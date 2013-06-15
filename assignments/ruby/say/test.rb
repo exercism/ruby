@@ -7,9 +7,25 @@ class SayTest < MiniTest::Unit::TestCase
     assert_equal 'zero', Say.new(0).in_english
   end
 
+  def test_one
+    skip
+    assert_equal 'one', Say.new(1).in_english
+  end
+
   def test_14
     skip
     assert_equal 'fourteen', Say.new(14).in_english
+  end
+
+  def test_twenty
+    skip
+    # This really shouldn't be twenty-zero
+    assert_equal 'twenty', Say.new(20).in_english
+  end
+
+  def test_twenty_two
+    skip
+    assert_equal 'twenty-two', Say.new(22).in_english
   end
 
   def test_100

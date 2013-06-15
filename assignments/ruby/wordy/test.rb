@@ -12,6 +12,11 @@ class WordProblemTest < MiniTest::Unit::TestCase
     assert_equal 55, WordProblem.new('What is 53 plus 2?').answer
   end
 
+  def test_add_negative_numbers
+    skip
+    assert_equal -11, @calculator.ask('What is -1 plus -10?')
+  end
+
   def test_add_more_digits
     skip
     assert_equal 45801, WordProblem.new('What is 123 plus 45678?').answer
@@ -42,6 +47,18 @@ class WordProblemTest < MiniTest::Unit::TestCase
     skip
     question = 'What is 1 plus 5 minus -2?'
     assert_equal 8, WordProblem.new(question).answer
+  end
+
+  def test_subtract_twice
+    skip
+    question = 'What is 20 minus 4 minus 13?'
+    assert_equal 3, WordProblem.new(question).answer
+  end
+
+  def test_subtract_then_add
+    skip
+    question = 'What is 17 minus 6 plus 3?'
+    assert_equal 14, WordProblem.new(question).answer
   end
 
   def test_multiply_twice
