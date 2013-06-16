@@ -1,7 +1,16 @@
 class Cipher
-  def initialize(key)
-    @key = key
-    @key_bytes = to_bytes(@key)
+  attr_reader :key, :key_bytes
+
+  def initialize(key=nil, key_length=100)
+    if key
+      check_key_validity(key)
+      @key = key
+      @key_bytes = to_bytes(@key)
+    else
+      @key_bytes = []
+      key_length.times { @key_bytes << Random.rand(0...26) }
+      @key = to_string(@key_bytes)
+    end
   end
 
   def encode(plaintext)
@@ -36,5 +45,15 @@ class Cipher
 
   def to_string(bytes)
     bytes.map {|c| c + 97}.pack("c*")
+  end
+
+  def check_key_validity(key)
+    if key =~ /[A-Z]/
+      raise ArgumentError.new("Keys must not contain capital letters")
+    elsif key =~ /[0-9]/
+      raise ArgumentError.new("Keys must not contain numbers")
+    elsif key.empty?
+      raise ArgumentError.new("Keys must contain at least one letter")
+    end
   end
 end

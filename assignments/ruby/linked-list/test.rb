@@ -9,6 +9,7 @@ class LinkedListProxyTest < MiniTest::Unit::TestCase
   end
 
   def test_head_is_num
+    skip
     assert_equal 0, @list.head
   end
 
