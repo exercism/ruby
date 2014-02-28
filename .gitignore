@@ -1,0 +1,7 @@
+*.swp
+*.beam
+.DS_Store
+.bundle
+.config
+.ruby-version
+tmp
