@@ -43,6 +43,15 @@ class ClockTest < MiniTest::Unit::TestCase
     assert_equal clock1, clock2
   end
 
+  def test_inequivalent_clocks
+    skip
+    clock1 = Clock.at(15, 37)
+    clock2 = Clock.at(15, 36)
+    clock3 = Clock.at(14, 37)
+    refute_equal clock1, clock2
+    refute_equal clock1, clock3
+  end
+
   def test_wrap_around_backwards
     skip
     clock = Clock.at(0, 30) - 60
