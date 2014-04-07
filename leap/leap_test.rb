@@ -7,8 +7,8 @@ class Date
     throw "Try to implement this yourself instead of using Ruby's implementation."
   end
   
-  alias :gregorian_leap?, :leap?
-  alias :julian_leap?, :leap?
+  alias :gregorian_leap? :leap?
+  alias :julian_leap? :leap?
 end
 
 class YearTest < MiniTest::Unit::TestCase
