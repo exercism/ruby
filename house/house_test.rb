@@ -2,93 +2,33 @@ require 'minitest/autorun'
 require_relative 'house'
 
 class HouseTest < MiniTest::Unit::TestCase
-  def rhyme
-    @rhyme = ::House.new
-  end
+  def test_rhyme
+    expected = <<-RHYME
+This is the house that Jack built.
 
-  def teardown
-    @rhyme = nil
-  end
+This is the malt that lay in the house that Jack built.
 
-  def test_house
-    expected = "This is the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(1)
-  end
+This is the rat that ate the malt that lay in the house that Jack built.
 
-  def test_malt
-    skip
-    expected = "This is the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(2)
-  end
+This is the cat that killed the rat that ate the malt that lay in the house that Jack built.
 
-  def test_rat
-    skip
-    expected = "This is the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(3)
-  end
+This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
 
-  def test_cat
-    skip
-    expected = "This is the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(4)
-  end
+This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
 
-  def test_dog
-    skip
-    expected = "This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(5)
-  end
+This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
 
-  def test_cow
-    skip
-    expected = "This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(6)
-  end
+This is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
 
-  def test_maiden
-    skip
-    expected = "This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(7)
-  end
+This is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
 
-  def test_man
-    skip
-    expected = "This is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(8)
-  end
+This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
 
-  def test_priest
-    skip
-    expected = "This is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(9)
-  end
+This is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
 
-  def test_rooster
-    skip
-    expected = "This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(10)
-  end
-
-  def test_farmer
-    skip
-    expected = "This is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(11)
-  end
-
-  def test_horse_and_hound_and_horn
-    skip
-    expected = "This is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.\n"
-    assert_equal expected, rhyme.verse(12)
-  end
-
-  def test_multiple_verses
-    skip
-    expected = ""
-    expected << "This is the house that Jack built.\n\n"
-    expected << "This is the malt that lay in the house that Jack built.\n\n"
-    expected << "This is the rat that ate the malt that lay in the house that Jack built.\n\n"
-
-    assert_equal expected, rhyme.verses(1, 3)
+This is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.
+    RHYME
+    assert_equal expected, House.recite
   end
 end
 

@@ -1,35 +1,32 @@
 class House
-  def verses(first, last)
-    first.upto(last).map do |number|
-      verse(number)
-    end.join("\n") + "\n"
+  def self.recite
+    new.recite
   end
 
-  def verse(number)
-    "This is" + "%s.\n" % chain(number).join('')
+  def recite
+    (1..pieces.length).map {|i| line(i) }.join("\n")
   end
 
-  def chain(length)
-    pieces[0..length-1].reverse.map do |subject, link|
-      " the %s that %s" % [subject, link]
-    end
+  def line(i)
+    "This is %s.\n" % pieces.last(i).join(' ')
   end
+
+  private
 
   def pieces
     [
-      ['house', 'Jack built'],
-      ['malt', 'lay in'],
-      ['rat', 'ate'],
-      ['cat', 'killed'],
-      ['dog', 'worried'],
-      ['cow with the crumpled horn', 'tossed'],
-      ['maiden all forlorn', 'milked'],
-      ['man all tattered and torn', 'kissed'],
-      ['priest all shaven and shorn', 'married'],
-      ['rooster that crowed in the morn', 'woke'],
-      ['farmer sowing his corn', 'kept'],
-      ['horse and the hound and the horn', 'belonged to'],
+      'the horse and the hound and the horn that belonged to',
+      'the farmer sowing his corn that kept',
+      'the rooster that crowed in the morn that woke',
+      'the priest all shaven and shorn that married',
+      'the man all tattered and torn that kissed',
+      'the maiden all forlorn that milked',
+      'the cow with the crumpled horn that tossed',
+      'the dog that worried',
+      'the cat that killed',
+      'the rat that ate',
+      'the malt that lay in',
+      'the house that Jack built',
     ]
   end
 end
-
