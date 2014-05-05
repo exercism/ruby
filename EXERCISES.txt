@@ -3,12 +3,15 @@ leap
 grains
 raindrops
 hamming
+binary
 etl
 scrabble-score
 gigasecond
 word-count
 anagram
+point-mutations
 grade-school
+octal
 proverb
 space-age
 house
