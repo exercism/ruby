@@ -25,6 +25,7 @@ class PhoneNumber
   private
 
   def clean(number)
+    return "0" * 10 if number.match(/[a-zA-Z]/)
     number = number.gsub(/[^0-9]/, "")
     normalize(number)
   end
