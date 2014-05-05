@@ -3,6 +3,7 @@ class DNA
   attr_reader :nucleotides
   def initialize(strand)
     @nucleotides = strand.chars
+    nucleotides.each {|n| validate!(n)}
   end
 
   def count(abbreviation)
