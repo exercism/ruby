@@ -13,6 +13,7 @@ proverb
 space-age
 house
 roman-numerals
+circular-buffer
 clock
 prime-factors
 strain
