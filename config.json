@@ -66,6 +66,11 @@
     "simple-linked-list",
     "linked-list"
   ],
+  "deprecated": [
+    "binary",
+    "octal",
+    "point-mutations"
+  ],
   "ignore": [
 
   ]
