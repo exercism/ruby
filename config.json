@@ -65,5 +65,8 @@
     "twelve-days",
     "simple-linked-list",
     "linked-list"
+  ],
+  "ignore": [
+
   ]
 }
