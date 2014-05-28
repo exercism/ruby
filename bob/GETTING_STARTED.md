@@ -112,7 +112,7 @@ you don't have to deal with all the failures at once.
 
 To activate the next test, delete the "skip", and run the test suite again.
 
-## Wash, Rince, Repeat
+## Wash, Rinse, Repeat
 
 Delete one "skip" at a time, and make each test pass before you move to the
 next one.
