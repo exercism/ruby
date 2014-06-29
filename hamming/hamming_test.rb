@@ -28,12 +28,12 @@ class HammingTest < MiniTest::Unit::TestCase
 
   def test_ignores_extra_length_on_first_strand_when_longer
     skip
-    assert_equal 0, Hamming.compute('AAAG', 'AAA')
+    assert_equal 1, Hamming.compute('AGAG', 'AAA')
   end
 
   def test_ignores_extra_length_on_other_strand_when_longer
     skip
-    assert_equal 0, Hamming.compute('AAA', 'AAAG')
+    assert_equal 2, Hamming.compute('AGG', 'AAAA')
   end
 
   def test_large_hamming_distance
