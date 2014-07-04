@@ -100,6 +100,12 @@ class BobTest < MiniTest::Unit::TestCase
     assert_equal 'Fine. Be that way!', ::Bob.new.hey(silence)
   end
 
+  def test_alternate_silences
+    skip
+    silence = "\t" * rand(1..10)
+    assert_equal 'Fine. Be that way!', ::Bob.new.hey(silence)
+  end
+
   def test_on_multiple_line_questions
     skip
     assert_equal 'Whatever.', ::Bob.new.hey(%{
