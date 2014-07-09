@@ -1,13 +1,8 @@
 class Gigasecond
+  SECONDS = 10**9
 
-  attr_reader :born_at
-  def initialize(date_of_birth)
-    @born_at = date_of_birth.to_time
+  def self.from(date)
+    (date.to_time + SECONDS).to_date
   end
-
-  def date
-    (born_at + 1_000_000_000).to_date
-  end
-
 end
 
