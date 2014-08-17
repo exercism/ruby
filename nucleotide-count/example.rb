@@ -1,17 +1,23 @@
-class DNA
-
-  attr_reader :nucleotides
-  def initialize(strand)
-    @nucleotides = strand.chars
-    nucleotides.each {|n| validate!(n)}
+class Nucleotide
+  def self.from_dna(strand)
+    acids = strand.chars
+    unless acids.all?(&validate)
+      raise ArgumentError.new("Invalid DNA #{strand}")
+    end
+    new(acids)
   end
 
-  def count(abbreviation)
-    validate!(abbreviation)
-    nucleotides.count(abbreviation)
+  def self.validate
+    Proc.new {|acid| %w(A C G T).include?(acid)}
   end
 
-  def nucleotide_counts
+  attr_reader :acids
+
+  def initialize(acids)
+    @acids = acids
+  end
+
+  def histogram
     {
       'A' => count('A'),
       'T' => count('T'),
@@ -20,14 +26,7 @@ class DNA
     }
   end
 
-  def validate!(abbreviation)
-    unless nucleotide?(abbreviation)
-      raise ArgumentError.new("#{abbreviation} is not a nucleotide.")
-    end
+  def count(acid)
+    acids.count(acid)
   end
-
-  def nucleotide?(abbreviation)
-    %w(A T C G U).include?(abbreviation)
-  end
-
 end
