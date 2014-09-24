@@ -14,13 +14,13 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_shouting
     skip
-    assert_equal 'Woah, chill out!', ::Bob.new.hey('WATCH OUT!')
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey('WATCH OUT!')
   end
 
   def test_shouting_gibberish
     skip
     gibberish = ('A'..'Z').to_a.shuffle[0,10].join
-    assert_equal 'Woah, chill out!', ::Bob.new.hey(gibberish)
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey(gibberish)
   end
 
   def test_asking_a_question
@@ -51,12 +51,12 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_forceful_questions
     skip
-    assert_equal 'Woah, chill out!', ::Bob.new.hey('WHAT THE HELL WERE YOU THINKING?')
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey('WHAT THE HELL WERE YOU THINKING?')
   end
 
   def test_shouting_numbers
     skip
-    assert_equal 'Woah, chill out!', ::Bob.new.hey('1, 2, 3 GO!')
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey('1, 2, 3 GO!')
   end
 
   def test_only_numbers
@@ -71,12 +71,12 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_shouting_with_special_characters
     skip
-    assert_equal 'Woah, chill out!', ::Bob.new.hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!')
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!')
   end
 
   def test_shouting_with_no_exclamation_mark
     skip
-    assert_equal 'Woah, chill out!', ::Bob.new.hey('I HATE YOU')
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey('I HATE YOU')
   end
 
   def test_statement_containing_question_mark
