@@ -8,7 +8,7 @@ class Bob
     when phrase.silent?
       'Fine. Be that way!'
     when phrase.loud?
-      'Woah, chill out!'
+      'Whoa, chill out!'
     when phrase.quizzical?
       'Sure.'
     else
