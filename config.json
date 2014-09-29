@@ -64,7 +64,8 @@
     "largest-series-product",
     "binary-search",
     "pascals-triangle",
-    "custom-set"
+    "custom-set",
+    "minesweeper"
   ],
   "deprecated": [
     "octal",
