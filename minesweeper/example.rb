@@ -12,39 +12,48 @@ class Board
   end
 
   def transform
-    printout = []
-    rows.each_with_index do |row, i|
-      inner = []
-      row.each_char.with_index do |space, j|
-        if space != " "
-          inner << space
-        else
-          k = 0
-          surroundings = [
-            row[j -1], row[j + 1], rows[i - 1][j - 1],
-            rows[i - 1][j], rows[i - 1][j + 1],
-            rows[i + 1][j - 1], rows[i + 1][j], rows[i + 1][j + 1]
-          ]
-          surroundings.each do |datum|
-            if datum == "*"
-              k += 1
-            end
-          end
-          if k > 0
-            inner << k.to_s
-          else
-            inner << space
-          end
-        end
-      end
-      printout << inner.join
+    rows.map.with_index do |row, i|
+      decorate_row(row, i)
     end
-    printout
+  end
+
+  def mine?(char)
+    char == "*"
   end
 
   private
 
   attr_reader :rows
+
+  def decorate_row(row, i)
+    inner = []
+    row.each_char.with_index do |space, j|
+      if space != " "
+        inner << space
+      else
+        surroundings = surroundings(row, i, j)
+        k = count_mines_nearby(surroundings)
+        if k > 0
+          inner << k.to_s
+        else
+          inner << space
+        end
+      end
+    end
+    inner.join
+  end
+
+  def surroundings(row, i, j)
+    [
+      row[j -1], row[j + 1], rows[i - 1][j - 1],
+      rows[i - 1][j], rows[i - 1][j + 1],
+      rows[i + 1][j - 1], rows[i + 1][j], rows[i + 1][j + 1]
+    ]
+  end
+
+  def count_mines_nearby(surroundings)
+    surroundings.count {|datum| mine?(datum) }
+  end
 
   def validate
     validate_size
