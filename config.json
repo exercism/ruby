@@ -65,7 +65,8 @@
     "binary-search",
     "pascals-triangle",
     "custom-set",
-    "minesweeper"
+    "minesweeper",
+    "scale-generator"
   ],
   "deprecated": [
     "octal",
