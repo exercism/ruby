@@ -3,7 +3,7 @@ require_relative 'robot'
 
 class RobotTest < MiniTest::Unit::TestCase
   def test_has_name
-    assert_match /\w{2}\d{3}/, Robot.new.name
+    assert_match /[a-zA-Z]{2}\d{3}/, Robot.new.name
   end
 
   def test_name_sticks
