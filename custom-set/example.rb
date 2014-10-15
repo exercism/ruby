@@ -2,7 +2,7 @@ class CustomSet
   attr_reader :data
 
   def initialize(input_data = [])
-    @data = parse_data(input_data)
+    @data = parse_data(input_data.uniq)
   end
 
   def delete(datum)
@@ -53,7 +53,7 @@ class CustomSet
     other.nodes.all?{ |other_node| nodes.any?{|node| node.eql?(other_node) } }
   end
 
-  def to_list
+  def to_a
     nodes.uniq
   end
 
