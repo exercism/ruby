@@ -6,12 +6,17 @@ class CustomSetTest < MiniTest::Unit::TestCase
   def test_equal
     assert_equal CustomSet.new([1, 3]), CustomSet.new([3, 1])
   end
+  
+  def test_no_duplicates
+    assert_equal CustomSet.new([1, 1]), CustomSet.new([1])
+  end   
 
   def test_delete
     skip
     assert_equal CustomSet.new([1,3]), CustomSet.new([3,2,1]).delete(2)
     assert_equal CustomSet.new([1,2,3]), CustomSet.new([3,2,1]).delete(4)
     assert_equal CustomSet.new([1,2,3]), CustomSet.new([3,2,1]).delete(2.0)
+    assert_equal CustomSet.new([1,3]), CustomSet.new([3,2.0,1]).delete(2.0)
   end
 
   def test_difference
@@ -83,11 +88,11 @@ class CustomSetTest < MiniTest::Unit::TestCase
     assert CustomSet.new.subset?(CustomSet.new)
   end
 
-  def test_to_list
+  def test_to_a
     skip
-    assert_equal [], CustomSet.new.to_list.sort
-    assert_equal [1,2,3], CustomSet.new([3,1,2]).to_list.sort
-    assert_equal [1,2,3], CustomSet.new([3,1,2,1]).to_list.sort
+    assert_equal [], CustomSet.new.to_a.sort
+    assert_equal [1,2,3], CustomSet.new([3,1,2]).to_a.sort
+    assert_equal [1,2,3], CustomSet.new([3,1,2,1]).to_a.sort
   end
 
   def test_union
