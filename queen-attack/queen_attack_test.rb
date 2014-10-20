@@ -37,14 +37,14 @@ class QueensTest < MiniTest::Unit::TestCase
     skip
     queens = Queens.new(white: [2, 4], black: [6, 6])
     board = <<-BOARD.chomp
-O O O O O O O O
-O O O O O O O O
-O O O O W O O O
-O O O O O O O O
-O O O O O O O O
-O O O O O O O O
-O O O O O O B O
-O O O O O O O O
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ W _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ B _
+_ _ _ _ _ _ _ _
     BOARD
     assert_equal board, queens.to_s
   end
@@ -53,14 +53,14 @@ O O O O O O O O
     skip
     queens = Queens.new(white: [7, 1], black: [0, 0])
     board = <<-BOARD.chomp
-B O O O O O O O
-O O O O O O O O
-O O O O O O O O
-O O O O O O O O
-O O O O O O O O
-O O O O O O O O
-O O O O O O O O
-O W O O O O O O
+B _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ W _ _ _ _ _ _
     BOARD
     assert_equal board, queens.to_s
   end
@@ -69,14 +69,14 @@ O W O O O O O O
     skip
     queens = Queens.new(white: [4, 3], black: [3, 4])
     board = <<-BOARD.chomp
-O O O O O O O O
-O O O O O O O O
-O O O O O O O O
-O O O O B O O O
-O O O W O O O O
-O O O O O O O O
-O O O O O O O O
-O O O O O O O O
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ B _ _ _
+_ _ _ W _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
+_ _ _ _ _ _ _ _
     BOARD
     assert_equal board, queens.to_s
   end
