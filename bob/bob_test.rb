@@ -8,85 +8,105 @@ rescue LoadError => e
 end
 
 class BobTest < MiniTest::Unit::TestCase
+
+  def feedback(text)
+    "Bob hears #{text.inspect}, and.."
+  end
+
   def test_stating_something
-    assert_equal 'Whatever.', ::Bob.new.hey('Tom-ay-to, tom-aaaah-to.')
+    message_to_bob = 'Tom-ay-to, tom-aaaah-to.'
+    assert_equal 'Whatever.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_shouting
     skip
-    assert_equal 'Whoa, chill out!', ::Bob.new.hey('WATCH OUT!')
+    message_to_bob = 'WATCH OUT!'
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey('WATCH OUT!'), feedback(message_to_bob)
   end
 
   def test_shouting_gibberish
     skip
     gibberish = ('A'..'Z').to_a.shuffle[0,10].join
-    assert_equal 'Whoa, chill out!', ::Bob.new.hey(gibberish)
+    message_to_bob = gibberish
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey(gibberish), feedback(message_to_bob)
   end
 
   def test_asking_a_question
     skip
-    assert_equal 'Sure.', ::Bob.new.hey('Does this cryogenic chamber make me look fat?')
+    message_to_bob = 'Does this cryogenic chamber make me look fat?'
+    assert_equal 'Sure.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_asking_a_numeric_question
     skip
-    assert_equal 'Sure.', ::Bob.new.hey('You are, what, like 15?')
+    message_to_bob = 'You are, what, like 15?'
+    assert_equal 'Sure.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_asking_gibberish
     skip
     gibberish = ('a'..'z').to_a.shuffle[0,10].join
-    assert_equal 'Sure.', ::Bob.new.hey("#{gibberish}?")
+    assert_equal 'Sure.', ::Bob.new.hey("#{gibberish}?"), feedback(gibberish)
   end
 
   def test_talking_forcefully
     skip
-    assert_equal 'Whatever.', ::Bob.new.hey("Let's go make out behind the gym!")
+    message_to_bob = "Let's go make out behind the gym!"
+    assert_equal 'Whatever.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_using_acronyms_in_regular_speech
     skip
-    assert_equal 'Whatever.', ::Bob.new.hey("It's OK if you don't want to go to the DMV.")
+    message_to_bob = "It's OK if you don't want to go to the DMV."
+    assert_equal 'Whatever.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_forceful_questions
     skip
-    assert_equal 'Whoa, chill out!', ::Bob.new.hey('WHAT THE HELL WERE YOU THINKING?')
+    message_to_bob = 'WHAT THE HELL WERE YOU THINKING?'
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_shouting_numbers
     skip
-    assert_equal 'Whoa, chill out!', ::Bob.new.hey('1, 2, 3 GO!')
+    message_to_bob = '1, 2, 3 GO!'
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_only_numbers
     skip
-    assert_equal 'Whatever.', ::Bob.new.hey('1, 2, 3')
+    message_to_bob = '1, 2, 3'
+    assert_equal 'Whatever.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_question_with_only_numbers
     skip
-    assert_equal 'Sure.', ::Bob.new.hey('4?')
+    message_to_bob = '4?'
+    assert_equal 'Sure.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_shouting_with_special_characters
     skip
-    assert_equal 'Whoa, chill out!', ::Bob.new.hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!')
+    message_to_bob = 'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!'
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_shouting_with_no_exclamation_mark
     skip
-    assert_equal 'Whoa, chill out!', ::Bob.new.hey('I HATE YOU')
+    message_to_bob = 'I HATE YOU'
+    assert_equal 'Whoa, chill out!', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_statement_containing_question_mark
     skip
-    assert_equal 'Whatever.', ::Bob.new.hey('Ending with ? means a question.')
+    message_to_bob = 'Ending with ? means a question.'
+    assert_equal 'Whatever.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_prattling_on
     skip
-    assert_equal 'Sure.', ::Bob.new.hey("Wait! Hang on. Are you going to be OK?")
+    message_to_bob = "Wait! Hang on. Are you going to be OK?"
+    assert_equal 'Sure.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 
   def test_silence
@@ -108,9 +128,10 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_on_multiple_line_questions
     skip
-    assert_equal 'Whatever.', ::Bob.new.hey(%{
+    message_to_bob = %{
 Does this cryogenic chamber make me look fat?
-no})
+no}
+    assert_equal 'Whatever.', ::Bob.new.hey(message_to_bob), feedback(message_to_bob)
   end
 end
 
@@ -136,4 +157,3 @@ Then run the test again.
 For more guidance as you work on this exercise, see
 GETTING_STARTED.md.
 *****************************************************
-
