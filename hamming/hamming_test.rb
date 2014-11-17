@@ -32,14 +32,18 @@ class HammingTest < MiniTest::Unit::TestCase
     assert_equal 1, Hamming.compute('GGACG', 'GGTCG')
   end
 
-  def test_ignores_extra_length_on_first_strand_when_longer
+  def test_errors_when_length_on_first_strand_is_longer
     skip
-    assert_equal 1, Hamming.compute('AGAGACTTA', 'AAA')
+    assert_raises ArgumentError do
+      Hamming.compute('AGAGACTTA', 'AAA')
+    end
   end
 
-  def test_ignores_extra_length_on_other_strand_when_longer
+  def test_errors_when_length_on_second_strand_is_longer
     skip
-    assert_equal 2, Hamming.compute('AGG', 'AAAACTGACCCACCCCAGG')
+    assert_raises ArgumentError do
+      Hamming.compute('AGG', 'AAAACTGACCCACCCCAGG')
+    end
   end
 
   def test_large_hamming_distance
