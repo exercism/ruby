@@ -1,6 +1,6 @@
 # Getting Started
 
-These exercises lean on Test-Driven Development (TDD), but they're not an
+These exercises lean on Test-Driven Development (TDD), but tcompute're not an
 exact match.
 
 The following steps assume that you are in the same directory as the test
@@ -23,9 +23,9 @@ Run the test again. It will give you a new error.
 
 
     1) Error:
-    HammingTest#test_stating_something:
+    HammingTest#test_no_difference_between_identical_strands:
     NameError: uninitialized constant Hamming
-        hamming_test.rb:12:in `test_stating_something'
+        hamming_test.rb:12:in `test_no_difference_between_identical_strands'
 
 Within the first test, we are telling ruby to create a new Hamming object,
 but it doesn't know anything about any Hamming, so we need to make one.
@@ -40,9 +40,9 @@ Open up the hamming.rb file and add the following code:
 Run the test again.
 
     1) Error:
-    HammingTest#test_stating_something:
+    HammingTest#test_no_difference_between_identical_strands:
     NoMethodError: undefined method `compute' for #<Hamming:0x007fa531343e50>
-        hamming_test.rb:12:in `test_stating_something'
+        hamming_test.rb:12:in `test_no_difference_between_identical_strands'
 
 
 This time we have a Hamming, but we're trying to call a method named "compute" on him.
@@ -59,9 +59,9 @@ Open up hamming.rb and add a method definition inside the class:
 Run the test again.
 
     1) Error:
-    HammingTest#test_stating_something:
-    ArgumentError: wrong number of arguments (1 for 0)
-      in `compute' hamming_test.rb:12:in `test_stating_something'
+    HammingTest#test_no_difference_between_identical_strands:
+    ArgumentError: wrong number of arguments (2 for 0)
+      in `compute' hamming_test.rb:12:in `test_no_difference_between_identical_strands'
 
 The method "compute" needs to take an argument.
 
@@ -80,8 +80,8 @@ Change the "compute" method definition so it takes an argument.
 Run the test again.
 
     1) Failure:
-    HammingTest#test_stating_something [hamming_test.rb:12]:
-    Expected: "Whatever."
+    HammingTest#test_no_difference_between_identical_strands [hamming_test.rb:12]:
+    Expected: 0
       Actual: nil
 
 Up until now we've been getting errors, this time we get a failure.
@@ -93,9 +93,8 @@ errors.
 A failure is different—when you have a failure the ruby is running just fine,
 but the test is expecting one outcome, but getting another.
 
-The test is expecting the "compute" method to return the string "Whatever". The
-easiest way to make it pass, is to simply stick the string "Whatever" inside
-the method definition.
+The test is expecting the compute method to return the number 0. The easiest way 
+to make it pass, is to simply stick the number 0 inside the method definition.
 
 ## Step 6
 
