@@ -27,8 +27,17 @@ Run the test again. It will give you a new error.
     NameError: uninitialized constant Hamming
         hamming_test.rb:12:in `test_no_difference_between_identical_strands'
 
-Within the first test, we are telling ruby to create a new Hamming object,
-but it doesn't know anything about any Hamming, so we need to make one.
+Within the first test, we are referencing a constant named `Hamming` when
+we say `Hamming.compute('A', 'A')`. When Ruby sees a capitalized name like
+`Hamming`, it looks it up in a big huge list of all the constants it knows about,
+to see what it points to. It could point to anything, and often in Ruby we have
+constants that point to definitions of classes or modules.
+
+When it looks `Hamming` up in it's list, it doesn't find anything, so we need to make
+one.
+
+There are several ways that this error message can be made to go
+away, one of which is to define a `Hamming` class.
 
 Open up the hamming.rb file and add the following code:
 
@@ -45,12 +54,13 @@ Run the test again.
         hamming_test.rb:12:in `test_no_difference_between_identical_strands'
 
 
-This time we have a Hamming, but we're trying to call a method named "compute" on him.
+This time we have a `Hamming`, but we're trying tell it to `compute`, and
+`Hamming` doesn't understand that message.
 
 Open up hamming.rb and add a method definition inside the class:
 
     class Hamming
-      def compute
+      def self.compute
       end
     end
 
@@ -63,17 +73,17 @@ Run the test again.
     ArgumentError: wrong number of arguments (2 for 0)
       in `compute' hamming_test.rb:12:in `test_no_difference_between_identical_strands'
 
-The method "compute" needs to take an argument.
+The method `compute` needs to take an argument.
 
 These are examples of method definitions that take arguments:
 
-    def greet(name)
+    def self.greet(name)
     end
 
-    def drink(beverage)
+    def self.drink(beverage)
     end
 
-Change the "compute" method definition so it takes an argument.
+Change the `compute` method definition so it takes an argument.
 
 ## Step 5
 
@@ -86,14 +96,13 @@ Run the test again.
 
 Up until now we've been getting errors, this time we get a failure.
 
-An error means that ruby cannot even run properly because things like missing
-files or referencing classes or methods that don't exist, or because of syntax
-errors.
+An error means that Ruby cannot even run properly because of things like missing
+files or syntax errors, or referring to things that don't exist.
 
-A failure is different—when you have a failure the ruby is running just fine,
+A failure is different—when you have a failure the Ruby is running just fine,
 but the test is expecting one outcome, but getting another.
 
-The test is expecting the compute method to return the number 0. The easiest way 
+The test is expecting the `compute` method to return the number 0. The easiest way
 to make it pass, is to simply stick the number 0 inside the method definition.
 
 ## Step 6
