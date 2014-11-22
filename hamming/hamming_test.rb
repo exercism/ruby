@@ -64,11 +64,11 @@ The most important part of the error is
 
       cannot load such file
 
-It's looking for a file named bob.rb that doesn't
+It's looking for a file named hamming.rb that doesn't
 exist yet.
 
-To fix the error, create an empty file named bob.rb
-in the same directory as the bob_test.rb file.
+To fix the error, create an empty file named hamming.rb
+in the same directory as the hamming_test.rb file.
 
 Then run the test again.
 
