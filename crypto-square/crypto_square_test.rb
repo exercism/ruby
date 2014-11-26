@@ -7,6 +7,12 @@ class CryptoTest < MiniTest::Unit::TestCase
     assert_equal "splunk", crypto.normalize_plaintext
   end
 
+  def test_normalize_uppercase_characters
+    skip
+    crypto = Crypto.new('WHOA HEY!')
+    assert_equal "whoahey", crypto.normalize_plaintext
+  end
+
   def test_normalize_with_numbers
     skip
     crypto = Crypto.new('1, 2, 3 GO!')
@@ -28,6 +34,12 @@ class CryptoTest < MiniTest::Unit::TestCase
   def test_size_of_non_perfect_square
     skip
     crypto = Crypto.new('123456789abc')
+    assert_equal 4, crypto.size
+  end
+
+  def test_size_is_determined_by_normalized_plaintext
+    skip
+    crypto = Crypto.new('Oh hey, this is nuts!')
     assert_equal 4, crypto.size
   end
 
@@ -57,13 +69,31 @@ class CryptoTest < MiniTest::Unit::TestCase
 
   def test_normalized_ciphertext
     skip
+    crypto = Crypto.new('Vampires are people too!')
+    assert_equal 'vrel aepe mset paoo irpo', crypto.normalize_ciphertext
+  end
+
+  def test_normalized_ciphertext_spills_into_short_segment
+    skip
     crypto = Crypto.new('Madness, and then illumination.')
     assert_equal 'msemo aanin dninn dlaet ltshu i', crypto.normalize_ciphertext
   end
 
-  def test_more_normalized_ciphertext
+  def test_another_normalized_ciphertext
     skip
-    crypto = Crypto.new('Vampires are people too!')
-    assert_equal 'vrel aepe mset paoo irpo', crypto.normalize_ciphertext
+    crypto = Crypto.new('If man was meant to stay on the ground god would have given us roots')
+    assert_equal 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau', crypto.normalize_ciphertext
+  end
+
+  def test_normalized_ciphertext_with_punctuation
+    skip
+    crypto = Crypto.new('Have a nice day. Feed the dog & chill out!')
+    assert_equal 'hifei acedl veeol eddgo aatcu nyhht', crypto.normalize_ciphertext
+  end
+
+  def test_normalized_ciphertext_when_just_less_then_a_full_square
+    skip
+    crypto = Crypto.new('I am')
+    assert_equal 'im a', crypto.normalize_ciphertext
   end
 end
