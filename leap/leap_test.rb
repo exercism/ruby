@@ -13,26 +13,26 @@ end
 
 class YearTest < MiniTest::Unit::TestCase
   def test_leap_year
-    assert Year.leap?(1996)
+    assert Year.leap?(1996), "Yes, 1996 is a leap year"
   end
 
   def test_non_leap_year
     skip
-    refute Year.leap?(1997)
+    refute Year.leap?(1997), "No, 1997 is not a leap year"
   end
 
   def test_non_leap_even_year
     skip
-    refute Year.leap?(1998)
+    refute Year.leap?(1998), "No, 1998 is not a leap year"
   end
 
   def test_century
     skip
-    refute Year.leap?(1900)
+    refute Year.leap?(1900), "No, 1900 is not a leap year"
   end
 
   def test_fourth_century
     skip
-    assert Year.leap?(2400)
+    assert Year.leap?(2400), "Yes, 2400 is a leap year"
   end
 end
