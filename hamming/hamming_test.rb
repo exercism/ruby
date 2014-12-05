@@ -32,6 +32,16 @@ class HammingTest < MiniTest::Unit::TestCase
     assert_equal 1, Hamming.compute('GGACG', 'GGTCG')
   end
 
+  def test_nonunique_characters_within_first_strand
+    skip
+    assert_equal 1, Hamming.compute('AGA', 'AGG')
+  end
+
+  def test_nonunique_characters_within_second_strand
+    skip
+    assert_equal 1, Hamming.compute('AGG', 'AGA')
+  end
+
   def test_large_hamming_distance
     skip
     assert_equal 4, Hamming.compute('GATACA', 'GCATAA')
