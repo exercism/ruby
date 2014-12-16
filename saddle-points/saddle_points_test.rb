@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'matrix'
 
 class MatrixTest < MiniTest::Unit::TestCase
-
   def test_extract_a_row
     matrix = Matrix.new("1 2\n10 20")
     assert_equal [1, 2], matrix.rows[0]
@@ -61,5 +60,4 @@ class MatrixTest < MiniTest::Unit::TestCase
     matrix = Matrix.new("4 5 4\n3 5 5\n1 5 4")
     assert_equal [[0, 1], [1, 1], [2, 1]], matrix.saddle_points
   end
-
 end

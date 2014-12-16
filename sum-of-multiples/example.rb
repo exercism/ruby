@@ -1,5 +1,4 @@
 class SumOfMultiples
-
   def self.to(limit)
     new(5, 3).to(limit)
   end
@@ -24,6 +23,4 @@ class SumOfMultiples
       i % multiple == 0
     end
   end
-
 end
-

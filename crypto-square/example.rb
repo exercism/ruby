@@ -25,7 +25,7 @@ class Crypto
   end
 
   def normalize_ciphertext
-    chunk(ciphertext, 5).join(" ")
+    chunk(ciphertext, 5).join(' ')
   end
 
   def chunk(s, size)

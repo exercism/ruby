@@ -26,13 +26,13 @@ class NucleotideTest < MiniTest::Unit::TestCase
 
   def test_empty_dna_strand_has_no_nucleotides
     skip
-    expected = {'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0}
+    expected = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0 }
     assert_equal expected, Nucleotide.from_dna('').histogram
   end
 
   def test_repetitive_sequence_has_only_guanosine
     skip
-    expected = {'A' => 0, 'T' => 0, 'C' => 0, 'G' => 8}
+    expected = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 8 }
     assert_equal expected, Nucleotide.from_dna('GGGGGGGG').histogram
   end
 
@@ -40,7 +40,7 @@ class NucleotideTest < MiniTest::Unit::TestCase
     skip
     s = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
     dna = Nucleotide.from_dna(s)
-    expected = {'A' => 20, 'T' => 21, 'G' => 17, 'C' => 12}
+    expected = { 'A' => 20, 'T' => 21, 'G' => 17, 'C' => 12 }
     assert_equal expected, dna.histogram
   end
 

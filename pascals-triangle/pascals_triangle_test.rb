@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'triangle'
 
 class TriangleTest < MiniTest::Unit::TestCase
-
   def test_one_row
     triangle = Triangle.new(1)
     assert_equal [[1]], triangle.rows
@@ -35,7 +34,7 @@ class TriangleTest < MiniTest::Unit::TestCase
   def test_twentieth_row
     skip
     triangle = Triangle.new(20)
-    expected = [1, 19, 171, 969, 3876, 11628, 27132, 50388, 75582, 92378, 92378, 75582, 50388, 27132, 11628, 3876, 969, 171, 19, 1]
+    expected = [1, 19, 171, 969, 3876, 11_628, 27_132, 50_388, 75_582, 92_378, 92_378, 75_582, 50_388, 27_132, 11_628, 3876, 969, 171, 19, 1]
     assert_equal expected, triangle.rows.last
   end
 end

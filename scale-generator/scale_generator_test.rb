@@ -20,7 +20,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_another_chromatic_scale
     skip
     chromatic = Scale.new('F', :chromatic)
-    expected = ['F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E']
+    expected = %w(F Gb G Ab A Bb B C Db D Eb E)
     actual = chromatic.pitches
     assert_equal expected, actual
   end
@@ -28,7 +28,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_major_scale
     skip
     major = Scale.new('C', :major, 'MMmMMMm')
-    expected = ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+    expected = %w(C D E F G A B)
     actual = major.pitches
     assert_equal expected, actual
   end
@@ -52,7 +52,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_another_minor_scale
     skip
     minor = Scale.new('bb', :minor, 'MmMMmMM')
-    expected = ['Bb', 'C', 'Db', 'Eb', 'F', 'Gb', 'Ab']
+    expected = %w(Bb C Db Eb F Gb Ab)
     actual = minor.pitches
     assert_equal expected, actual
   end
@@ -60,7 +60,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_dorian_mode
     skip
     dorian = Scale.new('d', :dorian, 'MmMMMmM')
-    expected = ['D', 'E', 'F', 'G', 'A', 'B', 'C']
+    expected = %w(D E F G A B C)
     actual = dorian.pitches
     assert_equal expected, actual
   end
@@ -68,7 +68,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_mixolydian_mode
     skip
     mixolydian = Scale.new('Eb', :mixolydian, 'MMmMMmM')
-    expected = ['Eb', 'F', 'G', 'Ab', 'Bb', 'C', 'Db']
+    expected = %w(Eb F G Ab Bb C Db)
     actual = mixolydian.pitches
     assert_equal expected, actual
   end
@@ -84,7 +84,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_phrygian_mode
     skip
     phrygian = Scale.new('e', :phrygian, 'mMMMmMM')
-    expected = ['E', 'F', 'G', 'A', 'B', 'C', 'D']
+    expected = %w(E F G A B C D)
     actual = phrygian.pitches
     assert_equal expected, actual
   end
@@ -92,7 +92,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_locrian_mode
     skip
     locrian = Scale.new('g', :locrian, 'mMMmMMM')
-    expected = ['G', 'Ab', 'Bb', 'C', 'Db', 'Eb', 'F']
+    expected = %w(G Ab Bb C Db Eb F)
     actual = locrian.pitches
     assert_equal expected, actual
   end
@@ -100,7 +100,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_harmonic_minor
     skip
     harmonic_minor = Scale.new('d', 'harmonic_minor', 'MmMMmAm')
-    expected = ['D', 'E', 'F', 'G', 'A', 'Bb', 'Db']
+    expected = %w(D E F G A Bb Db)
     actual = harmonic_minor.pitches
     assert_equal expected, actual
   end
@@ -116,7 +116,7 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
   def test_hexatonic
     skip
     hexatonic = Scale.new('Db', :hexatonic, 'MMMMMM')
-    expected = ['Db', 'Eb', 'F', 'G', 'A', 'B']
+    expected = %w(Db Eb F G A B)
     actual = hexatonic.pitches
     assert_equal expected, actual
   end
@@ -136,6 +136,4 @@ class ScaleGeneratorTest < MiniTest::Unit::TestCase
     actual = enigmatic.pitches
     assert_equal expected, actual
   end
-
 end
-

@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'prime_factors'
 
 class PrimeFactorsTest < MiniTest::Unit::TestCase
-
   def test_1
     assert_equal [], PrimeFactors.for(1)
   end
@@ -49,12 +48,11 @@ class PrimeFactorsTest < MiniTest::Unit::TestCase
 
   def test_901255
     skip
-    assert_equal [5, 17, 23, 461], PrimeFactors.for(901255)
+    assert_equal [5, 17, 23, 461], PrimeFactors.for(901_255)
   end
 
   def test_93819012551
     skip
-    assert_equal [11, 9539, 894119], PrimeFactors.for(93819012551)
+    assert_equal [11, 9539, 894_119], PrimeFactors.for(93_819_012_551)
   end
-
 end

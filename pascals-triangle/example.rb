@@ -6,15 +6,15 @@ class Triangle
 
   def rows
     triangle = []
-    0.upto(depth-1) do |row|
+    0.upto(depth - 1) do |row|
       values = []
       if row == 0
         values << 1
       else
-        length = (triangle[row-1] || []).size
+        length = (triangle[row - 1] || []).size
         0.upto(length) do |position|
-          left = position.zero? ? 0 : triangle[row-1][position-1]
-          right = (triangle[row-1] || [])[position] || 0
+          left = position.zero? ? 0 : triangle[row - 1][position - 1]
+          right = (triangle[row - 1] || [])[position] || 0
           values << (left + right)
         end
       end

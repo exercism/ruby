@@ -1,6 +1,6 @@
 class Board
-  VALID_BORDERS = ["+", "-", "|"]
-  VALID_DATA = ["*", "|", "+", "-", " "]
+  VALID_BORDERS = ['+', '-', '|']
+  VALID_DATA = ['*', '|', '+', '-', ' ']
 
   def self.transform(input)
     new(input).transform
@@ -18,7 +18,7 @@ class Board
   end
 
   def mine?(char)
-    char == "*"
+    char == '*'
   end
 
   private
@@ -28,7 +28,7 @@ class Board
   def decorate_row(row, i)
     inner = []
     row.each_char.with_index do |space, j|
-      if space != " "
+      if space != ' '
         inner << space
       else
         surroundings = surroundings(row, i, j)
@@ -45,14 +45,14 @@ class Board
 
   def surroundings(row, i, j)
     [
-      row[j -1], row[j + 1], rows[i - 1][j - 1],
+      row[j - 1], row[j + 1], rows[i - 1][j - 1],
       rows[i - 1][j], rows[i - 1][j + 1],
       rows[i + 1][j - 1], rows[i + 1][j], rows[i + 1][j + 1]
     ]
   end
 
   def count_mines_nearby(surroundings)
-    surroundings.count {|datum| mine?(datum) }
+    surroundings.count { |datum| mine?(datum) }
   end
 
   def validate
@@ -64,7 +64,7 @@ class Board
   def validate_size
     len = rows.first.length
     if rows.any? { |row| row.length != len }
-      raise ValueError, "Invalid board"
+      fail ValueError, 'Invalid board'
     end
   end
 
@@ -73,7 +73,7 @@ class Board
       invalid = row.chars.any? do |char|
         !VALID_BORDERS.include?(char)
       end
-      raise ValueError, "Invalid board" if invalid
+      fail ValueError, 'Invalid board' if invalid
     end
   end
 
@@ -82,7 +82,7 @@ class Board
       invalid = row.chars.any? do |char|
         !VALID_DATA.include?(char)
       end
-      raise ValueError, "Invalid board" if invalid
+      fail ValueError, 'Invalid board' if invalid
     end
   end
 end
