@@ -18,7 +18,7 @@ class WordProblemTest < MiniTest::Unit::TestCase
 
   def test_add_more_digits
     skip
-    assert_equal 45801, WordProblem.new('What is 123 plus 45678?').answer
+    assert_equal 45_801, WordProblem.new('What is 123 plus 45678?').answer
   end
 
   def test_subtract
@@ -91,5 +91,4 @@ class WordProblemTest < MiniTest::Unit::TestCase
       WordProblem.new('Who is the president of the United States?').answer
     end
   end
-
 end

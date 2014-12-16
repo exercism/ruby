@@ -4,11 +4,11 @@ class House
   end
 
   def recite
-    (1..pieces.length).map {|i| line(i) }.join("\n")
+    (1..pieces.length).map { |i| line(i) }.join("\n")
   end
 
   def line(i)
-    "This is %s.\n" % pieces.last(i).map {|s| s.join("\n") }.join(' ')
+    "This is %s.\n" % pieces.last(i).map { |s| s.join("\n") }.join(' ')
   end
 
   private
@@ -26,7 +26,7 @@ class House
       ['the cat', 'that killed'],
       ['the rat', 'that ate'],
       ['the malt', 'that lay in'],
-      ['the house that Jack built'],
+      ['the house that Jack built']
     ]
   end
 end

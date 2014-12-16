@@ -2,10 +2,7 @@ require 'minitest/autorun'
 require_relative 'simulator'
 
 class RobotTurningTest < MiniTest::Unit::TestCase
-
-  def robot
-    @robot
-  end
+  attr_reader :robot
 
   def setup
     @robot = Robot.new
@@ -95,7 +92,7 @@ class RobotTurningTest < MiniTest::Unit::TestCase
 
   def test_advance_when_facing_north
     skip
-    robot.at(0,0)
+    robot.at(0, 0)
     robot.orient(:north)
     robot.advance
     assert_equal [0, 1], robot.coordinates
@@ -103,7 +100,7 @@ class RobotTurningTest < MiniTest::Unit::TestCase
 
   def test_advance_when_facing_east
     skip
-    robot.at(0,0)
+    robot.at(0, 0)
     robot.orient(:east)
     robot.advance
     assert_equal [1, 0], robot.coordinates
@@ -111,7 +108,7 @@ class RobotTurningTest < MiniTest::Unit::TestCase
 
   def test_advance_when_facing_south
     skip
-    robot.at(0,0)
+    robot.at(0, 0)
     robot.orient(:south)
     robot.advance
     assert_equal [0, -1], robot.coordinates
@@ -119,7 +116,7 @@ class RobotTurningTest < MiniTest::Unit::TestCase
 
   def test_advance_when_facing_west
     skip
-    robot.at(0,0)
+    robot.at(0, 0)
     robot.orient(:west)
     robot.advance
     assert_equal [-1, 0], robot.coordinates
@@ -133,31 +130,31 @@ class RobotSimulatorTest < MiniTest::Unit::TestCase
 
   def test_instructions_for_turning_left
     skip
-    assert_equal [:turn_left], simulator.instructions("L")
+    assert_equal [:turn_left], simulator.instructions('L')
   end
 
   def test_instructions_for_turning_right
     skip
-    assert_equal [:turn_right], simulator.instructions("R")
+    assert_equal [:turn_right], simulator.instructions('R')
   end
 
   def test_instructions_for_advancing
     skip
-    assert_equal [:advance], simulator.instructions("A")
+    assert_equal [:advance], simulator.instructions('A')
   end
 
   def test_series_of_instructions
     skip
     commands = [:turn_right, :advance, :advance, :turn_left]
-    assert_equal commands, simulator.instructions("RAAL")
+    assert_equal commands, simulator.instructions('RAAL')
   end
 
   def test_instruct_robot
     skip
     robot = Robot.new
     simulator.place(robot, x: -2, y: 1, direction: :east)
-    simulator.evaluate(robot, "RLAALAL")
-    assert_equal [0,2], robot.coordinates
+    simulator.evaluate(robot, 'RLAALAL')
+    assert_equal [0, 2], robot.coordinates
     assert_equal :west, robot.bearing
   end
 
@@ -169,9 +166,9 @@ class RobotSimulatorTest < MiniTest::Unit::TestCase
     simulator.place(robot1, x: 0, y: 0, direction: :north)
     simulator.place(robot2, x: 2, y: -7, direction: :east)
     simulator.place(robot3, x: 8, y: 4, direction: :south)
-    simulator.evaluate(robot1, "LAAARALA")
-    simulator.evaluate(robot2, "RRAAAAALA")
-    simulator.evaluate(robot3, "LAAARRRALLLL")
+    simulator.evaluate(robot1, 'LAAARALA')
+    simulator.evaluate(robot2, 'RRAAAAALA')
+    simulator.evaluate(robot3, 'LAAARRRALLLL')
 
     assert_equal [-4, 1], robot1.coordinates
     assert_equal :west, robot1.bearing

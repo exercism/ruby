@@ -1,12 +1,11 @@
 class Series
-
   def initialize(numeric_string)
     @digits = convert_to_digits(numeric_string)
   end
 
   def slices(length)
     if length > digits.length
-      raise ArgumentError.new('Not enough digits')
+      fail ArgumentError.new('Not enough digits')
     end
     result = []
     i = -1
@@ -26,4 +25,3 @@ class Series
     s.chars.to_a.map(&:to_i)
   end
 end
-

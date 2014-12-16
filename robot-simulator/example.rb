@@ -1,7 +1,6 @@
 class Simulator
-
   def instructions(text)
-    text.split("").map {|char| command(char)}
+    text.split('').map { |char| command(char) }
   end
 
   def place(robot, position)
@@ -24,11 +23,9 @@ class Simulator
       'A' => :advance
     }[char]
   end
-
 end
 
 class Robot
-
   attr_accessor :x, :y, :bearing
 
   def at(x, y)
@@ -42,7 +39,7 @@ class Robot
 
   def orient(direction)
     unless cardinal_directions.include?(direction)
-      raise ArgumentError
+      fail ArgumentError
     end
     self.bearing = direction
   end
@@ -77,5 +74,4 @@ class Robot
   def cardinal_directions
     [:north, :east, :south, :west]
   end
-
 end

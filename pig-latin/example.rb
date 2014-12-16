@@ -6,16 +6,17 @@ class PigLatin
   end
 
   def initialize(word)
-    @word = word.downcase.gsub(/[^a-z]/,'')
+    @word = word.downcase.gsub(/[^a-z]/, '')
   end
 
   def translate
-    return (word + "ay") if it_starts_with_vowel_sound?
+    return (word + 'ay') if it_starts_with_vowel_sound?
     start, remainder = parse_initial_consonant_sound_and_remainder
-    remainder + start + "ay"
+    remainder + start + 'ay'
   end
 
-private
+  private
+
   attr_reader :word
 
   def it_starts_with_vowel_sound?

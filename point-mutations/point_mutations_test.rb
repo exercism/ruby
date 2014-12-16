@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'dna'
 
 class DNATest < MiniTest::Unit::TestCase
-
   def test_no_difference_between_empty_strands
     assert_equal 0, DNA.new('').hamming_distance('')
   end
@@ -49,5 +48,4 @@ class DNATest < MiniTest::Unit::TestCase
     assert_equal 4, dna.hamming_distance('AGACATCTTTCAGCCGCCGGATTAGGCAA')
     assert_equal 1, dna.hamming_distance('AGG')
   end
-
 end

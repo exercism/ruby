@@ -18,7 +18,6 @@ class Bob
 end
 
 class Phrase
-
   attr_reader :source
   def initialize(drivel)
     @source = drivel.to_s.strip

@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'atbash'
 
 class AtbashTest < MiniTest::Unit::TestCase
-
   def test_encode_no
     assert_equal 'ml', Atbash.encode('no')
   end
@@ -43,5 +42,4 @@ class AtbashTest < MiniTest::Unit::TestCase
     cipher = 'gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt'
     assert_equal cipher, Atbash.encode(plaintext)
   end
-
 end

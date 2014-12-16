@@ -6,7 +6,7 @@ class WordProblem
 
   def answer
     if too_complicated?
-      raise ArgumentError.new("I don't understand the question")
+      fail ArgumentError.new("I don't understand the question")
     end
 
     unless @answer
@@ -32,7 +32,7 @@ class WordProblem
     /What is (-?\d+) #{operations} (-?\d+)( #{operations} (-?\d+))?\?/
   end
 
-  def operation index
+  def operation(index)
     case matches[index]
     when 'plus' then :+
     when 'minus' then :-
@@ -56,6 +56,4 @@ class WordProblem
   def chain?
     !!matches[4]
   end
-
 end
-

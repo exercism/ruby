@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'space_age'
 
 class SpaceAgeTest < MiniTest::Unit::TestCase
-
   def test_age_in_seconds
     age = SpaceAge.new(1_000_000)
     assert_equal 1_000_000, age.seconds
@@ -62,5 +61,4 @@ class SpaceAgeTest < MiniTest::Unit::TestCase
     assert_equal 260.16, age.on_earth
     assert_equal 1.58, age.on_neptune
   end
-
 end

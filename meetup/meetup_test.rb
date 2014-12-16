@@ -8,7 +8,6 @@ require_relative 'meetup'
 # and schedule is :first, :second, :third, :fourth, :last or :teenth.
 
 class MeetupTest < MiniTest::Unit::TestCase
-
   def test_monteenth_of_may_2013
     assert_equal Date.new(2013, 5, 13), Meetup.new(5, 2013).day(:monday, :teenth)
   end
@@ -462,5 +461,4 @@ class MeetupTest < MiniTest::Unit::TestCase
     skip
     assert_equal Date.new(2013, 4, 28), Meetup.new(4, 2013).day(:sunday, :last)
   end
-
 end

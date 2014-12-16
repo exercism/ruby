@@ -59,13 +59,13 @@ class SayTest < MiniTest::Unit::TestCase
 
   def test_1_million_and_some_crumbs
     skip
-    assert_equal 'one million two', Say.new(1000002).in_english
+    assert_equal 'one million two', Say.new(1_000_002).in_english
   end
 
   def test_1_million_2_thousand_345
     skip
     expected = 'one million two thousand three hundred forty-five'
-    assert_equal expected, Say.new(1002345).in_english
+    assert_equal expected, Say.new(1_002_345).in_english
   end
 
   def test_1_billion
@@ -79,7 +79,7 @@ class SayTest < MiniTest::Unit::TestCase
     expected << 'six hundred fifty-four million '
     expected << 'three hundred twenty-one thousand '
     expected << 'one hundred twenty-three'
-    assert_equal expected, Say.new(987654321123).in_english
+    assert_equal expected, Say.new(987_654_321_123).in_english
   end
 
   def test_lower_bound
@@ -92,7 +92,7 @@ class SayTest < MiniTest::Unit::TestCase
   def test_upper_bound
     skip
     assert_raises ArgumentError do
-      Say.new(1000000000000).in_english
+      Say.new(1_000_000_000_000).in_english
     end
   end
 end

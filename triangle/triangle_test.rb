@@ -85,5 +85,4 @@ class TriangleTest < MiniTest::Unit::TestCase
       Triangle.new(7, 3, 2).kind
     end
   end
-
 end
