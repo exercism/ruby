@@ -50,18 +50,21 @@ class AllergiesTest < MiniTest::Unit::TestCase
   def test_allergic_to_lots_of_stuff
     skip
     allergies = Allergies.new(248)
-    assert_equal %w(strawberries tomatoes chocolate pollen cats), allergies.list
+    expected = %w(strawberries tomatoes chocolate pollen cats)
+    assert_equal expected, allergies.list
   end
 
   def test_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert_equal %w(eggs peanuts shellfish strawberries tomatoes chocolate pollen cats), allergies.list
+    expected = %w(eggs peanuts shellfish strawberries tomatoes chocolate pollen cats)
+    assert_equal expected, allergies.list
   end
 
   def test_ignore_non_allergen_score_parts
     skip
     allergies = Allergies.new(509)
-    assert_equal %w(eggs shellfish strawberries tomatoes chocolate pollen cats), allergies.list
+    expected = %w(eggs shellfish strawberries tomatoes chocolate pollen cats)
+    assert_equal expected, allergies.list
   end
 end

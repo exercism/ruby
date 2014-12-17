@@ -18,14 +18,14 @@ class Translation
 
   def self.lookups
     {
-      ['AUG']                      => 'Methionine',
-      %w(UUU UUC)               => 'Phenylalanine',
-      %w(UUA UUG)              => 'Leucine',
+      ['AUG']             => 'Methionine',
+      %w(UUU UUC)         => 'Phenylalanine',
+      %w(UUA UUG)         => 'Leucine',
       %w(UCU UCC UCA UCG) => 'Serine',
-      %w(UAU UAC)               => 'Tyrosine',
-      %w(UGU UGC)               => 'Cystine',
-      ['UGG']                      => 'Tryptophan',
-      %w(UAA UAG UGA)        => 'STOP'
+      %w(UAU UAC)         => 'Tyrosine',
+      %w(UGU UGC)         => 'Cystine',
+      ['UGG']             => 'Tryptophan',
+      %w(UAA UAG UGA)     => 'STOP'
     }
   end
 end

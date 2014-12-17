@@ -38,9 +38,7 @@ class Robot
   end
 
   def orient(direction)
-    unless cardinal_directions.include?(direction)
-      fail ArgumentError
-    end
+    fail ArgumentError unless cardinal_directions.include?(direction)
     self.bearing = direction
   end
 

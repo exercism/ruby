@@ -46,7 +46,8 @@ class CryptoTest < MiniTest::Unit::TestCase
   def test_plaintext_segments
     skip
     crypto = Crypto.new('Never vex thine heart with idle woes')
-    assert_equal %w(neverv exthin eheart withid lewoes), crypto.plaintext_segments
+    expected = %w(neverv exthin eheart withid lewoes)
+    assert_equal expected, crypto.plaintext_segments
   end
 
   def test_other_plaintext_segments
@@ -82,13 +83,15 @@ class CryptoTest < MiniTest::Unit::TestCase
   def test_another_normalized_ciphertext
     skip
     crypto = Crypto.new('If man was meant to stay on the ground god would have given us roots')
-    assert_equal 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau', crypto.normalize_ciphertext
+    expected = 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau'
+    assert_equal expected, crypto.normalize_ciphertext
   end
 
   def test_normalized_ciphertext_with_punctuation
     skip
     crypto = Crypto.new('Have a nice day. Feed the dog & chill out!')
-    assert_equal 'hifei acedl veeol eddgo aatcu nyhht', crypto.normalize_ciphertext
+    expected = 'hifei acedl veeol eddgo aatcu nyhht'
+    assert_equal expected, crypto.normalize_ciphertext
   end
 
   def test_normalized_ciphertext_when_just_less_then_a_full_square

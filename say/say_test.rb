@@ -49,7 +49,8 @@ class SayTest < MiniTest::Unit::TestCase
 
   def test_1_thousand_234
     skip
-    assert_equal 'one thousand two hundred thirty-four', Say.new(1234).in_english
+    expected = 'one thousand two hundred thirty-four'
+    assert_equal expected, Say.new(1234).in_english
   end
 
   def test_1_million

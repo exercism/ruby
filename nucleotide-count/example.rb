@@ -1,9 +1,7 @@
 class Nucleotide
   def self.from_dna(strand)
     acids = strand.chars
-    unless acids.all?(&validate)
-      fail ArgumentError.new("Invalid DNA #{strand}")
-    end
+    fail ArgumentError.new("Invalid DNA #{strand}") unless acids.all?(&validate)
     new(acids)
   end
 
