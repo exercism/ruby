@@ -4,7 +4,7 @@ require_relative 'year'
 
 class Date
   def leap?
-    throw "Try to implement this yourself instead of using Ruby's implementation."
+    throw "Implement this yourself instead of using Ruby's implementation."
   end
 
   alias_method :gregorian_leap?, :leap?

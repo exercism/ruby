@@ -7,10 +7,7 @@ class Series
   end
 
   def largest_product(length)
-    if length > digits.length
-      fail ArgumentError.new('Not enough digits')
-    end
-
+    fail ArgumentError.new('Not enough digits') if length > digits.length
     products = []
     slices(length).each do |slice|
       products << slice.inject(1) do |product, n|

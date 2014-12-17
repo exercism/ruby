@@ -10,9 +10,9 @@ class RandomKeyCipherTest < MiniTest::Unit::TestCase
     assert_match(/[a-z]+/, @cipher.key)
   end
 
-  # Here we take advantage of the fact that plaintext of "aaa..." doesn't outputs
-  # the key. This is a critical problem with shift ciphers, some characters
-  # will always output the key verbatim.
+  # Here we take advantage of the fact that plaintext of "aaa..." doesn't
+  # outputs the key. This is a critical problem with shift ciphers, some
+  # characters will always output the key verbatim.
   def test_cipher_encode
     skip
     plaintext = 'aaaaaaaaaa'
