@@ -1,5 +1,3 @@
-require 'delegate'
-
 class Year < SimpleDelegator
   def self.leap?(number)
     Year.new(number).leap?
