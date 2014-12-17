@@ -7,7 +7,7 @@ class Element
   end
 
   def self.each_datum(elem)
-    while not elem.nil?
+    until elem.nil?
       yield elem.datum
       elem = elem.next
     end
@@ -25,13 +25,13 @@ class Element
     res
   end
 
-  def initialize(datum, next_element=nil)
+  def initialize(datum, next_element = nil)
     @datum = datum
     @next = next_element
   end
 
   def to_s
-    "<#{self.class.name} @datum=#{@datum} @next=#{@next || "nil"}>"
+    "<#{self.class.name} @datum=#{@datum} @next=#{@next || 'nil'}>"
   end
 
   def to_a

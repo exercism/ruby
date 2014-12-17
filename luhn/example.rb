@@ -1,5 +1,4 @@
 class Luhn
-
   def self.create(number)
     test_number = number * 10
     luhn = Luhn.new(test_number)
@@ -14,7 +13,7 @@ class Luhn
 
   def addends
     numbers = []
-    number.to_s.reverse.split("").map(&:to_i).each_with_index do |n, i|
+    number.to_s.reverse.split('').map(&:to_i).each_with_index do |n, i|
       if i % 2 == 0
         numbers << n
       else

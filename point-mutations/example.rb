@@ -1,5 +1,4 @@
 class DNA
-
   attr_reader :strand
   def initialize(strand)
     @strand = strand

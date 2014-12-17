@@ -28,13 +28,13 @@ class CustomSet
 
   def intersection(other)
     intersection = nodes.select do |node|
-      other.nodes.any?{ |other_node| other_node.eql?(node) }
+      other.nodes.any? { |other_node| other_node.eql?(node) }
     end
     CustomSet.new(intersection)
   end
 
   def member?(datum)
-    data.any?{ |node| node.datum.eql?(datum) }
+    data.any? { |node| node.datum.eql?(datum) }
   end
 
   def put(datum)
@@ -50,7 +50,7 @@ class CustomSet
 
   def subset?(other)
     return true if other.data.empty?
-    other.nodes.all?{ |other_node| nodes.any?{|node| node.eql?(other_node) } }
+    other.nodes.all? { |other_node| nodes.any? { |node| node.eql?(other_node) } }
   end
 
   def to_a
@@ -67,7 +67,7 @@ class CustomSet
   end
 
   def nodes
-    data.map{|d| d.datum}.sort
+    data.map(&:datum).sort
   end
 
   def add_datum(datum)
@@ -81,7 +81,6 @@ class CustomSet
       Node.new(d)
     end
   end
-
 end
 
 class Node
@@ -90,5 +89,4 @@ class Node
   def initialize(input_datum)
     @datum = input_datum
   end
-
 end

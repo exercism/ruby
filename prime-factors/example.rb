@@ -1,5 +1,4 @@
 class PrimeFactors
-
   def self.for(number)
     factors = []
     divisor = 2
@@ -12,6 +11,4 @@ class PrimeFactors
     end
     factors
   end
-
 end
-

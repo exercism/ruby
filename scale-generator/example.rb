@@ -1,7 +1,7 @@
 class Scale
-  ASCENDING_INTERVALS = ['m', 'M', 'A']
+  ASCENDING_INTERVALS = %w(m M A)
   CHROMATIC_SCALE = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
-  FLAT_CHROMATIC_SCALE = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']
+  FLAT_CHROMATIC_SCALE = %w(C Db D Eb E F Gb G Ab A Bb B)
   FLAT_KEYS = %w(F Bb Eb Ab Db Gb d g c f bb eb)
 
   def initialize(tonic, scale_name, pattern = nil)
@@ -16,7 +16,7 @@ class Scale
   end
 
   def pitches
-    return reorder_chromatic_scale if !pattern
+    return reorder_chromatic_scale unless pattern
     last_index = 0
     scale = pattern.each_char.with_object([]) do |c, collector|
       collector << reorder_chromatic_scale[last_index]
@@ -33,5 +33,4 @@ class Scale
     index = chromatic_scale.index(tonic)
     chromatic_scale[index..-1] + chromatic_scale[0..index - 1]
   end
-
 end

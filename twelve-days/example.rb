@@ -38,4 +38,3 @@ class TwelveDaysSong
     end
   end
 end
-

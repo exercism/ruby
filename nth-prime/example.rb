@@ -4,7 +4,7 @@ class Prime
   def self.nth(n)
     if n < 1
       message = 'There is no such thing. Be reasonable.'
-      raise ArgumentError.new(message)
+      fail ArgumentError.new(message)
     end
 
     primes = 0
@@ -16,4 +16,3 @@ class Prime
     i
   end
 end
-

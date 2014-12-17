@@ -1,5 +1,5 @@
 class Clock
-  def self.at(hour, minutes=0)
+  def self.at(hour, minutes = 0)
     new(hour, minutes)
   end
 
@@ -13,11 +13,11 @@ class Clock
   end
 
   def +(minutes)
-    self.class.from(time + (minutes*60))
+    self.class.from(time + (minutes * 60))
   end
 
   def -(minutes)
-    self.class.from(time - (minutes*60))
+    self.class.from(time - (minutes * 60))
   end
 
   def ==(other)
