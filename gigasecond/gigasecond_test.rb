@@ -5,7 +5,6 @@ require 'time'
 require_relative 'gigasecond'
 
 class GigasecondTest < MiniTest::Unit::TestCase
-
   def test_1
     gs = Gigasecond.from(Date.new(2011, 4, 25))
     assert_equal Date.new(2043, 1, 1), gs
@@ -36,5 +35,4 @@ class GigasecondTest < MiniTest::Unit::TestCase
     gs = Gigasecond.from(your_birthday)
     assert_equal Date.new(2009, 1, 31), gs
   end
-
 end

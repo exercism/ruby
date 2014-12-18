@@ -1,5 +1,4 @@
 class Raindrops
-
   def self.convert(i)
     new(i).convert
   end
@@ -34,6 +33,4 @@ class Raindrops
   def plong?
     (number % 7) == 0
   end
-
 end
-

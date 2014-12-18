@@ -1,5 +1,4 @@
 class Atbash
-
   def self.encode(plaintext)
     new(plaintext).encode
   end
@@ -29,11 +28,10 @@ class Atbash
   end
 
   def alphabet
-    "abcdefghijklmnopqrstuvwxyz"
+    'abcdefghijklmnopqrstuvwxyz'
   end
 
   def key
     alphabet.reverse
   end
-
 end

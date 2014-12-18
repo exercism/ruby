@@ -4,19 +4,19 @@ require_relative 'crypto'
 class CryptoTest < MiniTest::Unit::TestCase
   def test_normalize_strange_characters
     crypto = Crypto.new('s#$%^&plunk')
-    assert_equal "splunk", crypto.normalize_plaintext
+    assert_equal 'splunk', crypto.normalize_plaintext
   end
 
   def test_normalize_uppercase_characters
     skip
     crypto = Crypto.new('WHOA HEY!')
-    assert_equal "whoahey", crypto.normalize_plaintext
+    assert_equal 'whoahey', crypto.normalize_plaintext
   end
 
   def test_normalize_with_numbers
     skip
     crypto = Crypto.new('1, 2, 3 GO!')
-    assert_equal "123go", crypto.normalize_plaintext
+    assert_equal '123go', crypto.normalize_plaintext
   end
 
   def test_size_of_small_square
@@ -46,25 +46,26 @@ class CryptoTest < MiniTest::Unit::TestCase
   def test_plaintext_segments
     skip
     crypto = Crypto.new('Never vex thine heart with idle woes')
-    assert_equal ["neverv", "exthin", "eheart", "withid", "lewoes"], crypto.plaintext_segments
+    expected = %w(neverv exthin eheart withid lewoes)
+    assert_equal expected, crypto.plaintext_segments
   end
 
   def test_other_plaintext_segments
     skip
     crypto = Crypto.new('ZOMG! ZOMBIES!!!')
-    assert_equal ["zomg", "zomb", "ies"], crypto.plaintext_segments
+    assert_equal %w(zomg zomb ies), crypto.plaintext_segments
   end
 
   def test_ciphertext
     skip
     crypto = Crypto.new('Time is an illusion. Lunchtime doubly so.')
-    assert_equal "tasneyinicdsmiohooelntuillibsuuml", crypto.ciphertext
+    assert_equal 'tasneyinicdsmiohooelntuillibsuuml', crypto.ciphertext
   end
 
   def test_another_ciphertext
     skip
     crypto = Crypto.new('We all know interspecies romance is weird.')
-    assert_equal "wneiaweoreneawssciliprerlneoidktcms", crypto.ciphertext
+    assert_equal 'wneiaweoreneawssciliprerlneoidktcms', crypto.ciphertext
   end
 
   def test_normalized_ciphertext
@@ -82,13 +83,15 @@ class CryptoTest < MiniTest::Unit::TestCase
   def test_another_normalized_ciphertext
     skip
     crypto = Crypto.new('If man was meant to stay on the ground god would have given us roots')
-    assert_equal 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau', crypto.normalize_ciphertext
+    expected = 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau'
+    assert_equal expected, crypto.normalize_ciphertext
   end
 
   def test_normalized_ciphertext_with_punctuation
     skip
     crypto = Crypto.new('Have a nice day. Feed the dog & chill out!')
-    assert_equal 'hifei acedl veeol eddgo aatcu nyhht', crypto.normalize_ciphertext
+    expected = 'hifei acedl veeol eddgo aatcu nyhht'
+    assert_equal expected, crypto.normalize_ciphertext
   end
 
   def test_normalized_ciphertext_when_just_less_then_a_full_square

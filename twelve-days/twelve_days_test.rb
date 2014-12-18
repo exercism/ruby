@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'twelve_days'
 
 class TwelveDaysTest < MiniTest::Unit::TestCase
-
   def song
     @song ||= ::TwelveDaysSong.new
   end
@@ -85,8 +84,8 @@ class TwelveDaysTest < MiniTest::Unit::TestCase
   def test_multiple_verses
     skip
     expected =
-      "On the first day of Christmas my true love gave to me, a Partridge in a Pear Tree.\n\n" +
-      "On the second day of Christmas my true love gave to me, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" +
+      "On the first day of Christmas my true love gave to me, a Partridge in a Pear Tree.\n\n" \
+      "On the second day of Christmas my true love gave to me, two Turtle Doves, and a Partridge in a Pear Tree.\n\n" \
       "On the third day of Christmas my true love gave to me, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n\n"
     assert_equal expected, song.verses(1, 3)
   end

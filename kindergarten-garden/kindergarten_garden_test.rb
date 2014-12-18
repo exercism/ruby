@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'garden'
 
 class GardenTest < MiniTest::Unit::TestCase
-
   def test_alices_garden
     garden = Garden.new("RC\nGG")
     assert_equal [:radishes, :clover, :grass, :grass], garden.alice
@@ -26,7 +25,6 @@ class GardenTest < MiniTest::Unit::TestCase
     assert_equal [:clover, :clover, :clover, :clover], garden.bob
     assert_equal [:grass, :grass, :grass, :grass], garden.charlie
   end
-
 end
 
 class TestFullGarden < MiniTest::Unit::TestCase
@@ -35,9 +33,7 @@ class TestFullGarden < MiniTest::Unit::TestCase
     @garden = Garden.new(diagram)
   end
 
-  def garden
-    @garden
-  end
+  attr_reader :garden
 
   def test_alice
     skip
@@ -101,16 +97,13 @@ class TestFullGarden < MiniTest::Unit::TestCase
 end
 
 class DisorderedTest < MiniTest::Unit::TestCase
-
   def setup
     diagram = "VCRRGVRG\nRVGCCGCV"
-    students = ["Samantha", "Patricia", "Xander", "Roger"]
+    students = %w(Samantha Patricia Xander Roger)
     @garden = Garden.new(diagram, students)
   end
 
-  def garden
-    @garden
-  end
+  attr_reader :garden
 
   def test_patricia
     skip
@@ -131,27 +124,26 @@ class DisorderedTest < MiniTest::Unit::TestCase
     skip
     assert_equal [:radishes, :grass, :clover, :violets], garden.xander
   end
-
 end
 
 class TwoGardensDifferentStudents < MiniTest::Unit::TestCase
- def diagram
-   "VCRRGVRG\nRVGCCGCV"
- end
+  def diagram
+    "VCRRGVRG\nRVGCCGCV"
+  end
 
- def garden_1
-   @garden_1 ||= Garden.new(diagram, ["Alice", "Bob", "Charlie", "Dan"])
- end
+  def garden_1
+    @garden_1 ||= Garden.new(diagram, %w(Alice Bob Charlie Dan))
+  end
 
- def garden_2
-   @garden_2 ||= Garden.new(diagram, ["Bob", "Charlie", "Dan", "Erin"])
- end
+  def garden_2
+    @garden_2 ||= Garden.new(diagram, %w(Bob Charlie Dan Erin))
+  end
 
- def test_bob_and_charlie_per_garden
-   skip
-   assert_equal [:radishes, :radishes, :grass, :clover], garden_1.bob
-   assert_equal [:violets, :clover, :radishes, :violets], garden_2.bob
-   assert_equal [:grass, :violets, :clover, :grass], garden_1.charlie
-   assert_equal [:radishes, :radishes, :grass, :clover], garden_2.charlie
- end
+  def test_bob_and_charlie_per_garden
+    skip
+    assert_equal [:radishes, :radishes, :grass, :clover], garden_1.bob
+    assert_equal [:violets, :clover, :radishes, :violets], garden_2.bob
+    assert_equal [:grass, :violets, :clover, :grass], garden_1.charlie
+    assert_equal [:radishes, :radishes, :grass, :clover], garden_2.charlie
+  end
 end

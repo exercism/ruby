@@ -25,15 +25,14 @@ class Proverb
   end
 
   def consequence(cause, effect)
-    "For want of a %s the %s was lost." % [cause, effect]
+    'For want of a %s the %s was lost.' % [cause, effect]
   end
 
   def qualifier
-    options[:qualifier] ?  "%s " % options[:qualifier] : ""
+    options[:qualifier] ?  '%s ' % options[:qualifier] : ''
   end
 
   def conclusion
     "\nAnd all for the want of a %s%s." % [qualifier, chain.first]
   end
 end
-

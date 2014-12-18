@@ -27,7 +27,8 @@ class PhraseTest < MiniTest::Unit::TestCase
     phrase = Phrase.new('all the kings horses and all the kings men')
     phrase.word_count # count it an extra time
     counts = {
-      'all' => 2, 'the' => 2, 'kings' => 2, 'horses' => 1, 'and' => 1, 'men' => 1
+      'all' => 2, 'the' => 2, 'kings' => 2,
+      'horses' => 1, 'and' => 1, 'men' => 1
     }
     assert_equal counts, phrase.word_count
   end
@@ -35,7 +36,10 @@ class PhraseTest < MiniTest::Unit::TestCase
   def test_ignore_punctuation
     skip
     phrase = Phrase.new('car : carpet as java : javascript!!&@$%^&')
-    counts = { 'car' => 1, 'carpet' => 1, 'as' => 1, 'java' => 1, 'javascript' => 1 }
+    counts = {
+      'car' => 1, 'carpet' => 1, 'as' => 1,
+      'java' => 1, 'javascript' => 1
+    }
     assert_equal counts, phrase.word_count
   end
 
@@ -70,7 +74,10 @@ class PhraseTest < MiniTest::Unit::TestCase
   def test_with_apostrophes
     skip
     phrase = Phrase.new("First: don't laugh. Then: don't cry.")
-    counts = { 'first' => 1, "don't" => 2, 'laugh' => 1, 'then' => 1, 'cry' => 1 }
+    counts = {
+      'first' => 1, "don't" => 2, 'laugh' => 1,
+      'then' => 1, 'cry' => 1
+    }
     assert_equal counts, phrase.word_count
   end
 end
