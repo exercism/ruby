@@ -1,4 +1,4 @@
-class Year < SimpleDelegator
+class Year
   def self.leap?(number)
     Year.new(number).leap?
   end
