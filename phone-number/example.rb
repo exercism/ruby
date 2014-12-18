@@ -1,5 +1,4 @@
 class PhoneNumber
-
   attr_reader :number
   def initialize(number)
     @number = clean(number)
@@ -25,8 +24,8 @@ class PhoneNumber
   private
 
   def clean(number)
-    return "0" * 10 if number.match(/[a-zA-Z]/)
-    number = number.gsub(/[^0-9]/, "")
+    return '0' * 10 if number.match(/[a-zA-Z]/)
+    number = number.gsub(/[^0-9]/, '')
     normalize(number)
   end
 
@@ -34,15 +33,13 @@ class PhoneNumber
     if valid?(number)
       number[/(\d{10})\z/, 1]
     else
-      "0" * 10
+      '0' * 10
     end
   end
 
   def valid?(number)
     return true if number.length == 10
-    return true if number.length == 11 && number.start_with?("1")
+    return true if number.length == 11 && number.start_with?('1')
     false
   end
-
 end
-

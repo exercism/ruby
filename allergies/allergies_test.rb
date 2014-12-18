@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'allergies'
 
 class AllergiesTest < MiniTest::Unit::TestCase
-
   def test_no_allergies_means_not_allergic
     allergies = Allergies.new(0)
     refute allergies.allergic_to?('peanuts')
@@ -45,25 +44,27 @@ class AllergiesTest < MiniTest::Unit::TestCase
   def test_allergic_to_eggs_and_peanuts
     skip
     allergies = Allergies.new(3)
-    assert_equal ['eggs', 'peanuts'], allergies.list
+    assert_equal %w(eggs peanuts), allergies.list
   end
 
   def test_allergic_to_lots_of_stuff
     skip
     allergies = Allergies.new(248)
-    assert_equal ['strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats'], allergies.list
+    expected = %w(strawberries tomatoes chocolate pollen cats)
+    assert_equal expected, allergies.list
   end
 
   def test_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert_equal ['eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats'], allergies.list
+    expected = %w(eggs peanuts shellfish strawberries tomatoes chocolate pollen cats)
+    assert_equal expected, allergies.list
   end
 
   def test_ignore_non_allergen_score_parts
     skip
     allergies = Allergies.new(509)
-    assert_equal ['eggs', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats'], allergies.list
+    expected = %w(eggs shellfish strawberries tomatoes chocolate pollen cats)
+    assert_equal expected, allergies.list
   end
-
 end

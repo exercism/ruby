@@ -23,7 +23,7 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_shouting_gibberish
     skip
-    remark = ('A'..'Z').to_a.shuffle[0,10].join
+    remark = ('A'..'Z').to_a.shuffle[0, 10].join
     assert_equal 'Whoa, chill out!', bob.hey(remark), feedback(remark)
   end
 
@@ -41,7 +41,7 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_asking_gibberish
     skip
-    remark = ('a'..'z').to_a.shuffle[0,10].join << "?"
+    remark = ('a'..'z').to_a.shuffle[0, 10].join << '?'
     assert_equal 'Sure.', bob.hey(remark), feedback(remark)
   end
 
@@ -101,7 +101,7 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_prattling_on
     skip
-    remark = "Wait! Hang on. Are you going to be OK?"
+    remark = 'Wait! Hang on. Are you going to be OK?'
     assert_equal 'Sure.', bob.hey(remark), feedback(remark)
   end
 
@@ -113,7 +113,7 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_prolonged_silence
     skip
-    remark = " " * rand(1..10)
+    remark = ' ' * rand(1..10)
     assert_equal 'Fine. Be that way!', bob.hey(remark), feedback(remark)
   end
 
@@ -125,9 +125,9 @@ class BobTest < MiniTest::Unit::TestCase
 
   def test_on_multiple_line_questions
     skip
-    remark = %{
+    remark = %(
 Does this cryogenic chamber make me look fat?
-no}
+no)
     assert_equal 'Whatever.', bob.hey(remark), feedback(remark)
   end
 end

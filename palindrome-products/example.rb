@@ -1,7 +1,6 @@
 Palindrome = Struct.new(:value, :factors)
 
 class Palindromes
-
   attr_reader :range
   def initialize(options)
     max = options.fetch(:max_factor)
@@ -29,7 +28,7 @@ class Palindromes
   end
 
   def sort
-    @palindromes.sort_by do |key, palindrome|
+    @palindromes.sort_by do |key, _palindrome|
       key
     end
   end
@@ -41,5 +40,4 @@ class Palindromes
   def smallest
     sort.first[1]
   end
-
 end

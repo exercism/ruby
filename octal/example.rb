@@ -1,5 +1,4 @@
 class Octal
-
   BASE = 8
 
   attr_reader :digits
@@ -17,6 +16,6 @@ class Octal
   end
 
   def valid_chars
-    [*('0'..(BASE-1).to_s)]
+    [*('0'..(BASE - 1).to_s)]
   end
 end

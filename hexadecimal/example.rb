@@ -1,5 +1,4 @@
 class Hexadecimal
-
   BASE = 16
 
   attr_reader :digits

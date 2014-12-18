@@ -5,4 +5,3 @@ class Gigasecond
     (date.to_time + SECONDS).to_date
   end
 end
-
