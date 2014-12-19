@@ -166,7 +166,7 @@ class OCRTest < MiniTest::Unit::TestCase
     assert_equal '1234567890', OCR.new(text).convert
   end
 
-  def test_identify_123_456_789
+  def test_identify_123_456_789 # rubocop:disable Metrics/MethodLength
     skip
     text = <<-NUMBER.chomp
     _  _

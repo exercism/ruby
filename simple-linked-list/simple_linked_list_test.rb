@@ -10,6 +10,7 @@ class LinkedListTest < MiniTest::Unit::TestCase
 
   def test_constructor
     assert_equal 1, @one.datum
+    # rubocop:disable Style/EmptyLines
     assert_nil @one.next
 
     assert_equal 2, @two.datum
@@ -38,7 +39,8 @@ class LinkedListTest < MiniTest::Unit::TestCase
     test_constructor
   end
 
-  def test_from_a
+  # rubocop:disable  Metrics/AbcSize
+  def test_from_a # rubocop:disable Metrics/MethodLength
     skip
     assert_nil Element.from_a([])
 
@@ -59,6 +61,7 @@ class LinkedListTest < MiniTest::Unit::TestCase
     skip
     assert_equal [1], Element.from_a([1]).to_a
     assert_equal [2, 1], Element.from_a([2, 1]).to_a
+    # rubocop:disable Lint/ParenthesesAsGroupedExpression
     assert_equal (1..10).to_a, Element.from_a(1..10).to_a
   end
 end

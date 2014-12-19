@@ -82,7 +82,9 @@ class CryptoTest < MiniTest::Unit::TestCase
 
   def test_another_normalized_ciphertext
     skip
-    crypto = Crypto.new('If man was meant to stay on the ground god would have given us roots')
+    crypto = Crypto.new(
+      'If man was meant to stay on the ground god would have given us roots'
+    )
     expected = 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau'
     assert_equal expected, crypto.normalize_ciphertext
   end

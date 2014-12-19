@@ -41,6 +41,7 @@ class CustomSetTest < MiniTest::Unit::TestCase
     assert_equal CustomSet.new, CustomSet.new.empty
   end
 
+  # rubocop:disable Metrics/LineLength
   def test_intersection
     skip
     assert_equal CustomSet.new([:a, :c]),
@@ -94,7 +95,7 @@ class CustomSetTest < MiniTest::Unit::TestCase
     assert_equal [1, 2, 3], CustomSet.new([3, 1, 2, 1]).to_a.sort
   end
 
-  def test_union
+  def test_union # rubocop:disable Metrics/MethodLength
     skip
     assert_equal CustomSet.new([3, 2, 1]),
                  CustomSet.new([1, 3]).union(CustomSet.new([2]))
