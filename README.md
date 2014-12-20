@@ -40,6 +40,21 @@ submitting a general change across many of the problems (e.g. formatting).
 
 Thank you so much for contributing! :sparkles:
 
+### Style Guide
+
+We have created a minimal set of guidelines for the testing files, which
+you can take advantage of by installing the `rubocop` gem.  It will use
+the configuration file located in the root folder, `.rubocop.yml`.  When
+you edit your code, you can simply run `rubocop -D`.  It will ignore
+your `example.rb`, but will gently suggest style for your test code.
+
+The `-D` option that is suggested is provided to give you the ability to
+easily ignore the Cops that you think should be ignored.  This is easily
+done by doing `# rubocop:disable CopName`, where the `CopName` is repla)ed
+appropriately.
+
+For more complete information, see [Rubocop](http://batsov.com/rubocop/).
+
 ## READMEs
 
 Please do not add a README or README.md file to the problem directory. The
