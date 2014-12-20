@@ -50,7 +50,7 @@ your `example.rb`, but will gently suggest style for your test code.
 
 The `-D` option that is suggested is provided to give you the ability to
 easily ignore the Cops that you think should be ignored.  This is easily
-done by doing `# rubocop:disable CopName`, where the `CopName` is repla)ed
+done by doing `# rubocop:disable CopName`, where the `CopName` is replaced
 appropriately.
 
 For more complete information, see [Rubocop](http://batsov.com/rubocop/).
