@@ -1,0 +1,29 @@
+AllCops:
+  Exclude:
+    - '*/example.rb'
+Style/Documentation:
+  Enabled: false
+Style/StringLiterals:
+  Enabled: true
+Metrics/AbcSize:
+  Enabled: false
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+Style/TrailingComma:
+  EnforcedStyleForMultiline: comma
+Style/Blocks:
+  Enabled: true
+Style/RaiseArgs:
+  Enabled: true
+  EnforcedStyle: compact
+Metrics/ClassLength:
+  Max: 454
+Style/AndOr:
+  Enabled: true
+  EnforcedStyle: conditionals
+Style/FormatString:
+  Enabled: true
+  EnforcedStyle: percent
+Lint/RescueException:
+  Exclude:
+    - '*/*_test.rb'

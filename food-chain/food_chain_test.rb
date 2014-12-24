@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require_relative 'food_chain'
 
+# rubocop:disable Metrics/MethodLength, Metrics/LineLength
 class FoodChainTest < MiniTest::Unit::TestCase
   attr_reader :song
   def song
