@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require_relative 'house'
 
+# rubocop:disable Metrics/MethodLength
 class HouseTest < MiniTest::Unit::TestCase
   def test_rhyme
     expected = <<-RHYME

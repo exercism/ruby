@@ -158,7 +158,8 @@ class RobotSimulatorTest < MiniTest::Unit::TestCase
     assert_equal :west, robot.bearing
   end
 
-  def test_instruct_many_robots
+  # rubocop:disable Metrics/AbcSize
+  def test_instruct_many_robots # rubocop:disable Metrics/MethodLength
     skip
     robot1 = Robot.new
     robot2 = Robot.new

@@ -54,12 +54,14 @@ class SchoolTest < MiniTest::Unit::TestCase
     assert_equal [], school.grade(1)
   end
 
-  def test_sort_school
+  def test_sort_school # rubocop:disable Metrics/MethodLength
     skip
-    school.add('Jennifer', 4)
-    school.add('Kareem', 6)
-    school.add('Christopher', 4)
-    school.add('Kyle', 3)
+    [
+      ['Jennfier, 4'], ['Kareem', 6],
+      ['Christopher', 4], ['Kyle', 3]
+    ].each do |name, grade|
+      school.add(name, grade)
+    end
     sorted = {
       3 => ['Kyle'],
       4 => %w(Christopher Jennifer),

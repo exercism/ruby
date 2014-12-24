@@ -28,7 +28,7 @@ class ArrayTest < MiniTest::Unit::TestCase
     assert_equal %w(zebra zombies zelot), result
   end
 
-  def test_keep_arrays
+  def test_keep_arrays # rubocop:disable Metrics/MethodLength
     skip
     rows = [
       [1, 2, 3],
@@ -70,7 +70,7 @@ class ArrayTest < MiniTest::Unit::TestCase
     assert_equal %w(apple banana cherimoya), result
   end
 
-  def test_discard_arrays
+  def test_discard_arrays # rubocop:disable Metrics/MethodLength
     skip
     rows = [
       [1, 2, 3],

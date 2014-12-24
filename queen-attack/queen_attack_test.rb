@@ -32,7 +32,7 @@ class QueensTest < MiniTest::Unit::TestCase
     end
   end
 
-  def test_string_representation
+  def test_string_representation # rubocop:disable Metrics/MethodLength
     skip
     queens = Queens.new(white: [2, 4], black: [6, 6])
     board = <<-BOARD.chomp
@@ -48,7 +48,7 @@ _ _ _ _ _ _ _ _
     assert_equal board, queens.to_s
   end
 
-  def test_another_string_representation
+  def test_another_string_representation # rubocop:disable Metrics/MethodLength
     skip
     queens = Queens.new(white: [7, 1], black: [0, 0])
     board = <<-BOARD.chomp
@@ -64,6 +64,7 @@ _ W _ _ _ _ _ _
     assert_equal board, queens.to_s
   end
 
+  # rubocop:disable Metrics/MethodLength
   def test_yet_another_string_representation
     skip
     queens = Queens.new(white: [4, 3], black: [3, 4])
@@ -85,6 +86,7 @@ _ _ _ _ _ _ _ _
     queens = Queens.new(white: [2, 3], black: [4, 7])
     assert !queens.attack?
   end
+  # rubocop:enable Metrics/MethodLength
 
   def test_can_attack_on_same_row
     skip
