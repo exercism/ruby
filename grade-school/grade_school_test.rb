@@ -57,7 +57,7 @@ class SchoolTest < MiniTest::Unit::TestCase
   def test_sort_school # rubocop:disable Metrics/MethodLength
     skip
     [
-      ['Jennfier, 4'], ['Kareem', 6],
+      ['Jennifer', 4], ['Kareem', 6],
       ['Christopher', 4], ['Kyle', 3]
     ].each do |name, grade|
       school.add(name, grade)
