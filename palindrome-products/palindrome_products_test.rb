@@ -7,7 +7,7 @@ class PalindromesTest < MiniTest::Unit::TestCase
     palindromes.generate
     largest = palindromes.largest
     assert_equal 9, largest.value
-    assert [[[3, 3], [1, 9]], [[1, 9], [3, 3]]].include? largest.factors
+    assert_includes [[[3, 3], [1, 9]], [[1, 9], [3, 3]]], largest.factors
   end
 
   def test_largest_palindrome_from_double_digit_factors
