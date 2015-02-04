@@ -73,17 +73,17 @@ Run the test again.
     ArgumentError: wrong number of arguments (2 for 0)
       in `compute' hamming_test.rb:12:in `test_no_difference_between_identical_strands'
 
-The method `compute` needs to take an argument.
+The method `compute` needs to take two arguments.
 
 These are examples of method definitions that take arguments:
 
     def self.greet(name)
     end
 
-    def self.drink(beverage)
+    def self.drink(beverage,size)
     end
 
-Change the `compute` method definition so it takes an argument.
+Change the `compute` method definition so it takes two arguments.
 
 ## Step 5
 
