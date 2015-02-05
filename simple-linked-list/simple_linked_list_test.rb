@@ -64,4 +64,10 @@ class LinkedListTest < Minitest::Test
     # rubocop:disable Lint/ParenthesesAsGroupedExpression
     assert_equal (1..10).to_a, Element.from_a(1..10).to_a
   end
+
+  def test_empty_list_operations
+    skip
+    assert_equal [], Element.from_a([]).to_a
+    assert_equal [], Element.from_a([]).reverse.to_a
+  end
 end
