@@ -95,7 +95,7 @@ class CircularBufferTest < MiniTest::Unit::TestCase
     buffer.read
     buffer.write '4'
     buffer.read
-    (5..8).each { |i| buffer.write String(i) }
+    (5..8).each { |i| buffer.write! String(i) }
     buffer.write! 'A'
     buffer.write! 'B'
     (6..8).each do |i|
