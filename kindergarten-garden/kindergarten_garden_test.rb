@@ -29,6 +29,7 @@ end
 
 class TestFullGarden < MiniTest::Unit::TestCase
   def setup
+    skip
     diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
     @garden = Garden.new(diagram)
   end
@@ -98,6 +99,7 @@ end
 
 class DisorderedTest < MiniTest::Unit::TestCase
   def setup
+    skip
     diagram = "VCRRGVRG\nRVGCCGCV"
     students = %w(Samantha Patricia Xander Roger)
     @garden = Garden.new(diagram, students)
