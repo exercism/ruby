@@ -25,6 +25,14 @@ class ScaleGeneratorTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_naming_major_scale
+    skip
+    major = Scale.new('G', :major, 'MMmMMMm')
+    expected = 'G major'
+    actual = major.name
+    assert_equal expected, actual
+  end
+
   def test_major_scale
     skip
     major = Scale.new('C', :major, 'MMmMMMm')
