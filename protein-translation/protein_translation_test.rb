@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'translation'
 
 # rubocop:disable Style/MethodName
-class TranslationTest < Minitest::Unit::TestCase
+class TranslationTest < MiniTest::Unit::TestCase
   def test_AUG_translates_to_methionine
     assert_equal 'Methionine', Translation.of_codon('AUG')
   end
