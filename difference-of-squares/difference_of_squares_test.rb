@@ -45,4 +45,10 @@ class SquaresTest < MiniTest::Unit::TestCase
     skip
     assert_equal 25_164_150, Squares.new(100).difference
   end
+
+  def test_consistent_difference
+    skip
+    squares = Squares.new(10)
+    assert_equal squares.difference, squares.difference
+  end
 end
