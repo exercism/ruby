@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'atbash'
 
 # rubocop:disable Style/MethodName
-class AtbashTest < MiniTest::Unit::TestCase
+class AtbashTest < Minitest::Test
   def test_encode_no
     assert_equal 'ml', Atbash.encode('no')
   end

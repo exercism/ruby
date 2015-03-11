@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'bob'
 
-class BobTest < MiniTest::Unit::TestCase
+class BobTest < Minitest::Test
   def bob
     ::Bob.new
   end

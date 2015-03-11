@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'minesweeper.rb'
 
-class MinesweeperTest < MiniTest::Unit::TestCase
+class MinesweeperTest < Minitest::Test
   def test_transform1
     inp = ['+------+', '| *  * |', '|  *   |', '|    * |', '|   * *|',
            '| *  * |', '|      |', '+------+']

@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'proverb'
 
-class ProverbTest < MiniTest::Unit::TestCase
+class ProverbTest < Minitest::Test
   def test_a_single_consequence
     proverb = Proverb.new('nail', 'shoe')
     expected = "For want of a nail the shoe was lost.\n" \

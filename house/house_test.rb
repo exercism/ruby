@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'house'
 
 # rubocop:disable Metrics/MethodLength
-class HouseTest < MiniTest::Unit::TestCase
+class HouseTest < Minitest::Test
   def test_rhyme
     expected = <<-RHYME
 This is the house that Jack built.

@@ -4,7 +4,7 @@ require_relative 'series'
 # Rubocop directives
 # rubocop:disable Lint/ParenthesesAsGroupedExpression
 #
-class Seriestest < MiniTest::Unit::TestCase
+class Seriestest < Minitest::Test
   def test_digits
     assert_equal (0..9).to_a, Series.new('0123456789').digits
   end

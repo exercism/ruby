@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'raindrops'
 
-class RaindropsTest < MiniTest::Unit::TestCase
+class RaindropsTest < Minitest::Test
   def test_1
     assert_equal '1', Raindrops.convert(1)
   end

@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'linked_list'
 
-class DequeTest < MiniTest::Unit::TestCase
+class DequeTest < Minitest::Test
   def test_push_pop
     deque = Deque.new
     deque.push(10)
