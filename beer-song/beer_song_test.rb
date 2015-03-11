@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'beer_song'
 
-class BeerSongTest < MiniTest::Unit::TestCase
+class BeerSongTest < Minitest::Test
   def song
     @song = ::BeerSong.new
   end

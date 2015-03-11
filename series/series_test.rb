@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'series'
 
-class SeriesTest < MiniTest::Unit::TestCase
+class SeriesTest < Minitest::Test
   def test_simple_slices_of_one
     series = Series.new('01234')
     assert_equal [[0], [1], [2], [3], [4]], series.slices(1)

@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'twelve_days'
 
-class TwelveDaysTest < MiniTest::Unit::TestCase
+class TwelveDaysTest < Minitest::Test
   def song
     @song ||= ::TwelveDaysSong.new
   end

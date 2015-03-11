@@ -7,7 +7,7 @@ rescue LoadError => e
   exit 1
 end
 
-class HammingTest < MiniTest::Unit::TestCase
+class HammingTest < Minitest::Test
   def test_no_difference_between_identical_strands
     assert_equal 0, Hamming.compute('A', 'A')
   end

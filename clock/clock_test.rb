@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'clock'
 
-class ClockTest < MiniTest::Unit::TestCase
+class ClockTest < Minitest::Test
   def test_on_the_hour
     assert_equal '08:00', Clock.at(8).to_s
     assert_equal '09:00', Clock.at(9).to_s

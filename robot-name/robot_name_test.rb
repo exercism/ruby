@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'robot'
 
-class RobotTest < MiniTest::Unit::TestCase
+class RobotTest < Minitest::Test
   def test_has_name
     # rubocop:disable Lint/AmbiguousRegexpLiteral
     assert_match /^[A-Z]{2}\d{3}$/, Robot.new.name

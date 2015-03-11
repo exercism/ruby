@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'scale'
 
-class ScaleGeneratorTest < MiniTest::Unit::TestCase
+class ScaleGeneratorTest < Minitest::Test
   def test_naming_scale
     chromatic = Scale.new('c', :chromatic)
     expected = 'C chromatic'
