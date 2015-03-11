@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'luhn'
 
-class LuhnTest < MiniTest::Unit::TestCase
+class LuhnTest < Minitest::Test
   def test_addends
     luhn = Luhn.new(12_121)
     assert_equal [1, 4, 1, 4, 1], luhn.addends

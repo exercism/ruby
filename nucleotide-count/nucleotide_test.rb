@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'nucleotide'
 
-class NucleotideTest < MiniTest::Unit::TestCase
+class NucleotideTest < Minitest::Test
   def test_empty_dna_strand_has_no_adenosine
     assert_equal 0, Nucleotide.from_dna('').count('A')
   end

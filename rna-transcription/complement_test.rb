@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'complement'
 
-class ComplementTest < MiniTest::Unit::TestCase
+class ComplementTest < Minitest::Test
   def test_rna_complement_of_cytosine_is_guanine
     assert_equal 'G', Complement.of_dna('C')
   end

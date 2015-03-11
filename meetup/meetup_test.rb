@@ -7,7 +7,7 @@ require_relative 'meetup'
 # where weekday is one of :monday, :tuesday, etc
 # and schedule is :first, :second, :third, :fourth, :last or :teenth.
 # rubocop:disable Style/AlignParameters
-class MeetupTest < MiniTest::Unit::TestCase
+class MeetupTest < Minitest::Test
   def test_monteenth_of_may_2013
     assert_equal Date.new(2013, 5, 13),
       Meetup.new(5, 2013).day(:monday, :teenth)
