@@ -11,7 +11,7 @@ class Date
   alias_method :julian_leap?, :leap?
 end
 
-class YearTest < MiniTest::Unit::TestCase
+class YearTest < Minitest::Test
   def test_leap_year
     assert Year.leap?(1996), 'Yes, 1996 is a leap year'
   end

@@ -61,15 +61,6 @@ Please do not add a README or README.md file to the problem directory. The
 READMEs are constructed using shared metadata, which lives in the
 [exercism/x-common](https://github.com/exercism/x-common) repository.
 
-## Minitest vs MiniTest
-
-Minitest v4.x (`MiniTest::Unit::TestCase`) ships with the language, whereas
-Minitest v5.x (`Minitest::Test`) does not. This means that people who have
-installed v5.x will get deprecation warnings.
-
-There's no really good way around this at the moment. We can't upgrade without
-forcing people to install an extra dependency.
-
 ## Contributing Guide
 
 For an in-depth discussion of how exercism language tracks and problem sets

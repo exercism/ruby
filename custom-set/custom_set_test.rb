@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'custom_set'
 
-class CustomSetTest < MiniTest::Unit::TestCase
+class CustomSetTest < Minitest::Test
   def test_equal
     assert_equal CustomSet.new([1, 3]), CustomSet.new([3, 1])
   end

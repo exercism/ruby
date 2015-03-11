@@ -2,7 +2,7 @@ require 'minitest/autorun'
 
 require_relative 'linked_list'
 
-class LinkedListTest < MiniTest::Unit::TestCase
+class LinkedListTest < Minitest::Test
   def setup
     @one = Element.new(1, nil)
     @two = Element.new(2, @one)
