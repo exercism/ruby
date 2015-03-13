@@ -50,4 +50,14 @@ class ComplementTest < Minitest::Test
     skip
     assert_equal 'ACTTGGGCTGTAC', Complement.of_rna('UGAACCCGACAUG')
   end
+
+  def test_dna_raises_argument_error
+    skip
+    assert_raises(ArgumentError){ Complement.of_dna('U') }
+  end
+
+  def test_rna_raises_argument_error
+    skip
+    assert_raises(ArgumentError){ Complement.of_rna('T') }
+  end
 end
