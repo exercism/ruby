@@ -1,5 +1,6 @@
 language: bash
 
 script:
+  - make test
   - bin/fetch-configlet
   - bin/configlet .

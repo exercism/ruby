@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'array'
+require_relative 'strain'
 
 class ArrayTest < Minitest::Test
   def test_empty_keep
