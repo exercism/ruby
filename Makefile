@@ -16,6 +16,9 @@ TSTFILE := "$(ASSIGNMENT)_test.$(FILEEXT)"
 
 # single test
 test-assignment:
+	@echo ""
+	@echo ""
+	@echo "----------------------------------------------------------------"
 	@echo "running tests for: $(ASSIGNMENT)"
 	@cat $(ASSIGNMENT)/$(TSTFILE) | sed '/skip\s*$$/d' > $(OUTDIR)/$(TSTFILE)
 	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
