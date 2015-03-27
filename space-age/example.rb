@@ -17,7 +17,7 @@ class SpaceAge
   }.each do |planet, orbital_period|
 
     define_method("on_#{planet}") do
-      (seconds / orbital_period).round(2)
+      seconds / orbital_period
     end
 
   end
