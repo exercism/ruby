@@ -12,7 +12,7 @@ OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
 # language specific config (tweakable per language)
 FILEEXT := "rb"
 EXAMPLE := "example.$(FILEEXT)"
-TSTFILE := "$(ASSIGNMENT)_test.$(FILEEXT)"
+TSTFILE := "$(shell echo $(ASSIGNMENT) | sed 's/-/_/g')_test.$(FILEEXT)"
 
 # single test
 test-assignment:
