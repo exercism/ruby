@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 
-require_relative 'simple-linked-list'
+require_relative 'simple_linked_list'
 
 class LinkedListTest < Minitest::Test
   def setup

@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'nucleotide-count'
+require_relative 'nucleotide_count'
 
 class NucleotideTest < Minitest::Test
   def test_empty_dna_strand_has_no_adenosine

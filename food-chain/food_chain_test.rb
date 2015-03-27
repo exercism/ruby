@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'food-chain'
+require_relative 'food_chain'
 
 # rubocop:disable Metrics/MethodLength, Metrics/LineLength
 class FoodChainTest < Minitest::Test

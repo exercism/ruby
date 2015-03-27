@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'linked-list'
+require_relative 'linked_list'
 
 class DequeTest < Minitest::Test
   def test_push_pop

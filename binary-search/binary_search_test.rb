@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'binary-search'
+require_relative 'binary_search'
 
 class BinarySearchTest < Minitest::Test
   def test_it_has_list_data

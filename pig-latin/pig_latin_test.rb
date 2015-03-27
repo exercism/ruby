@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'pig-latin'
+require_relative 'pig_latin'
 
 class PigLatinTest < Minitest::Test
   def test_word_beginning_with_a

@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'ocr-numbers'
+require_relative 'ocr_numbers'
 
 class OCRTest < Minitest::Test
   def test_recognize_zero

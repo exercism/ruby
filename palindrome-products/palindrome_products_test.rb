@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'palindrome-products'
+require_relative 'palindrome_products'
 
 class PalindromesTest < Minitest::Test
   def test_largest_palindrome_from_single_digit_factors

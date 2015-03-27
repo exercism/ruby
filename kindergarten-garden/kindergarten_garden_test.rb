@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'kindergarten-garden'
+require_relative 'kindergarten_garden'
 
 class GardenTest < Minitest::Test
   def test_alices_garden

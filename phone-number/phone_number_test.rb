@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'phone-number'
+require_relative 'phone_number'
 
 class PhoneNumberTest < Minitest::Test
   def test_cleans_number
