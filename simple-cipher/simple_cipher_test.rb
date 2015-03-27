@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'simple-cipher'
+require_relative 'simple_cipher'
 
 class RandomKeyCipherTest < Minitest::Test
   def setup

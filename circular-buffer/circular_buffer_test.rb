@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'circular-buffer'
+require_relative 'circular_buffer'
 
 class CircularBufferTest < Minitest::Test
   def test_read_empty_buffer_throws_buffer_empty_exception

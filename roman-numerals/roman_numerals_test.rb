@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'roman-numerals'
+require_relative 'roman_numerals'
 
 class RomanTest < Minitest::Test
   def test_1

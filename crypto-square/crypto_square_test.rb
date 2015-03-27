@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'crypto-square'
+require_relative 'crypto_square'
 
 class CryptoTest < Minitest::Test
   def test_normalize_strange_characters

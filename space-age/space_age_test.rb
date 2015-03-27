@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'space-age'
+require_relative 'space_age'
 
 class SpaceAgeTest < Minitest::Test
   def test_age_in_seconds

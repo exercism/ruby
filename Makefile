@@ -21,10 +21,13 @@ test-assignment:
 	@echo "----------------------------------------------------------------"
 	@echo "running tests for: $(ASSIGNMENT)"
 	@cat $(ASSIGNMENT)/$(TSTFILE) | sed '/skip\s*$$/d' > $(OUTDIR)/$(TSTFILE)
-	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(ASSIGNMENT).$(FILEEXT)
+	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(EXERCISE).$(FILEEXT)
 	@ruby $(OUTDIR)/$(TSTFILE)
 
 # all tests
 test:
-	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1; done
+	@for assignment in $(ASSIGNMENTS); do \
+		exercise=$$(echo $$assignment | sed 's/-/_/g') \
+		ASSIGNMENT=$$assignment EXERCISE=$$exercise $(MAKE) -s test-assignment || exit 1;\
+	done
 

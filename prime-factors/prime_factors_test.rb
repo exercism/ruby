@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'prime-factors'
+require_relative 'prime_factors'
 
 class PrimeFactorsTest < Minitest::Test
   def test_1

@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'pascals-triangle'
+require_relative 'pascals_triangle'
 
 class TriangleTest < Minitest::Test
   def test_one_row

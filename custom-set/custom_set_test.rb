@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'custom-set'
+require_relative 'custom_set'
 
 class CustomSetTest < Minitest::Test
   def test_equal
