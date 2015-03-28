@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'phrase'
+require_relative 'word_count'
 
 class PhraseTest < Minitest::Test
   def test_count_one_word

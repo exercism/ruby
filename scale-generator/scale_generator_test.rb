@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'scale'
+require_relative 'scale_generator'
 
 class ScaleGeneratorTest < Minitest::Test
   def test_naming_scale
