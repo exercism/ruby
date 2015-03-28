@@ -1,4 +1,22 @@
 require 'minitest/autorun'
+
+require 'prime'
+
+Error_message = "Using Ruby's Prime class is probably the best way to do this in a 'real'\n" + 
+  "application; but this is an exercise, not a real application, so you're\n" + 
+  "expected to implement this yourself ;-)"
+class Prime
+  [:each, :new, :prime?, :take].each do |m|
+    define_method(m) { |*_| raise Error_message }
+  end
+end
+
+class Integer
+  [:prime?, :each_prime].each do |m|
+    define_method(m) { |*_| raise Error_message }
+  end
+end
+
 require_relative 'prime'
 
 class TestPrimes < Minitest::Test
