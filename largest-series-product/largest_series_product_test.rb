@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'series'
+require_relative 'largest_series_product'
 
 # Rubocop directives
 # rubocop:disable Lint/ParenthesesAsGroupedExpression

@@ -1,5 +1,11 @@
-language: bash
+language: ruby
+
+rvm:
+  - 2.1.2
+
+install: gem install minitest
 
 script:
+  - make test
   - bin/fetch-configlet
   - bin/configlet .

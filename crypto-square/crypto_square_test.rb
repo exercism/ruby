@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'crypto'
+require_relative 'crypto_square'
 
 class CryptoTest < Minitest::Test
   def test_normalize_strange_characters
@@ -69,7 +69,7 @@ class CryptoTest < Minitest::Test
   end
 
   def test_normalized_ciphertext
-    skip
+    skip("Skip")
     crypto = Crypto.new('Vampires are people too!')
     assert_equal 'vrel aepe mset paoo irpo', crypto.normalize_ciphertext
   end
@@ -81,7 +81,7 @@ class CryptoTest < Minitest::Test
   end
 
   def test_another_normalized_ciphertext
-    skip
+    skip("Skip")
     crypto = Crypto.new(
       'If man was meant to stay on the ground god would have given us roots'
     )
@@ -97,7 +97,7 @@ class CryptoTest < Minitest::Test
   end
 
   def test_normalized_ciphertext_when_just_less_then_a_full_square
-    skip
+    skip("Skip")
     crypto = Crypto.new('I am')
     assert_equal 'im a', crypto.normalize_ciphertext
   end

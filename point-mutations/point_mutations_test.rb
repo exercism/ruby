@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'dna'
+require_relative 'point_mutations'
 
 class DNATest < Minitest::Test
   def test_no_difference_between_empty_strands

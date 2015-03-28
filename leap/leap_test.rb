@@ -1,6 +1,6 @@
 require 'date'
 require 'minitest/autorun'
-require_relative 'year'
+require_relative 'leap'
 
 class Date
   def leap?
