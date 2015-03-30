@@ -5,3 +5,4 @@
 .config
 .ruby-version
 tmp
+bin/configlet
