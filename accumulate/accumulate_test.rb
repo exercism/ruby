@@ -35,4 +35,11 @@ class ArrayTest < Minitest::Test
     end
     assert_equal [%w(a1 a2 a3), %w(b1 b2 b3), %w(c1 c2 c3)], result
   end
+
+  def test_do_not_change_in_place
+    original = [1, 2, 3]
+    copy = original.dup
+    original.accumulate { |n| n * n }
+    assert_equal copy, original
+  end
 end
