@@ -6,9 +6,14 @@ exact match.
 The following steps assume that you are in the same directory as the test
 suite.
 
+You must also have installed the `minitest` gem:
+
+    $ gem install minitest
+
 ## Step 1
 
-Run the test suite. It's in Minitest, and can be run with ruby:
+Run the test suite. It written using the Minitest framework, and can be
+run with ruby:
 
     $ ruby hamming_test.rb
 
@@ -21,7 +26,6 @@ directory as the `hamming_test.rb` file.
 
 Run the test again. It will give you a new error.
 
-
     1) Error:
     HammingTest#test_no_difference_between_identical_strands:
     NameError: uninitialized constant Hamming
@@ -33,8 +37,8 @@ we say `Hamming.compute('A', 'A')`. When Ruby sees a capitalized name like
 to see what it points to. It could point to anything, and often in Ruby we have
 constants that point to definitions of classes or modules.
 
-When it looks `Hamming` up in it's list, it doesn't find anything, so we need to make
-one.
+When it looks `Hamming` up in it's list, it doesn't find anything, so we need
+to make one.
 
 There are several ways that this error message can be made to go
 away, one of which is to define a `Hamming` class.
