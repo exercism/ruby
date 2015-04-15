@@ -37,6 +37,12 @@ class PhoneNumberTest < Minitest::Test
     assert_equal '9876543210', number
   end
 
+  def test_valid_when_10_digits_and_area_code_starts_with_1
+    skip
+    number = PhoneNumber.new('1234567890').number
+    assert_equal '1234567890', number
+  end
+
   def test_invalid_when_11_digits
     skip
     number = PhoneNumber.new('21234567890').number
