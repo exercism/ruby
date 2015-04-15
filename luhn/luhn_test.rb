@@ -28,7 +28,7 @@ class LuhnTest < Minitest::Test
   def test_invalid_number
     skip
     luhn = Luhn.new(738)
-    assert !luhn.valid?
+    refute luhn.valid?
   end
 
   def test_valid_number
