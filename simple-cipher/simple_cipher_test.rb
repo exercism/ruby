@@ -7,7 +7,7 @@ class RandomKeyCipherTest < Minitest::Test
   end
 
   def test_cipher_key_is_letters
-    assert_match(/[a-z]+/, @cipher.key)
+    assert_match(/\A[a-z]+\z/, @cipher.key)
   end
 
   # Here we take advantage of the fact that plaintext of "aaa..." doesn't
