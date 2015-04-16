@@ -1,11 +1,9 @@
 class Grains
-  def square(number)
+  def self.square(number)
     2**(number - 1)
   end
 
-  def total
-    @total ||= (1..64).inject(0) do |sum, number|
-      sum + square(number)
-    end
+  def self.total
+    square(65) - 1
   end
 end
