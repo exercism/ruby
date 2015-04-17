@@ -6,3 +6,4 @@
 .ruby-version
 tmp
 bin/configlet
+bin/configlet.exe
