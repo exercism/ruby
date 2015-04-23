@@ -26,6 +26,16 @@ class SumTest < Minitest::Test
     assert_equal 51, SumOfMultiples.new(7, 13, 17).to(20)
   end
 
+  def test_configurable_4_6_to_15
+    skip
+    assert_equal 30, SumOfMultiples.new(4, 6).to(15)
+  end
+
+  def test_configurable_5_6_8_to_150
+    skip
+    assert_equal 4419, SumOfMultiples.new(5, 6, 8).to(150)
+  end
+
   def test_configurable_43_47_to_10000
     skip
     assert_equal 2_203_160, SumOfMultiples.new(43, 47).to(10_000)
