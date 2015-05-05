@@ -86,6 +86,26 @@ class CircularBufferTest < Minitest::Test
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
+  def test_forced_writes_of_nil_should_not_occupy_buffer
+    skip
+    buffer = CircularBuffer.new(2)
+    (1..2).each { |i| buffer.write String(i) }
+    buffer.write! nil
+    assert_equal '1', buffer.read
+    assert_equal '2', buffer.read
+    assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
+  end
+
+  def test_forced_writes_to_non_full_buffer_should_behave_like_writes
+    skip
+    buffer = CircularBuffer.new(2)
+    buffer.write '1'
+    buffer.write! '2'
+    assert_equal '1', buffer.read
+    assert_equal '2', buffer.read
+    assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
+  end
+
   # rubocop:disable Metrics/MethodLength
   def test_alternate_read_and_write_into_buffer_overflow
     skip
