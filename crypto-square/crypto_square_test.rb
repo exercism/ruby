@@ -69,7 +69,7 @@ class CryptoTest < Minitest::Test
   end
 
   def test_normalized_ciphertext
-    skip("Skip")
+    skip
     crypto = Crypto.new('Vampires are people too!')
     assert_equal 'vrel aepe mset paoo irpo', crypto.normalize_ciphertext
   end
@@ -77,15 +77,16 @@ class CryptoTest < Minitest::Test
   def test_normalized_ciphertext_spills_into_short_segment
     skip
     crypto = Crypto.new('Madness, and then illumination.')
-    assert_equal 'msemo aanin dninn dlaet ltshu i', crypto.normalize_ciphertext
+    expected = 'msemo aanin dnin ndla etlt shui'
+    assert_equal expected, crypto.normalize_ciphertext
   end
 
   def test_another_normalized_ciphertext
-    skip("Skip")
+    skip
     crypto = Crypto.new(
       'If man was meant to stay on the ground god would have given us roots'
     )
-    expected = 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghns seoau'
+    expected = 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau'
     assert_equal expected, crypto.normalize_ciphertext
   end
 
@@ -97,7 +98,7 @@ class CryptoTest < Minitest::Test
   end
 
   def test_normalized_ciphertext_when_just_less_then_a_full_square
-    skip("Skip")
+    skip
     crypto = Crypto.new('I am')
     assert_equal 'im a', crypto.normalize_ciphertext
   end
