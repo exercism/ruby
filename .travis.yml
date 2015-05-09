@@ -1,5 +1,7 @@
 language: ruby
 
+sudo: false # use containers for faster builds
+
 rvm:
   - 2.1.2
 
