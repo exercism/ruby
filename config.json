@@ -4,6 +4,7 @@
   "repository": "https://github.com/exercism/xruby",
   "active": true,
   "problems": [
+    "hello-world",
     "hamming",
     "gigasecond",
     "rna-transcription",
