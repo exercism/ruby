@@ -1,5 +1,5 @@
 class HelloWorld
-  def self.hello(name = '')
-    name == '' ? 'Hello, world!' : "Hello, #{name}!"
+  def self.hello(name = 'world')
+    "Hello, #{name}!"
   end
 end

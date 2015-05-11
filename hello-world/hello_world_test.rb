@@ -1,8 +1,12 @@
 require 'minitest/autorun'
 require_relative 'hello_world'
 class HelloWorldTest < Minitest::Test
+  def test_no_strange_name
+    assert_equal 'Hello, !', HelloWorld.hello(''), 'Greeting given an empty string as a name'
+  end
+
   def test_no_name
-    assert_equal 'Hello, world!', HelloWorld.hello(''), 'Greeting given no name'
+    assert_equal 'Hello, world!', HelloWorld.hello, 'Greeting given an empty string as a name'
   end
 
   def test_sample_name
