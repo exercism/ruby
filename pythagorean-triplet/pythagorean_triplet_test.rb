@@ -18,7 +18,7 @@ class TripletTest < Minitest::Test
 
   def test_not_pythagorean
     skip
-    assert !Triplet.new(5, 6, 7).pythagorean?
+    refute Triplet.new(5, 6, 7).pythagorean?
   end
 
   def test_triplets_upto_10
