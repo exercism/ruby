@@ -27,6 +27,19 @@ end
 
 Just remember to delete it before submitting the problem.
 
+## Generated Problems
+
+Some problems have shared inputs/outputs across multiple tracks. If the problem
+contains an `example.tt` file, then look for a generator corresponding to the problem
+within the `bin/` directory.
+
+For example, the Hamming problem can be re-generated from the shared test data
+with the following command:
+
+```bash
+bin/generate-hamming
+```
+
 ## Pull Requests
 
 We welcome pull requests that provide fixes to existing problems (missing

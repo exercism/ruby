@@ -1,0 +1,47 @@
+require 'minitest/autorun'
+begin
+  require_relative 'hamming'
+rescue LoadError => e
+  puts "\n\n#{e.backtrace.first} #{e.message}"
+  puts DATA.read
+  exit 1
+end
+
+# Test data version:
+# <%= sha1 %>
+class HammingTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %><% if test_case.skipped? %>
+    skip<% end %><% if test_case.raises_error? %>
+    assert_raises(ArgumentError){ <%= test_case.do %> }<% else %>
+    assert_equal <%= test_case.expected %>, <%= test_case.do %><% end %>
+  end
+<% end %>
+  # This test is for the sake of people providing feedback, so they
+  # know which version of the exercise you are solving.
+  def test_bookkeeping
+    assert_equal <%= version+1 %>, Hamming::VERSION
+  end
+end
+
+__END__
+
+*****************************************************
+You got an error, which is exactly as it should be.
+This is the first step in the Test-Driven Development
+(TDD) process.
+
+The most important part of the error is
+
+      cannot load such file
+
+It's looking for a file named hamming.rb that doesn't
+exist yet.
+
+To fix the error, create an empty file named hamming.rb
+in the same directory as the hamming_test.rb file.
+
+Then run the test again.
+
+For more guidance as you work on this exercise, see
+GETTING_STARTED.md.
+*****************************************************
