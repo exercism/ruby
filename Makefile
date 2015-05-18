@@ -6,8 +6,8 @@ ASSIGNMENTS = $(shell find . -maxdepth 1 -mindepth 1 -type d | awk -F/ '{print $
 default: test
 
 # output directories
-TMPDIR ?= "/tmp"
-OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
+TMPDIR ?= "/tmp/"
+OUTDIR := $(shell mktemp -d "$(TMPDIR)$(ASSIGNMENT).XXXXXXXXXX")
 
 # language specific config (tweakable per language)
 FILEEXT := "rb"
@@ -21,6 +21,7 @@ test-assignment:
 	@echo ""
 	@echo "----------------------------------------------------------------"
 	@echo "running tests for: $(ASSIGNMENT)"
+	@cp -r $(ASSIGNMENT)/* $(OUTDIR)
 	@cat $(ASSIGNMENT)/$(TSTFILE) | sed '/skip\s*$$/d' > $(OUTDIR)/$(TSTFILE)
 	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(SRCFILE).$(FILEEXT)
 	@ruby $(OUTDIR)/$(TSTFILE)
