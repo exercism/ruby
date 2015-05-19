@@ -12,7 +12,7 @@ class Generator
   end
 
   def metadata_dir
-    File.expand_path(File.join("..", "..", "..", "x-common"), __FILE__)
+    File.expand_path(File.join('..', '..', '..', 'x-common'), __FILE__)
   end
 
   def data
@@ -20,7 +20,7 @@ class Generator
   end
 
   def path_to(file)
-    File.expand_path(File.join("..", "..", name, file), __FILE__)
+    File.expand_path(File.join('..', '..', name, file), __FILE__)
   end
 
   def version
@@ -40,11 +40,11 @@ class Generator
       f.write ERB.new(File.read(path_to('example.tt'))).result binding
     end
     File.open(path_to('.version'), 'w') do |f|
-      f.write version+1
+      f.write version + 1
     end
-    contents = File.read(path_to("example.rb"))
-    File.open(path_to("example.rb"), 'w') do |f|
-      f.write contents.gsub("VERSION = #{version}", "VERSION = #{version+1}")
+    contents = File.read(path_to('example.rb'))
+    File.open(path_to('example.rb'), 'w') do |f|
+      f.write contents.gsub("VERSION = #{version}", "VERSION = #{version + 1}")
     end
   end
 end

@@ -1,6 +1,6 @@
 class HammingCase < OpenStruct
   def name
-    "test_%s" % description.gsub(/[ -]/, "_")
+    'test_%s' % description.gsub(/[ -]/, '_')
   end
 
   def do
@@ -16,8 +16,8 @@ class HammingCase < OpenStruct
   end
 end
 
-HammingCases = Proc.new do |data|
-  JSON.parse(data)["cases"].map.with_index { |row, i|
-    HammingCase.new(row.merge("index" => i))
-  }
+HammingCases = proc do |data|
+  JSON.parse(data)['cases'].map.with_index do |row, i|
+    HammingCase.new(row.merge('index' => i))
+  end
 end
