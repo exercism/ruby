@@ -36,8 +36,13 @@ class BinaryTest < Minitest::Test
     assert_equal 1128, Binary.new('10001101000').to_decimal
   end
 
-  def test_invalid_binary_is_decimal_0
+  def test_invalid_binary_string_is_decimal_0
     skip
     assert_equal 0, Binary.new('carrot123').to_decimal
+  end
+
+  def test_invalid_binary_numeric_string_is_decimal_0
+    skip
+    assert_equal 0, Binary.new('123').to_decimal
   end
 end
