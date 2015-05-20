@@ -7,8 +7,10 @@ rescue LoadError => e
   exit 1
 end
 
-class HammingTest < Minitest::Test
+# Test data version:
+# 2299e68 Document how to skip the hello world problem
 
+class HammingTest < Minitest::Test
   def test_identical_strands
     assert_equal 0, Hamming.compute('A', 'A')
   end
@@ -70,12 +72,18 @@ class HammingTest < Minitest::Test
 
   def test_disallow_first_strand_longer
     skip
-    assert_raises(ArgumentError){ Hamming.compute('AATG', 'AAA') }
+    assert_raises(ArgumentError) { Hamming.compute('AATG', 'AAA') }
   end
 
   def test_disallow_second_strand_longer
     skip
-    assert_raises(ArgumentError){ Hamming.compute('ATA', 'AGTG') }
+    assert_raises(ArgumentError) { Hamming.compute('ATA', 'AGTG') }
+  end
+
+  # This test is for the sake of people providing feedback, so they
+  # know which version of the exercise you are solving.
+  def test_bookkeeping
+    assert_equal 1, Hamming::VERSION
   end
 end
 
