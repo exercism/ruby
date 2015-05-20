@@ -12,6 +12,13 @@ with the language, so you're all set.
 Each problem should have a test suite and an example solution.
 The example solution should be named `example.rb`.
 
+**Some problems are generated from shared inputs/outputs, see
+[Generated Problems](#generated-problems) below.** In short, if
+the problem directory contains an `example.tt` file, then it's a
+generated problem.
+
+### Hard-coded Problems
+
 Run the test with `ruby path/to/the_test.rb`.
 
 At the moment the Ruby problems `skip` all but the first test, in order to not
@@ -30,18 +37,42 @@ end
 
 Just remember to delete it before submitting the problem.
 
-## Generated Problems
+### Generated Problems
 
-Some problems have shared inputs/outputs across multiple tracks. If the problem
-contains an `example.tt` file, then look for a generator corresponding to the problem
-within the `bin/` directory.
+If you find an `example.tt` file in a problem directory, then the problem is
+generated from shared data. In this case changing the test file itself will
+not be enough.
 
-For example, the Hamming problem can be re-generated from the shared test data
-with the following command:
+You will need to have cloned [the shared metadata](https://github.com/exercism/x-common)
+at the same level as the xruby repository. E.g.
 
-```bash
-bin/generate-hamming
 ```
+tree -L 1 ~/code/exercism
+├── x-common
+└── xruby
+```
+
+1. `xruby/$PROBLEM/example.tt` - the Erb template for the test file, `$PROBLEM_test.rb`.
+1. `x-common/$PROBLEM.json` - the shared inputs and outputs for the problem.
+1. `lib/$PROBLEM.rb` - the logic for turning the data into tests.
+1. `xruby/bin/generate-$PROBLEM` - the command to actually generate the test suite.
+1. `.version` - used to keep track of the version of the test files as the data changes.
+
+Additionally, there is some common generator logic in `lib/generator.rb`.
+
+For example, take a look at the `hamming.json` file in the x-common repository, as well
+as the following files in the xruby repository:
+
+1. `hamming/example.tt`
+1. `bin/generate-hamming`
+1. `lib/hamming.rb`
+1. `lib/generator.rb`
+
+The `hamming/hamming_test.rb` will never be edited directly. If there's a missing test case,
+then additional inputs/outputs should be submitted to the x-common repository.
+
+Changes to the test suite (style, boilerplate, etc) will probably have to be made to
+`example.tt`.
 
 ## Pull Requests
 
