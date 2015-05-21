@@ -28,14 +28,12 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file.
 
 If you want to temporarily disable the skips while working on a problem, you can
-define an empty `skip` method in the test suite:
+run the file with a shim that temporarily disables them:
+
 
 ```ruby
-def skip
-end
+ruby -I../lib -rdisable_skip <fiename_test.rb>
 ```
-
-Just remember to delete it before submitting the problem.
 
 ### Generated Problems
 
