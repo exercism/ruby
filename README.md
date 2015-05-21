@@ -24,9 +24,6 @@ Run the test with `ruby path/to/the_test.rb`.
 At the moment the Ruby problems `skip` all but the first test, in order to not
 overwhelm people with errors.
 
-If you would like color output, you can `require 'minitest/pride'` in
-the test file.
-
 If you want to temporarily disable the skips while working on a problem, you can
 run the file with a shim that temporarily disables them:
 

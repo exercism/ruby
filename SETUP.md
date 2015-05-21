@@ -4,6 +4,9 @@ For running the tests provided, you will need the Minitest gem. Open a terminal 
 
     gem install minitest
 
+If you would like color output, you can `require 'minitest/pride'` in
+the test file.
+
 In order to run the test, you can run the test file from the exercise directory. For example, if the test suite is called `hello_world_test.rb`, you can run the following command:
 
     ruby hello_world_test.rb
