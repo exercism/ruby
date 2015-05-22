@@ -3,7 +3,7 @@ require 'minitest/autorun'
 # following command:
 #     ruby -I../lib -rdisable_skip <fiename_test.rb>
 
-class Minitest
+module Minitest
   class Test
     def skip
     end
