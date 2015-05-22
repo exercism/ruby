@@ -9,22 +9,22 @@ end
 
 class HelloWorldTest < Minitest::Test
   def test_no_name
-    assert_equal 'Hello, world!', HelloWorld.hello, 'When giving no name, we should greet the world!'
+    assert_equal 'Hello, world!', HelloWorld.hello, 'When given no name, we should greet the world!'
   end
 
   def test_sample_name
     skip
-    assert_equal 'Hello, Alice!', HelloWorld.hello('Alice'), 'When giving "Alice" we should greet Alice!'
+    assert_equal 'Hello, Alice!', HelloWorld.hello('Alice'), 'When given "Alice" we should greet Alice!'
   end
 
   def test_other_sample_name
     skip
-    assert_equal 'Hello, Bob!', HelloWorld.hello('Bob'), 'When giving "Bob" we should greet Bob!'
+    assert_equal 'Hello, Bob!', HelloWorld.hello('Bob'), 'When given "Bob" we should greet Bob!'
   end
 
   def test_no_strange_name
     skip
-    assert_equal 'Hello, !', HelloWorld.hello(''), 'When giving an empty string, it is strange, but should have a space and punctuation'
+    assert_equal 'Hello, !', HelloWorld.hello(''), 'When given an empty string it should have a space and punctuation, though admittedly this is strange.'
   end
 end
 
