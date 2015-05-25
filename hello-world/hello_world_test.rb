@@ -9,7 +9,7 @@ end
 
 class HelloWorldTest < Minitest::Test
   def test_no_name
-    assert_equal 'Hello, world!', HelloWorld.hello, 'When given no name, we should greet the world!'
+    assert_equal 'Hello, World!', HelloWorld.hello, 'When given no name, we should greet the world!'
   end
 
   def test_sample_name
