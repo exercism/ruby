@@ -37,7 +37,7 @@ class ArrayTest < Minitest::Test
       [2, 1, 2],
       [1, 5, 2],
       [2, 2, 1],
-      [1, 2, 5]
+      [1, 2, 5],
     ]
     result = rows.keep { |row| row.include?(5) }
     assert_equal [[5, 5, 5], [5, 1, 2], [1, 5, 2], [1, 2, 5]], result
@@ -79,7 +79,7 @@ class ArrayTest < Minitest::Test
       [2, 1, 2],
       [1, 5, 2],
       [2, 2, 1],
-      [1, 2, 5]
+      [1, 2, 5],
     ]
     result = rows.discard { |row| row.include?(5) }
     assert_equal [[1, 2, 3], [2, 1, 2], [2, 2, 1]], result

@@ -29,7 +29,7 @@ class RobotTest < Minitest::Test
     robot.reset
     name2 = robot.name
     assert name != name2
-    assert_equal name2, robot.name, "Command/Query Separation: query methods should generally not change object state"
+    assert_equal name2, robot.name, 'Command/Query Separation: query methods should generally not change object state'
     # rubocop:disable Lint/AmbiguousRegexpLiteral
     assert_match /^[A-Z]{2}\d{3}$/, name2
     # rubocop:enable Lint/AmbiguousRegexpLiteral

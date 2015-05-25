@@ -52,7 +52,7 @@ class CustomSetTest < Minitest::Test
   end
 
   def test_member?
-    skip("No method uniq for Range(1..3)")
+    skip('No method uniq for Range(1..3)')
     assert CustomSet.new([1, 2, 3]).member?(2)
     assert CustomSet.new(1..3).member?(2)
     refute CustomSet.new(1..3).member?(2.0)

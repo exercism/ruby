@@ -54,7 +54,8 @@ class LinkedListTest < Minitest::Test
     assert_nil two_a.next.next
 
     one_to_ten = Element.from_a(1..10)
-    assert_equal 10, one_to_ten.next.next.next.next.next.next.next.next.next.datum
+    assert_equal 10,
+                 one_to_ten.next.next.next.next.next.next.next.next.next.datum
   end
 
   def test_roundtrip
