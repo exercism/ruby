@@ -9,17 +9,17 @@ end
 
 class HelloWorldTest < Minitest::Test
   def test_no_name
-    assert_equal 'Hello, World!', HelloWorld.hello, 'When given no name, we should greet the world!'
+    assert_equal 'Hello, World!', HelloWorld.hello, 'When given no name, it should greet the world!'
   end
 
   def test_sample_name
     skip
-    assert_equal 'Hello, Alice!', HelloWorld.hello('Alice'), 'When given "Alice" we should greet Alice!'
+    assert_equal 'Hello, Alice!', HelloWorld.hello('Alice'), 'When given "Alice" it should greet Alice!'
   end
 
   def test_other_sample_name
     skip
-    assert_equal 'Hello, Bob!', HelloWorld.hello('Bob'), 'When given "Bob" we should greet Bob!'
+    assert_equal 'Hello, Bob!', HelloWorld.hello('Bob'), 'When given "Bob" it should greet Bob!'
   end
 
   def test_no_strange_name
