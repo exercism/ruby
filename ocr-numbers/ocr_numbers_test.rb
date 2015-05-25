@@ -3,7 +3,7 @@ require_relative 'ocr_numbers'
 
 class OCRTest < Minitest::Test
   def test_recognize_zero
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
  _
 | |
@@ -25,7 +25,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_recognize_two
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
  _
  _|
@@ -36,7 +36,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_recognize_three
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
  _
  _|
@@ -58,7 +58,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_recognize_five
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
  _
 |_
@@ -69,7 +69,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_recognize_six
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
  _
 |_
@@ -80,7 +80,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_recognize_seven
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
  _
   |
@@ -91,7 +91,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_recognize_eight
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
  _
 |_|
@@ -102,7 +102,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_recognize_nine
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
  _
 |_|
@@ -113,7 +113,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_identify_garble
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
 
 | |
@@ -124,7 +124,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_identify_10
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
     _
   || |
@@ -135,7 +135,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_identify_110101100
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
        _     _        _  _
   |  || |  || |  |  || || |
@@ -146,7 +146,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_identify_with_garble
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
        _     _           _
   |  || |  || |     || || |
@@ -157,7 +157,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_identify_1234567890
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
     _  _     _  _  _  _  _  _
   | _| _||_||_ |_   ||_||_|| |
@@ -168,7 +168,7 @@ class OCRTest < Minitest::Test
   end
 
   def test_identify_123_456_789 # rubocop:disable Metrics/MethodLength
-    skip("Undefined method [] for nil")
+    skip('Undefined method [] for nil')
     text = <<-NUMBER.chomp
     _  _
   | _| _|

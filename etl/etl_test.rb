@@ -24,7 +24,7 @@ class TransformTest < Minitest::Test
       'a' => 1,
       'e' => 1,
       'd' => 2,
-      'g' => 2
+      'g' => 2,
     }
 
     assert_equal expected, ETL.transform(old)
@@ -39,7 +39,7 @@ class TransformTest < Minitest::Test
       4 => %w(F H V W Y),
       5 => %w(K),
       8 => %w(J X),
-      10 => %w(Q Z)
+      10 => %w(Q Z),
     }
 
     expected = {

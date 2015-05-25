@@ -3,7 +3,6 @@ require 'minitest/autorun'
 require_relative 'food_chain'
 
 class FoodChainTest < Minitest::Test
-
   # This test is an acceptance test.
   #
   # If you find it difficult to work the problem with so much

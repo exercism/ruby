@@ -80,4 +80,3 @@ class HammingTest < Minitest::Test
     assert_equal 1, Hamming::VERSION
   end
 end
-
