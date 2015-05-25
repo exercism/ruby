@@ -1,11 +1,12 @@
 require 'minitest/autorun'
 
 require 'prime'
-ERROR_MESSAGE = [
-  "Using Ruby's Prime class is probably the best way to do this in a 'real'\n",
-  "application; but this is an exercise, not a real application, so you're",
-  "expected to\nimplement this yourself ;-)"
-].join
+ERROR_MESSAGE = <<-MSG
+Using Ruby's Prime class is probably the best way to do this in a
+'real' application; but this is an exercise, not a real application,
+so you're expected to implement this yourself.
+MSG
+
 class Prime
   [:each, :new, :prime?, :take].each do |m|
     define_method(m) { |*_| fail ERROR_MESSAGE }
