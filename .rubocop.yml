@@ -11,7 +11,7 @@ Style/SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: no_space
 Style/TrailingComma:
   EnforcedStyleForMultiline: comma
-Style/Blocks:
+Style/BlockDelimiters:
   Enabled: true
 Style/RaiseArgs:
   Enabled: true
