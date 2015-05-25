@@ -1,4 +1,6 @@
 class Acronym
+  VERSION = 1
+
   def self.abbreviate(phrase)
     [].tap do |letters|
       each_word(phrase) do |word|
