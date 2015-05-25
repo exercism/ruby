@@ -2,6 +2,11 @@ require 'minitest/autorun'
 require_relative 'robot_name'
 
 class RobotTest < Minitest::Test
+  COMMAND_QUERY = <<-MSG
+    Command/Query Separation:
+    Query methods should generally not change object state.
+  MSG
+
   def test_has_name
     # rubocop:disable Lint/AmbiguousRegexpLiteral
     assert_match /^[A-Z]{2}\d{3}$/, Robot.new.name
@@ -29,7 +34,7 @@ class RobotTest < Minitest::Test
     robot.reset
     name2 = robot.name
     assert name != name2
-    assert_equal name2, robot.name, 'Command/Query Separation: query methods should generally not change object state'
+    assert_equal name2, robot.name, COMMAND_QUERY
     # rubocop:disable Lint/AmbiguousRegexpLiteral
     assert_match /^[A-Z]{2}\d{3}$/, name2
     # rubocop:enable Lint/AmbiguousRegexpLiteral
