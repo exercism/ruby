@@ -1,8 +1,11 @@
 require 'minitest/autorun'
 require 'date'
 require 'time'
-
 require_relative 'gigasecond'
+
+# Test data version:
+# 2299e68 Document how to skip the hello world problem
+
 class GigasecondTest < Minitest::Test
   def test_2011_04_25
     gs = Gigasecond.from(Time.utc(2011, 4, 25, 0, 0, 0))
@@ -33,11 +36,14 @@ class GigasecondTest < Minitest::Test
     assert_equal Time.utc(2046, 10, 3, 1, 46, 39), gs
   end
 
-  # modify the test to test your 1 Gs anniversary
+  # Test your 1Gs anniversary
   def test_with_your_birthday
-    skip('Keep')
-    your_birthday = Time.utc(year, month, day)
-    gs = Gigasecond.from(your_birthday)
-    assert_equal Time.utc(2009, 1, 31, 1, 46, 39), gs
+    skip
+  end
+
+  # This test is for the sake of people providing feedback, so they
+  # know which version of the exercise you are solving.
+  def test_bookkeeping
+    assert_equal 1, Gigasecond::VERSION
   end
 end
