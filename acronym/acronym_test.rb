@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'acronym'
 
 class AcronymTest < Minitest::Test
-  def test_acronyms
+  ACRONYM_PAIRS =
     {
       'Portable Network Graphics' => 'PNG',
       'Ruby on Rails' => 'ROR',
@@ -10,7 +10,10 @@ class AcronymTest < Minitest::Test
       'First In, First Out' => 'FIFO',
       'PHP: Hypertext Preprocessor' => 'PHP',
       'Complementary metal-oxide semiconductor' => 'CMOS',
-    }.each do |given, expected|
+    }
+
+  def test_acronyms
+    ACRONYM_PAIRS.each do |given, expected|
       assert_equal expected, Acronym.abbreviate(given), <<-MSG
         The acronym of '#{given}' should be '#{expected}'.
       MSG
