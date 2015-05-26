@@ -1,3 +1,4 @@
+gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'acronym'
 
@@ -18,6 +19,7 @@ class AcronymTest < Minitest::Test
         The acronym of '#{given}' should be '#{expected}'.
       MSG
     end
+    gem 'minitest', '>= 5.0.0'
   end
 
   # This is some simple book-keeping to let people who are
