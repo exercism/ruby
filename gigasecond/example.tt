@@ -1,0 +1,25 @@
+require 'minitest/autorun'
+require 'date'
+require 'time'
+require_relative 'gigasecond'
+
+# Test data version:
+# <%= sha1 %>
+class GigasecondTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %><% if test_case.skipped? %>
+    skip<% end %>
+    gs = Gigasecond.from(<%= test_case.got %>)
+    assert_equal <%= test_case.want %>, gs
+  end
+<% end %>
+  # Test your 1Gs anniversary
+  def test_with_your_birthday
+    skip
+  end
+
+  # This test is for the sake of people providing feedback, so they
+  # know which version of the exercise you are solving.
+  def test_bookkeeping
+    assert_equal <%= version+1 %>, Gigasecond::VERSION
+  end
+end
