@@ -44,22 +44,22 @@ end
 __END__
 
 *****************************************************
-  You got an error, which is exactly as it should be.
-  This is the first step in the Test-Driven Development
+You got an error, which is exactly as it should be.
+This is the first step in the Test-Driven Development
 (TDD) process.
 
-  The most important part of the error is
+The most important part of the error is
 
-cannot load such file
+   cannot load such file
 
 It's looking for a file named hello_world.rb that doesn't
 exist yet.
 
-  To fix the error, create an empty file named hello_world.rb
+To fix the error, create an empty file named hello_world.rb
 in the same directory as the hello_world_test.rb file.
 
-  Then run the test again.
+Then run the test again.
 
-  For more guidance as you work on this exercise, see
+For more guidance as you work on this exercise, see
 GETTING_STARTED.md.
-  *****************************************************
+*****************************************************
