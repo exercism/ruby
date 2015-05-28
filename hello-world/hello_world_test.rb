@@ -1,6 +1,10 @@
-require 'minitest/autorun'
 begin
+  gem 'minitest', '>= 5.0.0'
+  require 'minitest/autorun'
   require_relative 'hello_world'
+rescue Gem::LoadError => e
+  puts "\n\n#{e.backtrace.first} #{e.message}"
+  puts 'Minitest 5.0 gem must be installed for the xRuby track.'
 rescue LoadError => e
   puts "\n\n#{e.backtrace.first} #{e.message}"
   puts DATA.read
@@ -46,7 +50,7 @@ This is the first step in the Test-Driven Development
 
 The most important part of the error is
 
-      cannot load such file
+   cannot load such file
 
 It's looking for a file named hello_world.rb that doesn't
 exist yet.
