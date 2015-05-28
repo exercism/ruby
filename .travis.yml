@@ -5,9 +5,12 @@ sudo: false # use containers for faster builds
 rvm:
   - 2.1.2
 
-install: gem install minitest
+install:
+  - gem install minitest
+  - gem install rubocop
 
 script:
+  - rubocop
   - make test
   - bin/fetch-configlet
   - bin/configlet .
