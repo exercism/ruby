@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 gem 'minitest', '>= 5.0.0'
 require 'date'
 require 'minitest/autorun'
