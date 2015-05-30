@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+puts 'Ensuring test files are executable...'
+
+Dir.glob('**/*test.rb').each do |f|
+  if file.executable?(f)
+    print '.'
+  else
+    print "Adding exec bit to #{f}."
+    File.chmod(0744, f)
+  end
+end

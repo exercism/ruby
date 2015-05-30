@@ -11,6 +11,7 @@ install:
 
 script:
   - rubocop -fs -D
+  - bin/executable-tests-check
   - make test
   - bin/fetch-configlet
   - bin/configlet .
