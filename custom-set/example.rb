@@ -2,7 +2,7 @@ class CustomSet
   attr_reader :data
 
   def initialize(input_data = [])
-    @data = parse_data(input_data.uniq)
+    @data = parse_data(input_data.to_a.uniq)
   end
 
   def delete(datum)
