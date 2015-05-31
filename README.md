@@ -80,6 +80,16 @@ change.
 Please submit changes to a single problem per pull request unless you're
 submitting a general change across many of the problems (e.g. formatting).
 
+You can run (some) of the same checks that we run by running the
+following tool in your terminal:
+
+    bin/local-status-check
+
+If you would like to have these run right before you push your commits,
+you can activate the hook by running this tool in your terminal:
+
+    bin/setup-git-hoooks
+
 Thank you so much for contributing! :sparkles:
 
 ### Style Guide
