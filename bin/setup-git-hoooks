@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo "Setting up pre-push git hook now..."
+cp  ./bin/local-status-check .git/hooks/pre-push
+

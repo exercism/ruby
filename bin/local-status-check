@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+puts "Starting #{__FILE__} happening now."
+
+commands_to_run = [
+  'make test',
+  'rubocop -fs -D',
+  'bin/executable-tests-check',
+]
+sucess = []
+commands_to_run.each do |c|
+  sucess << (system c)
+end
+unless sucess.all?
+  p sucess
+  STDERR.puts <<-EOS
+Push will be aborted!!! Fix the problem above and correct the commit.
+  EOS
+  exit(1)
+end
+puts "Finished #{__FILE__} checks..."
