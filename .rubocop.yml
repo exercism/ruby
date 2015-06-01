@@ -12,6 +12,9 @@ Style/SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: no_space
 Style/TrailingComma:
   EnforcedStyleForMultiline: comma
+Style/TrailingWhitespace:
+  Exclude:
+    - 'ocr-numbers/ocr_numbers_test.rb'
 Style/BlockDelimiters:
   Enabled: true
 Style/RaiseArgs:
