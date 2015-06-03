@@ -24,6 +24,7 @@ test-assignment:
 	@cp -r $(ASSIGNMENT)/* $(OUTDIR)
 	@cp $(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(SRCFILE).$(FILEEXT)
 	@ruby -I./lib -rdisable_skip.rb $(OUTDIR)/$(TSTFILE)
+	@rm -rf $(OUTDIR)
 
 # all tests
 test:
