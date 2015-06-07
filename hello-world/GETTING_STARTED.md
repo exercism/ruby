@@ -28,10 +28,24 @@ directory as the `hello_world_test.rb` file.
 
 Run the test again. It will give you a new error.
 
+    # Running:
+
+    ESSS
+
+    Finished in 0.001539s, 2599.0903 runs/s, 0.0000 assertions/s.
+
     1) Error:
     HelloWorldTest#test_no_name:
     NameError: uninitialized constant HelloWorldTest::HelloWorld
       hello-world/hello_world_test.rb:5:in `test_no_name'
+
+The letters `ESSS` show that there are four tests altogether,
+that one of them has an error (`E`), and that three of them are skipped (`S`).
+
+The goal is to have four passing tests, which will show as four dots: `....`.
+
+The tests are run in randomized order, which will cause the letters to display
+in random order as well.
 
 Within the first test, we are referencing a constant named `HelloWorld` when
 we say `HelloWorld.hello`. When Ruby sees a capitalized name like
