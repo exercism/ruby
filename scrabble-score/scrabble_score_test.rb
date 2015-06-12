@@ -40,7 +40,7 @@ class ScrabbleTest < Minitest::Test
 
   def test_scores_are_case_insensitive
     skip
-    assert_equal 20, Scrabble.new('MULTIBILLIONAIRE').score
+    assert_equal 41, Scrabble.new('oxyphenbutazone').score
   end
 
   def test_convenient_scoring
