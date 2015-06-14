@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'hamming'
 
 # Test data version:
-# 2299e68 Document how to skip the hello world problem
+# 11a7e6f Merge pull request #92 from kotp/116_Verbal_Word_Problem
 
 class HammingTest < Minitest::Test
   def test_identical_strands
@@ -79,6 +79,7 @@ class HammingTest < Minitest::Test
   # This test is for the sake of people providing feedback, so they
   # know which version of the exercise you are solving.
   def test_bookkeeping
+    skip
     assert_equal 1, Hamming::VERSION
   end
 end
