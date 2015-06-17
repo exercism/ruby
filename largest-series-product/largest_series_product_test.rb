@@ -5,6 +5,7 @@ require_relative 'largest_series_product'
 
 # Rubocop directives
 # rubocop:disable Lint/ParenthesesAsGroupedExpression
+# rubocop:disable Style/AlignParameters:
 #
 class Seriestest < Minitest::Test
   def test_largest_product_of_a_tiny_number
@@ -21,13 +22,15 @@ class Seriestest < Minitest::Test
   def test_largest_product_of_2
     skip
     series = Series.new('0123456789')
-    assert_equal 72, series.largest_product(2)
+    assert_equal 72, series.largest_product(2),
+      'Largest product of all sets of 2 result from 8 and 9'
   end
 
   def test_largest_product_of_2_shuffled
     skip
     series = Series.new('576802143')
-    assert_equal 48, series.largest_product(2)
+    assert_equal 48, series.largest_product(2),
+      'Largest product of all sets of 2 result from 6 and 8'
   end
 
   def test_largest_product_of_3
@@ -60,6 +63,13 @@ class Seriestest < Minitest::Test
     s = '52677741234314237566414902593461595376319419139427'
     series = Series.new(s)
     assert_equal 28_350, series.largest_product(6)
+  end
+
+  def test_identity
+    skip
+    series = Series.new('')
+    assert_equal 1, series.largest_product(0),
+      'Identity of an empty group is 1'
   end
 
   def test_slices_bigger_than_number

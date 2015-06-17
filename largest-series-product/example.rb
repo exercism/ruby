@@ -9,7 +9,9 @@ class Series
   def largest_product(length)
     @length = length
     validate_length
-    analyzer
+    return 1 if @digits.empty?
+    collection_of_digits
+    select_max { reduce_to_product  { validate  { separate } } }
   end
 
   private
@@ -17,11 +19,6 @@ class Series
   def validate_length
     @length > digits.length and
       fail(ArgumentError.new 'Not enough digits')
-  end
-
-  def analyzer
-    collection_of_digits
-    select_max { reduce_to_product { validate { separate } } }
   end
 
   def validate
