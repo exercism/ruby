@@ -7,18 +7,7 @@ require_relative 'largest_series_product'
 # rubocop:disable Lint/ParenthesesAsGroupedExpression
 #
 class Seriestest < Minitest::Test
-  def test_required_method_called_largest_product
-    assert_respond_to Series.allocate, :largest_product
-  end
-
-  def test_largest_product_of_2
-    skip
-    series = Series.new('0123456789')
-    assert_equal 72, series.largest_product(2)
-  end
-
   def test_largest_product_of_a_tiny_number
-    skip
     series = Series.new('12')
     assert_equal 2, series.largest_product(2)
   end
@@ -27,6 +16,12 @@ class Seriestest < Minitest::Test
     skip
     series = Series.new('19')
     assert_equal 9, series.largest_product(2)
+  end
+
+  def test_largest_product_of_2
+    skip
+    series = Series.new('0123456789')
+    assert_equal 72, series.largest_product(2)
   end
 
   def test_largest_product_of_2_shuffled

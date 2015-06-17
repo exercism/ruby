@@ -8,15 +8,20 @@ class Series
 
   def largest_product(length)
     @length = length
-    fail ArgumentError.new('Not enough digits') if @length > digits.length
+    validate_length
     analyzer
   end
 
   private
 
+  def validate_length
+    @length > digits.length and
+      fail(ArgumentError.new 'Not enough digits')
+  end
+
   def analyzer
     collection_of_digits
-    reduce_to_product { validate { separate } }.max
+    select_max { reduce_to_product { validate { separate } } }
   end
 
   def validate
@@ -27,8 +32,12 @@ class Series
     yield.map { |array| array.inject(1, :*) }
   end
 
+  def select_max
+    yield.max
+  end
+
   def separate
-    0.upto(digits.length - 1).map.with_index do |_, index|
+    digits.map.with_index do |_, index|
       digits[index, @length]
     end
   end
