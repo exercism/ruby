@@ -3,34 +3,43 @@
 class Series
   attr_reader :digits
   def initialize(numeric_string)
-    @digits = convert_to_digits(numeric_string)
+    @digits = numeric_string
   end
 
   def largest_product(length)
-    fail ArgumentError.new('Not enough digits') if length > digits.length
-    products = []
-    slices(length).each do |slice|
-      products << slice.inject(1) do |product, n|
-        product * n
-      end
-    end
-    products.sort.last
-  end
-
-  def slices(length)
-    result = []
-    i = -1
-    begin
-      i += 1
-      i2 = i + length - 1
-      result << digits[i..i2]
-    end while i2 < digits.size - 1
-    result
+    @length = length
+    validate_length
+    return 1 if @digits.empty?
+    collection_of_digits
+    select_max { reduce_to_product  { validate  { separate } } }
   end
 
   private
 
-  def convert_to_digits(s)
-    s.chars.to_a.map(&:to_i)
+  def validate_length
+    @length > digits.length and
+      fail(ArgumentError.new 'Not enough digits')
+  end
+
+  def validate
+    yield.take_while { |array| array.size == @length }
+  end
+
+  def reduce_to_product
+    yield.map { |array| array.inject(1, :*) }
+  end
+
+  def select_max
+    yield.max
+  end
+
+  def separate
+    digits.map.with_index do |_, index|
+      digits[index, @length]
+    end
+  end
+
+  def collection_of_digits
+    @digits = digits.chars.map(&:to_i)
   end
 end
