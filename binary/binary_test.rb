@@ -4,6 +4,10 @@ require 'minitest/autorun'
 require_relative 'binary'
 
 class BinaryTest < Minitest::Test
+  def test_binary_0_is_decimal_0
+    assert_equal 0, Binary.new('0').to_decimal
+  end
+
   def test_binary_1_is_decimal_1
     assert_equal 1, Binary.new('1').to_decimal
   end
@@ -38,13 +42,24 @@ class BinaryTest < Minitest::Test
     assert_equal 1128, Binary.new('10001101000').to_decimal
   end
 
-  def test_invalid_binary_string_is_decimal_0
+  def test_binary_ignores_leading_zeros
     skip
-    assert_equal 0, Binary.new('carrot123').to_decimal
+    assert_equal 31, Binary.new('000011111').to_decimal
   end
 
-  def test_invalid_binary_numeric_string_is_decimal_0
+  def test_invalid_binary_numbers_raise_an_error
     skip
-    assert_equal 0, Binary.new('123').to_decimal
+    %w(012 10nope nope10).each do |input|
+      assert_raises ArgumentError do
+        Binary.new(input)
+      end
+    end
+  end
+
+  # This test is for the sake of people providing feedback, so they
+  # know which version of the exercise you are solving.
+  def test_bookkeeping
+    skip
+    assert_equal 1, Binary::VERSION
   end
 end
