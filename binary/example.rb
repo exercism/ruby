@@ -3,7 +3,7 @@ class Binary
 
   attr_reader :digits
   def initialize(s)
-    raise ArgumentError.new("invalid binary input #{s}") unless valid?(s)
+    fail ArgumentError.new("invalid binary input #{s}") unless valid?(s)
 
     @digits = s.chars.reverse.collect(&:to_i)
   end
@@ -16,7 +16,8 @@ class Binary
 
   private
 
+  # rubocop:disable Style/WordArray
   def valid?(s)
-    s.chars.all? {|char| ['0', '1'].include?(char)}
+    s.chars.all? { |char| ['0', '1'].include?(char) }
   end
 end
