@@ -31,7 +31,7 @@ class CircularBufferTest < Minitest::Test
   def test_clearing_buffer
     skip
     buffer = CircularBuffer.new(3)
-    (1..3).each { |i| buffer.write String(i) }
+    ('1'..'3').each { |i| buffer.write i }
     buffer.clear
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
     buffer.write '1'
@@ -65,7 +65,7 @@ class CircularBufferTest < Minitest::Test
     skip
     buffer = CircularBuffer.new(5)
     buffer.write nil
-    (1..3).each { |i| buffer.write String(i) }
+    ('1'..'3').each { |i| buffer.write i }
     assert_equal '1', buffer.read
   end
 
@@ -91,7 +91,7 @@ class CircularBufferTest < Minitest::Test
   def test_forced_writes_of_nil_should_not_occupy_buffer
     skip
     buffer = CircularBuffer.new(2)
-    (1..2).each { |i| buffer.write String(i) }
+    ('1'..'2').each { |i| buffer.write i }
     buffer.write! nil
     assert_equal '1', buffer.read
     assert_equal '2', buffer.read
@@ -112,16 +112,16 @@ class CircularBufferTest < Minitest::Test
   def test_alternate_read_and_write_into_buffer_overflow
     skip
     buffer = CircularBuffer.new(5)
-    (1..3).each { |i| buffer.write String(i) }
+    ('1'..'3').each { |i| buffer.write i }
     buffer.read
     buffer.read
     buffer.write '4'
     buffer.read
-    (5..8).each { |i| buffer.write String(i) }
+    ('5'..'8').each { |i| buffer.write i }
     buffer.write! 'A'
     buffer.write! 'B'
-    (6..8).each do |i|
-      assert_equal String(i), buffer.read
+    ('6'..'8').each do |i|
+      assert_equal i, buffer.read
     end
     assert_equal 'A', buffer.read
     assert_equal 'B', buffer.read
