@@ -26,7 +26,13 @@ directory as the `hello_world_test.rb` file.
 
 ## Step 2
 
-Run the test again. It will give you a new error.
+Run the test again. It will give you a new error.  On Windows, it would complain about: 
+
+    syntax error, unexpected end-of-input, expecting '('
+    
+This is because the file is empty and does not contain the expected code.  The solution is the same as in OS X and Linux, below:
+
+On OS X and Linux, the error would be something like:
 
     # Running:
 
