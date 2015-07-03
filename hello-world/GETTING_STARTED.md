@@ -26,13 +26,17 @@ directory as the `hello_world_test.rb` file.
 
 ## Step 2
 
-Run the test again. It will give you a new error.  On Windows, it would complain about: 
+Run the test again. It will give you a new error, since now the file exists,
+but is empty and does not contain the expected code.
+
+Depending on what platform you are on, the error will look different, but
+the way to fix it will be the same.
+
+On Windows, it will complain about:
 
     syntax error, unexpected end-of-input, expecting '('
-    
-This is because the file is empty and does not contain the expected code.  The solution is the same as in OS X and Linux, below:
 
-On OS X and Linux, the error would be something like:
+On OS X and Linux, the error will be something like:
 
     # Running:
 
@@ -45,14 +49,6 @@ On OS X and Linux, the error would be something like:
     NameError: uninitialized constant HelloWorldTest::HelloWorld
       hello-world/hello_world_test.rb:5:in `test_no_name'
 
-The letters `ESSS` show that there are four tests altogether,
-that one of them has an error (`E`), and that three of them are skipped (`S`).
-
-The goal is to have four passing tests, which will show as four dots: `....`.
-
-The tests are run in randomized order, which will cause the letters to display
-in random order as well.
-
 Within the first test, we are referencing a constant named `HelloWorld` when
 we say `HelloWorld.hello`. When Ruby sees a capitalized name like
 `HelloWorld`, it looks it up in a big huge list of all the constants it knows about,
@@ -62,13 +58,25 @@ constants that point to definitions of classes or modules.
 When it looks `HelloWorld` up in it's list, it doesn't find anything, so we need
 to make one.
 
-There are several ways that this error message can be made to go
-away, one of which is to define a `HelloWorld` class.
+### Fixing the Error
 
-Open up the hello_world.rb file and add the following code:
+To fix it, open up the hello_world.rb file and add the following code:
 
     class HelloWorld
     end
+
+### Understanding Test Failures
+
+Whether you are on Windows, Mac OS X or Linux, you will eventually be faced with
+errors and failures that look a lot like the Mac OS X / Linux error above.
+
+The letters `ESSS` show that there are four tests altogether,
+that one of them has an error (`E`), and that three of them are skipped (`S`).
+
+The goal is to have four passing tests, which will show as four dots: `....`.
+
+The tests are run in randomized order, which will cause the letters to display
+in random order as well.
 
 ## Step 3
 
