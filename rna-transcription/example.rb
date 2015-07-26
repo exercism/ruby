@@ -1,4 +1,6 @@
 class Complement
+  VERSION = 1
+
   def self.of_dna(strand)
     DNA.new(strand).tr('CGTA', 'GCAU')
   end
