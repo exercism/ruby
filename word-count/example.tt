@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative 'word_count'
+
+# Test data version:
+# <%= sha1 %>
+class PhraseTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %><% if test_case.skipped? %>
+    skip<% end %><% if test_case.raises_error? %>
+    assert_raises(ArgumentError) { <%= test_case.do %> }<% else %>
+    assert_equal <%= test_case.expected %>, <%= test_case.do %><% end %>
+  end
+<% end %>
+  # This test is for the sake of people providing feedback, so they
+  # know which version of the exercise you are solving.
+  def test_bookkeeping
+    skip
+    assert_equal <%= version+1 %>, Phrase::VERSION
+  end
+end
+
