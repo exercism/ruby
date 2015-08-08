@@ -6,8 +6,8 @@ rvm:
   - 2.1.2
 
 install:
-  - gem install minitest
-  - gem install rubocop
+  - gem install minitest --no-ri --no-rdoc
+  - gem install rubocop -v 0.31.0 --no-ri --no-rdoc
 
 script:
   - rubocop -fs -D
