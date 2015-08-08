@@ -3,6 +3,8 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'word_count'
 
+# Test data version:
+
 class PhraseTest < Minitest::Test
   def test_count_one_word
     phrase = Phrase.new('word')
@@ -81,5 +83,22 @@ class PhraseTest < Minitest::Test
       'then' => 1, 'cry' => 1
     }
     assert_equal counts, phrase.word_count
+  end
+
+  def test_with_quotations
+    skip
+    phrase = Phrase.new("Joe can't tell between 'large' and large.")
+    counts = {
+      'joe' => 1, "can't" => 1, 'tell' => 1,
+      'between' => 1, 'large' => 2, 'and' => 1
+    }
+    assert_equal counts, phrase.word_count
+  end
+
+  # This test is for the sake of people providing feedback, so they
+  # know which version of the exercise you are solving.
+  def test_bookkeeping
+    skip
+    assert_equal 1, Phrase::VERSION
   end
 end
