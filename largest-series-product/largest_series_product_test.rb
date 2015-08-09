@@ -4,7 +4,6 @@ require 'minitest/autorun'
 require_relative 'largest_series_product'
 
 # Rubocop directives
-# rubocop:disable Lint/ParenthesesAsGroupedExpression
 # rubocop:disable Style/AlignParameters:
 #
 class Seriestest < Minitest::Test

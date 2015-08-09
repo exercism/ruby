@@ -39,7 +39,6 @@ class DequeTest < Minitest::Test
     assert_equal 20, deque.pop
   end
 
-  # rubocop:disable Metrics/AbcSize
   def test_example # rubocop:disable Metrics/MethodLength
     skip
     deque = Deque.new

@@ -27,7 +27,6 @@ class CircularBufferTest < Minitest::Test
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
-  # rubocop:disable Metrics/AbcSize
   def test_clearing_buffer
     skip
     buffer = CircularBuffer.new(3)
