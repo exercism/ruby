@@ -6,7 +6,7 @@ require_relative 'food_chain'
 
 module NoCheating
   ERROR_MESSAGE = <<-MSG
-  This exercise intends to help you improve your hability to work
+  This exercise intends to help you improve your ability to work
   with data generated from your code, so DON'T just open or read
   the song.txt file.
   MSG
@@ -24,15 +24,7 @@ module NoCheating
   end
 end
 
-if FoodChain.class.eql? Class
-  class FoodChain
-    prepend NoCheating
-  end
-else
-  module FoodChain
-    prepend NoCheating
-  end
-end
+FoodChain.prepend NoCheating
 
 class FoodChainTest < Minitest::Test
   # This test is an acceptance test.
