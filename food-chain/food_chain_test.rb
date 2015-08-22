@@ -4,6 +4,15 @@ require 'minitest/autorun'
 
 require_relative 'food_chain'
 
+class NoCheating < IOError
+  def message
+    "The use of File.open and IO.read is restriced.\n"                \
+    'This exercise intends to help you improve your ability to work ' \
+    'with data generated from your code. Your program must not read ' \
+    'the song.txt file.'
+  end
+end
+
 class FoodChainTest < Minitest::Test
   # This test is an acceptance test.
   #
@@ -15,14 +24,38 @@ class FoodChainTest < Minitest::Test
   # specifically want feedback on them.
   def test_the_whole_song
     song_file = File.expand_path('../song.txt', __FILE__)
-    expected = IO.read(song_file)
+    expected  = IO.read(song_file)
     assert_equal expected, FoodChain.song
+  end
+
+  # Tests that an error is efectively raised when IO.read or
+  # File.open are used within FoodChain.
+  def test_read_guard
+    ["IO.read 'song.txt'", "File.open 'song.txt'"].each do |trigger|
+      assert_raises(NoCheating) { FoodChain.send :class_eval, trigger }
+    end
   end
 
   # This is some simple book-keeping to let people who are
   # giving feedback know which version of the exercise you solved.
   def test_version
     skip
-    assert_equal 1, FoodChain::VERSION
+    assert_equal 2, FoodChain::VERSION
   end
 end
+
+module RestrictedClasses
+  class File
+    def self.open(*)
+      fail NoCheating
+    end
+  end
+
+  class IO
+    def self.read(*)
+      fail NoCheating
+    end
+  end
+end
+
+FoodChain.prepend RestrictedClasses
