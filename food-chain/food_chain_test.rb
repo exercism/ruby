@@ -49,6 +49,10 @@ module RestrictedClasses
     def self.open(*)
       fail NoCheating
     end
+
+    def self.read(*)
+      fail NoCheating
+    end
   end
 
   class IO
