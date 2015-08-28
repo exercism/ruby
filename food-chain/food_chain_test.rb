@@ -28,7 +28,7 @@ class FoodChainTest < Minitest::Test
     assert_equal expected, FoodChain.song
   end
 
-  # Tests that an error is efectively raised when IO.read or
+  # Tests that an error is effectively raised when IO.read or
   # File.open are used within FoodChain.
   def test_read_guard
     ["IO.read 'song.txt'", "File.open 'song.txt'"].each do |trigger|
