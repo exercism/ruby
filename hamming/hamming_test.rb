@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'hamming'
 
 # Test data version:
-# 11a7e6f Merge pull request #92 from kotp/116_Verbal_Word_Problem
+# ab84334 Merge pull request #106 from bennn/grep-meta
 
 class HammingTest < Minitest::Test
   def test_identical_strands
@@ -78,6 +78,10 @@ class HammingTest < Minitest::Test
 
   # This test is for the sake of people providing feedback, so they
   # know which version of the exercise you are solving.
+  #
+  # Define a constant named VERSION inside of Hamming.
+  # If you're curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
     assert_equal 1, Hamming::VERSION

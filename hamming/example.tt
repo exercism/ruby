@@ -14,6 +14,10 @@ class HammingTest < Minitest::Test<% test_cases.each do |test_case| %>
 <% end %>
   # This test is for the sake of people providing feedback, so they
   # know which version of the exercise you are solving.
+  #
+  # Define a constant named VERSION inside of Hamming.
+  # If you're curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
     assert_equal <%= version+1 %>, Hamming::VERSION
