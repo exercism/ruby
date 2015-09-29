@@ -39,9 +39,16 @@ class ArrayTest < Minitest::Test
   end
 
   def test_do_not_change_in_place
+    skip
     original = [1, 2, 3]
     copy = original.dup
     original.accumulate { |n| n * n }
     assert_equal copy, original
+  end
+
+  # Problems in exercism evolve over time as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved, not your solution.
+  def test_bookkeeping
+    assert_equal 1, Accumulate::VERSION
   end
 end
