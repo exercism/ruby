@@ -79,7 +79,7 @@ class HammingTest < Minitest::Test
   # Problems in exercism evolve over time,
   # as we find better ways to ask questions.
   # The version number refers to the version of the problem you solved,
-  # not your solution.  
+  # not your solution.
   #
   # Define a constant named VERSION inside of Hamming.
   # If you're curious, read more about constants on RubyDoc:
