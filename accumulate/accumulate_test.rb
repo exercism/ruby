@@ -46,9 +46,4 @@ class ArrayTest < Minitest::Test
     assert_equal copy, original
   end
 
-  # Problems in exercism evolve over time as we find better ways to ask questions.
-  # The version number refers to the version of the problem you solved, not your solution.
-  def test_bookkeeping
-    assert_equal 1, Array::VERSION
-  end
 end
