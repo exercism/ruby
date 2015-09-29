@@ -45,5 +45,4 @@ class ArrayTest < Minitest::Test
     original.accumulate { |n| n * n }
     assert_equal copy, original
   end
-
 end
