@@ -32,7 +32,6 @@ class BstTest < Minitest::Test
     assert_equal 5, four.right.data
   end
 
-  # rubocop:disable Metrics/AbcSize
   def test_complex_tree # rubocop:disable Metrics/MethodLength
     skip
     four = Bst.new 4
