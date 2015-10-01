@@ -56,8 +56,14 @@ class BinaryTest < Minitest::Test
     end
   end
 
-  # This test is for the sake of people providing feedback, so they
-  # know which version of the exercise you are solving.
+  # Problems in exercism evolve over time,
+  # as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of Binary.
+  # If you're curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
     assert_equal 1, Binary::VERSION
