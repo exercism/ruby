@@ -36,8 +36,14 @@ class FoodChainTest < Minitest::Test
     end
   end
 
-  # This is some simple book-keeping to let people who are
-  # giving feedback know which version of the exercise you solved.
+  # Problems in exercism evolve over time,
+  # as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of FoodChain.
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_version
     skip
     assert_equal 2, FoodChain::VERSION
