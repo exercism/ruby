@@ -82,4 +82,15 @@ class RaindropsTest < Minitest::Test
     skip
     assert_equal '12121', Raindrops.convert(12_121)
   end
+  
+  # This test is for the sake of people providing feedback, so they
+  # know which version of the exercise you are solving.
+  #
+  # Define a constant named VERSION inside of Raindrops.
+  # If you're curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_raindrops
+    skip
+    assert_equal 1, Raindrops::VERSION
+  end
 end
