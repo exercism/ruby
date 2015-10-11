@@ -11,13 +11,13 @@ class SchoolTest < Minitest::Test
   end
 
   def test_an_empty_school
-    assert_equal({}, school.to_hash)
+    assert_equal({}, school.to_h)
   end
 
   def test_add_student
     skip
     school.add('Aimee', 2)
-    assert_equal({ 2 => ['Aimee'] }, school.to_hash)
+    assert_equal({ 2 => ['Aimee'] }, school.to_h)
   end
 
   def test_add_more_students_in_same_class
@@ -25,14 +25,14 @@ class SchoolTest < Minitest::Test
     school.add('Blair', 2)
     school.add('James', 2)
     school.add('Paul', 2)
-    assert_equal({ 2 => %w(Blair James Paul) }, school.to_hash)
+    assert_equal({ 2 => %w(Blair James Paul) }, school.to_h)
   end
 
   def test_add_students_to_different_grades
     skip
     school.add('Chelsea', 3)
     school.add('Logan', 7)
-    assert_equal({ 3 => ['Chelsea'], 7 => ['Logan'] }, school.to_hash)
+    assert_equal({ 3 => ['Chelsea'], 7 => ['Logan'] }, school.to_h)
   end
 
   def test_get_students_in_a_grade
@@ -69,7 +69,20 @@ class SchoolTest < Minitest::Test
       4 => %w(Christopher Jennifer),
       6 => ['Kareem'],
     }
-    assert_equal sorted, school.to_hash
-    assert_equal [3, 4, 6], school.to_hash.keys
+    assert_equal sorted, school.to_h
+    assert_equal [3, 4, 6], school.to_h.keys
+  end
+
+  # Problems in exercism evolve over time,
+  # as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of School.
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_bookkeeping
+    skip
+    assert_equal 1, School::VERSION
   end
 end
