@@ -107,6 +107,8 @@ appropriately.
 
 For more complete information, see [Rubocop](http://batsov.com/rubocop/).
 
+It is the responsibility of the Ruby test generator to interpret the $PROBLEM.json data in a stylistically correct manner, eg downcase the test method names.
+
 ## READMEs
 
 Please do not add a README or README.md file to the problem directory. The

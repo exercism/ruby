@@ -1,5 +1,6 @@
 class Year
   attr_reader :number
+  VERSION = 1
 
   def initialize(number)
     @number = number
