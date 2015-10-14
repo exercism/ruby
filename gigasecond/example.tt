@@ -9,7 +9,8 @@ class GigasecondTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %><% if test_case.skipped? %>
     skip<% end %>
     gs = Gigasecond.from(<%= test_case.got %>)
-    assert_equal <%= test_case.want %>, gs
+    assert_equal <%= test_case.want %>, gs,
+                 '<%= test_case.msg %>'
   end
 <% end %>
   # Test your 1Gs anniversary
