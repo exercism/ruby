@@ -13,37 +13,15 @@ rescue LoadError => e
 end
 
 # Test data version:
-# 055314b Added hello-world.json test definition
-
-class HelloWorldTest < Minitest::Test
-  def test_no_name
-    assert_equal 'Hello, World!', HelloWorld.hello, <<-MSG
-    When given no name, it should greet the world!
-    MSG
+# <%= sha1 %>
+class HelloWorldTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.test_name %><% if test_case.skipped? %>
+    skip<% end %>
+    assert_equal '<%= test_case.expected %>', <%= test_case.do %>, <<-MSG
+    <% test_case.msg.each do |message| %><%= message %>
+    <% end %>MSG
   end
-
-  def test_sample_name
-    skip
-    assert_equal 'Hello, Alice!', HelloWorld.hello('Alice'), <<-MSG
-    When given 'Alice', it should greet Alice!
-    MSG
-  end
-
-  def test_other_sample_name
-    skip
-    assert_equal 'Hello, Bob!', HelloWorld.hello('Bob'), <<-MSG
-    When given 'Bob', it should greet Bob!
-    MSG
-  end
-
-  def test_no_strange_name
-    skip
-    assert_equal 'Hello, !', HelloWorld.hello(''), <<-MSG
-    When given an empty string it should have a space
-    and punctuation, though admittedly this is strange.
-    MSG
-  end
-end
+<% end %>end
 
 __END__
 
