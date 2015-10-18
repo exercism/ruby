@@ -4,7 +4,11 @@ class RnaTranscriptionCase < OpenStruct
   end
 
   def do
-    defined?(rna) ? "Complement.of_rna('#{rna}')" : "Complement.of_dna('#{dna}')"
+    if defined?(rna)
+      "Complement.of_rna('#{rna}')"
+    else
+      "Complement.of_dna('#{dna}')"
+    end
   end
 
   def raises_error?

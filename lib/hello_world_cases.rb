@@ -4,7 +4,7 @@ class HelloWorldCase < OpenStruct
   end
 
   def do
-    defined?(name) ? "HelloWorld.hello('#{name}')" : "HelloWorld.hello"
+    defined?(name) ? "HelloWorld.hello('#{name}')" : 'HelloWorld.hello'
   end
 
   def raises_error?
