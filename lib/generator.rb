@@ -36,7 +36,7 @@ class Generator
   end
 
   def generate
-    File.open(path_to("#{name}_test.rb"), 'w') do |f|
+    File.open(path_to("#{name.gsub(/[ -]/, '_')}_test.rb"), 'w') do |f|
       f.write ERB.new(File.read(path_to('example.tt'))).result binding
     end
     File.open(path_to('.version'), 'w') do |f|
