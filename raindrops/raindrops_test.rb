@@ -3,6 +3,9 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'raindrops'
 
+# Test data version:
+# 816e537 Merge pull request #113
+
 class RaindropsTest < Minitest::Test
   def test_1
     assert_equal '1', Raindrops.convert(1)
@@ -78,8 +81,16 @@ class RaindropsTest < Minitest::Test
     assert_equal 'PlingPlangPlong', Raindrops.convert(105)
   end
 
-  def test_12121
+  # Problems in exercism evolve over time,
+  # as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of Raindrops.
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_bookkeeping
     skip
-    assert_equal '12121', Raindrops.convert(12_121)
+    assert_equal 1, Raindrops::VERSION
   end
 end
