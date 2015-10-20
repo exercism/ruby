@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/generator'
+require_relative '../lib/raindrop_cases'
+
+Generator.new('raindrops', RaindropCases).generate
