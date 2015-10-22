@@ -55,7 +55,7 @@ we say `HelloWorld.hello`. When Ruby sees a capitalized name like
 to see what it points to. It could point to anything, and often in Ruby we have
 constants that point to definitions of classes or modules.
 
-When it looks `HelloWorld` up in it's list, it doesn't find anything, so we need
+When it looks `HelloWorld` up in its list, it doesn't find anything, so we need
 to make one.
 
 ### Fixing the Error
