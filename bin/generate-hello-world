@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/generator'
+require_relative '../lib/hello_world_cases'
+
+Generator.new('hello-world', HelloWorldCases).generate

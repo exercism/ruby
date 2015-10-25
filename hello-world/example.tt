@@ -13,23 +13,13 @@ rescue LoadError => e
 end
 
 # Test data version:
-# 7668b09 Added hello world test definition
-
-class HelloWorldTest < Minitest::Test
-  def test_no_name
-    assert_equal 'Hello, World!', HelloWorld.hello
+# <%= sha1 %>
+class HelloWorldTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.test_name %><% if test_case.skipped? %>
+    skip<% end %>
+    assert_equal '<%= test_case.expected %>', <%= test_case.do %>
   end
-
-  def test_sample_name
-    skip
-    assert_equal 'Hello, Alice!', HelloWorld.hello('Alice')
-  end
-
-  def test_other_sample_name
-    skip
-    assert_equal 'Hello, Bob!', HelloWorld.hello('Bob')
-  end
-end
+<% end %>end
 
 __END__
 
