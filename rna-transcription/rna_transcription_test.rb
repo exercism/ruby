@@ -3,6 +3,9 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'rna_transcription'
 
+# Test data version:
+# 3b07e53 Merge pull request #117 from mikeyjcat/add-raindrops-json
+
 class ComplementTest < Minitest::Test
   def test_rna_complement_of_cytosine_is_guanine
     assert_equal 'G', Complement.of_dna('C')
@@ -53,32 +56,32 @@ class ComplementTest < Minitest::Test
     assert_equal 'ACTTGGGCTGTAC', Complement.of_rna('UGAACCCGACAUG')
   end
 
-  def test_dna_raises_argument_error
+  def test_dna_correctly_handles_invalid_input
     skip
     assert_raises(ArgumentError) { Complement.of_dna('U') }
   end
 
-  def test_rna_raises_argument_error
+  def test_rna_correctly_handles_invalid_input
     skip
     assert_raises(ArgumentError) { Complement.of_rna('T') }
   end
 
-  def test_rna_raises_argument_error_on_completely_invalid_input
-    skip
-    assert_raises(ArgumentError) { Complement.of_rna('XXX') }
-  end
-
-  def test_dna_raises_argument_error_on_completely_invalid_input
+  def test_dna_correctly_handles_completely_invalid_input
     skip
     assert_raises(ArgumentError) { Complement.of_dna('XXX') }
   end
 
-  def test_dna_raises_argument_error_on_partially_invalid_input
+  def test_rna_correctly_handles_completely_invalid_input
+    skip
+    assert_raises(ArgumentError) { Complement.of_rna('XXX') }
+  end
+
+  def test_dna_correctly_handles_partially_invalid_input
     skip
     assert_raises(ArgumentError) { Complement.of_dna('ACGTXXXCTTAA') }
   end
 
-  def test_rna_raises_argument_error_on_partially_invalid_input
+  def test_rna_correctly_handles_partially_invalid_input
     skip
     assert_raises(ArgumentError) { Complement.of_rna('UGAAXXXGACAUG') }
   end
@@ -89,7 +92,7 @@ class ComplementTest < Minitest::Test
   # not your solution.
   #
   # Define a constant named VERSION inside of Complement.
-  # If you're curious, read more about constants on RubyDoc:
+  # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
