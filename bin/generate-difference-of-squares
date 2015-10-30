@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/generator'
+require_relative '../lib/difference_of_squares_cases'
+
+Generator.new('difference-of-squares', DifferenceOfSquaresCases).generate
