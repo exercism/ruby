@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative 'roman_numerals'
+
+# Test data version:
+# <%= sha1 %>
+class RomanNumeralsTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %><% if test_case.skipped? %>
+    skip<% end %>
+    assert_equal '<%= test_case.expected %>', <%= test_case.do %>
+  end
+<% end %>
+  # Don't foget to define a constant VERSION inside of Fixnum.
+  def test_bookkeeping
+    skip
+    assert_equal <%= version+1 %>, Fixnum::VERSION
+  end
+end
