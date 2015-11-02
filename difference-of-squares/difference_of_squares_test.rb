@@ -57,7 +57,7 @@ class DifferenceOfSquaresTest < Minitest::Test
     assert_equal squares.difference, squares.difference
   end
 
-  # Do non't foget to define a constant VERSION inside of Squares.
+  # Don't foget to define a constant VERSION inside of Squares.
   def test_bookkeeping
     skip
     assert_equal 1, Squares::VERSION
