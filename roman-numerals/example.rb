@@ -1,4 +1,6 @@
 class Fixnum
+  VERSION = 1
+
   def to_roman
     i = self
     s = ''
