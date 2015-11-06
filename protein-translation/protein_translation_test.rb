@@ -36,10 +36,10 @@ class TranslationTest < Minitest::Test
     end
   end
 
-  def test_identifies_Cystine_codons
+  def test_identifies_Cysteine_codons
     skip
     %w(UGU UGC).each do |codon|
-      assert_equal 'Cystine', Translation.of_codon(codon)
+      assert_equal 'Cysteine', Translation.of_codon(codon)
     end
   end
 
@@ -72,7 +72,7 @@ class TranslationTest < Minitest::Test
   def test_stops_translation_of_longer_strand
     skip
     strand = 'UGGUGUUAUUAAUGGUUU'
-    expected = %w(Tryptophan Cystine Tyrosine)
+    expected = %w(Tryptophan Cysteine Tyrosine)
     assert_equal expected, Translation.of_rna(strand)
   end
 
