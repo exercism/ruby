@@ -23,7 +23,7 @@ class Translation
       %w(UUA UUG)         => 'Leucine',
       %w(UCU UCC UCA UCG) => 'Serine',
       %w(UAU UAC)         => 'Tyrosine',
-      %w(UGU UGC)         => 'Cystine',
+      %w(UGU UGC)         => 'Cysteine',
       ['UGG']             => 'Tryptophan',
       %w(UAA UAG UGA)     => 'STOP'
     }
