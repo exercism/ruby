@@ -47,4 +47,9 @@ class TrinaryTest < Minitest::Test
     skip
     assert_equal 0, Trinary.new('carrot').to_decimal
   end
+
+  def test_invalid_trinary_with_digits_is_decimal_0
+    skip
+    assert_equal 0, Trinary.new('0a1b2c').to_decimal
+  end
 end
