@@ -18,6 +18,10 @@ class SumTest < Minitest::Test
     assert_equal 23, SumOfMultiples.to(10)
   end
 
+  def test_sum_to_100
+    assert_equal 2_318, SumOfMultiples.to(100)
+  end
+
   def test_sum_to_1000
     skip
     assert_equal 233_168, SumOfMultiples.to(1000)
