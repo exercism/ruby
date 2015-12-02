@@ -6,6 +6,9 @@ require_relative 'custom_set'
 class CustomSetTest < Minitest::Test
   def test_equal
     assert_equal CustomSet.new([1, 3]), CustomSet.new([3, 1])
+    refute_equal CustomSet.new([1, 3]), CustomSet.new([3, 1, 5])
+    refute_equal CustomSet.new([1, 3, 5]), CustomSet.new([3, 1])
+    refute_equal CustomSet.new([1, 3]), CustomSet.new([2, 1])
   end
 
   def test_no_duplicates
