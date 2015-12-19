@@ -1,17 +1,14 @@
+---
 language: ruby
-
-sudo: false # use containers for faster builds
-
+sudo: false
 rvm:
-  - 2.1.2
-
+- 2.1.2
 install:
-  - gem install minitest --no-ri --no-rdoc
-  - gem install rubocop -v 0.31.0 --no-ri --no-rdoc
-
+- gem install minitest --no-document
+- gem install rubocop -v 0.31.0 --no-document
 script:
-  - rubocop -fs -D
-  - bin/executable-tests-check
-  - make test
-  - bin/fetch-configlet
-  - bin/configlet .
+- rubocop -fs -D
+- bin/executable-tests-check
+- make test
+- bin/fetch-configlet
+- bin/configlet .
