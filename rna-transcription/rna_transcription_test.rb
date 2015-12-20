@@ -31,59 +31,19 @@ class ComplementTest < Minitest::Test
     assert_equal 'UGCACCAGAAUU', Complement.of_dna('ACGTGGTCTTAA')
   end
 
-  def test_dna_complement_of_cytosine_is_guanine
-    skip
-    assert_equal 'G', Complement.of_rna('C')
-  end
-
-  def test_dna_complement_of_guanine_is_cytosine
-    skip
-    assert_equal 'C', Complement.of_rna('G')
-  end
-
-  def test_dna_complement_of_uracil_is_adenine
-    skip
-    assert_equal 'A', Complement.of_rna('U')
-  end
-
-  def test_dna_complement_of_adenine_is_thymine
-    skip
-    assert_equal 'T', Complement.of_rna('A')
-  end
-
-  def test_dna_complement
-    skip
-    assert_equal 'ACTTGGGCTGTAC', Complement.of_rna('UGAACCCGACAUG')
-  end
-
-  def test_dna_correctly_handles_invalid_input
+  def test_correctly_handles_invalid_input
     skip
     assert_raises(ArgumentError) { Complement.of_dna('U') }
   end
 
-  def test_rna_correctly_handles_invalid_input
-    skip
-    assert_raises(ArgumentError) { Complement.of_rna('T') }
-  end
-
-  def test_dna_correctly_handles_completely_invalid_input
+  def test_correctly_handles_completely_invalid_inputs
     skip
     assert_raises(ArgumentError) { Complement.of_dna('XXX') }
   end
 
-  def test_rna_correctly_handles_completely_invalid_input
-    skip
-    assert_raises(ArgumentError) { Complement.of_rna('XXX') }
-  end
-
-  def test_dna_correctly_handles_partially_invalid_input
+  def test_correctly_handles_partially_invalid_inputs
     skip
     assert_raises(ArgumentError) { Complement.of_dna('ACGTXXXCTTAA') }
-  end
-
-  def test_rna_correctly_handles_partially_invalid_input
-    skip
-    assert_raises(ArgumentError) { Complement.of_rna('UGAAXXXGACAUG') }
   end
 
   # Problems in exercism evolve over time,
@@ -95,7 +55,6 @@ class ComplementTest < Minitest::Test
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
-    skip
-    assert_equal 2, Complement::VERSION
+    assert_equal 3, Complement::VERSION
   end
 end
