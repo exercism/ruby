@@ -17,32 +17,32 @@ end
 
 class YearTest < Minitest::Test
   def test_leap_year
-    assert Year.leap?(1996), 'Yes, 1996 is a leap year'
+    assert_equal 'Yes, 1996 is a leap year', Year.leap?(1996)
   end
 
   def test_non_leap_year
     skip
-    refute Year.leap?(1997), 'No, 1997 is not a leap year'
+    assert_equal 'No, 1997 is not a leap year', Year.leap?(1997)
   end
 
   def test_non_leap_even_year
     skip
-    refute Year.leap?(1998), 'No, 1998 is not a leap year'
+    assert_equal 'No, 1998 is not a leap year', Year.leap?(1998)
   end
 
   def test_century
     skip
-    refute Year.leap?(1900), 'No, 1900 is not a leap year'
+    assert_equal 'No, 1900 is not a leap year', Year.leap?(1900)
   end
 
   def test_fourth_century
     skip
-    assert Year.leap?(2400), 'Yes, 2400 is a leap year'
+    assert_equal 'Yes, 2400 is a leap year', Year.leap?(2400)
   end
 
   def test_y2k
     skip
-    assert Year.leap?(2000), 'Yes, 2000 is a leap year'
+    assert_equal 'Yes, 2000 is a leap year', Year.leap?(2000)
   end
 
   # Problems in exercism evolve over time,
