@@ -74,10 +74,10 @@ To fix it, open up the hello_world.rb file and add the following code:
 Whether you are on Windows, Mac OS X or Linux, you will eventually be faced with
 errors and failures that look a lot like the Mac OS X / Linux error above.
 
-The letters `ESSS` show that there are four tests altogether,
-that one of them has an error (`E`), and that three of them are skipped (`S`).
+The letters `ESS` show that there are three tests altogether,
+that one of them has an error (`E`), and that two of them are skipped (`SS`).
 
-The goal is to have four passing tests, which will show as four dots: `....`.
+The goal is to have three passing tests, which will show as three dots: `...`.
 
 The tests are run in randomized order, which will cause the letters to display
 in random order as well.
@@ -89,7 +89,7 @@ Run the test again.
     1) Error:
     HelloWorldTest#test_no_name:
     NoMethodError: undefined method `hello' for HelloWorld:Class
-        hello_world_test.rb:5:in `test_no_name'
+        hello_world_test.rb:20:in `test_no_name'
 
 This time we have a `HelloWorld`, but we're trying tell it to `hello`, and
 `HelloWorld` doesn't understand that message.
