@@ -40,14 +40,18 @@ On OS X and Linux, the error will be something like:
 
     # Running:
 
-    ESSS
+    ESS
 
     Finished in 0.001539s, 2599.0903 runs/s, 0.0000 assertions/s.
 
     1) Error:
     HelloWorldTest#test_no_name:
     NameError: uninitialized constant HelloWorldTest::HelloWorld
-      hello-world/hello_world_test.rb:5:in `test_no_name'
+      hello-world/hello_world_test.rb:20:in `test_no_name'
+    
+    3 runs, 0 assertions, 0 failures, 1 errors, 2 skips
+    
+    You have skipped tests. Run with --verbose for details.
 
 Within the first test, we are referencing a constant named `HelloWorld` when
 we say `HelloWorld.hello`. When Ruby sees a capitalized name like
@@ -70,10 +74,10 @@ To fix it, open up the hello_world.rb file and add the following code:
 Whether you are on Windows, Mac OS X or Linux, you will eventually be faced with
 errors and failures that look a lot like the Mac OS X / Linux error above.
 
-The letters `ESSS` show that there are four tests altogether,
-that one of them has an error (`E`), and that three of them are skipped (`S`).
+The letters `ESS` show that there are three tests altogether,
+that one of them has an error (`E`), and that two of them are skipped (`SS`).
 
-The goal is to have four passing tests, which will show as four dots: `....`.
+The goal is to have three passing tests, which will show as three dots: `...`.
 
 The tests are run in randomized order, which will cause the letters to display
 in random order as well.
@@ -85,7 +89,7 @@ Run the test again.
     1) Error:
     HelloWorldTest#test_no_name:
     NoMethodError: undefined method `hello' for HelloWorld:Class
-        hello_world_test.rb:5:in `test_no_name'
+        hello_world_test.rb:20:in `test_no_name'
 
 This time we have a `HelloWorld`, but we're trying tell it to `hello`, and
 `HelloWorld` doesn't understand that message.
