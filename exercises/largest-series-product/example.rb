@@ -1,6 +1,8 @@
 # see also https://gist.github.com/blairand/5237976
 # see also https://gist.github.com/burtlo/89b0b817fdccf6bdf20f
 class Series
+  VERSION = 1
+
   attr_reader :digits
   def initialize(numeric_string)
     @digits = numeric_string
@@ -17,6 +19,8 @@ class Series
   private
 
   def validate_length
+    @length < 0 and
+      fail(ArgumentError.new 'Length must be non-negative')
     @length > digits.length and
       fail(ArgumentError.new 'Not enough digits')
   end
@@ -40,6 +44,8 @@ class Series
   end
 
   def collection_of_digits
+    @digits !~ /^\d*$/ and
+      fail(ArgumentError.new 'String must contain only digits')
     @digits = digits.chars.map(&:to_i)
   end
 end
