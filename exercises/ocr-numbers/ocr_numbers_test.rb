@@ -4,6 +4,7 @@ require 'minitest/autorun'
 require_relative 'ocr_numbers'
 
 class OCRTest < Minitest::Test
+  # rubocop:disable  Style/TrailingWhitespace
   def test_recognize_zero
     text = <<-NUMBER.chomp
  _ 
