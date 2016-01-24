@@ -1,33 +1,30 @@
 AllCops:
   Exclude:
-    - '*/example.rb'
+    - 'exercises/**/example.rb'
     - 'bin/*'
-Style/Documentation:
+Documentation:
   Enabled: false
-Style/StringLiterals:
+StringLiterals:
   Enabled: true
 Metrics/AbcSize:
   Enabled: false
-Style/SpaceAroundEqualsInParameterDefault:
+SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: no_space
-Style/TrailingComma:
+TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
-Style/TrailingWhitespace:
-  Exclude:
-    - 'ocr-numbers/ocr_numbers_test.rb'
-Style/BlockDelimiters:
+BlockDelimiters:
   Enabled: true
-Style/RaiseArgs:
+RaiseArgs:
   Enabled: true
   EnforcedStyle: compact
 Metrics/ClassLength:
   Max: 454
-Style/AndOr:
+AndOr:
   Enabled: true
   EnforcedStyle: conditionals
-Style/FormatString:
+FormatString:
   Enabled: true
   EnforcedStyle: percent
 Lint/RescueException:
   Exclude:
-    - '*/*_test.rb'
+    - 'exericises/**/*_test.rb'

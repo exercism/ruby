@@ -67,7 +67,7 @@ class SchoolTest < Minitest::Test
     sorted = {
       3 => ['Kyle'],
       4 => %w(Christopher Jennifer),
-      6 => ['Kareem'],
+      6 => ['Kareem']
     }
     assert_equal sorted, school.to_h
     assert_equal [3, 4, 6], school.to_h.keys

@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'robot_name'
 
 class RobotTest < Minitest::Test
-  COMMAND_QUERY = <<-MSG
+  COMMAND_QUERY = <<-MSG.freeze
     Command/Query Separation:
     Query methods should generally not change object state.
   MSG

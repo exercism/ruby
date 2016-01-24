@@ -3,7 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 
 require 'prime'
-ERROR_MESSAGE = <<-MSG
+ERROR_MESSAGE = <<-MSG.freeze
 Using Ruby's Prime class is probably the best way to do this in a
 'real' application; but this is an exercise, not a real application,
 so you're expected to implement this yourself.

@@ -5,7 +5,7 @@ rvm:
 - 2.1.2
 install:
 - gem install minitest --no-document
-- gem install rubocop -v 0.31.0 --no-document
+- gem install rubocop -v 0.36.0 --no-document
 script:
 - rubocop -fs -D
 - bin/executable-tests-check

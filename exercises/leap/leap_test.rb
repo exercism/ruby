@@ -11,8 +11,8 @@ class Date
     throw "Implement this yourself instead of using Ruby's implementation."
   end
 
-  alias_method :gregorian_leap?, :leap?
-  alias_method :julian_leap?, :leap?
+  alias gregorian_leap? leap?
+  alias julian_leap? leap?
 end
 
 class YearTest < Minitest::Test
