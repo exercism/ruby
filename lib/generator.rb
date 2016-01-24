@@ -20,7 +20,7 @@ class Generator
   end
 
   def path_to(file)
-    File.expand_path(File.join('..', '..', name, file), __FILE__)
+    File.expand_path(File.join('..', '..', 'exercises', name, file), __FILE__)
   end
 
   def version
