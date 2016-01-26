@@ -11,8 +11,8 @@ class AcronymTest < Minitest::Test
       'HyperText Markup Language' => 'HTML',
       'First In, First Out' => 'FIFO',
       'PHP: Hypertext Preprocessor' => 'PHP',
-      'Complementary metal-oxide semiconductor' => 'CMOS',
-    }
+      'Complementary metal-oxide semiconductor' => 'CMOS'
+    }.freeze
 
   def test_acronyms
     ACRONYM_PAIRS.each do |given, expected|

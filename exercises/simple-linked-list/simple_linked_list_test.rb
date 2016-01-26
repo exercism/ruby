@@ -62,7 +62,6 @@ class LinkedListTest < Minitest::Test
     skip
     assert_equal [1], Element.from_a([1]).to_a
     assert_equal [2, 1], Element.from_a([2, 1]).to_a
-    # rubocop:disable Lint/ParenthesesAsGroupedExpression
     assert_equal (1..10).to_a, Element.from_a(1..10).to_a
   end
 
