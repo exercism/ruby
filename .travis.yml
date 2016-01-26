@@ -4,7 +4,7 @@ sudo: false
 rvm:
   - 2.1.2
 install:
-  - bundle install -quiet
+  - bundle install --quiet
 script:
   - rubocop -fs -D
   - bin/executable-tests-check
