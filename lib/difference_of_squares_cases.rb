@@ -4,14 +4,12 @@ class DifferenceOfSquaresCase < OpenStruct
   end
 
   def do
-    case
-    when defined?(square_of_sums)
-      "Squares.new(#{square_of_sums}).square_of_sums"
-    when defined?(sum_of_squares)
-      "Squares.new(#{sum_of_squares}).sum_of_squares"
-    when defined?(difference)
-      "Squares.new(#{difference}).difference"
-    end
+    "Squares.new(#{number}).#{action}"
+  end
+
+  def action
+    return 'difference' if section == 'difference_of_squares'
+    section
   end
 
   def skipped?
@@ -24,7 +22,15 @@ class DifferenceOfSquaresCase < OpenStruct
 end
 
 DifferenceOfSquaresCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    DifferenceOfSquaresCase.new(row.merge('index' => i))
+  i = 0
+  json = JSON.parse(data)
+  cases = []
+  %w(square_of_sum sum_of_squares difference_of_squares).each do |section|
+    json[section]['cases'].each do |row|
+      row = row.merge(row.merge('index' => i, 'section' => section))
+      cases << DifferenceOfSquaresCase.new(row)
+      i += 1
+    end
   end
+  cases
 end
