@@ -7,9 +7,8 @@ require_relative 'difference_of_squares'
 # <%= sha1 %>
 class DifferenceOfSquaresTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.test_name %><% if test_case.skipped? %>
-    skip<% end %><% if test_case.raises_error? %>
-    assert_raises(ArgumentError) { <%= test_case.do %> }<% else %>
-    assert_equal <%= test_case.expected_formatted %>, <%= test_case.do %><% end %>
+    skip<% end %>
+    assert_equal <%= test_case.expected_formatted %>, <%= test_case.do %>
   end
 <% end %>
   def test_consistent_difference
@@ -18,7 +17,7 @@ class DifferenceOfSquaresTest < Minitest::Test<% test_cases.each do |test_case| 
     assert_equal squares.difference, squares.difference
   end
 
-  # Don't foget to define a constant VERSION inside of Squares.
+  # Don't forget to define a constant VERSION inside of Squares.
   def test_bookkeeping
     skip
     assert_equal <%= version+1 %>, Squares::VERSION
