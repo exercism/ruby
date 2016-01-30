@@ -77,7 +77,7 @@ class TriangleTest < Minitest::Test
   def test_triangles_violating_triangle_inequality_are_illegal_2
     skip
     assert_raises(TriangleError) do
-      Triangle.new(2, 4, 2).kind
+      Triangle.new(1, 4, 2).kind
     end
   end
 
@@ -86,5 +86,10 @@ class TriangleTest < Minitest::Test
     assert_raises(TriangleError) do
       Triangle.new(7, 3, 2).kind
     end
+  end
+
+  def test_isosceles_triangle_with_two_sides_sum_equal_to_third_side
+    skip
+    assert_equal :isosceles, Triangle.new(2, 2, 4).kind
   end
 end

@@ -39,7 +39,7 @@ class Triangle
   end
 
   def violates_inequality?
-    a + b <= c || a + c <= b || b + c <= a
+    a + b < c || a + c < b || b + c < a
   end
 
   def impossible_length_side?
