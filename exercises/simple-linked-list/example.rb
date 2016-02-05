@@ -30,10 +30,6 @@ class Element
     @next = next_element
   end
 
-  def to_s
-    "<#{self.class.name} @datum=#{@datum} @next=#{@next || 'nil'}>"
-  end
-
   def to_a
     self.class.to_a(self)
   end
