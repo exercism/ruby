@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 

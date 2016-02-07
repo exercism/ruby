@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: false
+
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'robot_name'
