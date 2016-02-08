@@ -1,62 +1,68 @@
 class Element
-  attr_reader :datum
-  attr_reader :next
+  attr_reader   :datum
+  attr_accessor :next
 
-  def self.from_a(arr)
-    arr.reverse_each.inject(NullElement.new) { |memo, obj| new(obj, memo) }
-  end
-
-  def self.each_datum(elem)
-    until elem.nil?
-      yield elem.datum
-      elem = elem.next
-    end
-  end
-
-  def self.to_a(elem)
-    arr = []
-    each_datum(elem, &arr.method(:push))
-    arr
-  end
-
-  def self.reverse(elem)
-    res = nil
-    each_datum(elem) { |datum| res = new(datum, res) }
-    res
-  end
-
-  def initialize(datum, next_element = NullElement.new)
+  def initialize(datum, next_element=nil)
     @datum = datum
-    @next = next_element
+    @next  = next_element
   end
 
-  def to_a
-    self.class.to_a(self)
-  end
-
-  def reverse
-    self.class.reverse(self)
+  def tail?
+    @next.nil?
   end
 end
 
-class NullElement
+class SimpleLinkedList
+  attr_reader :size
+  attr_reader :head
+
+  def initialize
+    @head = nil
+    @size = 0
+  end
+
+  def push(datum)
+    e = Element.new(datum, @head)
+    @head = e
+    @size += 1
+  end
+
+  def empty?
+    @size.zero?
+  end
+
+  def peek
+    @head.nil? ? nil : @head.datum
+  end
+
+  def pop
+    e, @head = @head, @head.next
+    @size -= 1
+    return e.datum
+  end
+
+  def each
+    return enum_for(:each) unless block_given?
+    current = head
+    until current.nil?
+      yield current.datum
+      current = current.next
+    end
+  end
+
   def to_a
-    []
+    each.to_a
   end
 
   def reverse
-    self
+    each.with_object(SimpleLinkedList.new) { |datum, list| list.push(datum) }
   end
 
-  def datum
-    nil
-  end
-
-  def next
-    nil
-  end
-
-  def nil?
-    true
+  def self.from_a(a)
+    new.tap do |list|
+      a.to_a.reverse_each do |item|
+        list.push(item)
+      end
+    end
   end
 end
