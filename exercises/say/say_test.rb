@@ -85,6 +85,30 @@ class SayTest < Minitest::Test
     assert_equal expected, Say.new(987_654_321_123).in_english
   end
 
+  def test_really_big_number_with_teens
+    expected = 'nine hundred seventeen billion '
+    expected << 'six hundred fourteen million '
+    expected << 'three hundred eleven thousand '
+    expected << 'one hundred twenty-three'
+    assert_equal expected, Say.new(917_614_311_123).in_english
+  end
+
+  def test_really_big_number_with_tens
+    expected = 'nine hundred eighty billion '
+    expected << 'six hundred forty million '
+    expected << 'three hundred twenty thousand '
+    expected << 'one hundred twenty-three'
+    assert_equal expected, Say.new(980_640_320_123).in_english
+  end
+
+  def test_really_big_number_with_hundreds
+    expected = 'nine hundred billion '
+    expected << 'six hundred million '
+    expected << 'three hundred thousand '
+    expected << 'one hundred twenty-three'
+    assert_equal expected, Say.new(900_600_300_123).in_english
+  end
+
   def test_lower_bound
     skip
     assert_raises ArgumentError do
