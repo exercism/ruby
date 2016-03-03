@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require 'date'
 require_relative 'meetup'
 
-# Define a class Meetup with a constructor taking a montth and a year
+# Define a class Meetup with a constructor taking a month and a year
 # and a method day(weekday, schedule)
 # where weekday is one of :monday, :tuesday, etc
 # and schedule is :first, :second, :third, :fourth, :last or :teenth.
@@ -117,7 +117,7 @@ class MeetupTest < Minitest::Test
       Meetup.new(10, 2013).day(:saturday, :teenth)
   end
 
-  def test_sunteenth_of_map_2013
+  def test_sunteenth_of_may_2013
     skip
     assert_equal Date.new(2013, 5, 19),
       Meetup.new(5, 2013).day(:sunday, :teenth)
