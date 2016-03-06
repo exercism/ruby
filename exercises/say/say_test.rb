@@ -86,6 +86,7 @@ class SayTest < Minitest::Test
   end
 
   def test_really_big_number_with_teens
+    skip
     expected = 'nine hundred seventeen billion '
     expected << 'six hundred fourteen million '
     expected << 'three hundred eleven thousand '
@@ -94,6 +95,7 @@ class SayTest < Minitest::Test
   end
 
   def test_really_big_number_with_tens
+    skip
     expected = 'nine hundred eighty billion '
     expected << 'six hundred forty million '
     expected << 'three hundred twenty thousand '
@@ -102,6 +104,7 @@ class SayTest < Minitest::Test
   end
 
   def test_really_big_number_with_hundreds
+    skip
     expected = 'nine hundred billion '
     expected << 'six hundred million '
     expected << 'three hundred thousand '
