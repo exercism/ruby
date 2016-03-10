@@ -6,7 +6,7 @@ require_relative 'food_chain'
 
 class NoCheating < IOError
   def message
-    "The use of File.open and IO.read is restriced.\n"                \
+    "The use of File.open and IO.read is restricted.\n"                \
     'This exercise intends to help you improve your ability to work ' \
     'with data generated from your code. Your program must not read ' \
     'the song.txt file.'
