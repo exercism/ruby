@@ -119,8 +119,8 @@ files or syntax errors, or referring to things that don't exist.
 A failure is different. A failure is when Ruby is running just fine
 and the test is expecting one outcome, but getting another.
 
-The test is expecting the `hello` method to return the string `"Hello, world!"`. The easiest way
-to make it pass, is to simply stick the string `"Hello, world!"` inside the method definition.
+The test is expecting the `hello` method to return the string `"Hello, World!"`. The easiest way
+to make it pass, is to simply stick the string `"Hello, World!"` inside the method definition.
 
 ## Step 6
 
