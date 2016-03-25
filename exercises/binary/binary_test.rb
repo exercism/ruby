@@ -49,7 +49,7 @@ class BinaryTest < Minitest::Test
 
   def test_invalid_binary_numbers_raise_an_error
     skip
-    %w(012 10nope nope10).each do |input|
+    %w(012 10nope nope10 001\ nope).each do |input|
       assert_raises ArgumentError do
         Binary.new(input)
       end
@@ -66,6 +66,6 @@ class BinaryTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
-    assert_equal 1, Binary::VERSION
+    assert_equal 2, Binary::VERSION
   end
 end
