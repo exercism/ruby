@@ -5,27 +5,27 @@ require_relative 'sum_of_multiples'
 
 class SumTest < Minitest::Test
   def test_sum_to_1
-    assert_equal 0, SumOfMultiples.to(1)
+    assert_equal 0, SumOfMultiples.new(3, 5).to(1)
   end
 
   def test_sum_to_3
     skip
-    assert_equal 3, SumOfMultiples.to(4)
+    assert_equal 3, SumOfMultiples.new(3, 5).to(4)
   end
 
   def test_sum_to_10
     skip
-    assert_equal 23, SumOfMultiples.to(10)
+    assert_equal 23, SumOfMultiples.new(3, 5).to(10)
   end
 
   def test_sum_to_100
     skip
-    assert_equal 2_318, SumOfMultiples.to(100)
+    assert_equal 2_318, SumOfMultiples.new(3, 5).to(100)
   end
 
   def test_sum_to_1000
     skip
-    assert_equal 233_168, SumOfMultiples.to(1000)
+    assert_equal 233_168, SumOfMultiples.new(3, 5).to(1000)
   end
 
   def test_configurable_7_13_17_to_20
