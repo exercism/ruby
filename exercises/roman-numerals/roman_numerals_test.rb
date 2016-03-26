@@ -96,7 +96,7 @@ class RomanNumeralsTest < Minitest::Test
     assert_equal 'MMM', 3000.to_roman
   end
 
-  # Don't foget to define a constant VERSION inside of Fixnum.
+  # Don't forget to define a constant VERSION inside of Fixnum.
   def test_bookkeeping
     skip
     assert_equal 1, Fixnum::VERSION
