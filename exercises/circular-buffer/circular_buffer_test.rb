@@ -60,14 +60,6 @@ class CircularBufferTest < Minitest::Test
     assert_equal '3', buffer.read
   end
 
-  def test_writes_of_nil_should_not_occupy_buffer
-    skip
-    buffer = CircularBuffer.new(5)
-    buffer.write nil
-    ('1'..'3').each { |i| buffer.write i }
-    assert_equal '1', buffer.read
-  end
-
   def test_writing_to_a_full_buffer_throws_an_exception
     skip
     buffer = CircularBuffer.new(2)
@@ -84,16 +76,6 @@ class CircularBufferTest < Minitest::Test
     buffer.write! 'A'
     assert_equal '2', buffer.read
     assert_equal 'A', buffer.read
-    assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
-  end
-
-  def test_forced_writes_of_nil_should_not_occupy_buffer
-    skip
-    buffer = CircularBuffer.new(2)
-    ('1'..'2').each { |i| buffer.write i }
-    buffer.write! nil
-    assert_equal '1', buffer.read
-    assert_equal '2', buffer.read
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
