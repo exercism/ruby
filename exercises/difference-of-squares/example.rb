@@ -6,7 +6,7 @@ class Squares
     @max = max
   end
 
-  def square_of_sums
+  def square_of_sum
     sum = 0
     (1..max).each do |i|
       sum += i
@@ -23,6 +23,6 @@ class Squares
   end
 
   def difference
-    square_of_sums - sum_of_squares
+    square_of_sum - sum_of_squares
   end
 end
