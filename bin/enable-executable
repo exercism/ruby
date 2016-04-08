@@ -9,4 +9,4 @@ Dir.glob('**/*test.rb').each do |f|
     File.chmod(0744, f)
   end
 end
-  puts
+puts
