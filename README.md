@@ -29,7 +29,7 @@ run the file with a shim that temporarily disables them:
 
 
 ```ruby
-ruby -I../lib -rdisable_skip <fiename_test.rb>
+ruby -I../lib -rdisable_skip <filename_test.rb>
 ```
 
 ### Generated Test Suites
