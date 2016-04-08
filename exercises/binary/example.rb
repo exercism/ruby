@@ -1,5 +1,5 @@
 class Binary
-  VERSION = 1
+  VERSION = 2
 
   attr_reader :digits
   def initialize(s)

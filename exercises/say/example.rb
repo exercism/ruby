@@ -22,11 +22,10 @@ class Chunk
 
   def say_double_digits
     return '' if double_digits.zero?
-    s = ''
+    s = ' '
     if double_digits < 20
       s << small_numbers[double_digits]
     else
-      s << ' '
       s << decades[tens]
       unless ones.zero?
         s << '-'
