@@ -7,32 +7,37 @@ require_relative 'pangram'
 # 180638f Merge pull request #217 from ErikSchierboom/patch-2
 
 class PangramTest < Minitest::Test
+  # Below we use `%Q` syntax to create strings.
+  # This let's us worry less about escaping quotes.
+  # You can read more about Ruby's string literal syntax here:
+  # http://ruby-doc.org/core-2.3.0/doc/syntax/literals_rdoc.html#label-Strings
+
   def test_sentence_empty
-    str = ''
+    str = %Q()
     refute Pangram.is_pangram?(str)
   end
 
   def test_pangram_with_only_lower_case
     skip
-    str = 'the quick brown fox jumps over the lazy dog'
+    str = %Q(the quick brown fox jumps over the lazy dog)
     assert Pangram.is_pangram?(str)
   end
 
   def test_missing_character_x
     skip
-    str = 'a quick movement of the enemy will jeopardize five gunboats'
+    str = %Q(a quick movement of the enemy will jeopardize five gunboats)
     refute Pangram.is_pangram?(str)
   end
 
   def test_pangram_with_mixed_case_and_punctuation
     skip
-    str = '"Five quacking Zephyrs jolt my wax bed."'
+    str = %Q("Five quacking Zephyrs jolt my wax bed.")
     assert Pangram.is_pangram?(str)
   end
 
   def test_pangram_with_non_ascii_characters
     skip
-    str = 'Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.'
+    str = %Q(Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.)
     assert Pangram.is_pangram?(str)
   end
 

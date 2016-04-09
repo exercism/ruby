@@ -5,10 +5,15 @@ require_relative 'pangram'
 
 # Test data version:
 # <%= sha1 %>
-class PangramTest < Minitest::Test<% test_cases.each do |test_case| %>
+class PangramTest < Minitest::Test
+  # Below we use `%Q` syntax to create strings.
+  # This let's us worry less about escaping quotes.
+  # You can read more about Ruby's string literal syntax here:
+  # http://ruby-doc.org/core-2.3.0/doc/syntax/literals_rdoc.html#label-Strings
+<% test_cases.each do |test_case| %>
   def <%= test_case.name %><% if test_case.skipped? %>
     skip<% end %>
-    str = '<%= test_case.input %>'<% if test_case.expected %>
+    str = %Q(<%= test_case.input %>)<% if test_case.expected %>
     assert<% else %>
     refute<% end %> <%= test_case.do %>
   end
