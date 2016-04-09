@@ -14,6 +14,8 @@ FILEEXT := "rb"
 EXAMPLE := "example.$(FILEEXT)"
 SRCFILE := "$(shell echo $(ASSIGNMENT) | sed 's/-/_/g')"
 TSTFILE := "$(SRCFILE)_test.$(FILEEXT)"
+# Any additional arguments, such as -p for pretty output and others
+ARGS ?= ""
 
 # single test
 test-assignment:
@@ -23,7 +25,7 @@ test-assignment:
 	@echo "running tests for: $(ASSIGNMENT)"
 	@cp -r ./exercises/$(ASSIGNMENT)/* $(OUTDIR)
 	@cp ./exercises/$(ASSIGNMENT)/$(EXAMPLE) $(OUTDIR)/$(SRCFILE).$(FILEEXT)
-	@ruby -I./lib -rdisable_skip.rb $(OUTDIR)/$(TSTFILE)
+	@ruby -I./lib -rdisable_skip.rb $(OUTDIR)/$(TSTFILE) $(ARGS)
 	@rm -rf $(OUTDIR)
 
 # all tests
