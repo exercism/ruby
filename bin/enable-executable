@@ -1,12 +1,15 @@
 #!/usr/bin/env ruby
+
+require 'fileutils'
+
 puts 'Ensuring test files are executable...'
 
-Dir.glob('**/*test.rb').each do |f|
+(Dir.glob('**/*test.rb') + Dir.glob('bin/*')).each do |f|
   if File.executable?(f)
     print '.'
   else
-    print "Adding exec bit to #{f}."
-    File.chmod(0744, f)
+    print "\nAdding exec bit to #{f}"
+    FileUtils.chmod('u+x', f)
   end
 end
 puts

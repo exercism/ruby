@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require 'minitest/autorun'
 
-files = Dir.glob('**/*_test.rb')
-files.each do |f|
+(Dir.glob('**/*test.rb') + Dir.glob('bin/*')).each do |f|
   describe f do
     it 'should have the execution bit set' do
       assert File.executable?(f), "Execution bit not set for #{f}"
