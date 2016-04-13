@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'pangram'
 
 # Test data version:
-# 180638f Merge pull request #217 from ErikSchierboom/patch-2
+# eb8d142 Merge pull request #220 from IanWhitney/sieve_ordering
 
 class PangramTest < Minitest::Test
   def test_sentence_empty
