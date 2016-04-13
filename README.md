@@ -4,7 +4,8 @@ Exercism Exercises in Ruby
 
 ## Setup
 
-You'll need a recent (1.9.3+) version of Ruby, but that's it. Minitest ships
+You'll need a recent (1.9.3+) version of Ruby, but that's it. Minitest
+ships
 with the language, so you're all set.
 
 ## Working on Test Suites
@@ -21,16 +22,52 @@ generated problem.
 
 Run the test with `ruby path/to/the_test.rb`.
 
-At the moment the Ruby problems `skip` all but the first test, in order to not
-overwhelm people with errors.
+At the moment the Ruby problems `skip` all but the first test, in order
+to not overwhelm people with errors.
 
-If you want to temporarily disable the skips while working on a test suite, you can
-run the file with a shim that temporarily disables them:
+If you want to temporarily disable the skips while working on a test
+suite, you can run the file with a shim that temporarily disables them:
 
-
-```ruby
-ruby -I../lib -rdisable_skip <filename_test.rb>
+```sh
+ruby -I./lib -rdisable_skip exercise/exercise/filename_test.rb
 ```
+
+It is simpler to use the `make` tool which is available in the project
+root.  It will disable the skip calls for you automatically, it does the
+same thing as the above.
+
+If you would like to use the `make` tool to run a single test, while
+developing clock, for example, you can do something like this:
+
+```sh
+ASSIGNMENT=clock ARGS='-p' make test-assignment
+```
+
+Where, "ASSIGNMENT" is the variable that holds the name of the lesson,
+clock.
+
+ARGS is where you can put additional arguments, here I am demonstrating
+the `-p` argument which may give you 'pride' output.
+
+If you use zsh, you can use the following function to make this process
+simple.
+
+```sh
+xtest () { ASSIGNMENT=$1 ARGS=$2 make test-assignment }
+```
+
+Then you can simply use the command and exercise name, such as:
+
+`xtest binary`
+
+Or if you would like to use an option such as displaying the test names
+rather than just the dots, for example:
+
+`xtest clock -v`
+
+Or with the pride reporter activated:
+
+`xtest robot-name -p`
 
 ### Generated Test Suites
 
