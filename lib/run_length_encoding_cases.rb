@@ -10,11 +10,11 @@ class RunLengthEncodingCase < OpenStruct
   def do
     case description
     when /decode.+encode/
-      'RunLength.decode(RunLength.encode(input))'
+      'RunLengthEncoding.undo(RunLengthEncoding.do(input))'
     when /encode/
-      'RunLength.encode(input)'
+      'RunLengthEncoding.do(input)'
     when /decode/
-      'RunLength.decode(input)'
+      'RunLengthEncoding.undo(input)'
     end
   end
 
