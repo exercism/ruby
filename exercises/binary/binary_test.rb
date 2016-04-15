@@ -49,7 +49,7 @@ class BinaryTest < Minitest::Test
 
   def test_invalid_binary_numbers_raise_an_error
     skip
-    %w(012 10nope nope10 001\ nope).each do |input|
+    %w(012 10nope nope10 10nope10 001\ nope 2).each do |input|
       assert_raises ArgumentError do
         Binary.new(input)
       end
