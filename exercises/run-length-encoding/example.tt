@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative 'run_length_encoding'
+
+# Test data version:
+# <%= sha1 %>
+class RunLengthEncodingTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %><% if test_case.skipped? %>
+    skip<% end %>
+    <%= test_case.assign_input %>
+    <%= test_case.assign_output %>
+    <%= test_case.assertion %>
+  end
+<% end %>
+  # Problems in exercism evolve over time,
+  # as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of RunLengthEncoding.
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_bookkeeping
+    skip
+    assert_equal <%= version+1 %>, RunLengthEncoding::VERSION
+  end
+end
