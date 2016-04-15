@@ -3,23 +3,34 @@ class RunLengthEncodingCase < OpenStruct
     'test_%s' % cleaned_description
   end
 
-  def cleaned_description
-    description.gsub(/\W+/, '_').squeeze('_')
+  def assign_input
+    "input = '#{input}'"
   end
 
-  def do
+  def assign_output
+    "output = '#{expected}'"
+  end
+
+  def assertion
     case description
     when /decode.+encode/
-      'RunLengthEncoding.undo(RunLengthEncoding.do(input))'
+      'assert_equal output,
+                 RunLengthEncoding.decode(RunLengthEncoding.encode(input))'
     when /encode/
-      'RunLengthEncoding.do(input)'
+      'assert_equal output, RunLengthEncoding.encode(input)'
     when /decode/
-      'RunLengthEncoding.undo(input)'
+      'assert_equal output, RunLengthEncoding.decode(input)'
     end
   end
 
   def skipped?
     index > 0
+  end
+
+  # internal
+
+  def cleaned_description
+    description.gsub(/\W+/, '_').squeeze('_')
   end
 end
 

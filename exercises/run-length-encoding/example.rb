@@ -1,30 +1,32 @@
 class RunLengthEncoding
   VERSION = 1
 
-  def self.do(str)
+  def self.encode(str)
     str.chars.chunk { |char| char }.each_with_object('') do |chunk, out|
-      out << encode(chunk)
+      out << encoded(chunk)
     end
   end
 
-  def self.undo(str)
+  def self.decode(str)
     str.scan(/(\d+)?(\D)/).each_with_object('') do |captures, out|
-      out << decode(captures)
+      out << decoded(captures)
     end
   end
 
-  def self.encode(chunk)
+  # private
+
+  def self.encoded(chunk)
     char = chunk.first
     times = chunk.last.count
     return char if times == 1
     "#{times}#{char}"
   end
-  private_class_method :encode
+  private_class_method :encoded
 
-  def self.decode(captures)
+  def self.decoded(captures)
     times = (captures.first || 1).to_i
     char = captures.last
     char * times
   end
-  private_class_method :decode
+  private_class_method :decoded
 end

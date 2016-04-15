@@ -9,9 +9,9 @@ require_relative 'run_length_encoding'
 class RunLengthEncodingTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %><% if test_case.skipped? %>
     skip<% end %>
-    input = '<%= test_case.input %>'
-    output = '<%= test_case.expected %>'
-    assert_equal <%= test_case.do %>, output
+    <%= test_case.assign_input %>
+    <%= test_case.assign_output %>
+    <%= test_case.assertion %>
   end
 <% end %>
   # Problems in exercism evolve over time,
