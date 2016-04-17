@@ -1,30 +1,44 @@
+# Clock without dates exercise
 class Clock
-  def self.at(hour, minutes = 0)
-    new(hour, minutes)
+  VERSION = 1
+  def self.at(*args)
+    Clock.new(*args)
   end
 
-  def self.from(time)
-    new(time.hour, time.min)
+  def initialize(hours=0, minutes=0)
+    @internal = hours * 60 + minutes
   end
 
-  attr_reader :time
-  def initialize(hour, minutes)
-    @time = Time.utc(1970, 1, 1, hour, minutes)
+  # rubocop:disable Style/OpMethod
+  def +(hours=0, minutes)
+    @internal += hours * 60 + minutes
+    self
   end
 
-  def +(minutes)
-    self.class.from(time + (minutes * 60))
+  def -(*args)
+    self.+(*args.map(&:-@))
   end
-
-  def -(minutes)
-    self.class.from(time - (minutes * 60))
-  end
+  # rubocop:enable Style/OpMethod
 
   def ==(other)
     to_s == other.to_s
   end
 
   def to_s
-    time.strftime('%H:%M')
+    format '%02i:%02i', *time
+  end
+
+  private
+
+  def time
+    [hours_from(@internal), just_minutes(@internal)]
+  end
+
+  def hours_from(minutes)
+    minutes / 60 % 24
+  end
+
+  def just_minutes(minutes)
+    minutes % 60
   end
 end
