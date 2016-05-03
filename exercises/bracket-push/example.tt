@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative 'bracket_push'
+
+# Test data version:
+# <%= sha1 %>
+class BracketsTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %>
+    <%= test_case.skipped %>
+    <%= test_case.test_body %>
+  end
+<% end %>
+  # Problems in exercism evolve over time,
+  # as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of Brackets.
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_bookkeeping
+    skip
+    assert_equal <%= version+1 %>, Brackets::VERSION
+  end
+end
