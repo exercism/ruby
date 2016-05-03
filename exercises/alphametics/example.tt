@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative 'alphametics'
+
+# Test data version:
+# <%= sha1 %>
+class AlphameticsTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.test_name %><% if test_case.skipped? %>
+    skip<% end %>
+    expect = {
+<%= test_case.expected_values %>
+    }
+    actual = <%= test_case.work_load %>
+    assert_equal(expect, actual)
+  end
+<% end %>
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+  def test_bookkeeping
+    skip
+    assert_equal <%= version.next %>, BookKeeping::VERSION
+  end
+end
