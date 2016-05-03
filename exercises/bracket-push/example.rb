@@ -1,5 +1,5 @@
 module Brackets
-  VERSION = 2
+  VERSION = 1
 
   BRACKETS = {
     ')' => '(',
