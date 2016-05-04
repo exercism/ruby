@@ -1,8 +1,9 @@
 class Hamming
-  VERSION = 1
+  VERSION = 2
 
   def self.compute(strand1, strand2)
-    raise ArgumentError, "The two strands must have the same length." if strand1.length != strand2.length
+    strand1.length == strand2.length ||
+      fail(ArgumentError, 'The two strands must have the same length.')
     (0...strand1.length).count do |i|
       strand1[i] != strand2[i]
     end

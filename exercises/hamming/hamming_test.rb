@@ -4,10 +4,11 @@ require 'minitest/autorun'
 require_relative 'hamming'
 
 # Test data version:
-# ab84334 Merge pull request #106 from bennn/grep-meta
+# d750c46 Merge branch 'master' of github.com:exercism/x-common into 240
 
 class HammingTest < Minitest::Test
   def test_identical_strands
+    # skip
     assert_equal 0, Hamming.compute('A', 'A')
   end
 
@@ -51,6 +52,11 @@ class HammingTest < Minitest::Test
     assert_equal 1, Hamming.compute('AGG', 'AGA')
   end
 
+  def test_same_nucleotides_in_different_positions
+    skip
+    assert_equal 2, Hamming.compute('TAG', 'GAT')
+  end
+
   def test_large_distance
     skip
     assert_equal 4, Hamming.compute('GATACA', 'GCATAA')
@@ -86,6 +92,6 @@ class HammingTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
-    assert_equal 1, Hamming::VERSION
+    assert_equal 2, Hamming::VERSION
   end
 end
