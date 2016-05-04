@@ -6,6 +6,7 @@ require_relative 'sieve'
 class SieveTest < Minitest::Test
   def test_no_primes_under_two
     expected = []
+    assert_equal expected, Sieve.new(0).primes
     assert_equal expected, Sieve.new(1).primes
   end
 
@@ -45,5 +46,29 @@ class SieveTest < Minitest::Test
       953, 967, 971, 977, 983, 991, 997
     ]
     assert_equal expected, Sieve.new(1000).primes
+  end
+
+  # Testing that Sieve handles well some non-conventional arguments
+
+  def test_limit_is_not_duck_type_valid
+    skip
+    expected = []
+    assert_equal expected, Sieve.new('Cannot convert to integer').primes
+  end
+
+  def test_limit_is_duck_type_valid
+    skip
+    expected = [2, 3, 5, 7, 11, 13]
+    assert_equal expected, Sieve.new('13 is my number').primes
+    assert_equal expected, Sieve.new(Float(13)).primes
+    assert_equal expected, Sieve.new(Complex(13, 0)).primes
+    assert_equal expected, Sieve.new(Rational(26, 2)).primes
+  end
+
+  def test_limit_is_bad_input
+    skip
+    assert_raises ArgumentError do
+      Sieve.new(Object).primes
+    end
   end
 end

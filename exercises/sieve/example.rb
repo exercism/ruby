@@ -1,6 +1,11 @@
 class Sieve
   attr_reader :range
   def initialize(limit)
+    begin
+      limit = limit.to_i
+    rescue NoMethodError 
+      raise ArgumentError, "Limit not convertible to an integer (#{limit})."
+    end
     @range = (2..limit)
   end
 
