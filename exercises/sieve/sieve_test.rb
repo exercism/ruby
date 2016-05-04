@@ -53,7 +53,7 @@ class SieveTest < Minitest::Test
   def test_limit_is_not_duck_type_valid
     skip
     expected = []
-    assert_equal expected, Sieve.new('I cannot be converted to an integer').primes
+    assert_equal expected, Sieve.new('Cannot convert to integer').primes
   end
 
   def test_limit_is_duck_type_valid
