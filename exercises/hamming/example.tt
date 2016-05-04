@@ -6,11 +6,10 @@ require_relative 'hamming'
 # Test data version:
 # <%= sha1 %>
 class HammingTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %><% if test_case.raises_error? %>
-    assert_raises(ArgumentError) { <%= test_case.do %> }<% else %>
-    assert_equal <%= test_case.expected %>, <%= test_case.do %>,
-                 '<%= test_case.msg %>'<% end %>
+  def <%= test_case.name %>
+    <%= test_case.skipped %><% if test_case.raises_error? %>
+    assert_raises(ArgumentError) { <%= test_case.work_load %> }<% else %>
+    assert_equal <%= test_case.expected %>, <%= test_case.work_load %><% end %>
   end
 <% end %>
   # Problems in exercism evolve over time,
