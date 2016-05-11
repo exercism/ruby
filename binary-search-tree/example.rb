@@ -1,5 +1,5 @@
 class Bst
-  VERSION = 2
+  VERSION = 1
   
   attr_reader :data, :left, :right
   def initialize(data)
