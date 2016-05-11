@@ -111,4 +111,17 @@ class BstTest < Minitest::Test
     
     assert_raises(StopIteration) { each_enumerator.next }
   end
+  
+  # Problems in exercism evolve over time,
+  # as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of Bst.
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_bookkeeping
+    skip
+    assert_equal 2, Bst::VERSION
+  end
 end
