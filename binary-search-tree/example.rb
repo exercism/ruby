@@ -2,6 +2,7 @@ class Bst
   attr_reader :data, :left, :right
   def initialize(data)
     @data = data
+    @size = 1
   end
 
   def insert(value)
@@ -10,9 +11,13 @@ class Bst
     else
       insert_right(value)
     end
+    
+    @size += 1
   end
 
   def each(&block)
+    return enum_for(:each) { @size } unless block_given?
+    
     left && left.each(&block)
     block.call(data)
     right && right.each(&block)
