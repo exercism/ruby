@@ -122,6 +122,6 @@ class BstTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
-    assert_equal 2, Bst::VERSION
+    assert_equal 1, Bst::VERSION
   end
 end
