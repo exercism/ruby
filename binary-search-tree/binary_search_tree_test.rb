@@ -86,4 +86,29 @@ class BstTest < Minitest::Test
     four.insert 5
     assert_equal [1, 2, 3, 4, 5, 6, 7], record_all_data(four)
   end
+  
+  def test_each_returns_an_enumerator_if_no_block
+    skip
+    tree = Bst.new(4)
+    tree.insert 2
+    tree.insert 1
+    tree.insert 3
+    tree.insert 6
+    tree.insert 7
+    tree.insert 5
+    
+    each_enumerator = tree.each
+    
+    assert_kind_of Enumerator, each_enumerator
+    
+    assert_equal 1, each_enumerator.next
+    assert_equal 2, each_enumerator.next
+    assert_equal 3, each_enumerator.next
+    assert_equal 4, each_enumerator.next
+    assert_equal 5, each_enumerator.next
+    assert_equal 6, each_enumerator.next
+    assert_equal 7, each_enumerator.next
+    
+    assert_raises(StopIteration) { each_enumerator.next }
+  end
 end
