@@ -21,7 +21,7 @@ class Bst
     return enum_for(:each) { @size } unless block_given?
 
     left && left.each(&block)
-    yield
+    yield data
     right && right.each(&block)
   end
 
