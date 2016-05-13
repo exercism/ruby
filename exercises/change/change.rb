@@ -7,6 +7,6 @@ class Change
   end
 
   def find_fewest_coins
-    
+
   end
 end
