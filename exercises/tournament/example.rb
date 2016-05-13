@@ -1,10 +1,9 @@
-<<<<<<< HEAD
+require 'pry'
 class Tournament
   VERSION = 1
-  
+
 end
-=======
-require 'pry'
+
 
 def create_array(input)
   parsed = input.split("\n")
@@ -35,6 +34,7 @@ def tally(score)
   tallies = {}
   score.each do |team, result|
     if result == "win"
+      binding.pry
       tallies[team][:wins] += 1
     elsif result == "loss"
       tallies[team]["losses"] += 1
@@ -56,4 +56,3 @@ Allegoric Alaskians;Courageous Californians;win"
 array = create_array(input)
 scored = score(array)
 tally(scored)
->>>>>>> d8293c3d170c4243343442b665ca5d913161b66d
