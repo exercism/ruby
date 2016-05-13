@@ -1,11 +1,11 @@
 
 def sublist(set_a, set_b)
 
-  return "Equal" if set_a == set_b
-  return "A is a subset" if subset(set_a, set_b)
-  return "A is a superset" if subset(set_b, set_a)
+  return 'Equal' if set_a == set_b
+  return 'A is a subset' if subset(set_a, set_b)
+  return 'A is a superset' if subset(set_b, set_a)
 
-  "There are no subsets"
+  'There are no subsets'
 end
 
 def subset(set_1, set_2)
