@@ -36,11 +36,11 @@ class ChangeTest < Minitest::Test
 
   def test_error_testing_for_change_smaller_than_the_smallest_coins
     change = Change.new([5, 10], 3)
-    assert_equal -1, change.find_fewest_coins
+    assert_equal [], change.find_fewest_coins
   end
 
   def test_cannot_find_negative_change_values
     change = Change.new([1, 2, 5], -5)
-    assert_equal -1, change.find_fewest_coins
+    assert_equal [], change.find_fewest_coins
   end
 end
