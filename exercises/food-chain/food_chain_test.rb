@@ -54,29 +54,29 @@ end
 module RestrictedClasses
   class File
     def self.open(*)
-      fail NoCheating
+      raise NoCheating
     end
 
     def self.read(*)
-      fail NoCheating
+      raise NoCheating
     end
 
     def open(*)
-      fail NoCheating
+      raise NoCheating
     end
 
     def read(*)
-      fail NoCheating
+      raise NoCheating
     end
   end
 
   class IO
     def self.read(*)
-      fail NoCheating
+      raise NoCheating
     end
 
     def read(*)
-      fail NoCheating
+      raise NoCheating
     end
   end
 end

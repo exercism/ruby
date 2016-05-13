@@ -4,7 +4,6 @@ require 'minitest/autorun'
 require_relative 'bank_account'
 
 class BankAccountTest < Minitest::Test
-
   def setup
     @bank_account = BankAccount.new
   end
@@ -18,11 +17,11 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_initial_balance
-    assert_equal 0, @bank_account.balance 
+    assert_equal 0, @bank_account.balance
   end
 
   def test_initial_status
-    assert_equal "open", @bank_account.status  
+    assert_equal 'open', @bank_account.status
   end
 
   def test_one_deposit
@@ -61,19 +60,19 @@ class BankAccountTest < Minitest::Test
 
   def test_cannot_overdraw
     @bank_account.deposit(420)
-    @bank_account.withdraw(420420)
+    @bank_account.withdraw(420_420)
     assert_equal 420, @bank_account.balance
   end
 
   def test_close_account
     @bank_account.close
-    assert_equal "closed", @bank_account.status
+    assert_equal 'closed', @bank_account.status
   end
 
   def test_account_must_have_zero_balance_to_close
     @bank_account.deposit(420)
     @bank_account.close
-    assert_equal "open", @bank_account.status
+    assert_equal 'open', @bank_account.status
   end
 
   def test_cannot_deposit_to_closed_account
@@ -87,7 +86,4 @@ class BankAccountTest < Minitest::Test
     @bank_account.withdraw(420)
     assert_equal 0, @bank_account.balance
   end
-
-
 end
-

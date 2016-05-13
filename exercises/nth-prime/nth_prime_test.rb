@@ -13,13 +13,13 @@ MSG
 
 class Prime
   [:each, :new, :prime?, :take].each do |m|
-    define_method(m) { |*_| fail ERROR_MESSAGE }
+    define_method(m) { |*_| raise ERROR_MESSAGE }
   end
 end
 
 class Integer
   [:prime?, :each_prime].each do |m|
-    define_method(m) { |*_| fail ERROR_MESSAGE }
+    define_method(m) { |*_| raise ERROR_MESSAGE }
   end
 end
 
