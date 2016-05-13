@@ -1,0 +1,21 @@
+"Allegoric Alaskians;Blithering Badgers;win
+Devastating Donkeys;Courageous Californians;draw
+Devastating Donkeys;Allegoric Alaskians;win
+Courageous Californians;Blithering Badgers;loss
+Blithering Badgers;Devastating Donkeys;loss
+Allegoric Alaskians;Courageous Californians;win"
+
+
+organized by total points
+
+
+-scoring
+  -3 points for winning
+  -1 point for draws
+  -0 points for loss
+-tallying
+  -should add the total matches played for each team
+  -should identify wins, losses, and draws and count the totals for each
+-sorting
+-formatting
+  -return a string formatted as a table
