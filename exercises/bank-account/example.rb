@@ -14,7 +14,7 @@ class BankAccount
   end
 
   def withdraw(amount)
-      self.balance -= amount if (amount > 0 && amount <= balance)
+    self.balance -= amount if (amount > 0 && amount <= balance)
   end
 
   def close
