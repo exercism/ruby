@@ -2,7 +2,7 @@
 
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
-require_relative 'example'
+require_relative 'sublist'
 
 class Sublist < Minitest::Test
   def test_a_subset_b
