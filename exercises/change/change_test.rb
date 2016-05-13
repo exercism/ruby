@@ -10,37 +10,49 @@ class ChangeTest < Minitest::Test
   end
 
   def test_multiple_coin_change
+    skip
     change = Change.new([1, 5, 10, 25, 100], 15)
     assert_equal [5, 10], change.find_fewest_coins
   end
 
   def test_change_with_lilliputian_coins
+    skip
     change = Change.new([1, 4, 15, 20, 50], 23)
     assert_equal [4, 4, 15], change.find_fewest_coins
   end
 
   def test_change_with_lower_elbonia_coins
+    skip
     change = Change.new([1, 5, 10, 21, 25], 63)
     assert_equal [21, 21, 21], change.find_fewest_coins
   end
 
   def test_large_target_values
+    skip
     change = Change.new([1, 2, 5, 10, 20, 50, 100], 999)
     assert_equal [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100], change.find_fewest_coins
   end
 
   def test_no_coins_make_0_change
+    skip
     change = Change.new([1, 5, 10, 21, 25], 0)
     assert_equal [], change.find_fewest_coins
   end
 
   def test_error_testing_for_change_smaller_than_the_smallest_coins
+    skip
     change = Change.new([5, 10], 3)
     assert_equal [], change.find_fewest_coins
   end
 
   def test_cannot_find_negative_change_values
+    skip
     change = Change.new([1, 2, 5], -5)
     assert_equal [], change.find_fewest_coins
+  end
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, Change::VERSION
   end
 end

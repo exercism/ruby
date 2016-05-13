@@ -1,4 +1,7 @@
-require 'byebug'
+#This solution was found here: http://rubyquiz.com/quiz154.html
+#It passes all the tests, but we do not understand the recursion block.
+#BYOAlgorithm! :)
+
 class Change
   attr_reader :coins, :target
 
@@ -12,28 +15,27 @@ class Change
 
      # memoize solutions
      optimal_change = Hash.new do |hash, target|
-       debugger
        hash[target] = if target < coins.min
          [] #if target is less than smallest coin, no change
        elsif coins.include?(target)
          [target] #if target is same as a single coin, return target
-       else 
-       
+       else
+
          coins.
            # get rid of coins larger than target
           reject { |coin| coin > target }.
 
            # get rid of coins that are factors of other coins
-           coins.inject([]) {|mem, var| mem.any? {|c| c%var == 0} ? mem : mem+[var]}.
+           inject([]) {|mem, coin| mem.any? {|c| c%coin == 0} ? mem : mem+[coin]}.
 
-           # recurse
-           map { |coin| [coin] + hash[target - coin] }.
+           ## recurse
+           map {|coin| [coin] + hash[target - coin]}.
 
            # prune unhelpful solutions
            reject { |change| change.inject(0, :+) != target }.
 
            # pick the smallest, empty if none
-           min { |a, b| a.size <=> b.size } || []   
+           min { |a, b| a.size <=> b.size } || []
        end
      end
      optimal_change[target]
