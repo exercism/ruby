@@ -1,22 +1,40 @@
 require 'pry'
 class Tournament
-  def tally(input1)
+  def tally(input)
+    break_games_into_hash(input)
+  end
+
+  def break_games_into_hash(input)
     match_hash = Hash.new
-    matches = input1.split("\n")
+    matches = input.split("\n")
     matches.each_with_index do |match, index|
       match_arr = match.split(";")
-      match_hash["Game #{index + 1}"] = {match_arr[0] => match_arr[2], match_arr[1] => "result"}
+      i = 0
+      2.times do
+        unless match_hash.has_key?(match_arr[i])
+          match_hash[match_arr[i]] = {matches: 0, win: 0, loss: 0, draw: 0}
+        end
+        i += 1
+      end
+      match_hash[match_arr[0]][:matches] += 1
+      match_hash[match_arr[1]][:matches] += 1
       case match_arr[2]
       when "win"
-        match_hash["Game #{index + 1}"][match_arr[1]] = "loss"
-      when "draw"
-        match_hash["Game #{index + 1}"][match_arr[1]] = "draw"
+        match_hash[match_arr[0]][:win] += 1
+        match_hash[match_arr[1]][:loss] += 1
       when "loss"
-        match_hash["Game #{index + 1}"][match_arr[1]] = "win"
+        match_hash[match_arr[0]][:loss] += 1
+        match_hash[match_arr[1]][:win] += 1
+      when "draw"
+        match_hash[match_arr[0]][:draw] += 1
+        match_hash[match_arr[1]][:draw] += 1
       end
     end
-    binding.pry
+    match_hash
   end
-  VERSION = 1
+
+
 
 end
+
+VERSION = 1
