@@ -40,7 +40,7 @@ class RobotTest < Minitest::Test
     name = robot.name
     robot.reset
     name2 = robot.name
-    assert name != name2
+    refute_equal name, name2
     assert_equal name2, robot.name, COMMAND_QUERY
     assert_match NAME_REGEXP, name2
   end
