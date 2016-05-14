@@ -75,7 +75,8 @@
     "custom-set",
     "minesweeper",
     "scale-generator",
-    "protein-translation"
+    "protein-translation",
+    "perfect-numbers"
   ],
   "deprecated": [
     "octal",
