@@ -62,9 +62,9 @@ class DifferenceOfSquaresTest < Minitest::Test
     assert_equal squares.difference, squares.difference
   end
 
-  # Don't forget to define a constant VERSION inside of Squares.
+  # Don't forget to define a constant VERSION inside of BookKeeping.
   def test_bookkeeping
     skip
-    assert_equal 2, Squares::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end

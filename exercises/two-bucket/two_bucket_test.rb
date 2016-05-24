@@ -38,9 +38,9 @@ class TwoBucketTest < Minitest::Test
     assert_equal 7, two_bucket.other_bucket
   end
 
-  # Don't forget to define a constant VERSION inside of TwoBucket
+  # Don't forget to define a constant VERSION inside of BookKeeping.
   def test_bookkeeping
     skip
-    assert_equal 1, TwoBucket::VERSION
+    assert_equal 1, BookKeeping::VERSION
   end
 end

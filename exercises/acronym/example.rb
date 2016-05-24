@@ -1,6 +1,8 @@
-class Acronym
+module BookKeeping
   VERSION = 1
+end
 
+class Acronym
   def self.abbreviate(phrase)
     [].tap do |letters|
       each_word(phrase) do |word|

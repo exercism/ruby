@@ -1,6 +1,8 @@
-class Complement
+module BookKeeping
   VERSION = 3
+end
 
+class Complement
   def self.of_dna(strand)
     DNA.new(strand).tr('CGTA', 'GCAU')
   end

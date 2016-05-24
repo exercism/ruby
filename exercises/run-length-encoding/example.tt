@@ -14,16 +14,10 @@ class RunLengthEncodingTest < Minitest::Test<% test_cases.each do |test_case| %>
     <%= test_case.assertion %>
   end
 <% end %>
-  # Problems in exercism evolve over time,
-  # as we find better ways to ask questions.
-  # The version number refers to the version of the problem you solved,
-  # not your solution.
-  #
-  # Define a constant named VERSION inside of RunLengthEncoding.
-  # If you are curious, read more about constants on RubyDoc:
-  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
   def test_bookkeeping
     skip
-    assert_equal <%= version+1 %>, RunLengthEncoding::VERSION
+    assert_equal <%= version.next %>, BookKeeping::VERSION
   end
 end

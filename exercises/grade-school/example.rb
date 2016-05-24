@@ -1,6 +1,8 @@
-class School
+module BookKeeping
   VERSION = 1
+end
 
+class School
   def initialize
     @db = Hash.new { |db, grade| db[grade] = [] }
   end

@@ -56,6 +56,6 @@ class RobotTest < Minitest::Test
 
   def test_version
     skip
-    assert_equal 1, Robot::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end

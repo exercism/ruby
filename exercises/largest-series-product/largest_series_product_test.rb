@@ -96,6 +96,6 @@ class Seriestest < Minitest::Test
   end
 
   def test_bookkeeping
-    assert_equal 1, Series::VERSION
+    assert_equal 1, BookKeeping::VERSION
   end
 end

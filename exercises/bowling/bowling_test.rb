@@ -218,9 +218,9 @@ class GameTest < Minitest::Test
   end
   private :roll_n_times
 
-  # Don't forget to define a constant VERSION inside of Game.
+  # Don't forget to define a constant VERSION inside of BookKeeping.
   def test_bookkeeping
     skip
-    assert_equal 1, Game::VERSION
+    assert_equal 1, BookKeeping::VERSION
   end
 end

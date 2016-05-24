@@ -1,6 +1,8 @@
-class BeerSong
+module BookKeeping
   VERSION = 2
+end
 
+class BeerSong
   def lyrics
     verses(99, 0)
   end

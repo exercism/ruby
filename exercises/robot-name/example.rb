@@ -1,6 +1,8 @@
-class Robot
-  VERSION = 1
+module BookKeeping
+  VERSION = 2
+end
 
+class Robot
   @taken_names = {}
 
   def name

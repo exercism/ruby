@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/generator'
-require_relative '../lib/hamming_cases'
+require_relative '../lib/helper'
+require 'generator'
+require 'hamming_cases'
 
 Generator.new('hamming', HammingCases).generate

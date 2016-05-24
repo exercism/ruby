@@ -16,7 +16,9 @@ class Seriestest < Minitest::Test<% test_cases.each do |test_case| %>
     assert_equal <%= test_case.expected %>, <%= test_case.do %><% end %>
   end
 <% end %>
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
   def test_bookkeeping
-    assert_equal <%= version+1 %>, Series::VERSION
+    assert_equal <%= version.next %>, BookKeeping::VERSION
   end
 end

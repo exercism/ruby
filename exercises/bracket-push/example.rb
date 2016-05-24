@@ -1,5 +1,8 @@
-module Brackets
+module BookKeeping
   VERSION = 1
+end
+
+module Brackets
 
   BRACKETS = {
     ')' => '(',

@@ -48,11 +48,11 @@ class GigasecondTest < Minitest::Test
   # The version number refers to the version of the problem you solved,
   # not your solution.
   #
-  # Define a constant named VERSION inside of Gigasecond.
+  # Define a constant named VERSION inside of BookKeeping.
   # If you're curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
-    assert_equal 1, Gigasecond::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
