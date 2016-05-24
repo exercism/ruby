@@ -1,27 +1,7 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
-
-require 'prime'
-ERROR_MESSAGE = <<-MSG.freeze
-Using Ruby's Prime class is probably the best way to do this in a
-'real' application; but this is an exercise, not a real application,
-so you're expected to implement this yourself.
-MSG
-
-class Prime
-  [:each, :new, :prime?, :take].each do |m|
-    define_method(m) { |*_| fail ERROR_MESSAGE }
-  end
-end
-
-class Integer
-  [:prime?, :each_prime].each do |m|
-    define_method(m) { |*_| fail ERROR_MESSAGE }
-  end
-end
 
 require_relative 'nth_prime'
 
