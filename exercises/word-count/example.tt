@@ -12,11 +12,11 @@ class PhraseTest < Minitest::Test<% test_cases.each do |test_case| %>
     assert_equal <%= test_case.expected %>, <%= test_case.do %><% end %>
   end
 <% end %>
-  # This test is for the sake of people providing feedback, so they
-  # know which version of the exercise you are solving.
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
   def test_bookkeeping
     skip
-    assert_equal <%= version+1 %>, Phrase::VERSION
+    assert_equal <%= version.next %>, BookKeeping::VERSION
   end
 end
 

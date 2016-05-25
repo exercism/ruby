@@ -1,6 +1,8 @@
-class Raindrops
+module BookKeeping
   VERSION = 1
+end
 
+class Raindrops
   def self.convert(i)
     new(i).convert
   end

@@ -1,7 +1,10 @@
-class Squares
+module BookKeeping
   VERSION = 2
+end
 
+class Squares
   attr_reader :max
+
   def initialize(max)
     @max = max
   end

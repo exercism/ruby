@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/generator'
-require_relative '../lib/run_length_encoding_cases'
+require_relative '../lib/helper'
+require 'generator'
+require 'run_length_encoding_cases'
 
 Generator.new('run-length-encoding', RunLengthEncodingCases).generate

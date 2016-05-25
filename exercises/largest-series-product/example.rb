@@ -1,8 +1,10 @@
 # see also https://gist.github.com/blairand/5237976
 # see also https://gist.github.com/burtlo/89b0b817fdccf6bdf20f
-class Series
+module BookKeeping
   VERSION = 1
+end
 
+class Series
   attr_reader :digits
   def initialize(numeric_string)
     @digits = numeric_string

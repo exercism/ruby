@@ -1,5 +1,8 @@
-class Game
+module BookKeeping
   VERSION = 1
+end
+
+class Game
   RULES = { MIN: 0, MAX: 10 }.freeze
   at_exit { public :roll, :score }
 

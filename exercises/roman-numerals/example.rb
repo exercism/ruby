@@ -1,6 +1,8 @@
-class Fixnum
+module BookKeeping
   VERSION = 1
+end
 
+class Fixnum
   def to_roman
     i = self
     s = ''

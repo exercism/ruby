@@ -1,5 +1,8 @@
-class PerfectNumber
+module BookKeeping
   VERSION = 1
+end
+
+class PerfectNumber
   def self.classify(num)
     raise 'not a natural number' if num < 0
     aliquot_sum = aliquot_sum(num)
