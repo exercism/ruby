@@ -1,7 +1,7 @@
 # see also https://gist.github.com/blairand/5237976
 # see also https://gist.github.com/burtlo/89b0b817fdccf6bdf20f
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
 
 class Series
