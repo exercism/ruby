@@ -12,7 +12,6 @@ class TwoBucketTest < Minitest::Test<% test_cases.each do |test_case| %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
-
   def test_bookkeeping
     skip
     assert_equal <%= version.next %>, BookKeeping::VERSION

@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'largest_series_product'
 
 # Test data version:
-# 3764abd Merge pull request #167 from petertseng/largest-series-product-json
+# deb225e Implement canonical dataset for scrabble-score problem (#255)
 
 # Rubocop directives
 # rubocop:disable Style/NumericLiterals
@@ -95,7 +95,23 @@ class Seriestest < Minitest::Test
     assert_raises(ArgumentError) { Series.new('12345').largest_product(-1) }
   end
 
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module.
+  #  In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
