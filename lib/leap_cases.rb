@@ -11,7 +11,7 @@ class LeapCase < OpenStruct
     index > 0
   end
 
-  def msg
+  def failure_message
     "Expected '#{expected}', #{input} is #{expected ? '' : 'not '}a leap year."
   end
 end
