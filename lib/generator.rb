@@ -28,7 +28,7 @@ class Generator
   end
 
   def sha1
-    `cd #{metadata_dir} && git log -1 --oneline`
+    `cd #{metadata_dir} && git log -1 --pretty=format:"%h"`
   end
 
   def test_cases
