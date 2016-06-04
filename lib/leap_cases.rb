@@ -10,6 +10,10 @@ class LeapCase < OpenStruct
   def skipped?
     index > 0
   end
+
+  def failure_message
+    "Expected '#{expected}', #{input} is #{expected ? '' : 'not '}a leap year."
+  end
 end
 
 LeapCases = proc do |data|
