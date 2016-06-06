@@ -86,4 +86,31 @@ class BstTest < Minitest::Test
     four.insert 5
     assert_equal [1, 2, 3, 4, 5, 6, 7], record_all_data(four)
   end
+
+  def test_each_returns_enumerator_if_no_block
+    skip
+
+    tree = Bst.new 4
+    [2, 1, 3, 6, 7, 5].each { |x| tree.insert x }
+    each_enumerator = tree.each
+
+    assert_kind_of Enumerator, each_enumerator
+
+    (1..7).each { |x| assert_equal(x, each_enumerator.next) }
+
+    assert_raises(StopIteration) { each_enumerator.next }
+  end
+
+  # Problems in exercism evolve over time,
+  # as we find better ways to ask questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of Bst.
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_bookkeeping
+    skip
+    assert_equal 1, Bst::VERSION
+  end
 end
