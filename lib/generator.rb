@@ -5,6 +5,8 @@ require 'json'
 require 'ostruct'
 
 class Generator
+  METADATA_REPOSITORY = 'x-common'.freeze
+
   attr_reader :name, :cases
   def initialize(name, cases)
     @name = name
@@ -12,7 +14,7 @@ class Generator
   end
 
   def metadata_dir
-    File.expand_path(File.join('..', '..', '..', 'x-common'), __FILE__)
+    File.expand_path(File.join('..', '..', '..', METADATA_REPOSITORY), __FILE__)
   end
 
   def data
@@ -35,13 +37,43 @@ class Generator
     cases.call(data)
   end
 
+  def metadata_repository_missing_message
+    <<-EOM.gsub(/^ {6}/, '')
+
+      '#{METADATA_REPOSITORY}' repository not found.
+      Try running the command:
+        git clone https://github.com/exercism/#{METADATA_REPOSITORY}.git "#{metadata_dir}"
+
+    EOM
+  end
+
   def generate
+    check_metadata_repository_exists
+    generate_test_file
+    increment_version
+    increment_version_in_example
+  end
+
+  def check_metadata_repository_exists
+    unless File.directory?(metadata_dir)
+      STDERR.puts metadata_repository_missing_message
+      fail Errno::ENOENT.new(metadata_dir)
+    end
+  end
+
+  def generate_test_file
     File.open(path_to("#{name.gsub(/[ -]/, '_')}_test.rb"), 'w') do |f|
       f.write ERB.new(File.read(path_to('example.tt'))).result binding
     end
+  end
+
+  def increment_version
     File.open(path_to('.version'), 'w') do |f|
       f.write version + 1
     end
+  end
+
+  def increment_version_in_example
     contents = File.read(path_to('example.rb'))
     File.open(path_to('example.rb'), 'w') do |f|
       f.write contents.gsub("VERSION = #{version}", "VERSION = #{version + 1}")
