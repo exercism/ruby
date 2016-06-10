@@ -4,85 +4,104 @@ require 'minitest/autorun'
 require_relative 'grade_school'
 
 class SchoolTest < Minitest::Test
-  attr_reader :school
-
-  def setup
-    @school = School.new
-  end
-
-  def test_an_empty_school
-    assert_equal({}, school.to_h)
+  def test_empty_grade
+    subject = School.new
+    expected = []
+    assert_equal expected, subject.grade(1)
   end
 
   def test_add_student
-    skip
-    school.add('Aimee', 2)
-    assert_equal({ 2 => ['Aimee'] }, school.to_h)
-  end
-
-  def test_add_more_students_in_same_class
-    skip
-    school.add('Blair', 2)
-    school.add('James', 2)
-    school.add('Paul', 2)
-    assert_equal({ 2 => %w(Blair James Paul) }, school.to_h)
+    subject = School.new
+    assert subject.add('Aimee', 2)
+    expected = ['Aimee']
+    assert_equal expected, subject.grade(2)
   end
 
   def test_add_students_to_different_grades
     skip
-    school.add('Chelsea', 3)
-    school.add('Logan', 7)
-    assert_equal({ 3 => ['Chelsea'], 7 => ['Logan'] }, school.to_h)
+    subject = School.new
+    subject.add('Aimee', 3)
+    subject.add('Beemee', 7)
+    assert_equal ['Aimee'], subject.grade(3)
+    assert_equal ['Beemee'], subject.grade(7)
   end
 
-  def test_get_students_in_a_grade
+  def test_grade_with_multiple_students
     skip
-    school.add('Bradley', 5)
-    school.add('Franklin', 5)
-    school.add('Jeff', 1)
-    assert_equal %w(Bradley Franklin), school.grade(5)
+    subject  = School.new
+    grade    = rand(6)
+    students = %w(Aimee Beemee Ceemee)
+    students.each { |student| subject.add(student, grade) }
+    assert_equal students, subject.grade(grade)
   end
 
-  def test_get_students_sorted_in_a_grade
+  def test_grade_with_multiple_students_sorts_correctly
     skip
-    school.add('Franklin', 5)
-    school.add('Bradley', 5)
-    school.add('Jeff', 1)
-    assert_equal %w(Bradley Franklin), school.grade(5)
+    subject = School.new
+    grade    = rand(6)
+    students = %w(Beemee Aimee Ceemee)
+    students.each { |student| subject.add(student, grade) }
+    expected = students.sort
+    assert_equal expected, subject.grade(grade)
   end
 
-  def test_get_students_in_a_non_existant_grade
-    skip
-    assert_equal [], school.grade(1)
+  def test_empty_students_by_grade
+    subject = School.new
+    expected = {}
+    assert_equal expected, subject.students_by_grade
   end
 
-  def test_sort_school # rubocop:disable Metrics/MethodLength
+  def test_students_by_grade
     skip
-    [
-      ['Jennifer', 4], ['Kareem', 6],
-      ['Christopher', 4], ['Kyle', 3]
-    ].each do |name, grade|
-      school.add(name, grade)
+    subject = School.new
+    grade    = rand(6)
+    students = %w(Beemee Aimee Ceemee)
+    students.each { |student| subject.add(student, grade) }
+    expected = { grade => students.sort }
+    assert_equal expected, subject.students_by_grade
+  end
+
+  def test_students_by_grade_sorted
+    skip
+    subject = School.new
+    everyone.each do |(grade, students)|
+      students.each { |student| subject.add(student, grade) }
     end
-    sorted = {
-      3 => ['Kyle'],
-      4 => %w(Christopher Jennifer),
-      6 => ['Kareem']
-    }
-    assert_equal sorted, school.to_h
-    assert_equal [3, 4, 6], school.to_h.keys
+    expected = everyone_sorted
+    assert_equal expected, subject.students_by_grade
   end
 
-  # Problems in exercism evolve over time,
-  # as we find better ways to ask questions.
+  def everyone
+    { 2 => %w(Beemee Aimee Ceemee),
+      1 => %w(Effmee Geemee),
+      3 => %w(Eeemee Deemee) }
+  end
+
+  def everyone_sorted
+    { 1 => %w(Effmee Geemee),
+      2 => %w(Aimee Beemee Ceemee),
+      3 => %w(Deemee Eeemee) }
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
   # The version number refers to the version of the problem you solved,
   # not your solution.
   #
-  # Define a constant named VERSION inside of BookKeeping.
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 2 # Where the version number matches the one in the test.
+  # end
+  #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
