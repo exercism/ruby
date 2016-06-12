@@ -5,70 +5,72 @@ require_relative 'grade_school'
 
 class SchoolTest < Minitest::Test
   def test_empty_grade
-    subject = School.new
+    school = School.new
     expected = []
-    assert_equal expected, subject.grade(1)
+    assert_equal expected, school.grade(1)
   end
 
   def test_add_student
-    subject = School.new
-    assert subject.add('Aimee', 2)
+    skip
+    school = School.new
+    assert school.add('Aimee', 2)
     expected = ['Aimee']
-    assert_equal expected, subject.grade(2)
+    assert_equal expected, school.grade(2)
   end
 
   def test_add_students_to_different_grades
     skip
-    subject = School.new
-    subject.add('Aimee', 3)
-    subject.add('Beemee', 7)
-    assert_equal ['Aimee'], subject.grade(3)
-    assert_equal ['Beemee'], subject.grade(7)
+    school = School.new
+    school.add('Aimee', 3)
+    school.add('Beemee', 7)
+    assert_equal ['Aimee'], school.grade(3)
+    assert_equal ['Beemee'], school.grade(7)
   end
 
   def test_grade_with_multiple_students
     skip
-    subject  = School.new
-    grade    = rand(6)
+    school = School.new
+    grade    = 6
     students = %w(Aimee Beemee Ceemee)
-    students.each { |student| subject.add(student, grade) }
-    assert_equal students, subject.grade(grade)
+    students.each { |student| school.add(student, grade) }
+    assert_equal students, school.grade(grade)
   end
 
   def test_grade_with_multiple_students_sorts_correctly
     skip
-    subject = School.new
-    grade    = rand(6)
+    school = School.new
+    grade    = 6
     students = %w(Beemee Aimee Ceemee)
-    students.each { |student| subject.add(student, grade) }
+    students.each { |student| school.add(student, grade) }
     expected = students.sort
-    assert_equal expected, subject.grade(grade)
+    assert_equal expected, school.grade(grade)
   end
 
   def test_empty_students_by_grade
-    subject = School.new
+    skip
+    school = School.new
     expected = {}
-    assert_equal expected, subject.students_by_grade
+    assert_equal expected, school.students_by_grade
   end
 
   def test_students_by_grade
     skip
-    subject = School.new
-    grade    = rand(6)
+    school = School.new
+    grade    = 6
     students = %w(Beemee Aimee Ceemee)
-    students.each { |student| subject.add(student, grade) }
+    students.each { |student| school.add(student, grade) }
     expected = { grade => students.sort }
-    assert_equal expected, subject.students_by_grade
+    assert_equal expected, school.students_by_grade
   end
 
   def test_students_by_grade_sorted
     skip
-    subject = School.new
-    everyone.each do |(grade, students)|
-      students.each { |student| subject.add(student, grade) }
+    school = School.new
+    everyone.each do |grade, students|
+      students.each { |student| school.add(student, grade) }
     end
     expected = everyone_sorted
-    assert_equal expected, subject.students_by_grade
+    assert_equal expected, school.students_by_grade
   end
 
   def everyone
