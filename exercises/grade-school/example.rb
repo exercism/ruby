@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
 
 class School
@@ -15,7 +15,7 @@ class School
     @db[level].sort
   end
 
-  def to_h
+  def students_by_grade
     sorted = @db.map { |grade, students| [grade, students.sort] }.sort
     Hash[sorted]
   end
