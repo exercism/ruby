@@ -87,6 +87,7 @@
   ],
   "ignored": [
     "docs",
+    "img",
     "lib"
   ],
   "foregone": [
