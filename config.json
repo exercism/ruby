@@ -6,8 +6,9 @@
   "gitter": "xruby",
   "problems": [
     "hello-world",
-    "hamming",
     "gigasecond",
+    "space-age",
+    "hamming",
     "rna-transcription",
     "raindrops",
     "difference-of-squares",
@@ -34,7 +35,6 @@
     "trinary",
     "beer-song",
     "bowling",
-    "space-age",
     "anagram",
     "binary-search-tree",
     "crypto-square",
