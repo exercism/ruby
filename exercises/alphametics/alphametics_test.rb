@@ -4,9 +4,10 @@ require 'minitest/autorun'
 require_relative 'alphametics'
 
 # Test data version:
-# 9b8b80c
+# 0b81bdb
 class AlphameticsTest < Minitest::Test
   def test_solve_short_puzzle
+    # skip
     expect = {
       'I' => 1, 'B' => 9, 'L' => 0
     }
@@ -45,6 +46,20 @@ class AlphameticsTest < Minitest::Test
     assert_equal(expect, actual)
   end
 
+  def test_solution_must_have_unique_value_for_each_letter
+    skip
+    expect = nil
+    actual = Alphametics.new.solve('A == B')
+    assert_equal(expect, actual)
+  end
+
+  def test_leading_zero_solution_is_invalid
+    skip
+    expect = nil
+    actual = Alphametics.new.solve('ACA + DD == BD')
+    assert_equal(expect, actual)
+  end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -64,6 +79,6 @@ class AlphameticsTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
