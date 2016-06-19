@@ -1,0 +1,4 @@
+#!/bin/bash
+
+CWD=`pwd`
+cd $1 && bundle install && bundle exec rspec -r $CWD/lib/disable_rspec_skip.rb
