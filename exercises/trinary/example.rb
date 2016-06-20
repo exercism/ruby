@@ -3,7 +3,7 @@ class Trinary
 
   attr_reader :digits
   def initialize(decimal)
-    decimal = '0' unless decimal.match(/^[012]+$/)
+    decimal = '0' unless decimal.match(/\A[012]+\z/)
     @digits = decimal.reverse.chars.collect(&:to_i)
   end
 
