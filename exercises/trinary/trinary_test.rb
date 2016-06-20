@@ -52,4 +52,9 @@ class TrinaryTest < Minitest::Test
     skip
     assert_equal 0, Trinary.new('0a1b2c').to_decimal
   end
+
+  def test_invalid_trinary_with_multiline_string
+    skip
+    assert_equal 0, Trinary.new("Invalid\n201\nString").to_decimal
+  end
 end
