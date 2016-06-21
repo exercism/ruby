@@ -1,5 +1,6 @@
 class AlphameticsCase < OpenStruct
   PAIRS_PER_LINE = 4
+  SPACE = ->(num) { ' ' * num }
 
   def test_name
     "test_#{description.tr(' ', '_')}"
@@ -9,14 +10,20 @@ class AlphameticsCase < OpenStruct
     "Alphametics.new.solve('#{puzzle}')"
   end
 
-  def expected_values
-    expected.each_slice(PAIRS_PER_LINE).map do |pairs|
-      '      %s' % pairs.map { |k, v| "'#{k}' => #{v}" }.join(', ')
-    end.join(",\n")[0..-1]
+  def expect
+    return 'nil' if expected.nil?
+    expected_values
   end
 
-  def skipped?
-    index > 0
+  def expected_values
+    "{\n" << expected.each_slice(PAIRS_PER_LINE).map do |pairs|
+      '%s'.prepend(SPACE[6]) %
+      pairs.map { |k, v| "'#{k}' => #{v}" }.join(', ')
+    end.join(",\n") << "\n    }"
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 
