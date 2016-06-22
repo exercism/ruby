@@ -40,6 +40,7 @@
     "crypto-square",
     "clock",
     "alphametics",
+    "rail-fence-cipher",
     "acronym",
     "scrabble-score",
     "nucleotide-count",
