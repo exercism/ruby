@@ -37,7 +37,7 @@ class CustomSet
     CustomSet.new(intersection)
   end
 
-  def member?(datum)
+  def include?(datum)
     data.any? { |node| node.datum.eql?(datum) }
   end
 

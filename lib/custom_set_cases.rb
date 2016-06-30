@@ -60,7 +60,7 @@ class CustomSetCase < OpenStruct
   def contains
     "set = CustomSet.new #{set}
     element = #{element}
-    #{assert_or_refute} set.member? element"
+    #{assert_or_refute} set.include? element"
   end
 
   def assert_or_refute

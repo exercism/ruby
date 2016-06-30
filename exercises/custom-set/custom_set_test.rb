@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'custom_set'
 
 # Test data version:
-# cdfb4a2
+# 2d6e205
 class CustomSetTest < Minitest::Test
   def test_sets_with_no_elements_are_empty
     # skip
@@ -22,21 +22,21 @@ class CustomSetTest < Minitest::Test
     skip
     set = CustomSet.new []
     element = 1
-    refute set.member? element
+    refute set.include? element
   end
 
   def test_when_the_element_is_in_the_set
     skip
     set = CustomSet.new [1, 2, 3]
     element = 1
-    assert set.member? element
+    assert set.include? element
   end
 
   def test_when_the_element_is_not_in_the_set
     skip
     set = CustomSet.new [1, 2, 3]
     element = 4
-    refute set.member? element
+    refute set.include? element
   end
 
   def test_empty_set_is_a_subset_of_another_empty_set
