@@ -43,13 +43,13 @@ class CustomSetCase < OpenStruct
   def disjoint
     "set1 = CustomSet.new #{set1}
     set2 = CustomSet.new #{set2}
-    #{assert_or_refute} set1.disjoint? set2"
+    #{assert_or_refute} set1.disjoint?(set2), #{disjoint_failure_msg}"
   end
 
   def subset
     "set1 = CustomSet.new #{set1}
     set2 = CustomSet.new #{set2}
-    #{assert_or_refute} set1.subset? set2"
+    #{assert_or_refute} set1.subset?(set2), #{subset_failure_msg}"
   end
 
   def empty
@@ -60,11 +60,27 @@ class CustomSetCase < OpenStruct
   def contains
     "set = CustomSet.new #{set}
     element = #{element}
-    #{assert_or_refute} set.include? element"
+    #{assert_or_refute} set.include?(element), #{contains_failure_msg}"
   end
 
   def assert_or_refute
     expected ? 'assert' : 'refute'
+  end
+
+  def disjoint_failure_msg
+    "'#{set1} and #{set2} are#{not?} disjoint'"
+  end
+
+  def subset_failure_msg
+    "'#{set1} is#{not?} a subset of #{set2}'"
+  end
+
+  def contains_failure_msg
+    "'#{set} does#{not?} include #{element}'"
+  end
+
+  def not?
+    expected ? '' : ' NOT'
   end
 
   def skipped

@@ -22,98 +22,98 @@ class CustomSetTest < Minitest::Test
     skip
     set = CustomSet.new []
     element = 1
-    refute set.include? element
+    refute set.include?(element), '[] does NOT include 1'
   end
 
   def test_when_the_element_is_in_the_set
     skip
     set = CustomSet.new [1, 2, 3]
     element = 1
-    assert set.include? element
+    assert set.include?(element), '[1, 2, 3] does include 1'
   end
 
   def test_when_the_element_is_not_in_the_set
     skip
     set = CustomSet.new [1, 2, 3]
     element = 4
-    refute set.include? element
+    refute set.include?(element), '[1, 2, 3] does NOT include 4'
   end
 
   def test_empty_set_is_a_subset_of_another_empty_set
     skip
     set1 = CustomSet.new []
     set2 = CustomSet.new []
-    assert set1.subset? set2
+    assert set1.subset?(set2), '[] is a subset of []'
   end
 
   def test_empty_set_is_a_subset_of_non_empty_set
     skip
     set1 = CustomSet.new []
     set2 = CustomSet.new [1]
-    assert set1.subset? set2
+    assert set1.subset?(set2), '[] is a subset of [1]'
   end
 
   def test_non_empty_set_is_not_a_subset_of_empty_set
     skip
     set1 = CustomSet.new [1]
     set2 = CustomSet.new []
-    refute set1.subset? set2
+    refute set1.subset?(set2), '[1] is NOT a subset of []'
   end
 
   def test_set_is_a_subset_of_set_with_exact_same_elements
     skip
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [1, 2, 3]
-    assert set1.subset? set2
+    assert set1.subset?(set2), '[1, 2, 3] is a subset of [1, 2, 3]'
   end
 
   def test_set_is_a_subset_of_larger_set_with_same_elements
     skip
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [4, 1, 2, 3]
-    assert set1.subset? set2
+    assert set1.subset?(set2), '[1, 2, 3] is a subset of [4, 1, 2, 3]'
   end
 
   def test_set_is_not_a_subset_of_set_that_does_not_contain_its_elements
     skip
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [4, 1, 3]
-    refute set1.subset? set2
+    refute set1.subset?(set2), '[1, 2, 3] is NOT a subset of [4, 1, 3]'
   end
 
   def test_the_empty_set_is_disjoint_with_itself
     skip
     set1 = CustomSet.new []
     set2 = CustomSet.new []
-    assert set1.disjoint? set2
+    assert set1.disjoint?(set2), '[] and [] are disjoint'
   end
 
   def test_empty_set_is_disjoint_with_non_empty_set
     skip
     set1 = CustomSet.new []
     set2 = CustomSet.new [1]
-    assert set1.disjoint? set2
+    assert set1.disjoint?(set2), '[] and [1] are disjoint'
   end
 
   def test_non_empty_set_is_disjoint_with_empty_set
     skip
     set1 = CustomSet.new [1]
     set2 = CustomSet.new []
-    assert set1.disjoint? set2
+    assert set1.disjoint?(set2), '[1] and [] are disjoint'
   end
 
   def test_sets_are_not_disjoint_if_they_share_an_element
     skip
     set1 = CustomSet.new [1, 2]
     set2 = CustomSet.new [2, 3]
-    refute set1.disjoint? set2
+    refute set1.disjoint?(set2), '[1, 2] and [2, 3] are NOT disjoint'
   end
 
   def test_sets_are_disjoint_if_they_share_no_elements
     skip
     set1 = CustomSet.new [1, 2]
     set2 = CustomSet.new [3, 4]
-    assert set1.disjoint? set2
+    assert set1.disjoint?(set2), '[1, 2] and [3, 4] are disjoint'
   end
 
   def test_empty_sets_are_equal
