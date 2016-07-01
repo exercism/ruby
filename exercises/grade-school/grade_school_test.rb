@@ -71,6 +71,7 @@ class SchoolTest < Minitest::Test
     end
     expected = everyone_sorted
     assert_equal expected, school.students_by_grade
+    assert_equal expected.keys, school.students_by_grade.keys
   end
 
   def everyone
@@ -104,6 +105,6 @@ class SchoolTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
