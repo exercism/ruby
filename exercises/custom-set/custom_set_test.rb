@@ -3,114 +3,299 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'custom_set'
 
+# Test data version:
+# 2d6e205
 class CustomSetTest < Minitest::Test
-  def test_equal
-    assert_equal CustomSet.new([1, 3]), CustomSet.new([3, 1])
-    refute_equal CustomSet.new([1, 3]), CustomSet.new([3, 1, 5])
-    refute_equal CustomSet.new([1, 3, 5]), CustomSet.new([3, 1])
-    refute_equal CustomSet.new([1, 3]), CustomSet.new([2, 1])
+  def test_sets_with_no_elements_are_empty
+    # skip
+    set = CustomSet.new []
+    assert_empty set
   end
 
-  def test_no_duplicates
-    assert_equal CustomSet.new([1, 1]), CustomSet.new([1])
-  end
-
-  def test_delete
+  def test_sets_with_elements_are_not_empty
     skip
-    assert_equal CustomSet.new([1, 3]), CustomSet.new([3, 2, 1]).delete(2)
-    assert_equal CustomSet.new([1, 2, 3]), CustomSet.new([3, 2, 1]).delete(4)
-    assert_equal CustomSet.new([1, 2, 3]), CustomSet.new([3, 2, 1]).delete(2.0)
-    assert_equal CustomSet.new([1, 3]), CustomSet.new([3, 2.0, 1]).delete(2.0)
+    set = CustomSet.new [1]
+    refute_empty set
   end
 
-  def test_difference
+  def test_nothing_is_contained_in_an_empty_set
     skip
-    assert_equal CustomSet.new([1, 3]),
-                 CustomSet.new([1, 2, 3]).difference(CustomSet.new([2, 4]))
-
-    assert_equal CustomSet.new([1, 2.0, 3]),
-                 CustomSet.new([1, 2.0, 3]).difference(CustomSet.new([2, 4]))
+    set = CustomSet.new []
+    element = 1
+    refute set.include?(element), '[] does NOT include 1'
   end
 
-  def test_disjoint?
+  def test_when_the_element_is_in_the_set
     skip
-    assert CustomSet.new([1, 2]).disjoint?(CustomSet.new([3, 4]))
-    refute CustomSet.new([1, 2]).disjoint?(CustomSet.new([2, 3]))
-    assert CustomSet.new([1.0, 2.0]).disjoint?(CustomSet.new([2, 3]))
-    assert CustomSet.new.disjoint?(CustomSet.new)
+    set = CustomSet.new [1, 2, 3]
+    element = 1
+    assert set.include?(element), '[1, 2, 3] does include 1'
   end
 
-  def test_empty
+  def test_when_the_element_is_not_in_the_set
     skip
-    assert_equal CustomSet.new, CustomSet.new([1, 2]).empty
-    assert_equal CustomSet.new, CustomSet.new.empty
+    set = CustomSet.new [1, 2, 3]
+    element = 4
+    refute set.include?(element), '[1, 2, 3] does NOT include 4'
+  end
+
+  def test_empty_set_is_a_subset_of_another_empty_set
+    skip
+    set1 = CustomSet.new []
+    set2 = CustomSet.new []
+    assert set1.subset?(set2), '[] is a subset of []'
+  end
+
+  def test_empty_set_is_a_subset_of_non_empty_set
+    skip
+    set1 = CustomSet.new []
+    set2 = CustomSet.new [1]
+    assert set1.subset?(set2), '[] is a subset of [1]'
+  end
+
+  def test_non_empty_set_is_not_a_subset_of_empty_set
+    skip
+    set1 = CustomSet.new [1]
+    set2 = CustomSet.new []
+    refute set1.subset?(set2), '[1] is NOT a subset of []'
+  end
+
+  def test_set_is_a_subset_of_set_with_exact_same_elements
+    skip
+    set1 = CustomSet.new [1, 2, 3]
+    set2 = CustomSet.new [1, 2, 3]
+    assert set1.subset?(set2), '[1, 2, 3] is a subset of [1, 2, 3]'
+  end
+
+  def test_set_is_a_subset_of_larger_set_with_same_elements
+    skip
+    set1 = CustomSet.new [1, 2, 3]
+    set2 = CustomSet.new [4, 1, 2, 3]
+    assert set1.subset?(set2), '[1, 2, 3] is a subset of [4, 1, 2, 3]'
+  end
+
+  def test_set_is_not_a_subset_of_set_that_does_not_contain_its_elements
+    skip
+    set1 = CustomSet.new [1, 2, 3]
+    set2 = CustomSet.new [4, 1, 3]
+    refute set1.subset?(set2), '[1, 2, 3] is NOT a subset of [4, 1, 3]'
+  end
+
+  def test_the_empty_set_is_disjoint_with_itself
+    skip
+    set1 = CustomSet.new []
+    set2 = CustomSet.new []
+    assert set1.disjoint?(set2), '[] and [] are disjoint'
+  end
+
+  def test_empty_set_is_disjoint_with_non_empty_set
+    skip
+    set1 = CustomSet.new []
+    set2 = CustomSet.new [1]
+    assert set1.disjoint?(set2), '[] and [1] are disjoint'
+  end
+
+  def test_non_empty_set_is_disjoint_with_empty_set
+    skip
+    set1 = CustomSet.new [1]
+    set2 = CustomSet.new []
+    assert set1.disjoint?(set2), '[1] and [] are disjoint'
+  end
+
+  def test_sets_are_not_disjoint_if_they_share_an_element
+    skip
+    set1 = CustomSet.new [1, 2]
+    set2 = CustomSet.new [2, 3]
+    refute set1.disjoint?(set2), '[1, 2] and [2, 3] are NOT disjoint'
+  end
+
+  def test_sets_are_disjoint_if_they_share_no_elements
+    skip
+    set1 = CustomSet.new [1, 2]
+    set2 = CustomSet.new [3, 4]
+    assert set1.disjoint?(set2), '[1, 2] and [3, 4] are disjoint'
+  end
+
+  def test_empty_sets_are_equal
+    skip
+    set1 = CustomSet.new []
+    set2 = CustomSet.new []
+    assert_equal set1, set2
+  end
+
+  def test_empty_set_is_not_equal_to_non_empty_set
+    skip
+    set1 = CustomSet.new []
+    set2 = CustomSet.new [1, 2, 3]
+    refute_equal set1, set2
+  end
+
+  def test_non_empty_set_is_not_equal_to_empty_set
+    skip
+    set1 = CustomSet.new [1, 2, 3]
+    set2 = CustomSet.new []
+    refute_equal set1, set2
+  end
+
+  def test_sets_with_the_same_elements_are_equal
+    skip
+    set1 = CustomSet.new [1, 2]
+    set2 = CustomSet.new [2, 1]
+    assert_equal set1, set2
+  end
+
+  def test_sets_with_different_elements_are_not_equal
+    skip
+    set1 = CustomSet.new [1, 2, 3]
+    set2 = CustomSet.new [1, 2, 4]
+    refute_equal set1, set2
+  end
+
+  def test_add_to_empty_set
+    skip
+    set = CustomSet.new []
+    expected = CustomSet.new [3]
+    assert_equal expected, set.add(3)
+  end
+
+  def test_add_to_non_empty_set
+    skip
+    set = CustomSet.new [1, 2, 4]
+    expected = CustomSet.new [1, 2, 3, 4]
+    assert_equal expected, set.add(3)
+  end
+
+  def test_adding_an_existing_element_does_not_change_the_set
+    skip
+    set = CustomSet.new [1, 2, 3]
+    expected = CustomSet.new [1, 2, 3]
+    assert_equal expected, set.add(3)
+  end
+
+  def test_intersection_of_two_empty_sets_is_an_empty_set
+    skip
+    set1 = CustomSet.new []
+    set2 = CustomSet.new []
+    expected = CustomSet.new []
+    assert_equal expected, set2.intersection(set1)
+  end
+
+  def test_intersection_of_an_empty_set_and_non_empty_set_is_an_empty_set
+    skip
+    set1 = CustomSet.new []
+    set2 = CustomSet.new [3, 2, 5]
+    expected = CustomSet.new []
+    assert_equal expected, set2.intersection(set1)
+  end
+
+  def test_intersection_of_a_non_empty_set_and_an_empty_set_is_an_empty_set
+    skip
+    set1 = CustomSet.new [1, 2, 3, 4]
+    set2 = CustomSet.new []
+    expected = CustomSet.new []
+    assert_equal expected, set2.intersection(set1)
+  end
+
+  def test_intersection_of_two_sets_with_no_shared_elements_is_an_empty_set
+    skip
+    set1 = CustomSet.new [1, 2, 3]
+    set2 = CustomSet.new [4, 5, 6]
+    expected = CustomSet.new []
+    assert_equal expected, set2.intersection(set1)
   end
 
   # rubocop:disable Metrics/LineLength
-  def test_intersection
+  def test_intersection_of_two_sets_with_shared_elements_is_a_set_of_the_shared_elements
     skip
-    assert_equal CustomSet.new([:a, :c]),
-                 CustomSet.new([:a, :b, :c]).intersection(CustomSet.new([:a, :c, :d]))
-
-    assert_equal CustomSet.new([3]),
-                 CustomSet.new([1, 2, 3]).intersection(CustomSet.new([1.0, 2.0, 3]))
+    set1 = CustomSet.new [1, 2, 3, 4]
+    set2 = CustomSet.new [3, 2, 5]
+    expected = CustomSet.new [2, 3]
+    assert_equal expected, set2.intersection(set1)
   end
 
-  def test_member?
+  def test_difference_of_two_empty_sets_is_an_empty_set
     skip
-    assert CustomSet.new([1, 2, 3]).member?(2)
-    assert CustomSet.new(1..3).member?(2)
-    refute CustomSet.new(1..3).member?(2.0)
-    refute CustomSet.new(1..3).member?(4)
+    set1 = CustomSet.new []
+    set2 = CustomSet.new []
+    expected = CustomSet.new []
+    assert_equal expected, set1.difference(set2)
   end
 
-  def test_put
+  def test_difference_of_empty_set_and_non_empty_set_is_an_empty_set
     skip
-    assert_equal CustomSet.new([1, 2, 3, 4]),
-                 CustomSet.new([1, 2, 4]).put(3)
-
-    assert_equal CustomSet.new([1, 2, 3]),
-                 CustomSet.new([1, 2, 3]).put(3)
-
-    assert_equal CustomSet.new([1, 2, 3, 3.0]),
-                 CustomSet.new([1, 2, 3]).put(3.0)
+    set1 = CustomSet.new []
+    set2 = CustomSet.new [3, 2, 5]
+    expected = CustomSet.new []
+    assert_equal expected, set1.difference(set2)
   end
 
-  def test_size
+  def test_difference_of_a_non_empty_set_and_an_empty_set_is_the_non_empty_set
     skip
-    assert_equal 0, CustomSet.new.size
-    assert_equal 3, CustomSet.new([1, 2, 3]).size
-    assert_equal 3, CustomSet.new([1, 2, 3, 2]).size
+    set1 = CustomSet.new [1, 2, 3, 4]
+    set2 = CustomSet.new []
+    expected = CustomSet.new [1, 2, 3, 4]
+    assert_equal expected, set1.difference(set2)
   end
 
-  def test_subset?
+  def test_difference_of_two_non_empty_sets_is_a_set_of_elements_that_are_only_in_the_first_set
     skip
-    assert CustomSet.new([1, 2, 3]).subset?(CustomSet.new([1, 2, 3]))
-    assert CustomSet.new([4, 1, 2, 3]).subset?(CustomSet.new([1, 2, 3]))
-    refute CustomSet.new([4, 1, 3]).subset?(CustomSet.new([1, 2, 3]))
-    refute CustomSet.new([1, 2, 3, 4]).subset?(CustomSet.new([1, 2, 3.0]))
-    assert CustomSet.new([4, 1, 3]).subset?(CustomSet.new)
-    assert CustomSet.new.subset?(CustomSet.new)
+    set1 = CustomSet.new [3, 2, 1]
+    set2 = CustomSet.new [2, 4]
+    expected = CustomSet.new [1, 3]
+    assert_equal expected, set1.difference(set2)
   end
 
-  def test_to_a
+  def test_union_of_empty_sets_is_an_empty_set
     skip
-    assert_equal [], CustomSet.new.to_a.sort
-    assert_equal [1, 2, 3], CustomSet.new([3, 1, 2]).to_a.sort
-    assert_equal [1, 2, 3], CustomSet.new([3, 1, 2, 1]).to_a.sort
+    set1 = CustomSet.new []
+    set2 = CustomSet.new []
+    expected = CustomSet.new []
+    assert_equal expected, set1.union(set2)
   end
 
-  def test_union # rubocop:disable Metrics/MethodLength
+  def test_union_of_an_empty_set_and_non_empty_set_is_the_non_empty_set
     skip
-    assert_equal CustomSet.new([3, 2, 1]),
-                 CustomSet.new([1, 3]).union(CustomSet.new([2]))
-    assert_equal CustomSet.new([3.0, 3, 2, 1]),
-                 CustomSet.new([1, 3]).union(CustomSet.new([2, 3.0]))
-    assert_equal CustomSet.new([3, 1]),
-                 CustomSet.new([1, 3]).union(CustomSet.new)
-    assert_equal CustomSet.new([2]),
-                 CustomSet.new([2]).union(CustomSet.new)
-    assert_equal CustomSet.new([]),
-                 CustomSet.new.union(CustomSet.new)
+    set1 = CustomSet.new []
+    set2 = CustomSet.new [2]
+    expected = CustomSet.new [2]
+    assert_equal expected, set1.union(set2)
+  end
+
+  def test_union_of_a_non_empty_set_and_empty_set_is_the_non_empty_set
+    skip
+    set1 = CustomSet.new [1, 3]
+    set2 = CustomSet.new []
+    expected = CustomSet.new [1, 3]
+    assert_equal expected, set1.union(set2)
+  end
+
+  def test_union_of_non_empty_sets_contains_all_unique_elements
+    skip
+    set1 = CustomSet.new [1, 3]
+    set2 = CustomSet.new [2, 3]
+    expected = CustomSet.new [3, 2, 1]
+    assert_equal expected, set1.union(set2)
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
   end
 end
