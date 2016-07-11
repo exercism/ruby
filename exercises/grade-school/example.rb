@@ -1,22 +1,26 @@
-module BookKeeping
-  VERSION = 2
-end
-
 class School
   def initialize
-    @db = Hash.new { |db, grade| db[grade] = [] }
-  end
-
-  def add(student, grade)
-    @db[grade] << student
-  end
-
-  def grade(level)
-    @db[level].sort
+    @students = Hash.new { |hash, key| hash[key] = [] }
   end
 
   def students_by_grade
-    sorted = @db.map { |grade, students| [grade, students.sort] }.sort
-    Hash[sorted]
+    @students.keys.sort.map { |level| grade(level) }
   end
+
+  def add(student, level)
+    @students[level] << student
+    @students[level].sort!
+  end
+
+  def students(level)
+    @students[level]
+  end
+
+  def grade(level)
+    { grade: level, students: students(level) }
+  end
+end
+
+module BookKeeping
+  VERSION = 3
 end

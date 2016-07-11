@@ -7,7 +7,7 @@ class SchoolTest < Minitest::Test
   def test_empty_grade
     school = School.new
     expected = []
-    assert_equal expected, school.grade(1)
+    assert_equal expected, school.students(1)
   end
 
   def test_add_student
@@ -15,7 +15,7 @@ class SchoolTest < Minitest::Test
     school = School.new
     assert school.add('Aimee', 2)
     expected = ['Aimee']
-    assert_equal expected, school.grade(2)
+    assert_equal expected, school.students(2)
   end
 
   def test_add_students_to_different_grades
@@ -23,8 +23,8 @@ class SchoolTest < Minitest::Test
     school = School.new
     school.add('Aimee', 3)
     school.add('Beemee', 7)
-    assert_equal ['Aimee'], school.grade(3)
-    assert_equal ['Beemee'], school.grade(7)
+    assert_equal ['Aimee'], school.students(3)
+    assert_equal ['Beemee'], school.students(7)
   end
 
   def test_grade_with_multiple_students
@@ -33,7 +33,7 @@ class SchoolTest < Minitest::Test
     grade    = 6
     students = %w(Aimee Beemee Ceemee)
     students.each { |student| school.add(student, grade) }
-    assert_equal students, school.grade(grade)
+    assert_equal students, school.students(grade)
   end
 
   def test_grade_with_multiple_students_sorts_correctly
@@ -43,13 +43,13 @@ class SchoolTest < Minitest::Test
     students = %w(Beemee Aimee Ceemee)
     students.each { |student| school.add(student, grade) }
     expected = students.sort
-    assert_equal expected, school.grade(grade)
+    assert_equal expected, school.students(grade)
   end
 
   def test_empty_students_by_grade
     skip
     school = School.new
-    expected = {}
+    expected = []
     assert_equal expected, school.students_by_grade
   end
 
@@ -59,30 +59,34 @@ class SchoolTest < Minitest::Test
     grade    = 6
     students = %w(Beemee Aimee Ceemee)
     students.each { |student| school.add(student, grade) }
-    expected = { grade => students.sort }
+    expected = [{ grade: grade, students: students.sort }]
     assert_equal expected, school.students_by_grade
   end
 
   def test_students_by_grade_sorted
     skip
     school = School.new
-    everyone.each do |grade, students|
-      students.each { |student| school.add(student, grade) }
+    everyone.each do |grade|
+      grade[:students].each { |student| school.add(student, grade[:grade]) }
     end
     expected = everyone_sorted
     assert_equal expected, school.students_by_grade
   end
 
   def everyone
-    { 2 => %w(Beemee Aimee Ceemee),
-      1 => %w(Effmee Geemee),
-      3 => %w(Eeemee Deemee) }
+    [
+      { grade: 3, students: %w(Deemee Eeemee) },
+      { grade: 1, students: %w(Effmee Geemee) },
+      { grade: 2, students: %w(Aimee Beemee Ceemee) }
+    ]
   end
 
   def everyone_sorted
-    { 1 => %w(Effmee Geemee),
-      2 => %w(Aimee Beemee Ceemee),
-      3 => %w(Deemee Eeemee) }
+    [
+      { grade: 1, students: %w(Effmee Geemee) },
+      { grade: 2, students: %w(Aimee Beemee Ceemee) },
+      { grade: 3, students: %w(Deemee Eeemee) }
+    ]
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -104,6 +108,6 @@ class SchoolTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
