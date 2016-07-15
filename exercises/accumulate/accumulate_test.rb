@@ -41,7 +41,7 @@ class ArrayTest < Minitest::Test
   def test_no_block_is_passed
     skip
     result = [1, 2, 3].accumulate
-    assert_instance_of Enumerator, result 
+    assert_instance_of Enumerator, result
   end
 
   def test_do_not_change_in_place
