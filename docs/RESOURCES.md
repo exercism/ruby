@@ -10,3 +10,4 @@ Exercism provides exercises and feedback but can be difficult to jump into for t
 * [StackOverflow](http://stackoverflow.com/questions/tagged/ruby)
 * [RubyMonk](https://rubymonk.com/)
 * [Learn Ruby The Hard Way](http://learnrubythehardway.org/book/)
+* [Codecademy.org's Ruby Course](https://www.codecademy.com/learn/ruby)
