@@ -122,7 +122,7 @@ and the test is expecting one outcome, but getting another.
 The test is expecting the `hello` method to return the string `"Hello, World!"`. The easiest way
 to make it pass, is to simply stick the string `"Hello, World!"` inside the method definition.
 
-## Step 6
+## Step 5
 
 Run the test again.
 
