@@ -85,8 +85,8 @@ class Board
   end
 
   def winner
-    return WHITE if winner? WHITE
     return BLACK if winner? BLACK
+    return WHITE if winner? WHITE
     ''
   end
 
