@@ -1,7 +1,6 @@
 Position = Struct.new(:x, :y)
 class Board
   DIRECTIONS = [[1, 0], [-1, 0], [0, 1], [0, -1], [-1, 1], [1, -1]].freeze
-  NOTHING = nil
   BLACK = 'X'.freeze
   WHITE = 'O'.freeze
 
@@ -23,7 +22,7 @@ class Board
         @fields[x][y] =
           if char == BLACK || char == WHITE
             char
-          else NOTHING
+          else nil
           end
       end
     end
@@ -31,16 +30,13 @@ class Board
 
   def start_of(winner)
     case winner
-    when BLACK then (0..(@width - 1)).map { |x| Position.new(x, 0) }
-    when WHITE then (0..(@height - 1)).map { |y| Position.new(0, y) }
+    when BLACK then (0...@width).map { |x| Position.new(x, 0) }
+    when WHITE then (0...@height).map { |y| Position.new(0, y) }
     end
   end
 
   def winner?(winner)
-    start_of(winner).each do |position|
-      return true if winner_on?(position, winner)
-    end
-    false
+    start_of(winner).any? {|position| winner_on?(position, winner) }
   end
 
   def neighbours(pos)
@@ -57,36 +53,40 @@ class Board
       position.x < @width && position.y < @height
   end
 
-  def target_of?(winner, position)
-    case winner
-    when BLACK then position.x == @width - 1
-    when WHITE then position.y == @height - 1
-    else
-      false
-    end
+  def reach_target?(winner, position)
+    axis_position = winner == BLACK ? position.x : position.y
+    axis_position == edge_of(winner)
   end
 
-  def reach_target?(winner, position)
-    (winner == BLACK && position.x == @width - 1) ||
-      (winner == WHITE && position.y == @height - 1)
+  def edge_of winner
+    {
+      BLACK  => @width - 1,
+      WHITE => @height - 1
+    }[winner]
   end
 
   def winner_on?(position, winner)
     x = position.x
     y = position.y
     if @fields[x][y] == winner
-      return if @history[[winner, x, y]]
+      return false if @history[[winner, x, y]]
       @history[[winner, x, y]] = true
+ if @debug
+   puts ">"*20
+      dump
+   puts "<"*20
+ end
       return true if reach_target? winner, position
       neighbours(position).each do |pos|
         return true if winner_on? pos, winner
       end
     end
+    false
   end
 
   def winner
-    return 'black' if winner? BLACK
-    return 'white' if winner? WHITE
+    return WHITE if winner? WHITE
+    return BLACK if winner? BLACK
     ''
   end
 

@@ -12,6 +12,14 @@ class ConnectTest < Minitest::Test
     '    . . . . .'
   ].freeze
 
+  EDGES_POPULATED_BUT_NO_WINNER = [
+    '. . . . .',
+    ' . . . . X',
+    '  . O . X .',
+    '   . . O . .',
+    '    . . . O .'
+  ].freeze
+
   RECTANGLE_BLACK = [
     '. O . .',
     ' O X X X',
@@ -53,33 +61,39 @@ class ConnectTest < Minitest::Test
     assert_equal board.winner, ''
   end
 
+  def test_empty_board_has_no_winner
+    board = Board.new EDGES_POPULATED_BUT_NO_WINNER
+    assert_equal board.winner, ''
+  end
+
   def test_1x1_board_wins_black
     board = Board.new ['X']
-    assert_equal board.winner, 'black'
+    assert_equal board.winner, 'X'
   end
 
   def test_1x1_board_wins_white
     board = Board.new ['O']
-    assert_equal board.winner, 'white'
+    assert_equal board.winner, 'O'
   end
 
   def test_convoluted_path
     board = Board.new CONVOLUTED_PATH
-    assert_equal board.winner, 'black'
+    assert_equal board.winner, 'X'
   end
 
   def test_rectangle_white_wins
     board = Board.new RECTANGLE_WHITE
-    assert_equal 'white', board.winner
+    assert_equal 'O', board.winner
   end
 
   def test_rectangle_black_wins
     board = Board.new RECTANGLE_BLACK
-    assert_equal board.winner, 'white'
+    board.debug!
+    assert_equal 'X', board.winner
   end
 
   def test_aspiral_black_wins
     board = Board.new ASPIRAL
-    assert_equal 'black', board.winner
+    assert_equal 'X', board.winner
   end
 end
