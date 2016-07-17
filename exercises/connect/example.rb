@@ -5,11 +5,11 @@ class Board
   WHITE = 'O'.freeze
 
   def initialize(game)
-    @fields = Array.new(game.length) { Array.new(cols(game[0]).size) }
+    @height = game.size
+    @width = cols(game[0]).size
+    @fields = Array.new(@height) { Array.new(@width) }
     prepare_board(game)
     @history = {}
-    @height = @fields.length
-    @width = @fields[0].length
   end
 
   def cols(line)
