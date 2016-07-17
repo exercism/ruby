@@ -30,8 +30,8 @@ class Board
 
   def start_of(winner)
     case winner
-    when BLACK then (0...@width).map { |x| Position.new(x, 0) }
-    when WHITE then (0...@height).map { |y| Position.new(0, y) }
+    when BLACK then (0...@height).map { |y| Position.new(0,y) }
+    when WHITE then (0...@width).map { |x| Position.new(x, 0) }
     end
   end
 
