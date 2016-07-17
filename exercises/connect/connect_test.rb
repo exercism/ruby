@@ -61,7 +61,7 @@ class ConnectTest < Minitest::Test
     assert_equal board.winner, ''
   end
 
-  def test_empty_board_has_no_winner
+  def test_populated_but_no_winner
     board = Board.new EDGES_POPULATED_BUT_NO_WINNER
     assert_equal board.winner, ''
   end
