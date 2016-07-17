@@ -71,15 +71,8 @@ class Board
     if @fields[x][y] == winner
       return false if @history[[winner, x, y]]
       @history[[winner, x, y]] = true
- if @debug
-   puts ">"*20
-      dump
-   puts "<"*20
- end
       return true if reach_target? winner, position
-      neighbours(position).each do |pos|
-        return true if winner_on? pos, winner
-      end
+      return neighbours(position).any?{|pos| winner_on? pos, winner}
     end
     false
   end
@@ -100,6 +93,7 @@ class Board
 
   def dump
     each_field do |chr, x, y|
+      print " " * y if x == 0
       if chr == BLACK || chr == WHITE
         chr = chr.downcase if @history[[chr, x, y]]
         print chr + ' '
