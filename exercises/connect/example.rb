@@ -91,16 +91,18 @@ class Board
     end
   end
 
-  def dump
+  def to_s
+    s = ""
     each_field do |chr, x, y|
-      print " " * y if x == 0
+      s << ' ' * y if x == 0
       if chr == BLACK || chr == WHITE
         chr = chr.downcase if @history[[chr, x, y]]
-        print chr + ' '
+        s << chr + ' '
       else
-        print '. '
+        s << '. '
       end
-      print "\n" if x == @width - 1
+      s << ?\n if x == @width - 1
     end
+    s
   end
 end
