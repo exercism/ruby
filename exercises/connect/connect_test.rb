@@ -88,7 +88,6 @@ class ConnectTest < Minitest::Test
 
   def test_rectangle_black_wins
     board = Board.new RECTANGLE_BLACK
-    board.debug!
     assert_equal 'X', board.winner
   end
 
