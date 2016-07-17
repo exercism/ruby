@@ -56,43 +56,23 @@ class ConnectTest < Minitest::Test
     '         X X X X X X X X O'
   ].freeze
 
-  def test_empty_board_has_no_winner
-    board = Board.new EMPTY
-    assert_equal board.winner, ''
-  end
+  TEST_CASES = [
+    [EMPTY, '', 'an empty board has no winner'],
+    [EDGES_POPULATED_BUT_NO_WINNER, '', 'only edges does not make a winner'],
+    [['X'], 'X', 'a one cell board with a X should get the winner easy'],
+    [['O'], 'O', 'a one cell board with a O should get the winner easy'],
+    [[' . '], '', 'a one cell board empty has no winner'],
+    [CONVOLUTED_PATH, 'X', 'Convoluted path x wins'],
+    [RECTANGLE_BLACK, 'X', 'Rectangle black - black wins'],
+    [RECTANGLE_WHITE, 'O', 'Rectangle white - white wins'],
+    [ASPIRAL, 'X', 'Aspiral black wins']
+  ].freeze
 
-  def test_populated_but_no_winner
-    board = Board.new EDGES_POPULATED_BUT_NO_WINNER
-    assert_equal board.winner, ''
-  end
-
-  def test_1x1_board_wins_black
-    board = Board.new ['X']
-    assert_equal board.winner, 'X'
-  end
-
-  def test_1x1_board_wins_white
-    board = Board.new ['O']
-    assert_equal board.winner, 'O'
-  end
-
-  def test_convoluted_path
-    board = Board.new CONVOLUTED_PATH
-    assert_equal board.winner, 'X'
-  end
-
-  def test_rectangle_white_wins
-    board = Board.new RECTANGLE_WHITE
-    assert_equal 'O', board.winner
-  end
-
-  def test_rectangle_black_wins
-    board = Board.new RECTANGLE_BLACK
-    assert_equal 'X', board.winner
-  end
-
-  def test_aspiral_black_wins
-    board = Board.new ASPIRAL
-    assert_equal 'X', board.winner
+  TEST_CASES.each do |game, expected_result, error_message|
+    define_method("test_#{error_message.tr(' ', '_')}") do
+      board = Board.new game
+      msg = "#{error_message}\nCurrent board: \n #{board}"
+      assert_equal expected_result, board.winner, msg
+    end
   end
 end
