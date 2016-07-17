@@ -6,54 +6,54 @@ require_relative 'connect'
 class ConnectTest < Minitest::Test
   EMPTY = [
     '. . . . .',
-    ' . . . . .',
-    '  . . . . .',
-    '   . . . . .',
-    '    . . . . .'
+    '. . . . .',
+    '. . . . .',
+    '. . . . .',
+    ' . . . . .'
   ].freeze
 
   EDGES_POPULATED_BUT_NO_WINNER = [
     '. . . . .',
-    ' . . . . X',
-    '  . O . X .',
-    '   . . O . .',
-    '    . . . O .'
+    '. . . . X',
+    '. O . X .',
+    '. . O . .',
+    '. . . O .'
   ].freeze
 
   RECTANGLE_BLACK = [
     '. O . .',
-    ' O X X X',
-    '  O X O .',
-    '   X X O X',
-    '    . O X .'
+    'O X X X',
+    'O X O .',
+    'X X O X',
+    '. O X .'
   ].freeze
 
   RECTANGLE_WHITE = [
     '. O . .',
-    ' O X X X',
-    '  O O O .',
-    '   X X O X',
-    '    . O X .'
+    'O X X X',
+    'O O O .',
+    'X X O X',
+    '. O X .'
   ].freeze
 
   CONVOLUTED_PATH = [
     '. X X . .',
-    ' X . X . X',
-    '  . X . X .',
-    '   . X X . .',
-    '    O O O O O'
+    'X . X . X',
+    '. X . X .',
+    '. X X . .',
+    'O O O O O'
   ].freeze
 
   ASPIRAL = [
-    ' O X X X X X X X X',
-    '  O X O O O O O O O',
-    '   O X O X X X X X O',
-    '    O X O X O O O X O',
-    '     O X O X X X O X O',
-    '      O X O O O X O X O',
-    '       O X X X X X O X O',
-    '        O O O O O O O X O',
-    '         X X X X X X X X O'
+    'O X X X X X X X X',
+    'O X O O O O O O O',
+    'O X O X X X X X O',
+    'O X O X O O O X O',
+    'O X O X X X O X O',
+    'O X O O O X O X O',
+    'O X X X X X O X O',
+    'O O O O O O O X O',
+    'X X X X X X X X O'
   ].freeze
 
   TEST_CASES = [
