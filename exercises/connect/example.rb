@@ -1,3 +1,6 @@
+module BookKeeping
+  VERSION = 1
+end
 Position = Struct.new(:x, :y)
 class Board
   DIRECTIONS = [[1, 0], [-1, 0], [0, 1], [0, -1], [-1, 1], [1, -1]].freeze
