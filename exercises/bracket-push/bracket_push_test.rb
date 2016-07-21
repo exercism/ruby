@@ -47,6 +47,11 @@ class BracketsTest < Minitest::Test
     assert Brackets.paired?('([{}({}[])])')
   end
 
+  def test_unopened_closing_brackets
+    skip
+    refute Brackets.paired?('{[)][]}')
+  end
+
   def test_unpaired_and_nested_brackets
     skip
     refute Brackets.paired?('([{])')
