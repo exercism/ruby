@@ -4,8 +4,7 @@ require 'minitest/autorun'
 require_relative 'bracket_push'
 
 # Test data version:
-# deb225e Implement canonical dataset for scrabble-score problem (#255)
-
+# 306975e
 class BracketsTest < Minitest::Test
   def test_paired_square_brackets
     # skip
@@ -80,8 +79,9 @@ class BracketsTest < Minitest::Test
   # not your solution.
   #
   # Define a constant named VERSION inside of the top level BookKeeping
-  # module.
-  #  In your file, it will look like this:
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
   #
   # module BookKeeping
   #   VERSION = 1 # Where the version number matches the one in the test.
@@ -92,6 +92,6 @@ class BracketsTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
