@@ -5,7 +5,7 @@ require 'minitest/autorun'
 require_relative 'binary'
 
 # Test data version:
-# acdf673
+# dd43e66
 class BinaryTest < Minitest::Test
   def test_binary_0_is_decimal_0
     # skip
@@ -85,6 +85,6 @@ class BinaryTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 3, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
