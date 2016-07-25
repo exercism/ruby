@@ -1,18 +1,18 @@
 class ConnectCase < OpenStruct
   def name
     'test_%s' % description
-      .gsub(/[() -]/, '_')
-      .chomp('_')
-      .downcase
+                .gsub(/[() -]/, '_')
+                .chomp('_')
+                .downcase
   end
 
   def test_body
     [
-      "board = [",
-      "  "+board.map(&:inspect).join(",\n      "),
-      "]",
-      "game = Board.new(board)",
-      "assert_equal #{expected.inspect}, game.winner, #{ description.inspect}"
+      'board = [',
+      '  ' + board.map(&:inspect).join(",\n      "),
+      ']',
+      'game = Board.new(board)',
+      "assert_equal #{expected.inspect}, game.winner, #{description.inspect}"
     ]
   end
 
