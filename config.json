@@ -80,7 +80,8 @@
     "minesweeper",
     "scale-generator",
     "protein-translation",
-    "perfect-numbers"
+    "perfect-numbers",
+    "connect"
   ],
   "deprecated": [
     "octal",
