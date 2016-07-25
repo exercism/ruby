@@ -25,7 +25,7 @@ class ConnectCase < OpenStruct
     string.inspect.tr('"', "'")
   end
 
-  def ignore_method_lenght
+  def ignore_method_length
     if board.length > 8
       "# rubocop:disable MethodLength\n  "
     end
