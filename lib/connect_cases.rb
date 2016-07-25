@@ -31,13 +31,11 @@ class ConnectCase < OpenStruct
 end
 
 ConnectCases = proc do |data|
-  i = 0
   json = JSON.parse(data)
   cases = []
-  json['cases'].each do |row|
-    row = row.merge(row.merge('index' => i))
+  json['cases'].each_with_index do |row, i|
+    row.merge!('index' => i)
     cases << ConnectCase.new(row)
-    i += 1
   end
   cases
 end
