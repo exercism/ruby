@@ -59,7 +59,7 @@ class BinaryCase < OpenStruct
 end
 
 BinaryCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
+  JSON.parse(data)['decimal'].map.with_index do |row, i|
     BinaryCase.new(row.merge('index' => i))
   end
 end
