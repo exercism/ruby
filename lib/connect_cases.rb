@@ -24,6 +24,12 @@ class ConnectCase < OpenStruct
   def single_quote(string)
     string.inspect.tr('"', "'")
   end
+
+  def ignore_method_lenght
+    if board.length > 8
+      "# rubocop:disable MethodLength\n  "
+    end
+  end
 end
 
 ConnectCases = proc do |data|

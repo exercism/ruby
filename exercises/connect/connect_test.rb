@@ -44,7 +44,7 @@ class ConnectTest < Minitest::Test
     assert_equal '', game.winner, 'illegal diagonal does not make a winner'
   end
 
-  def test_adjacent_angles_are_not_connected_and_nobody_wins
+  def test_nobody_wins_crossing_adjacent_angles
     skip
     board = [
       'X . . .',
@@ -54,7 +54,7 @@ class ConnectTest < Minitest::Test
       '    . . O .'
     ]
     game = Board.new(board)
-    assert_equal '', game.winner, 'adjacent angles are not connected and nobody wins'
+    assert_equal '', game.winner, 'nobody wins crossing adjacent angles'
   end
 
   def test_x_wins_crossing_from_left_to_right
@@ -96,6 +96,7 @@ class ConnectTest < Minitest::Test
     assert_equal 'X', game.winner, 'X wins using a convoluted path'
   end
 
+  # rubocop:disable MethodLength
   def test_x_wins_using_a_spiral_path
     skip
     board = [

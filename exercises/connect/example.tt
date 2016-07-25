@@ -6,7 +6,7 @@ require_relative 'connect'
 # Test data version:
 # <%= sha1 %>
 class ConnectTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %>
+  <%= test_case.ignore_method_lenght%>def <%= test_case.name %>
     <%= test_case.skipped %><% test_case.test_body.each do |line| %>
     <%= line %><% end %>
   end
