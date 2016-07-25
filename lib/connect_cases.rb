@@ -9,15 +9,20 @@ class ConnectCase < OpenStruct
   def test_body
     [
       'board = [',
-      '  ' + board.map(&:inspect).join(",\n      "),
+      '  ' + board.map(&method(:single_quote)).join(",\n      "),
       ']',
       'game = Board.new(board)',
-      "assert_equal #{expected.inspect}, game.winner, #{description.inspect}"
+      "assert_equal #{single_quote(expected)}, game.winner, " +
+        single_quote(description)
     ]
   end
 
   def skipped
     index.zero? ? '# skip' : 'skip'
+  end
+
+  def single_quote(string)
+    string.inspect.tr('"', "'")
   end
 end
 
