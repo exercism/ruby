@@ -26,9 +26,7 @@ class ConnectCase < OpenStruct
   end
 
   def ignore_method_length
-    if board.length > 8
-      "# rubocop:disable MethodLength\n  "
-    end
+    '# rubocop:disable MethodLength\n  ' if board.length > 8
   end
 end
 
