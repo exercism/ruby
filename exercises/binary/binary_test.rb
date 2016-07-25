@@ -5,7 +5,7 @@ require 'minitest/autorun'
 require_relative 'binary'
 
 # Test data version:
-# 676c54a
+# acdf673
 class BinaryTest < Minitest::Test
   def test_binary_0_is_decimal_0
     # skip
@@ -52,9 +52,16 @@ class BinaryTest < Minitest::Test
     assert_equal 31, Binary.new('000011111').to_decimal
   end
 
-  def test_invalid_binary_numbers_raise_an_error
+  def test_numbers_other_than_one_and_zero_raise_an_error
     skip
-    %w(012 10nope nope10 10nope10 001\ nope 2).each do |input|
+    %w(012 2).each do |input|
+      assert_raises(ArgumentError) { Binary.new(input) }
+    end
+  end
+
+  def test_containing_letters_raises_an_error
+    skip
+    %w(10nope nope10 10nope10 001\ nope).each do |input|
       assert_raises(ArgumentError) { Binary.new(input) }
     end
   end
