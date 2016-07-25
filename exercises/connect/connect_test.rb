@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'connect'
 
-# Test data version:
-# 15caeda
+# Test data version commit id: 6c6a395
 class ConnectTest < Minitest::Test
   def test_an_empty_board_has_no_winner
     # skip
