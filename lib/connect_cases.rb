@@ -34,7 +34,7 @@ ConnectCases = proc do |data|
   json = JSON.parse(data)
   cases = []
   json['cases'].each_with_index do |row, i|
-    row.merge!('index' => i)
+    row['index'] = i
     cases << ConnectCase.new(row)
   end
   cases
