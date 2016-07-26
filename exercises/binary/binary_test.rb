@@ -1,14 +1,19 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'binary'
 
+# Test data version:
+# dd43e66
 class BinaryTest < Minitest::Test
   def test_binary_0_is_decimal_0
+    # skip
     assert_equal 0, Binary.new('0').to_decimal
   end
 
   def test_binary_1_is_decimal_1
+    skip
     assert_equal 1, Binary.new('1').to_decimal
   end
 
@@ -47,23 +52,37 @@ class BinaryTest < Minitest::Test
     assert_equal 31, Binary.new('000011111').to_decimal
   end
 
-  def test_invalid_binary_numbers_raise_an_error
+  def test_numbers_other_than_one_and_zero_raise_an_error
     skip
-    %w(012 10nope nope10 10nope10 001\ nope 2).each do |input|
-      assert_raises ArgumentError do
-        Binary.new(input)
-      end
+    %w(012 2).each do |input|
+      assert_raises(ArgumentError) { Binary.new(input) }
     end
   end
 
-  # Problems in exercism evolve over time,
-  # as we find better ways to ask questions.
+  def test_containing_letters_raises_an_error
+    skip
+    %w(10nope nope10 10nope10 001\ nope).each do |input|
+      assert_raises(ArgumentError) { Binary.new(input) }
+    end
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
   # The version number refers to the version of the problem you solved,
   # not your solution.
   #
-  # Define a constant named VERSION inside of BookKeeping.
-  # If you're curious, read more about constants on RubyDoc:
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 2, BookKeeping::VERSION
