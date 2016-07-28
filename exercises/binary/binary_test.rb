@@ -5,7 +5,7 @@ require 'minitest/autorun'
 require_relative 'binary'
 
 # Test data version:
-# dd43e66
+# 01092b0
 class BinaryTest < Minitest::Test
   def test_binary_0_is_decimal_0
     # skip
@@ -52,18 +52,34 @@ class BinaryTest < Minitest::Test
     assert_equal 31, Binary.new('000011111').to_decimal
   end
 
-  def test_numbers_other_than_one_and_zero_raise_an_error
+  def test_2_is_not_a_valid_binary_digit
     skip
-    %w(012 2).each do |input|
-      assert_raises(ArgumentError) { Binary.new(input) }
-    end
+    assert_raises(ArgumentError) { Binary.new('2') }
   end
 
-  def test_containing_letters_raises_an_error
+  def test_a_number_containing_a_non_binary_digit_is_invalid
     skip
-    %w(10nope nope10 10nope10 001\ nope).each do |input|
-      assert_raises(ArgumentError) { Binary.new(input) }
-    end
+    assert_raises(ArgumentError) { Binary.new('01201') }
+  end
+
+  def test_a_number_with_trailing_non_binary_characters_is_invalid
+    skip
+    assert_raises(ArgumentError) { Binary.new('10nope') }
+  end
+
+  def test_a_number_with_leading_non_binary_characters_is_invalid
+    skip
+    assert_raises(ArgumentError) { Binary.new('nope10') }
+  end
+
+  def test_a_number_with_internal_non_binary_characters_is_invalid
+    skip
+    assert_raises(ArgumentError) { Binary.new('10nope10') }
+  end
+
+  def test_a_number_and_a_word_whitespace_spearated_is_invalid
+    skip
+    assert_raises(ArgumentError) { Binary.new('001 nope') }
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
