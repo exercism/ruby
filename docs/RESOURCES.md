@@ -1,13 +1,13 @@
-## Recommended Learning Resources
+## Recommended Resources
 
-Exercism provides exercises and feedback but can be difficult to jump into for those learning Ruby for the first time. These resources can help you get started:
+### Environment
+* [Ruby](https://www.ruby-lang.org/)
+* [Ruby Gems](https://rubygems.org/)
+* [Bundler](http://bundler.io/)
+* [RVM](https://rvm.io/)
+* [rbenv](https://github.com/rbenv/rbenv)
 
-* [Ruby in Twenty Minutes](https://www.ruby-lang.org/en/documentation/quickstart/)
-* [Ruby Documentation](http://ruby-doc.org/)
-* [RubyLearning.com](http://rubylearning.com/) - Ruby Tutorial and Study Notes
-* [RubyLearning.org](http://rubylearning.org/classes/) - Professionally Taught and Moderated Classes
-* [Learn to Program](http://pine.fm/LearnToProgram/) - A book (available online) written by Chris Pine
-* [StackOverflow](http://stackoverflow.com/questions/tagged/ruby)
-* [RubyMonk](https://rubymonk.com/)
-* [Learn Ruby The Hard Way](http://learnrubythehardway.org/book/)
-* [Codecademy.org's Ruby Course](https://www.codecademy.com/learn/ruby)
+### Docs
+* [Ruby Doc](http://ruby-doc.org/)
+* [API Dock](http://apidock.com/)
+* [Minitest](http://docs.seattlerb.org/minitest/)
