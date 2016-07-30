@@ -32,6 +32,7 @@
     "etl",
     "trinary",
     "beer-song",
+    "list-ops",
     "bowling",
     "space-age",
     "anagram",
@@ -81,8 +82,7 @@
     "scale-generator",
     "protein-translation",
     "perfect-numbers",
-    "connect",
-    "list-ops"
+    "connect"
   ],
   "deprecated": [
     "octal",
