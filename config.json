@@ -82,7 +82,8 @@
     "protein-translation",
     "perfect-numbers",
     "connect",
-    "list-ops"
+    "list-ops",
+    "diamond"
   ],
   "deprecated": [
     "octal",
