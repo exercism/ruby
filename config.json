@@ -81,7 +81,9 @@
     "scale-generator",
     "protein-translation",
     "perfect-numbers",
-    "connect"
+    "connect",
+    "list-ops",
+    "diamond"
   ],
   "deprecated": [
     "octal",
