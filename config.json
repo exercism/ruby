@@ -83,7 +83,8 @@
     "perfect-numbers",
     "connect",
     "list-ops",
-    "diamond"
+    "diamond",
+    "all-your-base"
   ],
   "deprecated": [
     "octal",
