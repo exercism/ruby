@@ -71,7 +71,8 @@ class WordProblemTest < Minitest::Test
   def test_add_then_multiply
     skip
     question = 'What is -3 plus 7 multiplied by -2?'
-    assert_equal(-8, WordProblem.new(question).answer)
+    message = 'You should ignore order of precedence. -3 + 7 * -2 = -8, not -17'
+    assert_equal(-8, WordProblem.new(question).answer, message)
   end
 
   def test_divide_twice
