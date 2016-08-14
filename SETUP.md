@@ -20,7 +20,7 @@ directory. For example, if the test suite is called
 
 To include color from the command line:
 
-    ruby -rminitest/pride hello_world_test.rb
+    ruby -r minitest/pride hello_world_test.rb
 
 The test files may have the execution bit set so you may also be able to
 run it like this:
