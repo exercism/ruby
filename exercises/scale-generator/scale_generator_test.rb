@@ -14,7 +14,7 @@ class ScaleGeneratorTest < Minitest::Test
   def test_chromatic_scale
     skip
     chromatic = Scale.new('C', :chromatic)
-    expected = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+    expected = %w(C C# D D# E F F# G G# A A# B)
     actual = chromatic.pitches
     assert_equal expected, actual
   end
@@ -46,7 +46,7 @@ class ScaleGeneratorTest < Minitest::Test
   def test_another_major_scale
     skip
     major = Scale.new('G', :major, 'MMmMMMm')
-    expected = ['G', 'A', 'B', 'C', 'D', 'E', 'F#']
+    expected = %w(G A B C D E F#)
     actual = major.pitches
     assert_equal expected, actual
   end
@@ -54,7 +54,7 @@ class ScaleGeneratorTest < Minitest::Test
   def test_minor_scale
     skip
     minor = Scale.new('f#', :minor, 'MmMMmMM')
-    expected = ['F#', 'G#', 'A', 'B', 'C#', 'D', 'E']
+    expected = %w(F# G# A B C# D E)
     actual = minor.pitches
     assert_equal expected, actual
   end
@@ -86,7 +86,7 @@ class ScaleGeneratorTest < Minitest::Test
   def test_lydian_mode
     skip
     lydian = Scale.new('a', :lydian, 'MMMmMMm')
-    expected = ['A', 'B', 'C#', 'D#', 'E', 'F#', 'G#']
+    expected = %w(A B C# D# E F# G#)
     actual = lydian.pitches
     assert_equal expected, actual
   end
@@ -118,7 +118,7 @@ class ScaleGeneratorTest < Minitest::Test
   def test_octatonic
     skip
     octatonic = Scale.new('C', :octatonic, 'MmMmMmMm')
-    expected = ['C', 'D', 'D#', 'F', 'F#', 'G#', 'A', 'B']
+    expected = %w(C D D# F F# G# A B)
     actual = octatonic.pitches
     assert_equal expected, actual
   end
@@ -134,7 +134,7 @@ class ScaleGeneratorTest < Minitest::Test
   def test_pentatonic
     skip
     pentatonic = Scale.new('A', :pentatonic, 'MMAMA')
-    expected = ['A', 'B', 'C#', 'E', 'F#']
+    expected = %w(A B C# E F#)
     actual = pentatonic.pitches
     assert_equal expected, actual
   end
@@ -142,7 +142,7 @@ class ScaleGeneratorTest < Minitest::Test
   def test_enigmatic
     skip
     enigmatic = Scale.new('G', :enigma, 'mAMMMmM')
-    expected = ['G', 'G#', 'B', 'C#', 'D#', 'F', 'F#']
+    expected = %w(G G# B C# D# F F#)
     actual = enigmatic.pitches
     assert_equal expected, actual
   end
