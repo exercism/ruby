@@ -109,7 +109,7 @@ class ScaleGeneratorTest < Minitest::Test
 
   def test_harmonic_minor
     skip
-    harmonic_minor = Scale.new('d', 'harmonic_minor', 'MmMMmAm')
+    harmonic_minor = Scale.new('d', :harmonic_minor, 'MmMMmAm')
     expected = %w(D E F G A Bb Db)
     actual = harmonic_minor.pitches
     assert_equal expected, actual
