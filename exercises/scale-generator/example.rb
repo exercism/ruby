@@ -34,3 +34,7 @@ class Scale
     chromatic_scale[index..-1] + chromatic_scale[0..index - 1]
   end
 end
+
+module BookKeeping
+  VERSION = 1
+end
