@@ -29,54 +29,58 @@ class ListOpsTest < Minitest::Test
 
   def test_reverse_gigantic
     skip
-    assert (1_000_000..1).to_a, ListOps.reverser((1..1_000_000).to_a)
+    expected = (1..1_000_000).to_a.reverse
+    assert_equal expected, ListOps.reverser((1..1_000_000).to_a)
   end
 
   def test_concat_empty
     skip
-    assert [], ListOps.concatter([], [])
+    assert_equal [], ListOps.concatter([], [])
   end
 
   def test_concat_normal
     skip
-    assert [12, 34, 56, 78], ListOps.concatter([12, 34], [56, 78])
+    assert_equal [12, 34, 56, 78], ListOps.concatter([12, 34], [56, 78])
   end
 
   def test_concat_gigantic
     skip
     input1 = (1..1_000_000).to_a
     input2 = (1_000_001..2_000_000).to_a
-    assert (1..2_000_000).to_a, ListOps.concatter(input1, input2)
+    assert_equal (1..2_000_000).to_a, ListOps.concatter(input1, input2)
   end
 
   def test_mapper_empty
     skip
-    assert [], ListOps.mapper([])
+    assert_equal [], ListOps.mapper([])
   end
 
   def test_mapper_normal
     skip
-    assert [2, 3, 4, 5, 6], ListOps.mapper([1, 2, 3, 4, 5])
+    assert_equal [2, 3, 4, 5, 6], ListOps.mapper([1, 2, 3, 4, 5]) { |n| n + 1 }
   end
 
   def test_mapper_gigantic
     skip
-    assert (2..1_000_001).to_a, ListOps.mapper((1..1_000_000).to_a)
+    result = ListOps.mapper((1..1_000_000).to_a) { |n| n + 1 }
+    assert_equal (2..1_000_001).to_a, result
   end
 
   def test_filterer_empty
     skip
-    assert [], ListOps.filterer([])
+    assert_equal [], ListOps.filterer([])
   end
 
   def test_filterer_normal
     skip
-    assert [1, 3, 5, 7, 9], ListOps.filterer([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    result = ListOps.filterer([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], &:odd?)
+    assert_equal [1, 3, 5, 7, 9], result
   end
 
   def test_filterer_gigantic
     skip
-    assert (1..10_000).to_a.select(&:even?), ListOps.filterer((1..10_000).to_a)
+    result = ListOps.filterer((1..10_000).to_a, &:even?)
+    assert_equal (1..10_000).to_a.select(&:even?), result
   end
 
   def test_sum_reducer_empty
@@ -102,6 +106,6 @@ class ListOpsTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 1, ListOps::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
