@@ -1,5 +1,4 @@
 class ListOps
-  VERSION = 1
   ## Do not use the functions map, concat, count, length, etc.
   ## and other built in ruby methods to solve  these
   ##
@@ -33,7 +32,7 @@ class ListOps
   def self.mapper(arr)
     answer = []
     arr.each do |element|
-      answer << (element + 1)
+      answer << yield(element) if block_given?
     end
     answer
   end
@@ -41,9 +40,7 @@ class ListOps
   def self.filterer(arr)
     answer = []
     arr.each do |element|
-      if element % 2 == 1
-        answer << element
-      end
+      answer << element if block_given? && yield(element)
     end
     answer
   end
@@ -63,5 +60,8 @@ class ListOps
     end
     total
   end
+end
 
+module BookKeeping
+  VERSION = 2
 end
