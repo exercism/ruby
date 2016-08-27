@@ -79,6 +79,6 @@ class PangramTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 2, Pangram::VERSION
   end
 end
