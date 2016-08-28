@@ -48,45 +48,45 @@ class DominoesTest < Minitest::Test
     assert_equal(expect, actual)
   end
 
-  def disconnected_simple
+  def test_disconnected_simple
     skip
     expect = false
     actual = Dominoes.new.can_chain?([[1, 1], [2, 2]])
     assert_equal(expect, actual)
   end
 
-  def disconnected_double_loop
+  def test_disconnected_double_loop
     skip
     expect = false
     actual = Dominoes.new.can_chain?([[1, 2], [2, 1], [3, 4], [4, 3]])
     assert_equal(expect, actual)
   end
 
-  def disconnected_single_isolated
+  def test_disconnected_single_isolated
     skip
     expect = false
-    actual = Dominoes.new.can_chain?([[1, 2], [2, 1], [3, 4], [4, 3]])
+    actual = Dominoes.new.can_chain?([[1, 2], [2, 3], [3, 1], [4, 4]])
     assert_equal(expect, actual)
   end
 
-  def need_backtrack
+  def test_need_backtrack
     skip
     expect = true
-    actual = Dominoes.new.can_chain?([[1, 2], [2, 1], [3, 4], [4, 3]])
+    actual = Dominoes.new.can_chain?([[1, 2], [2, 3], [3, 1], [2, 4], [2, 4]])
     assert_equal(expect, actual)
   end
 
-  def 
+  def test_separate_loops
     
-    expect = 
-    actual = 
+    expect = true
+    actual = Dominoes.new.can_chain?([[1, 2], [2, 3], [3, 1], [1, 1], [2, 2], [3, 3]])
     assert_equal(expect, actual)
   end
 
-  def 
+  def test_ten_elements
     
-    expect = 
-    actual = 
+    expect = true
+    actual = Dominoes.new.can_chain?([[1, 2], [5, 3], [3, 1], [1, 2], [2, 4], [1, 6], [2, 3], [3, 4], [5, 6]])
     assert_equal(expect, actual)
   end
 
