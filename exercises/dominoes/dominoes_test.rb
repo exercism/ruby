@@ -12,13 +12,11 @@ class DominoesTest < Minitest::Test
   end
 
   def test_singleton_input_chainable
-    skip
     actual = Dominoes.new.can_chain?([[1, 1]])
     assert(actual)
   end
 
   def test_singleton_input_not_chainable
-    skip
     actual = Dominoes.new.can_chain?([[1, 2]])
     refute(actual)
   end
