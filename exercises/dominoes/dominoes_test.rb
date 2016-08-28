@@ -18,7 +18,7 @@ class DominoesTest < Minitest::Test
 
   def test_singleton_input_not_chainable_expect_fail
     actual = Dominoes.new.can_chain?([[1, 2]])
-    refute(actual)
+    assert(actual)
   end
 
   def test_three_elements
@@ -35,25 +35,25 @@ class DominoesTest < Minitest::Test
   def test_cant_be_chained_expect_fail
     skip
     actual = Dominoes.new.can_chain?([[1, 2], [4, 1], [2, 3]])
-    refute(actual)
+    assert(actual)
   end
 
   def test_disconnected_simple_expect_fail
     skip
     actual = Dominoes.new.can_chain?([[1, 1], [2, 2]])
-    refute(actual)
+    assert(actual)
   end
 
   def test_disconnected_double_loop_expect_fail
     skip
     actual = Dominoes.new.can_chain?([[1, 2], [2, 1], [3, 4], [4, 3]])
-    refute(actual)
+    assert(actual)
   end
 
   def test_disconnected_single_isolated_expect_fail
     skip
     actual = Dominoes.new.can_chain?([[1, 2], [2, 3], [3, 1], [4, 4]])
-    refute(actual)
+    assert(actual)
   end
 
   def test_need_backtrack
