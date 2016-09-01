@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/helper'
+require 'generator'
+require 'change_cases'
+
+Generator.new('change', ChangeCases).generate

@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'alphametics'
 
 # Test data version:
-# 0b81bdb
+# 08a0cda
 class AlphameticsTest < Minitest::Test
   def test_solve_short_puzzle
     # skip
@@ -15,16 +15,15 @@ class AlphameticsTest < Minitest::Test
     assert_equal(expect, actual)
   end
 
-  # This test has been commented out due its long runtime.
-  # def test_solve_long_puzzle
-  #   skip
-  #   expect = {
-  #     'S' => 9, 'E' => 5, 'N' => 6, 'D' => 7,
-  #     'M' => 1, 'O' => 0, 'R' => 8, 'Y' => 2
-  #   }
-  #   actual = Alphametics.new.solve('SEND + MORE == MONEY')
-  #   assert_equal(expect, actual)
-  # end
+  def test_solve_long_puzzle
+    skip
+    expect = {
+      'S' => 9, 'E' => 5, 'N' => 6, 'D' => 7,
+      'M' => 1, 'O' => 0, 'R' => 8, 'Y' => 2
+    }
+    actual = Alphametics.new.solve('SEND + MORE == MONEY')
+    assert_equal(expect, actual)
+  end
 
   def test_solve_puzzle_with_multiplication
     skip
@@ -79,6 +78,6 @@ class AlphameticsTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
