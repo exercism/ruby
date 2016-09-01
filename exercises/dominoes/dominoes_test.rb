@@ -7,17 +7,17 @@ require_relative 'dominoes'
 # 08a0cda
 class DominoesTest < Minitest::Test
   def test_empty_input
-    actual = Dominoes.new.can_chain?([])
+    actual = Dominoes.new([]).can_chain?
     assert(actual)
   end
 
   def test_singleton_input_chainable
-    actual = Dominoes.new.can_chain?([[1, 1]])
+    actual = Dominoes.new([[1, 1]]).can_chain?
     assert(actual)
   end
 
   def test_singleton_input_not_chainable
-    actual = Dominoes.new.can_chain?([[1, 2]])
+    actual = Dominoes.new([[1, 2]]).can_chain?
     refute(actual)
   end
 
