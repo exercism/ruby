@@ -2,12 +2,14 @@ class Dominoes
   require_relative 'domino'
   attr_accessor :list
 
-  #[ArrayTuples] => [Domino]
-  def initialize(arr_form_of_dominoes =[])
+  #[ArrayTuples], false => [Domino] or [Domino], true => [Domino]
+  def initialize( arr=[], already_dominoes= nil)
     @list = []
-    if !arr_form_of_dominoes.empty?
-      arr_form_of_dominoes.each do |item|
+    arr.each do |item|
+      if !already_dominoes
         @list << Domino.new(item[0], item[1])
+      else
+        @list << Domino.deep_copy(item)
       end
     end
   end
@@ -37,7 +39,7 @@ class Dominoes
   #   result
   # end
 
-  
+
 
   # def self.make_dominoes!(arr_form_of_dominoes =[])
   #   @list = []
