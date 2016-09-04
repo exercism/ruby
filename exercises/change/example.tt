@@ -6,12 +6,12 @@ require_relative 'change'
 # Test data version:
 # <%= sha1 %>
 class ChangeTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def test_<%= test_case.description.tr(' ', '_') %>
+  def test_<%= test_case.description.tr!(' ', '_') %>
     <%= test_case.skipped %>
-    input = <%= test_case.coins %>
-    coins = <%= test_case.target %>
+    input = <%= test_case.target %>
+    coins = <%= test_case.coins %>
     expected = <%= test_case.expected %>
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
