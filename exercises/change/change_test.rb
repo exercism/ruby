@@ -7,67 +7,67 @@ require_relative 'change'
 # 08a0cda
 class ChangeTest < Minitest::Test
   def test_single_coin_change
-    
-    input = [1, 5, 10, 25, 100]
-    coins = 25
+    skip
+    input = 25
+    coins = [1, 5, 10, 25, 100]
     expected = [25]
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 
   def test_multiple_coin_change
-    
-    input = [1, 5, 10, 25, 100]
-    coins = 15
+    skip
+    input = 15
+    coins = [1, 5, 10, 25, 100]
     expected = [5, 10]
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 
   def test_change_with_Lilliputian_Coins
-    
-    input = [1, 4, 15, 20, 50]
-    coins = 23
+    skip
+    input = 23
+    coins = [1, 4, 15, 20, 50]
     expected = [4, 4, 15]
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 
   def test_change_with_Lower_Elbonia_Coins
-    
-    input = [1, 5, 10, 21, 25]
-    coins = 63
+    skip
+    input = 63
+    coins = [1, 5, 10, 21, 25]
     expected = [21, 21, 21]
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 
   def test_large_target_values
-    
-    input = [1, 2, 5, 10, 20, 50, 100]
-    coins = 999
+    skip
+    input = 999
+    coins = [1, 2, 5, 10, 20, 50, 100]
     expected = [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100]
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 
   def test_no_coins_make_0_change
-    
-    input = [1, 5, 10, 21, 25]
-    coins = 0
+    skip
+    input = 0
+    coins = [1, 5, 10, 21, 25]
     expected = []
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 
   def test_error_testing_for_change_smaller_than_the_smallest_of_coins
-    
-    input = [5, 10]
-    coins = 3
+    skip
+    input = 3
+    coins = [5, 10]
     expected = -1
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 
   def test_cannot_find_negative_change_values
-    
-    input = [1, 2, 5]
-    coins = -5
+    skip
+    input = -5
+    coins = [1, 2, 5]
     expected = -1
-    assert_equal(Change.generate(input, coins), expected)
+    assert_equal Change.generate(input, coins), expected
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -89,6 +89,6 @@ class ChangeTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 11, BookKeeping::VERSION
   end
 end
