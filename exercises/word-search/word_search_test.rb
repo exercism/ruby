@@ -5,7 +5,8 @@ require_relative 'word_search'
 class WordSearchTest < Minitest::Test
 
    PUZZLE =
-     ["jefblpepre",
+     ["clojurermt",
+       "jefblpepre",
       "camdcimgtc",
       "oivokprjsm",
       "pbwasqroua",
@@ -13,8 +14,8 @@ class WordSearchTest < Minitest::Test
       "wolcqlirpc",
       "screeaumgr",
       "alxhpburyi",
-      "jalaycalmp",
-      "clojurermt"]
+      "jalaycalmp"
+      ]
 
 
   def test_stupid   #SET TO FAIL!!
@@ -30,8 +31,8 @@ class WordSearchTest < Minitest::Test
   def test_find_horizontal_words_left_to_right
     word = "clojure"
     new_game = WordSearch.new(PUZZLE)
-
-    assert_equal [[9, 0],[9, 6]], new_game.search(word)
+    new_game.find_start_character(word)
+    assert_equal [[0,0],[0, 6]], new_game.build_words(word)
   end
 
 end

@@ -33,16 +33,17 @@ class WordSearch
     end
 
     def build_words(word)
-     build_until = word.size - 1
+     build_until = word.size
      @start_coordinates.each do |coordinate|
        new_word = ""
        k = 0
        until k == build_until
-        new_word <<  @puzzle[coordinate[0]].chars[coordinate[1+k]]
+        #  binding.pry
+        new_word <<  @puzzle[coordinate[0]].chars[coordinate[1]+k]
          k += 1
-       end
-       if word == new_word
-         return [[coordinate],[coordinate[0]].chars[coordinate[1+k]]]
+         if word == new_word
+           return [coordinate,[coordinate[0],coordinate[1]+k-1]]
+         end
        end
      end
     end
