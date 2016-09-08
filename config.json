@@ -84,7 +84,8 @@
     "connect",
     "list-ops",
     "diamond",
-    "all-your-base"
+    "all-your-base",
+    "sublist"
   ],
   "deprecated": [
     "octal",

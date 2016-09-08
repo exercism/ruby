@@ -1,5 +1,5 @@
 require 'byebug'
-SUBLIST = 0 
+SUBLIST = 0
 SUPERLIST = 1
 EQUAL = 2
 UNEQUAL = 3
