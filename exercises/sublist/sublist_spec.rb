@@ -49,7 +49,7 @@ describe 'SublistTest' do
     expect(check_lists(l1, l2)).to eq(SUBLIST)
   end
   
-   'test_sublist_in_middle' do
+  it 'test_sublist_in_middle' do
     l1 = [2, 3, 4]
     l2 = [0, 1, 2, 3, 4, 5]
     expect(check_lists(l1, l2)).to eq(SUBLIST)
@@ -96,7 +96,6 @@ describe 'SublistTest' do
     expect(check_lists([1, 2, 3], [1, 3])).to eq(UNEQUAL)
     expect(check_lists([1, 2, 3], [3, 2, 1])).to eq(UNEQUAL)
   end
-
 end
 
 
