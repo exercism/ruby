@@ -20,7 +20,6 @@ class AcronymTest < Minitest::Test
         The acronym of '#{given}' should be '#{expected}'.
       MSG
     end
-    gem 'minitest', '>= 5.0.0'
   end
 
   # Problems in exercism evolve over time,
