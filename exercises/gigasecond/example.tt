@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'date'
 require 'time'
 require_relative 'gigasecond'
 
