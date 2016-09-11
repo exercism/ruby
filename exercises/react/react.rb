@@ -1,13 +1,3 @@
-class Reactor
-  def create_input(initial_value)
-    InputCell::new(initial_value)
-  end
-
-  def create_compute(*inputs, &block)
-    ComputeCell::new(inputs, ->() { block.call(*inputs.map(&:value)) })
-  end
-end
-
 class Cell
   attr_reader :value
 
@@ -30,10 +20,11 @@ class InputCell < Cell
 end
 
 class ComputeCell < Cell
-  def initialize(inputs, compute)
-    super(compute.call)
+  def initialize(*inputs, &compute)
+    new_value = -> { compute.call(*inputs.map(&:value)) }
+    super(new_value.call)
     @last_value = @value
-    @compute = compute
+    @new_value = new_value
     inputs.each { |i| i.dependencies << self }
     @callbacks = {}
     @callbacks_issued = 0
@@ -52,7 +43,7 @@ class ComputeCell < Cell
   # TODO: Would like for only InputCells and ComputeCells to call these two.
 
   def update_dependencies
-    new_value = @compute.call
+    new_value = @new_value.call
     return if new_value == @value
     @value = new_value
     @dependencies.each(&:update_dependencies)
