@@ -2,6 +2,7 @@ require 'byebug'
 class Change
   class << self
     def generate(amount, coins_supply)
+      # write the algorithm
       # Given a supply of coins with different values
       # Keep track of possible coins combinations
       # Go through the supply of coins
@@ -20,10 +21,9 @@ class Change
       remaining_amount = amount
 
       available_coins.each do |coin|
-        if (remaining_amount/coin).to_i > 0
-          ((remaining_amount/coin).to_i).times do
+        if remaining_amount/coin > 0
+          (remaining_amount/coin).times do
             coins << coin
-            debugger
           end
         end
         if coins.length > 0
