@@ -33,9 +33,19 @@ class TriangleTest < Minitest::Test
     assert_equal :isosceles, Triangle.new(10, 10, 2).kind
   end
 
+  def test_isosceles_triangles_have_unequal_side_larger_than_equal_sides
+    skip
+    assert_equal :isosceles, Triangle.new(4, 7, 4).kind
+  end
+
   def test_scalene_triangles_have_no_equal_sides
     skip
     assert_equal :scalene, Triangle.new(3, 4, 5).kind
+  end
+
+  def test_2a_equals_b_plus_c_looks_like_equilateral_but_is_not
+    skip
+    assert_equal :scalene, Triangle.new(5, 4, 6).kind
   end
 
   def test_scalene_triangles_have_no_equal_sides_at_a_larger_scale_too
@@ -60,13 +70,6 @@ class TriangleTest < Minitest::Test
     end
   end
 
-  def test_triangles_with_negative_sides_are_illegal
-    skip
-    assert_raises(TriangleError) do
-      Triangle.new(3, 4, -5).kind
-    end
-  end
-
   def test_triangles_violating_triangle_inequality_are_illegal
     skip
     assert_raises(TriangleError) do
@@ -77,14 +80,14 @@ class TriangleTest < Minitest::Test
   def test_triangles_violating_triangle_inequality_are_illegal_2
     skip
     assert_raises(TriangleError) do
-      Triangle.new(2, 4, 2).kind
+      Triangle.new(7, 3, 2).kind
     end
   end
 
   def test_triangles_violating_triangle_inequality_are_illegal_3
     skip
     assert_raises(TriangleError) do
-      Triangle.new(7, 3, 2).kind
+      Triangle.new(1, 3, 1).kind
     end
   end
 end
