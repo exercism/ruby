@@ -4,8 +4,7 @@ require 'minitest/autorun'
 require_relative 'raindrops'
 
 # Test data version:
-# deb225e Implement canonical dataset for scrabble-score problem (#255)
-
+# 5b5e807
 class RaindropsTest < Minitest::Test
   def test_1
     assert_equal '1', Raindrops.convert(1)
@@ -29,6 +28,11 @@ class RaindropsTest < Minitest::Test
   def test_6
     skip
     assert_equal 'Pling', Raindrops.convert(6)
+  end
+
+  def test_8
+    skip
+    assert_equal '8', Raindrops.convert(8)
   end
 
   def test_9
@@ -61,6 +65,11 @@ class RaindropsTest < Minitest::Test
     assert_equal 'Plang', Raindrops.convert(25)
   end
 
+  def test_27
+    skip
+    assert_equal 'Pling', Raindrops.convert(27)
+  end
+
   def test_35
     skip
     assert_equal 'PlangPlong', Raindrops.convert(35)
@@ -81,14 +90,20 @@ class RaindropsTest < Minitest::Test
     assert_equal 'PlingPlangPlong', Raindrops.convert(105)
   end
 
+  def test_3125
+    skip
+    assert_equal 'Plang', Raindrops.convert(3125)
+  end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
   # not your solution.
   #
   # Define a constant named VERSION inside of the top level BookKeeping
-  # module.
-  #  In your file, it will look like this:
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
   #
   # module BookKeeping
   #   VERSION = 1 # Where the version number matches the one in the test.
@@ -99,6 +114,6 @@ class RaindropsTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
