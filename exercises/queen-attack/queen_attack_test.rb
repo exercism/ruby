@@ -4,12 +4,6 @@ require 'minitest/autorun'
 require_relative 'queen_attack'
 
 class QueensTest < Minitest::Test
-  def test_default_positions
-    queens = Queens.new
-    assert_equal [0, 3], queens.white
-    assert_equal [7, 3], queens.black
-  end
-
   def test_specific_placement
     skip
     queens = Queens.new(white: [3, 7], black: [6, 1])
@@ -27,11 +21,33 @@ class QueensTest < Minitest::Test
     assert_equal [7, 7], queens2.black
   end
 
+  def test_queens_must_have_a_positive_rank
+    skip
+    assert_raises(ArgumentError) { Queens.new(white: [-1, 4], black: [2, 4]) }
+    assert_raises(ArgumentError) { Queens.new(white: [2, 4], black: [-1, 4]) }
+  end
+
+  def test_queens_must_have_a_positive_file
+    skip
+    assert_raises(ArgumentError) { Queens.new(white: [4, -1], black: [4, 2]) }
+    assert_raises(ArgumentError) { Queens.new(white: [4, 2], black: [4, -1]) }
+  end
+
+  def test_queen_ranks_do_not_exceed_board_size
+    skip
+    assert_raises(ArgumentError) { Queens.new(white: [8, 4], black: [2, 4]) }
+    assert_raises(ArgumentError) { Queens.new(white: [2, 4], black: [8, 4]) }
+  end
+
+  def test_queen_files_do_not_exceed_board_size
+    skip
+    assert_raises(ArgumentError) { Queens.new(white: [2, 8], black: [2, 4]) }
+    assert_raises(ArgumentError) { Queens.new(white: [2, 4], black: [2, 8]) }
+  end
+
   def test_cannot_occupy_same_space
     skip
-    assert_raises ArgumentError do
-      Queens.new(white: [2, 4], black: [2, 4])
-    end
+    assert_raises(ArgumentError) { Queens.new(white: [2, 4], black: [2, 4]) }
   end
 
   def test_string_representation # rubocop:disable Metrics/MethodLength
@@ -124,5 +140,26 @@ _ _ _ _ _ _ _ _
     skip
     queens = Queens.new(white: [6, 1], black: [1, 6])
     assert queens.attack?
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module.
+  #  In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
   end
 end
