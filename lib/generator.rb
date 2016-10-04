@@ -14,11 +14,11 @@ class Generator
   end
 
   def metadata_dir
-    File.expand_path(File.join('..', '..', '..', METADATA_REPOSITORY), __FILE__)
+    File.expand_path(File.join('..', '..', '..', METADATA_REPOSITORY, 'exercises', name), __FILE__)
   end
 
   def data
-    File.read(File.join(metadata_dir, "#{name}.json"))
+    File.read(File.join(metadata_dir, 'canonical-data.json'))
   end
 
   def path_to(file)
