@@ -1,6 +1,6 @@
 class RaindropsCase < OpenStruct
   def name
-    'test_%s' % description.downcase.gsub(/[ -]/, '_')
+    'test_%s' % number
   end
 
   def do
