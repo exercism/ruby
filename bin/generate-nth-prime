@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/helper'
+require 'generator'
+require 'nth_prime_cases'
+
+Generator.new('nth-prime', NthPrimeCases).generate

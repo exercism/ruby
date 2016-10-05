@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative 'nth_prime'
+
+# Test data version:
+# <%= sha1 %>
+# Rubocop directives
+# rubocop:disable Style/NumericLiterals
+#
+class NthPrimeTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %><% if test_case.skipped? %>
+    skip<% end %><% if test_case.raises_error? %>
+    assert_raises(ArgumentError) { <%= test_case.actual %> }<% else %>
+    assert_equal <%= test_case.expected %>, <%= test_case.actual %><% end %>
+  end
+<% end %>
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+  def test_bookkeeping
+    skip
+    assert_equal <%= version.next %>, BookKeeping::VERSION
+  end
+end
