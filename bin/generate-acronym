@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/helper'
+require 'generator'
+require 'acronym_cases'
+
+Generator.new('acronym', AcronymCases).generate
