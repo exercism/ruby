@@ -1,4 +1,4 @@
-class BracketsCase < OpenStruct
+class BracketPushCase < OpenStruct
   def name
     'test_%s' % description.gsub(/[ -]/, '_')
   end
@@ -34,8 +34,8 @@ class BracketsCase < OpenStruct
   end
 end
 
-BracketsCases = proc do |data|
+BracketPushCases = proc do |data|
   JSON.parse(data)['cases'].map.with_index do |row, i|
-    BracketsCase.new(row.merge('index' => i))
+    BracketPushCase.new(row.merge('index' => i))
   end
 end

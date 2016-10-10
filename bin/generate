@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+exercise = ARGV[0]
+cases = "#{exercise.tr('-','_')}_cases"
+
+require_relative '../lib/helper'
+require 'generator'
+begin
+  require "#{cases}"
+rescue LoadError
+  puts "A generator does not currently exist for #{exercise}!"
+  exit(1)
+end
+
+klass = Object.const_get(cases.split('_').map(&:capitalize).join)
+Generator.new(exercise, klass).generate
