@@ -1,80 +1,138 @@
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
 
 class Poker
-  def initialize(hands)
-    @hands = hands
+
+  def initialize(hand_arrays)
+    @hands = hand_arrays.map { |hand_array| Hand.new(hand_array) }
   end
 
   def best_hand
-    best_score = @hands.map { |hand| hand_rank(hand) }.max
-    @hands.select { |hand| hand_rank(hand) == best_score }
+    hands.select { |hand| hand.score == highest_score }.map(&:to_a)
   end
 
   private
 
-  def hand_rank(hand)
-    hand_parser(hand)
-    top_hand || low_hand
+  attr_reader :hands
+
+  def highest_score
+    hands.map(&:score).max
   end
 
-  def hand_parser(hand)
-    @card_ranks = hand.map { |ele| '..23456789TJQKA'.index(ele[0]) }
-    @card_suits = hand.map { |ele| '.HSDC'.index(ele[1]) }
-    @card_split = @card_ranks.each_with_object(Hash.new(0)) { |r, h| h[r] += 1 }
-    @groups = @card_split.values.sort.reverse
+end
+
+class Hand
+
+  def initialize(hand_array)
+    @hand_array = hand_array
+    @cards = hand_array.map { |rank_and_suit| Card.new(rank_and_suit) }
   end
 
-  def top_hand
-    straight_flush || square || full || flush || straight
+  def to_a
+    hand_array
   end
 
-  def low_hand
-    three_of_a_kind || double_pair || pair || 0 + @card_ranks.max
+  def score
+    [hand_score, card_score].flatten
   end
 
-  def straight_flush
-    800 + @card_ranks.max if straight? && flush?
+  private
+
+  attr_reader :hand_array, :cards
+
+  def hand_score
+    scoring_hands.map.with_index { |scoring_hand, i| i if scoring_hand }.compact.max
   end
 
-  def square
-    700 + @card_split.key(4) if @groups == [4, 1]
+  def card_score
+    five_high_straight? ? [5, 4, 3, 2, 1] : card_score_array
   end
 
-  def full
-    600 + @card_split.key(3) if @groups == [3, 2]
+  def card_score_array
+    rank_count_hash
+        .sort_by { |rank, count| [-count, -rank] }
+        .map { |count_rank_array| count_rank_array[0] }
   end
 
-  def flush
-    500 + @card_ranks.max if flush?
+  def scoring_hands
+    [high_card?, one_pair?, two_pair?, three_of_a_kind?, five_high_straight?,
+     straight?, flush?, full_house?, four_of_a_kind?, straight_flush?]
   end
 
-  def straight
-    400 + @card_ranks.max if straight?
+  def high_card?
+    rank_count_totals.max == 1
   end
 
-  def three_of_a_kind
-    300 + @card_split.key(3) if @groups == [3, 1, 1]
+  def one_pair?
+    rank_count_totals.max == 2
   end
 
-  def double_pair
-    if @groups == [2, 2, 1]
-      @card_split.delete(@card_split.key(1))
-      return 200 + @card_split.max_by { |k| k }[0]
-    end
+  def two_pair?
+    rank_count_totals == [1, 2, 2]
   end
 
-  def pair
-    100 + @card_split.key(2) if @groups == [2, 1, 1, 1]
+  def three_of_a_kind?
+    rank_count_totals.max == 3
+  end
+
+  def five_high_straight?
+    rank_values == [2, 3, 4, 5, 14]
   end
 
   def straight?
-    @card_ranks = [1, 2, 3, 4, 5] if @card_ranks.sort == [2, 3, 4, 5, 14]
-    @card_ranks.uniq.length == 5 && @card_ranks.max - @card_ranks.min == 4
+    rank_values.each_cons(2).all? { |a, b| a + 1 == b }
   end
 
   def flush?
-    @card_suits.uniq.length == 1
+    suits.uniq.count == 1
   end
+
+  def full_house?
+    rank_count_totals == [2, 3]
+  end
+
+  def four_of_a_kind?
+    rank_count_totals.max == 4
+  end
+
+  def straight_flush?
+    straight? && flush?
+  end
+
+  def rank_count_totals
+    rank_count_hash.values.sort
+  end
+
+  def rank_count_hash
+    rank_values.each_with_object(Hash.new(0)) { |value, count| count[value] += 1 }
+  end
+
+  def rank_values
+    cards.map(&:rank_value).sort
+  end
+
+  def suits
+    cards.map(&:suit)
+  end
+
+end
+
+class Card
+
+  RANK_VALUES = {'2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6,
+                 '7' => 7, '8' => 8, '9' => 9, '10' => 10,
+                 'J' => 11, 'Q' => 12, 'K' => 13, 'A' => 14}
+
+  attr_reader :rank, :suit
+
+  def initialize(rank_and_suit)
+    @rank = rank_and_suit[0..-2]
+    @suit = rank_and_suit[-1]
+  end
+
+  def rank_value
+    RANK_VALUES[rank]
+  end
+
 end
