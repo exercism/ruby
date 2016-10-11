@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'hamming_cases'
-
-Generator.new('hamming', HammingCases).generate

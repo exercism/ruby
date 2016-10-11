@@ -1,8 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'alphametics_cases'
-
-Generator.new('alphametics', AlphameticsCases).generate
-

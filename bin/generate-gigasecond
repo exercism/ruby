@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'gigasecond_cases'
-
-Generator.new('gigasecond', GigasecondCases).generate

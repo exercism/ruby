@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'pangram_cases'
-
-Generator.new('pangram', PangramCases).generate
