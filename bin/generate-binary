@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'binary_cases'
-
-Generator.new('binary', BinaryCases).generate

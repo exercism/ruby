@@ -89,7 +89,7 @@ tree -L 1 ~/code/exercism
 1. `xruby/$PROBLEM/example.tt` - the Erb template for the test file, `$PROBLEM_test.rb`.
 1. `x-common/$PROBLEM.json` - the shared inputs and outputs for the problem.
 1. `lib/$PROBLEM.rb` - the logic for turning the data into tests.
-1. `xruby/bin/generate-$PROBLEM` - the command to actually generate the test suite.
+1. `xruby/bin/generate $PROBLEM` - the command to actually generate the test suite.
 1. `.version` - used to keep track of the version of the test files as the data changes.
 
 Additionally, there is some common generator logic in `lib/generator.rb`.
@@ -98,7 +98,7 @@ For example, take a look at the `hamming.json` file in the x-common repository, 
 as the following files in the xruby repository:
 
 1. `hamming/example.tt`
-1. `bin/generate-hamming`
+1. `bin/generate hamming`
 1. `lib/hamming.rb`
 1. `lib/generator.rb`
 

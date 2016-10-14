@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'two_bucket_cases'
-
-Generator.new('two-bucket', TwoBucketCases).generate

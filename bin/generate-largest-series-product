@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'largest_series_product_cases'
-
-Generator.new('largest-series-product', LargestSeriesProductCases).generate

@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'custom_set_cases'
-
-Generator.new('custom-set', CustomSetCases).generate

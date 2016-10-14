@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'rna_transcription_cases'
-
-Generator.new('rna-transcription', RnaTranscriptionCases).generate

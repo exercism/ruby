@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'clock_cases'
-
-Generator.new('clock', ClockCases).generate

@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'connect_cases'
-
-Generator.new('connect', ConnectCases).generate

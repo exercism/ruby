@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'hello_world_cases'
-
-Generator.new('hello-world', HelloWorldCases).generate

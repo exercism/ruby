@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'roman_numerals_cases'
-
-Generator.new('roman-numerals', RomanNumeralsCases).generate

@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'raindrop_cases'
-
-Generator.new('raindrops', RaindropCases).generate

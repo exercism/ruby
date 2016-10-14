@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'bracket_push_cases'
-
-Generator.new('bracket-push', BracketsCases).generate

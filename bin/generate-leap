@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative '../lib/helper'
-require 'generator'
-require 'leap_cases'
-
-Generator.new('leap', LeapCases).generate
