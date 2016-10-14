@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'alphametics'
 
 # Test data version:
-# 0b81bdb
+# 8d8589f
 class AlphameticsTest < Minitest::Test
   def test_solve_short_puzzle
     # skip
@@ -26,26 +26,6 @@ class AlphameticsTest < Minitest::Test
   #   assert_equal(expect, actual)
   # end
 
-  def test_solve_puzzle_with_multiplication
-    skip
-    expect = {
-      'I' => 8, 'F' => 2, 'D' => 3, 'R' => 9,
-      'O' => 1
-    }
-    actual = Alphametics.new.solve('IF * DR == DORI')
-    assert_equal(expect, actual)
-  end
-
-  def test_solve_puzzle_with_exponents
-    skip
-    expect = {
-      'P' => 9, 'I' => 6, 'R' => 7, 'A' => 4,
-      'E' => 0
-    }
-    actual = Alphametics.new.solve('PI * R ^ 2 == AREA')
-    assert_equal(expect, actual)
-  end
-
   def test_solution_must_have_unique_value_for_each_letter
     skip
     expect = nil
@@ -59,6 +39,28 @@ class AlphameticsTest < Minitest::Test
     actual = Alphametics.new.solve('ACA + DD == BD')
     assert_equal(expect, actual)
   end
+
+  def test_solve_puzzle_with_four_words
+    skip
+    expect = {
+      'E' => 4, 'G' => 2, 'H' => 5, 'I' => 0,
+      'L' => 1, 'S' => 9, 'T' => 7
+    }
+    actual = Alphametics.new.solve('HE + SEES + THE == LIGHT')
+    assert_equal(expect, actual)
+  end
+
+  # This test has been commented out due its long runtime.
+  # def test_solve_puzzle_with_many_words
+  #   skip
+  #   expect = {
+  #     'A' => 5, 'D' => 3, 'E' => 4, 'F' => 7,
+  #     'G' => 8, 'N' => 0, 'O' => 2, 'R' => 1,
+  #     'S' => 6, 'T' => 9
+  #   }
+  #   actual = Alphametics.new.solve('AND + A + STRONG + OFFENSE + AS + A + GOOD = DEFENSE')
+  #   assert_equal(expect, actual)
+  # end
 
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
@@ -79,6 +81,6 @@ class AlphameticsTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
