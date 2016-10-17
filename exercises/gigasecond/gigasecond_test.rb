@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'time'
 require_relative 'gigasecond'
 
 # Test data version: 9d027ad
