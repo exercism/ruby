@@ -4,66 +4,66 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'isogram'
 
-# Test data version:
-# 306975e
+# Common test data version: 3dfde31
 class IsogramTest < Minitest::Test
   def test_duplicates
-    str = 'duplicates'
-    assert Isogram.is_isogram?(str)
+    
+    string = 'duplicates'
+    assert Isogram.is_isogram?(string)
   end
 
   def test_eleven
     skip
-    str = 'eleven'
-    refute Isogram.is_isogram?(str)
+    string = 'eleven'
+    refute Isogram.is_isogram?(string)
   end
 
   def test_subdermatoglyphic
     skip
-    str = 'subdermatoglyphic'
-    assert Isogram.is_isogram?(str)
+    string = 'subdermatoglyphic'
+    assert Isogram.is_isogram?(string)
   end
 
   def test_alphabet
     skip
-    str = 'Alphabet'
-    refute Isogram.is_isogram?(str)
+    string = 'Alphabet'
+    refute Isogram.is_isogram?(string)
   end
 
   def test_thumbscrew_japingly
     skip
-    str = 'thumbscrew-japingly'
-    assert Isogram.is_isogram?(str)
+    string = 'thumbscrew-japingly'
+    assert Isogram.is_isogram?(string)
   end
 
   def test_hjelmqvist_gryb_zock_pfund_wax
     skip
-    str = 'Hjelmqvist-Gryb-Zock-Pfund-Wax'
-    assert Isogram.is_isogram?(str)
+    string = 'Hjelmqvist-Gryb-Zock-Pfund-Wax'
+    assert Isogram.is_isogram?(string)
   end
 
-  def test_heizlrckstoabdmpfung
+  def test_heizölrückstoßabdämpfung
     skip
-    str = 'Heizölrückstoßabdämpfung'
-    assert Isogram.is_isogram?(str)
+    string = 'Heizölrückstoßabdämpfung'
+    assert Isogram.is_isogram?(string)
   end
 
   def test_the_quick_brown_fox
     skip
-    str = 'the quick brown fox'
-    refute Isogram.is_isogram?(str)
+    string = 'the quick brown fox'
+    refute Isogram.is_isogram?(string)
   end
 
   def test_emily_jung_schwartzkopf
     skip
-    str = 'Emily Jung Schwartzkopf'
-    assert Isogram.is_isogram?(str)
+    string = 'Emily Jung Schwartzkopf'
+    assert Isogram.is_isogram?(string)
   end
 
-  def test_lphant
+  def test_éléphant
     skip
-    str = 'éléphant'
-    refute Isogram.is_isogram?(str)
+    string = 'éléphant'
+    refute Isogram.is_isogram?(string)
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
