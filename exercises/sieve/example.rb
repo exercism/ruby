@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION = 1
+end
+
 class Sieve
   attr_reader :range
   def initialize(limit)
