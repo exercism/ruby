@@ -1,16 +1,19 @@
 class IsogramCase < OpenStruct
+
   def name
-    str_to_ascii = input.downcase.unpack('U*').select { |c| c < 128 }.map(&:chr)
-    joined_string = str_to_ascii.join.gsub(/[ -]/, '_')
-    'test_%s' % joined_string
+    format('test_%s', description)
   end
 
-  def do
-    'Isogram.is_isogram?(str)'
+  def description
+    input.downcase.gsub(/[ -]/,'_')
   end
 
-  def skipped?
-    index > 0
+  def assertion
+    expected ? 'assert' : 'refute'
+  end
+
+  def skip
+    'skip' unless index.zero?
   end
 end
 

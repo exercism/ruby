@@ -4,14 +4,12 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'isogram'
 
-# Test data version:
-# <%= sha1 %>
+# Common test data version: <%= sha1 %>
 class IsogramTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %>
-    str = '<%= test_case.input %>'<% if test_case.expected %>
-    assert<% else %>
-    refute<% end %> <%= test_case.do %>
+  def <%= test_case.name %>
+    <%= test_case.skip %>
+    string = '<%= test_case.input %>'
+    <%= test_case.assertion %> Isogram.is_isogram?(string)
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
