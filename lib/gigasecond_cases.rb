@@ -1,8 +1,16 @@
 require 'time'
 
 class GigasecondCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.gsub(/[ :-]/, '_')
+  end
+
+  def work_load
+    "assert_equal #{want}, Gigasecond.from(#{got})"
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def description
@@ -25,10 +33,6 @@ class GigasecondCase < OpenStruct
   def stop_values
     ts = Time.parse(expected)
     [ts.year, ts.month, ts.day, ts.hour, ts.min, ts.sec]
-  end
-
-  def skipped?
-    index > 0
   end
 end
 

@@ -1,9 +1,9 @@
 class BinaryCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def assertion
+  def work_load
     return error_assertion if raises_error?
     equality_assertion
   end
@@ -15,14 +15,14 @@ class BinaryCase < OpenStruct
   private
 
   def error_assertion
-    "assert_raises(ArgumentError) { #{work_load} }"
+    "assert_raises(ArgumentError) { #{checked} }"
   end
 
   def equality_assertion
-    "assert_equal #{expected}, #{work_load}"
+    "assert_equal #{expected}, #{checked}"
   end
 
-  def work_load
+  def checked
     "Binary.new('#{binary}')#{'.to_decimal' unless raises_error?}"
   end
 

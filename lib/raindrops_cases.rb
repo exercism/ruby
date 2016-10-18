@@ -1,14 +1,14 @@
 class RaindropsCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % number
   end
 
-  def do
-    "Raindrops.convert(#{number})"
+  def work_load
+    "assert_equal '#{expected}', Raindrops.convert(#{number})"
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 

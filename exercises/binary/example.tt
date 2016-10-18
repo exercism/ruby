@@ -9,7 +9,7 @@ require_relative 'binary'
 class BinaryTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %>
     <%= test_case.skipped %>
-    <%= test_case.assertion %>
+    <%= test_case.work_load %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

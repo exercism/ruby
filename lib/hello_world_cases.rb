@@ -3,12 +3,18 @@ class HelloWorldCase < OpenStruct
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def do
-    defined?(name) ? "HelloWorld.hello('#{name}')" : 'HelloWorld.hello'
+  def work_load
+    assertion =
+      if defined?(name)
+        "HelloWorld.hello('#{name}')"
+      else
+        'HelloWorld.hello'
+      end
+    "assert_equal '#{expected}', #{assertion}"
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 

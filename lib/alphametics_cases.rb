@@ -7,7 +7,7 @@ class AlphameticsCase < OpenStruct
   end
 
   def work_load
-    "Alphametics.new.solve('#{puzzle}')"
+    "assert_equal(#{expect}, Alphametics.new.solve('#{puzzle}'))"
   end
 
   def expect

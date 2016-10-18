@@ -1,18 +1,18 @@
 class LargestSeriesProductCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.tr('()', '').tr(' -', '_').downcase
   end
 
-  def do
+  def work_load
     "Series.new('#{digits}').largest_product(#{span})"
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def raises_error?
     expected.to_i == -1
-  end
-
-  def skipped?
-    index > 0
   end
 end
 

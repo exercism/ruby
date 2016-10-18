@@ -1,14 +1,14 @@
 class AcronymCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.tr(' ', '_')
   end
 
-  def assertion
-    "Acronym.abbreviate('#{phrase}')"
+  def work_load
+    "assert_equal #{expected}, Acronym.abbreviate('#{phrase}')"
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 

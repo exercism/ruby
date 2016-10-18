@@ -4,7 +4,7 @@ class RnaTranscriptionCase < OpenStruct
   end
 
   def work_load
-    "Complement.of_dna('#{dna}')"
+    "assert_equal '#{expected}', Complement.of_dna('#{dna}')"
   end
 
   def skipped

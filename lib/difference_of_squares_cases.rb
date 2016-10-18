@@ -1,9 +1,9 @@
 class DifferenceOfSquaresCase < OpenStruct
-  def test_name
+  def name
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def do
+  def work_load
     "Squares.new(#{number}).#{action}"
   end
 
@@ -12,8 +12,8 @@ class DifferenceOfSquaresCase < OpenStruct
     section
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def expected_formatted

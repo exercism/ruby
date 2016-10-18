@@ -1,14 +1,18 @@
 class PangramCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.delete("'").gsub(/[ -]/, '_')
   end
 
-  def do
-    'Pangram.is_pangram?(str)'
+  def work_load
+    if expected
+      "assert Pangram.is_pangram?('#{input}')"
+    else
+      "refute Pangram.is_pangram?('#{input}')"
+    end
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 

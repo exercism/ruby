@@ -6,9 +6,9 @@ require_relative 'roman_numerals'
 # Test data version:
 # <%= sha1 %>
 class RomanNumeralsTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %>
-    assert_equal '<%= test_case.expected %>', <%= test_case.do %>
+  def <%= test_case.test_name %>
+    <%= test_case.skipped %>
+    <%= test_case.work_load %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

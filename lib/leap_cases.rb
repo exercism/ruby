@@ -1,14 +1,14 @@
 class LeapCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.downcase.gsub(/[ -]/, '_')
   end
 
-  def do
+  def work_load
     "Year.leap?(#{input})"
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def failure_message

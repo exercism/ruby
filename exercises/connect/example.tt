@@ -4,10 +4,11 @@ require 'minitest/autorun'
 require_relative 'connect'
 
 # Test data version commit id: <%= sha1 %>
-class ConnectTest < Minitest::Test<% test_cases.each do |test_case| %>
+class ConnectTest < Minitest::Test
+<% test_cases.each do |test_case| %>
   <%= test_case.ignore_method_length%>def <%= test_case.name %>
-    <%= test_case.skipped %><% test_case.test_body.each do |line| %>
-    <%= line %><% end %>
+    <%= test_case.skipped %>
+    <%= test_case.work_load.strip %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

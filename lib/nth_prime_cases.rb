@@ -1,18 +1,23 @@
 class NthPrimeCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.downcase.gsub(/[ -]/, '_')
   end
 
-  def actual
-    "Prime.nth(#{input})"
+  def work_load
+    actual = "Prime.nth(#{input})"
+    if raises_error?
+      "assert_raises(ArgumentError) { #{actual} }"
+    else
+      "assert_equal #{expected}, #{actual}"
+    end
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def raises_error?
     expected == false
-  end
-
-  def skipped?
-    index > 0
   end
 end
 

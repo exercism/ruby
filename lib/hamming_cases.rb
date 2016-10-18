@@ -1,5 +1,5 @@
 class HammingCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
@@ -7,13 +7,12 @@ class HammingCase < OpenStruct
     "Hamming.compute('#{strand1}', '#{strand2}')"
   end
 
-  def raises_error?
-    expected.to_i == -1
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
-  def skipped
-    index.zero? && '# skip' ||
-      'skip'
+  def raises_error?
+    expected.to_i == -1
   end
 end
 
