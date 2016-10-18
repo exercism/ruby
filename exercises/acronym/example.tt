@@ -6,9 +6,9 @@ require_relative 'acronym'
 # Test data version:
 # <%= sha1 %>
 class AcronymTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %>
+  def <%= test_case.test_name %>
     <%= test_case.skipped %>
-    <%= test_case.work_load %>
+    <%= test_case.workload %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

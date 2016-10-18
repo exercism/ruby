@@ -3,20 +3,28 @@ class RunLengthEncodingCase < OpenStruct
     'test_%s' % cleaned_description
   end
 
-  def work_load
-    case description
-    when /decode.+encode/
-      "assert_equal #{expected},
-                 RunLengthEncoding.decode(RunLengthEncoding.encode(#{input}))"
-    when /encode/
-      "assert_equal #{expected}, RunLengthEncoding.encode(#{input})"
-    when /decode/
-      "assert_equal #{expected}, RunLengthEncoding.decode(#{input})"
-    end
+  def workload
+    <<-WL.chomp
+input = '#{input}'
+    output = '#{expected}'
+    #{assertion}
+    WL
   end
 
   def skipped
     index.zero? ? '# skip' : 'skip'
+  end
+
+  def assertion
+    case description
+    when /decode.+encode/
+      "assert_equal output,
+                 RunLengthEncoding.decode(RunLengthEncoding.encode(input))"
+    when /encode/
+      "assert_equal output, RunLengthEncoding.encode(input)"
+    when /decode/
+      "assert_equal output, RunLengthEncoding.decode(input)"
+    end
   end
 
   # internal

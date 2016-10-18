@@ -3,11 +3,18 @@ class PangramCase < OpenStruct
     'test_%s' % description.delete("'").gsub(/[ -]/, '_')
   end
 
-  def work_load
+  def workload
+    <<-WL.chomp
+str = '#{input}'
+    #{assertion}
+    WL
+  end
+
+  def assertion
     if expected
-      "assert Pangram.is_pangram?('#{input}')"
+      "assert Pangram.is_pangram?(str)"
     else
-      "refute Pangram.is_pangram?('#{input}')"
+      "refute Pangram.is_pangram?(str)"
     end
   end
 

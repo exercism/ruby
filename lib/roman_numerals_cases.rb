@@ -3,7 +3,7 @@ class RomanNumeralsCase < OpenStruct
     'test_%s' % number.to_s
   end
 
-  def work_load
+  def workload
     "assert_equal '#{expected}', #{'%s.to_roman' % number.to_s}"
   end
 

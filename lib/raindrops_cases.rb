@@ -3,7 +3,7 @@ class RaindropsCase < OpenStruct
     'test_%s' % number
   end
 
-  def work_load
+  def workload
     "assert_equal '#{expected}', Raindrops.convert(#{number})"
   end
 

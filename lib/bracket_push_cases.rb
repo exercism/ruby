@@ -3,7 +3,7 @@ class BracketPushCase < OpenStruct
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def work_load
+  def workload
     long_input? ? split_test : simple_test
   end
 

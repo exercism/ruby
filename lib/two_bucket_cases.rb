@@ -8,7 +8,7 @@ class TwoBucketCase < OpenStruct
     "TwoBucket.new(#{bucket_one}, #{bucket_two}, #{goal}, '#{start_bucket}')"
   end
 
-  def work_load
+  def workload
     "two_bucket = #{self.do}
     assert_equal #{expected['moves']}, two_bucket.moves
     assert_equal '#{expected['goal_bucket']}', two_bucket.goal_bucket

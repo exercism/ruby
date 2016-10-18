@@ -6,8 +6,12 @@ class AlphameticsCase < OpenStruct
     "test_#{description.tr(' ', '_')}"
   end
 
-  def work_load
-    "assert_equal(#{expect}, Alphametics.new.solve('#{puzzle}'))"
+  def workload
+    <<-WL.chomp
+expect = #{expect}
+    actual = Alphametics.new.solve('#{puzzle}')
+    assert_equal(expect, actual)
+    WL
   end
 
   def expect

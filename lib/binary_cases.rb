@@ -3,7 +3,7 @@ class BinaryCase < OpenStruct
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def work_load
+  def workload
     return error_assertion if raises_error?
     equality_assertion
   end

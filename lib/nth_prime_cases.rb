@@ -3,7 +3,7 @@ class NthPrimeCase < OpenStruct
     'test_%s' % description.downcase.gsub(/[ -]/, '_')
   end
 
-  def work_load
+  def workload
     actual = "Prime.nth(#{input})"
     if raises_error?
       "assert_raises(ArgumentError) { #{actual} }"

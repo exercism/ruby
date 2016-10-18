@@ -6,7 +6,7 @@ class ClockCase < OpenStruct
                 .chomp('_')
   end
 
-  def work_load
+  def workload
     section == 'equal' ? compare_clocks : simple_test
   end
 

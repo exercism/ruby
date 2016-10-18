@@ -1,14 +1,18 @@
 class WordCountCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.tr(' ', '_')
   end
 
-  def object_under_test
-    %Q(Phrase.new(#{input.inspect}))
+  def workload
+    <<-WL.chomp
+phrase = Phrase.new(#{input.inspect})
+    counts = #{expected}
+    assert_equal counts, phrase.word_count
+    WL
   end
 
-  def skipped?
-    index.nonzero?
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 

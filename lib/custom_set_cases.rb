@@ -3,7 +3,7 @@ class CustomSetCase < OpenStruct
     'test_%s' % description.gsub(/ |-/, '_')
   end
 
-  def work_load
+  def workload
     send section
   end
 

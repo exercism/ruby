@@ -3,8 +3,13 @@ class LeapCase < OpenStruct
     'test_%s' % description.downcase.gsub(/[ -]/, '_')
   end
 
-  def work_load
-    "Year.leap?(#{input})"
+  def workload
+    assertion = "Year.leap?(#{input})"
+    if expected
+      "assert #{assertion}, #{failure_message.inspect}"
+    else
+      "refute #{assertion}, #{failure_message.inspect}"
+    end
   end
 
   def skipped

@@ -5,8 +5,11 @@ class GigasecondCase < OpenStruct
     'test_%s' % description.gsub(/[ :-]/, '_')
   end
 
-  def work_load
-    "assert_equal #{want}, Gigasecond.from(#{got})"
+  def workload
+    <<-WL.chomp
+result = Gigasecond.from(#{got})
+    assert_equal #{want}, result
+    WL
   end
 
   def skipped

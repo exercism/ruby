@@ -3,8 +3,8 @@ class AcronymCase < OpenStruct
     'test_%s' % description.tr(' ', '_')
   end
 
-  def work_load
-    "assert_equal #{expected}, Acronym.abbreviate('#{phrase}')"
+  def workload
+    "assert_equal '#{expected}', Acronym.abbreviate('#{phrase}')"
   end
 
   def skipped

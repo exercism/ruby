@@ -6,8 +6,8 @@ class ConnectCase < OpenStruct
                 .downcase
   end
 
-  def work_load
-    <<-WL
+  def workload
+    <<-WL.chomp
 board = [
       #{board.map(&method(:single_quote)).join(",\n      ")}
     ]
