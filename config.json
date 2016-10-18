@@ -84,7 +84,8 @@
     "connect",
     "list-ops",
     "diamond",
-    "all-your-base"
+    "all-your-base",
+    "isogram"
   ],
   "exercises": [
     {
@@ -563,6 +564,12 @@
     },
     {
       "slug": "all-your-base",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
+      "slug": "isogram",
       "difficulty": 1,
       "topics": [
       ]

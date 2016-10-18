@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative 'isogram'
+
+# Common test data version: <%= sha1 %>
+class IsogramTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %>
+    <%= test_case.skip %>
+    string = '<%= test_case.input %>'
+    <%= test_case.assertion %> Isogram.is_isogram?(string)
+  end
+<% end %>
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+  def test_bookkeeping
+    skip
+    assert_equal <%= version.next %>, BookKeeping::VERSION
+  end
+end
