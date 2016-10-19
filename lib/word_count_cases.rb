@@ -4,7 +4,7 @@ class WordCountCase < OpenStruct
   end
 
   def object_under_test
-    %Q(Phrase.new(#{input.to_json}))
+    %Q(Phrase.new(#{input.inspect}))
   end
 
   def skipped?
