@@ -7,9 +7,10 @@ require_relative 'word_count'
 # <%= sha1 %>
 class PhraseTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %><% if test_case.raises_error? %>
-    assert_raises(ArgumentError) { <%= test_case.do %> }<% else %>
-    assert_equal <%= test_case.expected %>, <%= test_case.do %><% end %>
+    skip<% end %>
+    phrase = <%= test_case.object_under_test %>
+    counts = <%= test_case.expected %>
+    assert_equal counts, phrase.word_count
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
