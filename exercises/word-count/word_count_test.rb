@@ -35,9 +35,7 @@ class PhraseTest < Minitest::Test
 
   def test_handles_expanded_lists
     skip
-    phrase = Phrase.new("one,
-two,
-three")
+    phrase = Phrase.new("one,\ntwo,\nthree")
     counts = {"one"=>1, "two"=>1, "three"=>1}
     assert_equal counts, phrase.word_count
   end
