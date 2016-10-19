@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
 
 class Game
@@ -28,7 +28,7 @@ class Game
   def valid_frame?(pins)
     last_roll_was_strike = @score_card[current_frame].last == 10
 
-    (last_frame? && last_roll_was_strike) ||
+    (last_frame? && last_roll_was_strike || spare?) ||
     @score_card[current_frame].last.to_i + pins <= RULES[:MAX]
   end
 
