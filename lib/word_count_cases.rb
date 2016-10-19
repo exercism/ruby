@@ -4,7 +4,7 @@ class WordCountCase < OpenStruct
   end
 
   def object_under_test
-    "Phrase.new('#{input}')"
+    %Q(Phrase.new("#{input}"))
   end
 
   def skipped?
