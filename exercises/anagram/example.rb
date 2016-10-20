@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION=2
+end
+
 class Anagram
   attr_reader :subject
   def initialize(word)

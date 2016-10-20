@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative 'anagram'
+
+# Test data version:
+# <%= sha1 %>
+class AnagramTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.test_name %>
+    <%= test_case.skipped %>
+    <%= test_case.work_load %>
+  end
+<% end %>
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+  def test_bookkeeping
+    skip
+    assert_equal <%= version.next %>, BookKeeping::VERSION
+  end
+end
