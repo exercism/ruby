@@ -7,12 +7,12 @@ commands_to_run = [
   'bundle exec rubocop -fs -D',
   'bin/executable-tests-check',
 ]
-sucess = []
+success = []
 commands_to_run.each do |c|
-  sucess << (system c)
+  success << (system c)
 end
-unless sucess.all?
-  p sucess
+unless success.all?
+  p success
   STDERR.puts <<-EOS
 Push will be aborted!!! Fix the problem above and correct the commit.
   EOS
