@@ -3,7 +3,7 @@ module BookKeeping
 end
 
 class Game
-  RULES = { MIN: 0, MAX: 10 }.freeze
+  PINS = { MIN: 0, MAX: 10 }.freeze
   at_exit { public :roll, :score }
 
   private
@@ -20,7 +20,7 @@ class Game
   end
 
   def validate(pins)
-    raise 'Invalid number of pins' unless (RULES[:MIN]..RULES[:MAX]).cover?(pins)
+    raise 'Invalid number of pins' unless (PINS[:MIN]..PINS[:MAX]).cover?(pins)
     raise 'Too many pins in frame' unless valid_frame?(pins)
     raise 'Game is over, no rolls allowed' if game_complete?
   end
@@ -29,7 +29,7 @@ class Game
     last_roll_was_strike = @score_card[current_frame].last == 10
 
     (last_frame? && last_roll_was_strike || spare?) ||
-    @score_card[current_frame].last.to_i + pins <= RULES[:MAX]
+      @score_card[current_frame].last.to_i + pins <= PINS[:MAX]
   end
 
   def score
@@ -40,10 +40,10 @@ class Game
   end
 
   def score_frame(f, i)
-    strike_or_spare = [f.first, f.inject(:+)].any? {|e| e == RULES[:MAX]}
+    strike_or_spare = [f.first, f.inject(:+)].any? { |e| e == PINS[:MAX] }
 
     if strike_or_spare
-      special(@score_card[i], @score_card[i+1], @score_card[i+2])
+      special(@score_card[i], @score_card[i + 1], @score_card[i + 2])
     else
       f.reduce(:+)
     end

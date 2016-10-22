@@ -1,6 +1,6 @@
 class BowlingCase < OpenStruct
   def test_name
-    'test_%s' % description.downcase.tr(' ', '_')
+    "test_#{description.downcase.tr(' ', '_')}"
   end
 
   def skipped
@@ -20,10 +20,10 @@ class BowlingCase < OpenStruct
   def assert
     if assert_error?
       [
-        "assert_raises StandardError do",
+        'assert_raises StandardError do',
         "  #{roll}",
-        "  @game.score",
-        "end"
+        '  @game.score',
+        'end'
       ]
     else
       [roll, "assert_equal #{expected}, @game.score"]
@@ -37,7 +37,6 @@ class BowlingCase < OpenStruct
   def indent_lines(code)
     code.join("\n" + ' ' * 4)
   end
-
 end
 
 BowlingCases = proc do |data|
