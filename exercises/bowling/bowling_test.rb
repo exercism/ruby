@@ -3,224 +3,200 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'bowling'
 
-class GameTest < Minitest::Test
+# Test data version:
+# 0a51cfc
+class BowlingTest < Minitest::Test
   def setup
     @game = Game.new
   end
 
-  def test_must_be_able_to_roll_with_number_of_pins
-    assert_respond_to @game, :roll
-    assert_equal 1, @game.method(:roll).arity
+  def roll(rolls)
+    rolls.each { |pins| @game.roll(pins) }
   end
 
-  def test_must_have_a_score
-    skip
-    assert_respond_to @game, :score
-  end
-
-  def test_should_be_able_to_score_open_frame
-    skip
-    @game.roll(3)
-    @game.roll(4)
-    roll_n_times(18, 0)
-    assert_equal 7, @game.score
-  end
-
-  def test_should_be_able_to_score_multiple_frames
-    skip
-    [3, 4, 2, 3, 5, 2].each do |pins|
-      @game.roll pins
-    end
-    roll_n_times(14, 0)
-    assert_equal 19, @game.score
-  end
-
-  def test_should_score_a_game_with_all_gutterballs
-    skip
-    roll_n_times(20, 0)
+  def test_should_be_able_to_score_a_game_with_all_zeros
+    # skip
+    roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     assert_equal 0, @game.score
   end
 
-  def test_should_score_a_game_with_all_single_pin_rolls
+  def test_should_be_able_to_score_a_game_with_no_strikes_or_spares
     skip
-    roll_n_times(20, 1)
-    assert_equal 20, @game.score
-  end
-
-  def test_should_allow_game_with_all_open_frames
-    skip
-    roll_n_times(10, [3, 6])
+    roll([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])
     assert_equal 90, @game.score
   end
 
-  def test_should_correctly_score_a_strike_that_is_not_on_the_last_frame
+  def test_a_spare_followed_by_zeros_is_worth_ten_points
     skip
-    @game.roll(10)
-    @game.roll(5)
-    @game.roll(3)
-    roll_n_times(16, 0)
-
-    assert_equal 26, @game.score
+    roll([6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    assert_equal 10, @game.score
   end
 
-  def test_should_score_a_spare_that_is_not_on_the_last_frame
+  def test_points_scored_in_the_roll_after_a_spare_are_counted_twice
     skip
-    @game.roll(5)
-    @game.roll(5)
-    @game.roll(3)
-    @game.roll(4)
-    roll_n_times(16, 0)
-
-    assert_equal 20, @game.score
+    roll([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    assert_equal 16, @game.score
   end
 
-  def test_should_score_multiple_strikes_in_a_row
+  def test_consecutive_spares_each_get_a_one_roll_bonus
     skip
-    @game.roll(10)
-    @game.roll(10)
-    @game.roll(10)
-    @game.roll(5)
-    @game.roll(3)
-    roll_n_times(12, 0)
-
-    assert_equal 81, @game.score
+    roll([5, 5, 3, 7, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    assert_equal 31, @game.score
   end
 
-  def test_should_score_multiple_spares_in_a_row
+  def test_a_spare_in_the_last_frame_gets_a_one_roll_bonus_that_is_counted_once
     skip
-    @game.roll(5)
-    @game.roll(5)
-    @game.roll(3)
-    @game.roll(7)
-    @game.roll(4)
-    @game.roll(1)
-    roll_n_times(14, 0)
-
-    assert_equal 32, @game.score
-  end
-
-  def test_should_allow_fill_balls_when_the_final_frame_is_strike
-    skip
-    roll_n_times(18, 0)
-    @game.roll(10)
-    @game.roll(7)
-    @game.roll(1)
-
-    assert_equal 18, @game.score
-  end
-
-  def test_should_allow_fill_ball_in_last_frame_if_spare
-    skip
-    roll_n_times(18, 0)
-    @game.roll(9)
-    @game.roll(1)
-    @game.roll(7)
-
+    roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 7])
     assert_equal 17, @game.score
   end
 
-  def test_should_allow_fill_balls_to_be_strike
+  def test_a_strike_earns_ten_points_in_frame_with_a_single_roll
     skip
-    roll_n_times(18, 0)
-    @game.roll(10)
-    @game.roll(10)
-    @game.roll(10)
+    roll([10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    assert_equal 10, @game.score
+  end
 
+  def test_points_scored_in_the_two_rolls_after_a_strike_are_counted_twice_as_a_bonus
+    skip
+    roll([10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    assert_equal 26, @game.score
+  end
+
+  def test_consecutive_strikes_each_get_the_two_roll_bonus
+    skip
+    roll([10, 10, 10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    assert_equal 81, @game.score
+  end
+
+  def test_a_strike_in_the_last_frame_gets_a_two_roll_bonus_that_is_counted_once
+    skip
+    roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 1])
+    assert_equal 18, @game.score
+  end
+
+  def test_rolling_a_spare_with_the_two_roll_bonus_does_not_get_a_bonus_roll
+    skip
+    roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 3])
+    assert_equal 20, @game.score
+  end
+
+  def test_strikes_with_the_two_roll_bonus_do_not_get_bonus_rolls
+    skip
+    roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10])
     assert_equal 30, @game.score
   end
 
-  def test_should_score_a_perfect_game
+  def test_a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus
     skip
-    roll_n_times(12, 10)
+    roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 10])
+    assert_equal 20, @game.score
+  end
+
+  def test_all_strikes_is_a_perfect_game
+    skip
+    roll([10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])
     assert_equal 300, @game.score
   end
 
-  def test_should_not_allow_rolls_with_negative_pins
+  def test_rolls_can_not_score_negative_points
     skip
-    assert_raises(
-      RuntimeError,
-      'Pins must have a value from 0 to 10') do
-        @game.roll(-1)
-      end
-  end
-
-  def test_should_not_allow_rolls_better_than_strike
-    skip
-    assert_raises(
-      RuntimeError,
-      'Pins must have a value from 0 to 10') do
-        @game.roll(11)
-      end
-  end
-
-  def test_should_not_allow_two_normal_rolls_better_than_strike
-    skip
-    assert_raises RuntimeError, 'Pin count exceeds pins on the lane' do
-      @game.roll(5)
-      @game.roll(6)
-    end
-  end
-
-  def test_should_not_allow_two_normal_rolls_better_than_strike_in_last_frame
-    skip
-    roll_n_times(18, 0)
-    assert_raises RuntimeError, 'Pin count exceeds pins on the lane' do
-      @game.roll(10)
-      @game.roll(5)
-      @game.roll(6)
-    end
-  end
-
-  def test_should_not_allow_to_take_score_at_the_beginning
-    skip
-    assert_raises(
-      RuntimeError,
-      'Score cannot be taken until the end of the game',
-    ) do
+    assert_raises StandardError do
+      roll([-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
       @game.score
     end
   end
 
-  def test_should_not_allow_to_take_score_before_game_has_ended
+  def test_a_roll_can_not_score_more_than_10_points
     skip
-    roll_n_times(19, 5)
-    assert_raises(
-      RuntimeError,
-      'Score cannot be taken until the end of the game') do
-        @game.score
-      end
-  end
-
-  def test_should_not_allow_rolls_after_the_tenth_frame
-    skip
-    roll_n_times(20, 0)
-    assert_raises(
-      RuntimeError,
-      'Should not be able to roll after game is over',
-    ) do
-      @game.roll(0)
-    end
-  end
-
-  def test_should_not_calculate_score_before_fill_balls_have_been_played
-    skip
-    roll_n_times(10, 10)
-
-    assert_raises RuntimeError, 'Game is not yet over, cannot score!' do
+    assert_raises StandardError do
+      roll([11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
       @game.score
     end
   end
 
-  def roll_n_times(rolls, pins)
-    rolls.times do
-      Array(pins).each { |value| @game.roll(value) }
+  def test_two_rolls_in_a_frame_can_not_score_more_than_10_points
+    skip
+    assert_raises StandardError do
+      roll([5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+      @game.score
     end
   end
-  private :roll_n_times
 
-  # Don't forget to define a constant VERSION inside of BookKeeping.
+  def test_two_bonus_rolls_after_a_strike_in_the_last_frame_can_not_score_more_than_10_points
+    skip
+    assert_raises StandardError do
+      roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5, 6])
+      @game.score
+    end
+  end
+
+  def test_an_unstarted_game_can_not_be_scored
+    skip
+    assert_raises StandardError do
+      roll([])
+      @game.score
+    end
+  end
+
+  def test_an_incomplete_game_can_not_be_scored
+    skip
+    assert_raises StandardError do
+      roll([0, 0])
+      @game.score
+    end
+  end
+
+  def test_a_game_with_more_than_ten_frames_can_not_be_scored
+    skip
+    assert_raises StandardError do
+      roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+      @game.score
+    end
+  end
+
+  def test_bonus_rolls_for_a_strike_in_the_last_frame_must_be_rolled_before_score_can_be_calculated
+    skip
+    assert_raises StandardError do
+      roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10])
+      @game.score
+    end
+  end
+
+  def test_both_bonus_rolls_for_a_strike_in_the_last_frame_must_be_rolled_before_score_can_be_calculated
+    skip
+    assert_raises StandardError do
+      roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10])
+      @game.score
+    end
+  end
+
+  def test_bonus_roll_for_a_spare_in_the_last_frame_must_be_rolled_before_score_can_be_calculated
+    skip
+    assert_raises StandardError do
+      roll([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3])
+      @game.score
+    end
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
