@@ -1,8 +1,10 @@
 module BookKeeping
-  VERSION = 3
+  VERSION = 4
 end
 
 class Alphametics
+  class << self
+
   def solve(puzzle)
     letters = Hash.new(0)
     puzzle.scan(/[a-zA-Z]/) { |w| letters[w] += 1 }
@@ -11,7 +13,7 @@ class Alphametics
       return letters_values if valid?(puzzle, letters_values)
     end
 
-    nil
+    {}
   end
 
   private
@@ -29,6 +31,7 @@ class Alphametics
   def valid?(puzzle, letters_values)
     equation = puzzle.gsub(/[a-zA-Z]/, letters_values)
     Equation.new(equation).valid?
+  end
   end
 end
 
