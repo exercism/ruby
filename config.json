@@ -85,7 +85,8 @@
     "list-ops",
     "diamond",
     "all-your-base",
-    "isogram"
+    "isogram",
+    "transpose"
   ],
   "exercises": [
     {
@@ -570,6 +571,12 @@
     },
     {
       "slug": "isogram",
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
+      "slug": "transpose",
       "difficulty": 1,
       "topics": [
       ]
