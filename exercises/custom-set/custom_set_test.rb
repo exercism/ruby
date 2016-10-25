@@ -204,7 +204,6 @@ class CustomSetTest < Minitest::Test
     assert_equal expected, set2.intersection(set1)
   end
 
-  # rubocop:disable Metrics/LineLength
   def test_intersection_of_two_sets_with_shared_elements_is_a_set_of_the_shared_elements
     skip
     set1 = CustomSet.new [1, 2, 3, 4]

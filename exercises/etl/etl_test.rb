@@ -32,7 +32,7 @@ class TransformTest < Minitest::Test
     assert_equal expected, ETL.transform(old)
   end
 
-  def test_full_dataset # rubocop:disable Metrics/MethodLength
+  def test_full_dataset
     skip
     old = {
       1 => %w(A E I O U L N R S T),

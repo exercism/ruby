@@ -5,8 +5,6 @@ require_relative 'nth_prime'
 
 # Test data version:
 # bb79e10
-# Rubocop directives
-# rubocop:disable Style/NumericLiterals
 #
 class NthPrimeTest < Minitest::Test
   def test_first_prime

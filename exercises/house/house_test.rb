@@ -3,7 +3,6 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'house'
 
-# rubocop:disable Metrics/MethodLength
 class HouseTest < Minitest::Test
   def test_rhyme
     expected = <<-RHYME
