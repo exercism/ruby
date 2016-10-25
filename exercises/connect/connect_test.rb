@@ -95,7 +95,6 @@ class ConnectTest < Minitest::Test
     assert_equal 'X', game.winner, 'X wins using a convoluted path'
   end
 
-  # rubocop:disable MethodLength
   def test_x_wins_using_a_spiral_path
     skip
     board = [

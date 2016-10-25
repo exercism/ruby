@@ -3,7 +3,6 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'beer_song'
 
-# rubocop:disable Metrics/LineLength
 class BeerSongTest < Minitest::Test
   def test_the_first_verse
     expected = "99 bottles of beer on the wall, 99 bottles of beer.\n" \
@@ -62,7 +61,7 @@ class BeerSongTest < Minitest::Test
     assert_equal expected, BeerSong.new.verses(2, 0)
   end
 
-  def test_the_whole_song # rubocop:disable Metrics/MethodLength
+  def test_the_whole_song
     skip
     expected = <<-SONG
 99 bottles of beer on the wall, 99 bottles of beer.

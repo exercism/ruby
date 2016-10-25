@@ -3,7 +3,6 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'protein_translation'
 
-# rubocop:disable Style/MethodName
 class TranslationTest < Minitest::Test
   def test_AUG_translates_to_methionine
     assert_equal 'Methionine', Translation.of_codon('AUG')

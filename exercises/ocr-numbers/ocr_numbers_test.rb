@@ -4,7 +4,6 @@ require 'minitest/autorun'
 require_relative 'ocr_numbers'
 
 class OCRTest < Minitest::Test
-  # rubocop:disable  Style/TrailingWhitespace
   def test_recognize_zero
     text = <<-NUMBER.chomp
  _ 
@@ -169,7 +168,7 @@ class OCRTest < Minitest::Test
     assert_equal '1234567890', OCR.new(text).convert
   end
 
-  def test_identify_123_456_789 # rubocop:disable Metrics/MethodLength
+  def test_identify_123_456_789
     skip
     text = <<-NUMBER.chomp
     _  _ 

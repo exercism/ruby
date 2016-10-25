@@ -12,7 +12,6 @@ class Clock
     @internal = hours * 60 + minutes
   end
 
-  # rubocop:disable Style/OpMethod
   def +(hours=0, minutes)
     @internal += hours * 60 + minutes
     self
@@ -21,7 +20,6 @@ class Clock
   def -(*args)
     self.+(*args.map(&:-@))
   end
-  # rubocop:enable Style/OpMethod
 
   def ==(other)
     to_s == other.to_s

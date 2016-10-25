@@ -3,7 +3,6 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'atbash_cipher'
 
-# rubocop:disable Style/MethodName
 class AtbashTest < Minitest::Test
   def test_encode_no
     assert_equal 'ml', Atbash.encode('no')
