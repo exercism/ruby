@@ -38,7 +38,7 @@ class ProverbTest < Minitest::Test
     assert_equal expected, proverb.to_s
   end
 
-  def test_the_whole_proverb # rubocop:disable Metrics/MethodLength
+  def test_the_whole_proverb
     skip
     chain = %w(nail shoe horse rider message battle kingdom)
     proverb = Proverb.new(*chain)
@@ -52,7 +52,6 @@ class ProverbTest < Minitest::Test
     assert_equal expected, proverb.to_s
   end
 
-  # rubocop:disable Metrics/MethodLength
   def test_an_optional_qualifier_in_the_final_consequence
     skip
     chain = %w(nail shoe horse rider message battle kingdom)
@@ -66,7 +65,6 @@ class ProverbTest < Minitest::Test
       'And all for the want of a horseshoe nail.'
     assert_equal expected, proverb.to_s
   end
-  # rubocop:enable Metrics/MethodLength
 
   def test_proverb_is_same_each_time
     skip

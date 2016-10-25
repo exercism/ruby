@@ -89,7 +89,6 @@ class CircularBufferTest < Minitest::Test
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
-  # rubocop:disable Metrics/MethodLength
   def test_alternate_read_and_write_into_buffer_overflow
     skip
     buffer = CircularBuffer.new(5)
@@ -108,5 +107,4 @@ class CircularBufferTest < Minitest::Test
     assert_equal 'B', buffer.read
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
-  # rubocop:enable Metrics/MethodLength
 end

@@ -5,9 +5,6 @@ require_relative 'largest_series_product'
 
 # Test data version:
 # <%= sha1 %>
-# Rubocop directives
-# rubocop:disable Style/NumericLiterals
-# rubocop:disable Metrics/LineLength
 #
 class Seriestest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %><% if test_case.skipped? %>

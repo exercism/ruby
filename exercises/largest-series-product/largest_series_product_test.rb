@@ -6,10 +6,6 @@ require_relative 'largest_series_product'
 # Test data version:
 # deb225e Implement canonical dataset for scrabble-score problem (#255)
 
-# Rubocop directives
-# rubocop:disable Style/NumericLiterals
-# rubocop:disable Metrics/LineLength
-#
 class Seriestest < Minitest::Test
   def test_can_find_the_largest_product_of_2_with_numbers_in_order
     assert_equal 72, Series.new('0123456789').largest_product(2)

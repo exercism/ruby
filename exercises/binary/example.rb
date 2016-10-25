@@ -19,7 +19,6 @@ class Binary
 
   private
 
-  # rubocop:disable Style/WordArray
   def valid?(s)
     s.chars.all? { |char| ['0', '1'].include?(char) }
   end
