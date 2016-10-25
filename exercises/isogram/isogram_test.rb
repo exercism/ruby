@@ -4,10 +4,10 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'isogram'
 
-# Common test data version: 3dfde31
+# Common test data version: c1cb73f
 class IsogramTest < Minitest::Test
   def test_duplicates
-    
+    # skip
     string = 'duplicates'
     assert Isogram.is_isogram?(string)
   end
