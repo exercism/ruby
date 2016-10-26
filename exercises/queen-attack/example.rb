@@ -3,7 +3,9 @@ class Queens
   def initialize(positions = {})
     @white = positions.fetch(:white) { [0, 3] }
     @black = positions.fetch(:black) { [7, 3] }
-    fail ArgumentError if white == black
+    fail ArgumentError, "Queens cannot be placed on the same spot" if white == black
+    fail ArgumentError, "Positions must be positive numbers" if (white + black).any? { |p| p < 0 }
+    fail ArgumentError, "Positions must have square on board" if (white + black).any? { |p| p > 7 }
   end
 
   def attack?

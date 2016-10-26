@@ -34,6 +34,34 @@ class QueensTest < Minitest::Test
     end
   end
 
+  def test_queen_must_have_positive_row
+    skip
+    assert_raises ArgumentError do
+      Queens.new(white: [-2, 2])
+    end
+  end
+
+  def test_queen_must_have_positive_column
+    skip
+    assert_raises ArgumentError do
+      Queens.new(white: [2, -2])
+    end
+  end
+
+  def test_queen_must_have_row_on_board
+    skip
+    assert_raises ArgumentError do
+      Queens.new(white: [8, 4])
+    end
+  end
+
+  def test_queen_must_have_column_on_board
+    skip
+    assert_raises ArgumentError do
+      Queens.new(white: [4, 8])
+    end
+  end
+
   def test_string_representation
     skip
     queens = Queens.new(white: [2, 4], black: [6, 6])
@@ -100,25 +128,25 @@ _ _ _ _ _ _ _ _
     assert queens.attack?
   end
 
-  def test_can_attack_on_diagonal
+  def test_can_attack_on_first_diagonal
     skip
     queens = Queens.new(white: [1, 1], black: [6, 6])
     assert queens.attack?
   end
 
-  def test_can_attack_on_other_diagonal
+  def test_can_attack_on_second_diagonal
     skip
     queens = Queens.new(white: [0, 6], black: [1, 7])
     assert queens.attack?
   end
 
-  def test_can_attack_on_yet_another_diagonal
+  def test_can_attack_on_third_diagonal
     skip
     queens = Queens.new(white: [4, 1], black: [6, 3])
     assert queens.attack?
   end
 
-  def test_can_attack_on_a_diagonal_slanted_the_other_way
+  def test_can_attack_on_fourth_diagonal
     skip
     queens = Queens.new(white: [6, 1], black: [1, 6])
     assert queens.attack?
