@@ -3,91 +3,130 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'triangle'
 
+# Test data version:
+# b806246
 class TriangleTest < Minitest::Test
-  def test_equilateral_triangles_have_equal_sides
-    assert_equal :equilateral, Triangle.new(2, 2, 2).kind
+  def test_triangle_is_equilateral_if_all_sides_are_equal
+    triangle = Triangle.new([2, 2, 2])
+    assert triangle.equilateral?, "Expected 'true', triangle is equilateral."
   end
 
-  def test_larger_equilateral_triangles_also_have_equal_sides
+  def test_triangle_is_not_equilateral_if_any_side_is_unequal
     skip
-    assert_equal :equilateral, Triangle.new(10, 10, 10).kind
+    triangle = Triangle.new([2, 3, 2])
+    refute triangle.equilateral?, "Expected 'false', triangle is not equilateral."
   end
 
-  def test_isosceles_triangles_have_last_two_sides_equal
+  def test_triangle_is_not_equilateral_if_no_sides_are_equal
     skip
-    assert_equal :isosceles, Triangle.new(3, 4, 4).kind
+    triangle = Triangle.new([5, 4, 6])
+    refute triangle.equilateral?, "Expected 'false', triangle is not equilateral."
   end
 
-  def test_isosceles_triangles_have_first_and_last_sides_equal
+  def test_all_zero_sides_are_illegal__so_the_triangle_is_not_equilateral
     skip
-    assert_equal :isosceles, Triangle.new(4, 3, 4).kind
+    triangle = Triangle.new([0, 0, 0])
+    refute triangle.equilateral?, "Expected 'false', triangle is not equilateral."
   end
 
-  def test_isosceles_triangles_have_two_first_sides_equal
+  def test_equilateral_triangle_sides_may_be_floats
     skip
-    assert_equal :isosceles, Triangle.new(4, 4, 3).kind
+    triangle = Triangle.new([0.5, 0.5, 0.5])
+    assert triangle.equilateral?, "Expected 'true', triangle is equilateral."
   end
 
-  def test_isosceles_triangles_have_in_fact_exactly_two_sides_equal
+  def test_triangle_is_isosceles_if_last_two_sides_are_equal
     skip
-    assert_equal :isosceles, Triangle.new(10, 10, 2).kind
+    triangle = Triangle.new([3, 4, 4])
+    assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
-  def test_isosceles_triangles_have_unequal_side_larger_than_equal_sides
+  def test_triangle_is_isosceles_if_first_two_sides_are_equal
     skip
-    assert_equal :isosceles, Triangle.new(4, 7, 4).kind
+    triangle = Triangle.new([4, 4, 3])
+    assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
-  def test_scalene_triangles_have_no_equal_sides
+  def test_triangle_is_isosceles_if_first_and_last_sides_are_equal
     skip
-    assert_equal :scalene, Triangle.new(3, 4, 5).kind
+    triangle = Triangle.new([4, 3, 4])
+    assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
-  def test_2a_equals_b_plus_c_looks_like_equilateral_but_is_not
+  def test_equilateral_triangles_are_also_isosceles
     skip
-    assert_equal :scalene, Triangle.new(5, 4, 6).kind
+    triangle = Triangle.new([4, 4, 4])
+    assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
-  def test_scalene_triangles_have_no_equal_sides_at_a_larger_scale_too
+  def test_triangle_is_not_isosceles_if_no_sides_are_equal
     skip
-    assert_equal :scalene, Triangle.new(10, 11, 12).kind
+    triangle = Triangle.new([2, 3, 4])
+    refute triangle.isosceles?, "Expected 'false', triangle is not isosceles."
   end
 
-  def test_scalene_triangles_have_no_equal_sides_in_descending_order_either
+  def test_sides_that_violate_triangle_inequality_are_not_isosceles__even_if_two_are_equal
     skip
-    assert_equal :scalene, Triangle.new(5, 4, 2).kind
+    triangle = Triangle.new([1, 1, 3])
+    refute triangle.isosceles?, "Expected 'false', triangle is not isosceles."
   end
 
-  def test_very_small_triangles_are_legal
+  def test_isosceles_triangle_sides_may_be_floats
     skip
-    assert_equal :scalene, Triangle.new(0.4, 0.6, 0.3).kind
+    triangle = Triangle.new([0.5, 0.4, 0.5])
+    assert triangle.isosceles?, "Expected 'true', triangle is isosceles."
   end
 
-  def test_triangles_with_no_size_are_illegal
+  def test_triangle_is_scalene_if_no_sides_are_equal
     skip
-    assert_raises(TriangleError) do
-      Triangle.new(0, 0, 0).kind
-    end
+    triangle = Triangle.new([5, 4, 6])
+    assert triangle.scalene?, "Expected 'true', triangle is scalene."
   end
 
-  def test_triangles_violating_triangle_inequality_are_illegal
+  def test_triangle_is_not_scalene_if_all_sides_are_equal
     skip
-    assert_raises(TriangleError) do
-      Triangle.new(1, 1, 3).kind
-    end
+    triangle = Triangle.new([4, 4, 4])
+    refute triangle.scalene?, "Expected 'false', triangle is not scalene."
   end
 
-  def test_triangles_violating_triangle_inequality_are_illegal_2
+  def test_triangle_is_not_scalene_if_two_sides_are_equal
     skip
-    assert_raises(TriangleError) do
-      Triangle.new(7, 3, 2).kind
-    end
+    triangle = Triangle.new([4, 4, 3])
+    refute triangle.scalene?, "Expected 'false', triangle is not scalene."
   end
 
-  def test_triangles_violating_triangle_inequality_are_illegal_3
+  def test_sides_that_violate_triangle_inequality_are_not_scalene__even_if_they_are_all_different
     skip
-    assert_raises(TriangleError) do
-      Triangle.new(1, 3, 1).kind
-    end
+    triangle = Triangle.new([7, 3, 2])
+    refute triangle.scalene?, "Expected 'false', triangle is not scalene."
+  end
+
+  def test_scalene_triangle_sides_may_be_floats
+    skip
+    triangle = Triangle.new([0.5, 0.4, 0.6])
+    assert triangle.scalene?, "Expected 'true', triangle is scalene."
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
   end
 end
+
