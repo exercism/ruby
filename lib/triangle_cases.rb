@@ -1,11 +1,11 @@
 class TriangleCase < OpenStruct
-  def name
+  def test_name
     initial = description.downcase
     replaced = initial.gsub(/(true|false)/, replacements)
     if initial.eql?(replaced) && !initial.include?(triangle)
       replaced = triangle + ' triangle ' + initial
     end
-    'test_%s' % replaced.gsub(/[ ,-]/, '_')
+    'test_%s' % replaced.gsub(/[, -]/, '_').squeeze('_')
   end
 
   def replacements
@@ -13,16 +13,22 @@ class TriangleCase < OpenStruct
     booleans.each { |k, v| booleans[k] = "triangle is#{v} #{triangle}" }
   end
 
-  def do
-    "triangle.#{triangle}?"
+  def workload
+    "triangle = Triangle.new(#{sides})
+    #{assert_or_refute} triangle.#{triangle}?, #{failure_message}"
   end
 
-  def skipped?
-    index > 0
+  def assert_or_refute
+    expected ? 'assert' : 'refute'
   end
 
   def failure_message
-    "Expected '#{expected}', triangle is #{expected ? '' : 'not '}#{triangle}."
+    "\"Expected '#{expected}', triangle is #{expected ? '' : 'not '}" +
+    "#{triangle}.\""
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 

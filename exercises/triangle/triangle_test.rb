@@ -7,6 +7,7 @@ require_relative 'triangle'
 # b806246
 class TriangleTest < Minitest::Test
   def test_triangle_is_equilateral_if_all_sides_are_equal
+    # skip
     triangle = Triangle.new([2, 2, 2])
     assert triangle.equilateral?, "Expected 'true', triangle is equilateral."
   end
@@ -23,7 +24,7 @@ class TriangleTest < Minitest::Test
     refute triangle.equilateral?, "Expected 'false', triangle is not equilateral."
   end
 
-  def test_all_zero_sides_are_illegal__so_the_triangle_is_not_equilateral
+  def test_all_zero_sides_are_illegal_so_the_triangle_is_not_equilateral
     skip
     triangle = Triangle.new([0, 0, 0])
     refute triangle.equilateral?, "Expected 'false', triangle is not equilateral."
@@ -65,7 +66,7 @@ class TriangleTest < Minitest::Test
     refute triangle.isosceles?, "Expected 'false', triangle is not isosceles."
   end
 
-  def test_sides_that_violate_triangle_inequality_are_not_isosceles__even_if_two_are_equal
+  def test_sides_that_violate_triangle_inequality_are_not_isosceles_even_if_two_are_equal
     skip
     triangle = Triangle.new([1, 1, 3])
     refute triangle.isosceles?, "Expected 'false', triangle is not isosceles."
@@ -95,7 +96,7 @@ class TriangleTest < Minitest::Test
     refute triangle.scalene?, "Expected 'false', triangle is not scalene."
   end
 
-  def test_sides_that_violate_triangle_inequality_are_not_scalene__even_if_they_are_all_different
+  def test_sides_that_violate_triangle_inequality_are_not_scalene_even_if_they_are_all_different
     skip
     triangle = Triangle.new([7, 3, 2])
     refute triangle.scalene?, "Expected 'false', triangle is not scalene."

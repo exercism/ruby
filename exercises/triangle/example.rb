@@ -2,9 +2,6 @@ module BookKeeping
   VERSION = 1
 end
 
-class TriangleError < RuntimeError
-end
-
 class Triangle
   attr_reader :sides
 
