@@ -5,17 +5,23 @@ class TriangleCase < OpenStruct
     if initial.eql?(replaced) && !initial.include?(triangle)
       replaced = triangle + ' triangle ' + initial
     end
-    'test_%s' % replaced.gsub(/[, -]/, '_').squeeze('_')
+    'test_%s' % replaced.tr_s(', -', '_')
   end
 
   def replacements
-    booleans = { 'true' => '', 'false' => ' not' }
-    booleans.each { |k, v| booleans[k] = "triangle is#{v} #{triangle}" }
+    booleans = { 'true' => '', 'false' => '' }
+    booleans.each { |k, v| booleans[k] = expected_type(k) }
   end
 
   def workload
-    "triangle = Triangle.new(#{sides})
-    #{assert_or_refute} triangle.#{triangle}?, #{failure_message}"
+    [
+      "triangle = Triangle.new(#{sides})",
+      indent("#{assert_or_refute} triangle.#{triangle}?, #{failure_message}")
+    ].join("\n")
+  end
+
+  def indent(line)
+    ' ' * 4 + line
   end
 
   def assert_or_refute
@@ -23,8 +29,17 @@ class TriangleCase < OpenStruct
   end
 
   def failure_message
-    "\"Expected '#{expected}', triangle is #{expected ? '' : 'not '}" +
-    "#{triangle}.\""
+    %Q("Expected '#{expected}', #{expected_type}.")
+  end
+
+  def expected_type(boolean = nil)
+    boolean ||= expected
+    "triangle is #{boolean_check(boolean) ? '' : 'not '}#{triangle}"
+  end
+
+  def boolean_check(boolean)
+    return true if boolean == true || boolean == 'true'
+    false
   end
 
   def skipped
