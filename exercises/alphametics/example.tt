@@ -14,7 +14,7 @@ class AlphameticsTest < Minitest::Test
   end
 <% end %>
   # These tests have been commented out due their long runtime.  If you are
-  # interested in optimsing your solution for speed these are a good tests to
+  # interested in optimising your solution for speed these are a good tests to
   # try.
   #
   # def test_puzzle_with_eight_letters
@@ -27,7 +27,7 @@ class AlphameticsTest < Minitest::Test
 
   # def test_puzzle_with_ten_letters
   #   skip
-  #   input = 'AND + A + STRONG + OFFENSE + AS + A + GOOD = DEFENSE'
+  #   input = 'AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE'
   #   expected = { 'A' => 5, 'D' => 3, 'E' => 4, 'F' => 7,
   #                'G' => 8, 'N' => 0, 'O' => 2, 'R' => 1,
   #                'S' => 6, 'T' => 9 }
