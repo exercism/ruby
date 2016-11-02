@@ -3,7 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'alphametics'
 
-# Test data version: c1cb73f
+# Test data version: 9dab356
 class AlphameticsTest < Minitest::Test
 
   def test_puzzle_with_three_letters
@@ -50,26 +50,28 @@ class AlphameticsTest < Minitest::Test
     assert_equal expected, Alphametics.solve(input)
   end
 
-  # These tests have been commented out due their long runtime.  If you are
-  # interested in optimsing your solution for speed these are a good tests to
-  # try.
-  #
-  # def test_puzzle_with_eight_letters
-  #   skip
-  #   input = 'SEND + MORE == MONEY'
-  #   expected = { 'D' => 7, 'E' => 5, 'M' => 1, 'N' => 6,
-  #                'O' => 0, 'R' => 8, 'S' => 9, 'Y' => 2 }
-  #   assert_equal expected, Alphametics.solve(input)
-  # end
+  # The obvious algorithm can take a long time to solve this puzzle,
+  # but an optimised solution can solve it fairly quickly.
+  # (It's OK to submit your solution without getting this test to pass.)
+  def test_puzzle_with_eight_letters
+    skip
+    input = 'SEND + MORE == MONEY'
+    expected = { 'D' => 7, 'E' => 5, 'M' => 1, 'N' => 6,
+                 'O' => 0, 'R' => 8, 'S' => 9, 'Y' => 2 }
+    assert_equal expected, Alphametics.solve(input)
+  end
 
-  # def test_puzzle_with_ten_letters
-  #   skip
-  #   input = 'AND + A + STRONG + OFFENSE + AS + A + GOOD = DEFENSE'
-  #   expected = { 'A' => 5, 'D' => 3, 'E' => 4, 'F' => 7,
-  #                'G' => 8, 'N' => 0, 'O' => 2, 'R' => 1,
-  #                'S' => 6, 'T' => 9 }
-  #   assert_equal expected, Alphametics.solve(input)
-  # end
+  # The obvious algorithm can take a long time to solve this puzzle,
+  # but an optimised solution can solve it fairly quickly.
+  # (It's OK to submit your solution without getting this test to pass.)
+  def test_puzzle_with_ten_letters
+    skip
+    input = 'AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE'
+    expected = { 'A' => 5, 'D' => 3, 'E' => 4, 'F' => 7,
+                 'G' => 8, 'N' => 0, 'O' => 2, 'R' => 1,
+                 'S' => 6, 'T' => 9 }
+    assert_equal expected, Alphametics.solve(input)
+  end
 
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
@@ -87,7 +89,6 @@ class AlphameticsTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-
   def test_bookkeeping
     skip
     assert_equal 4, BookKeeping::VERSION
