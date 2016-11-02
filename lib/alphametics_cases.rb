@@ -16,10 +16,30 @@ class AlphameticsCase < OpenStruct
   end
 
   def workload
-    'assert_equal expected, Alphametics.solve(input)'
+    body = [
+      'input = %s' % input,
+      'expected = %s' % expect,
+      'assert_equal expected, Alphametics.solve(input)'
+    ]
+    indent(body,4)
+  end
+
+  def runtime_comment
+    if slow?
+      comments = 
+        '',
+        '# The obvious algorithm can take a long time to solve this puzzle,',
+        '# but an optimised solution can solve it fairly quickly.',
+        '# (It\'s OK to submit your solution without getting this test to pass.)'
+      indent(comments,2)
+    end
   end
 
   private
+
+  def slow?
+    (expected||{}).size > 7 
+  end
 
   def expected_values
     "{ #{indent(expected_values_as_lines,17)} }"
@@ -38,9 +58,10 @@ class AlphameticsCase < OpenStruct
     lines[0...-1].map { |line| "#{line}," }.push(lines.last)
   end
 
-  def indent(string, spaces)
-    string.join("\n" + ' ' * spaces)
+  def indent(lines, spaces)
+    lines.join("\n" + ' ' * spaces)
   end
+
 end
 
 AlphameticsCases = proc do |data|
@@ -50,5 +71,5 @@ AlphameticsCases = proc do |data|
   end
 
   # The example algorithm takes a long time to solve these.
-  testcases.reject { |testcase| (testcase.expected||{}).size > 7 }
+  # testcases.reject { |testcase| (testcase.expected||{}).size > 7 }
 end
