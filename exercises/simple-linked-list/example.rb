@@ -1,68 +1,59 @@
 class Element
-  attr_reader   :datum
+  attr_reader :datum
   attr_accessor :next
-
-  def initialize(datum, next_element=nil)
-    @datum = datum
-    @next  = next_element
-  end
-
-  def tail?
-    @next.nil?
+  def initialize(value)
+    @datum = value
+    @next  = nil
   end
 end
 
 class SimpleLinkedList
-  attr_reader :size
-  attr_reader :head
-
-  def initialize
-    @head = nil
-    @size = 0
-  end
-
-  def push(datum)
-    e = Element.new(datum, @head)
-    @head = e
-    @size += 1
-  end
-
-  def empty?
-    @size.zero?
-  end
-
-  def peek
-    @head.nil? ? nil : @head.datum
-  end
-
-  def pop
-    e, @head = @head, @head.next
-    @size -= 1
-    return e.datum
-  end
-
-  def each
-    return enum_for(:each) unless block_given?
-    current = head
-    until current.nil?
-      yield current.datum
-      current = current.next
-    end
+  def initialize(array = [])
+    create_from_array(array)
   end
 
   def to_a
-    each.to_a
-  end
-
-  def reverse
-    each.with_object(SimpleLinkedList.new) { |datum, list| list.push(datum) }
-  end
-
-  def self.from_a(a)
-    new.tap do |list|
-      a.to_a.reverse_each do |item|
-        list.push(item)
-      end
+    result = []
+    pointer = @head
+    while pointer
+      result << pointer.datum
+      pointer = pointer.next
     end
+    result
   end
+
+  def push(element)
+    element.next = @head unless @head.nil?
+    @head = element
+    self
+  end
+
+  def pop
+    element = @head
+    @head = element.next if element
+    element
+  end
+
+  def reverse!
+    previous = nil
+    pointer = @head
+    while pointer
+      temp = pointer.next
+      pointer.next = previous
+      previous = pointer
+      pointer = temp
+    end
+    @head = previous
+    self
+  end
+
+  private
+
+  def create_from_array(array)
+    array.each { |value| push(Element.new(value)) }
+  end
+end
+
+module BookKeeping
+  VERSION = 2
 end
