@@ -64,11 +64,8 @@ class AlphameticsCase < OpenStruct
 end
 
 AlphameticsCases = proc do |data|
-  testcases = JSON.parse(data)['solve']['cases'].map.with_index do |row, i|
+  JSON.parse(data)['solve']['cases'].map.with_index do |row, i|
     row = row.merge('index' => i)
     AlphameticsCase.new(row)
   end
-
-  # The example algorithm takes a long time to solve these.
-  # testcases.reject { |testcase| (testcase.expected||{}).size > 7 }
 end
