@@ -64,7 +64,8 @@ class Generator
 
   def generate_test_file
     File.open(path_to("#{name.gsub(/[ -]/, '_')}_test.rb"), 'w') do |f|
-      f.write ERB.new(File.read(path_to('example.tt'))).result binding
+      template = File.read(path_to('example.tt'))
+      f.write ERB.new(template, nil, '<>').result binding
     end
   end
 
