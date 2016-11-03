@@ -8,9 +8,7 @@ require_relative 'alphametics'
 class AlphameticsTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.test_name %>
     <%= test_case.skipped %>
-    expect = <%= test_case.expect %>
-    actual = <%= test_case.work_load %>
-    assert_equal(expect, actual)
+    <%= test_case.workload %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

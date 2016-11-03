@@ -7,10 +7,9 @@ require_relative 'sieve'
 # <%= sha1 %>
 
 class SieveTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %>
+  def <%= test_case.test_name %>
     <%= test_case.skipped %>
-    expected = <%= test_case.expected_string %>
-    assert_equal expected, Sieve.new(<%= test_case.limit %>).primes
+    <%= test_case.workload %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

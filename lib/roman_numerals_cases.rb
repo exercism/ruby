@@ -1,14 +1,14 @@
 class RomanNumeralsCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % number.to_s
   end
 
-  def do
-    '%s.to_roman' % number.to_s
+  def workload
+    "assert_equal '#{expected}', #{'%s.to_roman' % number.to_s}"
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 

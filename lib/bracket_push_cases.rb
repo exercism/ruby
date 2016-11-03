@@ -1,14 +1,14 @@
 class BracketPushCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.gsub(/[ -]/, '_')
+  end
+
+  def workload
+    long_input? ? split_test : simple_test
   end
 
   def skipped
     index.zero? ? '# skip' : 'skip'
-  end
-
-  def test_body
-    long_input? ? split_test : simple_test
   end
 
   def long_input?

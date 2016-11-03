@@ -7,10 +7,9 @@ require_relative 'nth_prime'
 # <%= sha1 %>
 #
 class NthPrimeTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %><% if test_case.raises_error? %>
-    assert_raises(ArgumentError) { <%= test_case.actual %> }<% else %>
-    assert_equal <%= test_case.expected %>, <%= test_case.actual %><% end %>
+  def <%= test_case.test_name %>
+    <%= test_case.skipped %>
+    <%= test_case.workload %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

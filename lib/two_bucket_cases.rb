@@ -8,15 +8,15 @@ class TwoBucketCase < OpenStruct
     "TwoBucket.new(#{bucket_one}, #{bucket_two}, #{goal}, '#{start_bucket}')"
   end
 
-  def test_body
+  def workload
     "two_bucket = #{self.do}
     assert_equal #{expected['moves']}, two_bucket.moves
     assert_equal '#{expected['goal_bucket']}', two_bucket.goal_bucket
     assert_equal #{expected['other_bucket']}, two_bucket.other_bucket"
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 

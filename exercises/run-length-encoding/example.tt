@@ -7,11 +7,9 @@ require_relative 'run_length_encoding'
 # Test data version:
 # <%= sha1 %>
 class RunLengthEncodingTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %>
-    <%= test_case.assign_input %>
-    <%= test_case.assign_output %>
-    <%= test_case.assertion %>
+  def <%= test_case.test_name %>
+    <%= test_case.skipped %>
+    <%= test_case.workload %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

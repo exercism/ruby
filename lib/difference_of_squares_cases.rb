@@ -3,17 +3,17 @@ class DifferenceOfSquaresCase < OpenStruct
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def do
-    "Squares.new(#{number}).#{action}"
+  def workload
+    "assert_equal #{expected_formatted}, Squares.new(#{number}).#{action}"
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def action
     return 'difference' if section == 'difference_of_squares'
     section
-  end
-
-  def skipped?
-    index > 0
   end
 
   def expected_formatted

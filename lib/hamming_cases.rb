@@ -1,19 +1,23 @@
 class HammingCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def work_load
-    "Hamming.compute('#{strand1}', '#{strand2}')"
+  def workload
+    assertion = "Hamming.compute('#{strand1}', '#{strand2}')"
+    if raises_error?
+      "assert_raises(ArgumentError) { #{assertion} }"
+    else
+      "assert_equal #{expected}, #{assertion}"
+    end    
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def raises_error?
     expected.to_i == -1
-  end
-
-  def skipped
-    index.zero? && '# skip' ||
-      'skip'
   end
 end
 

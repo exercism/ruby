@@ -1,13 +1,17 @@
 class ClockCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description
                 .gsub(/[() -]/, '_')
                 .gsub('=', 'is_equal_to')
                 .chomp('_')
   end
 
-  def test_body
+  def workload
     section == 'equal' ? compare_clocks : simple_test
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def compare_clocks
@@ -30,10 +34,6 @@ class ClockCase < OpenStruct
 
   def add_to_clock
     " + #{add}" if add
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
   end
 end
 

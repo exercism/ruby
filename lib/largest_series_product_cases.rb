@@ -1,18 +1,23 @@
 class LargestSeriesProductCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.tr('()', '').tr(' -', '_').downcase
   end
 
-  def do
-    "Series.new('#{digits}').largest_product(#{span})"
+  def workload
+    assertion = "Series.new('#{digits}').largest_product(#{span})"
+    if raises_error?
+      "assert_raises(ArgumentError) { #{assertion} }"
+    else
+      "assert_equal #{expected}, #{assertion}"
+    end
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def raises_error?
     expected.to_i == -1
-  end
-
-  def skipped?
-    index > 0
   end
 end
 

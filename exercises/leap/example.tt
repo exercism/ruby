@@ -15,10 +15,9 @@ class Date
 end
 
 class YearTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %><% if test_case.expected%>
-    assert <%= test_case.do %>, "<%= test_case.failure_message%>"<% else %>
-    refute <%= test_case.do %>, "<%= test_case.failure_message%>"<% end%>
+  def <%= test_case.test_name %>
+    <%= test_case.skipped %>
+    <%= test_case.workload %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

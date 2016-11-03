@@ -1,10 +1,14 @@
 class CustomSetCase < OpenStruct
-  def name
+  def test_name
     'test_%s' % description.gsub(/ |-/, '_')
   end
 
-  def test_body
+  def workload
     send section
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 
   def union
@@ -65,10 +69,6 @@ class CustomSetCase < OpenStruct
 
   def assert_or_refute
     expected ? 'assert' : 'refute'
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
   end
 end
 
