@@ -1,16 +1,11 @@
 class TriangleCase < OpenStruct
   def test_name
     initial = description.downcase
-    replaced = initial.gsub(/(true|false)/, replacements)
+    replaced = initial.gsub(/(true|false)/, expected_type)
     if initial.eql?(replaced) && !initial.include?(triangle)
       replaced = triangle + ' triangle ' + initial
     end
     'test_%s' % replaced.tr_s(', -', '_')
-  end
-
-  def replacements
-    booleans = { 'true' => '', 'false' => '' }
-    booleans.each { |k, v| booleans[k] = expected_type(k) }
   end
 
   def workload
@@ -32,14 +27,8 @@ class TriangleCase < OpenStruct
     %Q("Expected '#{expected}', #{expected_type}.")
   end
 
-  def expected_type(boolean = nil)
-    boolean ||= expected
-    "triangle is #{boolean_check(boolean) ? '' : 'not '}#{triangle}"
-  end
-
-  def boolean_check(boolean)
-    return true if boolean == true || boolean == 'true'
-    false
+  def expected_type
+    "triangle is #{expected ? '' : 'not '}#{triangle}"
   end
 
   def skipped
