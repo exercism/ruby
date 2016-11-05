@@ -4,10 +4,10 @@ require 'minitest/autorun'
 require_relative 'leap'
 
 # Test data version:
-# 9b8b80c
+# 7b0949e
 class Date
   def leap?
-    throw "Implement this yourself instead of using Ruby's implementation."
+    raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."
   end
 
   alias gregorian_leap? leap?
@@ -16,6 +16,7 @@ end
 
 class YearTest < Minitest::Test
   def test_leap_year
+    # skip
     assert Year.leap?(1996), "Expected 'true', 1996 is a leap year."
   end
 
@@ -48,7 +49,6 @@ class YearTest < Minitest::Test
     skip
     assert Year.leap?(2000), "Expected 'true', 2000 is a leap year."
   end
-
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -65,7 +65,6 @@ class YearTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-
   def test_bookkeeping
     skip
     assert_equal 2, BookKeeping::VERSION
