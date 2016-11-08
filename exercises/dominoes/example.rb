@@ -13,18 +13,15 @@ module Dominoes
 
     dominoes.each_with_index { |domino, i|
       other_dominoes = dominoes.take(i) + dominoes.drop(i + 1)
-      domino_left, domino_right = domino
-      if domino_left == chain_right
-        # Try to add domino (unflipped) to chain
-        if (subchain = try_subchain(other_dominoes, chain_left, domino_right))
-          return [domino] + subchain
+      # Try adding the domino either flipped or unflipped.
+      [domino, domino.reverse].each { |candidate|
+        domino_left, domino_right = candidate
+        if domino_left == chain_right
+          if (subchain = try_subchain(other_dominoes, chain_left, domino_right))
+            return [candidate] + subchain
+          end
         end
-      elsif domino_right == chain_right
-        # Try to add domino (flipped) to chain
-        if (subchain = try_subchain(other_dominoes, chain_left, domino_left))
-          return [[domino_right, domino_left]] + subchain
-        end
-      end
+      }
     }
 
     # Found no suitable chain.
