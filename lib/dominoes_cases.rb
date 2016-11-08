@@ -1,6 +1,6 @@
 class DominoesCase < OpenStruct
   def test_name
-    'test_%s' % description.tr("'", '').gsub(/[= -]+/, '_')
+    'test_%s' % description.gsub("can't", 'can not').gsub(/[= -]+/, '_')
   end
 
   def workload
