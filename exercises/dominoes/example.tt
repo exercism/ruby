@@ -36,9 +36,7 @@ class DominoesTest < Minitest::Test
 
   def assert_consecutive_dominoes_match(chain)
     chain.each_cons(2).with_index { |(d1, d2), i|
-      _, d1_right = d1
-      d2_left, _ = d2
-      assert_equal d1_right, d2_left,
+      assert_equal d1.last, d2.first,
         "In chain #{chain}, right end of domino #{i} (#{d1}) and left end of domino #{i + 1} (#{d2}) must match"
     }
   end
@@ -46,9 +44,7 @@ class DominoesTest < Minitest::Test
   def assert_dominoes_at_end_match(chain)
     first_domino = chain.first
     last_domino = chain.last
-    d1_left, _ = first_domino
-    _, d2_right = last_domino
-    assert_equal d1_left, d2_right,
+    assert_equal first_domino.first, last_domino.last,
       "In chain #{chain}, left end of first domino (#{first_domino}) and right end of last domino (#{last_domino}) must match"
   end
 end
