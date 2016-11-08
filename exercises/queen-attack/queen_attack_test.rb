@@ -3,152 +3,103 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'queen_attack'
 
-class QueensTest < Minitest::Test
-  def test_default_positions
-    queens = Queens.new
-    assert_equal [0, 3], queens.white
-    assert_equal [7, 3], queens.black
+# Test data version:
+# 82eb00d
+class QueenTest < Minitest::Test
+
+  def test_queen_with_a_valid_position
+    # skip
+    Queens.new white: [2, 2]
   end
 
-  def test_specific_placement
-    skip
-    queens = Queens.new(white: [3, 7], black: [6, 1])
-    assert_equal [3, 7], queens.white
-    assert_equal [6, 1], queens.black
-  end
-
-  def test_multiple_boards_simultaneously
-    skip
-    queens1 = Queens.new(white: [3, 7], black: [6, 1])
-    queens2 = Queens.new(white: [5, 4], black: [7, 7])
-    assert_equal [3, 7], queens1.white
-    assert_equal [6, 1], queens1.black
-    assert_equal [5, 4], queens2.white
-    assert_equal [7, 7], queens2.black
-  end
-
-  def test_cannot_occupy_same_space
+  def test_queen_must_have_positive_rank
     skip
     assert_raises ArgumentError do
-      Queens.new(white: [2, 4], black: [2, 4])
+      Queens.new white: [-2, 2]
     end
   end
 
-  def test_queen_must_have_positive_row
+  def test_queen_must_have_rank_on_board
     skip
     assert_raises ArgumentError do
-      Queens.new(white: [-2, 2])
+      Queens.new white: [8, 4]
     end
   end
 
-  def test_queen_must_have_positive_column
+  def test_queen_must_have_positive_file
     skip
     assert_raises ArgumentError do
-      Queens.new(white: [2, -2])
+      Queens.new white: [2, -2]
     end
   end
 
-  def test_queen_must_have_row_on_board
+  def test_queen_must_have_file_on_board
     skip
     assert_raises ArgumentError do
-      Queens.new(white: [8, 4])
+      Queens.new white: [4, 8]
     end
   end
 
-  def test_queen_must_have_column_on_board
+  def test_can_not_attack
     skip
-    assert_raises ArgumentError do
-      Queens.new(white: [4, 8])
-    end
+    queens = Queens.new white: [2, 4], black: [6, 6]
+    refute queens.attack?
   end
 
-  def test_string_representation
+  def test_can_attack_on_same_rank
     skip
-    queens = Queens.new(white: [2, 4], black: [6, 6])
-    board = <<-BOARD.chomp
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ W _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ B _
-_ _ _ _ _ _ _ _
-    BOARD
-    assert_equal board, queens.to_s
-  end
-
-  def test_another_string_representation
-    skip
-    queens = Queens.new(white: [7, 1], black: [0, 0])
-    board = <<-BOARD.chomp
-B _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ W _ _ _ _ _ _
-    BOARD
-    assert_equal board, queens.to_s
-  end
-
-  def test_yet_another_string_representation
-    skip
-    queens = Queens.new(white: [4, 3], black: [3, 4])
-    board = <<-BOARD.chomp
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ B _ _ _
-_ _ _ W _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-_ _ _ _ _ _ _ _
-    BOARD
-    assert_equal board, queens.to_s
-  end
-
-  def test_cannot_attack
-    skip
-    queens = Queens.new(white: [2, 3], black: [4, 7])
-    assert !queens.attack?
-  end
-
-  def test_can_attack_on_same_row
-    skip
-    queens = Queens.new(white: [2, 4], black: [2, 7])
+    queens = Queens.new white: [2, 4], black: [2, 6]
     assert queens.attack?
   end
 
-  def test_can_attack_on_same_column
+  def test_can_attack_on_same_file
     skip
-    queens = Queens.new(white: [5, 4], black: [2, 4])
+    queens = Queens.new white: [4, 5], black: [2, 5]
     assert queens.attack?
   end
 
   def test_can_attack_on_first_diagonal
     skip
-    queens = Queens.new(white: [1, 1], black: [6, 6])
+    queens = Queens.new white: [2, 2], black: [0, 4]
     assert queens.attack?
   end
 
   def test_can_attack_on_second_diagonal
     skip
-    queens = Queens.new(white: [0, 6], black: [1, 7])
+    queens = Queens.new white: [2, 2], black: [3, 1]
     assert queens.attack?
   end
 
   def test_can_attack_on_third_diagonal
     skip
-    queens = Queens.new(white: [4, 1], black: [6, 3])
+    queens = Queens.new white: [2, 2], black: [1, 1]
     assert queens.attack?
   end
 
   def test_can_attack_on_fourth_diagonal
     skip
-    queens = Queens.new(white: [6, 1], black: [1, 6])
+    queens = Queens.new white: [2, 2], black: [5, 5]
     assert queens.attack?
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_bookkeeping
+    skip
+    assert_equal 2, BookKeeping::VERSION
   end
 end
