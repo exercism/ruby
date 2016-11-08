@@ -502,6 +502,12 @@
       "difficulty": 1,
       "topics": [
       ]
+    },
+    {
+      "slug": "dominoes",
+      "difficulty": 1,
+      "topics": [
+      ]
     }
   ],
   "deprecated": [
