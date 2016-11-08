@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/helper'
+require 'generator'
+require 'dominoes_cases'
+
+Generator.new('dominoes', DominoesCases).generate
