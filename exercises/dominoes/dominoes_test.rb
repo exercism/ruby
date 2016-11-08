@@ -113,26 +113,34 @@ class DominoesTest < Minitest::Test
 
   def assert_correct_chain(input_dominoes, output_chain)
     refute_nil output_chain, "There should be a chain for #{input_dominoes}"
+    assert_same_dominoes(input_dominoes, output_chain)
+    assert_consecutive_dominoes_match(output_chain)
+    return if output_chain.empty?
+    assert_dominoes_at_end_match(output_chain)
+  end
 
+  def assert_same_dominoes(input_dominoes, output_chain)
     input_normal = input_dominoes.map(&:sort).sort
     output_normal = output_chain.map(&:sort).sort
     assert_equal input_normal, output_normal,
       'Dominoes used in the output must be the same as the ones given in the input'
+  end
 
-    output_chain.each_cons(2).with_index { |(d1, d2), i|
+  def assert_consecutive_dominoes_match(chain)
+    chain.each_cons(2).with_index { |(d1, d2), i|
       _, d1_right = d1
       d2_left, _ = d2
       assert_equal d1_right, d2_left,
-        "In chain #{output_chain}, right end of domino #{i} (#{d1}) and left end of domino #{i + 1} (#{d2}) must match"
+        "In chain #{chain}, right end of domino #{i} (#{d1}) and left end of domino #{i + 1} (#{d2}) must match"
     }
+  end
 
-    return if output_chain.empty?
-
-    first_domino = output_chain.first
-    last_domino = output_chain.last
+  def assert_dominoes_at_end_match(chain)
+    first_domino = chain.first
+    last_domino = chain.last
     d1_left, _ = first_domino
     _, d2_right = last_domino
     assert_equal d1_left, d2_right,
-      "In chain #{output_chain}, left end of first domino (#{first_domino}) and right end of last domino (#{last_domino}) must match"
+      "In chain #{chain}, left end of first domino (#{first_domino}) and right end of last domino (#{last_domino}) must match"
   end
 end
