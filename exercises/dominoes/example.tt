@@ -18,6 +18,10 @@ class DominoesTest < Minitest::Test
     assert_equal <%= version.next %>, BookKeeping::VERSION
   end
 
+  # It's infeasible to use example-based tests for this exercise,
+  # because the list of acceptable answers for a given input can be quite large.
+  # Instead, we verify certain properties of a correct chain.
+
   def assert_correct_chain(input_dominoes, output_chain)
     refute_nil output_chain, "There should be a chain for #{input_dominoes}"
     assert_same_dominoes(input_dominoes, output_chain)
