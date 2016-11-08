@@ -7,7 +7,7 @@ class DominoesCase < OpenStruct
     <<-WL.chomp
 input_dominoes = #{input}
     output_chain = Dominoes.chain(input_dominoes)
-    #{can_chain ? 'assert_correct_chain(input_dominoes, output_chain)' : 'assert_nil output_chain, "There should be no chain for #{input_dominoes}"'}
+    #{can_chain ? 'assert' : 'refute' }_correct_chain(input_dominoes, output_chain)
     WL
   end
 

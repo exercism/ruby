@@ -24,7 +24,7 @@ class DominoesTest < Minitest::Test
     skip
     input_dominoes = [[1, 2]]
     output_chain = Dominoes.chain(input_dominoes)
-    assert_nil output_chain, "There should be no chain for #{input_dominoes}"
+    refute_correct_chain(input_dominoes, output_chain)
   end
 
   def test_three_elements
@@ -45,28 +45,28 @@ class DominoesTest < Minitest::Test
     skip
     input_dominoes = [[1, 2], [4, 1], [2, 3]]
     output_chain = Dominoes.chain(input_dominoes)
-    assert_nil output_chain, "There should be no chain for #{input_dominoes}"
+    refute_correct_chain(input_dominoes, output_chain)
   end
 
   def test_disconnected_simple
     skip
     input_dominoes = [[1, 1], [2, 2]]
     output_chain = Dominoes.chain(input_dominoes)
-    assert_nil output_chain, "There should be no chain for #{input_dominoes}"
+    refute_correct_chain(input_dominoes, output_chain)
   end
 
   def test_disconnected_double_loop
     skip
     input_dominoes = [[1, 2], [2, 1], [3, 4], [4, 3]]
     output_chain = Dominoes.chain(input_dominoes)
-    assert_nil output_chain, "There should be no chain for #{input_dominoes}"
+    refute_correct_chain(input_dominoes, output_chain)
   end
 
   def test_disconnected_single_isolated
     skip
     input_dominoes = [[1, 2], [2, 3], [3, 1], [4, 4]]
     output_chain = Dominoes.chain(input_dominoes)
-    assert_nil output_chain, "There should be no chain for #{input_dominoes}"
+    refute_correct_chain(input_dominoes, output_chain)
   end
 
   def test_need_backtrack
@@ -138,5 +138,9 @@ class DominoesTest < Minitest::Test
     last_domino = chain.last
     assert_equal first_domino.first, last_domino.last,
       "In chain #{chain}, left end of first domino (#{first_domino}) and right end of last domino (#{last_domino}) must match"
+  end
+
+  def refute_correct_chain(input_dominoes, output_chain)
+    assert_nil output_chain, "There should be no chain for #{input_dominoes}"
   end
 end

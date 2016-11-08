@@ -47,4 +47,8 @@ class DominoesTest < Minitest::Test
     assert_equal first_domino.first, last_domino.last,
       "In chain #{chain}, left end of first domino (#{first_domino}) and right end of last domino (#{last_domino}) must match"
   end
+
+  def refute_correct_chain(input_dominoes, output_chain)
+    assert_nil output_chain, "There should be no chain for #{input_dominoes}"
+  end
 end
