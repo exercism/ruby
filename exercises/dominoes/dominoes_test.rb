@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'dominoes'
 
 # Test data version:
-# 018c48d
+# 82eb00d
 class DominoesTest < Minitest::Test
   def assert_correct_chain(input_dominoes, output_chain)
     refute_nil output_chain, "There should be a chain for #{input_dominoes}"
