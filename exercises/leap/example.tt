@@ -7,7 +7,7 @@ require_relative 'leap'
 # <%= sha1 %>
 class Date
   def leap?
-    throw "Implement this yourself instead of using Ruby's implementation."
+    raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."
   end
 
   alias gregorian_leap? leap?
@@ -15,8 +15,8 @@ class Date
 end
 
 class YearTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %><% if test_case.expected%>
+  def <%= test_case.name %>
+    <%= test_case.skip %><% if test_case.expected%>
     assert <%= test_case.do %>, "<%= test_case.failure_message%>"<% else %>
     refute <%= test_case.do %>, "<%= test_case.failure_message%>"<% end%>
   end

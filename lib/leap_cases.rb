@@ -7,8 +7,8 @@ class LeapCase < OpenStruct
     "Year.leap?(#{input})"
   end
 
-  def skipped?
-    index > 0
+  def skip
+    index.zero? ? '# skip' : 'skip'
   end
 
   def failure_message
