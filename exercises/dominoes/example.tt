@@ -22,8 +22,8 @@ class DominoesTest < Minitest::Test
   def assert_correct_chain(input_dominoes, output_chain)
     refute_nil output_chain, "There should be a chain for #{input_dominoes}"
     assert_same_dominoes(input_dominoes, output_chain)
-    assert_consecutive_dominoes_match(output_chain)
     return if output_chain.empty?
+    assert_consecutive_dominoes_match(output_chain)
     assert_dominoes_at_end_match(output_chain)
   end
 
