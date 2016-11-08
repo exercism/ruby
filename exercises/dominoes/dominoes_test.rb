@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'dominoes'
 
-# Test data version:
-# 82eb00d
+# Test data version: 82eb00d
 class DominoesTest < Minitest::Test
   def test_empty_input_empty_output
     # skip
