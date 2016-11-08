@@ -20,7 +20,7 @@ class DominoesTest < Minitest::Test
     assert_correct_chain(input_dominoes, output_chain)
   end
 
-  def test_singleton_that_can_t_be_chained
+  def test_singleton_that_cant_be_chained
     skip
     input_dominoes = [[1, 2]]
     output_chain = Dominoes.chain(input_dominoes)
@@ -41,7 +41,7 @@ class DominoesTest < Minitest::Test
     assert_correct_chain(input_dominoes, output_chain)
   end
 
-  def test_can_t_be_chained
+  def test_cant_be_chained
     skip
     input_dominoes = [[1, 2], [4, 1], [2, 3]]
     output_chain = Dominoes.chain(input_dominoes)
