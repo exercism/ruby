@@ -28,6 +28,9 @@ module Dominoes
     }
 
     # Found no suitable chain.
+    # Note that for "no chain" we have to use nil instead of [].
+    # This is because [] is the valid answer for `Dominoes.chain([])`.
+    # If we used [] for "no chain", then the meaning of [] is ambiguous.
     nil
   end
 end
