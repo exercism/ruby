@@ -4,16 +4,14 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'pangram'
 
-# Test data version:
-# <%= sha1 %>
+# Test data version: # <%= sha1 %>
 class PangramTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %>
-    str = '<%= test_case.input %>'<% if test_case.expected %>
-    assert<% else %>
-    refute<% end %> <%= test_case.do %>
+  def <%= test_case.name %>
+    <%= test_case.skipped? %>
+    <%= test_case.workload %>
   end
 <% end %>
+
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
   def test_bookkeeping
     skip
