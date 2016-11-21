@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION = 2
+end
+
 class Queens
   attr_reader :white, :black
   def initialize(positions = {})
@@ -12,18 +16,6 @@ class Queens
     on_horizontal? || on_vertical? || on_diagonal?
   end
 
-  def to_s
-    board = []
-    (0..7).each do |row|
-      positions = []
-      (0..7).each do |column|
-        positions << draw(row, column)
-      end
-      board[row] = positions.join(' ')
-    end
-    board.join("\n")
-  end
-
   private
 
   def on_horizontal?
@@ -35,23 +27,6 @@ class Queens
   end
 
   def on_diagonal?
-    white_diff.abs == black_diff.abs
-  end
-
-  def black_diff
-    black[1] - black[0]
-  end
-
-  def white_diff
-    white[1] - white[0]
-  end
-
-  def draw(row, column)
-    case [row, column]
-    when white then 'W'
-    when black then 'B'
-    else
-      '_'
-    end
+    (black[0] - white[0]).abs == (black[1] - white[1]).abs
   end
 end
