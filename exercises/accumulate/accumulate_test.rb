@@ -45,6 +45,7 @@ class ArrayTest < Minitest::Test
     original.accumulate { |n| n * n }
     assert_equal copy, original
   end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,

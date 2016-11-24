@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION = 3
+end
+
 class Array
   def accumulate
     result = []
