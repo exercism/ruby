@@ -5,7 +5,7 @@ require_relative 'bob'
 
 class BobTest < Minitest::Test
   def bob
-    ::Bob.new
+    Bob
   end
 
   def feedback(text)

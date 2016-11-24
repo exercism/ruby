@@ -1,4 +1,4 @@
-class Bob
+module Bob
   def hey(drivel)
     answer Phrase.new(drivel)
   end
@@ -35,3 +35,5 @@ class Phrase
     source.empty?
   end
 end
+
+Bob.extend Bob
