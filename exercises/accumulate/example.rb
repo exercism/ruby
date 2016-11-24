@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 3
+  VERSION = 1
 end
 
 class Array
