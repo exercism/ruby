@@ -20,9 +20,9 @@ class Game
   end
 
   def validate(pins)
-    raise 'Invalid number of pins' unless (PINS[:MIN]..PINS[:MAX]).cover?(pins)
-    raise 'Too many pins in frame' unless valid_frame?(pins)
-    raise 'Game is over, no rolls allowed' if game_complete?
+    raise StandardError, 'Invalid number of pins' unless (PINS[:MIN]..PINS[:MAX]).cover?(pins)
+    raise StandardError, 'Too many pins in frame' unless valid_frame?(pins)
+    raise StandardError, 'Game is over, no rolls allowed' if game_complete?
   end
 
   def valid_frame?(pins)
@@ -33,7 +33,7 @@ class Game
   end
 
   def score
-    raise 'Score unavailable until end of the game' unless game_complete?
+    raise StandardError, 'Score unavailable until end of the game' unless game_complete?
     @score_card.values.map.with_index(1) do |f, i|
       score_frame(f, i)
     end.reduce(:+)
