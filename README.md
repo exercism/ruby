@@ -108,6 +108,16 @@ then additional inputs/outputs should be submitted to the x-common repository.
 Changes to the test suite (style, boilerplate, etc) will probably have to be made to
 `example.tt`.
 
+### Exercise Generators
+
+If you wish to create a new generator, or edit an existing one, the generators currently live in the lib directory and are named `$PROBLEM_cases.rb`.  For example, the hamming generator is `lib/hamming_cases.rb`.  
+
+All generators currently adhere to a common public interface, and must define the following three methods:
+
+- `test_name` - Returns the name of the test (i.e `test_one_equals_one`)
+- `workload` - Returns the main syntax for the test.  This will vary depending on the test generator and its underlying implementation
+- `skipped` - Returns skip syntax (i.e. `skip` or `# skip`)
+
 ## Pull Requests
 
 We welcome pull requests that provide fixes to existing test suites (missing
