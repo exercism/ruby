@@ -114,9 +114,9 @@ If you wish to create a new generator, or edit an existing one, the generators c
 
 All generators currently adhere to a common public interface, and must define the following three methods:
 
-- `test_name` - Output the name of the test
-- `workload` - Output the body of the test
-- `skipped` - Output skip syntax
+- `test_name` - Returns the name of the test (i.e `test_one_equals_one`)
+- `workload` - Returns the main syntax for the test.  This will vary depending on the test generator and its underlying implementation
+- `skipped` - Returns skip syntax (i.e. `skip` or `# skip`)
 
 ## Pull Requests
 
