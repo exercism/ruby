@@ -1,10 +1,15 @@
 module BookKeeping
-  VERSION = 2
+  VERSION = 3
 end
 
 class Game
   PINS = { MIN: 0, MAX: 10 }.freeze
   at_exit { public :roll, :score }
+
+
+  class BowlingError < StandardError; end
+  class RollError < BowlingError; end
+  class GameError < BowlingError; end
 
   private
 
@@ -20,9 +25,9 @@ class Game
   end
 
   def validate(pins)
-    raise StandardError, 'Invalid number of pins' unless (PINS[:MIN]..PINS[:MAX]).cover?(pins)
-    raise StandardError, 'Too many pins in frame' unless valid_frame?(pins)
-    raise StandardError, 'Game is over, no rolls allowed' if game_complete?
+    raise RollError, 'Invalid number of pins' unless (PINS[:MIN]..PINS[:MAX]).cover?(pins)
+    raise RollError, 'Too many pins in frame' unless valid_frame?(pins)
+    raise GameError, 'Game is over, no rolls allowed' if game_complete?
   end
 
   def valid_frame?(pins)
@@ -33,7 +38,7 @@ class Game
   end
 
   def score
-    raise StandardError, 'Score unavailable until end of the game' unless game_complete?
+    raise GameError, 'Score unavailable until end of the game' unless game_complete?
     @score_card.values.map.with_index(1) do |f, i|
       score_frame(f, i)
     end.reduce(:+)
