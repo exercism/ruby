@@ -3,8 +3,8 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'bowling'
 
-# Test data version:
-# <%= sha1 %>
+# Test data version: <%= sha1 %>
+#
 class BowlingTest < Minitest::Test
   def setup
     @game = Game.new
@@ -13,11 +13,13 @@ class BowlingTest < Minitest::Test
   def roll(rolls)
     rolls.each { |pins| @game.roll(pins) }
   end
+
 <% test_cases.each do |test_case| %>
   def <%= test_case.test_name %>
     <%= test_case.skipped %>
     <%= test_case.work_load %>
   end
+
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
   def test_bookkeeping
