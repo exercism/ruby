@@ -4,68 +4,55 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'isogram'
 
-# Common test data version: c1cb73f
+# Common test data version: c59c2c4
 class IsogramTest < Minitest::Test
-  def test_duplicates
+  def test_empty_string
     # skip
-    string = 'duplicates'
+    string = ''
     assert Isogram.is_isogram?(string)
   end
 
-  def test_eleven
+  def test_isogram_with_only_lower_case_characters
+    skip
+    string = 'isogram'
+    assert Isogram.is_isogram?(string)
+  end
+
+  def test_word_with_one_duplicated_character
     skip
     string = 'eleven'
     refute Isogram.is_isogram?(string)
   end
 
-  def test_subdermatoglyphic
+  def test_longest_reported_english_isogram
     skip
     string = 'subdermatoglyphic'
     assert Isogram.is_isogram?(string)
   end
 
-  def test_alphabet
+  def test_word_with_duplicated_character_in_mixed_case
     skip
     string = 'Alphabet'
     refute Isogram.is_isogram?(string)
   end
 
-  def test_thumbscrew_japingly
+  def test_hypothetical_isogrammic_word_with_hyphen
     skip
     string = 'thumbscrew-japingly'
     assert Isogram.is_isogram?(string)
   end
 
-  def test_hjelmqvist_gryb_zock_pfund_wax
+  def test_isogram_with_duplicated_non_letter_character
     skip
     string = 'Hjelmqvist-Gryb-Zock-Pfund-Wax'
     assert Isogram.is_isogram?(string)
   end
 
-  def test_heizölrückstoßabdämpfung
-    skip
-    string = 'Heizölrückstoßabdämpfung'
-    assert Isogram.is_isogram?(string)
-  end
-
-  def test_the_quick_brown_fox
-    skip
-    string = 'the quick brown fox'
-    refute Isogram.is_isogram?(string)
-  end
-
-  def test_emily_jung_schwartzkopf
+  def test_made_up_name_that_is_an_isogram
     skip
     string = 'Emily Jung Schwartzkopf'
     assert Isogram.is_isogram?(string)
   end
-
-  def test_éléphant
-    skip
-    string = 'éléphant'
-    refute Isogram.is_isogram?(string)
-  end
-
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -82,9 +69,8 @@ class IsogramTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
