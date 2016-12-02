@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
 
 class Isogram
