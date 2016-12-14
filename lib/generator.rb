@@ -25,6 +25,10 @@ class Generator
     File.join(exercise_dir,'.meta')
   end
 
+  def version_filename
+    path_to('.version')
+  end
+
   def data
     File.read(File.join(metadata_dir, 'canonical-data.json'))
   end
@@ -34,7 +38,7 @@ class Generator
   end
 
   def version
-    @version ||= File.read(path_to('.version')).strip.to_i
+    @version ||= File.read(version_filename).strip.to_i
   end
 
   def sha1
@@ -77,7 +81,7 @@ class Generator
   end
 
   def increment_version
-    File.open(path_to('.version'), 'w') do |f|
+    File.open(version_filename, 'w') do |f|
       f.write version + 1
     end
   end
