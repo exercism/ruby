@@ -21,6 +21,10 @@ class Generator
     File.expand_path(File.join('..', '..', 'exercises', name), __FILE__)
   end
 
+  def exercise_meta_dir
+    File.join(exercise_dir,'.meta')
+  end
+
   def data
     File.read(File.join(metadata_dir, 'canonical-data.json'))
   end
