@@ -26,7 +26,7 @@ class Generator
   end
 
   def version_filename
-    path_to('.version')
+    File.join(exercise_meta_dir,'.version')
   end
 
   def data
