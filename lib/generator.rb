@@ -17,12 +17,16 @@ class Generator
     File.expand_path(File.join('..', '..', '..', METADATA_REPOSITORY, 'exercises', name), __FILE__)
   end
 
+  def exercise_dir
+    File.expand_path(File.join('..', '..', 'exercises', name), __FILE__)
+  end
+
   def data
     File.read(File.join(metadata_dir, 'canonical-data.json'))
   end
 
   def path_to(file)
-    File.expand_path(File.join('..', '..', 'exercises', name, file), __FILE__)
+    File.join(exercise_dir,file)
   end
 
   def version
