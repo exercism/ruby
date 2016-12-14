@@ -14,7 +14,6 @@ class Generator
   end
 
   def metadata_dir
-    # rubocop:disable Metrics/LineLength
     File.expand_path(File.join('..', '..', '..', METADATA_REPOSITORY, 'exercises', name), __FILE__)
   end
 
