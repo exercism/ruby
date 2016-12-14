@@ -14,8 +14,19 @@ class Generator
   end
 
   def metadata_dir
-    # rubocop:disable Metrics/LineLength
     File.expand_path(File.join('..', '..', '..', METADATA_REPOSITORY, 'exercises', name), __FILE__)
+  end
+
+  def exercise_dir
+    File.expand_path(File.join('..', '..', 'exercises', name), __FILE__)
+  end
+
+  def exercise_meta_dir
+    File.join(exercise_dir,'.meta')
+  end
+
+  def version_filename
+    File.join(exercise_meta_dir,'.version')
   end
 
   def data
@@ -23,11 +34,11 @@ class Generator
   end
 
   def path_to(file)
-    File.expand_path(File.join('..', '..', 'exercises', name, file), __FILE__)
+    File.join(exercise_dir,file)
   end
 
   def version
-    @version ||= File.read(path_to('.version')).strip.to_i
+    @version ||= File.read(version_filename).strip.to_i
   end
 
   def sha1
@@ -70,7 +81,7 @@ class Generator
   end
 
   def increment_version
-    File.open(path_to('.version'), 'w') do |f|
+    File.open(version_filename, 'w') do |f|
       f.write version + 1
     end
   end
