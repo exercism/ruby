@@ -3,7 +3,7 @@ require 'minitest/autorun'
 
 # Assume that this file lives in #{base}/bin
 base = File.join(__dir__,'..')
-files = Dir.glob("#{base}/**/*test.rb") + Dir.glob("#{base}/bin/*")
+files = Dir.glob("#{base}/exercises/**/*test.rb") + Dir.glob("#{base}/bin/*")
 
 files.each do |file|
   describe file do
