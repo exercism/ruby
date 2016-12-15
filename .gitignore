@@ -1,4 +1,4 @@
 .bundle
 bin/configlet
 bin/configlet.exe
-Gemfile.lock
+/Gemfile.lock
