@@ -517,7 +517,8 @@
   "ignored": [
     "docs",
     "img",
-    "lib"
+    "lib",
+    "test"
   ],
   "foregone": [
 
