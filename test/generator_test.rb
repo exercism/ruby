@@ -13,5 +13,11 @@ class GeneratorTest < Minitest::Test
     assert_equal 'xruby/test/fixtures/exercises/aname', subject.metadata_dir
   end
 
+  def test_exercise_dir
+    subject = Generator.new('aname', 'some cases')
+    # This is relative to the xruby root
+    assert_equal 'exercises/aname', subject.exercise_dir
+  end
+
 end
 

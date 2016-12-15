@@ -23,7 +23,7 @@ class Generator
   end
 
   def exercise_dir
-    File.expand_path(File.join('..', '..', 'exercises', name), __FILE__)
+    File.join('exercises', name)
   end
 
   def exercise_meta_dir
