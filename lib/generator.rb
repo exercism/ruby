@@ -4,6 +4,14 @@ require 'erb'
 require 'json'
 require 'ostruct'
 
+# Wrap git shell commands.
+class GitCommand
+  def self.short_sha(base_path)
+    git_path = File.join(base_path, '.git')
+    `git --git-dir=#{git_path} log -1 --pretty=format:'%h'`
+  end
+end
+
 class Generator
   METADATA_REPOSITORY = 'x-common'.freeze
 
@@ -47,7 +55,7 @@ class Generator
   end
 
   def sha1
-    `cd #{metadata_dir} && git log -1 --pretty=format:"%h"`
+    GitCommand.short_sha(@metadata_repository_path)
   end
 
   def test_cases
