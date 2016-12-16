@@ -8,14 +8,14 @@ class Generator
   METADATA_REPOSITORY = 'x-common'.freeze
 
   attr_reader :name, :cases
-  def initialize(name, cases, metadata_repository_path=nil)
+  def initialize(name, cases, metadata_repository_path = nil)
     @name = name
     @cases = cases
     @metadata_repository_path = metadata_repository_path || default_metadata_path
   end
 
   def default_metadata_path
-    File.join( '..', METADATA_REPOSITORY)
+    File.join('..', METADATA_REPOSITORY)
   end
 
   def metadata_dir
@@ -27,11 +27,11 @@ class Generator
   end
 
   def exercise_meta_dir
-    File.join(exercise_dir,'.meta')
+    File.join(exercise_dir, '.meta')
   end
 
   def version_filename
-    File.join(exercise_meta_dir,'.version')
+    File.join(exercise_meta_dir, '.version')
   end
 
   def data
@@ -39,7 +39,7 @@ class Generator
   end
 
   def path_to(file)
-    File.join(exercise_dir,file)
+    File.join(exercise_dir, file)
   end
 
   def version
