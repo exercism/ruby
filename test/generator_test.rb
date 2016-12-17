@@ -35,6 +35,17 @@ class GeneratorTest < Minitest::Test
     assert_equal expected, subject.version
   end
 
+  def test_test_cases
+    metadata_repository_path = 'test/fixtures/metadata'
+    exercises_path = 'test/fixtures'
+    canonical_data = File.read('test/fixtures/metadata/exercises/alpha/canonical-data.json')
+    test_cases = Minitest::Mock.new
+    test_cases.expect :call, true, [canonical_data]
+    subject = Generator.new('alpha', test_cases, metadata_repository_path, exercises_path)
+    subject.test_cases
+    test_cases.verify
+  end
+
   def test_generate
     metadata_repository_path = 'test/fixtures'
     exercises_path = 'test/fixtures'

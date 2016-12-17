@@ -1,0 +1,11 @@
+{
+    "solve": {
+        "description": "Test canonical data",
+        "cases": [
+            {
+                "description": "add 2 numbers",
+                "input": [1,1],
+                "expected": 2
+            },
+    }
+}
