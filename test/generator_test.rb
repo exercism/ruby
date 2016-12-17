@@ -28,9 +28,18 @@ class GeneratorTest < Minitest::Test
   end
 
   def test_version
-    fixture_path = 'test/fixtures'
-    subject = Generator.new('alpha', nil, fixture_path, fixture_path)
-    expected = 2016
+    metadata_repository_path = 'test/fixtures'
+    exercises_path = 'test/fixtures'
+    subject = Generator.new('alpha', nil, metadata_repository_path, exercises_path)
+    expected = 1
     assert_equal expected, subject.version
+  end
+
+  def test_generate
+    metadata_repository_path = 'test/fixtures'
+    exercises_path = 'test/fixtures'
+    subject = Generator.new('alpha', nil, metadata_repository_path, exercises_path)
+    assert subject.generate
+    # TODO: test side effects
   end
 end
