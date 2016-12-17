@@ -66,3 +66,9 @@ class GeneratorTest < Minitest::Test
     # TODO: test lack of side effects
   end
 end
+
+class GitCommandTest < Minitest::Test
+  def test_short_sha
+    assert_match(/^[0-9a-f]{7,}$/, GitCommand.short_sha('.'))
+  end
+end
