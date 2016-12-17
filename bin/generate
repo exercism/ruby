@@ -3,34 +3,9 @@
 require_relative '../lib/helper'
 require 'generator'
 
-def available_generators
-  cases = File.join( __dir__, '../lib/*_cases.rb')
-  Dir[cases].map {|filename| /([^\/]*)_cases\.rb$/.match(filename).captures}
-end
+paths = Generator::Paths.new(track: XRUBY_ROOT, metadata: METADATA_REPOSITORY_PATH)
 
-def usage
-  "Usage: #{$PROGRAM_NAME} exercise_generator\n\n" +
-  "Available exercise generators:\n" +
-  available_generators.sort.join(' ')
-end
+generator = Generator::CommandLine.new(paths).parse(ARGV)
+exit 1 unless generator
 
-exercise = ARGV[0]
-
-unless exercise
-  STDERR.puts "Exercise name required!\n"
-  puts usage
-  exit
-end
-
-cases = "#{exercise.tr('-','_')}_cases"
-
-begin
-  require "#{cases}"
-rescue LoadError
-  puts "A generator does not currently exist for #{exercise}!"
-  exit(1)
-end
-
-klass = Object.const_get(cases.split('_').map(&:capitalize).join)
-Generator.new(exercise, klass).generate
-
+generator.call
