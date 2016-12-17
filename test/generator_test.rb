@@ -18,4 +18,12 @@ class GeneratorTest < Minitest::Test
     # This is relative to the xruby root
     assert_equal 'exercises/aname', subject.exercise_dir
   end
+
+  def test_sha1
+    expected = '1234567'
+    GitCommand.stub :short_sha, expected do
+      subject = Generator.new(nil, nil)
+      assert_equal expected, subject.sha1
+    end
+  end
 end
