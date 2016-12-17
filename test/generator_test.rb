@@ -16,7 +16,7 @@ class GeneratorTest < Minitest::Test
   def test_exercise_dir
     subject = Generator.new('aname', nil)
     # This is relative to the xruby root
-    assert_equal 'exercises/aname', subject.exercise_dir
+    assert_equal './exercises/aname', subject.exercise_dir
   end
 
   def test_sha1
@@ -25,5 +25,12 @@ class GeneratorTest < Minitest::Test
       subject = Generator.new(nil, nil)
       assert_equal expected, subject.sha1
     end
+  end
+
+  def test_version
+    fixture_path = 'test/fixtures'
+    subject = Generator.new('alpha', nil, fixture_path, fixture_path)
+    expected = 2016
+    assert_equal expected, subject.version
   end
 end
