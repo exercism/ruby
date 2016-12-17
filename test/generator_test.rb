@@ -42,4 +42,16 @@ class GeneratorTest < Minitest::Test
     assert subject.generate
     # TODO: test side effects
   end
+
+  def test_generate_with_missing_metadata_repository
+    metadata_repository_path = 'test/fixtures/nonexistant'
+    exercises_path = 'test/fixtures'
+    subject = Generator.new('alpha', nil, metadata_repository_path, exercises_path)
+    assert_output '', /'x-common' repository not found/ do
+      assert_raises Errno::ENOENT do
+        subject.generate
+      end
+    end
+    # TODO: test lack of side effects
+  end
 end

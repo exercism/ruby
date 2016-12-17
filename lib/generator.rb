@@ -82,7 +82,7 @@ class Generator
 
   def check_metadata_repository_exists
     unless File.directory?(metadata_dir)
-      STDERR.puts metadata_repository_missing_message
+      $stderr.puts metadata_repository_missing_message
       fail Errno::ENOENT.new(metadata_dir)
     end
   end
