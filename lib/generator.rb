@@ -16,10 +16,11 @@ class Generator
   METADATA_REPOSITORY = 'x-common'.freeze
 
   attr_reader :name, :cases
-  def initialize(name, cases, metadata_repository_path = nil)
+  def initialize(name, cases, metadata_repository_path = nil, xruby_root = nil)
     @name = name
     @cases = cases
     @metadata_repository_path = metadata_repository_path || default_metadata_path
+    @xruby_root = xruby_root || '.'
   end
 
   def default_metadata_path
@@ -31,7 +32,7 @@ class Generator
   end
 
   def exercise_dir
-    File.join('exercises', name)
+    File.join(@xruby_root, 'exercises', name)
   end
 
   def exercise_meta_dir
@@ -81,7 +82,7 @@ class Generator
 
   def check_metadata_repository_exists
     unless File.directory?(metadata_dir)
-      STDERR.puts metadata_repository_missing_message
+      $stderr.puts metadata_repository_missing_message
       fail Errno::ENOENT.new(metadata_dir)
     end
   end
