@@ -1,3 +1,6 @@
+AllCops:
+  TargetRubyVersion: 2.1
+
 # Type 'Lint' (48):
 Lint/AmbiguousOperator:
   Description: Checks for ambiguous operators in the first argument of a method invocation
