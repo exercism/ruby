@@ -6,7 +6,7 @@ Exercism Exercises in Ruby
 
 ## Setup
 
-You'll need a recent (1.9.3+) version of Ruby, but that's it. Minitest
+You'll need a recent (2.1+) version of Ruby, but that's it. Minitest
 ships
 with the language, so you're all set.
 
