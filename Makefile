@@ -1,3 +1,5 @@
+.PHONY: test
+
 # assignments
 ASSIGNMENT ?= ""
 IGNOREDIRS := "^(\.git|bin|docs|lib|exercises)$$"
@@ -33,4 +35,3 @@ test:
 	@for assignment in $(ASSIGNMENTS); do \
 		ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1;\
 	done
-
