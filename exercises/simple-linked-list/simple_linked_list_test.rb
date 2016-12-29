@@ -1,189 +1,163 @@
-#!/usr/bin/env ruby
-gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
-
 require_relative 'simple_linked_list'
 
 class LinkedListTest < Minitest::Test
-  def test_element_datum
-    e = Element.new(1)
-    assert_equal 1, e.datum
+  def test_element
+    element = Element.new(1)
+    assert_equal 1, element.datum
   end
 
-  def test_element_tail
+  def test_element_can_hold_a_different_value
     skip
-    e = Element.new(1)
-    assert e.tail?
+    element = Element.new(10)
+    assert_equal 10, element.datum
   end
 
-  def test_element_next_default
+  def test_element_next
     skip
-    e = Element.new(1)
-    assert_nil e.next
+    element = Element.new(1)
+    assert_nil element.next
   end
 
-  def test_element_next_initialization
+  def test_element_next_can_be_assigned_to
     skip
-    e1 = Element.new(1)
-    e2 = Element.new(2, e1)
-    assert_equal e1, e2.next
+    first  = Element.new(1)
+    second = Element.new(2)
+    first.next = second
+    assert_equal second, first.next
   end
 
-  def test_empty_list_size
+  def test_list_push
     skip
-    l = SimpleLinkedList.new
-    assert_equal 0, l.size
+    list = SimpleLinkedList.new
+    element = Element.new(1)
+    assert_equal list, list.push(element)
   end
 
-  def test_empty_list_empty
+  def test_list_pop
     skip
-    l = SimpleLinkedList.new
-    assert l.empty?
+    list = SimpleLinkedList.new
+    element = Element.new(1)
+    list.push(element)
+    assert_equal element, list.pop
   end
 
-  def test_pushing_element_on_list
+  def test_list_pop_empty
     skip
-    l = SimpleLinkedList.new
-    l.push(1)
-    assert_equal 1, l.size
+    list = SimpleLinkedList.new
+    assert_nil list.pop
   end
 
-  def test_empty_list_1_element
+  def test_list_pop_is_last_in_first_out
     skip
-    l = SimpleLinkedList.new
-    l.push(1)
-    refute l.empty?
+    list = SimpleLinkedList.new
+    first = Element.new(1)
+    second = Element.new(2)
+    list.push(first).push(second)
+    assert_equal second, list.pop
   end
 
-  def test_peeking_at_list
+  def test_list_empty_to_array
     skip
-    l = SimpleLinkedList.new
-    l.push(1)
-    assert_equal 1, l.size
-    assert_equal 1, l.peek
+    list = SimpleLinkedList.new
+    assert_equal [], list.to_a
   end
 
-  def test_peeking_at_empty_list
+  def test_list_single_to_array
     skip
-    l = SimpleLinkedList.new
-    assert_nil l.peek
+    list = SimpleLinkedList.new
+    first = Element.new(1)
+    list.push(first)
+    assert_equal [1], list.to_a
   end
 
-  def test_access_head_element
+  def test_list_multiple_to_array
     skip
-    l = SimpleLinkedList.new
-    l.push(1)
-    assert_instance_of Element, l.head
-    assert_equal 1, l.head.datum
-    assert l.head.tail?
+    list = SimpleLinkedList.new
+    first = Element.new(1)
+    second = Element.new(2)
+    third = Element.new(3)
+    list.push(first).push(second).push(third)
+    assert_equal [3,2,1], list.to_a
   end
 
-  def test_items_are_stacked
+  def test_list_create_from_array
     skip
-    l = SimpleLinkedList.new
-    l.push(1)
-    l.push(2)
-    assert_equal 2, l.size
-    assert_equal 2, l.head.datum
-    assert_equal 1, l.head.next.datum
+    array = [1,2,3]
+    list = SimpleLinkedList.new(array)
+    assert_equal [3,2,1], list.to_a
   end
 
-  def test_push_10_items
+  def test_list_created_from_array_still_made_up_of_elements
     skip
-    l = SimpleLinkedList.new
-    (1..10).each do |datum|
-      l.push(datum)
-    end
-    assert_equal 10, l.size
-    assert_equal 10, l.peek
+    array = [1,2,3]
+    list = SimpleLinkedList.new(array)
+    assert_equal Element, list.pop.class
   end
 
-  def test_pop_1_item
+  def test_list_from_array_still_acts_as_lifo
     skip
-    l = SimpleLinkedList.new
-    l.push(1)
-    assert_equal 1, l.pop
-    assert_equal 0, l.size
+    array = [1,2,3]
+    list = SimpleLinkedList.new(array)
+    element = list.pop
+    assert_equal 3, element.datum
   end
 
-  def test_popping_frenzy
+  def test_list_in_place_reverse!
     skip
-    l = SimpleLinkedList.new
-    (1..10).each do |datum|
-      l.push(datum)
-    end
-    6.times { l.pop }
-    assert_equal 4, l.size
-    assert_equal 4, l.peek
+    first = Element.new(1)
+    second = Element.new(2)
+    third = Element.new(3)
+    list = SimpleLinkedList.new
+    list.push(first).push(second).push(third)
+
+    assert_equal [1,2,3], list.reverse!.to_a
   end
 
-  def test_from_a_empty_array
+  def test_list_in_place_reverse_are_the_same_elements
     skip
-    l = SimpleLinkedList.from_a([])
-    assert_equal 0, l.size
-    assert_nil l.peek
+    first = Element.new(1)
+    second = Element.new(2)
+    list = SimpleLinkedList.new
+    list.push(first).push(second)
+
+    list.reverse!
+
+    assert_equal first, list.pop
+    assert_equal second, list.pop
   end
 
-  def test_from_a_nil
+  def test_list_reverse_empty_list
     skip
-    l = SimpleLinkedList.from_a(nil)
-    assert_equal 0, l.size
-    assert_nil l.peek
+    list = SimpleLinkedList.new
+    assert_equal list, list.reverse!
   end
 
-  def test_from_a_2_element_array
+  def test_works_for_1_through_10
     skip
-    l = SimpleLinkedList.from_a([1, 2])
-    assert_equal 2, l.size
-    assert_equal 1, l.peek
-    assert_equal 2, l.head.next.datum
+    list = SimpleLinkedList.new(1..10)
+    expected = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    assert_equal expected, list.to_a
   end
 
-  def test_from_a_10_items
-    skip
-    l = SimpleLinkedList.from_a((1..10).to_a)
-    assert_equal 10, l.size
-    assert_equal 1, l.peek
-    assert_equal 10, l.head.next.next.next.next.next.next.next.next.next.datum
-  end
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module.
+  #  In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
-  def test_to_a_empty_list
+  def test_bookkeeping
     skip
-    l = SimpleLinkedList.new
-    assert_equal [], l.to_a
-  end
-
-  def test_to_a_of_1_element_list
-    skip
-    assert_equal [1], SimpleLinkedList.from_a([1]).to_a
-  end
-
-  def test_to_a_of_2_element_list
-    skip
-    assert_equal [1, 2], SimpleLinkedList.from_a([1, 2]).to_a
-  end
-
-  def test_reverse_2_element_list
-    skip
-    list = SimpleLinkedList.from_a([1, 2])
-    # list_r and list need not be the same object
-    list_r = list.reverse
-
-    assert_equal 2, list_r.peek
-    assert_equal 1, list_r.head.next.datum
-    assert list_r.head.next.tail?
-  end
-
-  def test_reverse_10_element_list
-    skip
-    data = (1..10).to_a
-    list = SimpleLinkedList.from_a(data)
-    assert_equal data.reverse, list.reverse.to_a
-  end
-
-  def test_roundtrip_10_element_array
-    skip
-    data = (1..10).to_a
-    assert_equal data, SimpleLinkedList.from_a(data).to_a
+    assert_equal 1, BookKeeping::VERSION
   end
 end
