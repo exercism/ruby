@@ -57,15 +57,16 @@ end
 
 class AllYourBaseCase::PreProcessor
   class << self
+    attr_reader :row
+
     def call(row)
       @row = row
 
       row.merge('expected' => expected_value)
     end
 
+    private :row
     private
-
-    attr_reader :row
 
     def expected_value
       return row['expected'] if row['expected']
