@@ -6,7 +6,7 @@ require_relative 'series'
 class SeriesTest < Minitest::Test
   def test_simple_slices_of_one
     series = Series.new('01234')
-    assert_equal ['1', '2', '3', '4'] series.slices(1)
+    assert_equal ['1', '2', '3', '4'], series.slices(1)
   end
 
   def test_simple_slices_of_one_again
