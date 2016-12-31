@@ -94,4 +94,11 @@ class SeriesTest < Minitest::Test
       series.slices(slice_string.length + 1)
     end
   end
+  
+  def test_sequential_slices
+    #skip
+    series = Series.new('1234')
+    series.slices(2)
+    series.slices(3)
+  end
 end
