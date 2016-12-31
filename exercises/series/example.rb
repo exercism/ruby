@@ -6,10 +6,11 @@ class Series
     if n > @series.length
       raise ArgumentError
     end
+    series = @series
     substrings = []
-    until @series.length < n
-      substrings << @series[0..n-1]
-      @series = @series[1..-1]
+    until series.length < n
+      substrings << series[0..n-1]
+      series = series[1..-1]
     end
     substrings
   end
