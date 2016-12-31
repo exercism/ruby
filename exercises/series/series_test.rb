@@ -98,7 +98,7 @@ class SeriesTest < Minitest::Test
   def test_sequential_slices
     #skip
     series = Series.new('1234')
-    series.slices(2)
-    series.slices(3)
+    assert equal ['12', '23', '34'], series.slices(2)
+    assert equal ['123', '234'], series.slices(3)
   end
 end
