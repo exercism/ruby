@@ -6,12 +6,21 @@ unless ENV['CI']
   require 'simplecov'
   SimpleCov.start do
     add_filter '/test/'
+
     add_group 'Generator' do |file|
       file.filename =~ /generator/
     end
+
+    add_group 'Tasks' do |file|
+      file.filename =~ /tasks/
+    end
+
     add_group 'Cases', '_cases.rb'
+
     add_group 'Other' do |file|
-      !(file.filename =~ /_cases\.rb$/) && file.filename !~ /generator/
+      !(file.filename =~ /_cases\.rb$/) &&
+        file.filename !~ /generator/ &&
+        file.filename !~ /tasks/
     end
   end
 end

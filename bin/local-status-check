@@ -3,7 +3,7 @@
 puts "Starting #{__FILE__} checks..."
 
 commands_to_run = [
-  'make test',
+  'rake test',
   'bundle exec rubocop -fs -D',
   'bin/executable-tests-check',
 ]
