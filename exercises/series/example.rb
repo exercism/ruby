@@ -1,27 +1,17 @@
 class Series
-  def initialize(numeric_string)
-    @digits = convert_to_digits(numeric_string)
+  def initialize(series)
+    @series = (series)
   end
-
-  def slices(length)
-    if length > digits.length
-      fail ArgumentError.new('Not enough digits')
+  def slices(n)
+    if n > @series.length
+      raise ArgumentError
     end
-    result = []
-    i = -1
-    begin
-      i += 1
-      i2 = i + length - 1
-      result << digits[i..i2]
-    end while i2 < digits.size - 1
-    result
-  end
-
-  private
-
-  attr_reader :digits
-
-  def convert_to_digits(s)
-    s.chars.to_a.map(&:to_i)
+    series = @series
+    substrings = []
+    until series.length < n
+      substrings << series[0..n-1]
+      series = series[1..-1]
+    end
+    substrings
   end
 end
