@@ -1,3 +1,4 @@
+require 'json'
 require_relative 'test_helper'
 
 class WordyCaseTest < Minitest::Test
