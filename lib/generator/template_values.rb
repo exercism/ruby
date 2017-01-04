@@ -14,7 +14,6 @@ module Generator
     end
   end
 
-  # This is not a standalone module, is that a problem?
   module TemplateValuesFactory
     def template_values
       # These are needed by the 'ExerciseCases' classes
