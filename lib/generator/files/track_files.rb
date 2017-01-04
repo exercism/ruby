@@ -65,15 +65,15 @@ module Generator
 
     class ExampleSolutionFile < Writable
       def update_version(version)
-        new_content = to_s.gsub(/VERSION = \d+/, "VERSION = #{version}")
-        save_if_changed(new_content)
+        content = to_s.gsub(/VERSION = \d+/, "VERSION = #{version}")
+        save_if_changed(content)
       end
     end
 
     class MinitestTestsFile < Writable
       def generate(template:,values:)
-        new_content = ERB.new(template, nil, '<>').result values.get_binding
-        save_if_changed(new_content)
+        content = ERB.new(template, nil, '<>').result values.get_binding
+        save_if_changed(content)
       end
     end
 

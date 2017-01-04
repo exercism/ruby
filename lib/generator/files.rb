@@ -29,14 +29,14 @@ module Generator
     end
 
     class Writable < Readable
-      def save_if_changed(new_content)
-        save(new_content) unless new_content == to_s
-        new_content
+      def save_if_changed(content)
+        save(content) unless content == to_s
+        content
       end
 
-      def save(new_content)
+      def save(content)
         File.open(filename, 'w') do |file|
-          file.write new_content
+          file.write content
         end
       end
     end

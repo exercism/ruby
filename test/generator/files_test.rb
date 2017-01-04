@@ -15,32 +15,32 @@ module Generator
 
     class WritableTest < Minitest::Test
       class TestUnchangedWritable < Writable
-        def save(_new_content)
+        def save(_content)
           fail StandardError
         end
       end
 
       def test_save_if_changed_unchanged
-        new_content = ''
+        content = ''
         subject = TestUnchangedWritable.new(filename: '/dev/null')
-        assert_equal(new_content, subject.save_if_changed(new_content))
+        assert_equal(content, subject.save_if_changed(content))
       end
 
       class TestChangedWritable < Writable
-        def save(_new_content)
+        def save(_content)
         end
       end
 
       def test_save_if_changed
-        new_content = 'new content'
+        content = 'new content'
         subject = TestChangedWritable.new(filename: '/dev/null')
-        assert_equal(new_content, subject.save_if_changed(new_content))
+        assert_equal(content, subject.save_if_changed(content))
       end
 
       def test_save
-        new_content = 'new content.'
+        content = 'new content.'
         subject = Writable.new(filename: '/dev/null')
-        assert_equal 12, subject.save(new_content)
+        assert_equal 12, subject.save(content)
       end
     end
 
