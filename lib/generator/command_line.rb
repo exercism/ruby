@@ -95,8 +95,8 @@ module Generator
     end
 
     def usage
-      option_parser.help +
-        "\nAvailable exercise generators:\n" +
+      option_parser.help <<
+        "\nAvailable exercise generators:\n" <<
         available_generators.sort.join(' ')
     end
 
