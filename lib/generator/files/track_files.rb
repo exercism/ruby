@@ -59,21 +59,21 @@ module Generator
       end
 
       def increment
-        save_if_changed(to_i + 1)
+        save(to_i + 1)
       end
     end
 
     class ExampleSolutionFile < Writable
       def update_version(version)
         content = to_s.gsub(/VERSION = \d+/, "VERSION = #{version}")
-        save_if_changed(content)
+        save(content)
       end
     end
 
     class MinitestTestsFile < Writable
       def generate(template:,values:)
         content = ERB.new(template, nil, '<>').result values.get_binding
-        save_if_changed(content)
+        save(content)
       end
     end
 

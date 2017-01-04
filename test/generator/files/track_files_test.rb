@@ -69,7 +69,7 @@ module Generator
 
     class TestsVersionFileTest < Minitest::Test
       class TestTestsVersionFile < TestsVersionFile
-        def save_if_changed(content)
+        def save(content)
           content
         end
       end
@@ -82,7 +82,7 @@ module Generator
 
     class ExampleSolutionFileTest < Minitest::Test
       class TestExampleSolutionFile < ExampleSolutionFile
-        def save_if_changed(content)
+        def save(content)
           content
         end
       end
@@ -95,7 +95,7 @@ module Generator
 
     class MinitestTestsFileTest < Minitest::Test
       class TestMinitestTestsFile < MinitestTestsFile
-        def save_if_changed(content)
+        def save(content)
           content
         end
       end

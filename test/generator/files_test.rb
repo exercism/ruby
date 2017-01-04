@@ -4,7 +4,7 @@ module Generator
   module Files
     class ReadableTest < Minitest::Test
       def test_abbreviated_commit_hash
-        mock_git_command = Minitest::Mock.new.expect :call, nil, ['path/.git','subdir/file']
+        mock_git_command = Minitest::Mock.new.expect :call, nil, ['path/.git', 'subdir/file']
         subject = Readable.new(filename: 'path/subdir/file', repository_root: 'path')
         GitCommand.stub(:abbreviated_commit_hash, mock_git_command) do
           subject.abbreviated_commit_hash
@@ -14,33 +14,29 @@ module Generator
     end
 
     class WritableTest < Minitest::Test
-      class TestUnchangedWritable < Writable
-        def save(_content)
-          fail StandardError
+      class TestWritableDoesntCallWrite < Writable
+        private
+
+        def write(_content)
+          fail StandardError, 'write should not be called'
         end
       end
 
-      def test_save_if_changed_unchanged
+      def test_save_if_unchanged
         content = ''
-        subject = TestUnchangedWritable.new(filename: '/dev/null')
-        assert_equal(content, subject.save_if_changed(content))
-      end
-
-      class TestChangedWritable < Writable
-        def save(_content)
-        end
+        subject = TestWritableDoesntCallWrite.new(filename: '/dev/null')
+        assert_equal(content, subject.save(content))
       end
 
       def test_save_if_changed
+        mock_writer = Minitest::Mock.new
         content = 'new content'
-        subject = TestChangedWritable.new(filename: '/dev/null')
-        assert_equal(content, subject.save_if_changed(content))
-      end
-
-      def test_save
-        content = 'new content.'
+        mock_writer.expect :write, content.size, [content]
         subject = Writable.new(filename: '/dev/null')
-        assert_equal 12, subject.save(content)
+        File.stub :open, nil, mock_writer do
+          assert_equal(content, subject.save(content))
+        end
+        mock_writer.verify
       end
     end
 
