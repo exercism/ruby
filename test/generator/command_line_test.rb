@@ -34,7 +34,7 @@ module Generator
     end
 
     def test_usage_help_with_exercise
-      args = %w(-h isogram)
+      args = %w(-h beta)
       assert_output(/Usage:/, nil) do
         refute CommandLine.new(FixturePaths).parse(args)
       end
@@ -60,22 +60,22 @@ module Generator
     end
 
     def test_default_options
-      args = %w(isogram)
-      Files::GeneratorCases.stub :available, %w(isogram) do
+      args = %w(beta)
+      Files::GeneratorCases.stub :available, %w(beta) do
         assert_instance_of UpdateVersionAndGenerateTests, CommandLine.new(FixturePaths).parse(args)
       end
     end
 
     def test_frozen_option
-      args = %w(-f isogram)
-      Files::GeneratorCases.stub :available, %w(isogram) do
+      args = %w(-f beta)
+      Files::GeneratorCases.stub :available, %w(beta) do
         assert_instance_of GenerateTests, CommandLine.new(FixturePaths).parse(args)
       end
     end
 
     def test_verbose_option
-      args = %w(-v isogram)
-      Files::GeneratorCases.stub :available, %w(isogram) do
+      args = %w(-v beta)
+      Files::GeneratorCases.stub :available, %w(beta) do
         assert_instance_of UpdateVersionAndGenerateTests, CommandLine.new(FixturePaths).parse(args)
       end
     end
