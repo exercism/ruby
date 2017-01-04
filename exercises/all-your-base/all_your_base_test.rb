@@ -1,9 +1,10 @@
-gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'all_your_base'
 
+# Test data version: aa12f2e
 class AllYourBaseTest < Minitest::Test
-  def test_single_bit_to_one_decimal
+  def test_single_bit_one_to_decimal
+    # skip
     digits = [1]
     input_base = 2
     output_base = 10
@@ -131,7 +132,7 @@ class AllYourBaseTest < Minitest::Test
   def test_single_zero
     skip
     digits = [0]
-    input_base  = 10
+    input_base = 10
     output_base = 2
     expected = [0]
 
@@ -142,10 +143,10 @@ class AllYourBaseTest < Minitest::Test
                  "Expected #{expected} but got #{converted}."
   end
 
-  def test_multiple_zeroes
+  def test_multiple_zeros
     skip
     digits = [0, 0, 0]
-    input_base  = 10
+    input_base = 10
     output_base = 2
     expected = [0]
 
@@ -175,13 +176,10 @@ class AllYourBaseTest < Minitest::Test
     digits = [1, -1, 1, 0, 1, 0]
     input_base = 2
     output_base = 10
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
   def test_invalid_positive_digit
@@ -189,13 +187,10 @@ class AllYourBaseTest < Minitest::Test
     digits = [1, 2, 1, 0, 1, 0]
     input_base = 2
     output_base = 10
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
   def test_first_base_is_one
@@ -203,13 +198,10 @@ class AllYourBaseTest < Minitest::Test
     digits = []
     input_base = 1
     output_base = 10
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
   def test_second_base_is_one
@@ -217,13 +209,10 @@ class AllYourBaseTest < Minitest::Test
     digits = [1, 0, 1, 0, 1, 0]
     input_base = 2
     output_base = 1
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
   def test_first_base_is_zero
@@ -231,13 +220,10 @@ class AllYourBaseTest < Minitest::Test
     digits = []
     input_base = 0
     output_base = 10
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
   def test_second_base_is_zero
@@ -245,13 +231,10 @@ class AllYourBaseTest < Minitest::Test
     digits = [7]
     input_base = 10
     output_base = 0
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
   def test_first_base_is_negative
@@ -259,13 +242,10 @@ class AllYourBaseTest < Minitest::Test
     digits = [1]
     input_base = -2
     output_base = 10
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
   def test_second_base_is_negative
@@ -273,13 +253,10 @@ class AllYourBaseTest < Minitest::Test
     digits = [1]
     input_base = 2
     output_base = -7
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
   def test_both_bases_are_negative
@@ -287,17 +264,30 @@ class AllYourBaseTest < Minitest::Test
     digits = [1]
     input_base = -2
     output_base = -7
-    expected = nil
 
-    converted = BaseConverter.convert(input_base, digits, output_base)
-
-    assert_equal expected, converted,
-                 "Input base: #{input_base}, output base #{output_base}. " \
-                 "Expected #{expected} but got #{converted}."
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
   end
 
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
