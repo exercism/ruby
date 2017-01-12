@@ -34,42 +34,32 @@ suite, you can run the file with a shim that temporarily disables them:
 ruby -I./lib -rdisable_skip exercise/exercise/filename_test.rb
 ```
 
-It is simpler to use the `make` tool which is available in the project
+It is simpler to use the `rake` tool which is available in the project
 root.  It will disable the skip calls for you automatically, it does the
 same thing as the above.
 
-If you would like to use the `make` tool to run a single test, while
+If you would like to use the `rake` tool to run a single test while
 developing clock, for example, you can do something like this:
 
 ```sh
-ASSIGNMENT=clock ARGS='-p' make test-assignment
+rake test:clock
 ```
 
-Where, "ASSIGNMENT" is the variable that holds the name of the lesson,
-clock.
-
-ARGS is where you can put additional arguments, here I am demonstrating
-the `-p` argument which may give you 'pride' output.
-
-If you use zsh, you can use the following function to make this process
-simple.
-
+To pass arguments to the test command, like `-p` for example, you can run
+the following:
 ```sh
-xtest () { ASSIGNMENT=$1 ARGS=$2 make test-assignment }
+rake test:clock -- -p
 ```
 
-Then you can simply use the command and exercise name, such as:
+To show an example of running a limited number of tests, we will use the
+"hamming" exercise with a pattern of "identical" to run (currently) two tests:
+```sh
+rake test:hamming -- -p -n="/identical/"
+```
 
-`xtest binary`
+Note that flags which have an attached value, like above, must take the form
+`-flag=value` and if `value` has spaces `-flag="value with spaces"`.
 
-Or if you would like to use an option such as displaying the test names
-rather than just the dots, for example:
-
-`xtest clock -v`
-
-Or with the pride reporter activated:
-
-`xtest robot-name -p`
 
 ### Generated Test Suites
 
