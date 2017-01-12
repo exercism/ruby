@@ -73,8 +73,8 @@ module Generator
       end
     end
 
-    def test_verbose_option
-      args = %w(-v beta)
+    def test_quiet_option
+      args = %w(-q beta)
       Files::GeneratorCases.stub :available, %w(beta) do
         assert_instance_of UpdateVersionAndGenerateTests, CommandLine.new(FixturePaths).parse(args)
       end

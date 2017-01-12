@@ -30,10 +30,10 @@ module Generator
     end
 
     def repository
-      if @options[:verbose]
-        LoggingRepository.new(paths: @paths, exercise_name: @options[:exercise_name], logger: logger)
-      else
+      if @options[:quiet]
         Repository.new(paths: @paths, exercise_name: @options[:exercise_name])
+      else
+        LoggingRepository.new(paths: @paths, exercise_name: @options[:exercise_name], logger: logger)
       end
     end
 
@@ -46,14 +46,14 @@ module Generator
     def logger
       logger = Logger.new($stdout)
       logger.formatter = proc { |_severity, _datetime, _progname, msg| "#{msg}\n" }
-      logger.level = @options[:verbose] ? Logger::DEBUG : Logger::ERROR
+      logger.level = @options[:quiet] ? Logger::ERROR : Logger::DEBUG
       logger
     end
 
     def default_options
       {
         freeze: false,
-        verbose: false,
+        quiet: false,
         exercise_name: nil
       }
     end
@@ -90,7 +90,7 @@ module Generator
         parser.banner = "Usage: #{$PROGRAM_NAME} [options] exercise-generator"
         parser.on('-f', '--freeze', 'Don\'t update test version') { |value| @options[:freeze] = value }
         parser.on('-h', '--help', 'Displays this help message') { |value| @options[:help] = value }
-        parser.on('-v', '--verbose', 'Display progress messages') { |value| @options[:verbose] = value }
+        parser.on('-q', '--quiet', "Don't display progress messages") { |value| @options[:quiet] = value }
       end
     end
 
