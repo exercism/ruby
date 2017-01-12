@@ -41,8 +41,21 @@ module Generator
       subject.define_singleton_method(:minitest_tests) { mock_minitest_tests }
       subject.define_singleton_method(:tests_template) { mock_tests_template }
       subject.define_singleton_method(:template_values) { mock_template_values }
-      subject.create_tests_file
+      expected = "Generated alpha tests version 1\n"
+      assert_output(expected,nil) do
+        subject.create_tests_file
+      end
       mock_minitest_tests.verify
+    end
+
+    def test_display_result
+      fake_version = 2
+      subject = Repository.new(paths: FixturePaths, exercise_name: 'alpha')
+      subject.define_singleton_method(:version) { fake_version }
+      expected = "Generated alpha tests version 2\n"
+      assert_output(expected, nil) do
+        subject.display_result
+      end
     end
   end
 
@@ -77,21 +90,6 @@ module Generator
       subject.define_singleton_method(:version) { fake_version }
 
       subject.update_example_solution
-      mock_logger.verify
-    end
-
-    # Too much to set up here :(
-    def test_create_tests_file
-      mock_logger = Minitest::Mock.new.expect :info, nil, ['Generated tests for alpha']
-
-      mock_tests_template = Minitest::Mock.new.expect :to_s, 'template'
-      mock_template_values = Minitest::Mock.new
-      mock_minitest_tests = Minitest::Mock.new.expect :generate, nil, [{ template: 'template', values: mock_template_values }]
-      subject = LoggingRepository.new(paths: FixturePaths, exercise_name: 'alpha', logger: mock_logger)
-      subject.define_singleton_method(:minitest_tests) { mock_minitest_tests }
-      subject.define_singleton_method(:tests_template) { mock_tests_template }
-      subject.define_singleton_method(:template_values) { mock_template_values }
-      subject.create_tests_file
       mock_logger.verify
     end
   end

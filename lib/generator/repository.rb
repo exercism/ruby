@@ -30,6 +30,11 @@ module Generator
         template: tests_template.to_s,
         values: template_values
       )
+      display_result
+    end
+
+    def display_result
+      $stdout.puts "Generated #{exercise_name} tests version #{version}"
     end
   end
 
@@ -48,11 +53,6 @@ module Generator
     def update_example_solution
       super
       @logger.info "Updated version in example solution to #{version}"
-    end
-
-    def create_tests_file
-      super
-      @logger.info "Generated tests for #{exercise_name}"
     end
   end
 
