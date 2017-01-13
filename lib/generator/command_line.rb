@@ -30,11 +30,10 @@ module Generator
     end
 
     def repository
-      if @options[:verbose]
-        LoggingRepository.new(paths: @paths, exercise_name: @options[:exercise_name], logger: logger)
-      else
-        Repository.new(paths: @paths, exercise_name: @options[:exercise_name])
-      end
+      LoggingRepository.new(
+        repository: Repository.new(paths: @paths, exercise_name: @options[:exercise_name]),
+        logger: logger
+      )
     end
 
     def parse_options(args)
@@ -46,7 +45,7 @@ module Generator
     def logger
       logger = Logger.new($stdout)
       logger.formatter = proc { |_severity, _datetime, _progname, msg| "#{msg}\n" }
-      logger.level = @options[:verbose] ? Logger::DEBUG : Logger::ERROR
+      logger.level = @options[:verbose] ? Logger::DEBUG : Logger::INFO
       logger
     end
 

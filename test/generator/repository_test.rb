@@ -41,56 +41,50 @@ module Generator
       subject.define_singleton_method(:minitest_tests) { mock_minitest_tests }
       subject.define_singleton_method(:tests_template) { mock_tests_template }
       subject.define_singleton_method(:template_values) { mock_template_values }
-      expected = "Generated alpha tests version 1\n"
-      assert_output(expected,nil) do
-        subject.create_tests_file
-      end
+      subject.create_tests_file
       mock_minitest_tests.verify
-    end
-
-    def test_display_result
-      fake_version = 2
-      subject = Repository.new(paths: FixturePaths, exercise_name: 'alpha')
-      subject.define_singleton_method(:version) { fake_version }
-      expected = "Generated alpha tests version 2\n"
-      assert_output(expected, nil) do
-        subject.display_result
-      end
     end
   end
 
   class LoggingRepositoryTest < Minitest::Test
-    FixturePaths = Paths.new(
-      metadata: 'test/fixtures/metadata',
-      track: 'test/fixtures/xruby'
-    )
+    def test_create_tests_file
+      mock_repository = Minitest::Mock.new
+      mock_repository.expect :create_tests_file, nil
+      mock_repository.expect :exercise_name, 'alpha'
+      mock_repository.expect :version, 2
+      mock_logger = Minitest::Mock.new
+      mock_logger.expect :info, nil, ['Generated alpha tests version 2']
+
+      subject = LoggingRepository.new(repository: mock_repository, logger: mock_logger)
+      subject.create_tests_file
+
+      mock_repository.verify
+    end
 
     def test_update_tests_version
-      fake_version = 2
-
+      mock_repository = Minitest::Mock.new
+      mock_repository.expect :update_tests_version, nil
+      mock_repository.expect :version, 2
       mock_logger = Minitest::Mock.new
-      mock_logger.expect :info, nil, ["Incremented tests version to #{fake_version}"]
+      mock_logger.expect :debug, nil, ['Incremented tests version to 2']
 
-      mock_tests_version = Minitest::Mock.new.expect :increment, fake_version
-      subject = LoggingRepository.new(paths: FixturePaths, exercise_name: 'alpha', logger: mock_logger)
-      subject.define_singleton_method(:tests_version) { mock_tests_version }
-      subject.define_singleton_method(:version) { fake_version }
+      subject = LoggingRepository.new(repository: mock_repository, logger: mock_logger)
       subject.update_tests_version
-      mock_logger.verify
+
+      mock_repository.verify
     end
 
     def test_update_example_solution
-      fake_version = 2
+      mock_repository = Minitest::Mock.new
+      mock_repository.expect :update_example_solution, nil
+      mock_repository.expect :version, 2
       mock_logger = Minitest::Mock.new
-      mock_logger.expect :info, nil, ["Updated version in example solution to #{fake_version}"]
+      mock_logger.expect :debug, nil, ['Updated version in example solution to 2']
 
-      mock_example_solution = Minitest::Mock.new.expect :update_version, nil, [2]
-      subject = LoggingRepository.new(paths: FixturePaths, exercise_name: 'alpha', logger: mock_logger)
-      subject.define_singleton_method(:example_solution) { mock_example_solution }
-      subject.define_singleton_method(:version) { fake_version }
-
+      subject = LoggingRepository.new(repository: mock_repository, logger: mock_logger)
       subject.update_example_solution
-      mock_logger.verify
+
+      mock_repository.verify
     end
   end
 end
