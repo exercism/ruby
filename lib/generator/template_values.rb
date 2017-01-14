@@ -22,14 +22,10 @@ module Generator
       require 'json'
       require cases_require_name
 
-      # Compensate for the version.next that appears in template files.
-      # TODO: remove the .next from the template files and remove compensation
-      compensated_version = version - 1
-
       TemplateValues.new(
         # TODO: rename sha1 to abbreviated_commit_hash
         sha1: canonical_data.abbreviated_commit_hash,
-        version: compensated_version,
+        version: version,
         test_cases: test_cases_proc.call(canonical_data.to_s)
       )
     end
