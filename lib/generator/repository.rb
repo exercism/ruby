@@ -33,30 +33,30 @@ module Generator
     end
   end
 
+  # This exists to give us a clue as to what we are delegating to.
+  class RepositoryDelegator < SimpleDelegator
+  end
+
   # A repository that also logs its progress.
-  class LoggingRepository < Repository
-    def initialize(paths:, exercise_name:, logger:)
-      super(paths: paths, exercise_name: exercise_name)
+  class LoggingRepository < RepositoryDelegator
+    def initialize(repository:, logger:)
+      __setobj__ @repository = repository
       @logger = logger
     end
 
     def update_tests_version
-      super
-      @logger.info "Incremented tests version to #{version}"
+      @repository.update_tests_version
+      @logger.debug "Incremented tests version to #{version}"
     end
 
     def update_example_solution
-      super
-      @logger.info "Updated version in example solution to #{version}"
+      @repository.update_example_solution
+      @logger.debug "Updated version in example solution to #{version}"
     end
 
     def create_tests_file
-      super
-      @logger.info "Generated tests for #{exercise_name}"
+      @repository.create_tests_file
+      @logger.info "Generated #{exercise_name} tests version #{version}"
     end
-  end
-
-  # This exists to give us a clue as to what we are delegating to.
-  class RepositoryDelegator < SimpleDelegator
   end
 end
