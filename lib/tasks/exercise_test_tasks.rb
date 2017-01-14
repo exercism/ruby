@@ -21,10 +21,8 @@ class ExerciseTestTasks
 
   private
 
-  attr_reader :options, :test_runner
-
   def exercises
-    @_exercises ||= Exercise.all
+    @exercises ||= Exercise.all
   end
 
   def define_task_for_all_exercises
@@ -34,7 +32,7 @@ class ExerciseTestTasks
 
   def define_task_for(exercise)
     task exercise do
-      test_runner.new(exercise: exercise, test_options: options).run
+      @test_runner.new(exercise: exercise, test_options: @options).run
     end
   end
 end

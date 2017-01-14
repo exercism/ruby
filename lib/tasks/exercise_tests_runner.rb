@@ -1,4 +1,4 @@
-require "rake/file_utils_ext"
+require 'rake/file_utils_ext'
 require 'tmpdir'
 
 class ExerciseTestsRunner
@@ -10,9 +10,9 @@ class ExerciseTestsRunner
   end
 
   def run
-    puts "\n\n#{'-'*64}\nrunning tests for: #{exercise}"
+    puts "\n\n#{'-' * 64}\nrunning tests for: #{@exercise}"
 
-    Dir.mktmpdir(exercise.name) do |dir|
+    Dir.mktmpdir(@exercise.name) do |dir|
       setup_exercise_files_in(dir)
       run_exercise_tests_in(dir)
     end
@@ -20,14 +20,12 @@ class ExerciseTestsRunner
 
   private
 
-  attr_reader :exercise, :test_options
-
   def setup_exercise_files_in(dir)
-    FileUtils.cp_r exercise.directory, dir
-    FileUtils.mv "#{dir}/#{exercise.example_file}", "#{dir}/#{exercise.testable_example_file}"
+    FileUtils.cp_r @exercise.directory, dir
+    FileUtils.mv "#{dir}/#{@exercise.example_file}", "#{dir}/#{@exercise.testable_example_file}"
   end
 
   def run_exercise_tests_in(dir)
-    ruby "-I lib -r disable_skip.rb #{dir}/#{exercise.test_file} #{test_options}"
+    ruby "-I lib -r disable_skip.rb #{dir}/#{@exercise.test_file} #{@test_options}"
   end
 end
