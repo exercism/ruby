@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'sieve'
 
 # Test data version:
-# <%= sha1 %>
+# <%= abbreviated_commit_hash %>
 
 class SieveTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %>

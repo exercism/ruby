@@ -13,7 +13,7 @@ rescue LoadError => e
 end
 
 # Test data version:
-# <%= sha1 %>
+# <%= abbreviated_commit_hash %>
 class HelloWorldTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.test_name %><% if test_case.skipped? %>
     skip<% end %>

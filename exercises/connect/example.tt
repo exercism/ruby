@@ -3,7 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'connect'
 
-# Test data version commit id: <%= sha1 %>
+# Test data version commit id: <%= abbreviated_commit_hash %>
 class ConnectTest < Minitest::Test<% test_cases.each do |test_case| %>
   <%= test_case.ignore_method_length%>def <%= test_case.name %>
     <%= test_case.skipped %><% test_case.test_body.each do |line| %>

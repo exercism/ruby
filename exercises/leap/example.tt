@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'leap'
 
 # Test data version:
-# <%= sha1 %>
+# <%= abbreviated_commit_hash %>
 class Date
   def leap?
     raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."
