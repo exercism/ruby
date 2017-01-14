@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'transpose'
 
-# Test data version:
-# <%= abbreviated_commit_hash %>
+# Common test data version: <%= abbreviated_commit_hash %>
 class TransposeTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.test_name %>
     <%= test_case.skipped %>
