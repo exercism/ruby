@@ -18,6 +18,6 @@ class TournamentTest < Minitest::Test
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
   def test_bookkeeping
     skip
-    assert_equal <%= version.next %>, BookKeeping::VERSION
+    assert_equal <%= version %>, BookKeeping::VERSION
   end
 end
