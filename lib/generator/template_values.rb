@@ -16,10 +16,6 @@ module Generator
 
   module TemplateValuesFactory
     def template_values
-      # These are needed by the 'ExerciseCases' classes
-      # TODO: move these into the individual classes
-      require 'ostruct'
-      require 'json'
       require cases_require_name
 
       TemplateValues.new(
