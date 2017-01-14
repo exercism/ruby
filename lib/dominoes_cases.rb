@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class DominoesCase < OpenStruct
   def test_name
     'test_%s' % description.gsub("can't", 'can not').gsub(/[= -]+/, '_')

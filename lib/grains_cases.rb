@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class GrainsCase < OpenStruct
   def test_name
     'test_%s' % description.downcase.tr_s(' ', '_')

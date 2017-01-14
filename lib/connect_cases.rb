@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class ConnectCase < OpenStruct
   def name
     'test_%s' % description

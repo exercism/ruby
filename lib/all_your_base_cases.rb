@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class AllYourBaseCase < OpenStruct
   def test_name
     'test_%s' % description.downcase.tr(' -', '_')

@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class WordCountCase < OpenStruct
   def name
     'test_%s' % description.tr(' ', '_')

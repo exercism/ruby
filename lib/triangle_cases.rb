@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class TriangleCase < OpenStruct
   def test_name
     initial = description.downcase
