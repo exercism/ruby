@@ -1,10 +1,10 @@
 module Generator
   # Contains methods accessible to the ERB template
   class TemplateValues
-    attr_reader :sha1, :version, :test_cases
+    attr_reader :abbreviated_commit_hash, :version, :test_cases
 
-    def initialize(sha1:, version:, test_cases:)
-      @sha1 = sha1
+    def initialize(abbreviated_commit_hash:, version:, test_cases:)
+      @abbreviated_commit_hash = abbreviated_commit_hash
       @version = version
       @test_cases = test_cases
     end
@@ -23,8 +23,7 @@ module Generator
       require cases_require_name
 
       TemplateValues.new(
-        # TODO: rename sha1 to abbreviated_commit_hash
-        sha1: canonical_data.abbreviated_commit_hash,
+        abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
         version: version,
         test_cases: test_cases_proc.call(canonical_data.to_s)
       )
