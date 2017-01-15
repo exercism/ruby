@@ -95,7 +95,7 @@ class AllYourBaseCase::PreProcessor
     end
 
     def handle_special_cases
-      [4,2] if row['input_digits'] == [0, 6, 0]
+      [4, 2] if row['input_digits'] == [0, 6, 0]
     end
   end
 end

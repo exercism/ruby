@@ -21,7 +21,7 @@ module Generator
     end
 
     def test_get_binding
-      subject = TemplateValues.new(sha1: nil,version: nil, test_cases: nil)
+      subject = TemplateValues.new(sha1: nil, version: nil, test_cases: nil)
       assert_instance_of Binding, subject.get_binding
     end
   end
