@@ -1559,7 +1559,7 @@ Style/SpaceAfterColon:
 Style/SpaceAfterComma:
   Description: Use spaces after commas.
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-operators
-  Enabled: false
+  Enabled: true
 
 # Supports --auto-correct
 Style/SpaceAfterControlKeyword:
