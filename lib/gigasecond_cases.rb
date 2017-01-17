@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 require 'time'
 
 class GigasecondCase < OpenStruct

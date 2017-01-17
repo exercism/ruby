@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class NthPrimeCase < OpenStruct
   def name
     'test_%s' % description.downcase.gsub(/[ -]/, '_')

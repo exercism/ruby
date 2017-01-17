@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class BowlingCase < OpenStruct
   def test_name
     "test_#{description.downcase.tr(' ', '_')}"

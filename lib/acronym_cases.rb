@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class AcronymCase < OpenStruct
   def name
     'test_%s' % description.tr(' ', '_')

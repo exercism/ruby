@@ -2,26 +2,26 @@ require_relative '../test_helper'
 
 module Generator
   class TestCasesValuesTest < Minitest::Test
-    def test_sha1
-      expected_sha1 = '1234567'
-      subject = TemplateValues.new(sha1: expected_sha1, version: nil, test_cases: nil)
-      assert_equal expected_sha1, subject.sha1
+    def test_abbreviated_commit_hash
+      expected_abbreviated_commit_hash = '1234567'
+      subject = TemplateValues.new(abbreviated_commit_hash: expected_abbreviated_commit_hash, version: nil, test_cases: nil)
+      assert_equal expected_abbreviated_commit_hash, subject.abbreviated_commit_hash
     end
 
     def test_version
       expected_version = '1234567'
-      subject = TemplateValues.new(version: expected_version, sha1: nil, test_cases: nil)
+      subject = TemplateValues.new(version: expected_version, abbreviated_commit_hash: nil, test_cases: nil)
       assert_equal expected_version, subject.version
     end
 
     def test_test_cases
       expected_test_cases = 'should be TemplateValues class'
-      subject = TemplateValues.new(test_cases: expected_test_cases, sha1: nil, version: nil)
+      subject = TemplateValues.new(test_cases: expected_test_cases, abbreviated_commit_hash: nil, version: nil)
       assert_equal expected_test_cases, subject.test_cases
     end
 
     def test_get_binding
-      subject = TemplateValues.new(sha1: nil, version: nil, test_cases: nil)
+      subject = TemplateValues.new(abbreviated_commit_hash: nil, version: nil, test_cases: nil)
       assert_instance_of Binding, subject.get_binding
     end
   end

@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class AnagramCase < OpenStruct
   def test_name
     'test_%s' % description.gsub(/[ -]/, '_')

@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class HelloWorldCase < OpenStruct
   def test_name
     'test_%s' % description.gsub(/[ -]/, '_')

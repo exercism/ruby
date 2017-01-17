@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'hamming'
 
-# Test data version:
-# <%= sha1 %>
+# Common test data version: <%= abbreviated_commit_hash %>
 class HammingTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %>
     <%= test_case.skipped %><% if test_case.raises_error? %>
@@ -15,6 +14,6 @@ class HammingTest < Minitest::Test<% test_cases.each do |test_case| %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
   def test_bookkeeping
     skip
-    assert_equal <%= version.next %>, BookKeeping::VERSION
+    assert_equal <%= version %>, BookKeeping::VERSION
   end
 end

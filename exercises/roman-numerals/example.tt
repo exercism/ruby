@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'roman_numerals'
 
-# Test data version:
-# <%= sha1 %>
+# Common test data version: <%= abbreviated_commit_hash %>
 class RomanNumeralsTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %><% if test_case.skipped? %>
     skip<% end %>
@@ -14,6 +13,6 @@ class RomanNumeralsTest < Minitest::Test<% test_cases.each do |test_case| %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
   def test_bookkeeping
     skip
-    assert_equal <%= version.next %>, BookKeeping::VERSION
+    assert_equal <%= version %>, BookKeeping::VERSION
   end
 end

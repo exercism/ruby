@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class RunLengthEncodingCase < OpenStruct
   def name
     'test_%s' % cleaned_description

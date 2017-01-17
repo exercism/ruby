@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class RaindropsCase < OpenStruct
   def name
     'test_%s' % number

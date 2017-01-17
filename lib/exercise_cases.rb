@@ -1,0 +1,2 @@
+require 'ostruct'
+require 'json'

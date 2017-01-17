@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'leap'
 
-# Test data version:
-# <%= sha1 %>
+# Common test data version: <%= abbreviated_commit_hash %>
 class Date
   def leap?
     raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."
@@ -24,6 +23,6 @@ class YearTest < Minitest::Test<% test_cases.each do |test_case| %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
   def test_bookkeeping
     skip
-    assert_equal <%= version.next %>, BookKeeping::VERSION
+    assert_equal <%= version %>, BookKeeping::VERSION
   end
 end

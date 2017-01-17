@@ -1,3 +1,5 @@
+require 'exercise_cases'
+
 class SieveCase < OpenStruct
   OPEN_ARRAY = "[\n\s\s\s\s\s\s".freeze
   CLOSE_ARRAY = "\n\s\s\s\s]".freeze
