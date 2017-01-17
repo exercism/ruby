@@ -20,7 +20,7 @@ class AlphameticsCase < OpenStruct
       "input = %s\n" % input,
       "expected = %s\n" % expect,
       "assert_equal expected, Alphametics.solve(input)"
-    indent(body,4)
+    indent(body, 4)
   end
 
   def runtime_comment
@@ -30,7 +30,7 @@ class AlphameticsCase < OpenStruct
         "# The obvious algorithm can take a long time to solve this puzzle,\n",
         "# but an optimised solution can solve it fairly quickly.\n",
         "# (It's OK to submit your solution without getting this test to pass.)\n"
-      indent(comments,2)
+      indent(comments, 2)
     end
   end
 
@@ -41,7 +41,7 @@ class AlphameticsCase < OpenStruct
   end
 
   def expected_values
-    "{ #{indent(expected_values_as_lines,17)} }"
+    "{ #{indent(expected_values_as_lines, 17)} }"
   end
 
   def expected_values_as_lines
@@ -50,7 +50,7 @@ class AlphameticsCase < OpenStruct
   end
 
   def expected_values_as_strings
-    expected.sort.map { |(key,value)| "'#{key}' => #{value}" }
+    expected.sort.map { |(key, value)| "'#{key}' => #{value}" }
   end
 
   def add_trailing_comma_and_newline(lines)

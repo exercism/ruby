@@ -10,7 +10,7 @@ class Diamond
     middle = total_lines/2
     letter_char_code = 65
     (0..total_lines - 1).each do |i|
-      line = Array.new(total_lines," ")                      # creates a line in each loop
+      line = Array.new(total_lines, " ")                      # creates a line in each loop
       if i == 0 || i == total_lines - 1                      # placing the letter A in the beginning and end
         line[middle] = "A"
       else

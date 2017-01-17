@@ -14,7 +14,7 @@ class GrainsCase < OpenStruct
   private
 
   def underscore_format(number)
-    number.to_s.reverse.gsub(/...(?=.)/,'\&_').reverse
+    number.to_s.reverse.gsub(/...(?=.)/, '\&_').reverse
   end
 end
 

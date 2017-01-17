@@ -11,7 +11,7 @@ module Generator
       end
 
       def filename(exercise_name)
-        "#{exercise_name.tr('-','_')}_cases"
+        "#{exercise_name.tr('-', '_')}_cases"
       end
 
       def proc_name(exercise_name)
@@ -19,7 +19,7 @@ module Generator
       end
 
       def exercise_name(filename)
-        %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_','-')
+        %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_', '-')
       end
     end
 
@@ -71,7 +71,7 @@ module Generator
     end
 
     class MinitestTestsFile < Writable
-      def generate(template:,values:)
+      def generate(template:, values:)
         content = ERB.new(template, nil, '<>').result values.get_binding
         save(content)
       end
