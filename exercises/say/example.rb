@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION = 1
+end
+
 class Chunk
   attr_reader :value, :magnitude
   def initialize(value, magnitude = nil)

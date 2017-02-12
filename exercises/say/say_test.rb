@@ -1,128 +1,120 @@
-#!/usr/bin/env ruby
-gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'say'
 
+# Test data version: e3bd4a2
 class SayTest < Minitest::Test
-  def test_0
-    assert_equal 'zero', Say.new(0).in_english
+  def test_zero
+    # skip
+    question = 0
+    assert_equal('zero', Say.new(question).in_english)
   end
 
   def test_one
     skip
-    assert_equal 'one', Say.new(1).in_english
+    question = 1
+    assert_equal('one', Say.new(question).in_english)
   end
 
-  def test_14
+  def test_fourteen
     skip
-    assert_equal 'fourteen', Say.new(14).in_english
+    question = 14
+    assert_equal('fourteen', Say.new(question).in_english)
   end
 
   def test_twenty
     skip
-    # This really shouldn't be twenty-zero
-    assert_equal 'twenty', Say.new(20).in_english
+    question = 20
+    assert_equal('twenty', Say.new(question).in_english)
   end
 
   def test_twenty_two
     skip
-    assert_equal 'twenty-two', Say.new(22).in_english
+    question = 22
+    assert_equal('twenty-two', Say.new(question).in_english)
   end
 
-  def test_100
+  def test_one_hundred
     skip
-    assert_equal 'one hundred', Say.new(100).in_english
+    question = 100
+    assert_equal('one hundred', Say.new(question).in_english)
   end
 
-  def test_120
+  def test_one_hundred_twenty_three
     skip
-    assert_equal 'one hundred twenty', Say.new(120).in_english
+    question = 123
+    assert_equal('one hundred twenty-three', Say.new(question).in_english)
   end
 
-  def test_123
+  def test_one_thousand
     skip
-    assert_equal 'one hundred twenty-three', Say.new(123).in_english
+    question = 1_000
+    assert_equal('one thousand', Say.new(question).in_english)
   end
 
-  def test_1_thousand
+  def test_one_thousand_two_hundred_thirty_four
     skip
-    assert_equal 'one thousand', Say.new(1000).in_english
+    question = 1_234
+    assert_equal('one thousand two hundred thirty-four', Say.new(question).in_english)
   end
 
-  def test_1_thousand_234
+  def test_one_million
     skip
-    expected = 'one thousand two hundred thirty-four'
-    assert_equal expected, Say.new(1234).in_english
+    question = 1_000_000
+    assert_equal('one million', Say.new(question).in_english)
   end
 
-  def test_1_million
+  def test_one_million_two_thousand_three_hundred_forty_five
     skip
-    assert_equal 'one million', Say.new(10**6).in_english
+    question = 1_002_345
+    assert_equal('one million two thousand three hundred forty-five', Say.new(question).in_english)
   end
 
-  def test_1_million_and_some_crumbs
+  def test_one_billion
     skip
-    assert_equal 'one million two', Say.new(1_000_002).in_english
+    question = 1_000_000_000
+    assert_equal('one billion', Say.new(question).in_english)
   end
 
-  def test_1_million_2_thousand_345
+  def test_a_big_number
     skip
-    expected = 'one million two thousand three hundred forty-five'
-    assert_equal expected, Say.new(1_002_345).in_english
+    question = 987_654_321_123
+    assert_equal('nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three', Say.new(question).in_english)
   end
 
-  def test_1_billion
+  def test_numbers_below_zero_are_out_of_range
     skip
-    assert_equal 'one billion', Say.new(10**9).in_english
-  end
-
-  def test_really_big_number
-    skip
-    expected = 'nine hundred eighty-seven billion '
-    expected << 'six hundred fifty-four million '
-    expected << 'three hundred twenty-one thousand '
-    expected << 'one hundred twenty-three'
-    assert_equal expected, Say.new(987_654_321_123).in_english
-  end
-
-  def test_really_big_number_with_teens
-    skip
-    expected = 'nine hundred seventeen billion '
-    expected << 'six hundred fourteen million '
-    expected << 'three hundred eleven thousand '
-    expected << 'one hundred twenty-three'
-    assert_equal expected, Say.new(917_614_311_123).in_english
-  end
-
-  def test_really_big_number_with_tens
-    skip
-    expected = 'nine hundred eighty billion '
-    expected << 'six hundred forty million '
-    expected << 'three hundred twenty thousand '
-    expected << 'one hundred twenty-three'
-    assert_equal expected, Say.new(980_640_320_123).in_english
-  end
-
-  def test_really_big_number_with_hundreds
-    skip
-    expected = 'nine hundred billion '
-    expected << 'six hundred million '
-    expected << 'three hundred thousand '
-    expected << 'one hundred twenty-three'
-    assert_equal expected, Say.new(900_600_300_123).in_english
-  end
-
-  def test_lower_bound
-    skip
+    question = -1
     assert_raises ArgumentError do
-      Say.new(-1).in_english
+      Say.new(question).in_english
     end
   end
 
-  def test_upper_bound
+  def test_numbers_above_999_999_999_999_are_out_of_range
     skip
+    question = 1_000_000_000_000
     assert_raises ArgumentError do
-      Say.new(1_000_000_000_000).in_english
+      Say.new(question).in_english
     end
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
   end
 end
