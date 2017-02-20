@@ -2,11 +2,11 @@ require 'exercise_cases'
 
 class HelloWorldCase < OpenStruct
   def test_name
-    'test_%s' % description.gsub(/[ -]/, '_')
+    'test_%s' % property.gsub(/[ -]/, '_')
   end
 
   def do
-    defined?(name) ? "HelloWorld.hello('#{name}')" : 'HelloWorld.hello'
+    'HelloWorld.hello'
   end
 
   def skipped?
