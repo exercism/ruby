@@ -1,69 +1,86 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'beer_song'
 
+# Common test data version: 9f3d48a
 class BeerSongTest < Minitest::Test
-  def test_the_first_verse
-    expected = "99 bottles of beer on the wall, 99 bottles of beer.\n" \
-      "Take one down and pass it around, 98 bottles of beer on the wall.\n"
+  def test_first_generic_verse
+    # skip
+    expected = <<-TEXT
+99 bottles of beer on the wall, 99 bottles of beer.
+Take one down and pass it around, 98 bottles of beer on the wall.
+TEXT
     assert_equal expected, BeerSong.new.verse(99)
   end
 
-  def test_another_verse
+  def test_last_generic_verse
     skip
-    expected = "3 bottles of beer on the wall, 3 bottles of beer.\n" \
-      "Take one down and pass it around, 2 bottles of beer on the wall.\n"
+    expected = <<-TEXT
+3 bottles of beer on the wall, 3 bottles of beer.
+Take one down and pass it around, 2 bottles of beer on the wall.
+TEXT
     assert_equal expected, BeerSong.new.verse(3)
   end
 
   def test_verse_2
     skip
-    expected = "2 bottles of beer on the wall, 2 bottles of beer.\n" \
-      "Take one down and pass it around, 1 bottle of beer on the wall.\n"
+    expected = <<-TEXT
+2 bottles of beer on the wall, 2 bottles of beer.
+Take one down and pass it around, 1 bottle of beer on the wall.
+TEXT
     assert_equal expected, BeerSong.new.verse(2)
   end
 
   def test_verse_1
     skip
-    expected = "1 bottle of beer on the wall, 1 bottle of beer.\n" \
-      "Take it down and pass it around, no more bottles of beer on the wall.\n"
+    expected = <<-TEXT
+1 bottle of beer on the wall, 1 bottle of beer.
+Take it down and pass it around, no more bottles of beer on the wall.
+TEXT
     assert_equal expected, BeerSong.new.verse(1)
   end
 
   def test_verse_0
     skip
-    expected = "No more bottles of beer on the wall, no more bottles of beer.\n" \
-      "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+    expected = <<-TEXT
+No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 99 bottles of beer on the wall.
+TEXT
     assert_equal expected, BeerSong.new.verse(0)
   end
 
-  def test_a_couple_verses
+  def test_first_two_verses
     skip
-    expected = "99 bottles of beer on the wall, 99 bottles of beer.\n" \
-      "Take one down and pass it around, 98 bottles of beer on the wall.\n" \
-      "\n" \
-      "98 bottles of beer on the wall, 98 bottles of beer.\n" \
-      "Take one down and pass it around, 97 bottles of beer on the wall.\n"
+    expected = <<-TEXT
+99 bottles of beer on the wall, 99 bottles of beer.
+Take one down and pass it around, 98 bottles of beer on the wall.
+
+98 bottles of beer on the wall, 98 bottles of beer.
+Take one down and pass it around, 97 bottles of beer on the wall.
+TEXT
     assert_equal expected, BeerSong.new.verses(99, 98)
   end
 
-  def test_a_few_verses
+  def test_last_three_verses
     skip
-    expected = "2 bottles of beer on the wall, 2 bottles of beer.\n" \
-      "Take one down and pass it around, 1 bottle of beer on the wall.\n" \
-      "\n" \
-      "1 bottle of beer on the wall, 1 bottle of beer.\n" \
-      "Take it down and pass it around, no more bottles of beer on the wall.\n" \
-      "\n" \
-      "No more bottles of beer on the wall, no more bottles of beer.\n" \
-      "Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+    expected = <<-TEXT
+2 bottles of beer on the wall, 2 bottles of beer.
+Take one down and pass it around, 1 bottle of beer on the wall.
+
+1 bottle of beer on the wall, 1 bottle of beer.
+Take it down and pass it around, no more bottles of beer on the wall.
+
+No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 99 bottles of beer on the wall.
+TEXT
     assert_equal expected, BeerSong.new.verses(2, 0)
   end
 
-  def test_the_whole_song
+  def test_all_verses
     skip
-    expected = <<-SONG
+    expected = <<-TEXT
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
 
@@ -363,18 +380,27 @@ Take it down and pass it around, no more bottles of beer on the wall.
 
 No more bottles of beer on the wall, no more bottles of beer.
 Go to the store and buy some more, 99 bottles of beer on the wall.
-    SONG
-    assert_equal expected, BeerSong.new.lyrics
+TEXT
+    assert_equal expected, BeerSong.new.verses(99, 0)
   end
-
-  # Problems in exercism evolve over time,
-  # as we find better ways to ask questions.
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
   # The version number refers to the version of the problem you solved,
   # not your solution.
   #
-  # Define a constant named VERSION inside of BookKeeping.
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
