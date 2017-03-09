@@ -65,11 +65,17 @@ Note that flags which have an attached value, like above, must take the form
 ### Generated Test Suites
 
 If you find an `example.tt` file in a problem directory, then the test suite is
-generated from shared data. In this case changing the test file itself will
-not be enough.
+generated from shared data, which can be found in the exercise definition in the [x-common][]
+repository.
 
-You will need to have cloned [the shared metadata](https://github.com/exercism/x-common)
-at the same level as the xruby repository. E.g.
+Typically you will want to do one of the following:
+
+* [Regenerate the test suite](#regenerating-an-exercise) based on updated canonical data
+* [Make changes to a generated exercise](#changing-a-generated-exercise)
+* [Implement a new generator](#implementing-a-generator)
+
+Generated exercises depend on the [the shared metadata][x-common], which must be
+cloned to the same directory that contains your clone of the xruby repository:
 
 ```
 tree -L 1 ~/code/exercism
@@ -77,37 +83,144 @@ tree -L 1 ~/code/exercism
 └── xruby
 ```
 
-1. `xruby/$PROBLEM/example.tt` - the Erb template for the test file, `$PROBLEM_test.rb`.
-1. `x-common/$PROBLEM.json` - the shared inputs and outputs for the problem.
-1. `lib/$PROBLEM.rb` - the logic for turning the data into tests.
-1. `xruby/bin/generate $PROBLEM` - the command to actually generate the test suite.
-1. `.version` - used to keep track of the version of the test files as the data changes.
+#### Regenerating an Exercise
 
-Additionally, there is some common generator logic in `lib/generator.rb`.
+From within the xruby directory, run the following command, where $PROBLEM is the slug
+of the exercise, e.g. `clock` or `atbash-cipher`:
 
-For example, take a look at the `hamming.json` file in the x-common repository, as well
-as the following files in the xruby repository:
+```
+bin/generate $PROBLEM
+```
 
-1. `hamming/example.tt`
-1. `bin/generate hamming`
-1. `lib/hamming.rb`
-1. `lib/generator.rb`
+#### Changing a Generated Exercise
 
-The `hamming/hamming_test.rb` will never be edited directly. If there's a missing test case,
-then additional inputs/outputs should be submitted to the x-common repository.
+The `$PROBLEM/$PROBLEM_test.rb` will never be edited directly.
 
-Changes to the test suite (style, boilerplate, etc) will probably have to be made to
-`example.tt`.
+There are two reasons why a test suite might change:
 
-### Exercise Generators
+1. the tests are wrong (an incorrect expectation, a missing edge case, etc)
+1. there might be issues with the style or boilerplate
 
-If you wish to create a new generator, or edit an existing one, the generators currently live in the lib directory and are named `$PROBLEM_cases.rb`.  For example, the hamming generator is `lib/hamming_cases.rb`.  
+In the first case, the changes need to be made to the `canonical-data.json` file for
+the exercise, which lives in the x-common repository.
 
-All generators currently adhere to a common public interface, and must define the following three methods:
+```
+../x-common/exercises/$PROBLEM/
+├── canonical-data.json
+├── description.md
+└── metadata.yml
+```
+
+This change will need to be submitted as a pull request to the x-common repository. This pull
+request needs to be merged before you can regenerate the exercise.
+
+Changes that don't have to do directly with the test inputs and outputs, will either need to be
+made to `exercises/$PROBLEM/example.tt` or `lib/$PROBLEM_cases.rb`. Then you can regenerate the
+exercise with `bin/generate $PROBLEM`.
+
+#### Implementing a Generator
+
+You will need to implement three files to create a generator:
+
+1. `exercises/$PROBLEM/example.tt` - the Erb template for the test file, `$PROBLEM_test.rb`.
+1. `exercises/$PROBLEM/.meta/.version` - used to keep track of the version of the test files as the data changes.
+1. `lib/$PROBLEM_cases.rb` - the logic for turning the data into tests.
+
+You will not need to touch the top-level script, `bin/generate`.
+
+The `bin/generate` command relies on some common logic implemented in `lib/generator.rb`.
+You probably won't need to touch that, either.
+
+The `lib/$PROBLEM_cases.rb` file should contain a small class that wraps the JSON for a single test case:
+
+```
+require 'exercise_cases'
+
+class ProblemNameCase < OpenStruct
+  def test_name
+    'test_%s' % description.gsub(/[ -]/, '_')
+  end
+
+  def workload
+    # implement main logic of test here
+  end
+
+  def skipped
+    index.zero? ? '# skip' : 'skip'
+  end
+end
+```
+
+Instead of `ProblemName` use the name of the actual problem. This is important, since
+the generator script will infer the name of the class from the argument that is passed.
+
+This class must implement the following methods:
 
 - `test_name` - Returns the name of the test (i.e `test_one_equals_one`)
 - `workload` - Returns the main syntax for the test.  This will vary depending on the test generator and its underlying implementation
 - `skipped` - Returns skip syntax (i.e. `skip` or `# skip`)
+
+Beyond that, you can implement any helper methods that you need.
+
+Below this class, implement a small loop that will generate all the test cases by reading the
+`canonical-data.json` file, and looping through the test cases.
+
+You will need to adjust the logic to match the structure of the canonical data.
+
+For example, if there is a single top-level key named "cases", then you can loop through
+them as follows:
+
+```
+ProblemNameCases = proc do |data|
+  JSON.parse(data)['cases'].map.with_index do |row, i|
+    ProblemNameCase.new(row.merge('index' => i))
+  end
+end
+```
+
+If there are multiple sections, then you will need to loop through the sections, and then
+loop through each of the cases in an inner loop:
+
+```
+ProblemNameCases = proc do |data|
+  i = 0
+  json = JSON.parse(data)
+  cases = []
+  %w(section1 section2 etc).each do |section|
+    json[section]['cases'].each do |row|
+      row = row.merge(row.merge('index' => i, 'section' => section))
+      cases << ProblemNameCase.new(row)
+      i += 1
+    end
+  end
+  cases
+end
+```
+
+Finally, you need to create a text template, `example.tt`, as the bases for the test suite.
+
+Start with the following boilerplate, and adjust as necessary:
+
+```
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
+require 'minitest/autorun'
+require_relative '$PROBLEM'
+
+# Common test data version: <%= abbreviated_commit_hash %>
+class ProblemNameTest < Minitest::Test<% test_cases.each do |test_case| %>
+  def <%= test_case.name %>
+    <%= test_case.skipped %>
+    assert_equal <%= test_case.expected %>, <%= test_case.work_load %>
+  end
+<% end %>
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+  def test_bookkeeping
+    skip
+    assert_equal <%= version %>, BookKeeping::VERSION
+  end
+end
+```
 
 ## Pull Requests
 
@@ -168,3 +281,5 @@ Copyright (c) 2014 Katrina Owen, _@kytrinyx.com
 
 ## Ruby icon
 The Ruby icon is the Vienna.rb logo, and is used with permission. Thanks Floor Dress :)
+
+[x-common]: https://github.com/exercism/x-common
