@@ -6,7 +6,7 @@ class HelloWorldCase < OpenStruct
   end
 
   def workload
-    "assert_equal '#{expected}', HelloWorld.hello"
+    "assert_equal #{expected.inspect}, HelloWorld.hello"
   end
 
   def skipped
