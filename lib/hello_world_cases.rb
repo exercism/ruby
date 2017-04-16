@@ -9,6 +9,10 @@ class HelloWorldCase < OpenStruct
     "assert_equal '#{expected}', #{self.do}"
   end
 
+  def skipped
+    index.zero? ? '# skip' : 'skip'
+  end
+
   def do
     'HelloWorld.hello'
   end

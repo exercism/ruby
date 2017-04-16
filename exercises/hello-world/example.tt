@@ -16,6 +16,7 @@ end
 class HelloWorldTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.test_name %><% if test_case.skipped? %>
     skip<% end %>
+    <%= test_case.skipped %>
     <%= test_case.workload %>
   end
 <% end %>end
