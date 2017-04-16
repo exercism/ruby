@@ -5,6 +5,10 @@ class HelloWorldCase < OpenStruct
     'test_%s' % property.gsub(/[ -]/, '_')
   end
 
+  def workload
+    "assert_equal '#{expected}', #{self.do}"
+  end
+
   def do
     'HelloWorld.hello'
   end
