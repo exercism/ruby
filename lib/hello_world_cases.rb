@@ -6,19 +6,11 @@ class HelloWorldCase < OpenStruct
   end
 
   def workload
-    "assert_equal '#{expected}', #{self.do}"
+    "assert_equal '#{expected}', HelloWorld.hello"
   end
 
   def skipped
     index.zero? ? '# skip' : 'skip'
-  end
-
-  def do
-    'HelloWorld.hello'
-  end
-
-  def skipped?
-    index > 0
   end
 end
 
