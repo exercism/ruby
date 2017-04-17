@@ -5,12 +5,12 @@ class HelloWorldCase < OpenStruct
     'test_%s' % property.gsub(/[ -]/, '_')
   end
 
-  def do
-    'HelloWorld.hello'
+  def workload
+    "assert_equal #{expected.inspect}, HelloWorld.hello"
   end
 
-  def skipped?
-    index > 0
+  def skipped
+    index.zero? ? '# skip' : 'skip'
   end
 end
 
