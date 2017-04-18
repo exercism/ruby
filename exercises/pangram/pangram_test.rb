@@ -20,6 +20,16 @@ class PangramTest < Minitest::Test
     assert result, "Expected true, got: #{result.inspect}. #{phrase.inspect} IS a pangram"
   end
 
+  def test_pangram_with_underscore_character
+    str = 'the quick brown_fox jumps over the lazy dog'
+    assert Pangram.is_pangram?(str)
+  end
+
+  def test_pangram_with_sentence_containing_numbers
+    str = 'the qu1ck br0wn fox jumps over the lazy dog'
+    refute Pangram.is_pangram?(str)
+  end
+
   def test_missing_character_x
     skip
     phrase = 'a quick movement of the enemy will jeopardize five gunboats'
