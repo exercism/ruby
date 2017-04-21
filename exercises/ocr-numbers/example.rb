@@ -1,80 +1,61 @@
-class OCR
-  attr_reader :text
+class OcrNumbers
+  DIGITS = {
+    ' _ | ||_|   ' => '0',
+    '     |  |   ' => '1',
+    ' _  _||_    ' => '2',
+    ' _  _| _|   ' => '3',
+    '   |_|  |   ' => '4',
+    ' _ |_  _|   ' => '5',
+    ' _ |_ |_|   ' => '6',
+    ' _   |  |   ' => '7',
+    ' _ |_||_|   ' => '8',
+    ' _ |_| _|   ' => '9'
+  }
+  DIGITS.default = '?'
+
+  def self.convert(text)
+    OcrNumbers.new(text).convert
+  end
+
   def initialize(text)
-    @text = text.split("\n")
+    @text = text
   end
 
   def convert
-    numbers = []
-    each_row do |row|
-      numbers << values_in_row(row)
-    end
-    format(numbers)
+    raise ArgumentError unless valid?
+
+    numbers.map {|lines| decode(lines) }.join(',')
   end
 
   private
+  attr_reader :text
 
-  def format(numbers)
-    numbers.map(&:join).join(',')
+  def valid?
+    (rows.size % 4).zero? &&
+      (first_row_width % 3).zero? &&
+      rows[1..-1].all? {|row| row.size == first_row_width }
   end
 
-  def values_in_row(row)
-    values = []
-    each_column do |column|
-      values << value_at(row, column)
-    end
-    values
+  def decode(lines)
+    lines.map {|line| line.scan(/.../) }.
+      transpose.
+      map {|char_rows| DIGITS[char_rows.join] }.
+      join
   end
 
-  def each_row
-    (0...row_count).step(4) do |row|
-      yield row
-    end
+  def numbers
+    text.split("\n").each_slice(4)
   end
 
-  def each_column
-    (0...column_count).step(3) do |column|
-      yield column
-    end
+  def rows
+    @rows ||= text.split("\n")
   end
 
-  def value_at(row, column)
-    value(pattern_at(row, column)) || garble
+  def first_row_width
+    @first_row_width ||= rows.first.size
   end
+end
 
-  def pattern_at(row, column)
-    [
-      text[row][column, 3],
-      text[row + 1][column, 3],
-      text[row + 2][column, 3],
-      text[row + 3][column, 3]
-    ]
-  end
-
-  def column_count
-    text.first.length
-  end
-
-  def row_count
-    text.length
-  end
-
-  def garble
-    '?'
-  end
-
-  def value(pattern)
-    {
-      [' _ ', '| |', '|_|', '   '] => '0',
-      ['   ', '  |', '  |', '   '] => '1',
-      [' _ ', ' _|', '|_ ', '   '] => '2',
-      [' _ ', ' _|', ' _|', '   '] => '3',
-      ['   ', '|_|', '  |', '   '] => '4',
-      [' _ ', '|_ ', ' _|', '   '] => '5',
-      [' _ ', '|_ ', '|_|', '   '] => '6',
-      [' _ ', '  |', '  |', '   '] => '7',
-      [' _ ', '|_|', '|_|', '   '] => '8',
-      [' _ ', '|_|', ' _|', '   '] => '9'
-    }[pattern]
-  end
+module BookKeeping
+  VERSION = 1
 end
