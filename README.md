@@ -137,7 +137,7 @@ The `lib/$PROBLEM_cases.rb` file should contain a small class that wraps the JSO
 require 'exercise_cases'
 
 class ProblemNameCase < OpenStruct
-  def test_name
+  def name
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
@@ -157,7 +157,7 @@ the generator script will infer the name of the class from the argument that is 
 
 This class must implement the following methods:
 
-- `test_name` - Returns the name of the test (i.e `test_one_equals_one`)
+- `name` - Returns the name of the test (i.e `test_one_equals_one`)
 - `workload` - Returns the main syntax for the test. This includes the assertion and any setup required for the test.  This will vary depending on the test generator and its underlying implementation
 - `skipped` - Returns skip syntax (i.e. `skip` or `# skip`)
 
