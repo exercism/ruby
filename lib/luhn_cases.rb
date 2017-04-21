@@ -6,12 +6,14 @@ class LuhnCase < OpenStruct
   end
 
   def work_load
-    %Q(Luhn.valid?("#{input}"))
+    %Q(#{assertion} Luhn.valid?("#{input}"))
   end
 
   def skipped
     index.zero? ? '# skip' : 'skip'
   end
+
+  private
 
   def assertion
     expected ? 'assert' : 'refute'
