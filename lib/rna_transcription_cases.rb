@@ -5,7 +5,7 @@ class RnaTranscriptionCase < OpenStruct
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def work_load
+  def workload
     "Complement.of_dna('#{dna}')"
   end
 
