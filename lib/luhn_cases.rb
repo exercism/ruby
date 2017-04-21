@@ -5,8 +5,8 @@ class LuhnCase < OpenStruct
     'test_%s' % description.tr('- ', '__')
   end
 
-  def work_load
-    %Q(#{assertion} Luhn.valid?("#{input}"))
+  def workload
+    %Q(#{assertion} Luhn.valid?(#{input.inspect}))
   end
 
   def skipped
