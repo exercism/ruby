@@ -15,8 +15,7 @@ class PigLatinCase < OpenStruct
 end
 
 PigLatinCases = proc do |data|
-  JSON.parse(data)['cases'].
-    flat_map {|section| section['cases'] }.
+  JSON.parse(data)['cases'].flat_map {|section| section['cases'] }. # extract all the cases into a single array
     each_with_index.
-    reduce([]) {|cases, (test, i)| cases << PigLatinCase.new(test.merge('index' => i)) }
+    map { |test, index| PigLatinCase.new(test.merge('index' => index)) }
 end

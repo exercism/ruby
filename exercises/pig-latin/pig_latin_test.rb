@@ -104,6 +104,7 @@ class PigLatinTest < Minitest::Test
     skip
     assert_equal "ickquay astfay unray", PigLatin.translate("quick fast run")
   end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -120,6 +121,7 @@ class PigLatinTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 1, BookKeeping::VERSION
