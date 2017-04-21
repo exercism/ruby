@@ -5,7 +5,7 @@ class AnagramCase < OpenStruct
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def work_load
+  def workload
     indent_lines([show_comment, detector, anagram, assert].compact)
   end
 

@@ -7,8 +7,8 @@ require_relative 'hamming'
 class HammingTest < Minitest::Test<% test_cases.each do |test_case| %>
   def <%= test_case.name %>
     <%= test_case.skipped %><% if test_case.raises_error? %>
-    assert_raises(ArgumentError) { <%= test_case.work_load %> }<% else %>
-    assert_equal <%= test_case.expected %>, <%= test_case.work_load %><% end %>
+    assert_raises(ArgumentError) { <%= test_case.workload %> }<% else %>
+    assert_equal <%= test_case.expected %>, <%= test_case.workload %><% end %>
   end
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>

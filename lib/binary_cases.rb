@@ -16,14 +16,14 @@ class BinaryCase < OpenStruct
   private
 
   def error_assertion
-    "assert_raises(ArgumentError) { #{work_load} }"
+    "assert_raises(ArgumentError) { #{workload} }"
   end
 
   def equality_assertion
-    "assert_equal #{expected}, #{work_load}"
+    "assert_equal #{expected}, #{workload}"
   end
 
-  def work_load
+  def workload
     "Binary.to_decimal('#{binary}')"
   end
 

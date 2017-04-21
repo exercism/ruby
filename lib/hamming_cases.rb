@@ -5,7 +5,7 @@ class HammingCase < OpenStruct
     'test_%s' % description.gsub(/[ -]/, '_')
   end
 
-  def work_load
+  def workload
     "Hamming.compute('#{strand1}', '#{strand2}')"
   end
 
