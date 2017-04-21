@@ -16,6 +16,5 @@ end
 
 PigLatinCases = proc do |data|
   JSON.parse(data)['cases'].flat_map {|section| section['cases'] }. # extract all the cases into a single array
-    each_with_index.
-    map { |test, index| PigLatinCase.new(test.merge('index' => index)) }
+    map.with_index { |test, index| PigLatinCase.new(test.merge('index' => index)) }
 end
