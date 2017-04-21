@@ -13,22 +13,18 @@ class Luhn
   def checksum
     @string.
       reverse.each_char.with_index.
-      sum {|c, i| i.odd? ? DOUBLE[c.to_i] : c.to_i }
+      reduce(0) {|sum, (c, i)| sum + (i.odd? ? DOUBLE[c.to_i] : c.to_i) }
   end
 
   def valid?
-    clean? && checksum_mod_10.zero?
+    clean? && (checksum % 10).zero?
   end
 
   def clean?
     @string.match(/^\d{2,}$/)
   end
-
-  def checksum_mod_10
-    checksum % 10
-  end
 end
+
 module BookKeeping
   VERSION = 1
 end
-
