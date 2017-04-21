@@ -27,3 +27,7 @@ class PigLatin
     word.scan(/\A([^aeiou]?qu|[^aeiou]+)(.*)/).first
   end
 end
+
+module BookKeeping
+  VERSION = 1
+end
