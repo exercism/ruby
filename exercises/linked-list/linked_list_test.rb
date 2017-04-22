@@ -53,4 +53,20 @@ class DequeTest < Minitest::Test
     assert_equal 50, deque.pop
     assert_equal 30, deque.shift
   end
+
+  def test_pop_to_empty
+    deque = Deque.new
+    deque.push(10)
+    assert_equal 10, deque.pop
+    deque.push(20)
+    assert_equal 20, deque.shift
+  end
+
+  def test_shift_to_empty
+    deque = Deque.new
+    deque.unshift(10)
+    assert_equal 10, deque.shift
+    deque.unshift(20)
+    assert_equal 20, deque.pop
+  end
 end
