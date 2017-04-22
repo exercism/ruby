@@ -1,16 +1,8 @@
 require 'exercise_cases'
 
-class PigLatinCase < OpenStruct
-  def name
-    'test_%s' % description.tr('- ', '__')
-  end
-
+class PigLatinCase < ExerciseCase
   def workload
-    %Q(assert_equal #{expected.inspect}, PigLatin.translate(#{input.inspect}))
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
+    assert_equal { "PigLatin.translate(#{input.inspect})" }
   end
 end
 

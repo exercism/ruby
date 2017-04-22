@@ -114,54 +114,50 @@ the exercise, which lives in the x-common repository.
 This change will need to be submitted as a pull request to the x-common repository. This pull
 request needs to be merged before you can regenerate the exercise.
 
-Changes that don't have to do directly with the test inputs and outputs, will either need to be
-made to `exercises/$PROBLEM/example.tt` or `lib/$PROBLEM_cases.rb`. Then you can regenerate the
-exercise with `bin/generate $PROBLEM`.
+Changes that don't have to do directly with the test inputs and outputs, will
+most likely be made to `lib/$PROBLEM_cases.rb` but may also be made to
+`exercises/$PROBLEM/example.tt`. Then you can regenerate the exercise with
+`bin/generate $PROBLEM`.
 
 #### Implementing a Generator
 
-You will need to implement three files to create a generator:
+You will need to implement two files and a directory to create a generator:
 
-1. `exercises/$PROBLEM/example.tt` - the Erb template for the test file, `$PROBLEM_test.rb`.
-1. `exercises/$PROBLEM/.meta/.version` - used to keep track of the version of the test files as the data changes.
 1. `lib/$PROBLEM_cases.rb` - the logic for turning the data into tests.
+1. `exercises/$PROBLEM/example.tt` - the Erb template for the test file, `$PROBLEM_test.rb`.
+1. `exercises/$PROBLEM/.meta/` - metadata directory, currently contains version file
 
 You will not need to touch the top-level script, `bin/generate`.
 
 The `bin/generate` command relies on some common logic implemented in `lib/generator.rb`.
 You probably won't need to touch that, either.
 
-The `lib/$PROBLEM_cases.rb` file should contain a small class that wraps the JSON for a single test case:
+`lib/$PROBLEM_cases.rb` contains a derived class of `ExerciseCase` (in `lib/exercise_cases.rb`)
+which wraps the JSON for a single test case. The default version looks something like this:
 
 ```
 require 'exercise_cases'
 
-class ProblemNameCase < OpenStruct
-  def name
-    'test_%s' % description.gsub(/[ -]/, '_')
-  end
+class ProblemNameCase < ExerciseCase
 
   def workload
     # Example workload:
-    "assert #{expected.inspect}, Problem.call(#{input.inspect})"
+    "#{assert_or_refute} Problem.call(#{input.inspect})"
   end
 
-  def skipped
-    index.zero? ? '# skip' : 'skip'
-  end
 end
 ```
 
-Instead of `ProblemName` use the name of the actual problem. This is important, since
+Instead of `ProblemName` use the CamelCased name of the actual problem. This is important, since
 the generator script will infer the name of the class from the argument that is passed.
 
-This class must implement the following methods:
+This class must provide the methods used by `example.tt`. The base class provides methods
+for the default template for everything except `workload`.
 
-- `name` - Returns the name of the test (i.e `test_one_equals_one`)
-- `workload` - Returns the main syntax for the test. This includes the assertion and any setup required for the test.  This will vary depending on the test generator and its underlying implementation
-- `skipped` - Returns skip syntax (i.e. `skip` or `# skip`)
-
-Beyond that, you can implement any helper methods that you need.
+`workload` generates the code for the body of a test, including the assertion
+and any setup required. The base class provides a variety of assertion and
+helper methods. Beyond that, you can implement any helper methods that you need
+as private methods in your derived class.
 
 Below this class, implement a small loop that will generate all the test cases by reading the
 `canonical-data.json` file, and looping through the test cases.
@@ -198,7 +194,8 @@ end
 
 Finally, you need to create a text template, `example.tt`, as the bases for the test suite.
 
-Start with the following boilerplate, and adjust as necessary:
+Start with the following boilerplate, and adjust as necessary. Remember, however, to strive
+to keep logic out of views.
 
 ```
 #!/usr/bin/env ruby
@@ -216,6 +213,7 @@ class ProblemNameTest < Minitest::Test
 
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
   def test_bookkeeping
     skip
     assert_equal <%= version %>, BookKeeping::VERSION

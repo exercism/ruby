@@ -1,22 +1,8 @@
 require 'exercise_cases'
 
-class LuhnCase < OpenStruct
-  def name
-    'test_%s' % description.tr('- ', '__')
-  end
-
+class LuhnCase < ExerciseCase
   def workload
-    %Q(#{assertion} Luhn.valid?(#{input.inspect}))
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
-  end
-
-  private
-
-  def assertion
-    expected ? 'assert' : 'refute'
+    %Q(#{assert_or_refute} Luhn.valid?(#{input.inspect}))
   end
 end
 
