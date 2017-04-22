@@ -3,7 +3,7 @@ require 'json'
 
 class ExerciseCase < OpenStruct
   def name
-    'test_%s' % description.gsub(/[^\w- ?!]/, '').gsub(/[- ]/, '_')
+    'test_%s' % description.gsub(/[^\w ?!]/, '').gsub(/[- ]/, '_')
   end
 
   def skipped
