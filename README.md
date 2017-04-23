@@ -132,17 +132,15 @@ You will not need to touch the top-level script, `bin/generate`.
 The `bin/generate` command relies on some common logic implemented in `lib/generator.rb`.
 You probably won't need to touch that, either.
 
-`lib/$PROBLEM_cases.rb` contains a derived class of `ExerciseCase` (in `lib/exercise_cases.rb`)
+`lib/$PROBLEM_cases.rb` contains a derived class of `ExerciseCase` (in `lib/generator/exercise_cases.rb`)
 which wraps the JSON for a single test case. The default version looks something like this:
 
 ```
-require 'exercise_cases'
-
 class ProblemNameCase < ExerciseCase
 
   def workload
     # Example workload:
-    "#{assert_or_refute} Problem.call(#{input.inspect})"
+    "#{assert} Problem.call(#{input.inspect})"
   end
 
 end
