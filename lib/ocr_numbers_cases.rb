@@ -13,8 +13,3 @@ class OcrNumbersCase < ExerciseCase
     %Q(OcrNumbers.convert(#{(input.join("\n")).inspect}))
   end
 end
-
-OcrNumbersCases = proc do |data|
-  JSON.parse(data)['cases'].flat_map {|section| section['cases'] }.
-    map.with_index {|test, index| OcrNumbersCase.new(test.merge('index' => index)) }
-end
