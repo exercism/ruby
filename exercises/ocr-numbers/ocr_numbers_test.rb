@@ -15,7 +15,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "1", OcrNumbers.convert("   \n  |\n  |\n   ")
   end
 
-  def test_unreadable_but_correctly_sized_inputs_return_
+  def test_unreadable_but_correctly_sized_inputs_return_?
     skip
     assert_equal "?", OcrNumbers.convert("   \n  _\n  |\n   ")
   end
@@ -35,7 +35,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "110101100", OcrNumbers.convert("       _     _        _  _ \n  |  || |  || |  |  || || |\n  |  ||_|  ||_|  |  ||_||_|\n                           ")
   end
 
-  def test_garbled_numbers_in_a_string_are_replaced_with_
+  def test_garbled_numbers_in_a_string_are_replaced_with_?
     skip
     assert_equal "11?10?1?0", OcrNumbers.convert("       _     _           _ \n  |  || |  || |     || || |\n  |  | _|  ||_|  |  ||_||_|\n                           ")
   end

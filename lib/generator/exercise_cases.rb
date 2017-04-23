@@ -2,7 +2,7 @@ require 'ostruct'
 require 'json'
 
 class ExerciseCase < OpenStruct
-  using Underscore
+  using Generator::Underscore
 
   def name
     'test_%s' % description.underscore
