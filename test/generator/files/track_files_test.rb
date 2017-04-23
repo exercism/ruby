@@ -25,6 +25,10 @@ module Generator
         assert_equal 'two_parter_cases', GeneratorCases.filename(exercise_name)
       end
 
+      def test_class_name
+        assert_equal 'TwoParterCase', GeneratorCases.class_name('two-parter')
+      end
+
       def test_proc_name
         exercise_name = 'two-parter'
         assert_equal 'TwoParterCases', GeneratorCases.proc_name(exercise_name)

@@ -14,8 +14,12 @@ module Generator
         "#{exercise_name.tr('-', '_')}_cases"
       end
 
+      def class_name(exercise_name)
+        filename(exercise_name)[0..-2].split('_').map(&:capitalize).join
+      end
+
       def proc_name(exercise_name)
-        filename(exercise_name).split('_').map(&:capitalize).join
+        "#{class_name(exercise_name)}s"
       end
 
       def exercise_name(filename)
