@@ -1,8 +1,6 @@
-require 'exercise_cases'
-
 class LuhnCase < ExerciseCase
   def workload
-    %Q(#{assert_or_refute} Luhn.valid?(#{input.inspect}))
+    "#{assert} Luhn.valid?(#{input.inspect})"
   end
 end
 

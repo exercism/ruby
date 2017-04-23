@@ -1,5 +1,3 @@
-require 'exercise_cases'
-
 class HammingCase < ExerciseCase
   def workload
     if raises_error?
