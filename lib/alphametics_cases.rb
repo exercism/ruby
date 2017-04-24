@@ -1,22 +1,6 @@
 require 'exercise_cases'
 
-class AlphameticsCase < OpenStruct
-  def test_name
-    "test_#{description.tr(' ', '_')}"
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
-  end
-
-  def input
-    "'#{puzzle}'"
-  end
-
-  def expect
-    expected.nil? ? {} : expected_values
-  end
-
+class AlphameticsCase < ExerciseCase
   def workload
     body =
       "input = %s\n" % input,
@@ -37,6 +21,14 @@ class AlphameticsCase < OpenStruct
   end
 
   private
+
+  def input
+    "'#{puzzle}'"
+  end
+
+  def expect
+    expected.nil? ? {} : expected_values
+  end
 
   def slow?
     (expected||{}).size > 7
