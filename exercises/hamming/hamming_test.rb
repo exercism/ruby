@@ -3,9 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'hamming'
 
-# Test data version:
-# deb225e Implement canonical dataset for scrabble-score problem (#255)
-
+# Common test data version: bb56dc7
 class HammingTest < Minitest::Test
   def test_identical_strands
     # skip
@@ -88,8 +86,9 @@ class HammingTest < Minitest::Test
   # not your solution.
   #
   # Define a constant named VERSION inside of the top level BookKeeping
-  # module.
-  #  In your file, it will look like this:
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
   #
   # module BookKeeping
   #   VERSION = 1 # Where the version number matches the one in the test.

@@ -10,27 +10,27 @@ class LuhnTest < Minitest::Test
     refute Luhn.valid?("1")
   end
 
-  def test_A_single_zero_is_invalid
+  def test_a_single_zero_is_invalid
     skip
     refute Luhn.valid?("0")
   end
 
-  def test_a_simple_valid_SIN_that_remains_valid_if_reversed
+  def test_a_simple_valid_sin_that_remains_valid_if_reversed
     skip
     assert Luhn.valid?("059")
   end
 
-  def test_a_simple_valid_SIN_that_becomes_invalid_if_reversed
+  def test_a_simple_valid_sin_that_becomes_invalid_if_reversed
     skip
     assert Luhn.valid?("59")
   end
 
-  def test_a_valid_Canadian_SIN
+  def test_a_valid_canadian_sin
     skip
     assert Luhn.valid?("055 444 285")
   end
 
-  def test_invalid_Canadian_SIN
+  def test_invalid_canadian_sin
     skip
     refute Luhn.valid?("055 444 286")
   end

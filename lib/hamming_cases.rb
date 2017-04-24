@@ -1,21 +1,16 @@
-require 'exercise_cases'
-
-class HammingCase < OpenStruct
-  def name
-    'test_%s' % description.gsub(/[ -]/, '_')
-  end
-
+class HammingCase < ExerciseCase
   def workload
+    if raises_error?
+      assert_raises(ArgumentError) { test_case }
+    else
+      assert_equal { test_case }
+    end
+  end
+
+  private
+
+  def test_case
     "Hamming.compute('#{strand1}', '#{strand2}')"
-  end
-
-  def raises_error?
-    expected.to_i == -1
-  end
-
-  def skipped
-    index.zero? && '# skip' ||
-      'skip'
   end
 end
 

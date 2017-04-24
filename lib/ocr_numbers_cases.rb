@@ -1,20 +1,10 @@
-require 'exercise_cases'
-
-class OcrNumbersCase < OpenStruct
-  def name
-    'test_%s' % description.downcase.tr('- .', '_')
-  end
-
+class OcrNumbersCase < ExerciseCase
   def workload
-    if expected == -1
-      "assert_raises(ArgumentError) { #{test_case} }"
+    if raises_error?
+      assert_raises(ArgumentError) { test_case }
     else
-      "assert_equal #{expected.inspect}, #{test_case}"
+      assert_equal { test_case }
     end
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
   end
 
   private
