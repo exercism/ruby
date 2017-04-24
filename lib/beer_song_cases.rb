@@ -1,43 +1,26 @@
 require 'exercise_cases'
 
-class BeerSongCase < OpenStruct
-  def test_name
-    'test_%s' % description.tr(' ', '_')
-  end
+class BeerSongCase < ExerciseCase
 
   def workload
-    "BeerSong.new.%s(%s)" % [property, workload_arguments]
+    "assert_equal expected, #{beer_song}"
   end
 
   def expected
     self["expected"].gsub('\n', '"\n" \\')
   end
 
-  def skipped
-    index.zero? ? '# skip' : 'skip'
-  end
-
   private
 
-  def workload_arguments
+  def beer_song
+    "BeerSong.new.%s(%s)" % [property, beer_song_arguments]
+  end
+
+  def beer_song_arguments
     if property == 'verse'
       number
     else
       "%s, %s" % [self["beginning"], self["end"]]
     end
   end
-end
-
-BeerSongCases = proc do |data|
-  i = 0
-  cases = []
-  JSON.parse(data)["cases"].each do |section|
-    section["cases"].each do |tests|
-      tests["cases"].each do |test|
-        cases << BeerSongCase.new(test.merge('index' => i))
-        i += 1
-      end
-    end
-  end
-  cases
 end
