@@ -4,7 +4,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'pangram'
 
-# Test data version: # f04fb3d
+# Common test data version: f375051
 class PangramTest < Minitest::Test
   def test_sentence_empty
     # skip
@@ -85,6 +85,7 @@ class PangramTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 4, BookKeeping::VERSION

@@ -1,15 +1,11 @@
 require 'exercise_cases'
 
-class PangramCase < OpenStruct
-  def name
-    'test_%s' % description.downcase.tr_s(" -'", '_').sub(/_$/, '')
-  end
-
+class PangramCase < ExerciseCase
   def workload
     [
     "phrase = '#{input}'",
     "    result = Pangram.pangram?(phrase)",
-    "    #{assertion} result, \"#{message}\""
+    "    #{assert} result, \"#{message}\""
     ].join("\n")
   end
 
@@ -21,17 +17,4 @@ class PangramCase < OpenStruct
     expected ? 'IS' : 'is NOT'
   end
 
-  def assertion
-    expected ? 'assert' : 'refute'
-  end
-
-  def skipped?
-    index.zero? ? '# skip' : 'skip'
-  end
-end
-
-PangramCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    PangramCase.new(row.merge('index' => i))
-  end
 end
