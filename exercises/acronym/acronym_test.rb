@@ -3,36 +3,41 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'acronym'
 
-# Test data version:
-# 5b5e807
+# Common test data version: dcfe476
 class AcronymTest < Minitest::Test
   def test_basic
-    assert_equal 'PNG', Acronym.abbreviate('Portable Network Graphics')
+    # skip
+    assert_equal "PNG", Acronym.abbreviate('Portable Network Graphics')
   end
 
   def test_lowercase_words
     skip
-    assert_equal 'ROR', Acronym.abbreviate('Ruby on Rails')
+    assert_equal "ROR", Acronym.abbreviate('Ruby on Rails')
   end
 
   def test_camelcase
     skip
-    assert_equal 'HTML', Acronym.abbreviate('HyperText Markup Language')
+    assert_equal "HTML", Acronym.abbreviate('HyperText Markup Language')
   end
 
   def test_punctuation
     skip
-    assert_equal 'FIFO', Acronym.abbreviate('First In, First Out')
+    assert_equal "FIFO", Acronym.abbreviate('First In, First Out')
   end
 
   def test_all_caps_words
     skip
-    assert_equal 'PHP', Acronym.abbreviate('PHP: Hypertext Preprocessor')
+    assert_equal "PHP", Acronym.abbreviate('PHP: Hypertext Preprocessor')
+  end
+
+  def test_non_acronym_all_caps_word
+    skip
+    assert_equal "GIMP", Acronym.abbreviate('GNU Image Manipulation Program')
   end
 
   def test_hyphenated
     skip
-    assert_equal 'CMOS', Acronym.abbreviate('Complementary metal-oxide semiconductor')
+    assert_equal "CMOS", Acronym.abbreviate('Complementary metal-oxide semiconductor')
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -54,6 +59,6 @@ class AcronymTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
