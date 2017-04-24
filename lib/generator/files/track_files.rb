@@ -18,8 +18,9 @@ module Generator
         filename(exercise_name)[0..-2].split('_').map(&:capitalize).join
       end
 
+      # TODO: for backwards compatibility, remove post-conversion
       def proc_name(exercise_name)
-        "#{class_name(exercise_name)}s"
+        class_name(exercise_name) + 's'
       end
 
       def exercise_name(filename)

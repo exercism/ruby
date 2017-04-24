@@ -10,7 +10,7 @@ module Generator
 
       def test_cases_found
         track_path = 'test/fixtures/xruby'
-        assert_equal %w(alpha beta), GeneratorCases.available(track_path).sort
+        assert_equal %w(alpha beta gamma), GeneratorCases.available(track_path).sort
       end
 
       def test_available_returns_exercise_names
