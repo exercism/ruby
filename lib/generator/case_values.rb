@@ -13,12 +13,9 @@ module Generator
       private
 
       def extractor
-        Object.const_defined?(test_cases_procname) ? ProcExtractor : AutoExtractor
+        Files::GeneratorCases.proc?(exercise_name) ? ProcExtractor : AutoExtractor
       end
 
-      def test_cases_procname
-        Files::GeneratorCases.proc_name(exercise_name)
-      end
     end
 
     class Extractor
