@@ -3,7 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'connect'
 
-# Test data version commit id: 6c6a395
+# Common test data version: 327db7f
 class ConnectTest < Minitest::Test
   def test_an_empty_board_has_no_winner
     # skip
@@ -16,6 +16,24 @@ class ConnectTest < Minitest::Test
     ]
     game = Board.new(board)
     assert_equal '', game.winner, 'an empty board has no winner'
+  end
+
+  def test_x_can_win_on_a_1x1_board
+    skip
+    board = [
+      'X'
+    ]
+    game = Board.new(board)
+    assert_equal 'X', game.winner, 'X can win on a 1x1 board'
+  end
+
+  def test_o_can_win_on_a_1x1_board
+    skip
+    board = [
+      'O'
+    ]
+    game = Board.new(board)
+    assert_equal 'O', game.winner, 'O can win on a 1x1 board'
   end
 
   def test_only_edges_does_not_make_a_winner
@@ -128,9 +146,8 @@ class ConnectTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
