@@ -220,20 +220,20 @@ end
 ```
 ### Workload philosophy.
 
-Within the test workload we want to prioritize educational value over expert comprehension and want to make sure that things are clear to people who may not be familiar with Minitest and even Ruby. 
+Prioritize educational value over expert comprehension and make sure that
+things are clear to people who may not be familiar with Minitest and even Ruby. 
 
-Therefore a multi line workload is preferred. 
-An example from `anagram`:
+Provide the information the student needs to derive the code to pass the test
+in a clear and consistent manner. Illustrate the purpose of the individual
+elements of the assertion by using meaningful variable names.
+
+Example output from the `workload` method:
 ```ruby
 detector = Anagram.new('allergy')
 anagrams = detector.match(["gallery", "ballerina", "regally", "clergy", "largely", "leading"])
 expected = ["gallery", "largely", "regally"]
 assert_equal expected, anagrams.sort
 ```
-
-This provides the information the student needs to derive the code to pass the test in a clear and consistent manner.
-Intention revealing variable names are used to illustrate the purpose of the individual elements of what could otherwise be a one line assertion. The values used in `detector`,`anagrams` and `expected` will all vary by test.  
-
 
 
 ## Pull Requests
