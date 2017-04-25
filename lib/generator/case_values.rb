@@ -1,23 +1,6 @@
 module Generator
   module CaseValues
 
-    module Extract
-
-      def extract
-        extractor.extract(
-          exercise_name: exercise_name,
-          exercise_data: canonical_data.to_s
-        )
-      end
-
-      private
-
-      def extractor
-        Files::GeneratorCases.proc?(exercise_name) ? ProcExtractor : AutoExtractor
-      end
-
-    end
-
     class Extractor
       attr_reader :exercise_name, :exercise_data
 
@@ -31,18 +14,10 @@ module Generator
       def initialize(exercise_name:, exercise_data:)
         @exercise_name = exercise_name
         @exercise_data = exercise_data
-
-        require cases_require_name
       end
 
       def extract
         fail NotImplementedError, 'Should return an array of ProblemNameCase'
-      end
-
-      private
-
-      def cases_require_name
-        Files::GeneratorCases.filename(exercise_name)
       end
     end
 

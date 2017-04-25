@@ -9,6 +9,7 @@ module Generator
       end
 
       def test_extract_via_proc
+        require Files::GeneratorCases.filename('alpha')
         cases = ProcExtractor.new(
           exercise_name: 'alpha',
           exercise_data: simple_canonical_data.to_s

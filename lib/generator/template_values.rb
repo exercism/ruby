@@ -15,15 +15,33 @@ module Generator
   end
 
   module TemplateValuesFactory
-    include CaseValues::Extract
+    include CaseValues
 
     def template_values
+      require cases_require_name
+
       TemplateValues.new(
         abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
         version: version,
         test_cases: extract
       )
     end
-  end
 
+    private
+
+    def extract
+      extractor.extract(
+        exercise_name: exercise_name,
+        exercise_data: canonical_data.to_s
+      )
+    end
+
+    def extractor
+      Files::GeneratorCases.proc?(exercise_name) ? ProcExtractor : AutoExtractor
+    end
+
+    def cases_require_name
+      Files::GeneratorCases.filename(exercise_name)
+    end
+  end
 end

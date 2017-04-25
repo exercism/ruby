@@ -9,6 +9,7 @@ module Generator
       end
 
       def test_simple_auto_extraction
+        require Files::GeneratorCases.filename('gamma')
         cases = AutoExtractor.new(
           exercise_name: 'gamma', exercise_data: simple_canonical_data.to_s
         ).extract
@@ -17,6 +18,7 @@ module Generator
       end
 
       def test_multi_level_auto_extraction
+        require Files::GeneratorCases.filename('gamma')
         cases = AutoExtractor.new(
           exercise_name: 'gamma', exercise_data: complex_canonical_data.to_s
         ).extract
