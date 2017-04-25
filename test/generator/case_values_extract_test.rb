@@ -1,0 +1,65 @@
+require_relative '../test_helper'
+
+module Generator
+  module CaseValues
+    class TestExtract
+      include Extract
+
+      def canonical_data
+        simple_canonical_data = Minitest::Mock.new
+        simple_canonical_data.expect(
+          :to_s,
+          <<-TEXT
+{
+	"description": "Test canonical data",
+	"cases": [
+	{
+		"description": "add 2 numbers",
+		"input": [1,1],
+		"expected": 2
+	}
+	]
+}
+TEXT
+        )
+        simple_canonical_data
+      end
+    end
+
+    class TestProcExtract < TestExtract
+      def exercise_name
+        'alpha'
+      end
+    end
+
+    class TestAutoExtract < TestExtract
+      def exercise_name
+        'gamma'
+      end
+    end
+
+    class ExtractTest < Minitest::Test
+
+      def setup
+        $LOAD_PATH.unshift 'test/fixtures/xruby/lib'
+      end
+
+      def test_extract_via_proc
+        cases = TestProcExtract.new.extract
+        expected = [AlphaCase.new(description: 'add 2 numbers', input: [1, 1], expected: 2, index: 0)]
+        assert_equal expected.to_s, cases.to_s
+      end
+
+      def test_auto_extract
+        cases = TestAutoExtract.new.extract
+        expected = [GammaCase.new(description: 'add 2 numbers', input: [1, 1], expected: 2, index: 0)]
+        assert_equal expected.to_s, cases.to_s
+      end
+
+      def teardown
+        $LOAD_PATH.delete 'test/fixtures/xruby/lib'
+      end
+
+    end
+  end
+end
