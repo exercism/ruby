@@ -155,7 +155,7 @@ for the default template for everything except `workload`.
 `workload` generates the code for the body of a test, including the assertion
 and any setup required. The base class provides a variety of assertion and
 helper methods. Beyond that, you can implement any helper methods that you need
-as private methods in your derived class.
+as private methods in your derived class. See below for more information about [the intention of workload](#workload-philosophy)
 
 Below this class, implement a small loop that will generate all the test cases by reading the
 `canonical-data.json` file, and looping through the test cases.
@@ -218,6 +218,23 @@ class ProblemNameTest < Minitest::Test
   end
 end
 ```
+### Workload philosophy.
+
+Within the test workload we want to prioritize educational value over expert comprehension and want to make sure that things are clear to people who may not be familiar with Minitest and even Ruby. 
+
+Therefore a multi line workload is preferred. 
+An example from `anagram`:
+```ruby
+detector = Anagram.new('allergy')
+anagrams = detector.match(["gallery", "ballerina", "regally", "clergy", "largely", "leading"])
+expected = ["gallery", "largely", "regally"]
+assert_equal expected, anagrams.sort
+```
+
+This provides the information the student needs to derive the code to pass the test in a clear and consistent manner.
+Intention revealing variable names are used to illustrate the purpose of the individual elements of what could otherwise be a one line assertion. The values used in `detector`,`anagrams` and `expected` will all vary by test.  
+
+
 
 ## Pull Requests
 
