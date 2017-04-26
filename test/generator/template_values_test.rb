@@ -52,11 +52,6 @@ module Generator
       include TemplateValuesFactory
     end
 
-    def test_template_values_from_proc
-      subject = TestTemplateValuesFactory.new
-      assert_instance_of TemplateValues, subject.template_values
-    end
-
     class ClassBasedTestTemplateValuesFactory
       def exercise_name
         'beta'

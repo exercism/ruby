@@ -9,16 +9,8 @@ end
 module Generator
   module CaseValues
     class ExtractorTest < Minitest::Test
-      def test_not_implemented_error
-        assert_raises NotImplementedError do
-          Extractor.extract(exercise_name: nil, exercise_data: nil)
-        end
-      end
-    end
-
-    class AutoExtractorTest < Minitest::Test
       def test_multi_level_auto_extraction
-        cases = AutoExtractor.new(
+        cases = Extractor.new(
           exercise_name: 'complex',
           exercise_data: File.read('test/fixtures/metadata/exercises/complex/canonical-data.json')
         ).extract
@@ -32,26 +24,6 @@ module Generator
                           expected: "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT", index: 2)
         ]
         assert_equal expected, cases
-      end
-    end
-
-    class ProcExtractorTest < Minitest::Test
-      def setup
-        load 'test/fixtures/xruby/lib/alpha_cases.rb'
-      end
-
-      def test_extract_via_proc
-        cases = ProcExtractor.new(
-          exercise_name: 'alpha',
-          exercise_data: File.read('test/fixtures/metadata/exercises/alpha/canonical-data.json')
-        ).extract
-        expected = [AlphaCase.new(description: 'add 2 numbers', input: [1, 1], expected: 2, index: 0)]
-        assert_equal expected, cases
-      end
-
-      def teardown
-        Object.send(:remove_const, :AlphaCases)
-        Object.send(:remove_const, :AlphaCase)
       end
     end
   end

@@ -17,13 +17,6 @@ module Generator
       end
 
       def extract
-        fail NotImplementedError, 'Should return an array of ProblemNameCase'
-      end
-    end
-
-    class AutoExtractor < Extractor
-
-      def extract
         extract_test_cases.map.with_index do |test, index|
           test_case_class.new(test.merge('index' => index))
         end
@@ -40,20 +33,6 @@ module Generator
       def test_case_class
         Object.const_get(Files::GeneratorCases.class_name(exercise_name))
       end
-    end
-
-    class ProcExtractor < Extractor
-
-      def extract
-        test_cases_proc.call(exercise_data)
-      end
-
-      private
-
-      def test_cases_proc
-        Object.const_get(Files::GeneratorCases.proc_name(exercise_name))
-      end
-
     end
 
   end

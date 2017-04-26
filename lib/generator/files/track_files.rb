@@ -18,14 +18,6 @@ module Generator
         filename(exercise_name)[0..-2].split('_').map(&:capitalize).join
       end
 
-      def proc?(exercise_name)
-        Object.const_defined?(proc_name(exercise_name))
-      end
-
-      def proc_name(exercise_name)
-        class_name(exercise_name) + 's'
-      end
-
       def exercise_name(filename)
         %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_', '-')
       end

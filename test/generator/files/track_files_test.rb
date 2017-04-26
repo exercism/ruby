@@ -28,11 +28,6 @@ module Generator
       def test_class_name
         assert_equal 'TwoParterCase', GeneratorCases.class_name('two-parter')
       end
-
-      def test_proc_name
-        exercise_name = 'two-parter'
-        assert_equal 'TwoParterCases', GeneratorCases.proc_name(exercise_name)
-      end
     end
 
     class TrackFilesTest < Minitest::Test
