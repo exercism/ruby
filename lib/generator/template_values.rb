@@ -27,7 +27,7 @@ module Generator
 
     def extract
       load cases_load_name
-      extractor.extract(canonical_data.to_s)
+      extractor.call(canonical_data.to_s)
     end
 
     def extractor

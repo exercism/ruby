@@ -5,7 +5,7 @@ module Generator
         @case_class = case_class
       end
 
-      def extract(exercise_data)
+      def call(exercise_data)
         parsed_data = JSON.parse(exercise_data)['cases']
         extract_test_cases(data: parsed_data).map.with_index do |test, index|
           @case_class.new(test.merge('index' => index))
