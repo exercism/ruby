@@ -4,57 +4,98 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'run_length_encoding'
 
-# Test data version:
-# deb225e Implement canonical dataset for scrabble-score problem (#255)
-
+# Common test data version: 503a57a
 class RunLengthEncodingTest < Minitest::Test
-  def test_encode_simple
+  def test_empty_string
+    # skip
+    input = ''
+    output = ''
+    assert_equal output, RunLengthEncoding.encode(input)
+  end
+
+  def test_single_characters_only_are_encoded_without_count
+    skip
+    input = 'XYZ'
+    output = 'XYZ'
+    assert_equal output, RunLengthEncoding.encode(input)
+  end
+
+  def test_string_with_no_single_characters
+    skip
     input = 'AABBBCCCC'
     output = '2A3B4C'
     assert_equal output, RunLengthEncoding.encode(input)
   end
 
-  def test_decode_simple
-    skip
-    input = '2A3B4C'
-    output = 'AABBBCCCC'
-    assert_equal output, RunLengthEncoding.decode(input)
-  end
-
-  def test_encode_with_single_values
+  def test_single_characters_mixed_with_repeated_characters
     skip
     input = 'WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'
     output = '12WB12W3B24WB'
     assert_equal output, RunLengthEncoding.encode(input)
   end
 
-  def test_decode_with_single_values
+  def test_multiple_whitespace_mixed_in_string
+    skip
+    input = '  hsqq qww  '
+    output = '2 hs2q q2w2 '
+    assert_equal output, RunLengthEncoding.encode(input)
+  end
+
+  def test_lowercase_characters
+    skip
+    input = 'aabbbcccc'
+    output = '2a3b4c'
+    assert_equal output, RunLengthEncoding.encode(input)
+  end
+
+  def test_empty_string
+    skip
+    input = ''
+    output = ''
+    assert_equal output, RunLengthEncoding.decode(input)
+  end
+
+  def test_single_characters_only
+    skip
+    input = 'XYZ'
+    output = 'XYZ'
+    assert_equal output, RunLengthEncoding.decode(input)
+  end
+
+  def test_string_with_no_single_characters
+    skip
+    input = '2A3B4C'
+    output = 'AABBBCCCC'
+    assert_equal output, RunLengthEncoding.decode(input)
+  end
+
+  def test_single_characters_with_repeated_characters
     skip
     input = '12WB12W3B24WB'
     output = 'WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'
     assert_equal output, RunLengthEncoding.decode(input)
   end
 
-  def test_decode_encode_combination
+  def test_multiple_whitespace_mixed_in_string
+    skip
+    input = '2 hs2q q2w2 '
+    output = '  hsqq qww  '
+    assert_equal output, RunLengthEncoding.decode(input)
+  end
+
+  def test_lower_case_string
+    skip
+    input = '2a3b4c'
+    output = 'aabbbcccc'
+    assert_equal output, RunLengthEncoding.decode(input)
+  end
+
+  def test_encode_followed_by_decode_gives_original_string
     skip
     input = 'zzz ZZ  zZ'
     output = 'zzz ZZ  zZ'
     assert_equal output,
                  RunLengthEncoding.decode(RunLengthEncoding.encode(input))
-  end
-
-  def test_encode_unicode
-    skip
-    input = '⏰⚽⚽⚽⭐⭐⏰'
-    output = '⏰3⚽2⭐⏰'
-    assert_equal output, RunLengthEncoding.encode(input)
-  end
-
-  def test_decode_unicode
-    skip
-    input = '⏰3⚽2⭐⏰'
-    output = '⏰⚽⚽⚽⭐⭐⏰'
-    assert_equal output, RunLengthEncoding.decode(input)
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -63,8 +104,9 @@ class RunLengthEncodingTest < Minitest::Test
   # not your solution.
   #
   # Define a constant named VERSION inside of the top level BookKeeping
-  # module.
-  #  In your file, it will look like this:
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
   #
   # module BookKeeping
   #   VERSION = 1 # Where the version number matches the one in the test.
@@ -75,6 +117,6 @@ class RunLengthEncodingTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end

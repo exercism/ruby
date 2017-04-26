@@ -5,15 +5,18 @@ require 'minitest/autorun'
 require_relative 'run_length_encoding'
 
 # Common test data version: <%= abbreviated_commit_hash %>
-class RunLengthEncodingTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.name %><% if test_case.skipped? %>
-    skip<% end %>
+class RunLengthEncodingTest < Minitest::Test
+<% test_cases.each do |test_case| %>
+  def <%= test_case.name %>
+    <%= test_case.skipped %>
     <%= test_case.assign_input %>
     <%= test_case.assign_output %>
     <%= test_case.assertion %>
   end
+
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
   def test_bookkeeping
     skip
     assert_equal <%= version %>, BookKeeping::VERSION
