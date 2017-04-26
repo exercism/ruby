@@ -85,22 +85,14 @@ TEXT
     end
 
     class ProcExtractorTest < Minitest::Test
-      def setup
-        $LOAD_PATH.unshift 'test/fixtures/xruby/lib'
-      end
-
       def test_extract_via_proc
-        require Files::GeneratorCases.filename('alpha')
+        require_relative '../fixtures/xruby/lib/alpha_cases.rb'
         cases = ProcExtractor.new(
           exercise_name: 'alpha',
           exercise_data: simple_canonical_data
         ).extract
         expected = [AlphaCase.new(description: 'add 2 numbers', input: [1, 1], expected: 2, index: 0)]
         assert_equal expected.to_s, cases.to_s
-      end
-
-      def teardown
-        $LOAD_PATH.delete 'test/fixtures/xruby/lib'
       end
 
       def simple_canonical_data
