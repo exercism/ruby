@@ -7,15 +7,6 @@ module Generator
         $LOAD_PATH.unshift 'test/fixtures/xruby/lib'
       end
 
-      def test_simple_auto_extraction
-        require Files::GeneratorCases.filename('gamma')
-        cases = AutoExtractor.new(
-          exercise_name: 'gamma', exercise_data: simple_canonical_data.to_s
-        ).extract
-        expected = [GammaCase.new(description: 'add 2 numbers', input: [1, 1], expected: 2, index: 0)]
-        assert_equal expected.to_s, cases.to_s
-      end
-
       def test_multi_level_auto_extraction
         require Files::GeneratorCases.filename('gamma')
         cases = AutoExtractor.new(
@@ -35,26 +26,6 @@ module Generator
 
       def teardown
         $LOAD_PATH.delete 'test/fixtures/xruby/lib'
-      end
-
-      def simple_canonical_data
-        simple_canonical_data = Minitest::Mock.new
-        simple_canonical_data.expect(
-          :to_s,
-          <<-TEXT
-{
-	"description": "Test canonical data",
-	"cases": [
-	{
-		"description": "add 2 numbers",
-		"input": [1,1],
-		"expected": 2
-	}
-	]
-}
-TEXT
-        )
-        simple_canonical_data
       end
 
       def complex_canonical_data
