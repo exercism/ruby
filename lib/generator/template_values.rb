@@ -16,8 +16,6 @@ module Generator
 
   module TemplateValuesFactory
     def template_values
-      require cases_require_name
-
       TemplateValues.new(
         abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
         version: version,
@@ -35,11 +33,16 @@ module Generator
     end
 
     def extractor
-      Files::GeneratorCases.proc?(exercise_name) ? CaseValues::ProcExtractor : CaseValues::AutoExtractor
+      load cases_load_name
+      if Files::GeneratorCases.proc?(exercise_name)
+        CaseValues::ProcExtractor
+      else
+        CaseValues::AutoExtractor
+      end
     end
 
-    def cases_require_name
-      Files::GeneratorCases.filename(exercise_name)
+    def cases_load_name
+      Files::GeneratorCases.load_filename(paths.track, exercise_name)
     end
   end
 end

@@ -29,6 +29,11 @@ module Generator
       def exercise_name(filename)
         %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_', '-')
       end
+
+      def load_filename(track_path, exercise_name)
+        path = File.join(track_path, 'lib')
+        "%s/%s.rb" % [ path, filename(exercise_name) ]
+      end
     end
 
     module TrackFiles
