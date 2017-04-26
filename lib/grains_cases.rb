@@ -1,53 +1,26 @@
 require 'exercise_cases'
 
-class GrainsCase < OpenStruct
-  def test_name
-    'test_%s' % description.downcase.tr_s(' ', '_')
-  end
+class GrainsCase < ExerciseCase
 
   def workload
-    fail NotImplementedError
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
+    send("#{property}_workload")
   end
 
   private
+
+  def square_workload
+    if raises_error?
+      "assert_raises(ArgumentError) { Grains.square(#{input}) }"
+    else
+      "assert_equal #{underscore_format(expected)}, Grains.square(#{input})"
+    end
+  end
+
+  def total_workload
+    "assert_equal #{underscore_format(expected)}, Grains.total"
+  end
 
   def underscore_format(number)
     number.to_s.reverse.gsub(/...(?=.)/, '\&_').reverse
   end
-end
-
-class GrainsCase::SquareMethod < GrainsCase
-  def workload
-    return error_assertion if expected < 0
-
-    "assert_equal #{underscore_format(expected)}, Grains.square(#{input})"
-  end
-
-  private
-
-  def error_assertion
-    "assert_raises(ArgumentError) { Grains.square(#{input}) }"
-  end
-end
-
-class GrainsCase::TotalMethod < GrainsCase
-  def workload
-    "assert_equal #{underscore_format(expected)}, Grains.total"
-  end
-end
-
-GrainsCases = proc do |data|
-  data = JSON.parse(data)
-
-  cases = data['square']['cases'].map.with_index do |row, i|
-    GrainsCase::SquareMethod.new(row.merge('index' => i))
-  end
-
-  cases << GrainsCase::TotalMethod.new(
-    data['total'].merge('index' => cases.size)
-  )
 end

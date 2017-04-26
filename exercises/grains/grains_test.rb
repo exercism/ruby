@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'grains'
 
-# Test data version: aa12f2e
+# Common test data version: 2e0e77e
 class GrainsTest < Minitest::Test
   def test_1
     # skip
@@ -74,6 +74,7 @@ class GrainsTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 1, BookKeeping::VERSION
