@@ -31,7 +31,7 @@ module Generator
           ComplexCase.new(description: 'first two verses', property: 'verses', beginning: 99, end: 98,
                           expected: "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT", index: 2)
         ]
-        assert_equal expected.to_s, cases.to_s
+        assert_equal expected, cases
       end
     end
 
@@ -43,7 +43,7 @@ module Generator
           exercise_data: File.read('test/fixtures/metadata/exercises/alpha/canonical-data.json')
         ).extract
         expected = [AlphaCase.new(description: 'add 2 numbers', input: [1, 1], expected: 2, index: 0)]
-        assert_equal expected.to_s, cases.to_s
+        assert_equal expected, cases
       end
     end
   end
