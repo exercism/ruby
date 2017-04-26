@@ -16,7 +16,7 @@ module Generator
         @exercise_data = exercise_data
       end
 
-      def extract
+      def extract(_)
         extract_test_cases.map.with_index do |test, index|
           test_case_class.new(test.merge('index' => index))
         end
@@ -34,6 +34,5 @@ module Generator
         Object.const_get(Files::GeneratorCases.class_name(exercise_name))
       end
     end
-
   end
 end

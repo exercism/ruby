@@ -27,11 +27,10 @@ module Generator
 
     def extract
       load cases_load_name
-
-      CaseValues::Extractor.extract(
+      CaseValues::Extractor.new(
         exercise_name: exercise_name,
         exercise_data: canonical_data.to_s
-      )
+      ).extract(canonical_data.to_s)
     end
 
     def cases_load_name
