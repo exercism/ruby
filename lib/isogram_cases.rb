@@ -1,22 +1,14 @@
 require 'exercise_cases'
 
-class IsogramCase < OpenStruct
+class IsogramCase < ExerciseCase
 
-  def name
-    format('test_%s', description.downcase.gsub(/[ -]/, '_'))
+  def workload
+    indent_lines(
+      [
+        "string = #{input.inspect}",
+        "#{assert} Isogram.is_isogram?(string)"
+      ], 4
+    )
   end
 
-  def assertion
-    expected ? 'assert' : 'refute'
-  end
-
-  def skip
-    index.zero? ? '# skip' : 'skip'
-  end
-end
-
-IsogramCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    IsogramCase.new(row.merge('index' => i))
-  end
 end
