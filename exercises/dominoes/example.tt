@@ -6,7 +6,7 @@ require_relative 'dominoes'
 # Common test data version: <%= abbreviated_commit_hash %>
 class DominoesTest < Minitest::Test
 <% test_cases.each do |test_case| %>
-  def <%= test_case.test_name %>
+  def <%= test_case.name %>
     <%= test_case.skipped %>
     <%= test_case.workload %>
   end
