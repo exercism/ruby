@@ -89,25 +89,10 @@ TEXT
         require_relative '../fixtures/xruby/lib/alpha_cases.rb'
         cases = ProcExtractor.new(
           exercise_name: 'alpha',
-          exercise_data: simple_canonical_data
+          exercise_data: File.read('test/fixtures/metadata/exercises/alpha/canonical-data.json')
         ).extract
         expected = [AlphaCase.new(description: 'add 2 numbers', input: [1, 1], expected: 2, index: 0)]
         assert_equal expected.to_s, cases.to_s
-      end
-
-      def simple_canonical_data
-        <<-TEXT
-{
-	"description": "Test canonical data",
-	"cases": [
-	{
-		"description": "add 2 numbers",
-		"input": [1,1],
-		"expected": 2
-	}
-	]
-}
-TEXT
       end
     end
   end
