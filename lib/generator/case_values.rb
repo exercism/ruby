@@ -1,11 +1,7 @@
 module Generator
   module CaseValues
-
     class Extractor
-      attr_reader :exercise_name
-
-      def initialize(exercise_name:, case_class:)
-        @exercise_name = exercise_name
+      def initialize(case_class:)
         @case_class = case_class
       end
 
