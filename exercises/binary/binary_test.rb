@@ -4,8 +4,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'binary'
 
-# Test data version:
-# 82eb00d
+# Common test data version: 969717d
 class BinaryTest < Minitest::Test
   def test_binary_0_is_decimal_0
     # skip
@@ -81,6 +80,7 @@ class BinaryTest < Minitest::Test
     skip
     assert_raises(ArgumentError) { Binary.to_decimal('001 nope') }
   end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -97,6 +97,7 @@ class BinaryTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 3, BookKeeping::VERSION

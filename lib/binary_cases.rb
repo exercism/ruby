@@ -1,39 +1,26 @@
 require 'exercise_cases'
 
-class BinaryCase < OpenStruct
-  def name
-    'test_%s' % description.gsub(/[ -]/, '_')
-  end
+class BinaryCase < ExerciseCase
 
-  def assertion
+  def workload
     raises_error? ? error_assertion : equality_assertion
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
   end
 
   private
 
   def error_assertion
-    "assert_raises(ArgumentError) { #{workload} }"
+    "assert_raises(ArgumentError) { #{test_case} }"
   end
 
   def equality_assertion
-    "assert_equal #{expected}, #{workload}"
+    "assert_equal #{expected}, #{test_case}"
   end
 
-  def workload
+  def test_case
     "Binary.to_decimal('#{binary}')"
   end
 
   def raises_error?
     expected.nil?
-  end
-end
-
-BinaryCases = proc do |data|
-  JSON.parse(data)['decimal'].map.with_index do |row, i|
-    BinaryCase.new(row.merge('index' => i))
   end
 end
