@@ -1,14 +1,15 @@
 require_relative '../test_helper'
 
+class GammaCase < ExerciseCase
+  def workload
+    assert { Gamma.foo(bar) }
+  end
+end
+
 module Generator
   module CaseValues
     class AutoExtractorTest < Minitest::Test
-      def setup
-        $LOAD_PATH.unshift 'test/fixtures/xruby/lib'
-      end
-
       def test_multi_level_auto_extraction
-        require Files::GeneratorCases.filename('gamma')
         cases = AutoExtractor.new(
           exercise_name: 'gamma', exercise_data: complex_canonical_data.to_s
         ).extract
@@ -22,10 +23,6 @@ module Generator
                         expected: "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT", index: 2)
         ]
         assert_equal expected.to_s, cases.to_s
-      end
-
-      def teardown
-        $LOAD_PATH.delete 'test/fixtures/xruby/lib'
       end
 
       def complex_canonical_data
