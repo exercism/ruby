@@ -1,13 +1,6 @@
 require 'exercise_cases'
 
-class TournamentCase < OpenStruct
-  def test_name
-    "test_#{description.tr(' ', '_').tr('()', '')}"
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
-  end
+class TournamentCase < ExerciseCase
 
   def workload
     'Tournament.tally(input)'
@@ -37,11 +30,5 @@ class TournamentCase < OpenStruct
 
   def indent_line(line, indent = 2)
     ' ' * indent * 2 + line
-  end
-end
-
-TournamentCases = proc do |data|
-  JSON.parse(data)['valid_inputs']['cases'].map.with_index do |row, i|
-    TournamentCase.new(row.merge('index' => i))
   end
 end

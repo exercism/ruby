@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'tournament'
 
-# Test data version:
-# 0a51cfc
+# Common test data version: cda8f98
 class TournamentTest < Minitest::Test
 
   def test_typical_input
