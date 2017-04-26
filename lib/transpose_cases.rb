@@ -1,13 +1,6 @@
 require 'exercise_cases'
 
-class TransposeCase < OpenStruct
-  def test_name
-    "test_#{description.tr(' ', '_')}"
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
-  end
+class TransposeCase < ExerciseCase
 
   def workload
     'Transpose.transpose(input)'
@@ -37,11 +30,5 @@ class TransposeCase < OpenStruct
 
   def indent_line(line, indent = 2)
     ' ' * indent * 2 + line
-  end
-end
-
-TransposeCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    TransposeCase.new(row.merge('index' => i))
   end
 end
