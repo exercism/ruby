@@ -3,7 +3,6 @@ require_relative '../test_helper'
 module Generator
   module CaseValues
     class AutoExtractorTest < Minitest::Test
-
       def setup
         $LOAD_PATH.unshift 'test/fixtures/xruby/lib'
       end
@@ -29,8 +28,7 @@ module Generator
           GammaCase.new(description: 'last generic verse', property: 'verse', number: 3,
                         expected: '3 bottles of beer on the wall, YAAAR', index: 1),
           GammaCase.new(description: 'first two verses', property: 'verses', beginning: 99, end: 98,
-                        expected: "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT", index: 2),
-
+                        expected: "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT", index: 2)
         ]
         assert_equal expected.to_s, cases.to_s
       end

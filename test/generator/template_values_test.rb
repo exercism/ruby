@@ -56,5 +56,4 @@ module Generator
       $LOAD_PATH.delete 'test/fixtures/xruby/lib'
     end
   end
-
 end
