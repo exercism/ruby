@@ -14,6 +14,17 @@ class ExerciseCase < OpenStruct
 
   protected
 
+  # used to indent multi line workloads, as
+  #   indent_lines(
+  #     [
+  #       "string = #{input.inspect}",
+  #       "#{assert} Isogram.is_isogram?(string)"
+  #     ], 4
+  #   )
+  def indent_lines(code, depth)
+    code.join("\n" + ' ' * depth)
+  end
+
   # used in workload, for example, as
   #   "#{assert} Luhn.valid?(#{input.inspect})"
   def assert
