@@ -15,8 +15,6 @@ module Generator
   end
 
   module TemplateValuesFactory
-    include CaseValues
-
     def template_values
       require cases_require_name
 
@@ -37,7 +35,7 @@ module Generator
     end
 
     def extractor
-      Files::GeneratorCases.proc?(exercise_name) ? ProcExtractor : AutoExtractor
+      Files::GeneratorCases.proc?(exercise_name) ? CaseValues::ProcExtractor : CaseValues::AutoExtractor
     end
 
     def cases_require_name
