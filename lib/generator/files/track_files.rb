@@ -34,7 +34,7 @@ module Generator
       end
 
       def track_tests_template_filename
-        @track_tests_template_filename ||= File.join(exercise_path, 'example.tt')
+        File.join(exercise_path, 'example.tt')
       end
 
       def minitest_tests_filename
