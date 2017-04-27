@@ -43,8 +43,12 @@ module Generator
         MinitestTestsFile.new(filename: File.join(exercise_path, minitest_tests_filename))
       end
 
-      def tests_template
-        TestsTemplateFile.new(filename: File.join(exercise_path, 'example.tt'))
+      def track_tests_template
+        TestsTemplateFile.new(filename: track_tests_template_filename)
+      end
+
+      def track_tests_template?
+        File.exist?(track_tests_template_filename)
       end
 
       private
@@ -53,8 +57,39 @@ module Generator
         File.join(paths.track, 'exercises', exercise_name)
       end
 
+      def track_tests_template_filename
+        @track_tests_template_filename ||= File.join(exercise_path, 'example.tt')
+      end
+
       def minitest_tests_filename
         "#{exercise_name.gsub(/[ -]/, '_')}_test.rb"
+      end
+    end
+
+    module DefaultFiles
+      def default_tests_template
+        TestsTemplateFile.new(filename: File.join(generator_path, 'test_template.tt'))
+      end
+
+      private
+
+      def generator_path
+        File.join(paths.track, 'lib', 'generator')
+      end
+    end
+
+    module TestsFileFactory
+      def create_tests_file
+        minitest_tests.generate(
+          template: tests_template.to_s,
+          values: template_values
+        )
+      end
+
+      private
+
+      def tests_template
+        track_tests_template? ? track_tests_template : default_tests_template
       end
     end
 
