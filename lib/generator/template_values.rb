@@ -1,17 +1,29 @@
+require 'forwardable'
+
 module Generator
   # Contains methods accessible to the ERB template
   class TemplateValues
-    attr_reader :abbreviated_commit_hash, :version, :exercise_name, :test_cases
+    attr_reader :metadata, :test_cases
+    extend Forwardable
+    def_delegators :@metadata, :abbreviated_commit_hash, :version, :exercise_name, :exercise_name_camel
 
-    def initialize(abbreviated_commit_hash:, version:, exercise_name:, test_cases:)
-      @abbreviated_commit_hash = abbreviated_commit_hash
-      @version = version
-      @exercise_name = exercise_name ? exercise_name.tr('-_', '_') : ''
+    def initialize(metadata:, test_cases:)
+      @metadata = metadata
       @test_cases = test_cases
     end
 
     def get_binding
       binding
+    end
+  end
+
+  class TemplateMetadata
+    attr_reader :abbreviated_commit_hash, :version, :exercise_name
+
+    def initialize(abbreviated_commit_hash:, version:, exercise_name:)
+      @abbreviated_commit_hash = abbreviated_commit_hash
+      @version = version
+      @exercise_name = exercise_name ? exercise_name.tr('-_', '_') : ''
     end
 
     def exercise_name_camel
@@ -22,9 +34,11 @@ module Generator
   module TemplateValuesFactory
     def template_values
       TemplateValues.new(
-        abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
-        version: version,
-        exercise_name: exercise_name,
+        metadata: TemplateMetadata.new(
+          abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
+          version: version,
+          exercise_name: exercise_name
+        ),
         test_cases: extract
       )
     end
