@@ -1,16 +1,21 @@
 module Generator
   # Contains methods accessible to the ERB template
   class TemplateValues
-    attr_reader :abbreviated_commit_hash, :version, :test_cases
+    attr_reader :abbreviated_commit_hash, :version, :exercise_name, :test_cases
 
-    def initialize(abbreviated_commit_hash:, version:, test_cases:)
+    def initialize(abbreviated_commit_hash:, version:, exercise_name:, test_cases:)
       @abbreviated_commit_hash = abbreviated_commit_hash
       @version = version
+      @exercise_name = exercise_name ? exercise_name.tr('-_', '_') : ''
       @test_cases = test_cases
     end
 
     def get_binding
       binding
+    end
+
+    def exercise_name_camel
+      exercise_name.split(/[-_]/).map(&:capitalize).join
     end
   end
 
@@ -19,6 +24,7 @@ module Generator
       TemplateValues.new(
         abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
         version: version,
+        exercise_name: exercise_name,
         test_cases: extract
       )
     end
