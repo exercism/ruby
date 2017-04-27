@@ -1,17 +1,19 @@
 require 'minitest/autorun'
 require_relative 'say'
 
-# Test data version: <%= sha1 %>
-class SayTest < Minitest::Test<% test_cases.each do |test_case| %>
-  def <%= test_case.test_name %>
+# Common test data version: <%= abbreviated_commit_hash %>
+class SayTest < Minitest::Test
+<% test_cases.each do |test_case| %>
+  def <%= test_case.name %>
     <%= test_case.skipped %>
     <%= test_case.workload %>
   end
-<% end %>
 
+<% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
   def test_bookkeeping
     skip
-    assert_equal <%= version.next %>, BookKeeping::VERSION
+    assert_equal <%= version %>, BookKeeping::VERSION
   end
 end

@@ -1,13 +1,6 @@
 require 'exercise_cases'
 
-class BowlingCase < OpenStruct
-  def test_name
-    "test_#{description.downcase.tr(' ', '_')}"
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
-  end
+class BowlingCase < ExerciseCase
 
   def workload
     indent_lines(assert)
@@ -15,34 +8,41 @@ class BowlingCase < OpenStruct
 
   private
 
-  def roll
-    "roll(#{rolls})"
+  def roll_previous
+    "record(#{previous_rolls})"
   end
 
   def assert
     if assert_error?
-      [
-        'assert_raises Game::BowlingError do',
-        "  #{roll}",
-        '  @game.score',
-        'end'
-      ]
+      property == 'score' ? score_raises : roll_raises
     else
-      [roll, "assert_equal #{expected}, @game.score"]
+      [roll_previous, "assert_equal #{expected}, @game.score"]
     end
   end
 
+  def roll_raises
+    [
+      roll_previous,
+      'assert_raises Game::BowlingError do',
+      '  @game.roll(' + roll.to_s + ')',
+      'end'
+    ]
+  end
+
+  def score_raises
+    [
+      roll_previous,
+      'assert_raises Game::BowlingError do',
+      '  @game.score',
+      'end'
+    ]
+  end
+
   def assert_error?
-    expected == -1
+    expected.respond_to?(:key?) && expected.key?('error')
   end
 
   def indent_lines(code)
     code.join("\n" + ' ' * 4)
-  end
-end
-
-BowlingCases = proc do |data|
-  JSON.parse(data)['score']['cases'].map.with_index do |row, i|
-    BowlingCase.new(row.merge('index' => i))
   end
 end

@@ -3,11 +3,10 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'nth_prime'
 
-# Test data version:
-# bb79e10
-#
+# Common test data version: 016d65b
 class NthPrimeTest < Minitest::Test
   def test_first_prime
+    # skip
     assert_equal 2, Prime.nth(1)
   end
 

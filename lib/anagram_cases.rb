@@ -1,16 +1,9 @@
 require 'exercise_cases'
 
-class AnagramCase < OpenStruct
-  def test_name
-    'test_%s' % description.gsub(/[ -]/, '_')
-  end
+class AnagramCase < ExerciseCase
 
   def workload
-    indent_lines([show_comment, detector, anagram, assert].compact)
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
+    indent_lines([show_comment, detector, anagram, wanted, assert].compact)
   end
 
   private
@@ -31,14 +24,13 @@ class AnagramCase < OpenStruct
     "anagrams = detector.match(#{candidates})"
   end
 
+  def wanted
+    "expected = #{expected.sort}"
+  end
+
   def assert
     actual = expected.size > 1 ? 'anagrams.sort' : 'anagrams'
-    "assert_equal #{expected.sort}, #{actual}"
+    "assert_equal expected, #{actual}"
   end
-end
 
-AnagramCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    AnagramCase.new(row.merge('index' => i))
-  end
 end

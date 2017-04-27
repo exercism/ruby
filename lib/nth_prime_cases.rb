@@ -1,11 +1,18 @@
 require 'exercise_cases'
 
-class NthPrimeCase < OpenStruct
-  def name
-    'test_%s' % description.downcase.gsub(/[ -]/, '_')
+class NthPrimeCase < ExerciseCase
+
+  def workload
+    if raises_error?
+      assert_raises(ArgumentError) { test_case }
+    else
+      assert_equal { test_case }
+    end
   end
 
-  def actual
+  private
+
+  def test_case
     "Prime.nth(#{input})"
   end
 
@@ -13,13 +20,4 @@ class NthPrimeCase < OpenStruct
     expected == false
   end
 
-  def skipped?
-    index > 0
-  end
-end
-
-NthPrimeCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    NthPrimeCase.new(row.merge('index' => i))
-  end
 end

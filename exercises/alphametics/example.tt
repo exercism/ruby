@@ -8,13 +8,14 @@ class AlphameticsTest < Minitest::Test
 <% test_cases.each do |test_case| %>
 
 <%= test_case.runtime_comment %>
-  def <%= test_case.test_name %>
+  def <%= test_case.name %>
     <%= test_case.skipped %>
     <%= test_case.workload %>
   end
 <% end %>
 
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
   def test_bookkeeping
     skip
     assert_equal <%= version %>, BookKeeping::VERSION

@@ -157,39 +157,6 @@ and any setup required. The base class provides a variety of assertion and
 helper methods. Beyond that, you can implement any helper methods that you need
 as private methods in your derived class. See below for more information about [the intention of workload](#workload-philosophy)
 
-Below this class, implement a small loop that will generate all the test cases by reading the
-`canonical-data.json` file, and looping through the test cases.
-
-You will need to adjust the logic to match the structure of the canonical data.
-
-For example, if there is a single top-level key named "cases", then you can loop through
-them as follows:
-
-```
-ProblemNameCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    ProblemNameCase.new(row.merge('index' => i))
-  end
-end
-```
-
-If there are multiple sections, then you will need to loop through the sections, and then
-loop through each of the cases in an inner loop:
-
-```
-ProblemNameCases = proc do |data|
-  json = JSON.parse(data)
-  cases = []
-  %w(section1 section2 etc).each do |section|
-    json[section]['cases'].each do |row|
-      row = row.merge(row.merge('index' => cases.size, 'section' => section))
-      cases << ProblemNameCase.new(row)
-    end
-  end
-  cases
-end
-```
-
 Finally, you need to create a text template, `example.tt`, as the bases for the test suite.
 
 Start with the following boilerplate, and adjust as necessary. Remember, however, to strive

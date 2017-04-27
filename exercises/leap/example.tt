@@ -13,14 +13,16 @@ class Date
   alias julian_leap? leap?
 end
 
-class YearTest < Minitest::Test<% test_cases.each do |test_case| %>
+class YearTest < Minitest::Test
+<% test_cases.each do |test_case| %>
   def <%= test_case.name %>
-    <%= test_case.skip %><% if test_case.expected%>
-    assert <%= test_case.do %>, "<%= test_case.failure_message%>"<% else %>
-    refute <%= test_case.do %>, "<%= test_case.failure_message%>"<% end%>
+    <%= test_case.skipped %>
+    <%= test_case.workload %>, "<%= test_case.failure_message %>"
   end
+
 <% end %>
 <%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
   def test_bookkeeping
     skip
     assert_equal <%= version %>, BookKeeping::VERSION

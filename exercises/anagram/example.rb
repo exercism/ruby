@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION=2
+  VERSION = 2
 end
 
 class Anagram

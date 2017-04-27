@@ -3,82 +3,81 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'queen_attack'
 
-# Test data version:
-# 82eb00d
-class QueenTest < Minitest::Test
+# Common test data version: 8adde5f
+class QueenAttackTest < Minitest::Test
 
   def test_queen_with_a_valid_position
     # skip
-    Queens.new white: [2, 2]
+    assert Queens.new(white: [2, 2])
   end
 
   def test_queen_must_have_positive_rank
     skip
     assert_raises ArgumentError do
-      Queens.new white: [-2, 2]
+      Queens.new(white: [-2, 2])
     end
   end
 
   def test_queen_must_have_rank_on_board
     skip
     assert_raises ArgumentError do
-      Queens.new white: [8, 4]
+      Queens.new(white: [8, 4])
     end
   end
 
   def test_queen_must_have_positive_file
     skip
     assert_raises ArgumentError do
-      Queens.new white: [2, -2]
+      Queens.new(white: [2, -2])
     end
   end
 
   def test_queen_must_have_file_on_board
     skip
     assert_raises ArgumentError do
-      Queens.new white: [4, 8]
+      Queens.new(white: [4, 8])
     end
   end
 
   def test_can_not_attack
     skip
-    queens = Queens.new white: [2, 4], black: [6, 6]
+    queens = Queens.new(white: [2, 4], black: [6, 6])
     refute queens.attack?
   end
 
   def test_can_attack_on_same_rank
     skip
-    queens = Queens.new white: [2, 4], black: [2, 6]
+    queens = Queens.new(white: [2, 4], black: [2, 6])
     assert queens.attack?
   end
 
   def test_can_attack_on_same_file
     skip
-    queens = Queens.new white: [4, 5], black: [2, 5]
+    queens = Queens.new(white: [4, 5], black: [2, 5])
     assert queens.attack?
   end
 
   def test_can_attack_on_first_diagonal
     skip
-    queens = Queens.new white: [2, 2], black: [0, 4]
+    queens = Queens.new(white: [2, 2], black: [0, 4])
     assert queens.attack?
   end
 
   def test_can_attack_on_second_diagonal
     skip
-    queens = Queens.new white: [2, 2], black: [3, 1]
+    queens = Queens.new(white: [2, 2], black: [3, 1])
     assert queens.attack?
   end
 
   def test_can_attack_on_third_diagonal
     skip
-    queens = Queens.new white: [2, 2], black: [1, 1]
+    queens = Queens.new(white: [2, 2], black: [1, 1])
     assert queens.attack?
   end
 
   def test_can_attack_on_fourth_diagonal
     skip
-    queens = Queens.new white: [2, 2], black: [5, 5]
+    queens = Queens.new(white: [2, 2], black: [5, 5])
     assert queens.attack?
   end
 

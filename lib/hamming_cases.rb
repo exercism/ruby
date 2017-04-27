@@ -13,9 +13,3 @@ class HammingCase < ExerciseCase
     "Hamming.compute('#{strand1}', '#{strand2}')"
   end
 end
-
-HammingCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    HammingCase.new(row.merge('index' => i))
-  end
-end

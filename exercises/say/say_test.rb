@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'say'
 
-# Test data version: e3bd4a2
+# Common test data version: be403e1
 class SayTest < Minitest::Test
   def test_zero
     # skip
@@ -89,7 +89,7 @@ class SayTest < Minitest::Test
     end
   end
 
-  def test_numbers_above_999_999_999_999_are_out_of_range
+  def test_numbers_above_999999999999_are_out_of_range
     skip
     question = 1_000_000_000_000
     assert_raises ArgumentError do
@@ -113,6 +113,7 @@ class SayTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 1, BookKeeping::VERSION

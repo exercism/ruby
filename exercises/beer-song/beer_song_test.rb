@@ -383,6 +383,7 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
 TEXT
     assert_equal expected, BeerSong.new.verses(99, 0)
   end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,

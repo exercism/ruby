@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'custom_set'
 
-# Test data version:
-# cdfb4a2
+# Common test data version: 4527635
 class CustomSetTest < Minitest::Test
   def test_sets_with_no_elements_are_empty
     # skip

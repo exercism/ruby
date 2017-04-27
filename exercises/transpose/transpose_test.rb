@@ -3,8 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'transpose'
 
-# Test data version:
-# 0a51cfc
+# Common test data version: 6dba022
 class TransposeTest < Minitest::Test
   def test_empty_string
     # skip

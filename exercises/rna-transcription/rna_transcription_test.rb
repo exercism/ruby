@@ -3,9 +3,7 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'rna_transcription'
 
-# Test data version:
-# deb225e Implement canonical dataset for scrabble-score problem (#255)
-
+# Common test data version: 0b20fff
 class ComplementTest < Minitest::Test
   def test_rna_complement_of_cytosine_is_guanine
     # skip
@@ -53,8 +51,9 @@ class ComplementTest < Minitest::Test
   # not your solution.
   #
   # Define a constant named VERSION inside of the top level BookKeeping
-  # module.
-  #  In your file, it will look like this:
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
   #
   # module BookKeeping
   #   VERSION = 1 # Where the version number matches the one in the test.
