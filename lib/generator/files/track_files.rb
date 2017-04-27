@@ -2,32 +2,6 @@ require 'erb'
 
 module Generator
   module Files
-    module GeneratorCases
-      module_function
-
-      def available(track_path)
-        generator_glob = File.join(track_path, 'lib', '*_cases.rb')
-        Dir[generator_glob].sort.map { |filename| exercise_name(filename) }
-      end
-
-      def filename(exercise_name)
-        "#{exercise_name.tr('-', '_')}_cases"
-      end
-
-      def class_name(exercise_name)
-        filename(exercise_name)[0..-2].split('_').map(&:capitalize).join
-      end
-
-      def exercise_name(filename)
-        %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_', '-')
-      end
-
-      def load_filename(track_path, exercise_name)
-        path = File.join(track_path, 'lib')
-        "%s/%s.rb" % [ path, filename(exercise_name) ]
-      end
-    end
-
     module TrackFiles
       include Exercise
 
@@ -43,12 +17,8 @@ module Generator
         MinitestTestsFile.new(filename: File.join(exercise_path, minitest_tests_filename))
       end
 
-      def track_tests_template
-        TestsTemplateFile.new(filename: track_tests_template_filename)
-      end
-
-      def track_tests_template?
-        File.exist?(track_tests_template_filename)
+      def tests_template
+        TestsTemplateFile.new(filename: tests_template_filename)
       end
 
       private
@@ -57,39 +27,18 @@ module Generator
         File.join(paths.track, 'exercises', exercise_name)
       end
 
+      # this method contains a LOT of magic text
+      def tests_template_filename
+        File.exist?(track_tests_template_filename) ? track_tests_template_filename :
+          File.join(paths.track, 'lib', 'generator', 'test_template.erb')
+      end
+
       def track_tests_template_filename
         @track_tests_template_filename ||= File.join(exercise_path, 'example.tt')
       end
 
       def minitest_tests_filename
         "#{exercise_name.gsub(/[ -]/, '_')}_test.rb"
-      end
-    end
-
-    module DefaultFiles
-      def default_tests_template
-        TestsTemplateFile.new(filename: File.join(generator_path, 'test_template.tt'))
-      end
-
-      private
-
-      def generator_path
-        File.join(paths.track, 'lib', 'generator')
-      end
-    end
-
-    module TestsFileFactory
-      def create_tests_file
-        minitest_tests.generate(
-          template: tests_template.to_s,
-          values: template_values
-        )
-      end
-
-      private
-
-      def tests_template
-        track_tests_template? ? track_tests_template : default_tests_template
       end
     end
 

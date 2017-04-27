@@ -3,8 +3,6 @@ require 'delegate'
 module Generator
   class Repository
     include Files::TrackFiles
-    include Files::DefaultFiles
-    include Files::TestsFileFactory
     include Files::MetadataFiles
     include TemplateValuesFactory
 
@@ -27,6 +25,12 @@ module Generator
       example_solution.update_version(version)
     end
 
+    def create_tests_file
+      minitest_tests.generate(
+        template: tests_template.to_s,
+        values: template_values
+      )
+    end
   end
 
   # This exists to give us a clue as to what we are delegating to.
