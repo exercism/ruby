@@ -60,9 +60,9 @@ module Generator
         assert_instance_of MinitestTestsFile, subject.minitest_tests
       end
 
-      def test_tests_template
+      def test_track_tests_template
         subject = TestTrackFiles.new
-        assert_instance_of TestsTemplateFile, subject.tests_template
+        assert_instance_of TestsTemplateFile, subject.track_tests_template
       end
     end
 
@@ -81,9 +81,9 @@ module Generator
         include DefaultFiles
       end
 
-      def test_tests_template
+      def test_default_tests_template
         subject = TestDefaultFiles.new
-        assert_instance_of TestsTemplateFile, subject.tests_template
+        assert_instance_of TestsTemplateFile, subject.default_tests_template
       end
     end
 
