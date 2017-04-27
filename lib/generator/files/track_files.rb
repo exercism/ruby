@@ -58,6 +58,18 @@ module Generator
       end
     end
 
+    module DefaultFiles
+      def tests_template
+        TestsTemplateFile.new(filename: File.join(generator_path, 'test_template.tt'))
+      end
+
+      private
+
+      def generator_path
+        File.join(paths.track, 'lib', 'generator')
+      end
+    end
+
     class TestsVersionFile < Writable
       def to_i
         to_s.to_i

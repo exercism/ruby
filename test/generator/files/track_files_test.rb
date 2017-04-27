@@ -66,6 +66,27 @@ module Generator
       end
     end
 
+    class DefaultFilesTest < Minitest::Test
+      FixturePaths = Paths.new(
+        metadata: 'test/fixtures/metadata',
+        track: 'test/fixtures/xruby'
+      )
+
+      class TestDefaultFiles
+        def initialize
+          @paths = FixturePaths
+          @exercise_name = 'alpha'
+        end
+        attr_reader :paths, :exercise_name
+        include DefaultFiles
+      end
+
+      def test_tests_template
+        subject = TestDefaultFiles.new
+        assert_instance_of TestsTemplateFile, subject.tests_template
+      end
+    end
+
     class TestsVersionFileTest < Minitest::Test
       class TestTestsVersionFile < TestsVersionFile
         def save(content)
