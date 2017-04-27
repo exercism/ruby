@@ -1,0 +1,45 @@
+{
+  "exercise": "beer-song",
+  "version": "1.0.0",
+  "cases": [
+    {
+      "description": "verse",
+      "cases": [
+        {
+          "description": "single verse",
+          "cases": [
+            {
+              "description": "first generic verse",
+              "property": "verse",
+              "number": 99,
+              "expected": "99 bottles of beer on the wall, YAAAR"
+            },
+            {
+              "description": "last generic verse",
+              "property": "verse",
+              "number": 3,
+              "expected": "3 bottles of beer on the wall, YAAAR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "lyrics",
+      "cases": [
+        {
+          "description": "multiple verses",
+          "cases": [
+            {
+              "description": "first two verses",
+              "property": "verses",
+              "beginning": 99,
+              "end": 98,
+              "expected": "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

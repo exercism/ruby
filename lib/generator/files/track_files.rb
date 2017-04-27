@@ -14,12 +14,17 @@ module Generator
         "#{exercise_name.tr('-', '_')}_cases"
       end
 
-      def proc_name(exercise_name)
-        filename(exercise_name).split('_').map(&:capitalize).join
+      def class_name(exercise_name)
+        filename(exercise_name)[0..-2].split('_').map(&:capitalize).join
       end
 
       def exercise_name(filename)
         %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_', '-')
+      end
+
+      def load_filename(track_path, exercise_name)
+        path = File.join(track_path, 'lib')
+        "%s/%s.rb" % [ path, filename(exercise_name) ]
       end
     end
 

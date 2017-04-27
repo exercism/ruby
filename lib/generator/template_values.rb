@@ -16,23 +16,28 @@ module Generator
 
   module TemplateValuesFactory
     def template_values
-      require cases_require_name
-
       TemplateValues.new(
         abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
         version: version,
-        test_cases: test_cases_proc.call(canonical_data.to_s)
+        test_cases: extract
       )
     end
 
     private
 
-    def cases_require_name
-      Files::GeneratorCases.filename(exercise_name)
+    def extract
+      load cases_load_name
+      extractor.cases(canonical_data.to_s)
     end
 
-    def test_cases_proc
-      Object.const_get(Files::GeneratorCases.proc_name(exercise_name))
+    def extractor
+        CaseValues::Extractor.new(
+          case_class: Object.const_get(Files::GeneratorCases.class_name(exercise_name))
+        )
+    end
+
+    def cases_load_name
+      Files::GeneratorCases.load_filename(paths.track, exercise_name)
     end
   end
 end
