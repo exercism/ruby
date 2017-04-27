@@ -1,3 +1,5 @@
+require 'generator/exercise_cases'
+
 class OcrNumbersCase < ExerciseCase
   def workload
     if raises_error?

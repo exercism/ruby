@@ -1,3 +1,4 @@
+require 'generator/exercise_cases'
 require 'time'
 
 class GigasecondCase < ExerciseCase

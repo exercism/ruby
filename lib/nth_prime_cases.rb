@@ -1,4 +1,4 @@
-require 'exercise_cases'
+require 'generator/exercise_cases'
 
 class NthPrimeCase < ExerciseCase
 
