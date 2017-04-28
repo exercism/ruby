@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative 'largest_series_product'
 
 # Common test data version: e79b832
-class Seriestest < Minitest::Test
+class LargestSeriesProductTest < Minitest::Test
   def test_finds_the_largest_product_if_span_equals_length
     # skip
     assert_equal 18, Series.new('29').largest_product(2)
@@ -98,6 +98,7 @@ class Seriestest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
+    skip
     assert_equal 3, BookKeeping::VERSION
   end
 end
