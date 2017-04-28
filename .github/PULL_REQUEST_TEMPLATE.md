@@ -26,7 +26,7 @@
 
 ## References and Closures
 <!--- not previously mentioned -->
-<!--- refernces #000 -->
+<!--- references #000 -->
 <!--- closes #000 -->
 
 ## Checklist:
