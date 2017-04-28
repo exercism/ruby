@@ -64,7 +64,7 @@ Note that flags which have an attached value, like above, must take the form
 
 ### Generated Test Suites
 
-If you find an `example.tt` file in a problem directory, then the test suite is
+If you find a `<problem_name>_cases.rb` file in `lib/`, then the test suite is
 generated from shared data, which can be found in the exercise definition in the [x-common][]
 repository.
 
@@ -94,7 +94,8 @@ bin/generate $PROBLEM
 
 #### Changing a Generated Exercise
 
-The `$PROBLEM/$PROBLEM_test.rb` will never be edited directly.
+Do not edit `$PROBLEM/$PROBLEM_test.rb`. Any changes you make will be overwritten when
+the file is generated the next time.
 
 There are two reasons why a test suite might change:
 
@@ -114,23 +115,14 @@ the exercise, which lives in the x-common repository.
 This change will need to be submitted as a pull request to the x-common repository. This pull
 request needs to be merged before you can regenerate the exercise.
 
-Changes that don't have to do directly with the test inputs and outputs, will
-most likely be made to `lib/$PROBLEM_cases.rb` but may also be made to
-`exercises/$PROBLEM/example.tt`. Then you can regenerate the exercise with
+Changes that don't have to do directly with the test inputs and outputs should
+be made to `lib/$PROBLEM_cases.rb`. Then you can regenerate the exercise with
 `bin/generate $PROBLEM`.
 
 #### Implementing a Generator
 
-You will need to implement two files and a directory to create a generator:
-
-1. `lib/$PROBLEM_cases.rb` - the logic for turning the data into tests.
-1. `exercises/$PROBLEM/example.tt` - the Erb template for the test file, `$PROBLEM_test.rb`.
-1. `exercises/$PROBLEM/.meta/` - metadata directory, currently contains version file
-
-You will not need to touch the top-level script, `bin/generate`.
-
-The `bin/generate` command relies on some common logic implemented in `lib/generator.rb`.
-You probably won't need to touch that, either.
+You will need to write code to produce the code that goes inside the test methods. Your
+code will live in `lib/$PROBLEM_cases.rb`.
 
 `lib/$PROBLEM_cases.rb` contains a derived class of `ExerciseCase` (in `lib/generator/exercise_cases.rb`)
 which wraps the JSON for a single test case. The default version looks something like this:
@@ -149,7 +141,7 @@ end
 Instead of `ProblemName` use the CamelCased name of the actual problem. This is important, since
 the generator script will infer the name of the class from the argument that is passed.
 
-This class must provide the methods used by `example.tt`. The base class provides methods
+This class must provide the methods used by `lib/generator/test_template.erb`. The base class provides methods
 for the default template for everything except `workload`.
 
 `workload` generates the code for the body of a test, including the assertion
@@ -157,34 +149,16 @@ and any setup required. The base class provides a variety of assertion and
 helper methods. Beyond that, you can implement any helper methods that you need
 as private methods in your derived class. See below for more information about [the intention of workload](#workload-philosophy)
 
-Finally, you need to create a text template, `example.tt`, as the bases for the test suite.
+If you really must add additional logic to the view template, you can use a custom
+template. Copy `lib/generator/test_template.erb` to your exercise directory, name it
+`exercise.tt`, and customize.
 
-Start with the following boilerplate, and adjust as necessary. Remember, however, to strive
-to keep logic out of views.
+You will not need to touch the top-level script, `bin/generate`.
 
-```
-#!/usr/bin/env ruby
-gem 'minitest', '>= 5.0.0'
-require 'minitest/autorun'
-require_relative '$PROBLEM'
+The `bin/generate` command relies on some common logic implemented in `lib/generator.rb`.
+You won't need to touch that, either.
 
-# Common test data version: <%= abbreviated_commit_hash %>
-class ProblemNameTest < Minitest::Test
-<% test_cases.each do |test_case| %>
-  def <%= test_case.name %>
-    <%= test_case.skipped %>
-    <%= test_case.workload %>
-  end
 
-<% end %>
-<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
-
-  def test_bookkeeping
-    skip
-    assert_equal <%= version %>, BookKeeping::VERSION
-  end
-end
-```
 ### Workload philosophy.
 
 Prioritize educational value over expert comprehension and make sure that
