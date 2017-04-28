@@ -5,7 +5,6 @@ require_relative 'queen_attack'
 
 # Common test data version: 8adde5f
 class QueenAttackTest < Minitest::Test
-
   def test_queen_with_a_valid_position
     # skip
     assert Queens.new(white: [2, 2])
@@ -97,6 +96,7 @@ class QueenAttackTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 2, BookKeeping::VERSION
