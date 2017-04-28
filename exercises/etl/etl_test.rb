@@ -1,7 +1,9 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'etl'
 
-# Test data version: ca9ed58
+# Common test data version: ca9ed58
 class EtlTest < Minitest::Test
   def test_a_single_letter
     # skip
