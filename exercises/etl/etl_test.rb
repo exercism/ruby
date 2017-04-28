@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'etl'
 
-# Test data version: 040a24f
+# Test data version: ca9ed58
 class EtlTest < Minitest::Test
   def test_a_single_letter
     # skip
@@ -39,8 +39,8 @@ class EtlTest < Minitest::Test
     }
     expected = {
        'a' => '1',
-       'e' => '1',
        'd' => '2',
+       'e' => '1',
        'g' => '2',
     }
 
@@ -106,6 +106,7 @@ class EtlTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 1, BookKeeping::VERSION

@@ -1,20 +1,12 @@
-require 'exercise_cases'
+require 'generator/exercise_cases'
 
-class EtlCase < OpenStruct
-  def test_name
-    'test_%s' % description.tr(' ,-', '_').downcase
-  end
-
+class EtlCase < ExerciseCase
   def workload
     [
       "old = #{format_hash(integerize_keys(input))}",
       "    expected = #{format_hash(expected)}\n",
       indent(4, assertion),
     ].join("\n")
-  end
-
-  def skipped
-    index.zero? ? '# skip' : 'skip'
   end
 
   private
@@ -39,10 +31,4 @@ class EtlCase < OpenStruct
     "{\n #{middle}   }"
   end
 
-end
-
-EtlCases = proc do |data|
-  JSON.parse(data)['transform']['cases'].map.with_index do |row, i|
-    EtlCase.new(row.merge(index: i))
-  end
 end
