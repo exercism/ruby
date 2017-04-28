@@ -21,8 +21,8 @@ class ExerciseCase < OpenStruct
   #       "#{assert} Isogram.is_isogram?(string)"
   #     ], 4
   #   )
-  def indent_lines(code, depth)
-    code.join("\n" + ' ' * depth)
+  def indent_lines(code, depth, separator = "\n")
+    code.join(separator + ' ' * depth)
   end
 
   # used in workload, for example, as
