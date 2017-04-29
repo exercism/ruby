@@ -34,8 +34,10 @@ module Generator
       end
 
       def test_version_not_present
-        subject = CanonicalDataFile.new(filename: 'test/fixtures/metadata/exercises/alpha/canonical-data.json')
-        assert_nil subject.version
+        subject = CanonicalDataFile.new(filename: 'no version key')
+        Files.stub(:read, '{ "json": true }' ) do
+          assert_nil subject.version
+        end
       end
     end
   end
