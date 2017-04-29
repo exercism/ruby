@@ -31,14 +31,17 @@ module Generator
         File.join(exercise_path, '.meta')
       end
 
-      # this method contains a LOT of magic text
       def tests_template_filename
         File.exist?(track_tests_template_filename) ? track_tests_template_filename :
-          File.join(paths.track, 'lib', 'generator', 'test_template.erb')
+          default_tests_template_filename
       end
 
       def track_tests_template_filename
         File.join(exercise_path, 'example.tt')
+      end
+
+      def default_tests_template_filename
+        File.join(paths.track, 'lib', 'generator', 'test_template.erb')
       end
 
       def minitest_tests_filename
