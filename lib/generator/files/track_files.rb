@@ -6,7 +6,7 @@ module Generator
       include Exercise
 
       def tests_version
-        TestsVersionFile.new(filename: File.join(exercise_path, '.meta', '.version'))
+        TestsVersionFile.new(filename: File.join(meta_path, '.version'))
       end
 
       def example_solution
@@ -18,7 +18,7 @@ module Generator
       end
 
       def tests_template
-        TestsTemplateFile.new(filename: tests_template_filename)
+        TestsTemplateFile.new(filename: tests_template_absolute_filename)
       end
 
       private
@@ -27,14 +27,32 @@ module Generator
         File.join(paths.track, 'exercises', exercise_name)
       end
 
-      # this method contains a LOT of magic text
-      def tests_template_filename
-        File.exist?(track_tests_template_filename) ? track_tests_template_filename :
-          File.join(paths.track, 'lib', 'generator', 'test_template.erb')
+      def meta_path
+        File.join(exercise_path, '.meta')
+      end
+
+      def tests_template_absolute_filename
+        case
+        when File.exist?(track_tests_template_filename) then track_tests_template_filename
+        when File.exist?(legacy_tests_template_filename) then legacy_tests_template_filename
+        else default_tests_template_filename
+        end
       end
 
       def track_tests_template_filename
+        File.join(meta_path, 'generator', tests_template_filename)
+      end
+
+      def default_tests_template_filename
+        File.join(paths.track, 'lib', 'generator', tests_template_filename)
+      end
+
+      def legacy_tests_template_filename
         File.join(exercise_path, 'example.tt')
+      end
+
+      def tests_template_filename
+        'test_template.erb'
       end
 
       def minitest_tests_filename
