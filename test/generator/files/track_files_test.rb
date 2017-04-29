@@ -36,7 +36,7 @@ module Generator
         subject = TestTrackFiles.new
         assert_instance_of TestsTemplateFile, subject.tests_template
         assert_equal(subject.send(:track_tests_template_filename),
-                     subject.send(:tests_template_filename))
+                     subject.send(:tests_template_absolute_filename))
       end
 
       class TestTrackFilesUseDefault
@@ -52,7 +52,23 @@ module Generator
         subject = TestTrackFilesUseDefault.new
         assert_instance_of TestsTemplateFile, subject.tests_template
         assert_equal(subject.send(:default_tests_template_filename),
-                     subject.send(:tests_template_filename))
+                     subject.send(:tests_template_absolute_filename))
+      end
+
+      class TestTrackFilesUseLegacy
+        def initialize
+          @paths = FixturePaths
+          @exercise_name = 'beta'
+        end
+        attr_reader :paths, :exercise_name
+        include TrackFiles
+      end
+
+      def test_default_tests_template
+        subject = TestTrackFilesUseLegacy.new
+        assert_instance_of TestsTemplateFile, subject.tests_template
+        assert_equal(subject.send(:legacy_tests_template_filename),
+                     subject.send(:tests_template_absolute_filename))
       end
     end
 
