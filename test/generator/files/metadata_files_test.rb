@@ -27,6 +27,11 @@ module Generator
         subject = CanonicalDataFile.new(filename: 'nonexistant')
         assert_nil subject.version
       end
+
+      def test_version
+        subject = CanonicalDataFile.new(filename: 'test/fixtures/metadata/exercises/complex/canonical-data.json')
+        assert_equal "1.0.0", subject.version
+      end
     end
   end
 end
