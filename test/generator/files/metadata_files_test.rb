@@ -21,5 +21,12 @@ module Generator
         assert_instance_of CanonicalDataFile, subject.canonical_data
       end
     end
+
+    class CanonicalDataFileTest < Minitest::Test
+      def test_version_for_file_that_does_not_exist
+        subject = CanonicalDataFile.new(filename: 'nonexistant')
+        assert_nil subject.version
+      end
+    end
   end
 end

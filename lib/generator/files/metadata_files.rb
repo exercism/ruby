@@ -17,6 +17,8 @@ module Generator
     end
 
     class CanonicalDataFile < Readable
+      def version
+      end
     end
   end
 end
