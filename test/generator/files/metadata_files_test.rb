@@ -29,8 +29,10 @@ module Generator
       end
 
       def test_version
-        subject = CanonicalDataFile.new(filename: 'test/fixtures/metadata/exercises/complex/canonical-data.json')
-        assert_equal "1.0.0", subject.version
+        subject = CanonicalDataFile.new(filename: 'has version key')
+        Files.stub(:read, '{"version": "1.2.3"}' ) do
+          assert_equal "1.2.3", subject.version
+        end
       end
 
       def test_version_not_present
