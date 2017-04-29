@@ -40,7 +40,7 @@ module Generator
       end
 
       def track_tests_template_filename
-        File.join(meta_path, tests_template_filename)
+        File.join(meta_path, 'generator', tests_template_filename)
       end
 
       def default_tests_template_filename

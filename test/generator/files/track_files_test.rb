@@ -34,9 +34,8 @@ module Generator
 
       def test_tests_template
         subject = TestTrackFiles.new
-        assert_instance_of TestsTemplateFile, subject.tests_template
-        assert_equal(subject.send(:track_tests_template_filename),
-                     subject.send(:tests_template_absolute_filename))
+        expected_filename = FixturePaths.track + '/exercises/alpha/.meta/generator/test_template.erb'
+        assert_equal expected_filename, subject.tests_template.filename
       end
 
       class TestTrackFilesUseDefault
@@ -50,9 +49,8 @@ module Generator
 
       def test_default_tests_template
         subject = TestTrackFilesUseDefault.new
-        assert_instance_of TestsTemplateFile, subject.tests_template
-        assert_equal(subject.send(:default_tests_template_filename),
-                     subject.send(:tests_template_absolute_filename))
+        expected_filename = FixturePaths.track + '/lib/generator/test_template.erb'
+        assert_equal expected_filename, subject.tests_template.filename
       end
 
       class TestTrackFilesUseLegacy
@@ -64,11 +62,10 @@ module Generator
         include TrackFiles
       end
 
-      def test_default_tests_template
+      def test_legacy_tests_template
         subject = TestTrackFilesUseLegacy.new
-        assert_instance_of TestsTemplateFile, subject.tests_template
-        assert_equal(subject.send(:legacy_tests_template_filename),
-                     subject.send(:tests_template_absolute_filename))
+        expected_filename = FixturePaths.track + '/exercises/beta/example.tt'
+        assert_equal expected_filename, subject.tests_template.filename
       end
     end
 
