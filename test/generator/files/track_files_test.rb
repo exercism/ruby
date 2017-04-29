@@ -64,7 +64,7 @@ module Generator
         include TrackFiles
       end
 
-      def test_default_tests_template
+      def test_legacy_tests_template
         subject = TestTrackFilesUseLegacy.new
         assert_instance_of TestsTemplateFile, subject.tests_template
         assert_equal(subject.send(:legacy_tests_template_filename),
