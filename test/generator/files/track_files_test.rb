@@ -34,7 +34,7 @@ module Generator
 
       def test_tests_template
         subject = TestTrackFiles.new
-        expected_filename = FixturePaths.track + '/exercises/alpha/.meta/test_template.erb'
+        expected_filename = FixturePaths.track + '/exercises/alpha/.meta/generator/test_template.erb'
         assert_equal expected_filename, subject.tests_template.filename
       end
 
