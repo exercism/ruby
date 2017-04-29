@@ -7,17 +7,9 @@ module Generator
         track: 'test/fixtures/xruby'
       )
 
-      class TestMetadataFiles
-        def initialize
-          @paths = FixturePaths
-          @exercise_name = 'alpha'
-        end
-        attr_reader :paths, :exercise_name
-        include MetadataFiles
-      end
-
       def test_canonical_data
-        subject = TestMetadataFiles.new
+        subject = OpenStruct.new(paths: FixturePaths, exercise_name: 'unimportant')
+        subject.extend(MetadataFiles)
         assert_instance_of CanonicalDataFile, subject.canonical_data
       end
     end
