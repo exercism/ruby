@@ -2,6 +2,24 @@ require_relative '../test_helper'
 
 module Generator
   module Files
+
+    class ReadTest < Minitest::Test
+      def test_read_existing_file
+        expected = 'content unimportant'
+        File.stub(:exist?, true) do
+          File.stub(:read, expected ) do
+            assert_equal expected, Files.read('pretend/this/exists')
+          end
+        end
+      end
+
+      def test_read_non_existing_file
+        File.stub(:exist?, false) do
+          assert_nil Files.read('pretend/this/does/not/exist')
+        end
+      end
+    end
+
     class ReadableTest < Minitest::Test
       def test_abbreviated_commit_hash
         mock_git_command = Minitest::Mock.new.expect :call, nil, ['path/.git', 'subdir/file']

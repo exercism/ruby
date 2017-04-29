@@ -2,6 +2,10 @@ require 'pathname'
 
 module Generator
   module Files
+    def self.read(filename)
+      File.read(filename) if File.exist?(filename)
+    end
+
     class Readable
       attr_reader :filename, :repository_root
       def initialize(filename:, repository_root: nil)
@@ -10,7 +14,7 @@ module Generator
       end
 
       def to_s
-        File.read(filename) if File.exist?(filename)
+        Files.read(filename)
       end
 
       def abbreviated_commit_hash
