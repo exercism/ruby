@@ -20,9 +20,23 @@ module Generator
         %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_', '-')
       end
 
+      # temporary, when we've moved everything, move contents of cases_filename
+      # to this method
       def load_filename(track_path, exercise_name)
-        path = File.join(track_path, 'lib')
-        "%s/%s.rb" % [ path, filename(exercise_name) ]
+        File.exist?(cases_filename(track_path, exercise_name)) ?
+          cases_filename(track_path, exercise_name) :
+          legacy_cases_filename(track_path, exercise_name)
+      end
+
+      # this becomes load_filename
+      def cases_filename(track_path, exercise_name)
+        "%s.rb" % File.join(track_path, 'exercises', exercise_name, '.meta', 'generator',
+                            filename(exercise_name))
+      end
+
+      # this goes away
+      def legacy_cases_filename(track_path, exercise_name)
+        "%s.rb" % File.join(track_path, 'lib', filename(exercise_name))
       end
     end
   end

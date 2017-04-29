@@ -28,6 +28,30 @@ module Generator
       def test_class_name
         assert_equal 'TwoParterCase', GeneratorCases.class_name('two-parter')
       end
+
+      def test_load_filename # test the cases_filename alternative
+        track_path = 'test/fixtures/xruby'
+        exercise_name = 'foo'
+        expected_filename = track_path + '/exercises/foo/.meta/generator/foo_cases.rb'
+        File.stub(:exist?, true) do
+          assert_equal(
+            expected_filename,
+            GeneratorCases.load_filename(track_path, exercise_name)
+          )
+        end
+      end
+
+      def test_load_legacy_filename # test the cases_filename alternative
+        track_path = 'test/fixtures/xruby'
+        exercise_name = 'foo'
+        expected_filename = track_path + '/lib/foo_cases.rb'
+        File.stub(:exist?, false) do
+          assert_equal(
+            expected_filename,
+            GeneratorCases.load_filename(track_path, exercise_name)
+          )
+        end
+      end
     end
   end
 end
