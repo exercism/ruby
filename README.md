@@ -18,8 +18,7 @@ The example solution should be named `example.rb`.
 
 **Some test suites are generated from shared inputs/outputs, see
 [Generated Test Suites](#generated-test-suites) below.** In short, if
-the problem directory contains an `example.tt` file, then it's a
-generated problem.
+a `lib/<problem>_cases.rb` file exists, then it's a generated problem.
 
 ### Hard-coded Test Suites
 
@@ -162,7 +161,7 @@ You won't need to touch that, either.
 ### Workload philosophy.
 
 Prioritize educational value over expert comprehension and make sure that
-things are clear to people who may not be familiar with Minitest and even Ruby. 
+things are clear to people who may not be familiar with Minitest and even Ruby.
 
 Provide the information the student needs to derive the code to pass the test
 in a clear and consistent manner. Illustrate the purpose of the individual
