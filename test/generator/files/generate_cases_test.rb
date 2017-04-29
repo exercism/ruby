@@ -15,7 +15,7 @@ module Generator
 
       def test_available_returns_exercise_names
         track_path = 'test/fixtures/xruby'
-        Dir.stub :[], %w(/alpha_cases.rb hy_phen_ated_cases.rb) do
+        Dir.stub :glob, %w(/alpha_cases.rb hy_phen_ated_cases.rb) do
           assert_equal %w(alpha hy-phen-ated), GeneratorCases.available(track_path)
         end
       end

@@ -4,8 +4,8 @@ module Generator
       module_function
 
       def available(track_path)
-        generator_glob = File.join(track_path, 'lib', '*_cases.rb')
-        Dir[generator_glob].sort.map { |filename| exercise_name(filename) }
+        generator_glob = File.join(track_path, "{lib,exercises}", '**', '*_cases.rb')
+        Dir.glob(generator_glob, File::FNM_DOTMATCH).sort.map { |filename| exercise_name(filename) }
       end
 
       def filename(exercise_name)
