@@ -7,18 +7,31 @@ module Generator
         track: 'test/fixtures/xruby'
       )
 
-      class TestMetadataFiles
-        def initialize
-          @paths = FixturePaths
-          @exercise_name = 'alpha'
-        end
-        attr_reader :paths, :exercise_name
-        include MetadataFiles
+      def test_canonical_data
+        subject = OpenStruct.new(paths: FixturePaths, exercise_name: 'unimportant')
+        subject.extend(MetadataFiles)
+        assert_instance_of CanonicalDataFile, subject.canonical_data
+      end
+    end
+
+    class CanonicalDataFileTest < Minitest::Test
+      def test_version_for_file_that_does_not_exist
+        subject = CanonicalDataFile.new(filename: 'nonexistant')
+        assert_nil subject.version
       end
 
-      def test_canonical_data
-        subject = TestMetadataFiles.new
-        assert_instance_of CanonicalDataFile, subject.canonical_data
+      def test_version
+        subject = CanonicalDataFile.new(filename: 'has version key')
+        Files.stub(:read, '{"version": "1.2.3"}' ) do
+          assert_equal "1.2.3", subject.version
+        end
+      end
+
+      def test_version_not_present
+        subject = CanonicalDataFile.new(filename: 'no version key')
+        Files.stub(:read, '{ "json": true }' ) do
+          assert_nil subject.version
+        end
       end
     end
   end

@@ -17,6 +17,9 @@ module Generator
     end
 
     class CanonicalDataFile < Readable
+      def version
+        JSON.parse(to_s)['version'] if to_s
+      end
     end
   end
 end
