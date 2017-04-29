@@ -6,7 +6,7 @@ module Generator
       include Exercise
 
       def tests_version
-        TestsVersionFile.new(filename: File.join(exercise_path, '.meta', '.version'))
+        TestsVersionFile.new(filename: File.join(meta_path, '.version'))
       end
 
       def example_solution
@@ -25,6 +25,10 @@ module Generator
 
       def exercise_path
         File.join(paths.track, 'exercises', exercise_name)
+      end
+
+      def meta_path
+        File.join(exercise_path, '.meta')
       end
 
       # this method contains a LOT of magic text
