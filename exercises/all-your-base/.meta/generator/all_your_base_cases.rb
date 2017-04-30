@@ -3,16 +3,10 @@ require 'generator/exercise_cases'
 class AllYourBaseCase < Generator::ExerciseCase
 
   def workload
-    indent(4, (assignments + assertion).join("\n")) + "\n"
+    indent_text(4, (assignments + assertion).join("\n"))
   end
 
   private
-
-  def indent(size, text)
-    text.lines.each_with_object('') do |line, obj|
-      obj << (line == "\n" ? line : ' ' * size + line)
-    end
-  end
 
   def assignments
       [
@@ -31,7 +25,7 @@ class AllYourBaseCase < Generator::ExerciseCase
       "converted = BaseConverter.convert(input_base, digits, output_base)",
       "",
       "assert_equal expected, converted,",
-      indent(13, error_message),
+      indent_text(13, error_message),
     ]
   end
 
@@ -45,7 +39,7 @@ class AllYourBaseCase < Generator::ExerciseCase
   end
 
   def error_message
-    %q("Input base: #{input_base}, output base #{output_base}. " \\) \
+    %q(             "Input base: #{input_base}, output base #{output_base}. " \\) \
       "\n" + %q("Expected #{expected} but got #{converted}.")
   end
 
