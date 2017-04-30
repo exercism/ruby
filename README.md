@@ -118,8 +118,7 @@ can regenerate the exercise with `bin/generate <exercise_name>`.
 
 An exercise's test case generator class produces the code that goes inside
 the minitest `test_<whatever>` methods. An exercise's generator lives in
-`exercises/<exercise_name>/.meta/generator/<exercise_name>_cases.rb`, although
-some generators have not yet been moved and are in `lib/<exercise_name>_cases.rb`.
+`exercises/<exercise_name>/.meta/generator/<exercise_name>_cases.rb`.
 
 The test case generator is a derived class of `ExerciseCase` (in
 `lib/generator/exercise_cases.rb`). `ExerciseCase` does most of the work of
