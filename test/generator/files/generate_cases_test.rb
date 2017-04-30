@@ -15,7 +15,7 @@ module Generator
 
       def test_available_returns_exercise_names
         track_path = 'test/fixtures/xruby'
-        Dir.stub :[], %w(/alpha_cases.rb hy_phen_ated_cases.rb) do
+        Dir.stub :glob, %w(/alpha_cases.rb hy_phen_ated_cases.rb) do
           assert_equal %w(alpha hy-phen-ated), GeneratorCases.available(track_path)
         end
       end
@@ -27,6 +27,30 @@ module Generator
 
       def test_class_name
         assert_equal 'TwoParterCase', GeneratorCases.class_name('two-parter')
+      end
+
+      def test_load_filename # test the cases_filename alternative
+        track_path = 'test/fixtures/xruby'
+        exercise_name = 'foo'
+        expected_filename = track_path + '/exercises/foo/.meta/generator/foo_cases.rb'
+        File.stub(:exist?, true) do
+          assert_equal(
+            expected_filename,
+            GeneratorCases.load_filename(track_path, exercise_name)
+          )
+        end
+      end
+
+      def test_load_legacy_filename # test the cases_filename alternative
+        track_path = 'test/fixtures/xruby'
+        exercise_name = 'foo'
+        expected_filename = track_path + '/lib/foo_cases.rb'
+        File.stub(:exist?, false) do
+          assert_equal(
+            expected_filename,
+            GeneratorCases.load_filename(track_path, exercise_name)
+          )
+        end
       end
     end
   end

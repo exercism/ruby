@@ -105,21 +105,26 @@ the exercise, which lives in the x-common repository.
 └── metadata.yml
 ```
 
-This change will need to be submitted as a pull request to the x-common repository. This pull
-request needs to be merged before you can regenerate the exercise.
+This change will need to be submitted as a pull request to the x-common
+repository. This pull request needs to be merged before you can regenerate the
+exercise.
 
 Changes that don't have to do directly with the test inputs and outputs should
-be made to `lib/<exercise_name>_cases.rb`. Then you can regenerate the exercise with
-`bin/generate <exercise_name>`.
+be made to the exercise's test case generator, discussed
+in [implementing a new generator](#implementing-a-generator), next.  Then you
+can regenerate the exercise with `bin/generate <exercise_name>`.
 
 #### Implementing a Generator
 
-You will need to write code to produce the code that goes inside the test methods. Your
-code will live in `lib/<exercise_name>_cases.rb`.
+An exercise's test case generator class produces the code that goes inside
+the minitest `test_<whatever>` methods. An exercise's generator lives in
+`exercises/<exercise_name>/.meta/generator/<exercise_name>_cases.rb`, although
+some generators have not yet been moved and are in `lib/<exercise_name>_cases.rb`.
 
-`lib/<exercise_name>_cases.rb` contains a derived class of `ExerciseCase` (in
-`lib/generator/exercise_cases.rb`) which wraps the JSON for a single test
-case. The default version looks something like this:
+The test case generator is a derived class of `ExerciseCase` (in
+`lib/generator/exercise_cases.rb`). `ExerciseCase` does most of the work of
+extracting the canonical data. The derived class wraps the JSON for a single
+test case. The default version looks something like this:
 
 ```
 class <ExerciseName>Case < ExerciseCase
