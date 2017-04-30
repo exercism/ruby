@@ -39,5 +39,5 @@
 
 ## References and Closures
 
-<!--- refernces #000 --->
-<!--- closes #000 --->
+<!--- references #000 -->
+<!--- closes #000 -->
