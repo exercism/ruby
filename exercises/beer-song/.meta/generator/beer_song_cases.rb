@@ -3,11 +3,8 @@ require 'generator/exercise_cases'
 class BeerSongCase < Generator::ExerciseCase
 
   def workload
-    "assert_equal expected, #{beer_song}"
-  end
-
-  def expected
-    self["expected"].gsub('\n', '"\n" \\')
+    %Q(expected = #{indented_heredoc(expected.split("\n"), 'TEXT', 0)}\n) +
+      "    assert_equal expected, #{beer_song}"
   end
 
   private
