@@ -9,11 +9,11 @@ class TransposeTest < Minitest::Test
     # skip
     input = <<-INPUT.gsub(/^ {6}/, '')
 
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
 
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -21,12 +21,12 @@ class TransposeTest < Minitest::Test
     skip
     input = <<-INPUT.gsub(/^ {6}/, '')
       A1
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       A
       1
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -35,11 +35,11 @@ class TransposeTest < Minitest::Test
     input = <<-INPUT.gsub(/^ {6}/, '')
       A
       1
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       A1
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -48,13 +48,13 @@ class TransposeTest < Minitest::Test
     input = <<-INPUT.gsub(/^ {6}/, '')
       ABC
       123
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       A1
       B2
       C3
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -62,7 +62,7 @@ class TransposeTest < Minitest::Test
     skip
     input = <<-INPUT.gsub(/^ {6}/, '')
       Single line.
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       S
@@ -77,7 +77,7 @@ class TransposeTest < Minitest::Test
       n
       e
       .
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -86,7 +86,7 @@ class TransposeTest < Minitest::Test
     input = <<-INPUT.gsub(/^ {6}/, '')
       The fourth line.
       The fifth line.
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       TT
@@ -105,7 +105,7 @@ class TransposeTest < Minitest::Test
       ne
       e.
       .
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -114,7 +114,7 @@ class TransposeTest < Minitest::Test
     input = <<-INPUT.gsub(/^ {6}/, '')
       The first line.
       The second line.
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       TT
@@ -133,7 +133,7 @@ class TransposeTest < Minitest::Test
       en
       .e
        .
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -145,7 +145,7 @@ class TransposeTest < Minitest::Test
       ABUSE
       RESIN
       TREND
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       HEART
@@ -153,7 +153,7 @@ class TransposeTest < Minitest::Test
       ABUSE
       RESIN
       TREND
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -164,7 +164,7 @@ class TransposeTest < Minitest::Test
       OUTLINED
       BLOOMING
       SEPTETTE
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       FOBS
@@ -175,7 +175,7 @@ class TransposeTest < Minitest::Test
       UNIT
       RENT
       EDGE
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -188,7 +188,7 @@ class TransposeTest < Minitest::Test
       SSSS
       EEEEE
       RRRRRR
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       TEASER
@@ -197,7 +197,7 @@ class TransposeTest < Minitest::Test
          SER
           ER
            R
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
@@ -218,7 +218,7 @@ class TransposeTest < Minitest::Test
       Is now the two hours' traffic of our stage;
       The which if you with patient ears attend,
       What here shall miss, our toil shall strive to mend.
-    INPUT
+INPUT
     actual = Transpose.transpose(input)
     expected = <<-EXPECTED.gsub(/^ {6}/, '')
       CIFWFAWDTAWITW
@@ -274,7 +274,7 @@ class TransposeTest < Minitest::Test
                 v  d
                 e  .
                 ,
-    EXPECTED
+EXPECTED
     assert_equal expected.strip, actual
   end
 
