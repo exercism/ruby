@@ -3,7 +3,7 @@ require 'generator/exercise_cases'
 class BeerSongCase < Generator::ExerciseCase
 
   def workload
-    %Q(expected = #{indented_heredoc(expected.split("\n"), 'TEXT', 0)}\n) +
+    %Q(expected = #{indent_heredoc(expected.split("\n"), 'TEXT', 0)}\n) +
       "    assert_equal expected, #{beer_song}"
   end
 

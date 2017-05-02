@@ -3,9 +3,9 @@ require 'generator/exercise_cases'
 class TournamentCase < Generator::ExerciseCase
 
   def workload
-    %Q(input = #{indented_heredoc(input, 'INPUT', 0, delimiter_mod)}\n) +
+    %Q(input = #{indent_heredoc(input, 'INPUT', 0, delimiter_mod)}\n) +
       %Q(    actual = Tournament.tally(input)\n) +
-      %Q(    expected = #{indented_heredoc(expected, 'TALLY', 0, delimiter_mod)}\n) +
+      %Q(    expected = #{indent_heredoc(expected, 'TALLY', 0, delimiter_mod)}\n) +
       '    assert_equal expected, actual'
   end
 
