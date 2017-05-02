@@ -21,6 +21,17 @@ module Generator
         assert_equal "assert_equal 2, 4", test_case.assert_equal { 1 + 3 }
       end
 
+      def test_raises_error
+        test_case = OpenStruct.new(expected: -1)
+        test_case.extend(Assertion)
+        assert test_case.raises_error?
+      end
+
+      def test_does_not_raise_error
+        test_case = OpenStruct.new(expected: 'cute kitties')
+        test_case.extend(Assertion)
+        refute test_case.raises_error?
+      end
     end
   end
 end
