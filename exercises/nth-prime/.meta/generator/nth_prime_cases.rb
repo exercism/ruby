@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class NthPrimeCase < ExerciseCase
+class NthPrimeCase < Generator::ExerciseCase
 
   def workload
     if raises_error?

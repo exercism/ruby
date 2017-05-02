@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class EtlCase < ExerciseCase
+class EtlCase < Generator::ExerciseCase
   def workload
     indent_lines([
       "old = {\n      #{format(input)}\n    }",

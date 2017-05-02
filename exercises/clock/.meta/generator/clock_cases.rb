@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class ClockCase < ExerciseCase
+class ClockCase < Generator::ExerciseCase
   def name
     'test_%s' % description
                 .gsub(/[() -]/, '_')

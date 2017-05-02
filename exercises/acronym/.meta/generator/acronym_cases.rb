@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class AcronymCase < ExerciseCase
+class AcronymCase < Generator::ExerciseCase
 
   def workload
     assert_equal { "Acronym.abbreviate('#{phrase}')" }

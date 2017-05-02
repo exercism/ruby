@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class TournamentCase < ExerciseCase
+class TournamentCase < Generator::ExerciseCase
 
   def workload
     'Tournament.tally(input)'

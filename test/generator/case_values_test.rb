@@ -1,12 +1,12 @@
 require_relative '../test_helper'
 
-class ComplexCase < ExerciseCase
-  def workload
-    assert { Complex.foo(bar) }
-  end
-end
-
 module Generator
+  class ComplexCase < ExerciseCase
+    def workload
+      assert { Complex.foo(bar) }
+    end
+  end
+
   module CaseValues
     class ExtractorTest < Minitest::Test
       def test_multi_level_auto_extraction

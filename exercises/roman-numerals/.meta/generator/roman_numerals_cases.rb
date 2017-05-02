@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class RomanNumeralsCase < ExerciseCase
+class RomanNumeralsCase < Generator::ExerciseCase
   def name
     'test_%s' % number.to_s
   end

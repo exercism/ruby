@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class DifferenceOfSquaresCase < ExerciseCase
+class DifferenceOfSquaresCase < Generator::ExerciseCase
 
   def workload
     %Q(assert_equal #{expected_formatted}, Squares.new(#{number}).#{action})
