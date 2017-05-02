@@ -4,6 +4,7 @@ require 'json'
 module Generator
   class ExerciseCase < OpenStruct
     using Generator::Underscore
+    include Assertion
 
     def name
       'test_%s' % description.underscore
