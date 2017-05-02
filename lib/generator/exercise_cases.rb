@@ -27,11 +27,11 @@ module Generator
       code.join(separator + ' ' * depth)
     end
 
-    # indent multi line workloads with blank lines
+    # indent multi line workloads with (unindented) blank lines
     #
-    #   indent_text(4, lines.join("\n"))
-    def indent_text(depth, text)
-      text.lines.reduce do |obj, line|
+    #   indent_text(4, lines)
+    def indent_text(depth, lines)
+      lines.reduce do |obj, line|
         obj << (line == "\n" ? line : ' ' * depth + line)
       end
     end
