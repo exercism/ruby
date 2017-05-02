@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class SieveCase < ExerciseCase
+class SieveCase < Generator::ExerciseCase
   OPEN_ARRAY = "[\n\s\s\s\s\s\s".freeze
   CLOSE_ARRAY = "\n\s\s\s\s]".freeze
   NEW_ARRAY_ROW = ",\n\s\s\s\s\s\s".freeze

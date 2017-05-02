@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class IsogramCase < ExerciseCase
+class IsogramCase < Generator::ExerciseCase
 
   def workload
     indent_lines(

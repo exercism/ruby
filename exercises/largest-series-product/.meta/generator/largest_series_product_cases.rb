@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class LargestSeriesProductCase < ExerciseCase
+class LargestSeriesProductCase < Generator::ExerciseCase
 
   def workload
     if raises_error?

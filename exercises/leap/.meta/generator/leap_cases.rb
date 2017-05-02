@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class LeapCase < ExerciseCase
+class LeapCase < Generator::ExerciseCase
 
   def workload
     "#{assert} Year.leap?(#{input.inspect})"

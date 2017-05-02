@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class TransposeCase < ExerciseCase
+class TransposeCase < Generator::ExerciseCase
 
   def workload
     'Transpose.transpose(input)'

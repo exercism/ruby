@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class QueenAttackCase < ExerciseCase
+class QueenAttackCase < Generator::ExerciseCase
 
   def workload
     property == 'create' ? create_workload : attack_workload

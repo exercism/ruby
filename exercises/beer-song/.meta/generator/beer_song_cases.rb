@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class BeerSongCase < ExerciseCase
+class BeerSongCase < Generator::ExerciseCase
 
   def workload
     "assert_equal expected, #{beer_song}"

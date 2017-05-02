@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class TwoBucketCase < ExerciseCase
+class TwoBucketCase < Generator::ExerciseCase
   def name
     "test_bucket_one_size_#{bucket_one}_bucket_two_"\
     "size_#{bucket_two}_goal_#{goal}_start_with_bucket_#{start_bucket}"

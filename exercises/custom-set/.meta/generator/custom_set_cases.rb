@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class CustomSetCase < ExerciseCase
+class CustomSetCase < Generator::ExerciseCase
 
   def workload
     send property

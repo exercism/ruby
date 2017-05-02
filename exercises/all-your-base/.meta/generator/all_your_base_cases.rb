@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class AllYourBaseCase < ExerciseCase
+class AllYourBaseCase < Generator::ExerciseCase
 
   def workload
     indent(4, (assignments + assertion).join("\n")) + "\n"

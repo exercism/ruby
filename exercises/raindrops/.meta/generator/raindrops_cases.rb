@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class RaindropsCase < ExerciseCase
+class RaindropsCase < Generator::ExerciseCase
 
   def workload
     assert_equal { "Raindrops.convert(#{number})" }

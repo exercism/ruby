@@ -1,6 +1,6 @@
 require 'generator/exercise_cases'
 
-class RunLengthEncodingCase < ExerciseCase
+class RunLengthEncodingCase < Generator::ExerciseCase
 
   def workload
     indent_lines([

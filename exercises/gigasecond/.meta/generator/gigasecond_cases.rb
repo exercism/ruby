@@ -1,7 +1,7 @@
 require 'generator/exercise_cases'
 require 'time'
 
-class GigasecondCase < ExerciseCase
+class GigasecondCase < Generator::ExerciseCase
   def workload
     %Q(assert_equal #{want}, Gigasecond.from(#{got}))
   end

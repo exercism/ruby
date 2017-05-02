@@ -1,54 +1,76 @@
 require 'ostruct'
 require 'json'
 
-class ExerciseCase < OpenStruct
-  using Generator::Underscore
+module Generator
+  class ExerciseCase < OpenStruct
+    using Generator::Underscore
 
-  def name
-    'test_%s' % description.underscore
-  end
+    def name
+      'test_%s' % description.underscore
+    end
 
-  def skipped
-    index.zero? ? '# skip' : 'skip'
-  end
+    def skipped
+      index.zero? ? '# skip' : 'skip'
+    end
 
-  protected
+    protected
 
-  # used to indent multi line workloads, as
-  #   indent_lines(
-  #     [
-  #       "string = #{input.inspect}",
-  #       "#{assert} Isogram.is_isogram?(string)"
-  #     ], 4
-  #   )
-  def indent_lines(code, depth, separator = "\n")
-    code.join(separator + ' ' * depth)
-  end
+    # indent multi line workloads
+    #
+    #   indent_lines(
+    #     [
+    #       "string = #{input.inspect}",
+    #       "#{assert} Isogram.is_isogram?(string)"
+    #     ], 4
+    #   )
+    def indent_lines(code, depth, separator = "\n")
+      code.join(separator + ' ' * depth)
+    end
 
-  # used in workload, for example, as
-  #   "#{assert} Luhn.valid?(#{input.inspect})"
-  def assert
-    expected ? 'assert' : 'refute'
-  end
+    # indent multi line workloads with blank lines
+    #
+    #   indent_text(4, lines.join("\n"))
+    def indent_text(depth, text)
+      text.lines.reduce do |obj, line|
+        obj << (line == "\n" ? line : ' ' * depth + line)
+      end
+    end
 
-  # used in workload, for example, as
-  #   assert_equal { "PigLatin.translate(#{input.inspect})" }
-  def assert_equal
-    "assert_equal #{expected.inspect}, #{yield}"
-  end
+    # generate heredoc (as part of workload) with optional indentation
+    def indented_heredoc(lines, delimiter, depth = 0, delimiter_method = nil)
+      [
+        "<<-#{delimiter}#{delimiter_method}",
+        lines.map { |line| ' ' * depth + line }.join("\n"),
+        delimiter
+      ].join("\n")
+    end
 
-  # used in workload, for example, as
-  #   if raises_error?
-  #     assert_raises(ArgumentError) { test_case }
-  #   else
-  #     assert_equal { test_case }
-  #   end
+    # e.g.,
+    #   "#{assert} Luhn.valid?(#{input.inspect})"
+    def assert
+      expected ? 'assert' : 'refute'
+    end
 
-  def raises_error?
-    expected.to_i == -1
-  end
+    # e.g.,
+    #   assert_equal { "PigLatin.translate(#{input.inspect})" }
+    def assert_equal
+      "assert_equal #{expected.inspect}, #{yield}"
+    end
 
-  def assert_raises(error)
-    "assert_raises(#{error}) { #{yield} }"
+    # e.g.,
+    #   if raises_error?
+    #     assert_raises(ArgumentError) { test_case }
+    #   else
+    #     assert_equal { test_case }
+    #   end
+    def raises_error?
+      expected.to_i == -1
+    end
+
+    # e.g.,
+    #   assert_raises(ArgumentError) { test_case }
+    def assert_raises(error)
+      "assert_raises(#{error}) { #{yield} }"
+    end
   end
 end
