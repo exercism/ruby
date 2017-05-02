@@ -16,7 +16,7 @@ module Generator
 
     class MultiLineCase < ExerciseCase
       def workload
-        indent_lines(['foo','bar'], 1)
+        indent_lines(['foo', 'bar'], 1)
       end
     end
     def test_indent_multiline_workloads
