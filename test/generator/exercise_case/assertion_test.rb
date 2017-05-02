@@ -15,6 +15,12 @@ module Generator
         assert_equal 'refute', test_case.assert
       end
 
+      def test_assert_equal
+        test_case = OpenStruct.new(expected: 2)
+        test_case.extend(Assertion)
+        assert_equal "assert_equal 2, 4", test_case.assert_equal { 1 + 3 }
+      end
+
     end
   end
 end
