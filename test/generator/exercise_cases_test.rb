@@ -26,7 +26,7 @@ module Generator
 
     class BlankLineCase < ExerciseCase
       def workload
-        indent_text(2, ["foo\n", "\n", "bar\n"])
+        indent_text(2, "foo\n\nbar\n")
       end
     end
     def test_indent_multiline_workloads_with_blank_lines

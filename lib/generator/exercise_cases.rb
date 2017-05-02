@@ -29,9 +29,9 @@ module Generator
 
     # indent multi line workloads with (unindented) blank lines
     #
-    #   indent_text(4, lines)
-    def indent_text(depth, lines)
-      lines.reduce do |obj, line|
+    #   indent_text(4, text)
+    def indent_text(depth, text)
+      text.lines.reduce do |obj, line|
         obj << (line == "\n" ? line : ' ' * depth + line)
       end
     end
