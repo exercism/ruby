@@ -8,6 +8,13 @@ module Generator
         test_case.extend(Assertion)
         assert_equal 'assert', test_case.assert
       end
+
+      def test_refute
+        test_case = OpenStruct.new(expected: false)
+        test_case.extend(Assertion)
+        assert_equal 'refute', test_case.assert
+      end
+
     end
   end
 end

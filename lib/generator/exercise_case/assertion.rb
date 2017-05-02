@@ -1,8 +1,8 @@
 module Generator
   class ExerciseCase < OpenStruct
     module Assertion
-      # e.g.,
-      #   "#{assert} Luhn.valid?(#{input.inspect})"
+
+      #  "#{assert} Luhn.valid?(#{input.inspect})"
       def assert
         expected ? 'assert' : 'refute'
       end
