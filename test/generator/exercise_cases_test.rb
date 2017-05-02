@@ -33,5 +33,15 @@ module Generator
       expected = "foo\n\n  bar\n"
       assert_equal expected, BlankLineCase.new.workload
     end
+
+    class HeredocCase < ExerciseCase
+      def workload
+        indent_heredoc(["foo", "bar"], 'TEXT', 1)
+      end
+    end
+    def test_heredoc
+      expected = "<<-TEXT\n foo\n bar\nTEXT"
+      assert_equal expected, HeredocCase.new.workload
+    end
   end
 end

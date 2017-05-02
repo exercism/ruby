@@ -37,7 +37,9 @@ module Generator
     end
 
     # generate heredoc (as part of workload) with optional indentation
-    def indented_heredoc(lines, delimiter, depth = 0, delimiter_method = nil)
+    #
+    #    indent_heredoc(["foo", "bar"], 'TEXT', 1)
+    def indent_heredoc(lines, delimiter, depth = 0, delimiter_method = nil)
       [
         "<<-#{delimiter}#{delimiter_method}",
         lines.map { |line| ' ' * depth + line }.join("\n"),
