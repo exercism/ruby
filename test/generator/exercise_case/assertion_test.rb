@@ -32,6 +32,15 @@ module Generator
         test_case.extend(Assertion)
         refute test_case.raises_error?
       end
+
+      def test_assert_raises
+        test_case = OpenStruct.new
+        test_case.extend(Assertion)
+        assert_equal(
+          "assert_raises(ArgumentError) { 4 }",
+          test_case.assert_raises(ArgumentError) { 2 + 2 }
+        )
+      end
     end
   end
 end
