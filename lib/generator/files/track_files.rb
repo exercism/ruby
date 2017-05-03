@@ -32,11 +32,8 @@ module Generator
       end
 
       def tests_template_absolute_filename
-        case
-        when File.exist?(track_tests_template_filename) then track_tests_template_filename
-        when File.exist?(legacy_tests_template_filename) then legacy_tests_template_filename
-        else default_tests_template_filename
-        end
+        File.exist?(track_tests_template_filename) ? track_tests_template_filename :
+          default_tests_template_filename
       end
 
       def track_tests_template_filename
@@ -45,10 +42,6 @@ module Generator
 
       def default_tests_template_filename
         File.join(paths.track, 'lib', 'generator', tests_template_filename)
-      end
-
-      def legacy_tests_template_filename
-        File.join(exercise_path, 'example.tt')
       end
 
       def tests_template_filename
