@@ -3,87 +3,92 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'phone_number'
 
+# Common test data version: 51d2475
 class PhoneNumberTest < Minitest::Test
-  def test_cleans_number
-    number = PhoneNumber.new('(123) 456-7890').number
-    assert_equal '1234567890', number
+  def test_cleans_the_number
+    # skip
+    assert_equal "2234567890", PhoneNumber.clean("(223) 456-7890")
   end
 
-  def test_cleans_a_different_number
+  def test_cleans_numbers_with_dots
     skip
-    number = PhoneNumber.new('(987) 654-3210').number
-    assert_equal '9876543210', number
+    assert_equal "2234567890", PhoneNumber.clean("223.456.7890")
   end
 
-  def test_cleans_number_with_dots
+  def test_cleans_numbers_with_multiple_spaces
     skip
-    number = PhoneNumber.new('456.123.7890').number
-    assert_equal '4561237890', number
-  end
-
-  def test_invalid_with_letters_in_place_of_numbers
-    skip
-    number = PhoneNumber.new('123-abc-1234').number
-    assert_equal '0000000000', number
+    assert_equal "2234567890", PhoneNumber.clean("223 456   7890   ")
   end
 
   def test_invalid_when_9_digits
     skip
-    number = PhoneNumber.new('123456789').number
-    assert_equal '0000000000', number
+    assert_nil PhoneNumber.clean("123456789")
   end
 
-  def test_valid_when_11_digits_and_first_is_1
+  def test_invalid_when_11_digits_does_not_start_with_a_1
     skip
-    number = PhoneNumber.new('19876543210').number
-    assert_equal '9876543210', number
+    assert_nil PhoneNumber.clean("22234567890")
   end
 
-  def test_valid_when_10_digits_and_area_code_starts_with_1
+  def test_valid_when_11_digits_and_starting_with_1
     skip
-    number = PhoneNumber.new('1234567890').number
-    assert_equal '1234567890', number
+    assert_equal "2234567890", PhoneNumber.clean("12234567890")
   end
 
-  def test_invalid_when_11_digits
+  def test_valid_when_11_digits_and_starting_with_1_even_with_punctuation
     skip
-    number = PhoneNumber.new('21234567890').number
-    assert_equal '0000000000', number
+    assert_equal "2234567890", PhoneNumber.clean("+1 (223) 456-7890")
   end
 
-  def test_invalid_when_12_digits_and_first_is_1
+  def test_invalid_when_more_than_11_digits
     skip
-    number = PhoneNumber.new('112345678901').number
-    assert_equal '0000000000', number
+    assert_nil PhoneNumber.clean("321234567890")
   end
 
-  def test_invalid_when_10_digits_with_extra_letters
+  def test_invalid_with_letters
     skip
-    number = PhoneNumber.new('1a2a3a4a5a6a7a8a9a0a').number
-    assert_equal '0000000000', number
+    assert_nil PhoneNumber.clean("123-abc-7890")
   end
 
-  def test_area_code
+  def test_invalid_with_punctuations
     skip
-    number = PhoneNumber.new('1234567890')
-    assert_equal '123', number.area_code
+    assert_nil PhoneNumber.clean("123-@:!-7890")
   end
 
-  def test_different_area_code
+  def test_invalid_with_right_number_of_digits_but_letters_mixed_in
     skip
-    number = PhoneNumber.new('9876543210')
-    assert_equal '987', number.area_code
+    assert_nil PhoneNumber.clean("1a2b3c4d5e6f7g8h9i0j")
   end
 
-  def test_pretty_print
+  def test_invalid_if_area_code_does_not_start_with_2_9
     skip
-    number = PhoneNumber.new('5551234567')
-    assert_equal '(555) 123-4567', number.to_s
+    assert_nil PhoneNumber.clean("(123) 456-7890")
   end
 
-  def test_pretty_print_with_full_us_phone_number
+  def test_invalid_if_exchange_code_does_not_start_with_2_9
     skip
-    number = PhoneNumber.new('11234567890')
-    assert_equal '(123) 456-7890', number.to_s
+    assert_nil PhoneNumber.clean("(223) 056-7890")
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
   end
 end
