@@ -121,7 +121,7 @@ the minitest `test_<whatever>` methods. An exercise's generator lives in
 `exercises/<exercise_name>/.meta/generator/<exercise_name>_cases.rb`.
 
 The test case generator is a derived class of `ExerciseCase` (in
-`lib/generator/exercise_cases.rb`). `ExerciseCase` does most of the work of
+`lib/generator/exercise_case.rb`). `ExerciseCase` does most of the work of
 extracting the canonical data. The derived class wraps the JSON for a single
 test case. The default version looks something like this:
 
@@ -218,7 +218,7 @@ appropriately.
 
 For more complete information, see [Rubocop](http://batsov.com/rubocop/).
 
-While `lib/generator/exercise_cases.rb` provides helper functions as discussed
+While `lib/generator/exercise_case.rb` provides helper functions as discussed
 above, it remains the responsibility of an exercise's generator to interpret its
 canonical-data.json data in a stylistically correct manner, e.g. converting
 string indices to integer indices.

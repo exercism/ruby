@@ -1,4 +1,4 @@
-require 'generator/exercise_cases'
+require 'generator/exercise_case'
 
 class RomanNumeralsCase < Generator::ExerciseCase
   def name
