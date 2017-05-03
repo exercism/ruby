@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'connect'
 
-# Common test data version: <%= abbreviated_commit_hash %>
+# Common test data version: <%= canonical_data_version %> <%= abbreviated_commit_hash %>
 class ConnectTest < Minitest::Test
 <% test_cases.each do |test_case| %>
   <%= test_case.ignore_method_length%>def <%= test_case.name %>

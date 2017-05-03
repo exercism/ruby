@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'leap'
 
-# Common test data version: <%= abbreviated_commit_hash %>
+# Common test data version: <%= canonical_data_version %> <%= abbreviated_commit_hash %>
 class Date
   def leap?
     raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."

@@ -57,6 +57,7 @@ module Generator
       def canonical_data
         mock_canonical_data = Minitest::Mock.new
         mock_canonical_data.expect :abbreviated_commit_hash, nil
+        mock_canonical_data.expect :version, '1.2.3'
         mock_canonical_data.expect :to_s, '{"cases":[]}'
         mock_canonical_data
       end
@@ -82,6 +83,7 @@ module Generator
       def canonical_data
         mock_canonical_data = Minitest::Mock.new
         mock_canonical_data.expect :abbreviated_commit_hash, nil
+        mock_canonical_data.expect :version, '1.2.3'
         mock_canonical_data.expect :to_s, '{"cases":[]}'
         mock_canonical_data
       end
