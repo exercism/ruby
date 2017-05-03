@@ -47,13 +47,6 @@ class RunLengthEncodingTest < Minitest::Test
     assert_equal output, RunLengthEncoding.encode(input)
   end
 
-  def test_empty_string
-    skip
-    input = ''
-    output = ''
-    assert_equal output, RunLengthEncoding.decode(input)
-  end
-
   def test_single_characters_only
     skip
     input = 'XYZ'
