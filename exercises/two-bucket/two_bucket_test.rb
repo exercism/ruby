@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'two_bucket'
 
-# Common test data version: 1.0.1 7aa0b42
+# Common test data version: 1.1.0 531486a
 class TwoBucketTest < Minitest::Test
   def test_bucket_one_size_3_bucket_two_size_5_goal_1_start_with_bucket_one
     # skip
@@ -36,6 +36,22 @@ class TwoBucketTest < Minitest::Test
     assert_equal 7, two_bucket.other_bucket
   end
 
+  def test_bucket_one_size_1_bucket_two_size_3_goal_3_start_with_bucket_two
+    skip
+    two_bucket = TwoBucket.new(1, 3, 3, 'two')
+    assert_equal 1, two_bucket.moves
+    assert_equal 'two', two_bucket.goal_bucket
+    assert_equal 0, two_bucket.other_bucket
+  end
+
+  def test_bucket_one_size_2_bucket_two_size_3_goal_3_start_with_bucket_one
+    skip
+    two_bucket = TwoBucket.new(2, 3, 3, 'one')
+    assert_equal 4, two_bucket.moves
+    assert_equal 'two', two_bucket.goal_bucket
+    assert_equal 1, two_bucket.other_bucket
+  end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -55,6 +71,6 @@ class TwoBucketTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
