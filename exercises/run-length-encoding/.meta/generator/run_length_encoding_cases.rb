@@ -2,6 +2,10 @@ require 'generator/exercise_cases'
 
 class RunLengthEncodingCase < Generator::ExerciseCase
 
+  def name
+    super.sub('test_',"test_#{property}_")
+  end
+
   def workload
     indent_lines([
       "input = '#{input}'",
