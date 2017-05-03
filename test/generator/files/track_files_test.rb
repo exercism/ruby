@@ -52,21 +52,6 @@ module Generator
         expected_filename = FixturePaths.track + '/lib/generator/test_template.erb'
         assert_equal expected_filename, subject.tests_template.filename
       end
-
-      class TestTrackFilesUseLegacy
-        def initialize
-          @paths = FixturePaths
-          @exercise_name = 'beta'
-        end
-        attr_reader :paths, :exercise_name
-        include TrackFiles
-      end
-
-      def test_legacy_tests_template
-        subject = TestTrackFilesUseLegacy.new
-        expected_filename = FixturePaths.track + '/exercises/beta/example.tt'
-        assert_equal expected_filename, subject.tests_template.filename
-      end
     end
 
     class TestsVersionFileTest < Minitest::Test
