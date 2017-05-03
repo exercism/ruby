@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'transpose'
 
-# Common test data version: 6dba022
+# Common test data version: 1.0.0 6dba022
 class TransposeTest < Minitest::Test
   def test_empty_string
     # skip

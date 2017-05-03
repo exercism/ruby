@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'connect'
 
-# Common test data version: 327db7f
+# Common test data version: 1.0.0 327db7f
 class ConnectTest < Minitest::Test
   def test_an_empty_board_has_no_winner
     # skip

@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'custom_set'
 
-# Common test data version: 4527635
+# Common test data version: 1.0.1 4527635
 class CustomSetTest < Minitest::Test
   def test_sets_with_no_elements_are_empty
     # skip

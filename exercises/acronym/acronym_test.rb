@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'acronym'
 
-# Common test data version: dcfe476
+# Common test data version: 1.0.0 dcfe476
 class AcronymTest < Minitest::Test
   def test_basic
     # skip

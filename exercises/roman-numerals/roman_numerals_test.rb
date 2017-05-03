@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'roman_numerals'
 
-# Common test data version: 070e8d5
+# Common test data version: 1.0.0 070e8d5
 class RomanNumeralsTest < Minitest::Test
   def test_1
     # skip

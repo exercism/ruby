@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'two_bucket'
 
-# Common test data version: 7aa0b42
+# Common test data version: 1.0.1 7aa0b42
 class TwoBucketTest < Minitest::Test
   def test_bucket_one_size_3_bucket_two_size_5_goal_1_start_with_bucket_one
     # skip

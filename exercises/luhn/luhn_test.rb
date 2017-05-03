@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'luhn'
 
-# Common test data version: c826372
+# Common test data version: 1.0.0 c826372
 class LuhnTest < Minitest::Test
   def test_single_digit_strings_can_not_be_valid
     # skip

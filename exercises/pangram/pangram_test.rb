@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'pangram'
 
-# Common test data version: f375051
+# Common test data version: 1.0.0 f375051
 class PangramTest < Minitest::Test
   def test_sentence_empty
     # skip

@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'grains'
 
-# Common test data version: 2e0e77e
+# Common test data version: 1.0.0 2e0e77e
 class GrainsTest < Minitest::Test
   def test_1
     # skip

@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'isogram'
 
-# Common test data version: 857c40d
+# Common test data version: 1.1.0 857c40d
 class IsogramTest < Minitest::Test
   def test_empty_string
     # skip

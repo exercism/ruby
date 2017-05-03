@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'gigasecond'
 
-# Common test data version: 61e7d70
+# Common test data version: 1.0.0 61e7d70
 class GigasecondTest < Minitest::Test
   def test_date_only_specification_of_time
     # skip

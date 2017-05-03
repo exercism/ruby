@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'hamming'
 
-# Common test data version: bb56dc7
+# Common test data version: 1.0.0 bb56dc7
 class HammingTest < Minitest::Test
   def test_identical_strands
     # skip
