@@ -31,6 +31,12 @@ class ExerciseTest < Minitest::Test
   end
 
   def test_example_file
+    File.stub(:exist?, true) do
+      assert_equal '.meta/solutions/name.rb', Exercise.new('name').example_file
+    end
+  end
+
+  def test_legacy_example_file
     assert_equal 'example.rb', Exercise.new('').example_file
   end
 
