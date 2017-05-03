@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'tournament'
 
-# Common test data version: 1.0.0 cda8f98
+# Common test data version: 1.1.0 877cd7d
 class TournamentTest < Minitest::Test
   def test_typical_input
     # skip
@@ -65,6 +65,24 @@ TALLY
     assert_equal expected, actual
   end
 
+  def test_mostly_invalid_lines
+    skip
+    input = <<-INPUT.gsub(/^ */, '')
+
+Allegoric Alaskans@Blithering Badgers;draw
+Blithering Badgers;Devastating Donkeys;loss
+Devastating Donkeys;Courageous Californians;win;5
+Courageous Californians;Allegoric Alaskans;los
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+Devastating Donkeys            |  1 |  1 |  0 |  0 |  3
+Blithering Badgers             |  1 |  0 |  0 |  1 |  0
+TALLY
+    assert_equal expected, actual
+  end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -84,6 +102,6 @@ TALLY
 
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
