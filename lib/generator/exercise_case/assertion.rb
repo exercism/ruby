@@ -10,7 +10,8 @@ module Generator
       # e.g.,
       #   assert_equal { "PigLatin.translate(#{input.inspect})" }
       def assert_equal
-        "assert_equal #{expected.inspect}, #{yield}"
+        assertion = expected.nil? ? 'assert_nil' : "assert_equal #{expected.inspect},"
+        "#{assertion} #{yield}"
       end
 
       # e.g.,

@@ -21,6 +21,12 @@ module Generator
         assert_equal "assert_equal 2, 4", test_case.assert_equal { 1 + 3 }
       end
 
+      def test_assert_equal_when_nil
+        test_case = OpenStruct.new(expected: nil)
+        test_case.extend(Assertion)
+        assert_equal "assert_nil 4", test_case.assert_equal { 1 + 3 }
+      end
+
       def test_raises_error
         test_case = OpenStruct.new(expected: -1)
         test_case.extend(Assertion)
