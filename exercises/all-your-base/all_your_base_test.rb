@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'all_your_base'
 
@@ -286,6 +288,7 @@ class AllYourBaseTest < Minitest::Test
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 2, BookKeeping::VERSION

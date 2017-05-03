@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# encoding: utf-8
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'beer_song'
@@ -400,6 +399,7 @@ TEXT
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
   def test_bookkeeping
     skip
     assert_equal 3, BookKeeping::VERSION

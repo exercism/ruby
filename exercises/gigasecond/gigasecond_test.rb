@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'gigasecond'
 
@@ -28,11 +30,6 @@ class GigasecondTest < Minitest::Test
     assert_equal Time.utc(2046, 10, 3, 1, 46, 39), Gigasecond.from(Time.utc(2015, 1, 24, 23, 59, 59))
   end
 
-  # Test your 1Gs anniversary
-  def test_with_your_birthday
-    skip
-  end
-
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -51,6 +48,7 @@ class GigasecondTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
+    skip
     assert_equal 6, BookKeeping::VERSION
   end
 end

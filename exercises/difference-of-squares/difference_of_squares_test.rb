@@ -55,12 +55,6 @@ class DifferenceOfSquaresTest < Minitest::Test
     assert_equal 25_164_150, Squares.new(100).difference
   end
 
-  def test_consistent_difference
-    skip
-    squares = Squares.new(10)
-    assert_equal squares.difference, squares.difference
-  end
-
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
