@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
 
 class Tournament
@@ -7,7 +7,9 @@ class Tournament
     teams = Hash.new { |h, k| h[k] = Hash.new { |h, k| h[k] = 0 } }
 
     input.split("\n").each do |line|
-      team_one, team_two, result = line.split(';')
+      matchdata = line.match(/^(.*);(.*);(.*)$/)
+      next unless matchdata
+      team_one, team_two, result = matchdata.captures
 
       case result
       when "win"
