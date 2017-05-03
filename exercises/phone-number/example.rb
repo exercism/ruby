@@ -1,45 +1,29 @@
-class PhoneNumber
-  attr_reader :number
-  def initialize(number)
-    @number = clean(number)
+module PhoneNumber
+  NANP_PROTOCOL = %r{
+    \A
+    (?<international_code>1?)
+    (?<area_code>[2-9]{1}[0-9]{2})
+    (?<exchange_code>[2-9]{1}[0-9]{2})
+    (?<subscriber>[0-9]{4})
+    \z
+  }x
+
+  def self.clean(number)
+    sanitized = digits_only(number)
+    sections = nanp_parse(sanitized)
+    format '%<area_code>s%<exchange_code>s%<subscriber>s', sections if sections
   end
 
-  def area_code
-    number[0..2]
+  def self.digits_only(number)
+    number.gsub(/\D/, '')
   end
 
-  # technically, the central office (exchange) code
-  def exchange_code
-    number[3..5]
+  def self.nanp_parse(number)
+    matches = number.match(NANP_PROTOCOL)
+    matches.names.map(&:to_sym).zip(matches.captures).to_h if matches
   end
+end
 
-  def subscriber_number
-    number[6..9]
-  end
-
-  def to_s
-    "(#{area_code}) #{exchange_code}-#{subscriber_number}"
-  end
-
-  private
-
-  def clean(number)
-    return '0' * 10 if number.match(/[a-zA-Z]/)
-    number = number.gsub(/[^0-9]/, '')
-    normalize(number)
-  end
-
-  def normalize(number)
-    if valid?(number)
-      number[/(\d{10})\z/, 1]
-    else
-      '0' * 10
-    end
-  end
-
-  def valid?(number)
-    return true if number.length == 10
-    return true if number.length == 11 && number.start_with?('1')
-    false
-  end
+module BookKeeping
+  VERSION = 1
 end
