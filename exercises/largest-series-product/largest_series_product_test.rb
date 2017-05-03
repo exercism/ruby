@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'largest_series_product'
 
-# Common test data version: e79b832
+# Common test data version: 1.0.0 e79b832
 class LargestSeriesProductTest < Minitest::Test
   def test_finds_the_largest_product_if_span_equals_length
     # skip

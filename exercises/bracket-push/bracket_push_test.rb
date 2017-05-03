@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'bracket_push'
 
-# Common test data version: 855c591
+# Common test data version: 1.1.0 855c591
 class BracketPushTest < Minitest::Test
   def test_paired_square_brackets
     # skip

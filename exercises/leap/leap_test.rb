@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'leap'
 
-# Common test data version: cc65ebe
+# Common test data version: 1.0.0 cc65ebe
 class Date
   def leap?
     raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."

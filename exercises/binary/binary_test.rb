@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'binary'
 
-# Common test data version: 969717d
+# Common test data version: 1.0.0 969717d
 class BinaryTest < Minitest::Test
   def test_binary_0_is_decimal_0
     # skip
