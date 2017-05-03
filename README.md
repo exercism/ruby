@@ -14,9 +14,19 @@ the language, so you're all set.
 
 The files for an exercise live in `exercises/<exercise_name>` (where
 `<exercise_name>` is the slug for the exercise, e.g. `clock` or
-`atbash-cipher`). An exercise has a test suite
-(`exercises/<exercise_name>/<exercise_name>_test.rb`) and an example solution
-(`exercises/<exercise_name>/example.rb`).
+`atbash-cipher`). All exercises have:
+
+* a test suite, `<exercise_name>_test.rb`
+* an example solution, `<exercise_name>.rb`, in `.meta/solutions`
+
+Tests with a test generator will also have:
+
+* a `.version`
+* the test generator, `<exercise_name>_cases.rb`, in `.meta/generator`
+
+A few tests have other custom files which are discussed below.
+
+### Canonical Data
 
 **Most exercises can be generated from shared inputs/outputs, called canonical
 data (see [Generated Test Suites](#generated-test-suites) below).** To find out
@@ -25,9 +35,9 @@ the [x-common repo](https://github.com/exercism/x-common/tree/master/exercises).
 
 ## Running the Tests
 
-Run the tests using `rake`, rather than `ruby path/to/the_test.rb`. `rake`
-knows to look for `example.rb` and to disable skips. Just tell `rake` the
-name of your problem and you are set:
+Run the tests using `rake`, rather than `ruby path/to/the_test.rb`. `rake` knows
+to look for the example solution and to disable skips. Just tell `rake` the name
+of your problem and you are set:
 
 ```sh
 rake test:clock
@@ -211,7 +221,7 @@ We have created a minimal set of guidelines for the testing files, which
 you can take advantage of by installing the `rubocop` gem.  It will use
 the configuration file located in the root folder, `.rubocop.yml`.  When
 you edit your code, you can simply run `rubocop -D`.  It will ignore
-your `example.rb`, but will gently suggest style for your test code.
+your example solution, but will gently suggest style for your test code.
 
 The `-D` option that is suggested is provided to give you the ability to
 easily ignore the Cops that you think should be ignored.  This is easily
