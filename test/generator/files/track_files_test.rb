@@ -13,7 +13,7 @@ module Generator
           @paths = FixturePaths
           @exercise_name = 'alpha'
         end
-        attr_reader :paths, :exercise_name
+        attr_accessor :paths, :exercise_name
         include TrackFiles
       end
 
@@ -24,7 +24,15 @@ module Generator
 
       def test_example_solution
         subject = TestTrackFiles.new
-        assert_instance_of ExampleSolutionFile, subject.example_solution
+        expected_filename = FixturePaths.track + '/exercises/alpha/.meta/solutions/alpha.rb'
+        assert_equal expected_filename, subject.example_solution.filename
+      end
+
+      def test_legacy_example_solution
+        subject = TestTrackFiles.new
+        subject.exercise_name = 'beta'
+        expected_filename = FixturePaths.track + '/exercises/beta/example.rb'
+        assert_equal expected_filename, subject.example_solution.filename
       end
 
       def test_minitest_tests
@@ -37,6 +45,7 @@ module Generator
         expected_filename = FixturePaths.track + '/exercises/alpha/.meta/generator/test_template.erb'
         assert_equal expected_filename, subject.tests_template.filename
       end
+
 
       class TestTrackFilesUseDefault
         def initialize
@@ -75,7 +84,9 @@ module Generator
       end
 
       def test_update_version
-        subject = TestExampleSolutionFile.new(filename: 'test/fixtures/xruby/exercises/alpha/example.rb')
+        subject = TestExampleSolutionFile.new(
+          filename: 'test/fixtures/xruby/exercises/alpha/.meta/solutions/alpha.rb'
+        )
         assert_match(/VERSION = 2/, subject.update_version(2))
       end
     end

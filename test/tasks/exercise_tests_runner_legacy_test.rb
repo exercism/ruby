@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-class FakeExercise
+class FakeLegacyExercise
   def name
     'test'
   end
@@ -12,7 +12,7 @@ class FakeExercise
   end
 
   def example_file
-    '.meta/solutions/test.rb'
+    'example.rb'
   end
 
   def testable_example_file
@@ -24,7 +24,7 @@ class FakeExercise
   end
 end
 
-class ExerciseTestsRunnerTest < Minitest::Test
+class ExerciseTestsRunnerLegacyTest < Minitest::Test
   def test_run
     Dir.stub :mktmpdir, nil, 'dir' do
       cp_mock = Minitest::Mock.new.expect(:call, nil, ['test/.', 'dir'])
@@ -32,7 +32,7 @@ class ExerciseTestsRunnerTest < Minitest::Test
       mv_mock = Minitest::Mock.new.expect(
         :call,
         nil,
-        ['dir/.meta/solutions/test.rb', 'dir/test.rb'],
+        ['dir/example.rb', 'dir/test.rb'],
       )
 
       ruby_mock = Minitest::Mock.new.expect(
@@ -44,7 +44,7 @@ class ExerciseTestsRunnerTest < Minitest::Test
       FileUtils.stub :cp_r, cp_mock do
         FileUtils.stub :mv, mv_mock do
           runner = ExerciseTestsRunner.new(
-            exercise: FakeExercise.new,
+            exercise: FakeLegacyExercise.new,
             test_options: '-p',
           )
 

@@ -23,7 +23,7 @@ class Exercise
   end
 
   def example_file
-    'example.rb'
+    File.exist?(example_filename) ? example_filename : legacy_example_filename
   end
 
   def testable_example_file
@@ -35,6 +35,14 @@ class Exercise
   end
 
   private
+
+  def example_filename
+    File.join('.meta', 'solutions', "#{name}.rb")
+  end
+
+  def legacy_example_filename
+    'example.rb'
+  end
 
   def base_file_name
     @_base_file_name ||= name.tr('-', '_')
