@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'run_length_encoding'
 
-# Common test data version: 503a57a
+# Common test data version: 1.0.0 503a57a
 class RunLengthEncodingTest < Minitest::Test
   def test_encode_empty_string
     # skip

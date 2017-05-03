@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'anagram'
 
-# Common test data version: 196fc1a
+# Common test data version: 1.0.1 196fc1a
 class AnagramTest < Minitest::Test
   def test_no_matches
     # skip

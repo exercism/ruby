@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'rna_transcription'
 
-# Common test data version: 0b20fff
+# Common test data version: 1.0.0 0b20fff
 class RnaTranscriptionTest < Minitest::Test
   def test_rna_complement_of_cytosine_is_guanine
     # skip

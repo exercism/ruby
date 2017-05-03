@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'bowling'
 
-# Common test data version: 3cf5eb9
+# Common test data version: 1.0.0 3cf5eb9
 class BowlingTest < Minitest::Test
   def setup
     @game = Game.new

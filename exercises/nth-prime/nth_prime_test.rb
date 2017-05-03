@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'nth_prime'
 
-# Common test data version: 016d65b
+# Common test data version: 1.0.0 016d65b
 class NthPrimeTest < Minitest::Test
   def test_first_prime
     # skip

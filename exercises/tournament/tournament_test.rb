@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'tournament'
 
-# Common test data version: cda8f98
+# Common test data version: 1.0.0 cda8f98
 class TournamentTest < Minitest::Test
   def test_typical_input
     # skip

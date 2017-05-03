@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'clock'
 
-# Common test data version: 8c7fc0c
+# Common test data version: 1.0.1 54c3b74
 class ClockTest < Minitest::Test
   def test_on_the_hour
     # skip

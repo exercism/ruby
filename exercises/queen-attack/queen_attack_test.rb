@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'queen_attack'
 
-# Common test data version: 8adde5f
+# Common test data version: 1.0.0 8adde5f
 class QueenAttackTest < Minitest::Test
   def test_queen_with_a_valid_position
     # skip

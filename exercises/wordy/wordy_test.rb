@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'wordy'
 
-# Common test data version: 5b8ad58
+# Common test data version: 1.0.0 5b8ad58
 class WordyTest < Minitest::Test
   def test_addition
     # skip

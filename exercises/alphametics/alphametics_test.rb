@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'alphametics'
 
-# Common test data version: b9bada8
+# Common test data version: 1.0.0 b9bada8
 class AlphameticsTest < Minitest::Test
 
   def test_puzzle_with_three_letters

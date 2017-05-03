@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'ocr_numbers'
 
-# Common test data version: 80782b6
+# Common test data version: 1.0.0 80782b6
 class OcrNumbersTest < Minitest::Test
   def test_recognizes_0
     # skip

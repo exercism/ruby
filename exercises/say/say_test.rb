@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'say'
 
-# Common test data version: be403e1
+# Common test data version: 1.0.0 be403e1
 class SayTest < Minitest::Test
   def test_zero
     # skip
