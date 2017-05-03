@@ -1,4 +1,4 @@
-require 'generator/exercise_cases'
+require 'generator/exercise_case'
 
 class BetaCase < Generator::ExerciseCase
   def workload
