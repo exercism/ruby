@@ -23,7 +23,7 @@ class Exercise
   end
 
   def example_file
-    File.exist?(example_filename) ? example_filename : legacy_example_filename
+    File.exist?(File.join(directory, example_filename)) ? example_filename : legacy_example_filename
   end
 
   def testable_example_file

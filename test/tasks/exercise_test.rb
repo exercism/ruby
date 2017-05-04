@@ -31,8 +31,10 @@ class ExerciseTest < Minitest::Test
   end
 
   def test_example_file
-    File.stub(:exist?, true) do
-      assert_equal '.meta/solutions/name.rb', Exercise.new('name').example_file
+    mock_exist = Minitest::Mock.new
+    mock_exist.expect(:call, true, ['exercises/alpha/./.meta/solutions/alpha.rb'])
+    File.stub(:exist?, mock_exist) do
+      assert_equal '.meta/solutions/alpha.rb', Exercise.new('alpha').example_file
     end
   end
 
