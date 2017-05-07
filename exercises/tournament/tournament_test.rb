@@ -2,10 +2,125 @@
 require 'minitest/autorun'
 require_relative 'tournament'
 
-# Common test data version: 1.1.0 877cd7d
+# Common test data version: 1.3.0 f2042f1
 class TournamentTest < Minitest::Test
-  def test_typical_input
+  def test_just_the_header_if_no_input
     # skip
+    input = <<-INPUT.gsub(/^ */, '')
+
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+TALLY
+    assert_equal expected, actual
+  end
+
+  def test_a_win_is_three_points_a_loss_is_zero_points
+    skip
+    input = <<-INPUT.gsub(/^ */, '')
+Allegoric Alaskans;Blithering Badgers;win
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3
+Blithering Badgers             |  1 |  0 |  0 |  1 |  0
+TALLY
+    assert_equal expected, actual
+  end
+
+  def test_a_win_can_also_be_expressed_as_a_loss
+    skip
+    input = <<-INPUT.gsub(/^ */, '')
+Blithering Badgers;Allegoric Alaskans;loss
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3
+Blithering Badgers             |  1 |  0 |  0 |  1 |  0
+TALLY
+    assert_equal expected, actual
+  end
+
+  def test_a_different_team_can_win
+    skip
+    input = <<-INPUT.gsub(/^ */, '')
+Blithering Badgers;Allegoric Alaskans;win
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+Blithering Badgers             |  1 |  1 |  0 |  0 |  3
+Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0
+TALLY
+    assert_equal expected, actual
+  end
+
+  def test_a_draw_is_one_point_each
+    skip
+    input = <<-INPUT.gsub(/^ */, '')
+Allegoric Alaskans;Blithering Badgers;draw
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1
+Blithering Badgers             |  1 |  0 |  1 |  0 |  1
+TALLY
+    assert_equal expected, actual
+  end
+
+  def test_there_can_be_more_than_one_match
+    skip
+    input = <<-INPUT.gsub(/^ */, '')
+Allegoric Alaskans;Blithering Badgers;win
+Allegoric Alaskans;Blithering Badgers;win
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6
+Blithering Badgers             |  2 |  0 |  0 |  2 |  0
+TALLY
+    assert_equal expected, actual
+  end
+
+  def test_there_can_be_more_than_one_winner
+    skip
+    input = <<-INPUT.gsub(/^ */, '')
+Allegoric Alaskans;Blithering Badgers;loss
+Allegoric Alaskans;Blithering Badgers;win
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3
+Blithering Badgers             |  2 |  1 |  0 |  1 |  3
+TALLY
+    assert_equal expected, actual
+  end
+
+  def test_there_can_be_more_than_two_teams
+    skip
+    input = <<-INPUT.gsub(/^ */, '')
+Allegoric Alaskans;Blithering Badgers;win
+Blithering Badgers;Courageous Californians;win
+Courageous Californians;Allegoric Alaskans;loss
+INPUT
+    actual = Tournament.tally(input)
+    expected = <<-TALLY.gsub(/^ */, '')
+Team                           | MP |  W |  D |  L |  P
+Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6
+Blithering Badgers             |  2 |  1 |  0 |  1 |  3
+Courageous Californians        |  2 |  0 |  0 |  2 |  0
+TALLY
+    assert_equal expected, actual
+  end
+
+  def test_typical_input
+    skip
     input = <<-INPUT.gsub(/^ */, '')
 Allegoric Alaskans;Blithering Badgers;win
 Devastating Donkeys;Courageous Californians;draw
@@ -65,24 +180,6 @@ TALLY
     assert_equal expected, actual
   end
 
-  def test_mostly_invalid_lines
-    skip
-    input = <<-INPUT.gsub(/^ */, '')
-
-Allegoric Alaskans@Blithering Badgers;draw
-Blithering Badgers;Devastating Donkeys;loss
-Devastating Donkeys;Courageous Californians;win;5
-Courageous Californians;Allegoric Alaskans;los
-INPUT
-    actual = Tournament.tally(input)
-    expected = <<-TALLY.gsub(/^ */, '')
-Team                           | MP |  W |  D |  L |  P
-Devastating Donkeys            |  1 |  1 |  0 |  0 |  3
-Blithering Badgers             |  1 |  0 |  0 |  1 |  0
-TALLY
-    assert_equal expected, actual
-  end
-
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
@@ -102,6 +199,6 @@ TALLY
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
 end
