@@ -4,7 +4,7 @@
   "repository": "https://github.com/exercism/xruby",
   "active": true,
   "gitter": "xruby",
-  "solutionpattern": "[Ee]xample|\\.meta/solutions/[^/]*\\.rb",
+  "solution_pattern": "[Ee]xample|\\.meta/solutions/[^/]*\\.rb",
   "exercises": [
     {
       "slug": "hello-world",
