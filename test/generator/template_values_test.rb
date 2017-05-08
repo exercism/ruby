@@ -106,7 +106,6 @@ module Generator
       subject = TestTemplateValuesFactory.new
       assert_instance_of TemplateValues, subject.template_values
       assert Object.const_defined?(:AlphaCase)
-      assert Object.const_defined?(:AlphaCases)
     end
 
     def teardown

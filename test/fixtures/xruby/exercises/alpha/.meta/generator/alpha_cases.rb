@@ -1,20 +1,9 @@
-class AlphaCase < OpenStruct
-
+class AlphaCase < Generator::ExerciseCase
   def name
     format('test_%s', description.downcase.gsub(/[ -]/, '_'))
   end
 
-  def assertion
-    expected ? 'assert' : 'refute'
-  end
-
-  def skip
-    index.zero? ? '# skip' : 'skip'
-  end
-end
-
-AlphaCases = proc do |data|
-  JSON.parse(data)['cases'].map.with_index do |row, i|
-    AlphaCase.new(row.merge('index' => i))
+  def workload
+    "assert true"
   end
 end
