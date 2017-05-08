@@ -16,7 +16,9 @@ module Generator
       end
 
       def minitest_tests
-        MinitestTestsFile.new(filename: File.join(exercise_path, minitest_tests_filename))
+        MinitestTestsFile.new(
+          filename: File.join(exercise_path, "#{exercise_name.gsub(/[ -]/, '_')}_test.rb")
+        )
       end
 
       def tests_template
@@ -48,9 +50,6 @@ module Generator
 
       def tests_template_filename
         'test_template.erb'
-      end
-      def minitest_tests_filename
-        "#{exercise_name.gsub(/[ -]/, '_')}_test.rb"
       end
     end
 
