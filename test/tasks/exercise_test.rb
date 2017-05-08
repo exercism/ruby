@@ -38,10 +38,6 @@ class ExerciseTest < Minitest::Test
     end
   end
 
-  def test_legacy_example_file
-    assert_equal 'example.rb', Exercise.new('').example_file
-  end
-
   def test_testable_example_file
     exercise = Exercise.new('all-your-base')
     assert_equal 'all_your_base.rb', exercise.testable_example_file

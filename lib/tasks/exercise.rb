@@ -23,7 +23,7 @@ class Exercise
   end
 
   def example_file
-    File.exist?(File.join(directory, example_filename)) ? example_filename : legacy_example_filename
+    example_filename
   end
 
   def testable_example_file
@@ -38,10 +38,6 @@ class Exercise
 
   def example_filename
     File.join('.meta', 'solutions', "#{name}.rb")
-  end
-
-  def legacy_example_filename
-    'example.rb'
   end
 
   def base_file_name
