@@ -28,13 +28,6 @@ module Generator
         assert_equal expected_filename, subject.example_solution.filename
       end
 
-      def test_legacy_example_solution
-        subject = TestTrackFiles.new
-        subject.exercise_name = 'beta'
-        expected_filename = FixturePaths.track + '/exercises/beta/example.rb'
-        assert_equal expected_filename, subject.example_solution.filename
-      end
-
       def test_minitest_tests
         subject = TestTrackFiles.new
         assert_instance_of MinitestTestsFile, subject.minitest_tests

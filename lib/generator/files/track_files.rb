@@ -5,16 +5,16 @@ module Generator
     module TrackFiles
       include Exercise
 
+      def minitest_tests
+        MinitestTestsFile.new(filename: File.join(exercise_path, minitest_tests_filename))
+      end
+
       def tests_version
-        TestsVersionFile.new(filename: File.join(meta_path, '.version'))
+        TestsVersionFile.new(filename: File.join(meta_path, version_filename))
       end
 
       def example_solution
-        ExampleSolutionFile.new(filename: File.join(exercise_path, example_file))
-      end
-
-      def minitest_tests
-        MinitestTestsFile.new(filename: File.join(exercise_path, minitest_tests_filename))
+        ExampleSolutionFile.new(filename: File.join(solutions_path, example_filename))
       end
 
       def tests_template
@@ -29,6 +29,22 @@ module Generator
 
       def meta_path
         File.join(exercise_path, '.meta')
+      end
+
+      def solutions_path
+        File.join(meta_path, 'solutions')
+      end
+
+      def minitest_tests_filename
+        "#{exercise_name.gsub(/[ -]/, '_')}_test.rb"
+      end
+
+      def version_filename
+        '.version'
+      end
+
+      def example_filename
+        "#{exercise_name}.rb"
       end
 
       def tests_template_absolute_filename
@@ -46,22 +62,6 @@ module Generator
 
       def tests_template_filename
         'test_template.erb'
-      end
-
-      def example_file
-        File.exist?(File.join(exercise_path, example_filename)) ? example_filename : legacy_example_filename
-      end
-
-      def example_filename
-        File.join('.meta', 'solutions', "#{exercise_name}.rb")
-      end
-
-      def legacy_example_filename
-        'example.rb'
-      end
-
-      def minitest_tests_filename
-        "#{exercise_name.gsub(/[ -]/, '_')}_test.rb"
       end
     end
 
