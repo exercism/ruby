@@ -10,12 +10,7 @@ module Generator
       'test_%s' % description.underscore
     end
 
-    # retain until converted
-    def skipped
-      index.zero? ? '# skip' : 'skip'
-    end
-
-    def skip(idx)
+    def skipped(idx)
       idx.zero? ? '# skip' : 'skip'
     end
 
