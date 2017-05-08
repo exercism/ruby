@@ -17,11 +17,11 @@ module Generator
 
         expected = [
           ComplexCase.new(description: 'first generic verse', property: 'verse', number: 99,
-                          expected: '99 bottles of beer on the wall, YAAAR', index: 0),
+                          expected: '99 bottles of beer on the wall, YAAAR'),
           ComplexCase.new(description: 'last generic verse', property: 'verse', number: 3,
-                          expected: '3 bottles of beer on the wall, YAAAR', index: 1),
+                          expected: '3 bottles of beer on the wall, YAAAR'),
           ComplexCase.new(description: 'first two verses', property: 'verses', beginning: 99, end: 98,
-                          expected: "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT", index: 2)
+                          expected: "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT")
         ]
         assert_equal expected, cases
       end
