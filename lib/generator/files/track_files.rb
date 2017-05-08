@@ -10,7 +10,9 @@ module Generator
       end
 
       def example_solution
-        ExampleSolutionFile.new(filename: File.join(exercise_path, example_file))
+        ExampleSolutionFile.new(
+          filename: File.join(meta_path, 'solutions', "#{exercise_name}.rb")
+        )
       end
 
       def minitest_tests
@@ -47,19 +49,6 @@ module Generator
       def tests_template_filename
         'test_template.erb'
       end
-
-      def example_file
-        File.exist?(File.join(exercise_path, example_filename)) ? example_filename : legacy_example_filename
-      end
-
-      def example_filename
-        File.join('.meta', 'solutions', "#{exercise_name}.rb")
-      end
-
-      def legacy_example_filename
-        'example.rb'
-      end
-
       def minitest_tests_filename
         "#{exercise_name.gsub(/[ -]/, '_')}_test.rb"
       end
