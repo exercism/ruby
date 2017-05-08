@@ -24,7 +24,8 @@ module Generator
 
       def test_example_solution
         subject = TestTrackFiles.new
-        assert_instance_of ExampleSolutionFile, subject.example_solution
+        expected_filename = FixturePaths.track + '/exercises/alpha/.meta/solutions/alpha.rb'
+        assert_equal expected_filename, subject.example_solution.filename
       end
 
       def test_minitest_tests
