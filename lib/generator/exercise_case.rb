@@ -10,8 +10,8 @@ module Generator
       'test_%s' % description.underscore
     end
 
-    def skipped
-      index.zero? ? '# skip' : 'skip'
+    def skipped(idx)
+      idx.zero? ? '# skip' : 'skip'
     end
 
     protected

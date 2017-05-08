@@ -14,9 +14,9 @@ end
 
 # Common test data version: <%= canonical_data_version %> <%= abbreviated_commit_hash %>
 class HelloWorldTest < Minitest::Test
-<% test_cases.each do |test_case| %>
+<% test_cases.each_with_index do |test_case, idx| %>
   def <%= test_case.name %>
-    <%= test_case.skipped %>
+    <%= test_case.skipped(idx) %>
     <%= test_case.workload %>
   end
 <% end %>

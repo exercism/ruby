@@ -4,9 +4,9 @@ require_relative 'connect'
 
 # Common test data version: <%= canonical_data_version %> <%= abbreviated_commit_hash %>
 class ConnectTest < Minitest::Test
-<% test_cases.each do |test_case| %>
+<% test_cases.each_with_index do |test_case, idx| %>
   <%= test_case.ignore_method_length%>def <%= test_case.name %>
-    <%= test_case.skipped %><% test_case.test_body.each do |line| %>
+    <%= test_case.skipped(idx) %><% test_case.test_body.each do |line| %>
     <%= line %><% end %>
   end
 

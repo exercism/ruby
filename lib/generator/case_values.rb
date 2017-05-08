@@ -6,11 +6,8 @@ module Generator
       end
 
       def cases(exercise_data)
-        extract_test_cases(
-          data: JSON.parse(exercise_data)['cases']
-        ).map.with_index do |test, index|
-          @case_class.new(test.merge('index' => index))
-        end
+        extract_test_cases(data: JSON.parse(exercise_data)['cases'])
+          .map { |test| @case_class.new(test) }
       end
 
       private

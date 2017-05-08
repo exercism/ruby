@@ -7,11 +7,11 @@ module Generator
     end
 
     def test_skipped_index_zero
-      assert_equal '# skip', ExerciseCase.new(index: 0).skipped
+      assert_equal '# skip', ExerciseCase.new.skipped(0)
     end
 
     def test_skipped_index_nonzero
-      assert_equal 'skip', ExerciseCase.new(index: 12).skipped
+      assert_equal 'skip', ExerciseCase.new.skipped(1)
     end
 
     class MultiLineCase < ExerciseCase
