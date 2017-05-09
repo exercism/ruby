@@ -50,8 +50,9 @@ class RobotTest < Minitest::Test
       robot.reset
       names << robot.name
     end
-    # This will probably be 5, but only accross multiple robots is uniqueness a requirement.
-    assert names.uniq.size > 2
+    # This will probably be 5, but name uniqueness is only a requirement
+    # accross multiple robots and consecutive calls to reset.
+    assert names.uniq.size > 1
   end
 
   def test_different_robots_have_different_names
