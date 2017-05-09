@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'dominoes'
 
-# Common test data version: 1.0.0 89a5281
+# Common test data version: 1.0.1 33f20d3
 class DominoesTest < Minitest::Test
   def test_empty_input_empty_output
     # skip
@@ -81,7 +81,7 @@ class DominoesTest < Minitest::Test
     assert_correct_chain(input_dominoes, output_chain)
   end
 
-  def test_ten_elements
+  def test_nine_elements
     skip
     input_dominoes = [[1, 2], [5, 3], [3, 1], [1, 2], [2, 4], [1, 6], [2, 3], [3, 4], [5, 6]]
     output_chain = Dominoes.chain(input_dominoes)
