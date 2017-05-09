@@ -2,24 +2,28 @@ require 'optparse'
 
 module Generator
   class GeneratorOptparser
+    attr_reader :options
+
     def initialize(args, paths)
       @args = args
       @paths = paths
+      @options = parse_options
     end
 
-    def parse_options
-      option_parser.parse!(@args)
-      options.tap { |opts| opts[:exercise_name] = @args.shift }
-    end
-
-    def valid?
+    def options_valid?
       validate_paths && validate_options && validate_exercise && validate_cases
     end
 
     private
 
-    def options
-      @options ||= {
+    def parse_options
+      @options = default_options
+      option_parser.parse!(@args)
+      options.tap { |opts| opts[:exercise_name] = @args.shift }
+    end
+
+    def default_options
+      {
         freeze: false,
         verbose: false,
         exercise_name: nil

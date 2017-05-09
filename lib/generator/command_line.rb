@@ -10,8 +10,8 @@ module Generator
 
     def parse(args)
       parser = GeneratorOptparser.new(args, @paths)
-      @options = parser.parse_options
-      generator if parser.valid?
+      @options = parser.options
+      generator if parser.options_valid?
     end
 
     private
