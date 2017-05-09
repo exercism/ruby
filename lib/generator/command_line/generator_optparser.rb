@@ -2,6 +2,13 @@ require 'optparse'
 
 module Generator
   class GeneratorOptparser
+    DEFAULT_OPTIONS = {
+      freeze: false,
+      all: false,
+      verbose: false,
+      exercise_name: nil
+    }.freeze
+
     attr_reader :options
 
     def initialize(args, paths)
@@ -11,29 +18,25 @@ module Generator
     end
 
     def options_valid?
-      validate_paths && validate_options && validate_exercise && validate_cases
+      validate_paths && validate_options &&
+        (options[:all] || (validate_exercise && validate_cases))
     end
 
     private
 
     def parse_options
-      @options = default_options
+      @options = DEFAULT_OPTIONS.dup
       option_parser.parse!(@args)
-      options.tap { |opts| opts[:exercise_name] = @args.shift }
-    end
-
-    def default_options
-      {
-        freeze: false,
-        verbose: false,
-        exercise_name: nil
-      }
+      options.tap { |opts| opts[:exercise_name] = @args.shift unless opts[:all] }
     end
 
     def option_parser
       @option_parser ||= OptionParser.new do |parser|
         parser.banner = "Usage: #{$PROGRAM_NAME} [options] exercise-generator"
         parser.on('-f', '--freeze', 'Don\'t update test version') { |value| options[:freeze] = value }
+        parser.on('-a', '--all', 'Regenerate all available test suites (implies freeze)') do |value|
+          options[:all] = value
+        end
         parser.on('-h', '--help', 'Displays this help message') { |value| options[:help] = value }
         parser.on('-v', '--verbose', 'Display progress messages') { |value| options[:verbose] = value }
       end
