@@ -1,3 +1,5 @@
+require 'logger'
+
 module Generator
   # Processes the command line arguments and sets everthing up and returns a
   # generator that can be called
@@ -7,23 +9,33 @@ module Generator
     end
 
     def parse(args)
-      parser = GeneratorOptparser.new(args, paths)
+      parser = GeneratorOptparser.new(args, @paths)
       @options = parser.options
-      generate if parser.options_valid?
+      generator if parser.options_valid?
     end
 
     private
-    attr_reader :paths
 
-    def generate
-      return GenerateAllTests.new(paths: paths, verbose: @options[:verbose]) if @options[:all]
+    def generator
+      generator_class.new(repository)
+    end
 
-      GeneratorFactory.new(
-        paths: paths,
-        exercise_name: @options[:exercise_name],
-        verbose: @options[:verbose],
-        freeze: @options[:freeze]
-      ).build
+    def generator_class
+      @options[:freeze] ? GenerateTests : UpdateVersionAndGenerateTests
+    end
+
+    def repository
+      LoggingRepository.new(
+        repository: Repository.new(paths: @paths, exercise_name: @options[:exercise_name]),
+        logger: logger
+      )
+    end
+
+    def logger
+      logger = Logger.new($stdout)
+      logger.formatter = proc { |_severity, _datetime, _progname, msg| "#{msg}\n" }
+      logger.level = @options[:verbose] ? Logger::DEBUG : Logger::INFO
+      logger
     end
   end
 end
