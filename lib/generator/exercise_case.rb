@@ -1,5 +1,4 @@
 require 'ostruct'
-require 'json'
 
 module Generator
   class ExerciseCase < OpenStruct
