@@ -5,7 +5,7 @@ require 'generator'
 
 paths = Generator::Paths.new(track: XRUBY_ROOT, metadata: METADATA_REPOSITORY_PATH)
 
-generator = Generator::CommandLine.new(paths).parse(ARGV)
-exit 1 unless generator
+generators = Generator::CommandLine.new(paths).parse(ARGV)
+exit 1 unless generators
 
-generator.call
+generators.map(&:call)
