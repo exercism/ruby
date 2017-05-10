@@ -29,7 +29,7 @@ module Generator
         assert_equal 'TwoParterCase', GeneratorCases.class_name('two-parter')
       end
 
-      def test_source_filename # test the cases_filename alternative
+      def test_source_filename
         track_path = 'test/fixtures/xruby'
         exercise_name = 'foo'
         expected_filename = track_path + '/exercises/foo/.meta/generator/foo_cases.rb'
