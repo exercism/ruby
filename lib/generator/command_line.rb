@@ -1,32 +1,46 @@
 require 'logger'
 
 module Generator
-  # Processes the command line arguments and sets everthing up and returns a
-  # generator that can be called
   class CommandLine
     def initialize(paths)
       @paths = paths
     end
 
     def parse(args)
-      parser = GeneratorOptparser.new(args, @paths)
+      parser = GeneratorOptparser.new(args, paths)
       @options = parser.options
-      generator if parser.options_valid?
+      generators if parser.options_valid?
     end
 
     private
+    attr_reader :paths
 
-    def generator
+    def generators
+      exercises.map do |exercise_name|
+        generator(repository(exercise_name))
+      end
+    end
+
+    def exercises
+      @options[:all] ? Files::GeneratorCases.available(paths.track) :
+        [@options[:exercise_name]]
+    end
+
+    def generator(repository)
       generator_class.new(repository)
     end
 
     def generator_class
-      @options[:freeze] ? GenerateTests : UpdateVersionAndGenerateTests
+      freeze? ? GenerateTests : UpdateVersionAndGenerateTests
     end
 
-    def repository
+    def freeze?
+      @options[:freeze] || @options[:all]
+    end
+
+    def repository(exercise_name)
       LoggingRepository.new(
-        repository: Repository.new(paths: @paths, exercise_name: @options[:exercise_name]),
+        repository: Repository.new(paths: paths, exercise_name: exercise_name),
         logger: logger
       )
     end
