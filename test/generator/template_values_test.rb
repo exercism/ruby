@@ -1,7 +1,7 @@
 require_relative '../test_helper'
 
 module Generator
-  class TestCasesValuesTest < Minitest::Test
+  class TestTemplateValuesTest < Minitest::Test
     def setup
       @arguments = {
         abbreviated_commit_hash: nil, version: nil, exercise_name: nil, test_cases: nil
@@ -46,7 +46,7 @@ module Generator
 
   class TemplateValuesFactoryTest < Minitest::Test
     class TestTemplateValuesFactory
-      def exercise_name
+      def slug
         'alpha'
       end
 
@@ -72,7 +72,7 @@ module Generator
     end
 
     class ClassBasedTestTemplateValuesFactory
-      def exercise_name
+      def slug
         'beta'
       end
 

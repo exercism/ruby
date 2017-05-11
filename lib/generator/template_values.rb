@@ -26,7 +26,7 @@ module Generator
         abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
         canonical_data_version: canonical_data.version,
         version: version,
-        exercise_name: exercise_name,
+        exercise_name: slug,
         test_cases: extract
       )
     end
@@ -40,12 +40,12 @@ module Generator
 
     def extractor
         CaseValues::Extractor.new(
-          case_class: Object.const_get(Files::GeneratorCases.class_name(exercise_name))
+          case_class: Object.const_get(Files::GeneratorCases.class_name(slug))
         )
     end
 
     def cases_load_name
-      Files::GeneratorCases.source_filepath(paths.track, exercise_name)
+      Files::GeneratorCases.source_filepath(paths.track, slug)
     end
   end
 end
