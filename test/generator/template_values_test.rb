@@ -22,13 +22,13 @@ module Generator
 
     def test_exercise_name
       expected_exercise_name = 'alpha_beta'
-      subject = TemplateValues.new(@arguments.merge(exercise_name: 'alpha-beta'))
+      subject = TemplateValues.new(@arguments.merge(exercise_name: expected_exercise_name))
       assert_equal expected_exercise_name, subject.exercise_name
     end
 
     def test_exercise_name_camel
       expected_exercise_name_camel = 'AlphaBeta'
-      subject = TemplateValues.new(@arguments.merge(exercise_name: 'alpha-beta'))
+      subject = TemplateValues.new(@arguments.merge(exercise_name: 'alpha_beta'))
       assert_equal expected_exercise_name_camel, subject.exercise_name_camel
     end
 
