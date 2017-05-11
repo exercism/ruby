@@ -12,12 +12,15 @@ the language, so you're all set.
 
 ## Anatomy of an Exercise
 
-The files for an exercise live in `exercises/<exercise_name>` (where
-`<exercise_name>` is the slug for the exercise, e.g. `clock` or
-`atbash-cipher`). Inside its directory, each exercise has:
+The files for an exercise live in `exercises/<slug>`. The slug for an exercise
+is a unique nickname composed of a-z (lowercase) and -, e.g. `clock` or
+`atbash-cipher`. Inside its directory, each exercise has:
 
 * a test suite, `<exercise_name>_test.rb`
 * an example solution, `.meta/solutions/<exercise_name>.rb`
+
+where `<exercise_name>` is the underscored version of the exercise's slug, e.g.,
+`clock` or `atbash_cipher`.
 
 If the exercise has a test generator, the directory will also contain:
 
@@ -47,6 +50,7 @@ rake test:clock
 
 To pass arguments to the test command, like `-p` for example, you can run
 the following:
+
 ```sh
 rake test:clock -- -p
 ```
@@ -93,13 +97,11 @@ tree -L 1 ~/code/exercism
 
 From within the xruby directory, run the following command:
 
-```
-bin/generate <exercise_name>
-```
+    bin/generate <slug>
 
 #### Changing a Generated Exercise
 
-Do not edit `<exercise_name>/<exercise_name>_test.rb`. Any changes you make will
+Do not edit `<slug>/<exercise_name>_test.rb`. Any changes you make will
 be overwritten when the test suite is regenerated.
 
 There are two reasons why a test suite might change:
@@ -111,7 +113,7 @@ In the first case, the changes need to be made to the `canonical-data.json` file
 the exercise, which lives in the x-common repository.
 
 ```
-../x-common/exercises/<exercise_name>/
+../x-common/exercises/<slug>/
 ├── canonical-data.json
 ├── description.md
 └── metadata.yml
@@ -124,20 +126,20 @@ exercise.
 Changes that don't have to do directly with the test inputs and outputs should
 be made to the exercise's test case generator, discussed
 in [implementing a new generator](#implementing-a-generator), next.  Then you
-can regenerate the exercise with `bin/generate <exercise_name>`.
+can regenerate the exercise with `bin/generate <slug>`.
 
 #### Implementing a Generator
 
 An exercise's test case generator class produces the code that goes inside
 the minitest `test_<whatever>` methods. An exercise's generator lives in
-`exercises/<exercise_name>/.meta/generator/<exercise_name>_cases.rb`.
+`exercises/<slug>/.meta/generator/<exercise_name>_cases.rb`.
 
 The test case generator is a derived class of `ExerciseCase` (in
 `lib/generator/exercise_case.rb`). `ExerciseCase` does most of the work of
 extracting the canonical data. The derived class wraps the JSON for a single
 test case. The default version looks something like this:
 
-```
+```ruby
 require 'generator/exercise_case'
 
 class <ExerciseName>Case < Generator::ExerciseCase
@@ -150,9 +152,9 @@ class <ExerciseName>Case < Generator::ExerciseCase
 end
 ```
 
-where `<ExerciseName>` is the <exercise_name> slug in CamelCase. This is
-important, since the generator script will infer the name of the class from the
-<exercise_name> slug.
+where `<ExerciseName>` is the CamelCased version of the exercise's slug. This is
+important, since the generator script will infer the name of the class from
+`<slug>`.
 
 This class must provide the methods used by the test
 template. A
@@ -162,8 +164,10 @@ base class provides methods for the default template for everything except
 `#workload`.
 
 `#workload` generates the code for the body of a test, including the assertion
-and any setup required. The base class provides a variety of assertion and
-helper methods. Beyond that, you can implement any helper methods that you need
+and any setup required. The base class provides a variety of
+[assertion](https://github.com/exercism/xruby/blob/master/lib/generator/exercise_case/assertion.rb) and
+[helper](https://github.com/exercism/xruby/blob/master/lib/generator/exercise_case.rb) methods.
+Beyond that, you can implement any helper methods that you need
 as private methods in your derived class. See below for more information
 about [the intention of #workload](#workload-philosophy)
 
