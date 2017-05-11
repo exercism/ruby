@@ -5,7 +5,7 @@ module Generator
 
       def available(track_path)
         generator_glob = File.join(meta_generator_path(track_path, '*'), '*_cases.rb')
-        Dir.glob(generator_glob, File::FNM_DOTMATCH).sort.map { |filename| exercise_name(filename) }
+        Dir.glob(generator_glob, File::FNM_DOTMATCH).map { |filename| exercise_name(filename) }.sort
       end
 
       def filename(exercise_name)

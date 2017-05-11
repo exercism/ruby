@@ -3,9 +3,10 @@ require_relative '../../test_helper.rb'
 module Generator
   module Files
     class GeneratorCasesTest < Minitest::Test
-      def test_available_returns_exercise_names
-        track_path = 'test/fixtures/xruby'
-        Dir.stub :glob, %w(/alpha_cases.rb hy_phen_ated_cases.rb) do
+      def test_available
+        track_path = '/track'
+        fake_filenames = %w(/track/zzz/alpha_cases.rb /track/aaa/hy_phen_ated_cases.rb)
+        Dir.stub :glob, fake_filenames do
           assert_equal %w(alpha hy-phen-ated), GeneratorCases.available(track_path)
         end
       end
