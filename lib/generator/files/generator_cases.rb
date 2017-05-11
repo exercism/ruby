@@ -10,7 +10,7 @@ module Generator
           filename(exercise_name)[0..-2].split('_').map(&:capitalize).join
         end
 
-        def source_filename(track_path, exercise_name)
+        def source_filepath(track_path, exercise_name)
           path = meta_generator_path(track_path, exercise_name)
           filename = filename(exercise_name) + '.rb'
           File.join(path, filename)
