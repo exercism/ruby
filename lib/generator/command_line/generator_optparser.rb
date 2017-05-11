@@ -6,7 +6,7 @@ module Generator
       freeze: false,
       all: false,
       verbose: false,
-      exercise_name: nil
+      slug: nil
     }.freeze
 
     attr_reader :options
@@ -27,7 +27,7 @@ module Generator
     def parse_options
       @options = DEFAULT_OPTIONS.dup
       option_parser.parse!(@args)
-      options.tap { |opts| opts[:exercise_name] = @args.shift unless opts[:all] }
+      options.tap { |opts| opts[:slug] = @args.shift unless opts[:all] }
     end
 
     def option_parser
@@ -75,15 +75,15 @@ module Generator
     end
 
     def validate_exercise
-      return true if options[:exercise_name]
+      return true if options[:slug]
       $stderr.puts "Exercise name required!\n"
       $stdout.puts usage
       false
     end
 
     def validate_cases
-      return true if available_generators.include?(options[:exercise_name])
-      $stderr.puts "A generator does not currently exist for #{options[:exercise_name]}!"
+      return true if available_generators.include?(options[:slug])
+      $stderr.puts "A generator does not currently exist for #{options[:slug]}!"
       false
     end
   end

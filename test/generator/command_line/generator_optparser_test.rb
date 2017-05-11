@@ -12,7 +12,7 @@ module Generator
         freeze: false,
         all: false,
         verbose: false,
-        exercise_name: nil
+        slug: nil
       }
     end
 
@@ -20,7 +20,7 @@ module Generator
       args = %w(beta)
       Files::GeneratorCases.stub :available, %w(beta) do
         assert_equal(
-          default_options.merge(exercise_name: 'beta'),
+          default_options.merge(slug: 'beta'),
           GeneratorOptparser.new(args, FixturePaths).options
         )
       end
@@ -30,7 +30,7 @@ module Generator
       args = %w(-f beta)
       Files::GeneratorCases.stub :available, %w(beta) do
         assert_equal(
-          default_options.merge(exercise_name: 'beta', freeze: true),
+          default_options.merge(slug: 'beta', freeze: true),
           GeneratorOptparser.new(args, FixturePaths).options
         )
       end
@@ -56,7 +56,7 @@ module Generator
       args = %w(-v beta)
       Files::GeneratorCases.stub :available, %w(beta) do
         assert_equal(
-          default_options.merge(exercise_name: 'beta', verbose: true),
+          default_options.merge(slug: 'beta', verbose: true),
           GeneratorOptparser.new(args, FixturePaths).options
         )
       end
@@ -103,7 +103,7 @@ module Generator
       assert GeneratorOptparser.new(args, FixturePaths).options_valid?
     end
 
-    def test_validate_exercise_name
+    def test_validate_slug
       expected_stderr = 'Exercise name required'
       assert_output(/Usage:/, /#{expected_stderr}/) do
         refute GeneratorOptparser.new([], FixturePaths).options_valid?
