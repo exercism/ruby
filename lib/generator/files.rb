@@ -48,13 +48,13 @@ module Generator
     end
 
     # An Exercise is used as part of a Repository
-    # so expects :paths and :exercise_name to be defined.
+    # so expects :paths and :slug to be defined.
     module Exercise
       def paths
         fail NotImplementedError, 'Should return a Generator::Paths object'
       end
 
-      def exercise_name
+      def slug
         fail NotImplementedError, 'Should return a String object'
       end
     end

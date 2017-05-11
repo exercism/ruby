@@ -24,7 +24,7 @@ module Generator
       private
 
       def exercise_path
-        File.join(paths.track, 'exercises', exercise_name)
+        File.join(paths.track, 'exercises', slug)
       end
 
       def meta_path
@@ -36,7 +36,7 @@ module Generator
       end
 
       def minitest_tests_filename
-        "#{exercise_name.gsub(/[ -]/, '_')}_test.rb"
+        "#{slug.gsub(/[ -]/, '_')}_test.rb"
       end
 
       def version_filename
@@ -44,7 +44,7 @@ module Generator
       end
 
       def example_filename
-        "#{exercise_name}.rb"
+        "#{slug}.rb"
       end
 
       def tests_template_absolute_filename

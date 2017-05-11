@@ -70,10 +70,10 @@ module Generator
         end
       end
 
-      def test_exercise_name_not_implemented
+      def test_slug_not_implemented
         subject = TestNotImplementedTrackFiles.new
         assert_raises NotImplementedError do
-          subject.exercise_name
+          subject.slug
         end
       end
     end
