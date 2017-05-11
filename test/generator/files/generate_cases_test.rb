@@ -10,6 +10,17 @@ module Generator
         end
       end
 
+      def test_available_calls_glob_with_the_right_arguments
+        track_path = '/track'
+        expected_glob = "#{track_path}/exercises/*/.meta/generator/*_cases.rb"
+        mock_glob_call = Minitest::Mock.new
+        mock_glob_call.expect :call, [], [expected_glob, File::FNM_DOTMATCH]
+        Dir.stub :glob, mock_glob_call do
+          GeneratorCases.available(track_path)
+        end
+        mock_glob_call.verify
+      end
+
       def test_filename
         exercise_name = 'two-parter'
         assert_equal 'two_parter_cases', GeneratorCases.filename(exercise_name)
