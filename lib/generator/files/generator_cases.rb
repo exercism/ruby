@@ -12,7 +12,9 @@ module Generator
         end
 
         def source_filename(track_path, exercise_name)
-          "%s.rb" % File.join(meta_generator_path(track_path, exercise_name), filename(exercise_name))
+          path = meta_generator_path(track_path, exercise_name)
+          filename = filename(exercise_name) + '.rb'
+          File.join(path, filename)
         end
 
         private
