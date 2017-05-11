@@ -3,8 +3,7 @@ module Generator
     module GeneratorCases
       class << self
         def available(track_path)
-          generator_glob = File.join(meta_generator_path(track_path, '*'), '*_cases.rb')
-          Dir.glob(generator_glob, File::FNM_DOTMATCH).map { |filename| exercise_name(filename) }.sort
+          cases_filepaths(track_path).map { |filepath| exercise_name(filepath) }.sort
         end
 
         def class_name(exercise_name)
@@ -18,6 +17,11 @@ module Generator
         end
 
         private
+
+        def cases_filepaths(track_path)
+          generator_glob = File.join(meta_generator_path(track_path, '*'), '*_cases.rb')
+          Dir.glob(generator_glob, File::FNM_DOTMATCH)
+        end
 
         def exercise_name(filename)
           %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_', '-')
