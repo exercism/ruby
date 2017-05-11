@@ -4,7 +4,7 @@ module Generator
       module_function
 
       def available(track_path)
-        generator_glob = File.join(track_path, 'exercises', '*', '.meta', 'generator', '*_cases.rb')
+        generator_glob = File.join(meta_generator_path(track_path, '*'), '*_cases.rb')
         Dir.glob(generator_glob, File::FNM_DOTMATCH).sort.map { |filename| exercise_name(filename) }
       end
 
@@ -21,8 +21,14 @@ module Generator
       end
 
       def source_filename(track_path, exercise_name)
-        "%s.rb" % File.join(track_path, 'exercises', exercise_name, '.meta', 'generator',
-                            filename(exercise_name))
+        "%s.rb" % File.join(meta_generator_path(track_path, exercise_name), filename(exercise_name))
+      end
+
+      private
+      module_function
+
+      def meta_generator_path(track_path, exercise_name)
+        File.join(track_path, 'exercises', exercise_name, '.meta', 'generator')
       end
     end
   end
