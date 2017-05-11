@@ -3,16 +3,16 @@ module Generator
     module GeneratorCases
       class << self
         def available(track_path)
-          cases_filepaths(track_path).map { |filepath| exercise_name(filepath) }.sort
+          cases_filepaths(track_path).map { |filepath| slugify(filepath) }.sort
         end
 
-        def class_name(exercise_name)
-          filename(exercise_name)[0..-2].split('_').map(&:capitalize).join
+        def class_name(exercise_name_or_slug)
+          filename(exercise_name_or_slug)[0..-2].split('_').map(&:capitalize).join
         end
 
-        def source_filepath(track_path, exercise_name)
-          path = meta_generator_path(track_path, exercise_name)
-          filename = filename(exercise_name) + '.rb'
+        def source_filepath(track_path, slug)
+          path = meta_generator_path(track_path, slug)
+          filename = filename(slug) + '.rb'
           File.join(path, filename)
         end
 
@@ -23,16 +23,16 @@ module Generator
           Dir.glob(generator_glob, File::FNM_DOTMATCH)
         end
 
-        def exercise_name(filepath)
+        def slugify(filepath)
           %r{([^/]*)_cases\.rb$}.match(filepath).captures[0].tr('_', '-')
         end
 
-        def filename(exercise_name)
-          "#{exercise_name.tr('-', '_')}_cases"
+        def filename(exercise_name_or_slug)
+          "#{exercise_name_or_slug.tr('-', '_')}_cases"
         end
 
-        def meta_generator_path(track_path, exercise_name)
-          File.join(track_path, 'exercises', exercise_name, '.meta', 'generator')
+        def meta_generator_path(track_path, slug)
+          File.join(track_path, 'exercises', slug, '.meta', 'generator')
         end
       end
     end
