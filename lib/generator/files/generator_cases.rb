@@ -23,8 +23,8 @@ module Generator
           Dir.glob(generator_glob, File::FNM_DOTMATCH)
         end
 
-        def exercise_name(filename)
-          %r{([^/]*)_cases\.rb$}.match(filename).captures[0].tr('_', '-')
+        def exercise_name(filepath)
+          %r{([^/]*)_cases\.rb$}.match(filepath).captures[0].tr('_', '-')
         end
 
         def filename(exercise_name)
