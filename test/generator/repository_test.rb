@@ -37,15 +37,24 @@ module Generator
     end
 
     def test_create_tests_file
-      mock_tests_template = Minitest::Mock.new.expect :to_s, 'template'
-      mock_template_values = Minitest::Mock.new
-      mock_minitest_tests = Minitest::Mock.new.expect :generate, nil, [{ template: 'template', values: mock_template_values }]
+      # Q: Is the pain here caused by:
+      # a) Repository `including` everything rather than using composition?
+      # b) Trying to verify the expected content.
+      # c) The expected content being too long
+      #
+      # Q: Where in the call stack should the testing logically stop?
+      # A: It should be able to stop when minitest_tests is called with the correct arguments.
+      expected_content = "#!/usr/bin/env ruby\nrequire 'minitest/autorun'\nrequire_relative 'alpha'\n\n# Hi. I am a custom comment\n\n# Common test data version: 123456789\nclass AlphaTest < Minitest::Test\n  def test_add_2_numbers\n    # skip\n    assert true\n  end\n\n  # Problems in exercism evolve over time, as we find better ways to ask\n  # questions.\n  # The version number refers to the version of the problem you solved,\n  # not your solution.\n  #\n  # Define a constant named VERSION inside of the top level BookKeeping\n  # module, which may be placed near the end of your file.\n  #\n  # In your file, it will look like this:\n  #\n  # module BookKeeping\n  #   VERSION = 1 # Where the version number matches the one in the test.\n  # end\n  #\n  # If you are curious, read more about constants on RubyDoc:\n  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html\n\n  def test_bookkeeping\n    skip\n    assert_equal 1, BookKeeping::VERSION\n  end\nend\n"
+      mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
       subject = Repository.new(paths: FixturePaths, slug: 'alpha')
-      subject.define_singleton_method(:minitest_tests) { mock_minitest_tests }
-      subject.define_singleton_method(:tests_template) { mock_tests_template }
-      subject.define_singleton_method(:template_values) { mock_template_values }
-      subject.create_tests_file
-      mock_minitest_tests.verify
+      GitCommand.stub(:abbreviated_commit_hash, '123456789') do
+        File.stub(:open, true, mock_file) do
+          assert_equal expected_content, subject.create_tests_file
+        end
+      end
+      mock_file.verify
+      # Don't pollute the namespace
+      Object.send(:remove_const, :AlphaCase)
     end
 
     def test_exercise_name
