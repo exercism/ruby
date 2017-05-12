@@ -12,7 +12,7 @@ class ExerciseTestsRunner
   def run
     puts "\n\n#{'-' * 64}\nrunning tests for: #{@exercise}"
 
-    Dir.mktmpdir(@exercise.name) do |dir|
+    Dir.mktmpdir(@exercise.slug) do |dir|
       setup_exercise_files_in(dir)
       run_exercise_tests_in(dir)
     end

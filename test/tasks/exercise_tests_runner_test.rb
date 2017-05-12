@@ -1,11 +1,11 @@
 require_relative '../test_helper'
 
 class FakeExercise
-  def name
+  def slug
     'test'
   end
 
-  alias :to_s :name
+  alias :to_s :slug
 
   def directory
     'test/.'
