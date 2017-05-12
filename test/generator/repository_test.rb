@@ -29,11 +29,13 @@ module Generator
     end
 
     def test_update_example_solution
-      mock_example_solution = Minitest::Mock.new.expect :update_version, nil, [1]
+      expected_content = "# This is the example\n\nclass BookKeeping\n  VERSION = 1\nend\n"
+      mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
       subject = Repository.new(paths: FixturePaths, slug: 'alpha')
-      subject.define_singleton_method(:example_solution) { mock_example_solution }
-      subject.update_example_solution
-      mock_example_solution.verify
+      File.stub(:open, true, mock_file) do
+        assert_equal expected_content, subject.update_example_solution
+      end
+      mock_file.verify
     end
 
     def test_create_tests_file
