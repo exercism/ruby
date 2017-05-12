@@ -18,11 +18,14 @@ module Generator
     end
 
     def test_update_tests_version
-      mock_tests_version = Minitest::Mock.new.expect :increment, 2
+      mock_file = Minitest::Mock.new.expect :write, '2'.length, [2]
       subject = Repository.new(paths: FixturePaths, slug: 'alpha')
-      subject.define_singleton_method(:tests_version) { mock_tests_version }
-      assert_equal 2, subject.update_tests_version
-      mock_tests_version.verify
+      # Verify iniital condition from fixture file
+      assert_equal 1, subject.tests_version.to_i
+      File.stub(:open, true, mock_file) do
+        assert_equal 2, subject.update_tests_version
+      end
+      mock_file.verify
     end
 
     def test_update_example_solution
