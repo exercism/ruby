@@ -25,13 +25,6 @@ module Generator
       def test_class_name
         assert_equal 'TwoParterCase', GeneratorCases.class_name('two-parter')
       end
-
-      def test_source_filepath
-        track_path = '/track'
-        slug = 'slug'
-        expected_filename = track_path + '/exercises/slug/.meta/generator/slug_case.rb'
-        assert_equal expected_filename, GeneratorCases.source_filepath(track_path, slug)
-      end
     end
   end
 end

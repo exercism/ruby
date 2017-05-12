@@ -49,7 +49,7 @@ module Generator
     end
 
     def cases_load_name
-      Files::GeneratorCases.source_filepath(paths.track, slug)
+      cases_filepath.filename
     end
   end
 end
