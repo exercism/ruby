@@ -56,7 +56,7 @@ module Generator
       end
 
       def cases_filename
-        "#{exercise_name}_cases.rb"
+        "#{exercise_name}_case.rb"
       end
 
       def tests_template_absolute_filename

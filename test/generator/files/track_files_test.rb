@@ -36,7 +36,7 @@ module Generator
 
       def test_cases_filepath
         subject = TestTrackFiles.new
-        expected_filepath = FixturePaths.track + '/exercises/alpha-beta/.meta/generator/alpha_beta_cases.rb'
+        expected_filepath = FixturePaths.track + '/exercises/alpha-beta/.meta/generator/alpha_beta_case.rb'
         assert_equal expected_filepath, subject.cases_filepath.filename
       end
 
