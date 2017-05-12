@@ -13,7 +13,7 @@ unless ENV['CI']
     groups = [
       CoverageGroup.new('Generator', %r{lib/generator}),
       CoverageGroup.new('Tasks', %r{tasks}),
-      CoverageGroup.new('Cases', %r{exercises/.*_cases.rb$})
+      CoverageGroup.new('Cases', %r{exercises/.*_case.rb$})
     ]
 
     groups.each do |group|
