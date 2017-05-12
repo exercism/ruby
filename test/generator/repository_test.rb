@@ -46,7 +46,43 @@ module Generator
       #
       # Q: Where in the call stack should the testing logically stop?
       # A: It should be able to stop when minitest_tests is called with the correct arguments.
-      expected_content = "#!/usr/bin/env ruby\nrequire 'minitest/autorun'\nrequire_relative 'alpha'\n\n# Hi. I am a custom comment\n\n# Common test data version: 123456789\nclass AlphaTest < Minitest::Test\n  def test_add_2_numbers\n    # skip\n    assert true\n  end\n\n  # Problems in exercism evolve over time, as we find better ways to ask\n  # questions.\n  # The version number refers to the version of the problem you solved,\n  # not your solution.\n  #\n  # Define a constant named VERSION inside of the top level BookKeeping\n  # module, which may be placed near the end of your file.\n  #\n  # In your file, it will look like this:\n  #\n  # module BookKeeping\n  #   VERSION = 1 # Where the version number matches the one in the test.\n  # end\n  #\n  # If you are curious, read more about constants on RubyDoc:\n  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html\n\n  def test_bookkeeping\n    skip\n    assert_equal 1, BookKeeping::VERSION\n  end\nend\n"
+     expected_content =<<TESTS_FILE
+#!/usr/bin/env ruby
+require 'minitest/autorun'
+require_relative 'alpha'
+
+# Hi. I am a custom comment
+
+# Common test data version: 123456789
+class AlphaTest < Minitest::Test
+  def test_add_2_numbers
+    # skip
+    assert true
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
+  end
+end
+TESTS_FILE
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
       subject = Repository.new(paths: FixturePaths, slug: 'alpha')
       GitCommand.stub(:abbreviated_commit_hash, '123456789') do
