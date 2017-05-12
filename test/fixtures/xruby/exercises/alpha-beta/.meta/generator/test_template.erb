@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+require 'minitest/autorun'
+require_relative 'alpha_beta'
+
+# Common test data version: <%= abbreviated_commit_hash %>
+class AlphaBetaTest < Minitest::Test
+<% test_cases.each_with_index do |test_case, idx| %>
+  def <%= test_case.name %>
+    <%= test_case.skipped(idx) %>
+    <%= test_case.workload %>
+  end
+
+<% end %>
+<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+
+  def test_bookkeeping
+    skip
+    assert_equal <%= version %>, BookKeeping::VERSION
+  end
+end

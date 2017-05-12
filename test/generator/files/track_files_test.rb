@@ -11,9 +11,10 @@ module Generator
       class TestTrackFiles
         def initialize
           @paths = FixturePaths
-          @slug = 'alpha'
+          @slug = 'alpha-beta'
+          @exercise_name = 'alpha_beta'
         end
-        attr_accessor :paths, :slug
+        attr_accessor :paths, :slug, :exercise_name
         include TrackFiles
       end
 
@@ -24,7 +25,7 @@ module Generator
 
       def test_example_solution
         subject = TestTrackFiles.new
-        expected_filename = FixturePaths.track + '/exercises/alpha/.meta/solutions/alpha.rb'
+        expected_filename = FixturePaths.track + '/exercises/alpha-beta/.meta/solutions/alpha_beta.rb'
         assert_equal expected_filename, subject.example_solution.filename
       end
 
@@ -35,7 +36,7 @@ module Generator
 
       def test_tests_template
         subject = TestTrackFiles.new
-        expected_filename = FixturePaths.track + '/exercises/alpha/.meta/generator/test_template.erb'
+        expected_filename = FixturePaths.track + '/exercises/alpha-beta/.meta/generator/test_template.erb'
         assert_equal expected_filename, subject.tests_template.filename
       end
 

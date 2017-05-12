@@ -31,6 +31,10 @@ module Generator
         values: template_values
       )
     end
+
+    def exercise_name
+      @exercise_name ||= slug.tr('-', '_')
+    end
   end
 
   # This exists to give us a clue as to what we are delegating to.

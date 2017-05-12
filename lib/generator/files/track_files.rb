@@ -36,7 +36,7 @@ module Generator
       end
 
       def minitest_tests_filename
-        "#{slug.gsub(/[ -]/, '_')}_test.rb"
+        "#{exercise_name}_test.rb"
       end
 
       def version_filename
@@ -44,7 +44,7 @@ module Generator
       end
 
       def example_filename
-        "#{slug}.rb"
+        "#{exercise_name}.rb"
       end
 
       def tests_template_absolute_filename
