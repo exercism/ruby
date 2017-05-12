@@ -1,6 +1,6 @@
 require 'json'
 require_relative 'test_helper'
-require_relative '../exercises/wordy/.meta/generator/wordy_cases'
+require_relative '../exercises/wordy/.meta/generator/wordy_case'
 
 class WordyCaseTest < Minitest::Test
   def test_workload_with_expected_and_no_message

@@ -25,7 +25,7 @@ where `<exercise_name>` is the underscored version of the exercise's slug, e.g.,
 If the exercise has a test generator, the directory will also contain:
 
 * `.version`
-* the test generator, `.meta/generator/<exercise_name>_cases.rb`
+* the test generator, `.meta/generator/<exercise_name>_case.rb`
 
 A few exercises use a custom test template:
 
@@ -132,7 +132,7 @@ can regenerate the exercise with `bin/generate <slug>`.
 
 An exercise's test case generator class produces the code that goes inside
 the minitest `test_<whatever>` methods. An exercise's generator lives in
-`exercises/<slug>/.meta/generator/<exercise_name>_cases.rb`.
+`exercises/<slug>/.meta/generator/<exercise_name>_case.rb`.
 
 The test case generator is a derived class of `ExerciseCase` (in
 `lib/generator/exercise_case.rb`). `ExerciseCase` does most of the work of

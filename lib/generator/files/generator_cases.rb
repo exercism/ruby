@@ -7,7 +7,7 @@ module Generator
         end
 
         def class_name(exercise_name_or_slug)
-          filename(exercise_name_or_slug)[0..-2].split('_').map(&:capitalize).join
+          filename(exercise_name_or_slug).split('_').map(&:capitalize).join
         end
 
         def source_filepath(track_path, slug)
@@ -19,16 +19,16 @@ module Generator
         private
 
         def cases_filepaths(track_path)
-          generator_glob = File.join(meta_generator_path(track_path, '*'), '*_cases.rb')
+          generator_glob = File.join(meta_generator_path(track_path, '*'), '*_case.rb')
           Dir.glob(generator_glob, File::FNM_DOTMATCH)
         end
 
         def slugify(filepath)
-          %r{([^/]*)_cases\.rb$}.match(filepath).captures[0].tr('_', '-')
+          %r{([^/]*)_case\.rb$}.match(filepath).captures[0].tr('_', '-')
         end
 
         def filename(exercise_name_or_slug)
-          "#{exercise_name_or_slug.tr('-', '_')}_cases"
+          "#{exercise_name_or_slug.tr('-', '_')}_case"
         end
 
         def meta_generator_path(track_path, slug)
