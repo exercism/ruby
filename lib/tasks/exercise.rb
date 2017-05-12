@@ -1,12 +1,12 @@
 class Exercise
   class << self
     def all
-      exercise_names.map { |e| new(e) }
+      slugs.map { |e| new(e) }
     end
 
     private
 
-    def exercise_names
+    def slugs
       FileList['exercises/*'].pathmap('%f').exclude('TRACK_HINTS.md')
     end
   end
@@ -23,7 +23,7 @@ class Exercise
   end
 
   def example_file
-    example_filename
+    File.join('.meta', 'solutions', "#{name}.rb")
   end
 
   def testable_example_file
@@ -35,10 +35,6 @@ class Exercise
   end
 
   private
-
-  def example_filename
-    File.join('.meta', 'solutions', "#{name}.rb")
-  end
 
   def base_file_name
     @_base_file_name ||= name.tr('-', '_')

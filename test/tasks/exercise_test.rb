@@ -26,8 +26,8 @@ class ExerciseTest < Minitest::Test
   end
 
   def test_directory
-    exercise = Exercise.new('exercise_name')
-    assert_equal 'exercises/exercise_name/.', exercise.directory
+    exercise = Exercise.new('slug')
+    assert_equal 'exercises/slug/.', exercise.directory
   end
 
   def test_example_file

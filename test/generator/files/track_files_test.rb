@@ -11,9 +11,9 @@ module Generator
       class TestTrackFiles
         def initialize
           @paths = FixturePaths
-          @exercise_name = 'alpha'
+          @slug = 'alpha'
         end
-        attr_accessor :paths, :exercise_name
+        attr_accessor :paths, :slug
         include TrackFiles
       end
 
@@ -43,9 +43,9 @@ module Generator
       class TestTrackFilesUseDefault
         def initialize
           @paths = FixturePaths
-          @exercise_name = 'notemplate'
+          @slug = 'notemplate'
         end
-        attr_reader :paths, :exercise_name
+        attr_reader :paths, :slug
         include TrackFiles
       end
 

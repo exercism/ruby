@@ -16,14 +16,11 @@ module Generator
     attr_reader :paths
 
     def generators
-      exercises.map do |exercise_name|
-        generator(repository(exercise_name))
-      end
+      exercises.map { |slug| generator(repository(slug)) }
     end
 
     def exercises
-      @options[:all] ? Files::GeneratorCases.available(paths.track) :
-        [@options[:exercise_name]]
+      @options[:all] ? Files::GeneratorCases.available(paths.track) : [@options[:slug]]
     end
 
     def generator(repository)
@@ -38,9 +35,9 @@ module Generator
       @options[:freeze] || @options[:all]
     end
 
-    def repository(exercise_name)
+    def repository(slug)
       LoggingRepository.new(
-        repository: Repository.new(paths: paths, exercise_name: exercise_name),
+        repository: Repository.new(paths: paths, slug: slug),
         logger: logger
       )
     end
