@@ -44,6 +44,11 @@ module Generator
       subject.create_tests_file
       mock_minitest_tests.verify
     end
+
+    def test_exercise_name
+      subject = Repository.new(paths: FixturePaths, slug: 'alpha-beta')
+      assert_equal 'alpha_beta', subject.exercise_name
+    end
   end
 
   class LoggingRepositoryTest < Minitest::Test

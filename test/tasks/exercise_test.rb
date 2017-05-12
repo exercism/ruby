@@ -10,19 +10,19 @@ class ExerciseTest < Minitest::Test
 
       FileList.stub :[], FileList["#{dir}/*"] do
         assert_equal true, Exercise.all.all? { |e| e.instance_of?(Exercise) }
-        assert_equal ['test', 'test2'], Exercise.all.map(&:name)
+        assert_equal ['test', 'test2'], Exercise.all.map(&:slug)
       end
     end
   end
 
-  def test_name
-    exercise = Exercise.new('name')
-    assert_equal 'name', exercise.name
+  def test_slug
+    exercise = Exercise.new('slug')
+    assert_equal 'slug', exercise.slug
   end
 
   def test_to_s
-    exercise = Exercise.new('name')
-    assert_equal 'name', exercise.to_s
+    exercise = Exercise.new('slug')
+    assert_equal 'slug', exercise.to_s
   end
 
   def test_directory

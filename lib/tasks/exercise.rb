@@ -11,32 +11,32 @@ class Exercise
     end
   end
 
-  attr_reader :name
-  alias :to_s :name
+  attr_reader :slug
+  alias :to_s :slug
 
-  def initialize(name)
-    @name = name
+  def initialize(slug)
+    @slug = slug
   end
 
   def directory
-    "exercises/#{name}/."
+    "exercises/#{slug}/."
   end
 
   def example_file
-    File.join('.meta', 'solutions', "#{name}.rb")
+    File.join('.meta', 'solutions', "#{exercise_name}.rb")
   end
 
   def testable_example_file
-    "#{base_file_name}.rb"
+    "#{exercise_name}.rb"
   end
 
   def test_file
-    "#{base_file_name}_test.rb"
+    "#{exercise_name}_test.rb"
   end
 
   private
 
-  def base_file_name
-    @_base_file_name ||= name.tr('-', '_')
+  def exercise_name
+    @exercise_name ||= slug.tr('-', '_')
   end
 end
