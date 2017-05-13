@@ -1,5 +1,5 @@
 # This is the example
 
 class BookKeeping
-  VERSION = 1
+  VERSION = 0
 end
