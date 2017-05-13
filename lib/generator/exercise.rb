@@ -25,7 +25,7 @@ module Generator
       example_solution.update_version(version)
     end
 
-    def create_tests_file
+    def build_tests
       minitest_tests.generate(
         template: tests_template.to_s,
         values: template_values
@@ -58,8 +58,8 @@ module Generator
       @logger.debug "Updated version in example solution to #{version}"
     end
 
-    def create_tests_file
-      @exercise.create_tests_file
+    def build_tests
+      @exercise.build_tests
       @logger.info "Generated #{slug} tests version #{version}"
     end
   end
