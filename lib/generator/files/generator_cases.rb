@@ -24,7 +24,7 @@ module Generator
         end
 
         def slugify(filepath)
-          %r{([^/]*)_case\.rb$}.match(filepath).captures[0].tr('_', '-')
+          File.basename(filepath, '_case.rb').tr('_', '-')
         end
 
         def filename(exercise_name_or_slug)
