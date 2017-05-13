@@ -50,6 +50,10 @@ module Generator
         'alpha'
       end
 
+      def test_case_name
+        'alpha_case'
+      end
+
       def version
         2
       end
@@ -71,41 +75,29 @@ module Generator
       include TemplateValuesFactory
     end
 
-    class ClassBasedTestTemplateValuesFactory
+    class ClassBasedTestTemplateValuesFactory < TestTemplateValuesFactory
       def slug
         'beta'
       end
 
-      def version
-        2
+      def test_case_name
+        'beta_case'
       end
-
-      def canonical_data
-        mock_canonical_data = Minitest::Mock.new
-        mock_canonical_data.expect :abbreviated_commit_hash, nil
-        mock_canonical_data.expect :version, '1.2.3'
-        mock_canonical_data.expect :to_s, '{"cases":[]}'
-        mock_canonical_data
-      end
-
-      def paths
-        mock_paths = Minitest::Mock.new
-        mock_paths.expect :track, 'test/fixtures/xruby'
-        mock_paths
-      end
-
-      include TemplateValuesFactory
     end
 
     def test_template_values_from_class
       subject = ClassBasedTestTemplateValuesFactory.new
-      assert_instance_of TemplateValues, subject.template_values
+      subject.stub(:case_load_name, 'test/fixtures/xruby/exercises/beta/.meta/generator/beta_case.rb') do
+        assert_instance_of TemplateValues, subject.template_values
+      end
     end
 
     def test_template_values_loads_problem_case_classes
       subject = TestTemplateValuesFactory.new
-      assert_instance_of TemplateValues, subject.template_values
-      assert Object.const_defined?(:AlphaCase)
+      subject.stub(:case_load_name, 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb') do
+        assert_instance_of TemplateValues, subject.template_values
+        assert Object.const_defined?(:AlphaCase)
+      end
     end
 
     def teardown

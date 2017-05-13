@@ -13,8 +13,9 @@ module Generator
           @paths = FixturePaths
           @slug = 'alpha-beta'
           @exercise_name = 'alpha_beta'
+          @test_case_name = 'alpha_beta_case'
         end
-        attr_accessor :paths, :slug, :exercise_name
+        attr_accessor :paths, :slug, :exercise_name, :test_case_name
         include TrackFiles
       end
 
@@ -32,6 +33,12 @@ module Generator
       def test_minitest_tests
         subject = TestTrackFiles.new
         assert_instance_of MinitestTestsFile, subject.minitest_tests
+      end
+
+      def test_case_filepath
+        subject = TestTrackFiles.new
+        expected_filepath = FixturePaths.track + '/exercises/alpha-beta/.meta/generator/alpha_beta_case.rb'
+        assert_equal expected_filepath, subject.case_filepath.filename
       end
 
       def test_tests_template

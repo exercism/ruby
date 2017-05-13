@@ -99,6 +99,11 @@ TESTS_FILE
       subject = Repository.new(paths: FixturePaths, slug: 'alpha-beta')
       assert_equal 'alpha_beta', subject.exercise_name
     end
+
+    def test_test_case_name
+      subject = Repository.new(paths: FixturePaths, slug: 'two-parter')
+      assert_equal 'two_parter_case', subject.test_case_name
+    end
   end
 
   class LoggingRepositoryTest < Minitest::Test

@@ -38,18 +38,22 @@ module Generator
     end
 
     def extract
-      load cases_load_name
+      load case_load_name
       extractor.cases(canonical_data.to_s)
     end
 
     def extractor
         CaseValues::Extractor.new(
-          case_class: Object.const_get(Files::GeneratorCases.class_name(slug))
+          case_class: Object.const_get(case_class_name)
         )
     end
 
-    def cases_load_name
-      Files::GeneratorCases.source_filepath(paths.track, slug)
+    def case_class_name
+      test_case_name.split('_').map(&:capitalize).join
+    end
+
+    def case_load_name
+      case_filepath.filename
     end
   end
 end
