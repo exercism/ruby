@@ -7,10 +7,10 @@ module Generator
     end
 
     class Readable
-      attr_reader :filename, :repository_root
-      def initialize(filename:, repository_root: nil)
+      attr_reader :filename, :exercise_root
+      def initialize(filename:, exercise_root: nil)
         @filename = filename
-        @repository_root = repository_root
+        @exercise_root = exercise_root
       end
 
       def to_s
@@ -24,11 +24,11 @@ module Generator
       private
 
       def relative_filename
-        Pathname.new(filename).relative_path_from(Pathname.new(repository_root)).to_s
+        Pathname.new(filename).relative_path_from(Pathname.new(exercise_root)).to_s
       end
 
       def git_path
-        File.join(repository_root, '.git')
+        File.join(exercise_root, '.git')
       end
     end
 
@@ -47,7 +47,7 @@ module Generator
       end
     end
 
-    # An Exercise is used as part of a Repository
+    # An Exercise is used as part of a Exercise
     # so expects :paths and :slug to be defined.
     module Exercise
       def paths

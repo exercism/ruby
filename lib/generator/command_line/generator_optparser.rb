@@ -54,16 +54,16 @@ module Generator
 
     def validate_paths
       return true if File.directory?(@paths.metadata)
-      $stderr.puts metadata_repository_missing_message(@paths.metadata)
+      $stderr.puts metadata_exercise_missing_message(@paths.metadata)
       false
     end
 
-    def metadata_repository_missing_message(repository)
+    def metadata_exercise_missing_message(exercise)
       <<-EOM.gsub(/^ {6}/, '')
 
-      'x-common' repository not found.
+      'x-common' exercise not found.
       Try running the command:
-        git clone https://github.com/exercism/x-common.git "#{repository}"
+        git clone https://github.com/exercism/x-common.git "#{exercise}"
 
       EOM
     end

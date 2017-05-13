@@ -14,10 +14,10 @@ module Generator
       end
     end
 
-    def test_invalid_metadata_repository_outputs_message_to_stderr
+    def test_invalid_metadata_exercise_outputs_message_to_stderr
       paths = Paths.new(metadata: 'test/fixtures/nonexistent', track: nil)
       expected_stderr = <<-MESSAGE.gsub(/^ {6}/, '')
-      'x-common' repository not found.
+      'x-common' exercise not found.
       Try running the command:
         git clone https://github.com/exercism/x-common.git "test/fixtures/nonexistent"
       MESSAGE
