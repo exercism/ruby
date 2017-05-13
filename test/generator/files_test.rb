@@ -23,7 +23,7 @@ module Generator
     class ReadableTest < Minitest::Test
       def test_abbreviated_commit_hash
         mock_git_command = Minitest::Mock.new.expect :call, nil, ['path/.git', 'subdir/file']
-        subject = Readable.new(filename: 'path/subdir/file', repository_root: 'path')
+        subject = Readable.new(filename: 'path/subdir/file', exercise_root: 'path')
         GitCommand.stub(:abbreviated_commit_hash, mock_git_command) do
           subject.abbreviated_commit_hash
         end

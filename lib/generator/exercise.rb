@@ -1,7 +1,7 @@
 require 'delegate'
 
 module Generator
-  class Repository
+  class Exercise
     include Files::TrackFiles
     include Files::MetadataFiles
     include TemplateValuesFactory
@@ -38,28 +38,28 @@ module Generator
   end
 
   # This exists to give us a clue as to what we are delegating to.
-  class RepositoryDelegator < SimpleDelegator
+  class ExerciseDelegator < SimpleDelegator
   end
 
-  # A repository that also logs its progress.
-  class LoggingRepository < RepositoryDelegator
-    def initialize(repository:, logger:)
-      __setobj__ @repository = repository
+  # A exercise that also logs its progress.
+  class LoggingExercise < ExerciseDelegator
+    def initialize(exercise:, logger:)
+      __setobj__ @exercise = exercise
       @logger = logger
     end
 
     def update_tests_version
-      @repository.update_tests_version
+      @exercise.update_tests_version
       @logger.debug "Incremented tests version to #{version}"
     end
 
     def update_example_solution
-      @repository.update_example_solution
+      @exercise.update_example_solution
       @logger.debug "Updated version in example solution to #{version}"
     end
 
     def create_tests_file
-      @repository.create_tests_file
+      @exercise.create_tests_file
       @logger.info "Generated #{slug} tests version #{version}"
     end
   end

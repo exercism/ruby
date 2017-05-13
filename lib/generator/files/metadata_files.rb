@@ -6,7 +6,7 @@ module Generator
       def canonical_data
         CanonicalDataFile.new(
           filename: File.join(exercise_metadata_path, 'canonical-data.json'),
-          repository_root: paths.metadata)
+          exercise_root: paths.metadata)
       end
 
       private
