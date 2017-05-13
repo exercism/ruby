@@ -95,9 +95,9 @@ TESTS_FILE
       Object.send(:remove_const, :AlphaCase)
     end
 
-    def test_exercise_name
+    def test_name
       subject = Exercise.new(paths: FixturePaths, slug: 'alpha-beta')
-      assert_equal 'alpha_beta', subject.exercise_name
+      assert_equal 'alpha_beta', subject.name
     end
   end
 

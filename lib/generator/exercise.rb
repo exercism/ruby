@@ -32,8 +32,8 @@ module Generator
       )
     end
 
-    def exercise_name
-      @exercise_name ||= slug.tr('-', '_')
+    def name
+      @name ||= slug.tr('-', '_')
     end
   end
 
