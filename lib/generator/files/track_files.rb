@@ -17,8 +17,8 @@ module Generator
         ExampleSolutionFile.new(filename: File.join(solutions_path, example_filename))
       end
 
-      def cases_filepath
-        CasesFile.new(filename: File.join(generator_path, cases_filename))
+      def case_filepath
+        CaseFile.new(filename: File.join(generator_path, case_filename))
       end
 
       def tests_template
@@ -55,7 +55,7 @@ module Generator
         "#{exercise_name}.rb"
       end
 
-      def cases_filename
+      def case_filename
         "#{test_case_name}.rb"
       end
 
@@ -104,6 +104,6 @@ module Generator
     class TestsTemplateFile < Readable
     end
 
-    class CasesFile < Readable; end
+    class CaseFile < Readable; end
   end
 end

@@ -87,14 +87,14 @@ module Generator
 
     def test_template_values_from_class
       subject = ClassBasedTestTemplateValuesFactory.new
-      subject.stub(:cases_load_name, 'test/fixtures/xruby/exercises/beta/.meta/generator/beta_case.rb') do
+      subject.stub(:case_load_name, 'test/fixtures/xruby/exercises/beta/.meta/generator/beta_case.rb') do
         assert_instance_of TemplateValues, subject.template_values
       end
     end
 
     def test_template_values_loads_problem_case_classes
       subject = TestTemplateValuesFactory.new
-      subject.stub(:cases_load_name, 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb') do
+      subject.stub(:case_load_name, 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb') do
         assert_instance_of TemplateValues, subject.template_values
         assert Object.const_defined?(:AlphaCase)
       end

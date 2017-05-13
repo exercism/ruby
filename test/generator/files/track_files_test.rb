@@ -35,10 +35,10 @@ module Generator
         assert_instance_of MinitestTestsFile, subject.minitest_tests
       end
 
-      def test_cases_filepath
+      def test_case_filepath
         subject = TestTrackFiles.new
         expected_filepath = FixturePaths.track + '/exercises/alpha-beta/.meta/generator/alpha_beta_case.rb'
-        assert_equal expected_filepath, subject.cases_filepath.filename
+        assert_equal expected_filepath, subject.case_filepath.filename
       end
 
       def test_tests_template

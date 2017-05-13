@@ -38,7 +38,7 @@ module Generator
     end
 
     def extract
-      load cases_load_name
+      load case_load_name
       extractor.cases(canonical_data.to_s)
     end
 
@@ -52,8 +52,8 @@ module Generator
       test_case_name.split('_').map(&:capitalize).join
     end
 
-    def cases_load_name
-      cases_filepath.filename
+    def case_load_name
+      case_filepath.filename
     end
   end
 end
