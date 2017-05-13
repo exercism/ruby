@@ -35,6 +35,10 @@ module Generator
     def exercise_name
       @exercise_name ||= slug.tr('-', '_')
     end
+
+    def test_case_name
+      exercise_name + '_case'
+    end
   end
 
   # This exists to give us a clue as to what we are delegating to.

@@ -21,10 +21,6 @@ module Generator
         end
         mock_glob_call.verify
       end
-
-      def test_class_name
-        assert_equal 'TwoParterCase', GeneratorCases.class_name('two-parter')
-      end
     end
   end
 end

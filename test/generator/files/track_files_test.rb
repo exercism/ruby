@@ -13,8 +13,9 @@ module Generator
           @paths = FixturePaths
           @slug = 'alpha-beta'
           @exercise_name = 'alpha_beta'
+          @test_case_name = 'alpha_beta_case'
         end
-        attr_accessor :paths, :slug, :exercise_name
+        attr_accessor :paths, :slug, :exercise_name, :test_case_name
         include TrackFiles
       end
 

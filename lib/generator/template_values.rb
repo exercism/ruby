@@ -44,8 +44,12 @@ module Generator
 
     def extractor
         CaseValues::Extractor.new(
-          case_class: Object.const_get(Files::GeneratorCases.class_name(slug))
+          case_class: Object.const_get(case_class_name)
         )
+    end
+
+    def case_class_name
+      test_case_name.split('_').map(&:capitalize).join
     end
 
     def cases_load_name

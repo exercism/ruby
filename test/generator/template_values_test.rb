@@ -50,6 +50,10 @@ module Generator
         'alpha'
       end
 
+      def test_case_name
+        'alpha_case'
+      end
+
       def version
         2
       end
@@ -74,6 +78,10 @@ module Generator
     class ClassBasedTestTemplateValuesFactory < TestTemplateValuesFactory
       def slug
         'beta'
+      end
+
+      def test_case_name
+        'beta_case'
       end
     end
 
