@@ -41,9 +41,13 @@ module Generator
 
     def implementation(exercise)
       LoggingImplementation.new(
-        implementation: Implementation.new(paths: paths, exercise: exercise),
+        implementation: Implementation.new(exercise: exercise, repository: repository(exercise)),
         logger: logger
       )
+    end
+
+    def repository(exercise)
+      Repository.new(paths: paths, exercise: exercise)
     end
 
     def logger
