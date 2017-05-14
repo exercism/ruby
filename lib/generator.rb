@@ -13,14 +13,14 @@ module Generator
 
   # This contains the order for updating/generating the files. (Strategy pattern).
   # Doesn't update the version information.
-  class GenerateTests < ExerciseDelegator
+  class GenerateTests < ImplementationDelegator
     def call
       create_tests_file
     end
   end
 
   # Update everything.
-  class UpdateVersionAndGenerateTests < ExerciseDelegator
+  class UpdateVersionAndGenerateTests < ImplementationDelegator
     def call
       update_tests_version
       update_example_solution
