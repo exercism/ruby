@@ -1,17 +1,16 @@
 require 'delegate'
+require 'forwardable'
 
 module Generator
   class Exercise
-    include Files::TrackFiles
-    include Files::MetadataFiles
     include TemplateValuesFactory
+    extend Forwardable
 
-    def initialize(paths:, slug:)
-      @paths = paths
-      @slug = slug
+    def initialize(repository:)
+      @repository = repository
     end
-
-    attr_reader :paths, :slug
+    attr_reader :repository
+    def_delegators :@repository, :tests_version, :example_solution, :minitest_tests, :tests_template, :canonical_data
 
     def version
       tests_version.to_i
@@ -25,15 +24,11 @@ module Generator
       example_solution.update_version(version)
     end
 
-    def create_tests_file
+    def build_tests
       minitest_tests.generate(
         template: tests_template.to_s,
         values: template_values
       )
-    end
-
-    def exercise_name
-      @exercise_name ||= slug.tr('-', '_')
     end
   end
 
@@ -58,9 +53,9 @@ module Generator
       @logger.debug "Updated version in example solution to #{version}"
     end
 
-    def create_tests_file
-      @exercise.create_tests_file
-      @logger.info "Generated #{slug} tests version #{version}"
+    def build_tests
+      @exercise.build_tests
+      @logger.info "Generated #{repository.slug} tests version #{version}"
     end
   end
 end

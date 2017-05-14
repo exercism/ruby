@@ -46,8 +46,13 @@ module Generator
 
   class TemplateValuesFactoryTest < Minitest::Test
     class TestTemplateValuesFactory
-      def slug
-        'alpha'
+      def repository
+        mock_repository = Minitest::Mock.new
+        mock_repository.expect :slug, 'alpha'
+        mock_repository.expect :name, 'alpha'
+        mock_repository.expect :paths, [:track, 'test/fixtures/xruby']
+        mock_repository.expect :case_load_name, 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb'
+        mock_repository.expect :case_class_name, 'AlphaCase'
       end
 
       def version
@@ -62,44 +67,7 @@ module Generator
         mock_canonical_data
       end
 
-      def paths
-        mock_paths = Minitest::Mock.new
-        mock_paths.expect :track, 'test/fixtures/xruby'
-        mock_paths
-      end
-
       include TemplateValuesFactory
-    end
-
-    class ClassBasedTestTemplateValuesFactory
-      def slug
-        'beta'
-      end
-
-      def version
-        2
-      end
-
-      def canonical_data
-        mock_canonical_data = Minitest::Mock.new
-        mock_canonical_data.expect :abbreviated_commit_hash, nil
-        mock_canonical_data.expect :version, '1.2.3'
-        mock_canonical_data.expect :to_s, '{"cases":[]}'
-        mock_canonical_data
-      end
-
-      def paths
-        mock_paths = Minitest::Mock.new
-        mock_paths.expect :track, 'test/fixtures/xruby'
-        mock_paths
-      end
-
-      include TemplateValuesFactory
-    end
-
-    def test_template_values_from_class
-      subject = ClassBasedTestTemplateValuesFactory.new
-      assert_instance_of TemplateValues, subject.template_values
     end
 
     def test_template_values_loads_problem_case_classes

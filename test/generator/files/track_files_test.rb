@@ -12,9 +12,9 @@ module Generator
         def initialize
           @paths = FixturePaths
           @slug = 'alpha-beta'
-          @exercise_name = 'alpha_beta'
+          @name = 'alpha_beta'
         end
-        attr_accessor :paths, :slug, :exercise_name
+        attr_accessor :paths, :slug, :name
         include TrackFiles
       end
 

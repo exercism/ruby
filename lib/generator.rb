@@ -15,7 +15,7 @@ module Generator
   # Doesn't update the version information.
   class GenerateTests < ExerciseDelegator
     def call
-      create_tests_file
+      build_tests
     end
   end
 
@@ -24,7 +24,7 @@ module Generator
     def call
       update_tests_version
       update_example_solution
-      create_tests_file
+      build_tests
     end
   end
 end
