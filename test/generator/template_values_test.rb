@@ -71,17 +71,6 @@ module Generator
       include TemplateValuesFactory
     end
 
-    class ClassBasedTestTemplateValuesFactory < TestTemplateValuesFactory
-      def slug
-        Exercise.new(slug: 'beta')
-      end
-    end
-
-    def test_template_values_from_class
-      subject = ClassBasedTestTemplateValuesFactory.new
-      assert_instance_of TemplateValues, subject.template_values
-    end
-
     def test_template_values_loads_problem_case_classes
       subject = TestTemplateValuesFactory.new
       assert_instance_of TemplateValues, subject.template_values
