@@ -1,7 +1,7 @@
 require 'delegate'
 
 module Generator
-  class Exercise
+  class Implementation
     include Files::TrackFiles
     include Files::MetadataFiles
     include TemplateValuesFactory
@@ -38,28 +38,28 @@ module Generator
   end
 
   # This exists to give us a clue as to what we are delegating to.
-  class ExerciseDelegator < SimpleDelegator
+  class ImplementationDelegator < SimpleDelegator
   end
 
-  # A exercise that also logs its progress.
-  class LoggingExercise < ExerciseDelegator
-    def initialize(exercise:, logger:)
-      __setobj__ @exercise = exercise
+  # A implementation that also logs its progress.
+  class LoggingImplementation < ImplementationDelegator
+    def initialize(implementation:, logger:)
+      __setobj__ @implementation = implementation
       @logger = logger
     end
 
     def update_tests_version
-      @exercise.update_tests_version
+      @implementation.update_tests_version
       @logger.debug "Incremented tests version to #{version}"
     end
 
     def update_example_solution
-      @exercise.update_example_solution
+      @implementation.update_example_solution
       @logger.debug "Updated version in example solution to #{version}"
     end
 
     def create_tests_file
-      @exercise.create_tests_file
+      @implementation.create_tests_file
       @logger.info "Generated #{slug} tests version #{version}"
     end
   end

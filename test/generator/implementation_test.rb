@@ -1,25 +1,25 @@
 require_relative '../test_helper'
 
 module Generator
-  class ExerciseTest < Minitest::Test
+  class ImplementationTest < Minitest::Test
     FixturePaths = Paths.new(
       metadata: 'test/fixtures/metadata',
       track: 'test/fixtures/xruby'
     )
 
     def test_version
-      subject = Exercise.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
       assert_equal 1, subject.version
     end
 
     def test_slug
-      subject = Exercise.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
       assert_equal 'alpha', subject.slug
     end
 
     def test_update_tests_version
       mock_file = Minitest::Mock.new.expect :write, '2'.length, [2]
-      subject = Exercise.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
       # Verify iniital condition from fixture file
       assert_equal 1, subject.tests_version.to_i
       File.stub(:open, true, mock_file) do
@@ -31,7 +31,7 @@ module Generator
     def test_update_example_solution
       expected_content = "# This is the example\n\nclass BookKeeping\n  VERSION = 1\nend\n"
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-      subject = Exercise.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
       File.stub(:open, true, mock_file) do
         assert_equal expected_content, subject.update_example_solution
       end
@@ -40,7 +40,7 @@ module Generator
 
     def test_create_tests_file
       # Q: Is the pain here caused by:
-      # a) Exercise `including` everything rather than using composition?
+      # a) Implementation `including` everything rather than using composition?
       # b) Trying to verify the expected content.
       # c) The expected content being too long
       #
@@ -84,7 +84,7 @@ class AlphaTest < Minitest::Test
 end
 TESTS_FILE
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-      subject = Exercise.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
       GitCommand.stub(:abbreviated_commit_hash, '123456789') do
         File.stub(:open, true, mock_file) do
           assert_equal expected_content, subject.create_tests_file
@@ -96,50 +96,50 @@ TESTS_FILE
     end
 
     def test_exercise_name
-      subject = Exercise.new(paths: FixturePaths, slug: 'alpha-beta')
+      subject = Implementation.new(paths: FixturePaths, slug: 'alpha-beta')
       assert_equal 'alpha_beta', subject.exercise_name
     end
   end
 
-  class LoggingExerciseTest < Minitest::Test
+  class LoggingImplementationTest < Minitest::Test
     def test_create_tests_file
-      mock_exercise = Minitest::Mock.new
-      mock_exercise.expect :create_tests_file, nil
-      mock_exercise.expect :slug, 'alpha'
-      mock_exercise.expect :version, 2
+      mock_implementation = Minitest::Mock.new
+      mock_implementation.expect :create_tests_file, nil
+      mock_implementation.expect :slug, 'alpha'
+      mock_implementation.expect :version, 2
       mock_logger = Minitest::Mock.new
       mock_logger.expect :info, nil, ['Generated alpha tests version 2']
 
-      subject = LoggingExercise.new(exercise: mock_exercise, logger: mock_logger)
+      subject = LoggingImplementation.new(implementation: mock_implementation, logger: mock_logger)
       subject.create_tests_file
 
-      mock_exercise.verify
+      mock_implementation.verify
     end
 
     def test_update_tests_version
-      mock_exercise = Minitest::Mock.new
-      mock_exercise.expect :update_tests_version, nil
-      mock_exercise.expect :version, 2
+      mock_implementation = Minitest::Mock.new
+      mock_implementation.expect :update_tests_version, nil
+      mock_implementation.expect :version, 2
       mock_logger = Minitest::Mock.new
       mock_logger.expect :debug, nil, ['Incremented tests version to 2']
 
-      subject = LoggingExercise.new(exercise: mock_exercise, logger: mock_logger)
+      subject = LoggingImplementation.new(implementation: mock_implementation, logger: mock_logger)
       subject.update_tests_version
 
-      mock_exercise.verify
+      mock_implementation.verify
     end
 
     def test_update_example_solution
-      mock_exercise = Minitest::Mock.new
-      mock_exercise.expect :update_example_solution, nil
-      mock_exercise.expect :version, 2
+      mock_implementation = Minitest::Mock.new
+      mock_implementation.expect :update_example_solution, nil
+      mock_implementation.expect :version, 2
       mock_logger = Minitest::Mock.new
       mock_logger.expect :debug, nil, ['Updated version in example solution to 2']
 
-      subject = LoggingExercise.new(exercise: mock_exercise, logger: mock_logger)
+      subject = LoggingImplementation.new(implementation: mock_implementation, logger: mock_logger)
       subject.update_example_solution
 
-      mock_exercise.verify
+      mock_implementation.verify
     end
   end
 end
