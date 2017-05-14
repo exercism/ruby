@@ -10,7 +10,7 @@ module Generator
       @repository = repository
     end
     attr_reader :repository
-    def_delegators :@repository, :tests_version, :example_solution, :minitest_tests, :tests_template
+    def_delegators :@repository, :tests_version, :example_solution, :minitest_tests, :tests_template, :canonical_data
 
     def version
       tests_version.to_i
