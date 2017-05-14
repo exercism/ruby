@@ -50,6 +50,8 @@ module Generator
         mock_repository = Minitest::Mock.new
         mock_repository.expect :slug, 'alpha'
         mock_repository.expect :name, 'alpha'
+        mock_repository.expect :paths, [:track, 'test/fixtures/xruby']
+        mock_repository.expect :cases_load_name, 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb'
         mock_repository
       end
 
@@ -65,27 +67,7 @@ module Generator
         mock_canonical_data
       end
 
-      def paths
-        mock_paths = Minitest::Mock.new
-        mock_paths.expect :track, 'test/fixtures/xruby'
-        mock_paths
-      end
-
       include TemplateValuesFactory
-    end
-
-    class ClassBasedTestTemplateValuesFactory < TestTemplateValuesFactory
-      def repository
-        mock_repository = Minitest::Mock.new
-        mock_repository.expect :slug, 'beta'
-        mock_repository.expect :name, 'beta'
-        mock_repository
-      end
-    end
-
-    def test_template_values_from_class
-      subject = ClassBasedTestTemplateValuesFactory.new
-      assert_instance_of TemplateValues, subject.template_values
     end
 
     def test_template_values_loads_problem_case_classes

@@ -12,5 +12,9 @@ module Generator
     def name
       @name ||= slug.tr('-', '_')
     end
+
+    def cases_load_name
+      Files::GeneratorCases.source_filepath(paths.track, slug)
+    end
   end
 end
