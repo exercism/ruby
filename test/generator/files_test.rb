@@ -57,25 +57,5 @@ module Generator
         mock_writer.verify
       end
     end
-
-    class ExerciseTest < Minitest::Test
-      class TestNotImplementedTrackFiles
-        include Exercise
-      end
-
-      def test_paths_not_implemented
-        subject = TestNotImplementedTrackFiles.new
-        assert_raises NotImplementedError do
-          subject.paths
-        end
-      end
-
-      def test_slug_not_implemented
-        subject = TestNotImplementedTrackFiles.new
-        assert_raises NotImplementedError do
-          subject.slug
-        end
-      end
-    end
   end
 end

@@ -1,8 +1,6 @@
 module Generator
   module Files
     module MetadataFiles
-      include Exercise
-
       def canonical_data
         CanonicalDataFile.new(
           filename: File.join(exercise_metadata_path, 'canonical-data.json'),
