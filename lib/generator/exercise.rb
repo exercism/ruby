@@ -55,7 +55,7 @@ module Generator
 
     def build_tests
       @exercise.build_tests
-      @logger.info "Generated #{slug} tests version #{version}"
+      @logger.info "Generated #{repository.slug} tests version #{version}"
     end
   end
 end

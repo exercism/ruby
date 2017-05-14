@@ -1,12 +1,12 @@
 require_relative '../test_helper'
 
 module Generator
-  class ExerciseTest < Minitest::Test
-    FixturePaths = Paths.new(
-      metadata: 'test/fixtures/metadata',
-      track: 'test/fixtures/xruby'
-    )
+  FixturePaths = Paths.new(
+    metadata: 'test/fixtures/metadata',
+    track: 'test/fixtures/xruby'
+  )
 
+  class ExerciseTest < Minitest::Test
     def test_version
       repository = Repository.new(paths: FixturePaths, slug: 'alpha')
       subject = Exercise.new(repository: repository)
@@ -102,9 +102,11 @@ TESTS_FILE
 
   class LoggingExerciseTest < Minitest::Test
     def test_build_tests
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+
       mock_exercise = Minitest::Mock.new
       mock_exercise.expect :build_tests, nil
-      mock_exercise.expect :slug, 'alpha'
+      mock_exercise.expect :repository, repository
       mock_exercise.expect :version, 2
       mock_logger = Minitest::Mock.new
       mock_logger.expect :info, nil, ['Generated alpha tests version 2']
