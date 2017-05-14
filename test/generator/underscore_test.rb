@@ -20,6 +20,10 @@ module Generator
       )
     end
 
+    def test_camel_case
+      assert_equal 'ASlug', 'a-slug'.camel_case
+    end
+
     def test_fixnum_underscore
       assert_equal '1_000_000', 1000000.underscore
     end
