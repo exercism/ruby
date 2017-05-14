@@ -46,8 +46,11 @@ module Generator
 
   class TemplateValuesFactoryTest < Minitest::Test
     class TestTemplateValuesFactory
-      def slug
-        'alpha'
+      def repository
+        mock_repository = Minitest::Mock.new
+        mock_repository.expect :slug, 'alpha'
+        mock_repository.expect :name, 'alpha'
+        mock_repository
       end
 
       def version
@@ -72,8 +75,11 @@ module Generator
     end
 
     class ClassBasedTestTemplateValuesFactory < TestTemplateValuesFactory
-      def slug
-        'beta'
+      def repository
+        mock_repository = Minitest::Mock.new
+        mock_repository.expect :slug, 'beta'
+        mock_repository.expect :name, 'beta'
+        mock_repository
       end
     end
 
