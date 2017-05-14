@@ -11,11 +11,7 @@ module Generator
         private
 
         def filepaths(track_path)
-          Dir.glob(meta_generator_path(track_path, '*'))
-        end
-
-        def meta_generator_path(track_path, slug)
-          File.join(track_path, 'exercises', slug, '.meta', 'generator')
+          Dir.glob(File.join(track_path, 'exercises', '*', '.meta', 'generator'))
         end
       end
     end
