@@ -2,35 +2,43 @@ require_relative '../test_helper'
 
 module Generator
   class ExerciseTest < Minitest::Test
+    FixturePaths = Paths.new(
+      metadata: 'test/fixtures/metadata',
+      track: 'test/fixtures/xruby'
+    )
+
     def test_version
-      mock_version_file = Minitest::Mock.new.expect :to_i, 1
-      mock_repository = Minitest::Mock.new.expect :tests_version, mock_version_file
-
-      subject = Exercise.new(repository: mock_repository)
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      subject = Exercise.new(repository: repository)
       assert_equal 1, subject.version
-
-      mock_repository.verify
-      mock_version_file.verify
     end
 
     def test_update_tests_version
-      mock_version_file = Minitest::Mock.new
-      mock_version_file.expect :increment, 2
-      mock_repository = Minitest::Mock.new.expect :tests_version, mock_version_file
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      # Verify iniital condition from fixture file
+      assert_equal 1, repository.tests_version.to_i
 
-      subject = Exercise.new(repository: mock_repository)
-      assert_equal 2, subject.update_tests_version
-
-      mock_repository.verify
-      mock_version_file.verify
+      mock_file = Minitest::Mock.new.expect :write, '2'.length, [2]
+      subject = Exercise.new(repository: repository)
+      File.stub(:open, true, mock_file) do
+        assert_equal 2, subject.update_tests_version
+      end
+      mock_file.verify
     end
 
     def test_update_example_solution
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+
       expected_content = "# This is the example\n\nclass BookKeeping\n  VERSION = 1\nend\n"
 
-      mock_solution_file = Minitest::Mock.new
-      mock_solution_file.expect :to_i, 1
-      mock_solution_file.expect :update_version, expected_content, [1]
+      mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
+      subject = Exercise.new(repository: repository)
+      File.stub(:open, true, mock_file) do
+        assert_equal expected_content, subject.update_example_solution
+      end
+      mock_file.verify
+    end
+
 
       mock_repository = Minitest::Mock.new
       mock_repository.expect :tests_version, mock_solution_file
