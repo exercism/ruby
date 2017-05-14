@@ -4,13 +4,19 @@ module Generator
   class TestTemplateValuesTest < Minitest::Test
     def setup
       @arguments = {
-        abbreviated_commit_hash: nil, version: nil, exercise_name: nil, test_cases: nil
+        abbreviated_commit_hash: nil, version: nil, exercise: nil, test_cases: nil
       }
+    end
+
+    def test_exercise_name
+      expected_exercise_name = 'alpha_beta'
+      subject = TemplateValues.new(@arguments.merge(exercise: Exercise.new(slug: 'alpha-beta')))
+      assert_equal expected_exercise_name, subject.exercise_name
     end
 
     def test_exercise_name_camel
       expected_exercise_name_camel = 'AlphaBeta'
-      subject = TemplateValues.new(@arguments.merge(exercise_name: 'alpha_beta'))
+      subject = TemplateValues.new(@arguments.merge(exercise: Exercise.new(slug: 'alpha_beta')))
       assert_equal expected_exercise_name_camel, subject.exercise_name_camel
     end
 

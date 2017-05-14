@@ -1,12 +1,14 @@
 module Generator
   # Contains methods accessible to the ERB template
   class TemplateValues
-    attr_reader :abbreviated_commit_hash, :version, :exercise_name, :test_cases, :canonical_data_version
+    using Underscore
 
-    def initialize(abbreviated_commit_hash:, version:, exercise_name:, test_cases:, canonical_data_version: nil)
+    attr_reader :abbreviated_commit_hash, :version, :exercise, :test_cases, :canonical_data_version
+
+    def initialize(abbreviated_commit_hash:, version:, exercise:, test_cases:, canonical_data_version: nil)
       @abbreviated_commit_hash = abbreviated_commit_hash
       @version = version
-      @exercise_name = exercise_name
+      @exercise = exercise
       @test_cases = test_cases
       @canonical_data_version = canonical_data_version
     end
@@ -15,8 +17,12 @@ module Generator
       binding
     end
 
+    def exercise_name
+      exercise.name
+    end
+
     def exercise_name_camel
-      exercise_name.split('_').map(&:capitalize).join
+      exercise.name.camel_case
     end
   end
 
@@ -26,7 +32,7 @@ module Generator
         abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
         canonical_data_version: canonical_data.version,
         version: version,
-        exercise_name: exercise.name,
+        exercise: exercise,
         test_cases: extract
       )
     end
