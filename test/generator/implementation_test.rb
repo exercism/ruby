@@ -34,7 +34,7 @@ module Generator
       mock_file.verify
     end
 
-    def test_create_tests_file
+    def test_build_tests
       # Q: Is the pain here caused by:
       # a) Implementation `including` everything rather than using composition?
       # b) Trying to verify the expected content.
@@ -83,7 +83,7 @@ TESTS_FILE
       subject = Implementation.new(paths: FixturePaths, exercise: Exercise.new(slug: 'alpha'))
       GitCommand.stub(:abbreviated_commit_hash, '123456789') do
         File.stub(:open, true, mock_file) do
-          assert_equal expected_content, subject.create_tests_file
+          assert_equal expected_content, subject.build_tests
         end
       end
       mock_file.verify
@@ -93,17 +93,17 @@ TESTS_FILE
   end
 
   class LoggingImplementationTest < Minitest::Test
-    def test_create_tests_file
+    def test_build_tests
       exercise = Exercise.new(slug: 'alpha')
       mock_implementation = Minitest::Mock.new
-      mock_implementation.expect :create_tests_file, nil
+      mock_implementation.expect :build_tests, nil
       mock_implementation.expect :exercise, exercise
       mock_implementation.expect :version, 2
       mock_logger = Minitest::Mock.new
       mock_logger.expect :info, nil, ['Generated alpha tests version 2']
 
       subject = LoggingImplementation.new(implementation: mock_implementation, logger: mock_logger)
-      subject.create_tests_file
+      subject.build_tests
 
       mock_implementation.verify
     end
