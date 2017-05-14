@@ -8,13 +8,14 @@ module Generator
     )
 
     def test_version
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
+      exercise = Minitest::Mock.new.expect :slug, 'alpha'
+      subject = Implementation.new(paths: FixturePaths, exercise: exercise)
       assert_equal 1, subject.version
     end
 
     def test_update_tests_version
       mock_file = Minitest::Mock.new.expect :write, '2'.length, [2]
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(paths: FixturePaths, exercise: Exercise.new(slug: 'alpha'))
       # Verify iniital condition from fixture file
       assert_equal 1, subject.tests_version.to_i
       File.stub(:open, true, mock_file) do
@@ -26,7 +27,7 @@ module Generator
     def test_update_example_solution
       expected_content = "# This is the example\n\nclass BookKeeping\n  VERSION = 1\nend\n"
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(paths: FixturePaths, exercise: Exercise.new(slug: 'alpha'))
       File.stub(:open, true, mock_file) do
         assert_equal expected_content, subject.update_example_solution
       end
@@ -79,7 +80,7 @@ class AlphaTest < Minitest::Test
 end
 TESTS_FILE
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(paths: FixturePaths, exercise: Exercise.new(slug: 'alpha'))
       GitCommand.stub(:abbreviated_commit_hash, '123456789') do
         File.stub(:open, true, mock_file) do
           assert_equal expected_content, subject.create_tests_file
@@ -89,18 +90,14 @@ TESTS_FILE
       # Don't pollute the namespace
       Object.send(:remove_const, :AlphaCase)
     end
-
-    def test_exercise_name
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha-beta')
-      assert_equal 'alpha_beta', subject.exercise_name
-    end
   end
 
   class LoggingImplementationTest < Minitest::Test
     def test_create_tests_file
+      exercise = Exercise.new(slug: 'alpha')
       mock_implementation = Minitest::Mock.new
       mock_implementation.expect :create_tests_file, nil
-      mock_implementation.expect :slug, 'alpha'
+      mock_implementation.expect :exercise, exercise
       mock_implementation.expect :version, 2
       mock_logger = Minitest::Mock.new
       mock_logger.expect :info, nil, ['Generated alpha tests version 2']

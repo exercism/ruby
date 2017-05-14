@@ -8,10 +8,6 @@ module Generator
           end.sort
         end
 
-        def class_name(exercise_name_or_slug)
-          filename(exercise_name_or_slug).split('_').map(&:capitalize).join
-        end
-
         def source_filepath(track_path, slug)
           path = meta_generator_path(track_path, slug)
           filename = filename(slug) + '.rb'
