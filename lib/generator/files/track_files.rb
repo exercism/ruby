@@ -3,8 +3,6 @@ require 'erb'
 module Generator
   module Files
     module TrackFiles
-      include Exercise
-
       def minitest_tests
         MinitestTestsFile.new(filename: File.join(exercise_path, minitest_tests_filename))
       end
