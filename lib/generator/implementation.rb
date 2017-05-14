@@ -6,12 +6,12 @@ module Generator
     include Files::MetadataFiles
     include TemplateValuesFactory
 
-    def initialize(paths:, slug:)
+    def initialize(paths:, exercise:)
       @paths = paths
-      @slug = slug
+      @exercise = exercise
     end
 
-    attr_reader :paths, :slug
+    attr_reader :paths, :exercise
 
     def version
       tests_version.to_i
@@ -30,10 +30,6 @@ module Generator
         template: tests_template.to_s,
         values: template_values
       )
-    end
-
-    def exercise_name
-      @exercise_name ||= slug.tr('-', '_')
     end
   end
 
@@ -60,7 +56,7 @@ module Generator
 
     def create_tests_file
       @implementation.create_tests_file
-      @logger.info "Generated #{slug} tests version #{version}"
+      @logger.info "Generated #{exercise.slug} tests version #{version}"
     end
   end
 end
