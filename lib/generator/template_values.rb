@@ -38,7 +38,7 @@ module Generator
       TemplateValues.new(
         exercise: exercise,
         version: version,
-        canonical_data: canonical_data,
+        canonical_data: canonical_data(exercise),
         test_cases: extract
       )
     end
@@ -46,8 +46,8 @@ module Generator
     private
 
     def extract
-      load cases_load_name
-      extractor.cases(canonical_data.to_s)
+      load case_load_path(exercise)
+      extractor.cases(canonical_data(exercise).to_s)
     end
 
     def extractor
@@ -56,8 +56,8 @@ module Generator
       )
     end
 
-    def cases_load_name
-      Files::GeneratorCases.source_filepath(paths.track, exercise.slug)
+    def case_load_path(exercise)
+      test_case(exercise).filename
     end
   end
 end

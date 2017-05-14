@@ -3,37 +3,45 @@ require 'erb'
 module Generator
   module Files
     module TrackFiles
-      def minitest_tests
-        MinitestTestsFile.new(filename: File.join(exercise_path, minitest_tests_filename))
+      def minitest_tests(exercise)
+        MinitestTestsFile.new(filename: File.join(exercise_path(exercise), minitest_tests_filename(exercise)))
       end
 
-      def tests_version
-        TestsVersionFile.new(filename: File.join(meta_path, version_filename))
+      def tests_version(exercise)
+        TestsVersionFile.new(filename: File.join(meta_path(exercise), version_filename))
       end
 
-      def example_solution
-        ExampleSolutionFile.new(filename: File.join(solutions_path, example_filename))
+      def example_solution(exercise)
+        ExampleSolutionFile.new(filename: File.join(solutions_path(exercise), example_filename(exercise)))
       end
 
-      def tests_template
-        TestsTemplateFile.new(filename: tests_template_absolute_filename)
+      def tests_template(exercise)
+        TestsTemplateFile.new(filename: tests_template_absolute_filename(exercise))
+      end
+
+      def test_case(exercise)
+        CaseFile.new(filename: File.join(generator_path(exercise), test_case_filename(exercise)))
       end
 
       private
 
-      def exercise_path
+      def exercise_path(exercise)
         File.join(paths.track, 'exercises', exercise.slug)
       end
 
-      def meta_path
-        File.join(exercise_path, '.meta')
+      def meta_path(exercise)
+        File.join(exercise_path(exercise), '.meta')
       end
 
-      def solutions_path
-        File.join(meta_path, 'solutions')
+      def solutions_path(exercise)
+        File.join(meta_path(exercise), 'solutions')
       end
 
-      def minitest_tests_filename
+      def generator_path(exercise)
+        File.join(meta_path(exercise), 'generator')
+      end
+
+      def minitest_tests_filename(exercise)
         "#{exercise.name}_test.rb"
       end
 
@@ -41,17 +49,21 @@ module Generator
         '.version'
       end
 
-      def example_filename
+      def example_filename(exercise)
         "#{exercise.name}.rb"
       end
 
-      def tests_template_absolute_filename
-        File.exist?(track_tests_template_filename) ? track_tests_template_filename :
+      def test_case_filename(exercise)
+        "#{exercise.name}_case.rb"
+      end
+
+      def tests_template_absolute_filename(exercise)
+        File.exist?(track_tests_template_filename(exercise)) ? track_tests_template_filename(exercise) :
           default_tests_template_filename
       end
 
-      def track_tests_template_filename
-        File.join(meta_path, 'generator', tests_template_filename)
+      def track_tests_template_filename(exercise)
+        File.join(meta_path(exercise), 'generator', tests_template_filename)
       end
 
       def default_tests_template_filename
@@ -88,6 +100,9 @@ module Generator
     end
 
     class TestsTemplateFile < Readable
+    end
+
+    class CaseFile < Readable
     end
   end
 end

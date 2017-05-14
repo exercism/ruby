@@ -41,11 +41,17 @@ module Generator
 
     def implementation(exercise)
       LoggingImplementation.new(
-        implementation: Implementation.new(paths: paths, exercise: exercise),
+        implementation: Implementation.new(exercise: exercise, repository: repository),
         logger: logger
       )
     end
 
+    # do we need one per implementation, or could they all use the same one?
+    def repository
+      Repository.new(paths: paths)
+    end
+
+    # do we need one per implementation, or could they all use the same one?
     def logger
       logger = Logger.new($stdout)
       logger.formatter = proc { |_severity, _datetime, _progname, msg| "#{msg}\n" }

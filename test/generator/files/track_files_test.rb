@@ -11,48 +11,55 @@ module Generator
       class TestTrackFiles
         def initialize
           @paths = FixturePaths
-          @exercise = Exercise.new(slug: 'alpha-beta')
         end
-        attr_reader :paths, :exercise
+        attr_reader :paths
         include TrackFiles
       end
 
       def test_tests_version
         subject = TestTrackFiles.new
-        assert_instance_of TestsVersionFile, subject.tests_version
+        assert_instance_of TestsVersionFile, subject.tests_version(Exercise.new(slug: 'alpha-beta'))
       end
 
       def test_example_solution
         subject = TestTrackFiles.new
         expected_filename = FixturePaths.track + '/exercises/alpha-beta/.meta/solutions/alpha_beta.rb'
-        assert_equal expected_filename, subject.example_solution.filename
+        assert_equal(
+          expected_filename,
+          subject.example_solution(Exercise.new(slug: 'alpha-beta')).filename
+        )
       end
 
       def test_minitest_tests
         subject = TestTrackFiles.new
-        assert_instance_of MinitestTestsFile, subject.minitest_tests
+        assert_instance_of MinitestTestsFile, subject.minitest_tests(Exercise.new(slug: 'alpha-beta'))
       end
 
       def test_tests_template
         subject = TestTrackFiles.new
         expected_filename = FixturePaths.track + '/exercises/alpha-beta/.meta/generator/test_template.erb'
-        assert_equal expected_filename, subject.tests_template.filename
+        assert_equal expected_filename, subject.tests_template(Exercise.new(slug: 'alpha-beta')).filename
       end
-
 
       class TestTrackFilesUseDefault
         def initialize
           @paths = FixturePaths
-          @exercise = Exercise.new(slug: 'notemplate')
         end
-        attr_reader :paths, :exercise
+        attr_reader :paths
         include TrackFiles
       end
 
       def test_default_tests_template
         subject = TestTrackFilesUseDefault.new
         expected_filename = FixturePaths.track + '/lib/generator/test_template.erb'
-        assert_equal expected_filename, subject.tests_template.filename
+        assert_equal expected_filename, subject.tests_template(Exercise.new(slug: 'notemplate')).filename
+      end
+
+      def test_test_case
+        subject = TestTrackFiles.new
+        expected_test_case_filename =
+          FixturePaths.track + '/exercises/alpha-beta/.meta/generator/alpha_beta_case.rb'
+        assert_equal expected_test_case_filename, subject.test_case(Exercise.new(slug: 'alpha-beta')).filename
       end
     end
 
