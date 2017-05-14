@@ -51,8 +51,8 @@ module Generator
         mock_repository.expect :slug, 'alpha'
         mock_repository.expect :name, 'alpha'
         mock_repository.expect :paths, [:track, 'test/fixtures/xruby']
-        mock_repository.expect :cases_load_name, 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb'
-        mock_repository
+        mock_repository.expect :case_load_name, 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb'
+        mock_repository.expect :case_class_name, 'AlphaCase'
       end
 
       def version

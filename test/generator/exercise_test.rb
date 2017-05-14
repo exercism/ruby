@@ -39,21 +39,65 @@ module Generator
       mock_file.verify
     end
 
+    def test_create_tests_file
+      # Q: Is the pain here caused by:
+      # a) Repository `including` everything rather than using composition?
+      # b) Trying to verify the expected content.
+      # c) The expected content being too long
+      #
+      # Q: Where in the call stack should the testing logically stop?
+      # A: It should be able to stop when minitest_tests is called with the correct arguments.
+     expected_content =<<TESTS_FILE
+#!/usr/bin/env ruby
+require 'minitest/autorun'
+require_relative 'alpha'
 
-      mock_repository = Minitest::Mock.new
-      mock_repository.expect :tests_version, mock_solution_file
-      mock_repository.expect :example_solution, mock_solution_file
+# Hi. I am a custom comment
 
-      subject = Exercise.new(repository: mock_repository)
-      assert_equal expected_content, subject.update_example_solution
+# Common test data version: 123456789
+class AlphaTest < Minitest::Test
+  def test_add_2_numbers
+    # skip
+    assert true
+  end
 
-      mock_repository.verify
-      mock_solution_file.verify
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
+  end
+end
+TESTS_FILE
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      subject = Exercise.new(repository: repository)
+
+      mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
+
+      GitCommand.stub(:abbreviated_commit_hash, '123456789') do
+        File.stub(:open, true, mock_file) do
+          assert_equal expected_content, subject.build_tests
+        end
+      end
+      mock_file.verify
+      # Don't pollute the namespace
+      Object.send(:remove_const, :AlphaCase)
     end
-
-#   will replace later
-#    def test_build_tests
-#    end
   end
 
   class LoggingExerciseTest < Minitest::Test

@@ -34,13 +34,13 @@ module Generator
     private
 
     def extract
-      load repository.cases_load_name
+      load repository.case_load_name
       extractor.cases(canonical_data.to_s)
     end
 
     def extractor
       CaseValues::Extractor.new(
-        case_class: Object.const_get(Files::GeneratorCases.class_name(slug))
+        case_class: Object.const_get(repository.case_class_name)
       )
     end
   end
