@@ -12,11 +12,6 @@ module Generator
       assert_equal 1, subject.version
     end
 
-    def test_slug
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
-      assert_equal 'alpha', subject.slug
-    end
-
     def test_update_tests_version
       mock_file = Minitest::Mock.new.expect :write, '2'.length, [2]
       subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
