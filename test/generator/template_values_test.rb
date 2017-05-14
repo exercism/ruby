@@ -4,8 +4,22 @@ module Generator
   class TestTemplateValuesTest < Minitest::Test
     def setup
       @arguments = {
-        abbreviated_commit_hash: nil, version: nil, exercise: nil, test_cases: nil
+        exercise: nil, version: nil, canonical_data: nil, test_cases: nil
       }
+    end
+
+    def test_abbreviated_commit_hash
+      expected_abbreviated_commit_hash = '1234567'
+      mock_canonical_data = Minitest::Mock.new.expect :abbreviated_commit_hash, expected_abbreviated_commit_hash
+      subject = TemplateValues.new(@arguments.merge(canonical_data: mock_canonical_data))
+      assert_equal expected_abbreviated_commit_hash, subject.abbreviated_commit_hash
+    end
+
+    def test_canonical_data_version
+      expected_canonical_data_version = '0.1.0'
+      mock_canonical_data = Minitest::Mock.new.expect :version, expected_canonical_data_version
+      subject = TemplateValues.new(@arguments.merge(canonical_data: mock_canonical_data))
+      assert_equal expected_canonical_data_version, subject.canonical_data_version
     end
 
     def test_exercise_name

@@ -3,18 +3,25 @@ module Generator
   class TemplateValues
     using Underscore
 
-    attr_reader :abbreviated_commit_hash, :version, :exercise, :test_cases, :canonical_data_version
+    attr_reader :exercise, :version, :canonical_data, :test_cases
 
-    def initialize(abbreviated_commit_hash:, version:, exercise:, test_cases:, canonical_data_version: nil)
-      @abbreviated_commit_hash = abbreviated_commit_hash
-      @version = version
+    def initialize(exercise:, version:, canonical_data:, test_cases:)
       @exercise = exercise
+      @version = version
+      @canonical_data = canonical_data
       @test_cases = test_cases
-      @canonical_data_version = canonical_data_version
     end
 
     def get_binding
       binding
+    end
+
+    def abbreviated_commit_hash
+      canonical_data.abbreviated_commit_hash
+    end
+
+    def canonical_data_version
+      canonical_data.version
     end
 
     def exercise_name
@@ -29,10 +36,9 @@ module Generator
   module TemplateValuesFactory
     def template_values
       TemplateValues.new(
-        abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
-        canonical_data_version: canonical_data.version,
-        version: version,
         exercise: exercise,
+        version: version,
+        canonical_data: canonical_data,
         test_cases: extract
       )
     end
