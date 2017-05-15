@@ -83,7 +83,9 @@ module Generator
 
     def validate_cases
       return true if available_generators.include?(options[:slug])
-      $stderr.puts "A generator does not currently exist for #{options[:slug]}!"
+      error_message = "A generator does not currently exist for #{options[:slug]}!"
+      expected_locations = "Expecting it to be at: #{Files::GeneratorCases.source_filepath(@paths.track, options[:slug])}"
+      $stderr.puts [error_message, expected_locations].join("\n")
       false
     end
   end
