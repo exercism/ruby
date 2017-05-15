@@ -13,7 +13,7 @@ module Generator
     end
 
     def name
-      'test_%s' % description.underscore
+      'test_%s' % canonical.description.underscore
     end
 
     def skipped(index)
