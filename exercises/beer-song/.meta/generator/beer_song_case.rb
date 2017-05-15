@@ -1,23 +1,22 @@
 require 'generator/exercise_case'
 
 class BeerSongCase < Generator::ExerciseCase
-
   def workload
-    %Q(expected = #{indent_heredoc(expected.split("\n"), 'TEXT', 0)}\n) +
-      "    assert_equal expected, #{beer_song}"
+    %(expected = #{indent_heredoc(canonical.expected.split("\n"), 'TEXT', 0)}\n) +
+      "    assert_equal expected, #{beer_song_call}"
   end
 
   private
 
-  def beer_song
-    "BeerSong.new.%s(%s)" % [property, beer_song_arguments]
+  def beer_song_call
+    format'BeerSong.new.%s(%s)', canonical.property, beer_song_arguments
   end
 
   def beer_song_arguments
-    if property == 'verse'
-      number
+    if canonical.property == 'verse'
+      canonical.number
     else
-      "%s, %s" % [self["beginning"], self["end"]]
+      format '%s, %s', canonical.beginning, canonical.end
     end
   end
 end
