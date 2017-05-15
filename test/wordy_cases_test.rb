@@ -4,7 +4,7 @@ require_relative '../exercises/wordy/.meta/generator/wordy_case'
 
 class WordyCaseTest < Minitest::Test
   def test_workload_with_expected_and_no_message
-    test_case = WordyCase.new(expected: 1, input: 1)
+    test_case = WordyCase.new(case_data: {'expected' => 1, 'input' => 1})
 
     expected_workload = [
       'question = \'1\'',
@@ -15,7 +15,9 @@ class WordyCaseTest < Minitest::Test
   end
 
   def test_workload_with_expected_and_message
-    test_case = WordyCase.new(expected: 1, input: 'What is -3 plus 7 multiplied by -2?')
+    test_case = WordyCase.new(
+      case_data: {'expected' => 1, 'input' => 'What is -3 plus 7 multiplied by -2?'}
+    )
     message = test_case.send(:message)
 
     expected_workload = [
@@ -29,7 +31,7 @@ class WordyCaseTest < Minitest::Test
   end
 
   def test_workload_without_expected
-    test_case = WordyCase.new(input: 1)
+    test_case = WordyCase.new(case_data: {'input' => 1})
 
     expected_workload = [
       'question = \'1\'',
