@@ -6,13 +6,13 @@ module Generator
     include CaseHelpers
     include Assertion
 
-    attr_reader :case_data
-    def initialize(case_data:)
-      @case_data = case_data
+    attr_reader :canonical
+    def initialize(canonical:)
+      @canonical = canonical
     end
 
     def name
-      'test_%s' % case_data['description'].underscore
+      'test_%s' % canonical['description'].underscore
     end
 
     def skipped(index)
