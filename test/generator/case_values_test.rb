@@ -16,14 +16,35 @@ module Generator
         ).cases(canonical_data)
 
         expected = [
-          ComplexCase.new(description: 'first generic verse', property: 'verse', number: 99,
-                          expected: '99 bottles of beer on the wall, YAAAR'),
-          ComplexCase.new(description: 'last generic verse', property: 'verse', number: 3,
-                          expected: '3 bottles of beer on the wall, YAAAR'),
-          ComplexCase.new(description: 'first two verses', property: 'verses', beginning: 99, end: 98,
-                          expected: "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT")
+          ComplexCase.new(
+            case_data: {
+              'description' => 'first generic verse',
+              'property' => 'verse',
+              'number' => 99,
+              'expected' => '99 bottles of beer on the wall, YAAAR'
+            }
+          ),
+          ComplexCase.new(
+            case_data: {
+              'description' => 'last generic verse',
+              'property' => 'verse',
+              'number' => 3,
+              'expected' => '3 bottles of beer on the wall, YAAAR'
+            }
+          ),
+          ComplexCase.new(
+            case_data: {
+              'description' => 'first two verses',
+              'property' => 'verses',
+              'beginning' => 99,
+              'end' => 98,
+              'expected' => "99 bottles of beer on the wall, YAR, PIRATES CAN'T COUNT"
+            }
+          )
         ]
-        assert_equal expected, cases
+        assert expected.zip(cases).all? do |exp, cs|
+          assert_equal exp.case_data, cs.case_data
+        end
       end
     end
   end
