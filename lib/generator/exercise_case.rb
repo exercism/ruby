@@ -29,6 +29,7 @@ module Generator
     end
 
     def forward(key)
+      warn "WARNING: Forwarding '#{key}' to 'canonical.#{key}'\n"
       canonical.send(key)
     end
   end
