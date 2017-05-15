@@ -9,6 +9,7 @@ module Generator
     attr_reader :canonical
     def initialize(canonical:)
       @canonical = canonical
+      setup_forwards(canonical)
     end
 
     def name
@@ -17,6 +18,18 @@ module Generator
 
     def skipped(index)
       index.zero? ? '# skip' : 'skip'
+    end
+
+    private
+
+    def setup_forwards(data)
+      data.to_h.keys.each do |key|
+        send(:define_singleton_method, key) { forward(key) }
+      end
+    end
+
+    def forward(key)
+      canonical.send(key)
     end
   end
 end
