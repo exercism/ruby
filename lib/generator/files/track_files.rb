@@ -19,6 +19,11 @@ module Generator
         TestsTemplateFile.new(filename: tests_template_absolute_filename)
       end
 
+      # FIXME: make this like everything else
+      def source_filepath
+          File.join(generator_path, case_filename)
+      end
+
       private
 
       def exercise_path
@@ -27,6 +32,10 @@ module Generator
 
       def meta_path
         File.join(exercise_path, '.meta')
+      end
+
+      def generator_path
+        File.join(meta_path, 'generator')
       end
 
       def solutions_path
@@ -60,6 +69,10 @@ module Generator
 
       def tests_template_filename
         'test_template.erb'
+      end
+
+      def case_filename
+        "#{slug_underscored}_case.rb"
       end
 
       def slug_underscored

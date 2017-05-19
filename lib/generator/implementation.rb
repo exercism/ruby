@@ -33,12 +33,6 @@ module Generator
         values: template_values
       )
     end
-
-    private
-
-    def paths
-      repository.paths
-    end
   end
 
   # This exists to give us a clue as to what we are delegating to.
