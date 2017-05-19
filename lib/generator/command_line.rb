@@ -13,6 +13,7 @@ module Generator
     end
 
     private
+
     attr_reader :paths
 
     def generators
@@ -37,8 +38,9 @@ module Generator
 
     def implementation(slug)
       exercise = Exercise.new(slug: slug)
+      repository = Repository.new(paths: paths, slug: slug)
       LoggingImplementation.new(
-        implementation: Implementation.new(paths: paths, exercise: exercise),
+        implementation: Implementation.new(repository: repository, exercise: exercise),
         logger: logger
       )
     end

@@ -9,13 +9,16 @@ module Generator
 
     def test_version
       exercise = Minitest::Mock.new.expect :slug, 'alpha'
-      subject = Implementation.new(paths: FixturePaths, exercise: exercise)
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(repository: repository, exercise: exercise)
       assert_equal 1, subject.version
     end
 
     def test_update_tests_version
       mock_file = Minitest::Mock.new.expect :write, '2'.length, [2]
-      subject = Implementation.new(paths: FixturePaths, exercise: Exercise.new(slug: 'alpha'))
+      exercise = Exercise.new(slug: 'alpha')
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(repository: repository, exercise: exercise)
       # Verify iniital condition from fixture file
       assert_equal 1, subject.tests_version.to_i
       File.stub(:open, true, mock_file) do
@@ -27,7 +30,9 @@ module Generator
     def test_update_example_solution
       expected_content = "# This is the example\n\nclass BookKeeping\n  VERSION = 1\nend\n"
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-      subject = Implementation.new(paths: FixturePaths, exercise: Exercise.new(slug: 'alpha'))
+      exercise = Exercise.new(slug: 'alpha')
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(repository: repository, exercise: exercise)
       File.stub(:open, true, mock_file) do
         assert_equal expected_content, subject.update_example_solution
       end
@@ -80,7 +85,9 @@ class AlphaTest < Minitest::Test
 end
 TESTS_FILE
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-      subject = Implementation.new(paths: FixturePaths, exercise: Exercise.new(slug: 'alpha'))
+      exercise = Exercise.new(slug: 'alpha')
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(repository: repository, exercise: exercise)
       GitCommand.stub(:abbreviated_commit_hash, '123456789') do
         File.stub(:open, true, mock_file) do
           assert_equal expected_content, subject.build_tests

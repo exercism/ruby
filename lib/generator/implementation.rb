@@ -6,12 +6,12 @@ module Generator
     include Files::MetadataFiles
     include TemplateValuesFactory
 
-    def initialize(paths:, exercise:)
-      @paths = paths
+    def initialize(repository:, exercise:)
+      @repository = repository
       @exercise = exercise
     end
 
-    attr_reader :paths, :exercise
+    attr_reader :repository, :exercise
 
     def version
       tests_version.to_i
@@ -30,6 +30,12 @@ module Generator
         template: tests_template.to_s,
         values: template_values
       )
+    end
+
+    private
+
+    def paths
+      repository.paths
     end
   end
 
