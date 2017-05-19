@@ -10,15 +10,14 @@ module Generator
       class TestMetadataFiles
         def initialize
           @paths = FixturePaths
-          @slug = 'alpha'
         end
-        attr_reader :paths, :slug
+        attr_reader :paths
         include MetadataFiles
       end
 
       def test_canonical_data
         subject = TestMetadataFiles.new
-        assert_instance_of CanonicalDataFile, subject.canonical_data
+        assert_instance_of CanonicalDataFile, subject.canonical_data(Exercise.new(slug: 'alpha'))
       end
     end
 

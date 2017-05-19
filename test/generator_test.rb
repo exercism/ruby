@@ -6,7 +6,7 @@ module Generator
       mock_exercise = Minitest::Mock.new
       mock_exercise.expect :update_tests_version, nil
       mock_exercise.expect :update_example_solution, nil
-      mock_exercise.expect :create_tests_file, nil
+      mock_exercise.expect :build_tests, nil
 
       subject = UpdateVersionAndGenerateTests.new(mock_exercise)
       subject.call
@@ -18,7 +18,7 @@ module Generator
   class UpdateVersionAndGenerateTestsFrozenVersionTest < Minitest::Test
     def test_call
       mock_exercise = Minitest::Mock.new
-      mock_exercise.expect :create_tests_file, nil
+      mock_exercise.expect :build_tests, nil
 
       subject = GenerateTests.new(mock_exercise)
       subject.call

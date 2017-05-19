@@ -1,55 +1,63 @@
 module Generator
   # Contains methods accessible to the ERB template
   class TemplateValues
-    attr_reader :abbreviated_commit_hash, :version, :exercise_name, :test_cases, :canonical_data_version
+    using Underscore
 
-    def initialize(abbreviated_commit_hash:, version:, exercise_name:, test_cases:, canonical_data_version: nil)
-      @abbreviated_commit_hash = abbreviated_commit_hash
+    attr_reader :exercise, :version, :canonical_data, :test_cases
+
+    def initialize(exercise:, version:, canonical_data:, test_cases:)
+      @exercise = exercise
       @version = version
-      @exercise_name = exercise_name
+      @canonical_data = canonical_data
       @test_cases = test_cases
-      @canonical_data_version = canonical_data_version
     end
 
     def get_binding
       binding
     end
 
+    def abbreviated_commit_hash
+      canonical_data.abbreviated_commit_hash
+    end
+
+    def canonical_data_version
+      canonical_data.version
+    end
+
+    def exercise_name
+      exercise.name
+    end
+
     def exercise_name_camel
-      exercise_name.split('_').map(&:capitalize).join
+      exercise.name.camel_case
     end
   end
 
   module TemplateValuesFactory
     def template_values
       TemplateValues.new(
-        abbreviated_commit_hash: canonical_data.abbreviated_commit_hash,
-        canonical_data_version: canonical_data.version,
+        exercise: exercise,
         version: version,
-        exercise_name: slug_underscore,
+        canonical_data: canonical_data(exercise),
         test_cases: extract
       )
     end
 
     private
 
-    def slug_underscore
-      slug ? slug.tr('-_', '_') : ''
-    end
-
     def extract
-      load cases_load_name
-      extractor.cases(canonical_data.to_s)
+      load case_load_path(exercise)
+      extractor.cases(canonical_data(exercise).to_s)
     end
 
     def extractor
-        CaseValues::Extractor.new(
-          case_class: Object.const_get(Files::GeneratorCases.class_name(slug))
-        )
+      CaseValues::Extractor.new(
+        case_class: Object.const_get(exercise.case_class)
+      )
     end
 
-    def cases_load_name
-      Files::GeneratorCases.source_filepath(paths.track, slug)
+    def case_load_path(exercise)
+      test_case(exercise).filename
     end
   end
 end

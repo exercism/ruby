@@ -19,5 +19,9 @@ module Generator
         'unreadable_but_correctly_sized_inputs_return_?'
       )
     end
+
+    def test_camel_case
+      assert_equal 'ASlug', 'a-slug'.camel_case
+    end
   end
 end
