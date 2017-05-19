@@ -19,9 +19,8 @@ module Generator
         TestsTemplateFile.new(filename: tests_template_absolute_filename)
       end
 
-      # FIXME: make this like everything else
-      def source_filepath
-          File.join(generator_path, case_filename)
+      def test_case
+        TestCaseFile.new(filename: File.join(generator_path, case_filename))
       end
 
       private
@@ -105,6 +104,9 @@ module Generator
     end
 
     class TestsTemplateFile < Readable
+    end
+
+    class TestCaseFile < Readable
     end
   end
 end

@@ -62,9 +62,8 @@ module Generator
         mock_canonical_data
       end
 
-      def repository
-        mock_repository = Minitest::Mock.new
-        mock_repository.expect :source_filepath, 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb'
+      def test_case
+        Files::TestCaseFile.new(filename: 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb')
       end
 
       include TemplateValuesFactory

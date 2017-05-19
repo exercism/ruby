@@ -39,6 +39,11 @@ module Generator
         assert_equal expected_filename, subject.tests_template.filename
       end
 
+      def test_test_case
+        subject = TestTrackFiles.new
+        expected_filename = FixturePaths.track + '/exercises/alpha-beta/.meta/generator/alpha_beta_case.rb'
+        assert_equal expected_filename, subject.test_case.filename
+      end
 
       class TestTrackFilesUseDefault
         def initialize

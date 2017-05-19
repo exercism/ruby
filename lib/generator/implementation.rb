@@ -6,7 +6,7 @@ module Generator
     extend Forwardable
     include TemplateValuesFactory
 
-    def_delegators :@repository, :tests_version, :example_solution, :tests_template, :minitest_tests, :canonical_data
+    def_delegators :@repository, :tests_version, :example_solution, :tests_template, :minitest_tests, :canonical_data, :test_case
 
     def initialize(repository:, exercise:)
       @repository = repository
