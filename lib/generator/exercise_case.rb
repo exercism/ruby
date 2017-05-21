@@ -23,5 +23,9 @@ module Generator
       return canonical.send(sym) if canonical.respond_to?(sym)
       super(sym, *args, &block)
     end
+
+    def respond_to?(sym, include_private = false)
+      canonical.respond_to?(sym) || super
+    end
   end
 end

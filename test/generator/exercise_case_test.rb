@@ -29,5 +29,15 @@ module Generator
         subject.key
       end
     end
+
+    def test_true_respond_to?
+      subject = ExerciseCase.new(canonical: OpenStruct.new('key' => 'value'))
+      assert subject.respond_to?(:key)
+    end
+
+    def test_false_respond_to?
+      subject = ExerciseCase.new(canonical: OpenStruct.new({}))
+      refute subject.respond_to?(:key)
+    end
   end
 end
