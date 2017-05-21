@@ -17,7 +17,7 @@ class BeerSongCase < Generator::ExerciseCase
     if property == 'verse'
       number
     else
-      "%s, %s" % [self["beginning"], self["end"]]
+      "%s, %s" % [self.beginning, self.end]
     end
   end
 end
