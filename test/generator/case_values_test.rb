@@ -17,7 +17,7 @@ module Generator
 
         expected = [
           ComplexCase.new(
-            case_data: {
+            canonical: {
               'description' => 'first generic verse',
               'property' => 'verse',
               'number' => 99,
@@ -25,7 +25,7 @@ module Generator
             }
           ),
           ComplexCase.new(
-            case_data: {
+            canonical: {
               'description' => 'last generic verse',
               'property' => 'verse',
               'number' => 3,
@@ -33,7 +33,7 @@ module Generator
             }
           ),
           ComplexCase.new(
-            case_data: {
+            canonical: {
               'description' => 'first two verses',
               'property' => 'verses',
               'beginning' => 99,
@@ -43,7 +43,7 @@ module Generator
           )
         ]
         assert expected.zip(cases).all? do |exp, cs|
-          assert_equal exp.case_data, cs.case_data
+          assert_equal exp.canonical, cs.canonical
         end
       end
     end

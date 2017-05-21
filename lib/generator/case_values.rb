@@ -7,7 +7,7 @@ module Generator
 
       def cases(exercise_data)
         extract_test_cases(data: JSON.parse(exercise_data)['cases'])
-          .map { |test| @case_class.new(case_data: test) }
+          .map { |test| @case_class.new(canonical: test) }
       end
 
       private
