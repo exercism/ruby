@@ -16,7 +16,7 @@ module Generator
     attr_reader :paths
 
     def generators
-      implementations.map { |slug| generator(implementation(slug)) }
+      implementations.map { |slug| generator(implementation(exercise(slug))) }
     end
 
     def implementations
@@ -35,9 +35,13 @@ module Generator
       @options[:freeze] || @options[:all]
     end
 
-    def implementation(slug)
+    def exercise(slug)
+      Exercise.new(slug: slug)
+    end
+
+    def implementation(exercise)
       LoggingImplementation.new(
-        implementation: Implementation.new(paths: paths, slug: slug),
+        implementation: Implementation.new(paths: paths, exercise: exercise),
         logger: logger
       )
     end
