@@ -21,7 +21,7 @@ module Generator
     end
 
     def test_fixnum_underscore
-      assert_equal '1_000_000', 1_000_000.underscore
+      assert_equal '1_000_000', 1000000.underscore
     end
   end
 end
