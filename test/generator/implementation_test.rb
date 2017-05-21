@@ -2,26 +2,30 @@ require_relative '../test_helper'
 
 module Generator
   class ImplementationTest < Minitest::Test
+    # I would love to be mocking these tests, but Minitest::Mock does not play well with
+    # Forwardable. As we'll be refactoring out the includes in Repository soon, doesn't
+    # seem worth the fight.
     FixturePaths = Paths.new(
       metadata: 'test/fixtures/metadata',
       track: 'test/fixtures/xruby'
     )
 
     def test_version
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
+      exercise = Minitest::Mock.new.expect :slug, 'alpha'
+      repository = Repository.new(paths: FixturePaths, exercise: exercise)
+      subject = Implementation.new(exercise: exercise, repository: repository)
       assert_equal 1, subject.version
     end
 
-    def test_slug
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
-      assert_equal 'alpha', subject.slug
-    end
-
     def test_update_tests_version
-      mock_file = Minitest::Mock.new.expect :write, '2'.length, [2]
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
-      # Verify iniital condition from fixture file
+      # Minitest::Mock doesn't document how to allow the mocked method to be called twice
+      exercise = Exercise.new(slug: 'alpha')
+      repository = Repository.new(paths: FixturePaths, exercise: exercise)
+      subject = Implementation.new(exercise: exercise, repository: repository)
       assert_equal 1, subject.tests_version.to_i
+
+      mock_file = Minitest::Mock.new.expect :write, '2'.length, [2]
+      # Verify iniital condition from fixture file
       File.stub(:open, true, mock_file) do
         assert_equal 2, subject.update_tests_version
       end
@@ -29,16 +33,23 @@ module Generator
     end
 
     def test_update_example_solution
+      exercise = Exercise.new(slug: 'alpha')
+      repository = Repository.new(paths: FixturePaths, exercise: exercise)
+      subject = Implementation.new(exercise: exercise, repository: repository)
+
       expected_content = "# This is the example\n\nclass BookKeeping\n  VERSION = 1\nend\n"
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
       File.stub(:open, true, mock_file) do
         assert_equal expected_content, subject.update_example_solution
       end
       mock_file.verify
     end
 
-    def test_create_tests_file
+    def test_build_tests
+      exercise = Exercise.new(slug: 'alpha')
+      repository = Repository.new(paths: FixturePaths, exercise: exercise)
+      subject = Implementation.new(exercise: exercise, repository: repository)
+
       # Q: Is the pain here caused by:
       # a) Implementation `including` everything rather than using composition?
       # b) Trying to verify the expected content.
@@ -84,34 +95,29 @@ class AlphaTest < Minitest::Test
 end
 TESTS_FILE
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha')
       GitCommand.stub(:abbreviated_commit_hash, '123456789') do
         File.stub(:open, true, mock_file) do
-          assert_equal expected_content, subject.create_tests_file
+          assert_equal expected_content, subject.build_tests
         end
       end
       mock_file.verify
       # Don't pollute the namespace
       Object.send(:remove_const, :AlphaCase)
     end
-
-    def test_exercise_name
-      subject = Implementation.new(paths: FixturePaths, slug: 'alpha-beta')
-      assert_equal 'alpha_beta', subject.exercise_name
-    end
   end
 
   class LoggingImplementationTest < Minitest::Test
-    def test_create_tests_file
+    def test_build_tests
+      exercise = Exercise.new(slug: 'alpha')
       mock_implementation = Minitest::Mock.new
-      mock_implementation.expect :create_tests_file, nil
-      mock_implementation.expect :slug, 'alpha'
+      mock_implementation.expect :build_tests, nil
+      mock_implementation.expect :exercise, exercise
       mock_implementation.expect :version, 2
       mock_logger = Minitest::Mock.new
       mock_logger.expect :info, nil, ['Generated alpha tests version 2']
 
       subject = LoggingImplementation.new(implementation: mock_implementation, logger: mock_logger)
-      subject.create_tests_file
+      subject.build_tests
 
       mock_implementation.verify
     end

@@ -10,9 +10,9 @@ module Generator
       class TestMetadataFiles
         def initialize
           @paths = FixturePaths
-          @slug = 'alpha'
+          @exercise = Exercise.new(slug: 'alpha')
         end
-        attr_reader :paths, :slug
+        attr_reader :paths, :exercise
         include MetadataFiles
       end
 

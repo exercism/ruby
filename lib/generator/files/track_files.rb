@@ -15,6 +15,10 @@ module Generator
         ExampleSolutionFile.new(filename: File.join(solutions_path, example_filename))
       end
 
+      def test_case
+        TestCaseFile.new(filename: File.join(generator_path, case_filename))
+      end
+
       def tests_template
         TestsTemplateFile.new(filename: tests_template_absolute_filename)
       end
@@ -22,7 +26,7 @@ module Generator
       private
 
       def exercise_path
-        File.join(paths.track, 'exercises', slug)
+        File.join(paths.track, 'exercises', exercise.slug)
       end
 
       def meta_path
@@ -33,8 +37,12 @@ module Generator
         File.join(meta_path, 'solutions')
       end
 
+      def generator_path
+        File.join(meta_path, 'generator')
+      end
+
       def minitest_tests_filename
-        "#{exercise_name}_test.rb"
+        "#{exercise.name}_test.rb"
       end
 
       def version_filename
@@ -42,7 +50,11 @@ module Generator
       end
 
       def example_filename
-        "#{exercise_name}.rb"
+        "#{exercise.name}.rb"
+      end
+
+      def case_filename
+        "#{exercise.name}_case.rb"
       end
 
       def tests_template_absolute_filename
@@ -88,6 +100,9 @@ module Generator
     end
 
     class TestsTemplateFile < Readable
+    end
+
+    class TestCaseFile < Readable
     end
   end
 end
