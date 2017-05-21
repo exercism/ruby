@@ -16,7 +16,7 @@ class WordyCase < Generator::ExerciseCase
   end
 
   def assertion
-    return error_assertion unless expected
+    return error_assertion if expected == false
     return message_assertion if message
 
     "assert_equal(#{expected}, WordProblem.new(question).answer)"
