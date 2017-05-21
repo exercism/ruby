@@ -19,5 +19,9 @@ module Generator
         'unreadable_but_correctly_sized_inputs_return_?'
       )
     end
+
+    def test_fixnum_underscore
+      assert_equal '1_000_000', 1000000.underscore
+    end
   end
 end
