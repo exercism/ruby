@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'acronym'
 
-# Common test data version: 1.0.0 dcfe476
+# Common test data version: 1.1.0 cae7ae1
 class AcronymTest < Minitest::Test
   def test_basic
     # skip
@@ -12,11 +12,6 @@ class AcronymTest < Minitest::Test
   def test_lowercase_words
     skip
     assert_equal "ROR", Acronym.abbreviate('Ruby on Rails')
-  end
-
-  def test_camelcase
-    skip
-    assert_equal "HTML", Acronym.abbreviate('HyperText Markup Language')
   end
 
   def test_punctuation
@@ -58,6 +53,6 @@ class AcronymTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 3, BookKeeping::VERSION
+    assert_equal 4, BookKeeping::VERSION
   end
 end
