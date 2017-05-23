@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION = 1
+end
+
 module Bob
   def hey(drivel)
     answer Phrase.new(drivel)
