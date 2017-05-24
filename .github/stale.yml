@@ -8,6 +8,8 @@ daysUntilClose: 7
 exemptLabels:
   - pinned
   - security
+  - good first patch
+  - first-timers only
 # Label to use when marking as stale
 staleLabel: stale
 # Comment to post when marking as stale. Set to `false` to disable
