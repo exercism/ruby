@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION = 1
+end
+
 class SumOfMultiples
   attr_reader :multiples
   def initialize(*multiples)
