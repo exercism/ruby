@@ -252,11 +252,6 @@ For an in-depth discussion of how exercism language tracks and exercises work,
 please see the
 [contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data)
 
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2014 Katrina Owen, _@kytrinyx.com
 
 ## Ruby icon
 The Ruby icon is the Vienna.rb logo, and is used with permission. Thanks Floor Dress :)
