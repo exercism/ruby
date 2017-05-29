@@ -24,11 +24,19 @@ class TriangleCase < Generator::ExerciseCase
   end
 
   def failure_message
-    %Q("Expected '#{expected}', #{expected_type}.")
+    %Q("Expected '#{expected}', #{expected_triangle}.")
   end
 
   def expected_type
-    "triangle #{sides} is #{expected ? '' : 'not '}#{property}"
+    "triangle is #{type}"
+  end
+
+  def expected_triangle
+    "triangle #{sides} is #{type}"
+  end
+
+  def type
+    "#{expected ? '' : 'not ' }#{property}"
   end
 
 end
