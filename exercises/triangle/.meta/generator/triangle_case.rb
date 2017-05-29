@@ -28,7 +28,7 @@ class TriangleCase < Generator::ExerciseCase
   end
 
   def expected_type
-    "triangle is #{expected ? '' : 'not '}#{property}"
+    "triangle #{sides} is #{expected ? '' : 'not '}#{property}"
   end
 
 end
