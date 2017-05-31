@@ -29,7 +29,7 @@ class ClockCase < Generator::ExerciseCase
   end
 
   def add_to_clock
-    " + #{add}" if add
+    " + #{add}" if respond_to?(:add)
   end
 
 end

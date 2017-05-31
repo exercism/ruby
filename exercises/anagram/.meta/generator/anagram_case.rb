@@ -13,7 +13,7 @@ class AnagramCase < Generator::ExerciseCase
   end
 
   def show_comment
-    "# #{comment}" unless comment.nil?
+    "# #{comment}" if respond_to?(:comment)
   end
 
   def detector
