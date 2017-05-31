@@ -3,7 +3,7 @@ require_relative '../test_helper'
 module Generator
   class ExerciseCaseTest < Minitest::Test
     def test_name
-      subject = ExerciseCase.new(canonical: OpenStruct.new('description' => 'foo'))
+      subject = ExerciseCase.new(canonical: OpenStruct.new(description: 'foo'))
       assert_equal 'test_foo', subject.name
     end
 
@@ -31,12 +31,12 @@ module Generator
     end
 
     def test_true_respond_to?
-      subject = ExerciseCase.new(canonical: OpenStruct.new('key' => 'value'))
+      subject = ExerciseCase.new(canonical: OpenStruct.new(key: 'value'))
       assert subject.respond_to?(:key)
     end
 
     def test_false_respond_to?
-      subject = ExerciseCase.new(canonical: OpenStruct.new({}))
+      subject = ExerciseCase.new(canonical: OpenStruct.new())
       refute subject.respond_to?(:key)
     end
   end
