@@ -6,9 +6,19 @@ class IsogramCase < Generator::ExerciseCase
     indent_lines(
       [
         "string = #{input.inspect}",
-        "#{assert} Isogram.is_isogram?(string)"
+        "#{assert} Isogram.isogram?(string), #{failure_message}"
       ], 4
     )
+  end
+
+  private
+
+  def failure_message
+    %Q("Expected '#{expected}', '#{input}' #{type}")
+  end
+
+  def type
+    "#{expected ? 'is' : 'is not'} an isogram"
   end
 
 end
