@@ -14,11 +14,15 @@ class IsogramCase < Generator::ExerciseCase
   private
 
   def failure_message
-    %Q("Expected '#{expected}', '#{input}' #{type}")
+    %Q("Expected #{expected}, #{reason}")
   end
 
-  def type
-    "#{expected ? 'is' : 'is not'} an isogram"
+  def reason
+    "'#{input}' #{is_or_not} an isogram"
+  end
+
+  def is_or_not
+    expected ? 'is' : 'is not'
   end
 
 end
