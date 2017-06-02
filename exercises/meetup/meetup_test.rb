@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require 'minitest/autorun'
-require 'date'
 require_relative 'meetup'
 
 # Define a class Meetup with a constructor taking a month and a year
