@@ -1,9 +1,9 @@
 module BookKeeping
-  VERSION = 3
+  VERSION = 4
 end
 
 class Isogram
-  def self.is_isogram?(str)
+  def self.isogram?(str)
     letters = str.downcase.gsub(/[[:punct:]]| /, '').chars
     letters == letters.uniq
   end
