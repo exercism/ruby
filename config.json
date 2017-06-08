@@ -593,6 +593,18 @@
       "topics": [
 
       ]
+    },
+    {
+      "slug": "collatz-conjecture",
+      "difficulty": 1,
+      "topics": [
+        "Control-flow (loops)",
+        "Control-flow (conditionals)",
+        "Recursion",
+        "Integers",
+        "Algorithms",
+        "Mathematics"
+      ]
     }
   ],
   "deprecated": [
