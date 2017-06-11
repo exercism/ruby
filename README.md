@@ -31,6 +31,12 @@ A few exercises use a custom test template:
 
 * `.meta/generator/test_template.erb`
 
+### BookKeeping::VERSION
+
+For some, even perhaps many, of the exercises, you will find a
+reference to the `BookKeeping` module, but this is only included when
+tests have been generated; see [Generated Test Suites](#generated-test-suites).
+
 ### Canonical Data
 
 **Most exercises can be generated from shared inputs/outputs, called canonical
