@@ -4,7 +4,6 @@ require_relative 'bob'
 
 # Common test data version: 1.0.0 65756b1
 class BobTest < Minitest::Test
-
   def test_stating_something
     # skip
     remark = "Tom-ay-to, tom-aaaah-to."
