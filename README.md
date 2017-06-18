@@ -1,6 +1,6 @@
-# xRuby
+# Exercism Ruby Track
 
-[![Build Status](https://travis-ci.org/exercism/xruby.svg?branch=master)](https://travis-ci.org/exercism/xruby)
+[![Build Status](https://travis-ci.org/exercism/ruby.svg?branch=master)](https://travis-ci.org/exercism/ruby)
 [![Join the chat at https://gitter.im/exercism/xruby](https://badges.gitter.im/exercism/xruby.svg)](https://gitter.im/exercism/xruby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Exercism Exercises in Ruby
@@ -78,7 +78,7 @@ Note that flags which have an attached value, like above, must take the form
 Generated test suites use the `bin/generator` cli.
 
 Before using the cli it is recommended you run `bundle install` from within
-the xruby directory to install/update any required gems.
+the ruby directory to install/update any required gems.
 
 While many of the exercises which have canonical data already have generators,
 some do not. To find out whether an exercise has a generator, run
@@ -94,17 +94,17 @@ generator. If a generator is available for your exercise, you can
 If not, you will need to [implement a new generator](#implementing-a-generator)
 
 Generated exercises depend on the [the shared metadata][x-common], which must be
-cloned to the same directory that contains your clone of the xruby repository:
+cloned to the same directory that contains your clone of the ruby repository:
 
 ```
 tree -L 1 ~/code/exercism
 ├── x-common
-└── xruby
+└── ruby
 ```
 
 #### Regenerating a Test Suite
 
-From within the xruby directory, run the following command:
+From within the ruby directory, run the following command:
 
     bin/generate <slug>
 
@@ -167,15 +167,15 @@ important, since the generator script will infer the name of the class from
 
 This class must provide the methods used by the test
 template. A
-[default template](https://github.com/exercism/xruby/blob/master/lib/generator/test_template.erb) that
+[default template](https://github.com/exercism/ruby/blob/master/lib/generator/test_template.erb) that
 most exercises can (and do) use lives in `lib/generator/test_template.erb`. The
 base class provides methods for the default template for everything except
 `#workload`.
 
 `#workload` generates the code for the body of a test, including the assertion
 and any setup required. The base class provides a variety of
-[assertion](https://github.com/exercism/xruby/blob/master/lib/generator/exercise_case/assertion.rb) and
-[helper](https://github.com/exercism/xruby/blob/master/lib/generator/exercise_case.rb) methods.
+[assertion](https://github.com/exercism/ruby/blob/master/lib/generator/exercise_case/assertion.rb) and
+[helper](https://github.com/exercism/ruby/blob/master/lib/generator/exercise_case.rb) methods.
 Beyond that, you can implement any helper methods that you need
 as private methods in your derived class. See below for more information
 about [the intention of #workload](#workload-philosophy)
