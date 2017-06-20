@@ -38,20 +38,21 @@ On Windows, it will complain about:
 
 On OS X and Linux, the error will be something like:
 
+
     # Running:
 
-    ESS
+    E
 
-    Finished in 0.001539s, 2599.0903 runs/s, 0.0000 assertions/s.
+    Finished in 0.001328s, 753.0121 runs/s, 0.0000 assertions/s.
 
-    1) Error:
-    HelloWorldTest#test_no_name:
+      1) Error:
+    HelloWorldTest#test_say_hi:
     NameError: uninitialized constant HelloWorldTest::HelloWorld
-      hello-world/hello_world_test.rb:20:in `test_no_name'
-    
-    3 runs, 0 assertions, 0 failures, 1 errors, 2 skips
-    
-    You have skipped tests. Run with --verbose for details.
+    Did you mean?  HelloWorldTest
+        hello_world_test.rb:19:in `test_say_hi'
+
+    1 runs, 0 assertions, 0 failures, 1 errors, 0 skips
+
 
 Within the first test, we are referencing a constant named `HelloWorld` when
 we say `HelloWorld.hello`. When Ruby sees a capitalized name like
@@ -68,19 +69,6 @@ To fix it, open up the hello_world.rb file and add the following code:
 
     class HelloWorld
     end
-
-### Understanding Test Failures
-
-Whether you are on Windows, Mac OS X or Linux, you will eventually be faced with
-errors and failures that look a lot like the Mac OS X / Linux error above.
-
-The letters `ESS` show that there are three tests altogether,
-that one of them has an error (`E`), and that two of them are skipped (`SS`).
-
-The goal is to have three passing tests, which will show as three dots: `...`.
-
-The tests are run in randomized order, which will cause the letters to display
-in random order as well.
 
 ## Step 3
 
@@ -130,17 +118,6 @@ If it fails you're going to need to read the error message carefully to figure
 out what went wrong, and then try again.
 
 If it passes, then you're ready to move to the next step.
-
-Open the hello_world_test.rb file, and find the word "skip". All but the first test
-start with "skip", which tells Minitest to ignore the test. This is so that
-you don't have to deal with all the failures at once.
-
-To activate the next test, delete the "skip", and run the test suite again.
-
-## Wash, Rinse, Repeat
-
-Delete one "skip" at a time, and make each test pass before you move to the
-next one.
 
 ## Submit
 
