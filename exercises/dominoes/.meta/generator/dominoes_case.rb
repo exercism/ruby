@@ -9,7 +9,7 @@ class DominoesCase < Generator::ExerciseCase
     <<-WL.chomp
 input_dominoes = #{input}
     output_chain = Dominoes.chain(input_dominoes)
-    #{can_chain ? 'assert' : 'refute' }_correct_chain(input_dominoes, output_chain)
+    #{expected ? 'assert' : 'refute' }_correct_chain(input_dominoes, output_chain)
     WL
   end
 
