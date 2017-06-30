@@ -42,7 +42,7 @@ tests have been generated; see [Generated Test Suites](#generated-test-suites).
 **Most exercises can be generated from shared inputs/outputs, called canonical
 data (see [Generated Test Suites](#generated-test-suites) below).** To find out
 whether a test has canonical data, check
-the [x-common repo](https://github.com/exercism/x-common/tree/master/exercises).
+the [problem-specifications repo](https://github.com/exercism/problem-specifications/tree/master/exercises).
 
 ## Running the Tests
 
@@ -93,12 +93,12 @@ generator. If a generator is available for your exercise, you can
 
 If not, you will need to [implement a new generator](#implementing-a-generator)
 
-Generated exercises depend on the [the shared metadata][x-common], which must be
+Generated exercises depend on the [the shared metadata][problem-specifications], which must be
 cloned to the same directory that contains your clone of the ruby repository:
 
 ```
 tree -L 1 ~/code/exercism
-├── x-common
+├── problem-specifications
 └── ruby
 ```
 
@@ -119,16 +119,16 @@ There are two reasons why a test suite might change:
 1. there might be issues with the style or boilerplate
 
 In the first case, the changes need to be made to the `canonical-data.json` file for
-the exercise, which lives in the x-common repository.
+the exercise, which lives in the problem-specifications repository.
 
 ```
-../x-common/exercises/<slug>/
+../problem-specifications/exercises/<slug>/
 ├── canonical-data.json
 ├── description.md
 └── metadata.yml
 ```
 
-This change will need to be submitted as a pull request to the x-common
+This change will need to be submitted as a pull request to the problem-specifications
 repository. This pull request needs to be merged before you can regenerate the
 exercise.
 
@@ -253,7 +253,7 @@ string indices to integer indices.
 ## READMEs
 
 Do not add a README or README.md file to the exercise's directory. The READMEs
-are constructed using shared metadata, which lives in the [x-common][] repo.
+are constructed using shared metadata, which lives in the [problem-specifications][] repo.
 
 ## Contributing Guide
 
@@ -265,4 +265,4 @@ please see the
 ## Ruby icon
 The Ruby icon is the Vienna.rb logo, and is used with permission. Thanks Floor Dress :)
 
-[x-common]: https://github.com/exercism/x-common
+[problem-specifications]: https://github.com/exercism/problem-specifications
