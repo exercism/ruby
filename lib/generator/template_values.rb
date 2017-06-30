@@ -47,7 +47,7 @@ module Generator
     end
 
     def cases_load_name
-      Files::GeneratorCases.source_filepath(paths.track, exercise.slug)
+      test_case.filename
     end
   end
 end

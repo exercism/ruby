@@ -1,17 +1,19 @@
 require 'delegate'
+require 'forwardable'
 
 module Generator
   class Implementation
-    include Files::TrackFiles
-    include Files::MetadataFiles
+    extend Forwardable
     include TemplateValuesFactory
 
-    def initialize(paths:, exercise:)
-      @paths = paths
+    def_delegators :@repository, :tests_version, :example_solution, :tests_template, :minitest_tests, :canonical_data, :test_case
+
+    def initialize(repository:, exercise:)
+      @repository = repository
       @exercise = exercise
     end
 
-    attr_reader :paths, :exercise
+    attr_reader :repository, :exercise
 
     def version
       tests_version.to_i

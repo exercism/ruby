@@ -62,10 +62,8 @@ module Generator
         mock_canonical_data
       end
 
-      def paths
-        mock_paths = Minitest::Mock.new
-        mock_paths.expect :track, 'test/fixtures/xruby'
-        mock_paths
+      def test_case
+        Files::TestCaseFile.new(filename: 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb')
       end
 
       include TemplateValuesFactory
