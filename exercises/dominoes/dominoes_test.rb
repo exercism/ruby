@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative 'dominoes'
 
-# Common test data version: 1.0.1 33f20d3
+# Common test data version: 2.0.0 b4ceaf4
 class DominoesTest < Minitest::Test
   def test_empty_input_empty_output
     # skip
