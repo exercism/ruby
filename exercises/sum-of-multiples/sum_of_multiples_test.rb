@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require 'minitest/autorun'
 require_relative 'sum_of_multiples'
 

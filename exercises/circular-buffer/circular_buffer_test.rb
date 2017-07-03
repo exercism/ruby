@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require 'minitest/autorun'
 require_relative 'circular_buffer'
 

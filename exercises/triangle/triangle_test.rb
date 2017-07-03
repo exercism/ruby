@@ -1,8 +1,7 @@
-#!/usr/bin/env ruby
 require 'minitest/autorun'
 require_relative 'triangle'
 
-# Common test data version: 1.0.0 fa90b35
+# Common test data version: 1.0.0 8acd78c
 class TriangleTest < Minitest::Test
   def test_triangle_is_equilateral_if_all_sides_are_equal
     # skip

@@ -7,7 +7,6 @@ install:
   - bundle install --quiet
 script:
   - rubocop -fs -D
-  - bin/executable-tests-check
   - rake test
   - bin/fetch-configlet
   - bin/configlet .

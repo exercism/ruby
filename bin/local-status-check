@@ -3,9 +3,8 @@
 puts "Starting #{__FILE__} checks..."
 
 commands_to_run = [
-  'rake test',
-  'bundle exec rubocop -fs -D',
-  'bin/executable-tests-check',
+  'bundle exec rake test',
+  'bundle exec rubocop -fs -D'
 ]
 success = []
 commands_to_run.each do |c|

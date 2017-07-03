@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require 'minitest/autorun'
 require_relative 'series'
 
@@ -93,7 +92,7 @@ class SeriesTest < Minitest::Test
       series.slices(slice_string.length + 1)
     end
   end
-  
+
   def test_sequential_slices
     skip
     series = Series.new('1234')
