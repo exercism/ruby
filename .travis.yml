@@ -9,4 +9,4 @@ script:
   - rubocop -fs -D
   - rake test
   - bin/fetch-configlet
-  - bin/configlet .
+  - bin/configlet lint .
