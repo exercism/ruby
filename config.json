@@ -1,7 +1,5 @@
 {
-  "slug": "ruby",
   "language": "Ruby",
-  "repository": "https://github.com/exercism/ruby",
   "active": true,
   "gitter": "xruby",
   "solution_pattern": "[Ee]xample|\\.meta/solutions/[^/]*\\.rb",
