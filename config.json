@@ -862,6 +862,19 @@
       ]
     },
     {
+      "uuid": "af5ccf14-eff2-4dc6-b1db-e209cddca62a",
+      "slug": "rotational-cipher",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "Control-flow (conditionals)",
+        "Control-flow (loops)",
+        "Logic",
+        "Strings"
+      ]
+    },
+    {
       "uuid": "cae4e000-3aac-41f7-b727-f9cce12d058d",
       "slug": "octal",
       "deprecated": true
