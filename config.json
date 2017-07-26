@@ -873,6 +873,19 @@
       ]
     },
     {
+      "uuid": "dc6c3e44-1027-4d53-9653-ba06824f8bcf",
+      "slug": "change",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "Algorithms",
+        "Control-flow (conditionals)",
+        "Control-flow (loops)",
+        "Logic"
+      ]
+    },
+    {
       "uuid": "cae4e000-3aac-41f7-b727-f9cce12d058d",
       "slug": "octal",
       "deprecated": true
