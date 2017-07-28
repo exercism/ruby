@@ -1,6 +1,4 @@
 class Bst
-  VERSION = 1
-
   attr_reader :data, :left, :right
   def initialize(data)
     @data = data
@@ -42,4 +40,8 @@ class Bst
       @right = Bst.new(value)
     end
   end
+end
+
+module BookKeeping
+  VERSION = 1
 end
