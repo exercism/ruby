@@ -4,8 +4,6 @@ Ruby was created as a language of careful balance. Its creator, [Yukihiro “Mat
 
 He has often said that he is "trying to make Ruby natural, not simple," in a way that mirrors life.
 
-Building on this, he adds:
-
-> Ruby is simple in appearance, but is very complex inside, just like our human body.
+Building on this, he adds: "Ruby is simple in appearance, but is very complex inside, just like our human body."
 
 You can read more about the Ruby language [on its site](https://www.ruby-lang.org/en/about/).
