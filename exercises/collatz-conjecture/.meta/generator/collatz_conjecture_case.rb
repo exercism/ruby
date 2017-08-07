@@ -1,7 +1,6 @@
 require 'generator/exercise_case'
 
 class CollatzConjectureCase < Generator::ExerciseCase
-  using Generator::Underscore
 
   def workload
     case expected
@@ -25,7 +24,7 @@ class CollatzConjectureCase < Generator::ExerciseCase
   end
 
   def input
-    number.underscore
+    literal(number)
   end
 end
 
