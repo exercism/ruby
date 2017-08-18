@@ -6,7 +6,7 @@ The challenge is to write a function that accepts an arbitrarily-deep nested lis
  
 For Example
 
-input: [1,[2,3,null,4],[null],5]
+input: [1,[2,3,nil,4],[nil],5]
 
 output: [1,2,3,4,5]
 
