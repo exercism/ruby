@@ -2,7 +2,7 @@
   "language": "Ruby",
   "active": true,
   "blurb" : "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.",
-  "gitter": "xruby",
+  "gitter": "ruby",
   "solution_pattern": "[Ee]xample|\\.meta/solutions/[^/]*\\.rb",
   "exercises": [
     {
