@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'all_your_base'
 
-# Common test data version: 1.0.0 39de23b
+# Common test data version: 1.1.0 c4d8d95
 class AllYourBaseTest < Minitest::Test
   def test_single_bit_one_to_decimal
     # skip
@@ -171,6 +171,39 @@ class AllYourBaseTest < Minitest::Test
                  "Expected #{expected} but got #{converted}."
   end
 
+  def test_first_base_is_one
+    skip
+    digits = []
+    input_base = 1
+    output_base = 10
+
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
+  end
+
+  def test_first_base_is_zero
+    skip
+    digits = []
+    input_base = 0
+    output_base = 10
+
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
+  end
+
+  def test_first_base_is_negative
+    skip
+    digits = [1]
+    input_base = -2
+    output_base = 10
+
+    assert_raises ArgumentError do
+      BaseConverter.convert(input_base, digits, output_base)
+    end
+  end
+
   def test_negative_digit
     skip
     digits = [1, -1, 1, 0, 1, 0]
@@ -193,17 +226,6 @@ class AllYourBaseTest < Minitest::Test
     end
   end
 
-  def test_first_base_is_one
-    skip
-    digits = []
-    input_base = 1
-    output_base = 10
-
-    assert_raises ArgumentError do
-      BaseConverter.convert(input_base, digits, output_base)
-    end
-  end
-
   def test_second_base_is_one
     skip
     digits = [1, 0, 1, 0, 1, 0]
@@ -215,33 +237,11 @@ class AllYourBaseTest < Minitest::Test
     end
   end
 
-  def test_first_base_is_zero
-    skip
-    digits = []
-    input_base = 0
-    output_base = 10
-
-    assert_raises ArgumentError do
-      BaseConverter.convert(input_base, digits, output_base)
-    end
-  end
-
   def test_second_base_is_zero
     skip
     digits = [7]
     input_base = 10
     output_base = 0
-
-    assert_raises ArgumentError do
-      BaseConverter.convert(input_base, digits, output_base)
-    end
-  end
-
-  def test_first_base_is_negative
-    skip
-    digits = [1]
-    input_base = -2
-    output_base = 10
 
     assert_raises ArgumentError do
       BaseConverter.convert(input_base, digits, output_base)
