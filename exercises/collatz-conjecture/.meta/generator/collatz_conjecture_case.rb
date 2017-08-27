@@ -4,7 +4,7 @@ class CollatzConjectureCase < Generator::ExerciseCase
 
   def workload
     case expected
-    when Fixnum
+    when Integer
       standard_assertion
     when Hash
       error_assertion

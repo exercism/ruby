@@ -10,7 +10,7 @@ module Generator
       end
     end
 
-    refine Fixnum do
+    refine Integer do
       def underscore
         self.to_s.reverse.gsub(/...(?=.)/, '\&_').reverse
       end
