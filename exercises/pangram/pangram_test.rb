@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'pangram'
 
-# Common test data version: 1.0.0 f375051
+# Common test data version: 1.1.0 fba1aef
 class PangramTest < Minitest::Test
   def test_sentence_empty
     # skip
@@ -61,7 +61,7 @@ class PangramTest < Minitest::Test
 
   def test_upper_and_lower_case_versions_of_the_same_character_should_not_be_counted_separately
     skip
-    phrase = 'the quick brown fox jumped over the lazy FOX'
+    phrase = 'the quick brown fox jumps over with lazy FX'
     result = Pangram.pangram?(phrase)
     refute result, "Expected false, got: #{result.inspect}. #{phrase.inspect} is NOT a pangram"
   end
@@ -85,6 +85,6 @@ class PangramTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 4, BookKeeping::VERSION
+    assert_equal 5, BookKeeping::VERSION
   end
 end
