@@ -2,7 +2,7 @@ module BookKeeping
   VERSION = 2
 end
 
-class Fixnum
+class Integer
   def to_roman
     i = self
     s = ''
