@@ -10,7 +10,7 @@ class <%= exercise_name_camel %>Test < Minitest::Test
   end
 
 <% end %>
-<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+<%= IO.read(EXERCISM_RUBY_LIB + '/bookkeeping.md') %>
 
   def test_bookkeeping
     skip
