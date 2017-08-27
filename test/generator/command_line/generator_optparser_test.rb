@@ -4,7 +4,7 @@ module Generator
   class GeneratorOptparserTest < Minitest::Test
     FixturePaths = Paths.new(
       metadata: 'test/fixtures/metadata',
-      track: 'test/fixtures/xruby'
+      track: 'test/fixtures/ruby'
     )
 
     def default_options
