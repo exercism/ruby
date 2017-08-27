@@ -63,7 +63,7 @@ module Generator
       end
 
       def test_case
-        Files::TestCaseFile.new(filename: 'test/fixtures/xruby/exercises/alpha/.meta/generator/alpha_case.rb')
+        Files::TestCaseFile.new(filename: 'test/fixtures/ruby/exercises/alpha/.meta/generator/alpha_case.rb')
       end
 
       include TemplateValuesFactory
