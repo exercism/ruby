@@ -1,10 +1,8 @@
 require 'minitest/autorun'
-require_relative '<%= exercise_name %>'
-
-# Hi. I am a custom comment
+require_relative 'alpha_beta'
 
 # Common test data version: <%= abbreviated_commit_hash %>
-class <%= exercise_name_camel %>Test < Minitest::Test
+class AlphaBetaTest < Minitest::Test
 <% test_cases.each_with_index do |test_case, idx| %>
   def <%= test_case.name %>
     <%= test_case.skipped(idx) %>
@@ -12,7 +10,7 @@ class <%= exercise_name_camel %>Test < Minitest::Test
   end
 
 <% end %>
-<%= IO.read(XRUBY_LIB + '/bookkeeping.md') %>
+<%= IO.read(EXERCISM_RUBY_LIB + '/bookkeeping.md') %>
 
   def test_bookkeeping
     skip

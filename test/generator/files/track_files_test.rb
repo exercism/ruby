@@ -5,7 +5,7 @@ module Generator
     class TrackFilesTest < Minitest::Test
       FixturePaths = Paths.new(
         metadata: 'test/fixtures/metadata',
-        track: 'test/fixtures/xruby'
+        track: 'test/fixtures/ruby'
       )
 
       class TestTrackFiles
@@ -69,7 +69,7 @@ module Generator
       end
 
       def test_increment
-        subject = TestTestsVersionFile.new(filename: 'test/fixtures/xruby/exercises/alpha/.meta/.version')
+        subject = TestTestsVersionFile.new(filename: 'test/fixtures/ruby/exercises/alpha/.meta/.version')
         assert_equal 2, subject.increment
       end
     end
@@ -83,7 +83,7 @@ module Generator
 
       def test_update_version
         subject = TestExampleSolutionFile.new(
-          filename: 'test/fixtures/xruby/exercises/alpha/.meta/solutions/alpha.rb'
+          filename: 'test/fixtures/ruby/exercises/alpha/.meta/solutions/alpha.rb'
         )
         assert_match(/VERSION = 2/, subject.update_version(2))
       end
@@ -103,7 +103,7 @@ module Generator
         mock_erb = Minitest::Mock.new
         mock_erb.expect :result, 'new content', ['mock binding']
 
-        subject = TestMinitestTestsFile.new(filename: 'test/fixtures/xruby/exercises/alpha/alpha_tests.rb')
+        subject = TestMinitestTestsFile.new(filename: 'test/fixtures/ruby/exercises/alpha/alpha_tests.rb')
         ERB.stub :new, mock_erb do
           assert_equal 'new content', subject.generate(template: mock_template, values: mock_values)
         end
