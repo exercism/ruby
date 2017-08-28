@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 4
+  VERSION = 5
 end
 
 class Pangram
