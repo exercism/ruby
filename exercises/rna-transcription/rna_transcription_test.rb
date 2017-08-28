@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'rna_transcription'
 
-# Common test data version: 1.0.0 0b20fff
+# Common test data version: 1.0.1 cb1fd3a
 class RnaTranscriptionTest < Minitest::Test
   def test_rna_complement_of_cytosine_is_guanine
     # skip
@@ -28,17 +28,17 @@ class RnaTranscriptionTest < Minitest::Test
     assert_equal 'UGCACCAGAAUU', Complement.of_dna('ACGTGGTCTTAA')
   end
 
-  def test_dna_correctly_handles_invalid_input
+  def test_correctly_handles_invalid_input_rna_instead_of_dna
     skip
     assert_equal '', Complement.of_dna('U')
   end
 
-  def test_dna_correctly_handles_completely_invalid_input
+  def test_correctly_handles_completely_invalid_dna_input
     skip
     assert_equal '', Complement.of_dna('XXX')
   end
 
-  def test_dna_correctly_handles_partially_invalid_input
+  def test_correctly_handles_partially_invalid_dna_input
     skip
     assert_equal '', Complement.of_dna('ACGTXXXCTTAA')
   end
