@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'change'
 
-# Common test data version: 1.0.0 3d8b5b3
+# Common test data version: 1.1.0 52cf1cf
 class ChangeTest < Minitest::Test
   def test_single_coin_change
     # skip
@@ -31,6 +31,11 @@ class ChangeTest < Minitest::Test
   def test_possible_change_without_unit_coins_available
     skip
     assert_equal [2, 2, 2, 5, 10], Change.generate([2, 5, 10, 20, 50], 21)
+  end
+
+  def test_another_possible_change_without_unit_coins_available
+    skip
+    assert_equal [4, 4, 4, 5, 5, 5], Change.generate([4, 5], 27)
   end
 
   def test_no_coins_make_0_change
@@ -72,6 +77,6 @@ class ChangeTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
