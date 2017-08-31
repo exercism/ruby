@@ -4,7 +4,7 @@ module Generator
   class CommandLineTest < Minitest::Test
     FixturePaths = Paths.new(
       metadata: 'test/fixtures/metadata',
-      track: 'test/fixtures/xruby'
+      track: 'test/fixtures/ruby'
     )
 
     def test_parse
