@@ -27,11 +27,11 @@ In order to run the test, you can run the test file from the exercise
 directory. For example, if the test suite is called
 `hello_world_test.rb`, you can run the following command:
 
-    ruby hello_world_test.rb
+    ruby two_fer_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride two_fer_test.rb
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
