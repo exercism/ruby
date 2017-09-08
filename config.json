@@ -176,6 +176,16 @@
       ]
     },
     {
+      "uuid": "8d345e34-e815-49cd-91ab-ca8db63b07ef",
+      "slug": "two-fer",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "4fc25295-5d6a-4d13-9b87-064167d8980e",
       "slug": "sum-of-multiples",
       "core": false,
