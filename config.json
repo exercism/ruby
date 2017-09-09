@@ -895,6 +895,18 @@
       "uuid": "89bd3d71-000f-4cd9-9a84-ad1b22ddbd33",
       "slug": "point-mutations",
       "deprecated": true
+    },
+    {
+      "uuid": "a20c86c0-e87b-4910-83b7-3715c86c2b0b",
+      "slug": "sublist",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "Control-flow (conditionals)",
+        "Control-flow (loops)",
+        "Logic"
+      ]
     }
   ],
   "foregone": [
