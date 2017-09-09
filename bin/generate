@@ -9,3 +9,12 @@ generators = Generator::CommandLine.new(paths).parse(ARGV)
 exit 1 unless generators
 
 generators.map(&:call)
+
+configletPath = "#{EXERCISM_RUBY_ROOT}/bin/configlet"
+unless File.file?(configletPath)
+  raise Exception.new("Unable to find configlet, fetch using bin/fetch_configlet")
+end
+
+generators.each do |generator|
+  system("#{configletPath} generate #{EXERCISM_RUBY_ROOT} --only=#{generator.exercise.slug}")
+end
