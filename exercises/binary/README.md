@@ -1,5 +1,3 @@
-# Binary
-
 Convert a binary number, represented as a string (e.g. '101010'), to its decimal equivalent using first principles.
 
 Implement binary to decimal conversion. Given a binary input
@@ -51,11 +49,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-All of Computer Science [http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-](http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

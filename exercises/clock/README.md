@@ -1,5 +1,3 @@
-# Clock
-
 Implement a clock that handles times without dates.
 
 You should be able to add and subtract minutes to it.
@@ -29,11 +27,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-Pairing session with Erin Drummond [https://twitter.com/ebdrummond](https://twitter.com/ebdrummond)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

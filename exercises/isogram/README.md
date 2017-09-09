@@ -1,5 +1,3 @@
-# Isogram
-
 Determine if a word or phrase is an isogram.
 
 An isogram (also known as a "nonpattern word") is a word or phrase without a repeating letter.
@@ -35,11 +33,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-Wikipedia [https://en.wikipedia.org/wiki/Isogram](https://en.wikipedia.org/wiki/Isogram)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

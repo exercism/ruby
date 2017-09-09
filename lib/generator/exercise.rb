@@ -12,6 +12,14 @@ module Generator
       @name ||= slug.underscore
     end
 
+    def directory
+      "exercises/#{@slug}"
+    end
+
+    def readme
+      "exercises/#{@slug}/README.md"
+    end
+
     def case_class
       slug.camel_case + 'Case'
     end

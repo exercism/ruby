@@ -4,6 +4,7 @@ module Generator
   class ImplementationTest < Minitest::Test
     FixturePaths = Paths.new(
       metadata: 'test/fixtures/metadata',
+      docs: 'test/fixtures/docs/EXERCISE_README_INSERT.md',
       track: 'test/fixtures/ruby'
     )
 
@@ -96,6 +97,16 @@ TESTS_FILE
       # Don't pollute the namespace
       Object.send(:remove_const, :AlphaCase)
     end
+
+    def test_build_readme
+      expected_content = "Add two numbers together\n\n## Requirements\n\n* The numbers should be added together\n\n****\nRuby instructions on how to run tests."
+      mock_file = Minitest::Mock.new.expect :puts, expected_content.length, [expected_content]
+      exercise = Exercise.new(slug: 'alpha')
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(repository: repository, exercise: exercise)
+      File.stub(:open, true, mock_file) { subject.build_readme }
+      mock_file.verify
+    end
   end
 
   class LoggingImplementationTest < Minitest::Test
@@ -110,6 +121,20 @@ TESTS_FILE
 
       subject = LoggingImplementation.new(implementation: mock_implementation, logger: mock_logger)
       subject.build_tests
+
+      mock_implementation.verify
+    end
+
+    def test_build_readme
+      exercise = Exercise.new(slug: 'alpha')
+      mock_implementation = Minitest::Mock.new
+      mock_implementation.expect :build_readme, nil
+      mock_implementation.expect :exercise, exercise
+      mock_logger = Minitest::Mock.new
+      mock_logger.expect :info, nil, ['Generated alpha README']
+
+      subject = LoggingImplementation.new(implementation: mock_implementation, logger: mock_logger)
+      subject.build_readme
 
       mock_implementation.verify
     end

@@ -1,5 +1,3 @@
-# Hamming
-
 Calculate the Hamming difference between two DNA strands.
 
 A mutation is simply a mistake that occurs during the creation or
@@ -58,11 +56,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

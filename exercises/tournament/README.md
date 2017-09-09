@@ -1,5 +1,3 @@
-# Tournament
-
 Tally the results of a small football competition.
 
 Based on an input file containing which team played against which and what the
@@ -87,8 +85,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

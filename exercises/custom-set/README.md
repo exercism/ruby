@@ -1,5 +1,3 @@
-# Custom Set
-
 Create a custom set type.
 
 Sometimes it is necessary to define a custom data structure of some
@@ -30,8 +28,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

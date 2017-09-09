@@ -1,5 +1,3 @@
-# Largest Series Product
-
 Given a string of digits, calculate the largest product for a contiguous
 substring of digits of length n.
 
@@ -36,11 +34,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-A variation on Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

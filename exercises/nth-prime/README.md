@@ -1,5 +1,3 @@
-# Nth Prime
-
 Given a number n, determine what the nth prime is.
 
 By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that
@@ -31,11 +29,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-A variation on Problem 7 at Project Euler [http://projecteuler.net/problem=7](http://projecteuler.net/problem=7)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

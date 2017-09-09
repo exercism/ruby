@@ -4,9 +4,10 @@ require_rel 'generator' # Include everything in the 'generator' subdirectory
 module Generator
   # Immutable value object for storing paths
   class Paths
-    attr_reader :track, :metadata
-    def initialize(track:, metadata:)
+    attr_reader :track, :docs, :metadata
+    def initialize(track:, docs:, metadata:)
       @track = track
+      @docs = docs
       @metadata = metadata
     end
   end
@@ -16,6 +17,7 @@ module Generator
   class GenerateTests < ImplementationDelegator
     def call
       build_tests
+      build_readme
     end
   end
 
@@ -25,6 +27,7 @@ module Generator
       update_tests_version
       update_example_solution
       build_tests
+      build_readme
     end
   end
 end

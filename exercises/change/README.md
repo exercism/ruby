@@ -1,33 +1,18 @@
-Write a function to solve alphametics puzzles.
+Correctly determine the fewest number of coins to be given to a customer such
+that the sum of the coins' value would equal the correct amount of change.
 
-[Alphametics](https://en.wikipedia.org/wiki/Alphametics) is a puzzle where
-letters in words are replaced with numbers.
+## For example
 
-For example `SEND + MORE = MONEY`:
+- An input of 15 with [1, 5, 10, 25, 100] should return one nickel (5)
+  and one dime (10) or [0, 1, 1, 0, 0]
+- An input of 40 with [1, 5, 10, 25, 100] should return one nickel (5)
+  and one dime (10) and one quarter (25) or [0, 1, 1, 1, 0]
 
-```
-  S E N D
-  M O R E +
------------
-M O N E Y
-```
+## Edge cases
 
-Replacing these with valid numbers gives:
-
-```
-  9 5 6 7
-  1 0 8 5 +
------------
-1 0 6 5 2
-```
-
-This is correct because every letter is replaced by a different number and the
-words, translated into numbers, then make a valid sum.
-
-Each letter must represent a different digit, and the leading digit of
-a multi-digit number must not be zero.
-
-Write a function to solve alphametics puzzles.
+- Does your algorithm work for any given set of coins?
+- Can you ask for negative change?
+- Can you ask for a change value smaller than the smallest coin value?
 
 * * * *
 
