@@ -1,4 +1,4 @@
-# Roman Numerals
+# Roman_numerals
 
 Write a function to convert from normal numbers to Roman Numerals.
 
@@ -65,11 +65,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-The Roman Numeral Kata [http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

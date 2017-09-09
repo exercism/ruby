@@ -80,10 +80,5 @@ To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
 
-
-## Source
-
-Inspired by one of the generated questions in the Extreme Startup game. [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

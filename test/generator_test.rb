@@ -7,6 +7,7 @@ module Generator
       mock_exercise.expect :update_tests_version, nil
       mock_exercise.expect :update_example_solution, nil
       mock_exercise.expect :build_tests, nil
+      mock_exercise.expect :build_readme, nil
 
       subject = UpdateVersionAndGenerateTests.new(mock_exercise)
       subject.call
@@ -19,6 +20,7 @@ module Generator
     def test_call
       mock_exercise = Minitest::Mock.new
       mock_exercise.expect :build_tests, nil
+      mock_exercise.expect :build_readme, nil
 
       subject = GenerateTests.new(mock_exercise)
       subject.call

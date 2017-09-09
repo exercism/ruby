@@ -1,4 +1,4 @@
-# Word Count
+# Word_count
 
 Given a phrase, count the occurrences of each word in that phrase.
 
@@ -35,11 +35,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

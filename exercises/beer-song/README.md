@@ -1,4 +1,4 @@
-# Beer Song
+# Beer_song
 
 Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.
 
@@ -343,11 +343,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-Learn to Program by Chris Pine [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

@@ -1,4 +1,4 @@
-# Phone Number
+# Phone_number
 
 Clean up user-entered phone numbers so that they can be sent SMS messages.
 
@@ -50,11 +50,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-Event Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventmanager.html](http://tutorials.jumpstartlab.com/projects/eventmanager.html)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

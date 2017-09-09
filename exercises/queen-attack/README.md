@@ -1,4 +1,4 @@
-# Queen Attack
+# Queen_attack
 
 Given the position of two queens on a chess board, indicate whether or not they
 are positioned so that they can attack each other.
@@ -49,11 +49,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-J Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

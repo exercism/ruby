@@ -1,4 +1,4 @@
-# Sum Of Multiples
+# Sum_of_multiples
 
 Given a number, find the sum of all the multiples of particular numbers up to
 but not including that number.
@@ -34,11 +34,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-A variation on Problem 1 at Project Euler [http://projecteuler.net/problem=1](http://projecteuler.net/problem=1)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

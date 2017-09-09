@@ -1,21 +1,20 @@
-# Raindrops
+# Change
 
-Convert a number to a string, the contents of which depend on the number's factors.
+Correctly determine the fewest number of coins to be given to a customer such
+that the sum of the coins' value would equal the correct amount of change.
 
-- If the number has 3 as a factor, output 'Pling'.
-- If the number has 5 as a factor, output 'Plang'.
-- If the number has 7 as a factor, output 'Plong'.
-- If the number does not have 3, 5, or 7 as a factor,
-  just pass the number's digits straight through.
+## For example
 
-## Examples
+- An input of 15 with [1, 5, 10, 25, 100] should return one nickel (5)
+  and one dime (10) or [0, 1, 1, 0, 0]
+- An input of 40 with [1, 5, 10, 25, 100] should return one nickel (5)
+  and one dime (10) and one quarter (25) or [0, 1, 1, 1, 0]
 
-- 28's factors are 1, 2, 4, **7**, 14, 28.
-  - In raindrop-speak, this would be a simple "Plong".
-- 30's factors are 1, 2, **3**, **5**, 6, 10, 15, 30.
-  - In raindrop-speak, this would be a "PlingPlang".
-- 34 has four factors: 1, 2, 17, and 34.
-  - In raindrop-speak, this would be "34".
+## Edge cases
+
+- Does your algorithm work for any given set of coins?
+- Can you ask for negative change?
+- Can you ask for a change value smaller than the smallest coin value?
 
 * * * *
 

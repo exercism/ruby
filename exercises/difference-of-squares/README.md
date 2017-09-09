@@ -1,4 +1,4 @@
-# Difference Of Squares
+# Difference_of_squares
 
 Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.
 
@@ -35,11 +35,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

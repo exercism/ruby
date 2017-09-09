@@ -1,4 +1,4 @@
-# Rna Transcription
+# Rna_transcription
 
 Given a DNA strand, return its RNA complement (per RNA transcription).
 
@@ -41,11 +41,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-Rosalind [http://rosalind.info/problems/rna](http://rosalind.info/problems/rna)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

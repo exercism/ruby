@@ -35,10 +35,5 @@ To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
 
-
-## Source
-
-Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

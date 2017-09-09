@@ -4,6 +4,7 @@ module Generator
   class ImplementationTest < Minitest::Test
     FixturePaths = Paths.new(
       metadata: 'test/fixtures/metadata',
+      docs: 'test/fixtures/metadata',
       track: 'test/fixtures/ruby'
     )
 

@@ -33,6 +33,17 @@ module Generator
         values: template_values
       )
     end
+
+    def build_readme
+      canonicalDocs = File.read(@repository.canonical_data().docs)
+      docs = File.read(@repository.paths.docs)
+      ne = "#{@repository.paths.track}/#{@exercise.directory}/README.md"
+      File.open(ne, "w") do |handle|
+        handle.puts "# #{@exercise.name.capitalize}\n\n"
+        handle.puts "#{canonicalDocs}\n"
+        handle.puts docs
+      end
+    end
   end
 
   # This exists to give us a clue as to what we are delegating to.
@@ -59,6 +70,11 @@ module Generator
     def build_tests
       @implementation.build_tests
       @logger.info "Generated #{exercise.slug} tests version #{version}"
+    end
+
+    def build_readme
+      @implementation.build_readme
+      @logger.info "Generated #{exercise.slug} README"
     end
   end
 end

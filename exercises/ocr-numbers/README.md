@@ -1,4 +1,4 @@
-# Ocr Numbers
+# Ocr_numbers
 
 Given a 3 x 4 grid of pipes, underscores, and spaces, determine which number is
 represented, or whether it is garbled.
@@ -101,11 +101,6 @@ directory. For example, if the test suite is called
 To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
-
-
-## Source
-
-Inspired by the Bank OCR kata [http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

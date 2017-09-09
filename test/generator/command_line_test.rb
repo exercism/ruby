@@ -4,6 +4,7 @@ module Generator
   class CommandLineTest < Minitest::Test
     FixturePaths = Paths.new(
       metadata: 'test/fixtures/metadata',
+      docs: 'test/fixtures/metadata',
       track: 'test/fixtures/ruby'
     )
 
@@ -15,7 +16,7 @@ module Generator
     end
 
     def test_invalid_metadata_repository_outputs_message_to_stderr
-      paths = Paths.new(metadata: 'test/fixtures/nonexistent', track: nil)
+      paths = Paths.new(metadata: 'test/fixtures/nonexistent', track: nil, docs: nil)
       expected_stderr = <<-MESSAGE.gsub(/^ {6}/, '')
       'problem-specifications' repository not found.
       Try running the command:

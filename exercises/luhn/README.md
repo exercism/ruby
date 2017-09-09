@@ -88,10 +88,5 @@ To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
 
-
-## Source
-
-The Luhn Algorithm on Wikipedia [http://en.wikipedia.org/wiki/Luhn_algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm)
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

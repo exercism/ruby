@@ -86,10 +86,5 @@ To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
 
-
-## Source
-
-A variation on JavaRanch CattleDrive, exercise 4a [http://www.javaranch.com/say.jsp](http://www.javaranch.com/say.jsp)
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

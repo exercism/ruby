@@ -51,10 +51,5 @@ To include color from the command line:
 
     ruby -r minitest/pride hello_world_test.rb
 
-
-## Source
-
-Sieve of Eratosthenes at Wikipedia [http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
