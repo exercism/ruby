@@ -1,5 +1,3 @@
-# Raindrops
-
 Convert a number to a string, the contents of which depend on the number's factors.
 
 - If the number has 3 as a factor, output 'Pling'.

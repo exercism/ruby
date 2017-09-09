@@ -1,5 +1,3 @@
-# Roman_numerals
-
 Write a function to convert from normal numbers to Roman Numerals.
 
 The Romans were a clever bunch. They conquered most of Europe and ruled

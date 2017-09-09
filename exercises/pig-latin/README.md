@@ -1,5 +1,3 @@
-# Pig_latin
-
 Implement a program that translates from English to Pig Latin.
 
 Pig Latin is a made-up children's language that's intended to be

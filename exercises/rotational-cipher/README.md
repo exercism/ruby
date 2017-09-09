@@ -1,5 +1,3 @@
-# Rotational_cipher
-
 Create an implementation of the rotational cipher, also sometimes called the Caesar cipher.
 
 The Caesar cipher is a simple shift cipher that relies on

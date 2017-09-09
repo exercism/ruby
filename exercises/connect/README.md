@@ -1,5 +1,3 @@
-# Connect
-
 Compute the result for a game of Hex / Polygon.
 
 The abstract boardgame known as

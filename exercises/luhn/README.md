@@ -1,5 +1,3 @@
-# Luhn
-
 Given a number determine whether or not it is valid per the Luhn formula.
 
 The [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) is

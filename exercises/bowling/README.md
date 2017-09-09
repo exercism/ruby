@@ -1,5 +1,3 @@
-# Bowling
-
 Score a bowling game.
 
 Bowling is game where players roll a heavy ball to knock down pins

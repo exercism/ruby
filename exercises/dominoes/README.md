@@ -1,5 +1,3 @@
-# Dominoes
-
 Make a chain of dominoes.
 
 Compute a way to order a given set of dominoes in such a way that they form a

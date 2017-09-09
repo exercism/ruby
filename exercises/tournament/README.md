@@ -1,5 +1,3 @@
-# Tournament
-
 Tally the results of a small football competition.
 
 Based on an input file containing which team played against which and what the

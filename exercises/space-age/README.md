@@ -1,5 +1,3 @@
-# Space_age
-
 Given an age in seconds, calculate how old someone would be on:
 
    - Earth: orbital period 365.25 Earth days, or 31557600 seconds

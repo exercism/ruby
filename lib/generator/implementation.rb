@@ -36,13 +36,9 @@ module Generator
 
     def build_readme
       canonicalDocs = File.read(@repository.canonical_data().docs)
-      docs = File.read(@repository.paths.docs)
-      ne = "#{@repository.paths.track}/#{@exercise.directory}/README.md"
-      File.open(ne, "w") do |handle|
-        handle.puts "# #{@exercise.name.capitalize}\n\n"
-        handle.puts "#{canonicalDocs}\n"
-        handle.puts docs
-      end
+      rubyDocs = File.read(@repository.paths.docs)
+      readme = File.join(@repository.paths.track, @exercise.readme)
+      File.open(readme, "w") { |handle| handle.puts "#{canonicalDocs}\n#{rubyDocs}" }
     end
   end
 
