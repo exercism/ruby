@@ -23,8 +23,11 @@ palindromic product within that range, along with all of it's factors.
 
 Given the range `[1, 9]` (both inclusive)...
 
-The smallest product is `1`. It's factors are `(1, 1)`.
-The largest product is `9`. It's factors are `(1, 9)`, `(3, 3)`, and `(9, 1)`.
+And given the list of all possible products within this range:
+`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 15, 21, 24, 27, 20, 28, 32, 36, 25, 30, 35, 40, 45, 42, 48, 54, 49, 56, 63, 64, 72, 81]`
+
+The smallest palindrome product is `1`. It's factors are `(1, 1)`.
+The largest palindrome product is `9`. It's factors are `(1, 9)`, `(3, 3)`, and `(9, 1)`.
 
 ## Example 2
 
