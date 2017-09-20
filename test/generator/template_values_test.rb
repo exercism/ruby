@@ -26,10 +26,10 @@ module Generator
       assert_equal expected_exercise_name, subject.exercise_name
     end
 
-    def test_exercise_name_camel
-      expected_exercise_name_camel = 'AlphaBeta'
+    def test_exercise_test_classname
+      expected = 'AlphaBetaTest'
       subject = TemplateValues.new(@arguments.merge(exercise_name: 'alpha_beta'))
-      assert_equal expected_exercise_name_camel, subject.exercise_name_camel
+      assert_equal expected, subject.exercise_test_classname
     end
 
     def test_test_cases
