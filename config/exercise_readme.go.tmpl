@@ -1,13 +1,13 @@
 # {{ .Spec.Name }}
 
-{{ .Spec.Description -}}
-{{- with .Hints }}
+{{ .Spec.Description }}
+{{ with .Hints }}
 {{ . }}
 {{ end }}
-{{- with .TrackInsert }}
+{{ with .TrackInsert }}
 {{ . }}
 {{ end }}
-{{- with .Spec.Credits -}}
+{{ with .Spec.Credits }}
 ## Source
 
 {{ . }}
