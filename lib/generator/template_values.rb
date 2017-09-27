@@ -17,6 +17,12 @@ module Generator
       binding
     end
 
+    def exercise_test_classname
+      exercise_name_camel + 'Test'
+    end
+
+    private
+
     def exercise_name_camel
       exercise_name.split('_').map(&:capitalize).join
     end

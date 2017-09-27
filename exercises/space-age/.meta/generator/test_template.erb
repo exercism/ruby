@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative '<%= exercise_name %>'
 
 # Common test data version: <%= canonical_data_version %> <%= abbreviated_commit_hash %>
-class <%= exercise_name_camel %>Test < Minitest::Test
+class <%= exercise_test_classname %> < Minitest::Test
   # assert_in_delta will pass if the difference
   # between the values being compared is less
   # than the allowed delta
