@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION = 1
+end
+
 class Allergies
   ALLERGENS = %w(eggs peanuts shellfish strawberries tomatoes chocolate pollen cats)
 
