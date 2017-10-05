@@ -887,6 +887,12 @@
       ]
     },
     {
+      "uuid": "8fe44264-0eb3-b780-635b-1ac0df69d7ddbc2d68c",
+      "slug": "complex-numbers",
+      "difficulty": 3,
+      "topics": [ "Mathematics" ]
+    },
+    {
       "uuid": "cae4e000-3aac-41f7-b727-f9cce12d058d",
       "slug": "octal",
       "deprecated": true
