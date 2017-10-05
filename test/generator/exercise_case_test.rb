@@ -7,6 +7,16 @@ module Generator
       assert_equal 'test_foo', subject.name
     end
 
+    def test_name_with_trailing_whitespace
+      subject = ExerciseCase.new(canonical: OpenStruct.new(description: 'foo '))
+      assert_equal 'test_foo', subject.name
+    end
+
+    def test_name_with_leading_whitespace
+      subject = ExerciseCase.new(canonical: OpenStruct.new(description: ' foo'))
+      assert_equal 'test_foo', subject.name
+    end
+
     def test_skipped_index_zero
       assert_equal '# skip', ExerciseCase.new(canonical: nil).skipped(0)
     end
