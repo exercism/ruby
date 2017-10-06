@@ -1,26 +1,26 @@
 class ComplexNumber
-  attr_accessor :real, :imaginary
+  attr_reader :real, :imaginary
 
-  def initialize(values)
-    @real = Array(values)[0]
-    @imaginary = Array(values)[1] || 0
+  def initialize(real, imaginary = 0)
+    @real = real
+    @imaginary = imaginary
   end
 
   def ==(other)
-     (self - other).abs.real < 1e-15
+     (self - other).abs < 1e-15
   end
 
   def +(other)
-    self.class.new([@real + other.real, @imaginary + other.imaginary])
+    self.class.new(@real + other.real, @imaginary + other.imaginary)
   end
 
   def -(other)
-    self.class.new([@real - other.real, @imaginary - other.imaginary])
+    self.class.new(@real - other.real, @imaginary - other.imaginary)
   end
 
   def *(other)
-    self.class.new([@real * other.real - @imaginary * other.imaginary,
-         @real * other.imaginary + @imaginary * other.real])
+    self.class.new(@real * other.real - @imaginary * other.imaginary,
+         @real * other.imaginary + @imaginary * other.real)
   end
 
   def /(other)
@@ -28,19 +28,19 @@ class ComplexNumber
   end
 
   def abs
-    self.class.new(Math.sqrt((self*self.conjugate).real))
+    Math.sqrt((self*self.conjugate).real)
   end
 
   def conjugate
-    self.class.new([@real, -@imaginary])
+    self.class.new(@real, -@imaginary)
   end
 
   def inv
-   self.class.new([@real / abs.real**2, -@imaginary / abs.real**2])
+   self.class.new(@real / abs**2, -@imaginary / abs**2)
   end
 
   def exp
-   self.class.new(Math.exp(@real)) * self.class.new([Math.cos(@imaginary), Math.sin(@imaginary)])
+   self.class.new(Math.exp(@real)) * self.class.new(Math.cos(@imaginary), Math.sin(@imaginary))
   end
 end
 

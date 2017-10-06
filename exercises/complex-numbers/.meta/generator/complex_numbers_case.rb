@@ -7,29 +7,37 @@ class ComplexNumbersCase < Generator::ExerciseCase
   end
 
   def number
-    parse_number((respond_to? :input) ? input : z1)
+    (respond_to? :input) ? input : z1
   end
 
   def operation
     case property
-    when "add" then " + ComplexNumber.new(#{z2})"
-    when "sub" then " - ComplexNumber.new(#{z2})"
-    when "mul" then " * ComplexNumber.new(#{z2})"
-    when "div" then " / ComplexNumber.new(#{z2})"
+    when "add" then " + #{construct_complex(z2)}"
+    when "sub" then " - #{construct_complex(z2)}" 
+    when "mul" then " * #{construct_complex(z2)}" 
+    when "div" then " / #{construct_complex(z2)}" 
     else ".#{property}"
     end
   end
 
   def testcase
-    "expected = ComplexNumber.new(#{parse_number(expected)})\n" +
-    "assert_equal expected, ComplexNumber.new(#{number})#{operation}"
+    "expected = #{expected_value}\n" +
+    "assert_equal expected, #{construct_complex(number)}#{operation}"
+  end
+
+  def construct_complex(value)
+    "ComplexNumber.new(#{parse_number(value)})"
+  end
+
+  def expected_value
+    (expected.is_a? Numeric) ? expected : construct_complex(expected)
   end
 
   def parse_number(number)
-   "["+ Array(number).map do |elem|
-#      (elem.is_a? Numeric) ? elem : Math.const_get(elem.upcase.to_sym)
+    return number if number.is_a? Numeric
+    Array(number).map do |elem|
       (elem.is_a? Numeric) ? elem.to_s : "Math::#{elem.upcase}"
-    end.join(", ") + "]"
+    end.join(", ")
   end
 
 end
