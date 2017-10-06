@@ -2,7 +2,7 @@ module Generator
   module Underscore
     refine String do
       def underscore
-        strip.downcase.gsub(/[- ]/, '_').gsub(/[^\w?]/, '')
+        downcase.gsub(/[- ]/, '_').gsub(/[^\w?]/, '')
       end
 
       def camel_case
