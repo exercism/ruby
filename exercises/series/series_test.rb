@@ -123,5 +123,3 @@ class SeriesTest < Minitest::Test
   end
 end
 
-end
-
