@@ -1,105 +1,97 @@
 require 'minitest/autorun'
 require_relative 'crypto_square'
 
-class CryptoTest < Minitest::Test
-  def test_normalize_strange_characters
-    crypto = Crypto.new('s#$%^&plunk')
-    assert_equal 'splunk', crypto.normalize_plaintext
+# Common test data version: 2.0.0 bcdd704
+class CryptoSquareTest < Minitest::Test
+  def test_lowercase
+    # skip
+    crypto = Crypto.new('Hello')
+    assert_equal "hello", crypto.normalize_plaintext
   end
 
-  def test_normalize_uppercase_characters
+  def test_remove_spaces
     skip
-    crypto = Crypto.new('WHOA HEY!')
-    assert_equal 'whoahey', crypto.normalize_plaintext
+    crypto = Crypto.new('Hi there')
+    assert_equal "hithere", crypto.normalize_plaintext
   end
 
-  def test_normalize_with_numbers
+  def test_remove_punctuation
     skip
-    crypto = Crypto.new('1, 2, 3 GO!')
-    assert_equal '123go', crypto.normalize_plaintext
+    crypto = Crypto.new('@1, 2%, 3 Go!')
+    assert_equal "123go", crypto.normalize_plaintext
   end
 
-  def test_size_of_small_square
+  def test_empty_plaintext_results_in_an_empty_rectangle
     skip
-    crypto = Crypto.new('1234')
-    assert_equal 2, crypto.size
+    crypto = Crypto.new('')
+    assert_equal [], crypto.plaintext_segments
   end
 
-  def test_size_of_slightly_larger_square
+  def test_4_character_plaintext_results_in_an_2x2_rectangle
     skip
-    crypto = Crypto.new('123456789')
-    assert_equal 3, crypto.size
+    crypto = Crypto.new('Ab Cd')
+    assert_equal ["ab", "cd"], crypto.plaintext_segments
   end
 
-  def test_size_of_non_perfect_square
+  def test_9_character_plaintext_results_in_an_3x3_rectangle
     skip
-    crypto = Crypto.new('123456789abc')
-    assert_equal 4, crypto.size
+    crypto = Crypto.new('This is fun!')
+    assert_equal ["thi", "sis", "fun"], crypto.plaintext_segments
   end
 
-  def test_size_is_determined_by_normalized_plaintext
+  def test_54_character_plaintext_results_in_an_8x7_rectangle
     skip
-    crypto = Crypto.new('Oh hey, this is nuts!')
-    assert_equal 4, crypto.size
+    crypto = Crypto.new('If man was meant to stay on the ground, god would have given us roots.')
+    assert_equal ["ifmanwas", "meanttos", "tayonthe", "groundgo", "dwouldha", "vegivenu", "sroots"], crypto.plaintext_segments
   end
 
-  def test_plaintext_segments
+  def test_empty_plaintext_results_in_an_empty_encode
     skip
-    crypto = Crypto.new('Never vex thine heart with idle woes')
-    expected = %w(neverv exthin eheart withid lewoes)
-    assert_equal expected, crypto.plaintext_segments
+    
   end
 
-  def test_other_plaintext_segments
+  def test_non_empty_plaintext_results_in_the_combined_plaintext_segments
     skip
-    crypto = Crypto.new('ZOMG! ZOMBIES!!!')
-    assert_equal %w(zomg zomb ies), crypto.plaintext_segments
+    
   end
 
-  def test_ciphertext
+  def test_empty_plaintext_results_in_an_empty_ciphertext
     skip
-    crypto = Crypto.new('Time is an illusion. Lunchtime doubly so.')
-    assert_equal 'tasneyinicdsmiohooelntuillibsuuml', crypto.ciphertext
+    crypto = Crypto.new('')
+    assert_equal "", crypto.ciphertext
   end
 
-  def test_another_ciphertext
+  def test_9_character_plaintext_results_in_3_chunks_of_3_characters
     skip
-    crypto = Crypto.new('We all know interspecies romance is weird.')
-    assert_equal 'wneiaweoreneawssciliprerlneoidktcms', crypto.ciphertext
+    crypto = Crypto.new('This is fun!')
+    assert_equal "tsf hiu isn", crypto.normalize_ciphertext
   end
 
-  def test_normalized_ciphertext
+  def test_54_character_plaintext_results_in_7_chunks_the_last_two_padded_with_spaces
     skip
-    crypto = Crypto.new('Vampires are people too!')
-    assert_equal 'vrel aepe mset paoo irpo', crypto.normalize_ciphertext
+    crypto = Crypto.new('If man was meant to stay on the ground, god would have given us roots.')
+    assert_equal "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau", crypto.normalize_ciphertext
   end
 
-  def test_normalized_ciphertext_spills_into_short_segment
-    skip
-    crypto = Crypto.new('Madness, and then illumination.')
-    expected = 'msemo aanin dnin ndla etlt shui'
-    assert_equal expected, crypto.normalize_ciphertext
-  end
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
-  def test_another_normalized_ciphertext
+  def test_bookkeeping
     skip
-    crypto = Crypto.new(
-      'If man was meant to stay on the ground god would have given us roots',
-    )
-    expected = 'imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn sseoau'
-    assert_equal expected, crypto.normalize_ciphertext
-  end
-
-  def test_normalized_ciphertext_with_punctuation
-    skip
-    crypto = Crypto.new('Have a nice day. Feed the dog & chill out!')
-    expected = 'hifei acedl veeol eddgo aatcu nyhht'
-    assert_equal expected, crypto.normalize_ciphertext
-  end
-
-  def test_normalized_ciphertext_when_just_less_then_a_full_square
-    skip
-    crypto = Crypto.new('I am')
-    assert_equal 'im a', crypto.normalize_ciphertext
+    assert_equal 1, BookKeeping::VERSION
   end
 end

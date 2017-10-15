@@ -1,3 +1,7 @@
+module BookKeeping
+  VERSION = 1
+end
+
 class Crypto
 
   def initialize(plaintext)
@@ -9,6 +13,7 @@ class Crypto
   end
 
   def plaintext_segments
+    return [] if normalize_plaintext == ''
     normalize_plaintext.chars.
                         each_slice(size).
                         map{ |s| s.join('') }.
@@ -20,6 +25,7 @@ class Crypto
   end
 
   def ciphertext
+    return '' if normalize_plaintext == ''
     transposed.join('')
   end
 
@@ -36,4 +42,5 @@ class Crypto
     end
     chunks.transpose.map{ |s| s.join('') }
   end
+
 end
