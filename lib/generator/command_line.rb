@@ -29,11 +29,11 @@ module Generator
     end
 
     def generator_class
-      freeze? ? GenerateTests : UpdateVersionAndGenerateTests
+      update? ? UpdateVersionAndGenerateTests : GenerateTests
     end
 
-    def freeze?
-      @options[:freeze]
+    def update?
+      @options[:update]
     end
 
     def implementation(slug)
