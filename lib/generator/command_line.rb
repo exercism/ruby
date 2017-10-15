@@ -33,7 +33,7 @@ module Generator
     end
 
     def freeze?
-      @options[:freeze] || @options[:all]
+      @options[:freeze]
     end
 
     def implementation(slug)
