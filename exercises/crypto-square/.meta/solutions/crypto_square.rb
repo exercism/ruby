@@ -37,3 +37,7 @@ class Crypto
     chunks.transpose.map{ |s| s.join('') }
   end
 end
+
+module BookKeeping
+  VERSION = 1
+end
