@@ -106,7 +106,10 @@ tree -L 1 ~/code/exercism
 
 From within the ruby directory, run the following command:
 
-    bin/generate <slug>
+    bin/generate --update <slug> 
+
+To regenerate tests without the updated canonical data, run the command
+without the `--update` option.
 
 #### Changing a Generated Exercise
 
