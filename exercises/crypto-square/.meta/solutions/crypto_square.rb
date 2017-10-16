@@ -4,6 +4,12 @@ class Crypto
     @plaintext = plaintext
   end
 
+  def ciphertext
+    transposed.join(' ')
+  end
+
+  private
+
   def normalize_plaintext
     @normalized ||= @plaintext.downcase.gsub(/\W/, '')
   end
@@ -23,12 +29,6 @@ class Crypto
     Math.sqrt(normalize_plaintext.length).ceil
   end
 
-  def ciphertext
-    transposed.join(' ')
-  end
-
-  private 
-
   def transposed
     chunk_size = size
     chunks = plaintext_segments.map do |s|
@@ -36,6 +36,7 @@ class Crypto
     end
     chunks.transpose.map{ |s| s.join('') }
   end
+
 end
 
 module BookKeeping
