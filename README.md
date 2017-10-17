@@ -108,8 +108,8 @@ From within the ruby directory, run the following command:
 
     bin/generate --update <slug> 
 
-To regenerate tests without the updated canonical data, run the command
-without the `--update` option.
+Leaving out the --update option will cause the BookKeeping version number to remain the same.
+This can be useful when testing generators.
 
 #### Changing a Generated Exercise
 
