@@ -1,6 +1,5 @@
 require 'minitest/autorun'
-# require_relative 'two_fer'
-require_relative '.meta/solutions/two_fer'
+require_relative 'two_fer'
 
 class TwoFerTest < Minitest::Test
   def test_empty_name_as_argument
