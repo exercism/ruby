@@ -1,96 +1,96 @@
+gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'roman_numerals'
 
 # Common test data version: 1.0.0 070e8d5
 class RomanNumeralsTest < Minitest::Test
   def test_1
-    # skip
-    assert_equal 'I', 1.to_roman
+    assert_equal 'I', Numeric.new(1).to_roman
   end
 
   def test_2
     skip
-    assert_equal 'II', 2.to_roman
+    assert_equal 'II', Numeric.new(2).to_roman
   end
 
   def test_3
     skip
-    assert_equal 'III', 3.to_roman
+    assert_equal 'III', Numeric.new(3).to_roman
   end
 
   def test_4
     skip
-    assert_equal 'IV', 4.to_roman
+    assert_equal 'IV', Numeric.new(4).to_roman
   end
 
   def test_5
     skip
-    assert_equal 'V', 5.to_roman
+    assert_equal 'V', Numeric.new(5).to_roman
   end
 
   def test_6
     skip
-    assert_equal 'VI', 6.to_roman
+    assert_equal 'VI', Numeric.new(6).to_roman
   end
 
   def test_9
     skip
-    assert_equal 'IX', 9.to_roman
+    assert_equal 'IX', Numeric.new(9).to_roman
   end
 
   def test_27
     skip
-    assert_equal 'XXVII', 27.to_roman
+    assert_equal 'XXVII', Numeric.new(27).to_roman
   end
 
   def test_48
     skip
-    assert_equal 'XLVIII', 48.to_roman
+    assert_equal 'XLVIII', Numeric.new(48).to_roman
   end
 
   def test_59
     skip
-    assert_equal 'LIX', 59.to_roman
+    assert_equal 'LIX', Numeric.new(59).to_roman
   end
 
   def test_93
     skip
-    assert_equal 'XCIII', 93.to_roman
+    assert_equal 'XCIII', Numeric.new(93).to_roman
   end
 
   def test_141
     skip
-    assert_equal 'CXLI', 141.to_roman
+    assert_equal 'CXLI', Numeric.new(141).to_roman
   end
 
   def test_163
     skip
-    assert_equal 'CLXIII', 163.to_roman
+    assert_equal 'CLXIII', Numeric.new(163).to_roman
   end
 
   def test_402
     skip
-    assert_equal 'CDII', 402.to_roman
+    assert_equal 'CDII', Numeric.new(402).to_roman
   end
 
   def test_575
     skip
-    assert_equal 'DLXXV', 575.to_roman
+    assert_equal 'DLXXV', Numeric.new(575).to_roman
   end
 
   def test_911
     skip
-    assert_equal 'CMXI', 911.to_roman
+    assert_equal 'CMXI', Numeric.new(911).to_roman
   end
 
   def test_1024
     skip
-    assert_equal 'MXXIV', 1024.to_roman
+    assert_equal 'MXXIV', Numeric.new(1024).to_roman
   end
 
   def test_3000
     skip
-    assert_equal 'MMM', 3000.to_roman
+    assert_equal 'MMM', Numeric.new(3000).to_roman
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -111,7 +111,7 @@ class RomanNumeralsTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 3, BookKeeping::VERSION
   end
+
 end
