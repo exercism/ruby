@@ -106,7 +106,10 @@ tree -L 1 ~/code/exercism
 
 From within the ruby directory, run the following command:
 
-    bin/generate <slug>
+    bin/generate --update <slug> 
+
+Leaving out the --update option will cause the BookKeeping version number to remain the same.
+This can be useful when testing generators.
 
 #### Changing a Generated Exercise
 

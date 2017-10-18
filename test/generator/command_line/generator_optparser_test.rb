@@ -9,7 +9,7 @@ module Generator
 
     def default_options
       {
-        freeze: false,
+        update: false,
         all: false,
         verbose: false,
         slug: nil
@@ -26,11 +26,11 @@ module Generator
       end
     end
 
-    def test_frozen_option
-      args = %w(-f beta)
+    def test_update_option
+      args = %w(-u beta)
       Files::GeneratorCases.stub :available, %w(beta) do
         assert_equal(
-          default_options.merge(slug: 'beta', freeze: true),
+          default_options.merge(slug: 'beta', update: true),
           GeneratorOptparser.new(args, FixturePaths).options
         )
       end
