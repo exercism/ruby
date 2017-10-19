@@ -24,7 +24,7 @@ class PigLatin
   end
 
   def parse_initial_consonant_sound_and_remainder
-    word.scan(/\A([^aeiou]?qu|[^aeiou]+)(.*)/).first
+    word.scan(/\A([^aeiou]?qu|[^aeiou]+(?=y)|[^aeiou]+)(.*)/).first
   end
 end
 
