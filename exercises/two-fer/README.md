@@ -40,34 +40,30 @@ also important not to over-engineer a solution.
 It's important to remember that the goal is to make code as expressive and
 readable as we can.
 
-* * * *
+## Running the tests
 
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/ruby).
+For running the tests provided, you will need the Minitest gem. Open a terminal window and run the following command to install minitest:
 
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
+`gem install minitest`
 
-    gem install minitest
+If you would like color output, you can require `'minitest/pride'` in the test file, or note the alternative instruction, below, for running the test file.
 
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
+In order to run the test, you can run the test file from the exercise directory.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
-
-    ruby hello_world_test.rb
+`ruby two_fer_test.rb`
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+`ruby -r minitest/pride two_fer_test.rb`
 
+## Further information
+
+For more detailed information about the Ruby track, including how to get help if you're having trouble, please visit the exercism.io [Ruby language page](http://exercism.io/languages/ruby/about).
 
 ## Source
 
 This is an exercise to introduce users to basic programming constructs, just after hello World. [https://en.wikipedia.org/wiki/Two-fer](https://en.wikipedia.org/wiki/Two-fer)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
