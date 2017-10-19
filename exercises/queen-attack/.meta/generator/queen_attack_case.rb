@@ -14,7 +14,7 @@ class QueenAttackCase < Generator::ExerciseCase
   end
 
   def parse_position queen
-    queen['position'].delete('() ').split(',').map{|i| i.to_i}
+    [queen['position']['row'], queen['position']['column']]
   end
 
   def create_workload
