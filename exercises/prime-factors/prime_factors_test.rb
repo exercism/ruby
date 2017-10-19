@@ -1,5 +1,12 @@
 require 'minitest/autorun'
-require_relative 'prime_factors'
+Prime = nil
+class CheatError < StandardError; end
+begin
+  require_relative 'prime_factors'
+rescue TypeError => e
+  raise e unless e.message == "Prime is not a class"
+  raise CheatError, "Solve this without using Ruby's built in Prime class"
+end
 
 class PrimeFactorsTest < Minitest::Test
   def test_1
