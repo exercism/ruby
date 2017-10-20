@@ -16,17 +16,6 @@
       ]
     },
     {
-      "uuid": "b02a4214-0f1a-9480-2132-2ea3d5073dbfbec0aa4",
-      "slug": "two-fer",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "Control-flow (conditionals)",
-        "Strings"
-      ]
-    },
-    {
       "uuid": "d33dec8a-e2b4-40bc-8be9-3f49de084d43",
       "slug": "hamming",
       "core": false,
@@ -895,6 +884,17 @@
         "Control-flow (conditionals)",
         "Control-flow (loops)",
         "Logic"
+      ]
+    },
+    {
+      "uuid": "b02a4214-0f1a-9480-2132-2ea3d5073dbfbec0aa4",
+      "slug": "two-fer",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "Control-flow (conditionals)",
+        "Strings"
       ]
     },
     {
