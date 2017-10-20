@@ -5,7 +5,7 @@ require_relative 'two_fer'
 class TwoFerTest < Minitest::Test
   def test_no_name_given
     # skip
-    assert_equal "One for you, one for me.", TwoFer.two_fer(nil)
+    assert_equal "One for you, one for me.", TwoFer.two_fer
   end
 
   def test_a_name_given
