@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'sum_of_multiples'
 
-# Common test data version: 1.0.0 72b1496
+# Common test data version: 1.1.0 df076b2
 class SumOfMultiplesTest < Minitest::Test
   def test_multiples_of_3_or_5_up_to_1
     # skip
@@ -11,6 +11,11 @@ class SumOfMultiplesTest < Minitest::Test
   def test_multiples_of_3_or_5_up_to_4
     skip
     assert_equal 3, SumOfMultiples.new(3, 5).to(4)
+  end
+
+  def test_multiples_of_3_up_to_7
+    skip
+    assert_equal 9, SumOfMultiples.new(3).to(7)
   end
 
   def test_multiples_of_3_or_5_up_to_10
@@ -82,6 +87,6 @@ class SumOfMultiplesTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
