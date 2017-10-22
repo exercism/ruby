@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'pig_latin'
 
-# Common test data version: 1.0.0 d4e9a22
+# Common test data version: 1.1.0 b5ddd0a
 class PigLatinTest < Minitest::Test
   def test_word_beginning_with_a
     # skip
@@ -41,11 +41,6 @@ class PigLatinTest < Minitest::Test
   def test_word_beginning_with_k
     skip
     assert_equal "oalakay", PigLatin.translate("koala")
-  end
-
-  def test_word_beginning_with_y
-    skip
-    assert_equal "ellowyay", PigLatin.translate("yellow")
   end
 
   def test_word_beginning_with_x
@@ -98,6 +93,21 @@ class PigLatinTest < Minitest::Test
     assert_equal "xrayay", PigLatin.translate("xray")
   end
 
+  def test_y_is_treated_like_a_consonant_at_the_beginning_of_a_word
+    skip
+    assert_equal "ellowyay", PigLatin.translate("yellow")
+  end
+
+  def test_y_is_treated_like_a_vowel_at_the_end_of_a_consonant_cluster
+    skip
+    assert_equal "ythmrhay", PigLatin.translate("rhythm")
+  end
+
+  def test_y_as_second_letter_in_two_letter_word
+    skip
+    assert_equal "ymay", PigLatin.translate("my")
+  end
+
   def test_a_whole_phrase
     skip
     assert_equal "ickquay astfay unray", PigLatin.translate("quick fast run")
@@ -122,6 +132,6 @@ class PigLatinTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 1, BookKeeping::VERSION
+    assert_equal 2, BookKeeping::VERSION
   end
 end
