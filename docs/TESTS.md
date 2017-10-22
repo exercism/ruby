@@ -10,6 +10,12 @@ Only the first test will be executed, all the others have been made pending
 using the `skip` method. Delete or comment the next `skip` as you get
 each test passing.
 
+## Understanding Skips
+
+The `skip` method instructs the test suite to not run a test. This is commonly used to avoid running tests of unimplemented functionality, so you can focus on the part you are currently working on.
+
+The test run summary will list the number of skipped tests. You should disable all of the skips before completing an exercise.
+
 ## Customizing Test Reporting
 
 If you want color, execute the tests with:
