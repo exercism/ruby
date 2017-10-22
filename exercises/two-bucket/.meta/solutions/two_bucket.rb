@@ -82,9 +82,9 @@ class TwoBucket
 
   def other_bucket_matches_goal
     if @start_bucket == 'one'
-      return @second_size == @goal
+      @second_size == @goal
     else
-      return @first_size == @goal
+      @first_size == @goal
     end
   end
 
