@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'two_bucket'
 
-# Common test data version: 1.1.0 531486a
+# Common test data version: 1.2.0 8aa11e8
 class TwoBucketTest < Minitest::Test
   def test_bucket_one_size_3_bucket_two_size_5_goal_1_start_with_bucket_one
     # skip
@@ -46,9 +46,9 @@ class TwoBucketTest < Minitest::Test
   def test_bucket_one_size_2_bucket_two_size_3_goal_3_start_with_bucket_one
     skip
     two_bucket = TwoBucket.new(2, 3, 3, 'one')
-    assert_equal 4, two_bucket.moves
+    assert_equal 2, two_bucket.moves
     assert_equal 'two', two_bucket.goal_bucket
-    assert_equal 1, two_bucket.other_bucket
+    assert_equal 2, two_bucket.other_bucket
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -70,6 +70,6 @@ class TwoBucketTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 3, BookKeeping::VERSION
+    assert_equal 4, BookKeeping::VERSION
   end
 end
