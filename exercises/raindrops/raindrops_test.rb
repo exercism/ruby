@@ -93,6 +93,11 @@ class RaindropsTest < Minitest::Test
     assert_equal "Plang", Raindrops.convert(3125)
   end
 
+  def test_the_sound_for_0_is_0
+    skip
+    assert_equal "0", Raindrops.convert(0)
+  end
+
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
   # The version number refers to the version of the problem you solved,
