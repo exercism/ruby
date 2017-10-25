@@ -887,6 +887,17 @@
       ]
     },
     {
+      "uuid": "b02a4214-0f1a-9480-2132-2ea3d5073dbfbec0aa4",
+      "slug": "two-fer",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "Control-flow (conditionals)",
+        "Strings"
+      ]
+    },
+    {
       "uuid": "cae4e000-3aac-41f7-b727-f9cce12d058d",
       "slug": "octal",
       "deprecated": true
