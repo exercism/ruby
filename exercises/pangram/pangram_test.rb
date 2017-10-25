@@ -1,13 +1,20 @@
 require 'minitest/autorun'
 require_relative 'pangram'
 
-# Common test data version: 1.1.0 fba1aef
+# Common test data version: 1.3.0 d79e13e
 class PangramTest < Minitest::Test
   def test_sentence_empty
     # skip
     phrase = ''
     result = Pangram.pangram?(phrase)
     refute result, "Expected false, got: #{result.inspect}. #{phrase.inspect} is NOT a pangram"
+  end
+
+  def test_recognizes_a_perfect_lower_case_pangram
+    skip
+    phrase = 'abcdefghijklmnopqrstuvwxyz'
+    result = Pangram.pangram?(phrase)
+    assert result, "Expected true, got: #{result.inspect}. #{phrase.inspect} IS a pangram"
   end
 
   def test_pangram_with_only_lower_case
@@ -24,9 +31,9 @@ class PangramTest < Minitest::Test
     refute result, "Expected false, got: #{result.inspect}. #{phrase.inspect} is NOT a pangram"
   end
 
-  def test_another_missing_character_x
+  def test_another_missing_character_eg_h
     skip
-    phrase = 'the quick brown fish jumps over the lazy dog'
+    phrase = 'five boxing wizards jump quickly at it'
     result = Pangram.pangram?(phrase)
     refute result, "Expected false, got: #{result.inspect}. #{phrase.inspect} is NOT a pangram"
   end
@@ -85,6 +92,6 @@ class PangramTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 5, BookKeeping::VERSION
+    assert_equal 6, BookKeeping::VERSION
   end
 end
