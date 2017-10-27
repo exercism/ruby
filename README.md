@@ -33,9 +33,7 @@ A few exercises use a custom test template:
 
 ### BookKeeping::VERSION
 
-For some, even perhaps many, of the exercises, you will find a
-reference to the `BookKeeping` module, but this is only included when
-tests have been generated; see [Generated Test Suites](#generated-test-suites).
+For some, even perhaps many, of the exercises, you will find a reference to the `BookKeeping` module, but this is only included when tests have been generated; see [Generated Test Suites](#generated-test-suites).  This `VERSION` number helps make sure exercise solvers and exercise reviewers know which revision of the test suite they are talking about, and it theoretically helps avoid reviewer feedback like *"Your solution doesn't make the tests pass."*.
 
 ### Canonical Data
 
@@ -104,12 +102,29 @@ tree -L 1 ~/code/exercism
 
 #### Regenerating a Test Suite
 
-From within the ruby directory, run the following command:
+From time to time, the [canonical data](https://github.com/exercism/problem-specifications/tree/master/exercises) for an exercise's tests changes, and we need to keep the Ruby version's tests synced up.  Regenerating these tests is a quick and easy way to help maintain the track and get involved!
 
-    bin/generate --update <slug> 
+If it's your first time cloning/contributing to the repository, you'll need to install any dependencies via `bundle`:
 
-Leaving out the --update option will cause the BookKeeping version number to remain the same.
-This can be useful when testing generators.
+```bash
+bundle install
+```
+
+The generator also depends on the presence of Exercism's `problem-specifications` repository (see the file tree in the section above).  Make sure you've got an *up-to-date* version of the specifications in a `problem-specifications` folder that's in a parallel directory to your local copy of the `ruby` repository.
+
+To check which problems have possibly been updated, run:
+
+```bash
+bin/generate -a
+```
+
+This will autogenerate all of the exercises that can be.  Use your editor, diff tool, or `git status` to find out which test files have changed.  Some exercises will update because someone updated the description or other exercise metadata.  Others will change because the actual test suite has changed.  If you find that an exercise's test suite (i.e. the actual tests, not just the line at the test data version number at the top of the tests) has changed, be sure to use `generate` to auto-increment the [BookKeeping::VERSION](#bookkeeping-version) number by running:
+
+```bash
+bin/generate -u <exercise-slug>
+```
+
+Once everything has been regenerated and updated, you're almost ready to submit your changes via pull request.  Please follow the guidelines in the [Pull Requests](#pull-requests) section, being sure to follow the pattern of `<slug>: Regenerate Tests`, where slug is the slug of the one exercise that your pull request is regenerating.
 
 #### Changing a Generated Exercise
 
@@ -260,10 +275,8 @@ are constructed using shared metadata, which lives in the [problem-specification
 
 ## Contributing Guide
 
-For an in-depth discussion of how exercism language tracks and exercises work,
-please see the
-[contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data)
-
+For an in-depth discussion of how exercism language tracks and exercises work, please see the
+[contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data).  If you're just getting started and looking for an easy way to get involved, take a look at  [regenerating the test suites](#regenerating-a-test-suite), [porting an exercise from another language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md), or [creating an automated test generator](#implementing-a-generator).
 
 ## Ruby icon
 The Ruby icon is the Vienna.rb logo, and is used with permission. Thanks Floor Dress :)
