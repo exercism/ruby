@@ -5,46 +5,42 @@ module BookKeeping
 end
 
 class Meetup
-  def self.days_of_week
-    [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday]
-  end
 
-  def self.weekday_number(weekday)
-    days_of_week.index(weekday)
-  end
+  SCHEDULE_FILTERS = {
+    "First"  => Proc.new { |dates| dates.first },
+    "Second" => Proc.new { |dates| dates[1] },
+    "Third"  => Proc.new { |dates| dates[2] },
+    "Fourth" => Proc.new { |dates| dates[3] },
+    "Last"   => Proc.new { |dates| dates.last },
+    "Teenth" => Proc.new do |dates|
+      dates.find { |date| date.day.between?(13, 19) }
+    end,
+  }
+  WHEN_FORMAT = /\A(#{SCHEDULE_FILTERS.keys.join("|")}) (#{Date::DAYNAMES.join("|")}) of (#{Date::MONTHNAMES.join("|")}), (\d+)\Z/
 
-  attr_reader :year, :number
-  def initialize(number, year)
-    @year = year
-    @number = number
-    @first = Date.new(year, number, 1)
-    @eighth = Date.new(year, number, 8)
-    @thirteenth = Date.new(year, number, 13)
-    @fifteenth = Date.new(year, number, 15)
-    @twenty_second = Date.new(year, number, 22)
-    @last = Date.new(year, number, -1)
-  end
-
-  def day(weekday, schedule)
-    case schedule
-    when :teenth then
-      @thirteenth + days_til(weekday, @thirteenth)
-    when :first then
-      @first + days_til(weekday, @first)
-    when :second then
-      @eighth + days_til(weekday, @eighth)
-    when :third then
-      @fifteenth + days_til(weekday, @fifteenth)
-    when :fourth then
-      @twenty_second + days_til(weekday, @twenty_second)
-    when :last then
-      @last - (7 - (self.class.weekday_number(weekday) - @last.wday)) % 7
+  def initialize(when_string)
+    match = when_string.match(WHEN_FORMAT)
+    if match
+      @schedule, @weekday_name, month_name, year = match.captures
+      @month = Date::MONTHNAMES.index(month_name)
+      @year = Integer(year)
+    else
+      raise ArgumentError, "invalid Meetup description"
     end
+  end
+
+  def to_date
+    @date ||= (
+      matching_weekdays = days_of_the_month.select do |date|
+        date.public_send("#{@weekday_name.downcase}?")
+      end
+      SCHEDULE_FILTERS.fetch(@schedule).call(matching_weekdays)
+    )
   end
 
   private
 
-  def days_til(weekday, day)
-    (self.class.weekday_number(weekday) - day.wday) % 7
+  def days_of_the_month
+    Date.new(@year, @month, 1)..Date.new(@year, @month, -1)
   end
 end
