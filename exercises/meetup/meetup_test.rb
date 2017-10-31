@@ -1,12 +1,10 @@
 require 'minitest/autorun'
 require_relative 'meetup'
 
-# Define a class Meetup with a constructor taking a month and a year
-# and a method day(weekday, schedule)
-# where weekday is one of :monday, :tuesday, etc
-# and schedule is :first, :second, :third, :fourth, :last or :teenth.
+# Common test data version: 1.0.0 fe9630e
 class MeetupTest < Minitest::Test
   def test_monteenth_of_may_2013
+    # skip
     assert_equal Date.new(2013, 5, 13),
       Meetup.new(5, 2013).day(:monday, :teenth)
   end
@@ -549,5 +547,51 @@ class MeetupTest < Minitest::Test
     skip
     assert_equal Date.new(2013, 4, 28),
       Meetup.new(4, 2013).day(:sunday, :last)
+  end
+
+  def test_last_wednesday_of_february_2012
+    skip
+    assert_equal Date.new(2012, 2, 29),
+      Meetup.new(2, 2012).day(:wednesday, :last)
+  end
+
+  def test_last_wednesday_of_december_2014
+    skip
+    assert_equal Date.new(2014, 12, 31),
+      Meetup.new(12, 2014).day(:wednesday, :last)
+  end
+
+  def test_last_sunday_of_february_2015
+    skip
+    assert_equal Date.new(2015, 2, 22),
+      Meetup.new(2, 2015).day(:sunday, :last)
+  end
+
+  def test_first_friday_of_december_2012
+    skip
+    assert_equal Date.new(2012, 12, 7),
+      Meetup.new(12, 2012).day(:friday, :first)
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
   end
 end
