@@ -25,9 +25,6 @@ Keep your hands off that collect/map/fmap/whatchamacallit functionality
 provided by your standard library!
 Solve this one yourself using other basic tools instead.
 
-Lisp specific: it's perfectly fine to use `MAPCAR` or the equivalent,
-as this is idiomatic Lisp, not a library function.
-
 ## Advanced
 
 It is typical to call [#to_enum](http://ruby-doc.org/core-2.3.1/Object.html#method-i-to_enum) when defining methods for a generic Enumerable, in case no block is passed.
