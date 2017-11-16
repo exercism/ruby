@@ -5,87 +5,155 @@ require_relative 'sublist'
 class SublistTest < Minitest::Test
   def test_empty_lists
     # skip
-    assert_equal "equal", Sublist.sublist([], [])
+    l1 = List.new([])
+    l2 = List.new([])
+    assert l1.sublist?(l2)
+    assert l1.superlist?(l2)
+    assert l1 == l2
   end
 
   def test_empty_list_within_non_empty_list
     skip
-    assert_equal "sublist", Sublist.sublist([], [1, 2, 3])
+    l1 = List.new([])
+    l2 = List.new([1, 2, 3])
+    assert l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_non_empty_list_contains_empty_list
     skip
-    assert_equal "superlist", Sublist.sublist([1, 2, 3], [])
+    l1 = List.new([1, 2, 3])
+    l2 = List.new([])
+    refute l1.sublist?(l2)
+    assert l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_list_equals_itself
     skip
-    assert_equal "equal", Sublist.sublist([1, 2, 3], [1, 2, 3])
+    l1 = List.new([1, 2, 3])
+    l2 = List.new([1, 2, 3])
+    assert l1.sublist?(l2)
+    assert l1.superlist?(l2)
+    assert l1 == l2
   end
 
   def test_different_lists
     skip
-    assert_equal "unequal", Sublist.sublist([1, 2, 3], [2, 3, 4])
+    l1 = List.new([1, 2, 3])
+    l2 = List.new([2, 3, 4])
+    refute l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_false_start
     skip
-    assert_equal "sublist", Sublist.sublist([1, 2, 5], [0, 1, 2, 3, 1, 2, 5, 6])
+    l1 = List.new([1, 2, 5])
+    l2 = List.new([0, 1, 2, 3, 1, 2, 5, 6])
+    assert l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_consecutive
     skip
-    assert_equal "sublist", Sublist.sublist([1, 1, 2], [0, 1, 1, 1, 2, 1, 2])
+    l1 = List.new([1, 1, 2])
+    l2 = List.new([0, 1, 1, 1, 2, 1, 2])
+    assert l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_sublist_at_start
     skip
-    assert_equal "sublist", Sublist.sublist([0, 1, 2], [0, 1, 2, 3, 4, 5])
+    l1 = List.new([0, 1, 2])
+    l2 = List.new([0, 1, 2, 3, 4, 5])
+    assert l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_sublist_in_middle
     skip
-    assert_equal "sublist", Sublist.sublist([2, 3, 4], [0, 1, 2, 3, 4, 5])
+    l1 = List.new([2, 3, 4])
+    l2 = List.new([0, 1, 2, 3, 4, 5])
+    assert l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_sublist_at_end
     skip
-    assert_equal "sublist", Sublist.sublist([3, 4, 5], [0, 1, 2, 3, 4, 5])
+    l1 = List.new([3, 4, 5])
+    l2 = List.new([0, 1, 2, 3, 4, 5])
+    assert l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_at_start_of_superlist
     skip
-    assert_equal "superlist", Sublist.sublist([0, 1, 2, 3, 4, 5], [0, 1, 2])
+    l1 = List.new([0, 1, 2, 3, 4, 5])
+    l2 = List.new([0, 1, 2])
+    refute l1.sublist?(l2)
+    assert l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_in_middle_of_superlist
     skip
-    assert_equal "superlist", Sublist.sublist([0, 1, 2, 3, 4, 5], [2, 3])
+    l1 = List.new([0, 1, 2, 3, 4, 5])
+    l2 = List.new([2, 3])
+    refute l1.sublist?(l2)
+    assert l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_at_end_of_superlist
     skip
-    assert_equal "superlist", Sublist.sublist([0, 1, 2, 3, 4, 5], [3, 4, 5])
+    l1 = List.new([0, 1, 2, 3, 4, 5])
+    l2 = List.new([3, 4, 5])
+    refute l1.sublist?(l2)
+    assert l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_first_list_missing_element_from_second_list
     skip
-    assert_equal "unequal", Sublist.sublist([1, 3], [1, 2, 3])
+    l1 = List.new([1, 3])
+    l2 = List.new([1, 2, 3])
+    refute l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_second_list_missing_element_from_first_list
     skip
-    assert_equal "unequal", Sublist.sublist([1, 2, 3], [1, 3])
+    l1 = List.new([1, 2, 3])
+    l2 = List.new([1, 3])
+    refute l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_order_matters_to_a_list
     skip
-    assert_equal "unequal", Sublist.sublist([1, 2, 3], [3, 2, 1])
+    l1 = List.new([1, 2, 3])
+    l2 = List.new([3, 2, 1])
+    refute l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   def test_same_digits_but_different_numbers
     skip
-    assert_equal "unequal", Sublist.sublist([1, 0, 1], [10, 1])
+    l1 = List.new([1, 0, 1])
+    l2 = List.new([10, 1])
+    refute l1.sublist?(l2)
+    refute l1.superlist?(l2)
+    refute l1 == l2
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask

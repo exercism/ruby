@@ -1,11 +1,20 @@
-module Sublist
-  def self.sublist(l1, l2)
-    s1 = l1.join(',')
-    s2 = l2.join(',')
-    return 'equal' if s1 == s2
-    return 'sublist' if s2.include? s1
-    return 'superlist' if s1.include? s2
-    return 'unequal'
+class List
+  attr_reader :array
+
+  def initialize(array)
+    @array = array
+  end
+
+  def sublist?(list)
+    list.array.join(',').include? @array.join(',')
+  end
+
+  def superlist?(list)
+    @array.join(',').include? list.array.join(',')
+  end
+
+  def ==(list)
+    @array == list.array
   end
 end
 
