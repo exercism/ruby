@@ -64,7 +64,7 @@ class Board
   def validate_size
     len = rows.first.length
     if rows.any? { |row| row.length != len }
-      fail ValueError, 'Invalid board'
+      fail ArgumentError, 'Invalid board'
     end
   end
 
@@ -73,7 +73,7 @@ class Board
       invalid = row.chars.any? do |char|
         !VALID_BORDERS.include?(char)
       end
-      fail ValueError, 'Invalid board' if invalid
+      fail ArgumentError, 'Invalid board' if invalid
     end
   end
 
@@ -82,9 +82,7 @@ class Board
       invalid = row.chars.any? do |char|
         !VALID_DATA.include?(char)
       end
-      fail ValueError, 'Invalid board' if invalid
+      fail ArgumentError, 'Invalid board' if invalid
     end
   end
 end
-
-ValueError = Class.new(StandardError)
