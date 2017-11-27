@@ -912,6 +912,15 @@
       "slug": "complex-numbers",
       "difficulty": 3,
       "topics": [ "Mathematics" ]
+    },
+    {
+      "uuid": "9a62f1a5-ad21-47a2-a130-b7a6e10e3fa9",
+      "slug": "bank-account",
+      "difficulty": 5,
+      "topics": [ 
+        "concurrency",
+        "logic"
+      ]
     }
   ],
   "foregone": [
