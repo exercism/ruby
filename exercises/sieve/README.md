@@ -25,7 +25,9 @@ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
 Notice that this is a very specific algorithm, and the tests don't check
 that you've implemented the algorithm, only that you've come up with the
-correct list of primes.
+correct list of primes. Your solution must implement the algorithm
+described here, without using prime-finding libraries (if your language
+provides those).
 
 * * * *
 
