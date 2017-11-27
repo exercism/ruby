@@ -9,17 +9,20 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_newly_opened_account_has_empty_balance
+    # skip
     bank_account.open
     assert_equal 0, bank_account.balance
   end
 
   def test_can_deposit_money
+    skip
     bank_account.open
     bank_account.deposit(10)
     assert_equal 10, bank_account.balance
   end
 
   def test_can_deposit_money_sequentially
+    skip
     bank_account.open
     bank_account.deposit(5)
     bank_account.deposit(23)
@@ -27,6 +30,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_can_withdraw_money
+    skip
     bank_account.open
     bank_account.deposit(10)
     bank_account.withdraw(5)
@@ -34,6 +38,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_can_withdraw_money_sequentially
+    skip
     bank_account.open
     bank_account.deposit(23)
     bank_account.withdraw(10)
@@ -42,6 +47,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_cannot_withdraw_money_from_empty_account
+    skip
     bank_account.open
     err = assert_raises(BankAccountActionInvalidError) do
       bank_account.withdraw(5)
@@ -50,6 +56,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_cannot_withdraw_more_money_than_you_have
+    skip
     bank_account.open
     bank_account.deposit(6)
     err = assert_raises(BankAccountActionInvalidError) do
@@ -62,6 +69,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_cannot_deposit_negative_amount
+    skip
     bank_account.open
     err = assert_raises(BankAccountActionInvalidError) do
       bank_account.deposit(-1)
@@ -70,6 +78,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_cannot_withdraw_negative_amount
+    skip
     bank_account.open
     err = assert_raises(BankAccountActionInvalidError) do
       bank_account.withdraw(-5)
@@ -78,6 +87,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_cannot_get_balance_of_closed_account
+    skip
     bank_account.open
     bank_account.deposit(10)
     bank_account.close
@@ -88,6 +98,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_cannot_deposit_money_into_closed_account
+    skip
     bank_account.open
     bank_account.close
     err = assert_raises(BankAccountActionInvalidError) do
@@ -97,6 +108,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_cannot_withdraw_money_from_closed_account
+    skip
     bank_account.open
     bank_account.deposit(20)
     bank_account.close
@@ -107,6 +119,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_bank_account_is_closed_before_it_is_open
+    skip
     err = assert_raises(BankAccountActionInvalidError) do
       bank_account.balance
     end
@@ -114,6 +127,7 @@ class BankAccountTest < Minitest::Test
   end
 
   def test_can_adjust_balance_concurrently
+    skip
     bank_account.open
     bank_account.deposit(1000)
 
