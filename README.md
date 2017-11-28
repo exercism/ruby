@@ -33,9 +33,14 @@ A few exercises use a custom test template:
 
 ### BookKeeping::VERSION
 
-For some, even perhaps many, of the exercises, you will find a
-reference to the `BookKeeping` module, but this is only included when
-tests have been generated; see [Generated Test Suites](#generated-test-suites).
+For some, even perhaps many, of the exercises, you will find a reference
+to the `BookKeeping` module, but this is only included when tests have
+been generated; see [Generated Test Suites](#generated-test-suites).
+This `VERSION` number helps make sure exercise solvers and exercise
+reviewers know which revision of the test suite they are talking
+about, and it theoretically helps avoid reviewer feedback like 
+*"Your solution doesn't make the tests pass,"* if they are looking
+at a different version of the tests than the solver used.
 
 ### Canonical Data
 
@@ -104,12 +109,67 @@ tree -L 1 ~/code/exercism
 
 #### Regenerating a Test Suite
 
-From within the ruby directory, run the following command:
+From time to time, the [canonical data](https://github.com/exercism/problem-specifications/tree/master/exercises)
+for an exercise's tests changes, and we need to keep the Ruby version's
+tests synced up.  Regenerating these tests is a quick and easy way to help
+maintain the track and get involved!
 
-    bin/generate --update <slug> 
+If it's your first time cloning/contributing to the repository, you'll
+need to install any dependencies via `bundle`:
 
-Leaving out the --update option will cause the BookKeeping version number to remain the same.
-This can be useful when testing generators.
+```bash
+bundle install
+```
+
+Be sure that you're working on the most up-to-date version of the repo.
+From the root of your copy of the repository:
+
+```bash
+# Add the exercism repo as upstream if you haven't yet:
+git remote add upstream https://github.com/exercism/ruby.git
+
+# Pull down any changes
+git fetch upstream
+
+# Merge any upstream changes with your master branch
+git checkout master
+git merge upstream/master
+```
+
+Depending on your git workflow preferences and the state of your local
+repo, you may want to do some rebasing.
+[See the rebasing documentation for more information.](https://help.github.com/articles/about-git-rebase/)
+
+The generator also depends on the presence of Exercism's `problem-specifications`
+repository (see the file tree in the section above).  Make sure you've got
+an *up-to-date* version of the specifications in a `problem-specifications`
+folder that's in a parallel directory to your local copy of the `ruby` repository.
+
+To check which problems have possibly been updated, run:
+
+```bash
+bin/generate --all
+```
+
+This will autogenerate all of the test cases for which generators exist.
+Use `git diff` (or your preferred method) to find out which test files
+have changed.  Some exercises will update because someone updated the
+description or other exercise metadata.  Others will change because the
+actual test suite has changed.  If you find that an exercise's test suite
+(i.e. the actual tests, not just the line at the test data version number
+at the top of the tests) has changed, be sure to use `generate` to update
+the [BookKeeping::VERSION](#bookkeeping-version) number by running:
+
+```bash
+bin/generate --update <exercise-slug>
+```
+
+Once everything has been regenerated and updated, you're almost ready to
+submit your changes via pull request.  Please be sure to only update one
+exercise per pull request.  Also, please follow the guidelines in the
+[Pull Requests](#pull-requests) section, being sure to follow the pattern
+of `<slug>: Regenerate Tests`, where slug is the slug of the exercise that
+your pull request is regenerating.
 
 #### Changing a Generated Exercise
 
@@ -260,10 +320,13 @@ are constructed using shared metadata, which lives in the [problem-specification
 
 ## Contributing Guide
 
-For an in-depth discussion of how exercism language tracks and exercises work,
-please see the
-[contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data)
+For an in-depth discussion of how exercism language tracks and exercises work, please see the
+[contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data).
 
+If you're just getting started and looking for a helpful way to get involved,
+take a look at  [regenerating the test suites](#regenerating-a-test-suite),
+[porting an exercise from another language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md),
+or [creating an automated test generator](#implementing-a-generator).
 
 ## Ruby icon
 The Ruby icon is the Vienna.rb logo, and is used with permission. Thanks Floor Dress :)
