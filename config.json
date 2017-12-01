@@ -912,6 +912,17 @@
       "slug": "complex-numbers",
       "difficulty": 3,
       "topics": [ "Mathematics" ]
+    },
+    {
+      "uuid": "a0aac827-8f7a-4065-9d05-a57009f5668d",
+      "slug": "isbn-verifier",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "strings",
+        "logic"
+      ]
     }
   ],
   "foregone": [
