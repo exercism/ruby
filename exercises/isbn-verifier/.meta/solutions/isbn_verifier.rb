@@ -16,7 +16,9 @@ class IsbnVerifier
       .map { |number, index| 
         number.to_i * index 
       }
-      .sum
+      .reduce(0){ |sum, digit|
+        sum + digit
+      }
     
     result % 11 == 0
   end
