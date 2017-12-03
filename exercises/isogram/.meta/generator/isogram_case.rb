@@ -18,7 +18,7 @@ class IsogramCase < Generator::ExerciseCase
   end
 
   def reason
-    "'#{input}' #{is_or_not} an isogram"
+    "'\#{string}' #{is_or_not} an isogram"
   end
 
   def is_or_not
