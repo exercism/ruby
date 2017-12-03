@@ -9,17 +9,17 @@ class IsbnVerifier
     result = str
       .gsub("-", "")
       .chars
-      .map { |char| 
-        char.gsub("X","10") 
+      .map { |char|
+        char.gsub("X","10")
       }
       .zip(10.downto(1))
-      .map { |number, index| 
-        number.to_i * index 
+      .map { |number, index|
+        number.to_i * index
       }
       .reduce(0){ |sum, digit|
         sum + digit
       }
-    
+
     result % 11 == 0
   end
 end

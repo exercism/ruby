@@ -18,7 +18,7 @@ class IsbnVerifierCase < Generator::ExerciseCase
   end
 
   def reason
-    "'#{input}' #{is_or_not} a valid isbn"
+    "'\#{string}' #{is_or_not} a valid isbn"
   end
 
   def is_or_not
