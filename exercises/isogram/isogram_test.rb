@@ -5,56 +5,56 @@ require_relative 'isogram'
 class IsogramTest < Minitest::Test
   def test_empty_string
     # skip
-    string = ""
-    assert Isogram.isogram?(string), "Expected true, '#{string}' is an isogram"
+    input = ""
+    assert Isogram.isogram?(string), "Expected true, '#{input}' is an isogram"
   end
 
   def test_isogram_with_only_lower_case_characters
     skip
-    string = "isogram"
-    assert Isogram.isogram?(string), "Expected true, '#{string}' is an isogram"
+    input = "isogram"
+    assert Isogram.isogram?(string), "Expected true, '#{input}' is an isogram"
   end
 
   def test_word_with_one_duplicated_character
     skip
-    string = "eleven"
-    refute Isogram.isogram?(string), "Expected false, '#{string}' is not an isogram"
+    input = "eleven"
+    refute Isogram.isogram?(string), "Expected false, '#{input}' is not an isogram"
   end
 
   def test_longest_reported_english_isogram
     skip
-    string = "subdermatoglyphic"
-    assert Isogram.isogram?(string), "Expected true, '#{string}' is an isogram"
+    input = "subdermatoglyphic"
+    assert Isogram.isogram?(string), "Expected true, '#{input}' is an isogram"
   end
 
   def test_word_with_duplicated_character_in_mixed_case
     skip
-    string = "Alphabet"
-    refute Isogram.isogram?(string), "Expected false, '#{string}' is not an isogram"
+    input = "Alphabet"
+    refute Isogram.isogram?(string), "Expected false, '#{input}' is not an isogram"
   end
 
   def test_hypothetical_isogrammic_word_with_hyphen
     skip
-    string = "thumbscrew-japingly"
-    assert Isogram.isogram?(string), "Expected true, '#{string}' is an isogram"
+    input = "thumbscrew-japingly"
+    assert Isogram.isogram?(string), "Expected true, '#{input}' is an isogram"
   end
 
   def test_isogram_with_duplicated_hyphen
     skip
-    string = "six-year-old"
-    assert Isogram.isogram?(string), "Expected true, '#{string}' is an isogram"
+    input = "six-year-old"
+    assert Isogram.isogram?(string), "Expected true, '#{input}' is an isogram"
   end
 
   def test_made_up_name_that_is_an_isogram
     skip
-    string = "Emily Jung Schwartzkopf"
-    assert Isogram.isogram?(string), "Expected true, '#{string}' is an isogram"
+    input = "Emily Jung Schwartzkopf"
+    assert Isogram.isogram?(string), "Expected true, '#{input}' is an isogram"
   end
 
   def test_duplicated_character_in_the_middle
     skip
-    string = "accentor"
-    refute Isogram.isogram?(string), "Expected false, '#{string}' is not an isogram"
+    input = "accentor"
+    refute Isogram.isogram?(string), "Expected false, '#{input}' is not an isogram"
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -76,6 +76,6 @@ class IsogramTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 5, BookKeeping::VERSION
+    assert_equal 4, BookKeeping::VERSION
   end
 end
