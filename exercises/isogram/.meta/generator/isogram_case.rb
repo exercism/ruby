@@ -5,8 +5,8 @@ class IsogramCase < Generator::ExerciseCase
   def workload
     indent_lines(
       [
-        "string = #{input.inspect}",
-        "#{assert} Isogram.isogram?(string), #{failure_message}"
+        "input = #{input.inspect}",
+        "#{assert} Isogram.isogram?(input), #{failure_message}"
       ], 4
     )
   end
@@ -18,7 +18,7 @@ class IsogramCase < Generator::ExerciseCase
   end
 
   def reason
-    "'#{input}' #{is_or_not} an isogram"
+    "'\#{input}' #{is_or_not} an isogram"
   end
 
   def is_or_not
