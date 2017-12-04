@@ -6,7 +6,7 @@ class IsogramCase < Generator::ExerciseCase
     indent_lines(
       [
         "input = #{input.inspect}",
-        "#{assert} Isogram.isogram?(string), #{failure_message}"
+        "#{assert} Isogram.isogram?(input), #{failure_message}"
       ], 4
     )
   end
