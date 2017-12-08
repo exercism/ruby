@@ -914,6 +914,17 @@
       "topics": [ "Mathematics" ]
     },
     {
+      "uuid": "a0aac827-8f7a-4065-9d05-a57009f5668d",
+      "slug": "isbn-verifier",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "strings",
+        "logic"
+      ]
+    },
+    {
       "uuid": "1af13ab1-04ea-5380-0958-32c65f0dbe41932275d",
       "slug": "sublist",
       "core": false,

@@ -1,12 +1,12 @@
 require 'generator/exercise_case'
 
-class IsogramCase < Generator::ExerciseCase
+class IsbnVerifierCase < Generator::ExerciseCase
 
   def workload
     indent_lines(
       [
-        "input = #{input.inspect}",
-        "#{assert} Isogram.isogram?(input), #{failure_message}"
+        "string = #{input.inspect}",
+        "#{assert} IsbnVerifier.valid?(string), #{failure_message}"
       ], 4
     )
   end
@@ -18,7 +18,7 @@ class IsogramCase < Generator::ExerciseCase
   end
 
   def reason
-    "'\#{input}' #{is_or_not} an isogram"
+    "'\#{string}' #{is_or_not} a valid isbn"
   end
 
   def is_or_not
