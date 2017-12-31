@@ -887,7 +887,7 @@
       ]
     },
     {
-      "uuid": "b02a4214-0f1a-9480-2132-2ea3d5073dbfbec0aa4",
+      "uuid": "1304b188-6d08-4361-be40-c6b1b88e5e54",
       "slug": "two-fer",
       "core": false,
       "unlocked_by": null,
@@ -908,10 +908,12 @@
       "deprecated": true
     },
     {
-      "uuid": "4ca1322e-0c39-1e80-91e9-6b3f9ccf894f9058490",
+      "uuid": "d75bd7c0-52c5-44f2-a046-f63cb332425f",
       "slug": "complex-numbers",
       "difficulty": 3,
-      "topics": [ "Mathematics" ]
+      "topics": [
+        "Mathematics"
+      ]
     },
     {
       "uuid": "a0aac827-8f7a-4065-9d05-a57009f5668d",
