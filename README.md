@@ -78,8 +78,7 @@ Note that flags which have an attached value, like above, must take the form
 `-flag=value` and if `value` has spaces `-flag="value with spaces"`.
 
 
-### Generated Test Suites
-
+### Generated Test Suites 
 Generated test suites use the `bin/generator` cli.
 
 Before using the cli it is recommended you run `bundle install` from within
@@ -325,6 +324,12 @@ Use the `configlet` tool to generate a README from shared metadata:
 3. Generate the readme for a particular exercise: `bin/configlet generate . --only rotational-cipher`
 
 ## Contributing Guide
+
+If adding a new exercise:
+
+* a [generator](#implementing-a-generator) should be implemented.
+* a minimal, partial, solution should be able to be pushed, in order to
+create a WIP pull request.
 
 For an in-depth discussion of how exercism language tracks and exercises work, please see the
 [contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data).
