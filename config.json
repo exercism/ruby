@@ -923,6 +923,18 @@
         "strings",
         "logic"
       ]
+    },
+    {
+      "uuid": "0ec96460-08be-49a0-973a-4336f21b763c",
+      "slug": "book-store",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 6,
+      "topics": [
+        "loops",
+        "arrays",
+        "logic"
+      ]
     }
   ],
   "foregone": [
