@@ -6,6 +6,7 @@ Implement general base conversion. Given a number in base **a**,
 represented as a sequence of digits, convert it to base **b**.
 
 ## Note
+
 - Try to implement the conversion yourself.
   Do not use something else to perform the conversion for you.
 
@@ -28,7 +29,6 @@ The number 1120, *in base 3*, means:
 
 I think you got the idea!
 
-
 *Yes. Those three numbers above are exactly the same. Congratulations!*
 
 * * * *
@@ -45,16 +45,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby all_your_base_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
-
+    ruby -r minitest/pride all_your_base_test.rb
 
 
 ## Submitting Incomplete Solutions

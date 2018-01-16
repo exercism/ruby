@@ -58,15 +58,13 @@ would get the same thing as the Caesar Cipher.
 
 The weakest link in any cipher is the human being. Let's make your
 substitution cipher a little more fault tolerant by providing a source
-of randomness and ensuring that the key is not composed of numbers or
-capital letters.
+of randomness and ensuring that the key contains only lowercase letters.
 
 If someone doesn't submit a key at all, generate a truly random key of
-at least 100 characters in length, accessible via Cipher#key (the #
-syntax means instance variable)
+at least 100 characters in length.
 
-If the key submitted has capital letters or numbers, throw an
-ArgumentError with a message to that effect.
+If the key submitted is not composed only of lowercase letters, your
+solution should handle the error in a language-appropriate way.
 
 ## Extensions
 
@@ -97,15 +95,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby simple_cipher_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride simple_cipher_test.rb
 
 
 ## Source

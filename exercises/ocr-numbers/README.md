@@ -1,4 +1,4 @@
-# Ocr Numbers
+# OCR Numbers
 
 Given a 3 x 4 grid of pipes, underscores, and spaces, determine which number is
 represented, or whether it is garbled.
@@ -9,7 +9,7 @@ To begin with, convert a simple binary font to a string containing 0 or 1.
 
 The binary font uses pipes and underscores, four rows high and three columns wide.
 
-```
+```text
      _   #
     | |  # zero.
     |_|  #
@@ -18,7 +18,7 @@ The binary font uses pipes and underscores, four rows high and three columns wid
 
 Is converted to "0"
 
-```
+```text
          #
       |  # one.
       |  #
@@ -39,7 +39,7 @@ Update your program to recognize multi-character binary strings, replacing garbl
 
 Update your program to recognize all numbers 0 through 9, both individually and as part of a larger string.
 
-```
+```text
  _ 
  _|
 |_ 
@@ -48,7 +48,7 @@ Update your program to recognize all numbers 0 through 9, both individually and 
 
 Is converted to "2"
 
-```
+```text
       _  _     _  _  _  _  _  _  #
     | _| _||_||_ |_   ||_||_|| | # decimal numbers.
     ||_  _|  | _||_|  ||_| _||_| #
@@ -61,7 +61,7 @@ Is converted to "1234567890"
 
 Update your program to handle multiple numbers, one per line. When converting several lines, join the lines with commas.
 
-```
+```text
     _  _ 
   | _| _|
   ||_  _|
@@ -92,15 +92,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby ocr_numbers_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride ocr_numbers_test.rb
 
 
 ## Source

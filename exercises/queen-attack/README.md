@@ -11,7 +11,7 @@ A chessboard can be represented by an 8 by 8 array.
 So if you're told the white queen is at (2, 3) and the black queen at
 (5, 6), then you'd know you've got a set-up like so:
 
-```plain
+```text
 _ _ _ _ _ _ _ _
 _ _ _ _ _ _ _ _
 _ _ _ W _ _ _ _
@@ -40,15 +40,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby queen_attack_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride queen_attack_test.rb
 
 
 ## Source

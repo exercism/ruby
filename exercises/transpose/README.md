@@ -4,14 +4,14 @@ Given an input text output it transposed.
 
 Roughly explained, the transpose of a matrix:
 
-```
+```text
 ABC
 DEF
 ```
 
 is given by:
 
-```
+```text
 AD
 BE
 CF
@@ -26,14 +26,14 @@ If the input has rows of different lengths, this is to be solved as follows:
 
 Therefore, transposing this matrix:
 
-```
+```text
 ABC
 DE
 ```
 
 results in:
 
-```
+```text
 AD
 BE
 C
@@ -41,21 +41,21 @@ C
 
 And transposing:
 
-```
+```text
 AB
 DEF
 ```
 
 results in:
 
-```
+```text
 AD
 BE
  F
 ```
 
 In general, all characters from the input should also be present in the transposed output.
-That means that if a column in the input text contains only spaces on its bottom-most row(s), 
+That means that if a column in the input text contains only spaces on its bottom-most row(s),
 the corresponding output row should contain the spaces in its right-most column(s).
 
 * * * *
@@ -72,15 +72,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby transpose_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride transpose_test.rb
 
 
 ## Source

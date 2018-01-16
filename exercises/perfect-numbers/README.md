@@ -5,7 +5,7 @@ Nicomachus' (60 - 120 CE) classification scheme for natural numbers.
 
 The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) devised a classification scheme for natural numbers, identifying each as belonging uniquely to the categories of **perfect**, **abundant**, or **deficient** based on their [aliquot sum](https://en.wikipedia.org/wiki/Aliquot_sum). The aliquot sum is defined as the sum of the factors of a number not including the number itself. For example, the aliquot sum of 15 is (1 + 3 + 5) = 9
 
-- **Perfect**: aliquot sum = number 
+- **Perfect**: aliquot sum = number
   - 6 is a perfect number because (1 + 2 + 3) = 6
   - 28 is a perfect number because (1 + 2 + 4 + 7 + 14) = 28
 - **Abundant**: aliquot sum > number
@@ -14,7 +14,7 @@ The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) d
 - **Deficient**: aliquot sum < number
   - 8 is a deficient number because (1 + 2 + 4) = 7
   - Prime numbers are deficient
-  
+
 Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
 
 * * * *
@@ -31,15 +31,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby perfect_numbers_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride perfect_numbers_test.rb
 
 
 ## Source

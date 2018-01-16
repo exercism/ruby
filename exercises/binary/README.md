@@ -7,10 +7,12 @@ string, your program should produce a decimal output. The
 program should handle invalid inputs.
 
 ## Note
+
 - Implement the conversion yourself.
   Do not use something else to perform the conversion for you.
 
 ## About Binary (Base-2)
+
 Decimal is a base-10 system.
 
 A number 23 in base 10 notation can be understood
@@ -42,15 +44,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby binary_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride binary_test.rb
 
 
 ## Source

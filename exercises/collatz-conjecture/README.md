@@ -10,6 +10,7 @@ always reach 1 eventually.
 Given a number n, return the number of steps required to reach 1.
 
 ## Examples
+
 Starting with n = 12, the steps would be as follows:
 
 0. 12
@@ -25,7 +26,6 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
-
 * * * *
 
 For installation and learning resources, refer to the
@@ -40,15 +40,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby collatz_conjecture_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride collatz_conjecture_test.rb
 
 
 ## Source

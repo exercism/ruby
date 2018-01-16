@@ -4,7 +4,7 @@ Detect saddle points in a matrix.
 
 So say you have a matrix like so:
 
-```plain
+```text
     0  1  2
   |---------
 0 | 9  8  7
@@ -15,7 +15,7 @@ So say you have a matrix like so:
 It has a saddle point at (1, 0).
 
 It's called a "saddle point" because it is greater than or equal to
-every element in its row and the less than or equal to every element in
+every element in its row and less than or equal to every element in
 its column.
 
 A matrix may have zero or more saddle points.
@@ -40,15 +40,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby saddle_points_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride saddle_points_test.rb
 
 
 ## Source

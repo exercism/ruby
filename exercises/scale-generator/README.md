@@ -32,7 +32,6 @@ Use Flats:
 F, Bb, Eb, Ab, Db, Gb major
 d, g, c, f, bb, eb minor
 
-
 The diatonic scales, and all other scales that derive from the
 chromatic scale, are built upon intervals. An interval is the space
 between two pitches.
@@ -70,16 +69,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby scale_generator_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
-
+    ruby -r minitest/pride scale_generator_test.rb
 
 
 ## Submitting Incomplete Solutions

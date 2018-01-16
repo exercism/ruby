@@ -1,12 +1,12 @@
 # Complex Numbers
 
-A complex number is a number in the form `z = a + b * i` where `a` and `b` are real and `i` satisfies `i^2 = -1`.
+A complex number is a number in the form `a + b * i` where `a` and `b` are real and `i` satisfies `i^2 = -1`.
 
 `a` is called the real part and `b` is called the imaginary part of `z`.
 The conjugate of the number `a + b * i` is the number `a - b * i`.
 The absolute value of a complex number `z = a + b * i` is a real number `|z| = sqrt(a^2 + b^2)`. The square of the absolute value `|z|^2` is the result of multiplication of `z` by its complex conjugate.
 
-The sum / difference of two complex numbers involves adding / subtracting their real and imaginary parts separately:
+The sum/difference of two complex numbers involves adding/subtracting their real and imaginary parts separately:
 `(a + i * b) + (c + i * d) = (a + c) + (b + d) * i`,
 `(a + i * b) - (c + i * d) = (a - c) + (b - d) * i`.
 
@@ -45,15 +45,14 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby complex_numbers_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride complex_numbers_test.rb
+
 
 ## Source
 
@@ -61,4 +60,3 @@ Wikipedia [https://en.wikipedia.org/wiki/Complex_number](https://en.wikipedia.or
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-

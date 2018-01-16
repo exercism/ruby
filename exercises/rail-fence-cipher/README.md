@@ -11,41 +11,46 @@ Finally the message is then read off in rows.
 
 For example, using three "rails" and the message "WE ARE DISCOVERED FLEE AT ONCE",
 the cipherer writes out:
-```
+
+```text
 W . . . E . . . C . . . R . . . L . . . T . . . E
 . E . R . D . S . O . E . E . F . E . A . O . C .
 . . A . . . I . . . V . . . D . . . E . . . N . .
 ```
 
 Then reads off:
-```
+
+```text
 WECRLTEERDSOEEFEAOCAIVDEN
 ```
 
-
 To decrypt a message you take the zig-zag shape and fill the ciphertext along the rows.
-```
+
+```text
 ? . . . ? . . . ? . . . ? . . . ? . . . ? . . . ?
 . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? .
 . . ? . . . ? . . . ? . . . ? . . . ? . . . ? . .
 ```
 
 The first row has seven spots that can be filled with "WECRLTE".
-```
+
+```text
 W . . . E . . . C . . . R . . . L . . . T . . . E
 . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? . ? .
 . . ? . . . ? . . . ? . . . ? . . . ? . . . ? . .
 ```
 
 Now the 2nd row takes "ERDSOEEFEAOC".
-```
+
+```text
 W . . . E . . . C . . . R . . . L . . . T . . . E
 . E . R . D . S . O . E . E . F . E . A . O . C .
 . . ? . . . ? . . . ? . . . ? . . . ? . . . ? . .
 ```
 
 Leaving "AIVDEN" for the last row.
-```
+
+```text
 W . . . E . . . C . . . R . . . L . . . T . . . E
 . E . R . D . S . O . E . E . F . E . A . O . C .
 . . A . . . I . . . V . . . D . . . E . . . N . .
@@ -67,15 +72,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby rail_fence_cipher_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride rail_fence_cipher_test.rb
 
 
 ## Source

@@ -5,7 +5,7 @@ Tally the results of a small football competition.
 Based on an input file containing which team played against which and what the
 outcome was, create a file with a table like this:
 
-```
+```text
 Team                           | MP |  W |  D |  L |  P
 Devastating Donkeys            |  3 |  2 |  1 |  0 |  7
 Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6
@@ -31,7 +31,7 @@ Input
 
 Your tallying program will receive input that looks like:
 
-```
+```text
 Allegoric Alaskans;Blithering Badgers;win
 Devastating Donkeys;Courageous Californians;draw
 Devastating Donkeys;Allegoric Alaskans;win
@@ -42,7 +42,7 @@ Allegoric Alaskans;Courageous Californians;win
 
 The result of the match refers to the first team listed. So this line
 
-```
+```text
 Allegoric Alaskans;Blithering Badgers;win
 ```
 
@@ -50,7 +50,7 @@ Means that the Allegoric Alaskans beat the Blithering Badgers.
 
 This line:
 
-```
+```text
 Courageous Californians;Blithering Badgers;loss
 ```
 
@@ -58,7 +58,7 @@ Means that the Blithering Badgers beat the Courageous Californians.
 
 And this line:
 
-```
+```text
 Devastating Donkeys;Courageous Californians;draw
 ```
 
@@ -78,16 +78,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby tournament_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
-
+    ruby -r minitest/pride tournament_test.rb
 
 
 ## Submitting Incomplete Solutions
