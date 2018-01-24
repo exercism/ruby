@@ -9,7 +9,7 @@ letter, the second with the second-last, and so on.
 
 An Atbash cipher for the Latin alphabet would be as follows:
 
-```plain
+```text
 Plain:  abcdefghijklmnopqrstuvwxyz
 Cipher: zyxwvutsrqponmlkjihgfedcba
 ```
@@ -23,6 +23,7 @@ being 5 letters, and punctuation is excluded. This is to make it harder to guess
 things based on word boundaries.
 
 ## Examples
+
 - Encoding `test` gives `gvhg`
 - Decoding `gvhg` gives `test`
 - Decoding `gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt` gives `thequickbrownfoxjumpsoverthelazydog`
@@ -41,15 +42,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby atbash_cipher_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride atbash_cipher_test.rb
 
 
 ## Source

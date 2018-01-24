@@ -12,7 +12,7 @@ Given an age in seconds, calculate how old someone would be on:
    - Neptune: orbital period 164.79132 Earth years
 
 So if you were told someone were 1,000,000,000 seconds old, you should
-be able to say that they're 31 Earth-years old.
+be able to say that they're 31.69 Earth-years old.
 
 If you're wondering why Pluto didn't make the cut, go watch [this
 youtube video](http://www.youtube.com/watch?v=Z_2gbGXzFbs).
@@ -31,15 +31,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby space_age_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride space_age_test.rb
 
 
 ## Source

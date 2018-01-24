@@ -4,13 +4,12 @@ Given a phrase, count the occurrences of each word in that phrase.
 
 For example for the input `"olly olly in come free"`
 
-```plain
+```text
 olly: 2
 in: 1
 come: 1
 free: 1
 ```
-
 
 * * * *
 
@@ -26,15 +25,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby word_count_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride word_count_test.rb
 
 
 ## Source

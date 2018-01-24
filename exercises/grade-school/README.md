@@ -21,7 +21,6 @@ In the end, you should be able to:
 Note that all our students only have one name.  (It's a small town, what
 do you want?)
 
-
 ## For bonus points
 
 Did you get the tests passing and the code clean? If you want to, these
@@ -49,15 +48,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby grade_school_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride grade_school_test.rb
 
 
 ## Source

@@ -2,7 +2,6 @@
 
 Parse and evaluate simple math word problems returning the answer as an integer.
 
-
 ## Iteration 1 — Addition
 
 Add two numbers together.
@@ -12,7 +11,6 @@ Add two numbers together.
 Evaluates to 18.
 
 Handle large numbers and negative numbers.
-
 
 ## Iteration 2 — Subtraction, Multiplication and Division
 
@@ -30,7 +28,6 @@ Now, perform the other three operations.
 
 5
 
-
 ## Iteration 3 — Multiple Operations
 
 Handle a set of operations, in sequence.
@@ -46,7 +43,6 @@ left-to-right, _ignoring the typical order of operations._
 
 15  (i.e. not 9)
 
-
 ## Bonus — Exponentials
 
 If you'd like, handle exponentials.
@@ -54,7 +50,6 @@ If you'd like, handle exponentials.
 > What is 2 raised to the 5th power?
 
 32
-
 
 * * * *
 
@@ -70,15 +65,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby wordy_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride wordy_test.rb
 
 
 ## Source

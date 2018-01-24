@@ -18,27 +18,27 @@ are disallowed.
 
 ## Example 1: valid credit card number
 
-```
+```text
 4539 1488 0343 6467
 ```
 
 The first step of the Luhn algorithm is to double every second digit,
 starting from the right. We will be doubling
 
-```
+```text
 4_3_ 1_8_ 0_4_ 6_6_
 ```
 
 If doubling the number results in a number greater than 9 then subtract 9
 from the product. The results of our doubling:
 
-```
+```text
 8569 2478 0383 3437
 ```
 
 Then sum all of the digits:
 
-```
+```text
 8+5+6+9+2+4+7+8+0+3+8+3+3+4+3+7 = 80
 ```
 
@@ -46,19 +46,19 @@ If the sum is evenly divisible by 10, then the number is valid. This number is v
 
 ## Example 2: invalid credit card number
 
-```
+```text
 8273 1232 7352 0569
 ```
 
 Double the second digits, starting from the right
 
-```
+```text
 7253 2262 5312 0539
 ```
 
 Sum the digits
 
-```
+```text
 7+2+5+3+2+2+6+2+5+3+1+2+0+5+3+9 = 57
 ```
 
@@ -78,15 +78,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby luhn_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride luhn_test.rb
 
 
 ## Source

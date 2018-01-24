@@ -31,17 +31,24 @@ If the buffer has 7 elements then it is completely full:
 When the buffer is full an error will be raised, alerting the client
 that further writes are blocked until a slot becomes free.
 
-The client can opt to overwrite the oldest data with a forced write. In
-this case, two more elements — A & B — are added and they overwrite the
-3 & 4:
+When the buffer is full, the client can opt to overwrite the oldest
+data with a forced write. In this case, two more elements — A & B —
+are added and they overwrite the 3 & 4:
 
     [6][7][8][9][A][B][5]
 
-Finally, if two elements are now removed then what would be returned is
-not 3 & 4 but 5 & 6 because A & B overwrote the 3 & the 4 yielding the
-buffer with:
+3 & 4 have been replaced by A & B making 5 now the oldest data in the
+buffer. Finally, if two elements are removed then what would be
+returned is 5 & 6 yielding the buffer:
 
     [ ][7][8][9][A][B][ ]
+
+Because there is space available, if the client again uses overwrite
+to store C & D then the space where 5 & 6 were stored previously will
+be used not the location of 7 & 8. 7 is still the oldest element and
+the buffer is once again full.
+
+    [D][7][8][9][A][B][C]
 
 * * * *
 
@@ -57,15 +64,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby circular_buffer_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride circular_buffer_test.rb
 
 
 ## Source

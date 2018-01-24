@@ -10,7 +10,7 @@ This is a [cumulative song](http://en.wikipedia.org/wiki/Cumulative_song) of unk
 
 This is one of many common variants.
 
-```plain
+```text
 I know an old lady who swallowed a fly.
 I don't know why she swallowed the fly. Perhaps she'll die.
 
@@ -77,15 +77,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby food_chain_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride food_chain_test.rb
 
 
 ## Source

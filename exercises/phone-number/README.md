@@ -6,14 +6,15 @@ The **North American Numbering Plan (NANP)** is a telephone numbering system use
 
 NANP numbers are ten-digit numbers consisting of a three-digit Numbering Plan Area code, commonly known as *area code*, followed by a seven-digit local number. The first three digits of the local number represent the *exchange code*, followed by the unique four-digit number which is the *subscriber number*.
 
-
 The format is usually represented as
-```
+
+```text
 (NXX)-NXX-XXXX
 ```
+
 where `N` is any digit from 2 through 9 and `X` is any digit from 0 through 9.
 
-Your task is to clean up differently formated telephone numbers by removing punctuation and the country code (1) if present.
+Your task is to clean up differently formatted telephone numbers by removing punctuation and the country code (1) if present.
 
 For example, the inputs
 - `+1 (613)-995-0253`
@@ -41,15 +42,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby phone_number_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride phone_number_test.rb
 
 
 ## Source

@@ -2,13 +2,14 @@
 
 Determine if a word or phrase is an isogram.
 
-An isogram (also known as a "nonpattern word") is a word or phrase without a repeating letter.
+An isogram (also known as a "nonpattern word") is a word or phrase without a repeating letter, however spaces and hyphens are allowed to appear multiple times.
 
 Examples of isograms:
 
 - lumberjacks
 - background
 - downstream
+- six-year-old
 
 The word *isograms*, however, is not an isogram, because the s repeats.
 
@@ -26,15 +27,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby isogram_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride isogram_test.rb
 
 
 ## Source

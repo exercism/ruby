@@ -7,20 +7,20 @@ Run-length encoding (RLE) is a simple form of data compression, where runs
 
 For example we can represent the original 53 characters with only 13.
 
-```
+```text
 "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"  ->  "12WB12W3B24WB"
 ```
 
 RLE allows the original data to be perfectly reconstructed from
 the compressed data, which makes it a lossless data compression.
 
-```
+```text
 "AABCCCDEEEE"  ->  "2AB3CD4E"  ->  "AABCCCDEEEE"
 ```
 
 For simplicity, you can assume that the unencoded string will only contain
-the letters A through Z (either lower or upper case) and whitespace. This way 
-data to be encoded will never contain any numbers and numbers inside data to 
+the letters A through Z (either lower or upper case) and whitespace. This way
+data to be encoded will never contain any numbers and numbers inside data to
 be decoded always represent the count for the following character.
 
 * * * *
@@ -37,15 +37,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby run_length_encoding_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride run_length_encoding_test.rb
 
 
 ## Source

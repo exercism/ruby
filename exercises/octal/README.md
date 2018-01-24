@@ -8,11 +8,13 @@ Implement octal to decimal conversion.  Given an octal input
 string, your program should produce a decimal output.
 
 ## Note
+
 - Implement the conversion yourself.
   Do not use something else to perform the conversion for you.
 - Treat invalid input as octal 0.
 
 ## About Octal (Base-8)
+
 Decimal is a base-10 system.
 
 A number 233 in base 10 notation can be understood
@@ -25,7 +27,8 @@ as a linear combination of powers of 10:
 - All these values are summed.
 
 So:
-```
+
+```text
    233 # decimal
  = 2*10^2 + 3*10^1 + 3*10^0
  = 2*100  + 3*10   + 3*1
@@ -34,7 +37,8 @@ So:
 Octal is similar, but uses powers of 8 rather than powers of 10.
 
 So:
-```
+
+```text
    233 # octal
  = 2*8^2 + 3*8^1 + 3*8^0
  = 2*64  + 3*8   + 3*1
@@ -56,15 +60,13 @@ If you would like color output, you can `require 'minitest/pride'` in
 the test file, or note the alternative instruction, below, for running
 the test file.
 
-In order to run the test, you can run the test file from the exercise
-directory. For example, if the test suite is called
-`hello_world_test.rb`, you can run the following command:
+Run the tests from the exercise directory using the following command:
 
-    ruby hello_world_test.rb
+    ruby octal_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride hello_world_test.rb
+    ruby -r minitest/pride octal_test.rb
 
 
 ## Source
