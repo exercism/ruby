@@ -32,13 +32,13 @@ It is typical to call [#to_enum](http://ruby-doc.org/core-2.3.1/Object.html#meth
 Here is an additional test you could add:
 
 ```ruby
-def test_accumulate_squares_when_no_block_is_passed
+def test_accumulate_when_block_is_deferred
   skip
-  enum = [1, 2, 3].accumulate
-  assert_instance_of Enumerator, enum
-
-  result = enum.each { |number| number * number }
-  assert_equal [1, 4, 9], result
+  accumulate_enumerator = [1, 2, 3].accumulate
+  accumulated_result = accumulate_enumerator.each do |number|
+    number * number
+  end
+  assert_equal [1, 4, 9], accumulated_result
 end
 ```
 
