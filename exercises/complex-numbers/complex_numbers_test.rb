@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'complex_numbers'
 
 # Common test data version: 1.0.0 '117d062'
-class ComplexNumbersTest < Minitest::Test
+class ComplexNumberTest < Minitest::Test
   def test_imaginary_unit
     # skip
     expected = ComplexNumber.new(-1, 0)
