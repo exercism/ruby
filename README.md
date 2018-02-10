@@ -109,6 +109,28 @@ tree -L 1 ~/code/exercism
 ├── problem-specifications
 └── ruby
 ```
+To explain a bit more, you must follow this commands step-by-step:-
+
+``` bash
+  $ mkdir exercism
+  $ cd exercism
+```
+Fork the [exercism/ruby](https://github.com/exercism/ruby)
+
+Fork the [exercism/problem-specifications](https://github.com/exercism/problem-specifications)
+
+Now you need to clone both the above repositories
+``` bash
+
+$ git clone https://github.com/YOUR-USERNAME/YOUR-RUBY-REPOSITORY
+$ git clone https://github.com/YOUR-USERNAME/YOUR-PROBLEM-S-REPOSITORY
+
+```
+Next, you need to [configure the remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/) and [synchronize](https://help.github.com/articles/syncing-a-fork/) it.
+
+Make sure you have synced up local master branch and upstream master branch.
+
+
 
 #### Regenerating a Test Suite
 
