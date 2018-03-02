@@ -129,7 +129,8 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-PROBLEM-S-REPOSITORY
 Next, you need to [configure the remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/) and [synchronize](https://help.github.com/articles/syncing-a-fork/) it.
 
 Make sure you have synced up local master branch and upstream master branch.
-
+Since this will keep local master branch up-to-date with the upstream repository.
+Thereby, you will able to get the latest commits.
 
 
 #### Regenerating a Test Suite
