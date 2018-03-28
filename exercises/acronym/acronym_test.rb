@@ -38,20 +38,20 @@ class AcronymTest < Minitest::Test
   # The version number refers to the version of the problem you solved,
   # not your solution.
   #
-  # Define a constant named VERSION inside of the top level BookKeeping
+  # Define a constant named VERSION inside of the top level Acronym
   # module, which may be placed near the end of your file.
   #
   # In your file, it will look like this:
   #
-  # module BookKeeping
+  # module Acronym
   #   VERSION = 1 # Where the version number matches the one in the test.
   # end
   #
   # If you are curious, read more about constants on RubyDoc:
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
-  def test_bookkeeping
+  def test_acronym
     skip
-    assert_equal 4, BookKeeping::VERSION
+    assert_equal 1, Acronym::VERSION
   end
 end
