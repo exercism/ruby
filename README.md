@@ -324,14 +324,8 @@ converting string indices to integer indices.
 
 ## READMEs
 
-<<<<<<< HEAD
 All exercises must have a README.md file, but should not be created manually. The READMEs
 are constructed using shared metadata, which lives in the [problem-specifications][] repo.
-=======
-Do not add a README or README.md file to the exercise's directory. The READMEs
-are constructed using shared metadata, which lives in the
-[problem-specifications][] repo.
->>>>>>> Whitespace and wrapping, not integral to this PR
 
 Use the `configlet` tool to generate a README from shared metadata:
 
