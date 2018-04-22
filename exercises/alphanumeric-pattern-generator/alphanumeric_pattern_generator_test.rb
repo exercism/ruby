@@ -1,8 +1,7 @@
 require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/pattern_generator'
+require_relative 'alphanumeric_pattern_generator'
 
-class PatternTest < Minitest::Test
+class PatternGeneratorTest < Minitest::Test
   def test_pattern_generator_verifies_patterns
     pattern = '.#.'
     pg = PatternGenerator.new(pattern)
@@ -37,5 +36,26 @@ class PatternTest < Minitest::Test
     pg = PatternGenerator.new(pattern)
 
     assert_equal 6760, pg.total_available
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    assert_equal 1, BookKeeping::VERSION
   end
 end
