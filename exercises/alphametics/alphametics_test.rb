@@ -59,6 +59,15 @@ class AlphameticsTest < Minitest::Test
     assert_equal expected, Alphametics.solve(input)
   end
 
+  # It was found to have a solution, so why not?
+  def test_puzzle_with_nine_letters
+    skip
+    input = 'FAKE + NEWS == LIES'
+    expected = {"E"=>0, "S"=>1, "F"=>2, "A"=>4,
+                "K"=>3, "N"=>6, "W"=>7, "L"=>8, "I"=>5}
+    assert_equal expected, Alphametics.solve(input)
+  end
+
   # The obvious algorithm can take a long time to solve this puzzle,
   # but an optimised solution can solve it fairly quickly.
   # (It's OK to submit your solution without getting this test to pass.)
@@ -70,6 +79,8 @@ class AlphameticsTest < Minitest::Test
                  'S' => 6, 'T' => 9 }
     assert_equal expected, Alphametics.solve(input)
   end
+  
+
 
   # Problems in exercism evolve over time, as we find better ways to ask
   # questions.
