@@ -13,7 +13,7 @@ class PatternGenerator
   end
 
   def generate(number)
-    return false if number >= total_available
+    error_handling('Out of range') if number >= total_available || number < 0
     @number = number
     pattern.chars.reverse.map do |element|
       get_root_value(element)
@@ -60,5 +60,9 @@ class PatternGenerator
     else
       pattern_element.downcase == given_element.downcase
     end
+  end
+
+  def error_handling(message)
+    raise ArgumentError, message
   end
 end
