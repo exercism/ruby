@@ -1,4 +1,5 @@
 require_relative '../test_helper'
+require 'generator/command_line'
 
 module Generator
   class CommandLineTest < Minitest::Test

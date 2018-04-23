@@ -1,4 +1,6 @@
 require_relative '../test_helper'
+require 'tasks/exercise'
+require 'tasks/exercise_test_tasks'
 
 class ExerciseTestTasksTest < Minitest::Test
   def test_all_exercises_task

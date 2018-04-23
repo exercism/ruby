@@ -1,4 +1,5 @@
 require_relative '../test_helper'
+require 'generator/git_command'
 
 module Generator
   class ImplementationTest < Minitest::Test

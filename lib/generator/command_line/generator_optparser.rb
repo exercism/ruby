@@ -1,4 +1,5 @@
 require 'optparse'
+require 'generator/files/generator_cases'
 
 module Generator
   class GeneratorOptparser

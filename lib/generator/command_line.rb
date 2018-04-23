@@ -1,4 +1,6 @@
 require 'logger'
+require 'generator/command_line/generator_optparser'
+require 'generator/repository'
 
 module Generator
   class CommandLine

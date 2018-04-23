@@ -1,4 +1,5 @@
 require_relative '../test_helper'
+require 'generator/exercise'
 require 'tmpdir'
 
 class ExerciseTest < Minitest::Test

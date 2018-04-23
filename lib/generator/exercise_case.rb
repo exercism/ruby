@@ -1,4 +1,7 @@
 require 'ostruct'
+require 'generator/exercise_case/assertion'
+require 'generator/exercise_case/case_helpers'
+require 'generator/underscore'
 
 module Generator
   class ExerciseCase
