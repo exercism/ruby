@@ -3,8 +3,6 @@ module BookKeeping
 end
 
 class PatternGenerator
-  attr_reader :pattern, :pattern_elements, :letters, :numbers
-
   def initialize(pattern)
     @pattern = pattern
     @pattern_elements = get_pattern_elements
@@ -12,9 +10,9 @@ class PatternGenerator
     @numbers = @pattern_elements['#']
   end
 
-  def generate(number)
-    error_handling('Out of range') if number >= total_available || number < 0
-    @number = number
+  def generate(number = nil)
+    error_handling('Out of range') if number && (number >= total_available || number < 0)
+    @number = number || rand(0..(total_available - 1))
     pattern.chars.reverse.map do |element|
       get_root_value(element)
     end.reverse.join.upcase
@@ -33,6 +31,8 @@ class PatternGenerator
   end
 
   private
+  attr_reader :pattern, :pattern_elements, :letters, :numbers
+
   def get_pattern_elements
     {
       '.' => ('a'..'z').to_a,
@@ -45,6 +45,8 @@ class PatternGenerator
       value = @number % pattern_elements[element].count
       @number /= pattern_elements[element].count
       pattern_elements[element][value]
+    else
+      element
     end
   end
 
