@@ -9,10 +9,18 @@ class ClockCase < Generator::ExerciseCase
   end
 
   def workload
-    property == 'equal' ? compare_clocks : simple_test
+    case property
+    when 'add' then arithmetic_test('+', add)
+    when 'create' then create_test
+    when 'equal' then compare_clocks
+    when 'subtract' then arithmetic_test('-', subtract)
+    end
   end
 
   private
+
+  ASSERTION_STR = 'assert_equal %s'
+  CLOCK_STR = 'Clock.at(%d, %d)'
 
   def compare_clocks
     "clock1 = Clock.at(#{clock1['hour']}, #{clock1['minute']})
@@ -20,16 +28,11 @@ class ClockCase < Generator::ExerciseCase
     #{assert} clock1 == clock2"
   end
 
-  def simple_test
-    [
-      "assert_equal #{expected.inspect}, ",
-      "#{'(' if add_to_clock}Clock.at(#{hour}, ",
-      "#{minute})#{add_to_clock}#{')' if add_to_clock}.to_s"
-    ].join
+  def create_test
+    "#{ASSERTION_STR}, #{CLOCK_STR}.to_s" % [expected.inspect, hour, minute]
   end
 
-  def add_to_clock
-    " + #{add}" if respond_to?(:add)
+  def arithmetic_test(op, value)
+    "#{ASSERTION_STR}, (#{CLOCK_STR} #{op} #{value}).to_s" % [expected.inspect, hour, minute]
   end
-
 end
