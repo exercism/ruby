@@ -1,4 +1,5 @@
 require 'pathname'
+require 'generator/git_command'
 
 module Generator
   module Files

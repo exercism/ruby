@@ -1,3 +1,5 @@
+require 'generator/underscore'
+
 module Generator
   class Exercise
     using Generator::Underscore

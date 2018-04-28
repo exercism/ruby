@@ -1,5 +1,6 @@
 require 'logger'
 require 'generator/command_line/generator_optparser'
+require 'generator/exercise'
 require 'generator/repository'
 
 module Generator

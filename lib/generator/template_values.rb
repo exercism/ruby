@@ -1,4 +1,5 @@
 require 'json'
+require 'generator/case_values'
 
 module Generator
   # Contains methods accessible to the ERB template

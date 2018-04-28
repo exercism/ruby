@@ -1,6 +1,6 @@
 require 'delegate'
 require 'forwardable'
-require_relative 'template_values'
+require 'generator/template_values'
 
 module Generator
   class Implementation
