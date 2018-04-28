@@ -1,3 +1,5 @@
+require 'generator/files'
+
 module Generator
   module Files
     module MetadataFiles

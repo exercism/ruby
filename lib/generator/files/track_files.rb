@@ -1,4 +1,5 @@
 require 'erb'
+require 'generator/files'
 
 module Generator
   module Files

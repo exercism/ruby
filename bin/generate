@@ -2,6 +2,7 @@
 
 require_relative '../lib/helper'
 require 'generator'
+require 'generator/command_line'
 
 paths = Generator::Paths.new(track: EXERCISM_RUBY_ROOT, metadata: METADATA_REPOSITORY_PATH)
 

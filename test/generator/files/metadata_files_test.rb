@@ -1,4 +1,6 @@
 require_relative '../../test_helper.rb'
+require 'generator/files/metadata_files'
+
 module Generator
   module Files
     class MetadataFilesTest < Minitest::Test

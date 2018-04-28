@@ -1,4 +1,6 @@
 require_relative '../test_helper'
+require 'generator/exercise_case'
+require 'generator/case_values'
 
 module Generator
   class ComplexCase < ExerciseCase

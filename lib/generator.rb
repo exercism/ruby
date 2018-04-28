@@ -1,5 +1,4 @@
-require 'require_all'
-require_rel 'generator' # Include everything in the 'generator' subdirectory
+require 'generator/implementation'
 
 module Generator
   # Immutable value object for storing paths

@@ -1,7 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 
-require 'require_all'
-
 unless ENV['CI']
   require 'simplecov'
 
@@ -31,4 +29,4 @@ end
 require 'minitest/autorun'
 
 # So we can be sure we have coverage on the whole lib directory:
-require_all 'lib'
+Dir.glob('lib/*.rb').each { |file| require file.gsub(%r{(^lib\/|\.rb$)}, '') }

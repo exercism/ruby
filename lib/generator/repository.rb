@@ -1,3 +1,6 @@
+require 'generator/files/metadata_files'
+require 'generator/files/track_files'
+
 module Generator
   class Repository
     include Files::TrackFiles
