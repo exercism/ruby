@@ -2,9 +2,9 @@
 
 Create a program that can generate and manage [alphanumeric](https://en.wikipedia.org/wiki/Alphanumeric) strings based on a given pattern.
 
-An alphanumeric pattern is a string that contains alphabetic and numeric characters. In our example, `.` represents alphabetic characters (a-z) and `#` represents numeric characters (0-9), so the pattern `.#` could produce anything from `A0` to `Z9`.
+An alphanumeric pattern is a string that contains alphabetic and numeric characters. In our example, patterns contain `.`, `#` or any alphanumeric character. `.` represents alphabetic characters (a-z) and `#` represents numeric characters (0-9), so the pattern `.#` could produce anything from `A0` to `Z9`. Given patterns can also have constant values. For example, the pattern `#.JH1.` could generate any pattern including the values `JH1` as index 2 ,3 and 4 respectively such as `9FJH1P`.
 
-An alphanumeric patterns can also have constant values. For example, the pattern `#.JH1.` could generate any pattern including the values `JH1` as index 2 ,3 and 4 respectively such as `9FJH1P`.
+The goal of this exercise is to create a class that is initialized with a given pattern then generates and validates alphanumeric strings using the pattern. The code should utilize the power of Ruby enumerables along with string manipulation to create an elegant algorithm to handle any given pattern.
 
 * * * *
 
