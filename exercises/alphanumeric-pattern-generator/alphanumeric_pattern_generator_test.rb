@@ -11,7 +11,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_verifies_lowercase_characters
-    # skip
+    skip
     pattern = '.'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -19,7 +19,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_a_single_character_pattern
-    # skip
+    skip
     pattern = '.'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -27,7 +27,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_can_verify_a_single_numeric_character
-    # skip
+    skip
     pattern = '#'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -35,7 +35,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_a_single_numeric_pattern
-    # skip
+    skip
     pattern = '#'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -43,7 +43,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_verifies_more_complex_patterns
-    # skip
+    skip
     pattern = '.#.'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -51,7 +51,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_more_complex_patterns
-    # skip
+    skip
     pattern = '.#.'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -59,7 +59,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_verifies_patterns_with_specific_elements
-    # skip
+    skip
     pattern = '.##ZA3.#'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -67,7 +67,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_verifies_patterns_with_specific_elements_in_different_spots
-    # skip
+    skip
     pattern = 'A#23.9.F'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -75,7 +75,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_patterns_with_constants
-    # skip
+    skip
     pattern = 'A#23..#'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -83,7 +83,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_nth_value_of_patterns
-    # skip
+    skip
     pattern = '.#.'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -91,7 +91,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_raises_exception_if_invalid_value_is_passed_to_generate
-    # skip
+    skip
     pattern = '.#.'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -99,7 +99,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_nth_value_of_patterns_with_constants
-    # skip
+    skip
     pattern = 'R#..W'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -107,7 +107,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_the_total_available_patterns
-    # skip
+    skip
     pattern = '.#.'
     pg = AlphanumericPatternGenerator.new(pattern)
 
@@ -115,7 +115,7 @@ class AlphanumericPatternGeneratorTest < Minitest::Test
   end
 
   def test_it_generates_the_total_available_patterns_with_constants
-    # skip
+    skip
     pattern = '.1.'
     pg = AlphanumericPatternGenerator.new(pattern)
 
