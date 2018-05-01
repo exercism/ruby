@@ -1,6 +1,6 @@
 # Alphanumeric Pattern Generator
 
-Create a program that can generate and manage [alphanumeric](https://en.wikipedia.org/wiki/Alphanumeric) strings based off a given pattern.
+Create a program that can generate and manage [alphanumeric](https://en.wikipedia.org/wiki/Alphanumeric) strings based on a given pattern.
 
 An alphanumeric pattern is a string that contains alphabetic and numeric characters. In our example, `.` represents alphabetic characters (a-z) and `#` represents numeric characters (0-9), so the pattern `.#` could produce anything from `A0` to `Z9`.
 
