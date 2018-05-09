@@ -7,7 +7,7 @@ class ZipperCase < Generator::ExerciseCase
       "zipper = Zipper.from_tree(tree)\n",
       "value = #{operations(input)}\n",
       "#{expected_by_type}\n",
-      "assert_equal expected, value"
+      assertion
     ]
     indent(body, 4)
   end
@@ -23,9 +23,39 @@ class ZipperCase < Generator::ExerciseCase
 
     def operations(input, zipper_name='zipper')
       operation_chain = input['operations'].map do |op|
-        op['operation']
+        operation = op['operation']
+        item = op['item']
+
+        set_tree = lambda do
+          if item.nil?
+            "#{operation}(nil)"
+          else
+            left = nil_if item['left']
+            right = nil_if item['right']
+            "#{operation}(Node.new(#{item['value']}, #{left}, #{right}))"
+          end
+        end
+
+        case operation
+        when 'set_value'
+          "#{operation}(#{op['item']})"
+        when 'set_left'
+          set_tree.call
+        when 'set_right'
+          set_tree.call
+        else
+          operation
+        end
       end.join('.')
       "#{zipper_name}.%s" % operation_chain
+    end
+
+    def assertion
+      if expected['value'].nil?
+        'assert_nil value'
+      else
+        'assert_equal expected, value'
+      end
     end
 
     def expected_by_type
@@ -63,5 +93,13 @@ class ZipperCase < Generator::ExerciseCase
 
     def indent(lines, spaces)
       lines.join(' ' * spaces)
+    end
+
+    def nil_if(value)
+      if value.nil?
+        'nil'
+      else
+        value
+      end
     end
 end

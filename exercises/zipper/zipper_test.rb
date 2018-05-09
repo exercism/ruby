@@ -63,7 +63,7 @@ class ZipperTest < Minitest::Test
     zipper = Zipper.from_tree(tree)
     value = zipper.left.left
     expected = nil
-    assert_equal expected, value
+    assert_nil value
   end
 
   def test_tree_from_deep_focus
@@ -108,7 +108,7 @@ class ZipperTest < Minitest::Test
     zipper = Zipper.from_tree(tree)
     value = zipper.up
     expected = nil
-    assert_equal expected, value
+    assert_nil value
   end
 
   def test_left_right_and_up
@@ -142,7 +142,7 @@ class ZipperTest < Minitest::Test
           nil,
           nil))
     zipper = Zipper.from_tree(tree)
-    value = zipper.left.set_value.to_tree
+    value = zipper.left.set_value(5).to_tree
     expected = 
       Node.new(1,
         Node.new(5,
@@ -169,7 +169,7 @@ class ZipperTest < Minitest::Test
           nil,
           nil))
     zipper = Zipper.from_tree(tree)
-    value = zipper.left.right.up.set_value.to_tree
+    value = zipper.left.right.up.set_value(5).to_tree
     expected = 
       Node.new(1,
         Node.new(5,
@@ -196,7 +196,7 @@ class ZipperTest < Minitest::Test
           nil,
           nil))
     zipper = Zipper.from_tree(tree)
-    value = zipper.left.set_left.to_tree
+    value = zipper.left.set_left(Node.new(5, nil, nil)).to_tree
     expected = 
       Node.new(1,
         Node.new(2,
@@ -225,7 +225,7 @@ class ZipperTest < Minitest::Test
           nil,
           nil))
     zipper = Zipper.from_tree(tree)
-    value = zipper.left.set_right.to_tree
+    value = zipper.left.set_right(nil).to_tree
     expected = 
       Node.new(1,
         Node.new(2,
@@ -250,7 +250,7 @@ class ZipperTest < Minitest::Test
           nil,
           nil))
     zipper = Zipper.from_tree(tree)
-    value = zipper.set_right.to_tree
+    value = zipper.set_right(Node.new(6, {"value"=>7, "left"=>nil, "right"=>nil}, {"value"=>8, "left"=>nil, "right"=>nil})).to_tree
     expected = 
       Node.new(1,
         Node.new(2,
@@ -281,7 +281,7 @@ class ZipperTest < Minitest::Test
           nil,
           nil))
     zipper = Zipper.from_tree(tree)
-    value = zipper.left.right.set_value.to_tree
+    value = zipper.left.right.set_value(5).to_tree
     expected = 
       Node.new(1,
         Node.new(2,
@@ -321,7 +321,7 @@ class ZipperTest < Minitest::Test
           nil))
     expected_zipper = Zipper.from_tree(expected_tree)
     expected = expected_zipper.right
-    assert_equal expected, value
+    assert_nil value
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -343,6 +343,6 @@ class ZipperTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 64, BookKeeping::VERSION
+    assert_equal 70, BookKeeping::VERSION
   end
 end
