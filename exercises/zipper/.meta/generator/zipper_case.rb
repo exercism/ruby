@@ -30,9 +30,11 @@ class ZipperCase < Generator::ExerciseCase
           if item.nil?
             "#{operation}(nil)"
           else
-            left = nil_if item['left']
-            right = nil_if item['right']
-            "#{operation}(Node.new(#{item['value']}, #{left}, #{right}))"
+            depth = ' ' * 6
+            left = nil_if build_tree(item['left'], 5)
+            right = nil_if build_tree(item['right'], 5)
+            # I know. This line is crazy.
+            "#{operation}(\n#{depth}Node.new(#{item['value']},\n  #{depth}#{left},\n  #{depth}#{right}))"
           end
         end
 
@@ -51,7 +53,7 @@ class ZipperCase < Generator::ExerciseCase
     end
 
     def assertion
-      if expected['value'].nil?
+      if expected['value'].nil? && expected['initialTree'].nil?
         'assert_nil value'
       else
         'assert_equal expected, value'

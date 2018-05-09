@@ -196,7 +196,10 @@ class ZipperTest < Minitest::Test
           nil,
           nil))
     zipper = Zipper.from_tree(tree)
-    value = zipper.left.set_left(Node.new(5, nil, nil)).to_tree
+    value = zipper.left.set_left(
+      Node.new(5,
+        nil,
+        nil)).to_tree
     expected = 
       Node.new(1,
         Node.new(2,
@@ -250,7 +253,14 @@ class ZipperTest < Minitest::Test
           nil,
           nil))
     zipper = Zipper.from_tree(tree)
-    value = zipper.set_right(Node.new(6, {"value"=>7, "left"=>nil, "right"=>nil}, {"value"=>8, "left"=>nil, "right"=>nil})).to_tree
+    value = zipper.set_right(
+      Node.new(6,
+        Node.new(7,
+          nil,
+          nil),
+        Node.new(8,
+          nil,
+          nil))).to_tree
     expected = 
       Node.new(1,
         Node.new(2,
@@ -321,7 +331,7 @@ class ZipperTest < Minitest::Test
           nil))
     expected_zipper = Zipper.from_tree(expected_tree)
     expected = expected_zipper.right
-    assert_nil value
+    assert_equal expected, value
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
@@ -343,6 +353,6 @@ class ZipperTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 70, BookKeeping::VERSION
+    assert_equal 71, BookKeeping::VERSION
   end
 end

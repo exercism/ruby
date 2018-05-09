@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 70
+  VERSION = 71
 end
 
 Node = Struct.new(:value, :left, :right)
@@ -73,5 +73,10 @@ class Zipper
 
   def set_right(node)
     Zipper.new(value, @left, node, @crumbs)
+  end
+
+  def ==(other_zipper)
+    return false unless other_zipper.is_a? Zipper
+    to_tree == other_zipper.to_tree
   end
 end
