@@ -935,6 +935,16 @@
         "arrays",
         "logic"
       ]
+    },
+    {
+      "uuid": "239b8e79-2983-4ce0-9dda-9bb999e79d11",
+      "slug": "zipper",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 7,
+      "topics": [
+        "Data Structures"
+      ]
     }
   ],
   "foregone": [
