@@ -36,7 +36,7 @@ The goal is to have all passing tests, which will show in two places:
 
 1. `SSSSSSESSSSSSSSS` will become a series dots: `................`, 
 
-2. The line at the bottom will read `16 runs, 0 assertions, 0 failures, 0
+2. The line at the bottom will read `16 runs, 16 assertions, 0 failures, 0
    errors, 0 skips`.
 
 ## Passing Tests
