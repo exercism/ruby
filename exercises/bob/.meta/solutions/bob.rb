@@ -1,5 +1,5 @@
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
 
 module Bob
@@ -11,6 +11,8 @@ module Bob
     case
     when phrase.silent?
       'Fine. Be that way!'
+    when phrase.loud? && phrase.quizzical?
+      'Calm down, I know what I\'m doing!'
     when phrase.loud?
       'Whoa, chill out!'
     when phrase.quizzical?
