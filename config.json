@@ -789,6 +789,19 @@
       "topics": [
         "Data Structures"
       ]
+    },
+    {
+      "uuid": "b81ccbfe-bc86-42b4-ab59-4e5da39b3ea6",
+      "slug": "alphanumeric-pattern-generator",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "loops",
+        "strings",
+        "arrays",
+        "logic"
+      ]
     }
   ]
 }
