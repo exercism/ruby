@@ -4,7 +4,6 @@
   "blurb": "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.",
   "gitter": "ruby",
   "solution_pattern": "[Ee]xample|\\.meta/solutions/[^/]*\\.rb",
-  "foregone": [],
   "exercises": [
     {
       "slug": "hello-world",
@@ -733,16 +732,26 @@
     {
       "slug": "octal",
       "uuid": "cae4e000-3aac-41f7-b727-f9cce12d058d",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 0,
+      "topics": null,
       "deprecated": true
     },
     {
       "slug": "point-mutations",
       "uuid": "89bd3d71-000f-4cd9-9a84-ad1b22ddbd33",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 0,
+      "topics": null,
       "deprecated": true
     },
     {
       "slug": "complex-numbers",
       "uuid": "d75bd7c0-52c5-44f2-a046-f63cb332425f",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "mathematics"
