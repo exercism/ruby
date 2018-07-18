@@ -34,12 +34,12 @@
     {
       "github_username": "hilary",
       "alumnus": false,
-      "show_on_website": false,
-      "name": null,
+      "show_on_website": true,
+      "name": "Hilary Holz",
       "link_text": null,
       "link_url": null,
       "avatar_url": null,
-      "bio": null
+      "bio": "25+ years experience as a software engineer, specializing in the web since NCSA HTTPd and Mosaic. Ruby has been my primary language for the past 7 years; it fills me with glee."
     },
     {
       "github_username": "bmulvihill",
