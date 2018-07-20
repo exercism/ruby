@@ -34,6 +34,7 @@
       "difficulty": 1,
       "topics": [
         "time",
+        "mathematics"
       ]
     },
     {
@@ -215,7 +216,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "parsing"
+      ]
     },
     {
       "slug": "prime-factors",
@@ -223,7 +227,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "mathematics",
+        "integers"
+      ]
     },
     {
       "slug": "strain",
@@ -255,7 +262,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "control_flow_loops"
+      ]
     },
     {
       "slug": "bowling",
