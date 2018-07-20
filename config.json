@@ -11,7 +11,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings"
+      ]
     },
     {
       "slug": "hamming",
@@ -19,7 +21,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "control_flow_conditionals"
+      ]
     },
     {
       "slug": "gigasecond",
@@ -27,7 +32,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "time",
+        "mathematics"
+      ]
     },
     {
       "slug": "rna-transcription",
@@ -35,7 +43,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "control_flow_conditionals",
+        "control_flow_loops",
+        "strings"
+      ]
     },
     {
       "slug": "raindrops",
@@ -43,7 +55,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "control_flow_conditionals",
+        "mathematics"
+      ]
     },
     {
       "slug": "difference-of-squares",
@@ -51,7 +66,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "integers",
+        "mathematics",
+        "algorithms"
+      ]
     },
     {
       "slug": "pangram",
@@ -59,7 +78,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "control_flow_conditionals"
+      ]
     },
     {
       "slug": "sieve",
@@ -67,7 +89,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "mathematics",
+        "integers",
+        "algorithms"
+      ]
     },
     {
       "slug": "roman-numerals",
@@ -75,7 +101,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "algorithms",
+        "control_flow_conditionals",
+        "control_flow_loops"
+      ]
     },
     {
       "slug": "nth-prime",
@@ -83,7 +113,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "mathematics",
+        "algorithms",
+        "control_flow_loops"
+      ]
     },
     {
       "slug": "leap",
@@ -91,7 +125,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "integers",
+        "mathematics",
+        "control_flow_conditionals"
+      ]
     },
     {
       "slug": "grains",
@@ -107,7 +145,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "algorithms"
+      ]
     },
     {
       "slug": "bob",
@@ -115,7 +156,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "regular_expressions",
+        "strings",
+        "control_flow_conditionals"
+      ]
     },
     {
       "slug": "run-length-encoding",
@@ -171,7 +216,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "parsing"
+      ]
     },
     {
       "slug": "prime-factors",
@@ -179,7 +227,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "mathematics",
+        "integers"
+      ]
     },
     {
       "slug": "strain",
@@ -211,7 +262,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "control_flow_loops"
+      ]
     },
     {
       "slug": "bowling",
