@@ -526,14 +526,6 @@
       "topics": null
     },
     {
-      "slug": "affine-cipher",
-      "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": null
-    },
-    {
       "slug": "twelve-days",
       "uuid": "eeb64dda-b79f-4920-8fa3-04810e8d37ab",
       "core": false,
@@ -796,6 +788,18 @@
       "difficulty": 7,
       "topics": [
         "Data Structures"
+      ]
+    },
+    {
+      "slug": "affine-cipher",
+      "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "cryptography",
+        "mathematics",
+        "strings"
       ]
     }
   ]
