@@ -22,8 +22,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "strings",
-        "control_flow_conditionals"
+        "control_flow_conditionals",
+        "strings"
       ]
     },
     {
@@ -33,8 +33,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "time",
-        "mathematics"
+        "mathematics",
+        "time"
       ]
     },
     {
@@ -67,9 +67,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
+        "algorithms",
         "integers",
-        "mathematics",
-        "algorithms"
+        "mathematics"
       ]
     },
     {
@@ -79,8 +79,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "strings",
-        "control_flow_conditionals"
+        "control_flow_conditionals",
+        "strings"
       ]
     },
     {
@@ -90,9 +90,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "mathematics",
+        "algorithms",
         "integers",
-        "algorithms"
+        "mathematics"
       ]
     },
     {
@@ -114,9 +114,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "mathematics",
         "algorithms",
-        "control_flow_loops"
+        "control_flow_loops",
+        "mathematics"
       ]
     },
     {
@@ -126,9 +126,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
+        "control_flow_conditionals",
         "integers",
-        "mathematics",
-        "control_flow_conditionals"
+        "mathematics"
       ]
     },
     {
@@ -146,8 +146,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "strings",
-        "algorithms"
+        "algorithms",
+        "strings"
       ]
     },
     {
@@ -157,9 +157,9 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
+        "control_flow_conditionals",
         "regular_expressions",
-        "strings",
-        "control_flow_conditionals"
+        "strings"
       ]
     },
     {
@@ -217,8 +217,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "strings",
-        "parsing"
+        "parsing",
+        "strings"
       ]
     },
     {
@@ -228,8 +228,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "mathematics",
-        "integers"
+        "integers",
+        "mathematics"
       ]
     },
     {
@@ -263,8 +263,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "strings",
-        "control_flow_loops"
+        "control_flow_loops",
+        "strings"
       ]
     },
     {
@@ -835,13 +835,13 @@
       ]
     },
     {
-      "uuid": "239b8e79-2983-4ce0-9dda-9bb999e79d11",
       "slug": "zipper",
+      "uuid": "239b8e79-2983-4ce0-9dda-9bb999e79d11",
       "core": false,
       "unlocked_by": null,
       "difficulty": 7,
       "topics": [
-        "Data Structures"
+        "data_structures"
       ]
     },
     {
