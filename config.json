@@ -120,17 +120,6 @@
       ]
     },
     {
-      "slug": "reverse-string",
-      "uuid": "e2df2756-7a48-4b45-b601-91be91027dbd",
-      "core": false,
-      "unlocked_by": "isogram",
-      "difficulty": 2,
-      "topics": [
-        "sequences",
-        "strings"
-      ]
-    },
-    {
       "slug": "difference-of-squares",
       "uuid": "f1e4ee0c-8718-43f2-90a5-fb1e915288da",
       "core": true,
