@@ -848,6 +848,20 @@
       ]
     },
     {
+      "slug": "kindergarten-garden",
+      "uuid": "04bde625-e363-4d8b-880f-db7bf86286eb",
+      "core": false,
+      "unlocked_by": "tournament",
+      "difficulty": 3,
+      "topics": [
+        "parsing",
+        "records",
+        "searching",
+        "strings",
+        "structs"
+      ]
+    },
+    {
       "slug": "simple-cipher",
       "uuid": "29c66e8a-b1b0-4bbd-be7b-9979ff51ba8f",
       "core": false,
@@ -1114,6 +1128,47 @@
       "difficulty": 0,
       "topics": null,
       "deprecated": true
+    },
+    {
+      "slug": "affine-cipher",
+      "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "cryptography",
+        "mathematics",
+        "strings"
+      ]
+    },
+    {
+      "slug": "complex-numbers",
+      "uuid": "d75bd7c0-52c5-44f2-a046-f63cb332425f",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "mathematics"
+      ]
+    },
+    {
+      "slug": "point-mutations",
+      "uuid": "89bd3d71-000f-4cd9-9a84-ad1b22ddbd33",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 0,
+      "topics": null,
+      "deprecated": true
+    },
+    {
+      "uuid": "239b8e79-2983-4ce0-9dda-9bb999e79d11",
+      "slug": "zipper",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 7,
+      "topics": [
+        "Data Structures"
+      ]
     }
   ]
 }
