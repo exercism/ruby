@@ -227,7 +227,7 @@
       "slug": "flatten-array",
       "uuid": "2df8ed82-2a04-4112-a17b-7813bcdc0e84",
       "core": false,
-      "unlocked_by": "error-handling",
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "arrays",
@@ -310,7 +310,7 @@
       "slug": "series",
       "uuid": "2de036e4-576d-47fc-bb03-4ed1612e79da",
       "core": false,
-      "unlocked_by": "parallel-letter-frequency",
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "arrays",
@@ -482,7 +482,7 @@
       "slug": "bracket-push",
       "uuid": "26f6e297-7980-4472-8ce7-157b62b0ff40",
       "core": false,
-      "unlocked_by": "tree-building",
+      "unlocked_by": null,
       "difficulty": 7,
       "topics": [
         "parsing",
@@ -528,7 +528,7 @@
       "slug": "rail-fence-cipher",
       "uuid": "64196fe5-2270-4113-a614-fbfbb6d00f2b",
       "core": false,
-      "unlocked_by": "tree-building",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -579,7 +579,7 @@
       "slug": "circular-buffer",
       "uuid": "f3419fe3-a5f5-4bc9-bc40-49f450b8981e",
       "core": false,
-      "unlocked_by": "error-handling",
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "queues",
@@ -604,7 +604,7 @@
       "slug": "custom-set",
       "uuid": "4f74b3cd-f995-4b8c-9b57-23f073261d0e",
       "core": false,
-      "unlocked_by": "error-handling",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "filtering",
@@ -752,7 +752,7 @@
       "slug": "grade-school",
       "uuid": "4460742c-2beb-48d7-94e6-72ff13c68c71",
       "core": false,
-      "unlocked_by": "bank-account",
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "lists",
@@ -790,7 +790,7 @@
       "slug": "simple-linked-list",
       "uuid": "fa7b91c2-842c-42c8-bdf9-00bb3e71a7f5",
       "core": false,
-      "unlocked_by": "error-handling",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "arrays",
@@ -801,7 +801,7 @@
       "slug": "linked-list",
       "uuid": "92c9aafc-791d-4aaf-a136-9bee14f6ff95",
       "core": false,
-      "unlocked_by": "tree-building",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "data_structure",
@@ -812,7 +812,7 @@
       "slug": "binary-search",
       "uuid": "b1ba445d-4908-4922-acc0-de3a0ec92c53",
       "core": false,
-      "unlocked_by": "tree-building",
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -825,7 +825,7 @@
       "slug": "binary-search-tree",
       "uuid": "0e05bfcf-17ae-4884-803a-fa1428bc1702",
       "core": false,
-      "unlocked_by": "tree-building",
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -882,7 +882,7 @@
       "slug": "robot-simulator",
       "uuid": "724e6a6e-2e6e-45a9-ab0e-0d8d50a06085",
       "core": false,
-      "unlocked_by": "bank-account",
+      "unlocked_by": null,
       "difficulty": 6,
       "topics": [
         "concurrency",
@@ -937,7 +937,7 @@
       "slug": "change",
       "uuid": "dc6c3e44-1027-4d53-9653-ba06824f8bcf",
       "core": false,
-      "unlocked_by": "bank-account",
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -988,7 +988,7 @@
       "slug": "book-store",
       "uuid": "0ec96460-08be-49a0-973a-4336f21b763c",
       "core": false,
-      "unlocked_by": "error-handling",
+      "unlocked_by": null,
       "difficulty": 8,
       "topics": [
         "algorithms",
@@ -1036,7 +1036,7 @@
       "slug": "dominoes",
       "uuid": "705f3eb6-55a9-476c-b3f2-e9f3cb0bbe37",
       "core": false,
-      "unlocked_by": "error-handling",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -1048,7 +1048,7 @@
       "slug": "alphametics",
       "uuid": "2323a2a5-c181-4c1e-9c5f-f6b92b2de511",
       "core": false,
-      "unlocked_by": "error-handling",
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -1061,7 +1061,7 @@
       "slug": "two-bucket",
       "uuid": "e5a2d445-437d-46a8-889b-fbcd62c70fa9",
       "core": false,
-      "unlocked_by": "tree-building",
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "algorithms",
