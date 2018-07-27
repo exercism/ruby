@@ -1076,10 +1076,10 @@
       "unlocked_by": null,
       "difficulty": 3,
       "topics": [
-          "recursion",
-          "type_conversion",
-          "lists",
-          "functional_programming"
+        "functional_programming",
+        "lists",
+        "recursion",
+        "type_conversion"
       ]
     },
     {
@@ -1150,13 +1150,13 @@
       "deprecated": true
     },
     {
-      "uuid": "239b8e79-2983-4ce0-9dda-9bb999e79d11",
       "slug": "zipper",
+      "uuid": "239b8e79-2983-4ce0-9dda-9bb999e79d11",
       "core": false,
       "unlocked_by": null,
       "difficulty": 7,
       "topics": [
-        "Data Structures"
+        "data_structures"
       ]
     }
   ]
