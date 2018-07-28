@@ -17,6 +17,17 @@
       ]
     },
     {
+      "slug": "two-fer",
+      "uuid": "1304b188-6d08-4361-be40-c6b1b88e5e54",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "strings"
+      ]
+    },
+    {
       "slug": "hamming",
       "uuid": "d33dec8a-e2b4-40bc-8be9-3f49de084d43",
       "core": true,
@@ -956,17 +967,6 @@
         "loops",
         "matrices",
         "transforming"
-      ]
-    },
-    {
-      "slug": "two-fer",
-      "uuid": "1304b188-6d08-4361-be40-c6b1b88e5e54",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "conditionals",
-        "strings"
       ]
     },
     {
