@@ -309,7 +309,7 @@
       "slug": "beer-song",
       "uuid": "50c34698-7767-42b3-962f-21c735e49787",
       "core": false,
-      "unlocked_by": "twelve-days",
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "loops",
