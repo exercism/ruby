@@ -425,7 +425,7 @@
       "slug": "acronym",
       "uuid": "74468206-68a2-4efb-8caa-782634674c7f",
       "core": false,
-      "unlocked_by": "flatten-array",
+      "unlocked_by": "two-fer",
       "difficulty": 2,
       "topics": [
         "regular_expressions",
@@ -437,7 +437,7 @@
       "slug": "scrabble-score",
       "uuid": "d934ebce-9ac3-4a41-bcb8-d70480170438",
       "core": true,
-      "unlocked_by": "two-fer",
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "loops",
