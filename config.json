@@ -20,7 +20,7 @@
       "slug": "two-fer",
       "uuid": "1304b188-6d08-4361-be40-c6b1b88e5e54",
       "core": true,
-      "unlocked_by": "hello-world",
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -64,7 +64,7 @@
       "slug": "raindrops",
       "uuid": "efad2cea-1e0b-4fb8-a452-a8e91be73638",
       "core": true,
-      "unlocked_by": "two-fer",
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -76,7 +76,7 @@
       "slug": "difference-of-squares",
       "uuid": "f1e4ee0c-8718-43f2-90a5-fb1e915288da",
       "core": true,
-      "unlocked_by": "hamming",
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "algorithms",
@@ -385,7 +385,7 @@
       "slug": "clock",
       "uuid": "f95ebf09-0f32-4e60-867d-60cb81dd9a62",
       "core": true,
-      "unlocked_by": "hamming",
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "equality",
@@ -566,7 +566,7 @@
       "slug": "matrix",
       "uuid": "3de21c18-a533-4150-8a73-49df8fcb8c61",
       "core": true,
-      "unlocked_by": "hamming",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "arrays",
@@ -688,7 +688,7 @@
       "slug": "luhn",
       "uuid": "bee97539-b8c1-460e-aa14-9336008df2b6",
       "core": true,
-      "unlocked_by": "hamming",
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "algorithms",
@@ -828,7 +828,7 @@
       "slug": "isogram",
       "uuid": "a79eb8cd-d2db-48f5-a7dc-055039dcee62",
       "core": true,
-      "unlocked_by": "two-fer",
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "sequences",
@@ -877,7 +877,7 @@
       "slug": "twelve-days",
       "uuid": "eeb64dda-b79f-4920-8fa3-04810e8d37ab",
       "core": true,
-      "unlocked_by": "hamming",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -940,7 +940,7 @@
       "slug": "tournament",
       "uuid": "486becee-9d85-4139-ab89-db254d385ade",
       "core": true,
-      "unlocked_by": "hamming",
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "integers",
