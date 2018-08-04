@@ -80,7 +80,7 @@
       "difficulty": 2,
       "topics": [
         "algorithms",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -104,7 +104,7 @@
         "algorithms",
         "integers",
         "loops",
-        "mathematics",
+        "math",
         "sorting"
       ]
     },
@@ -128,7 +128,7 @@
       "topics": [
         "algorithms",
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -154,7 +154,6 @@
         "bitwise_operations",
         "if_else_statements",
         "integers",
-        "mathematics",
         "type_conversion"
       ]
     },
@@ -219,7 +218,7 @@
       "difficulty": 5,
       "topics": [
         "loops",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -269,7 +268,7 @@
       "topics": [
         "algorithms",
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -337,8 +336,7 @@
       "difficulty": 2,
       "topics": [
         "floating_point_numbers",
-        "if_else_statements",
-        "mathematics"
+        "if_else_statements"
       ]
     },
     {
@@ -391,7 +389,6 @@
       "difficulty": 3,
       "topics": [
         "equality",
-        "mathematics",
         "text_formatting",
         "time"
       ]
@@ -405,7 +402,6 @@
       "topics": [
         "algorithms",
         "arrays",
-        "mathematics",
         "searching"
       ]
     },
@@ -527,8 +523,7 @@
         "booleans",
         "errors",
         "games",
-        "logic",
-        "mathematics"
+        "logic"
       ]
     },
     {
@@ -539,7 +534,7 @@
       "difficulty": 6,
       "topics": [
         "algorithms",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -778,6 +773,7 @@
       "topics": [
         "algorithms",
         "integers",
+        "math",
         "sequences"
       ]
     },
@@ -789,7 +785,7 @@
       "difficulty": 5,
       "topics": [
         "algorithms",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -825,7 +821,7 @@
         "algorithms",
         "filtering",
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -911,7 +907,7 @@
       "topics": [
         "algorithms",
         "arrays",
-        "mathematics",
+        "math",
         "recursion"
       ]
     },
@@ -991,7 +987,7 @@
       "difficulty": 3,
       "topics": [
         "integers",
-        "mathematics",
+        "math",
         "transforming"
       ]
     },
@@ -1019,7 +1015,6 @@
         "algorithms",
         "arrays",
         "loops",
-        "mathematics",
         "searching"
       ]
     },
@@ -1033,7 +1028,7 @@
         "conditionals",
         "control_flow_loops",
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -1046,8 +1041,7 @@
         "algorithms",
         "floating_point_numbers",
         "integers",
-        "lists",
-        "mathematics"
+        "lists"
       ]
     },
     {
@@ -1126,7 +1120,7 @@
       "difficulty": 3,
       "topics": [
         "cryptography",
-        "mathematics",
+        "math",
         "strings"
       ]
     },
@@ -1137,7 +1131,7 @@
       "unlocked_by": null,
       "difficulty": 3,
       "topics": [
-        "mathematics"
+        "math"
       ]
     },
     {
