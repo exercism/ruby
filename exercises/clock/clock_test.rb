@@ -5,7 +5,7 @@ require_relative 'clock'
 class ClockTest < Minitest::Test
   def test_on_the_hour
     # skip
-    assert_equal "08:00", Clock.new(hour: 8, minute: 0).to_s
+    assert_equal "08:00", Clock.new(hour: 8).to_s
   end
 
   def test_past_the_hour
@@ -15,17 +15,17 @@ class ClockTest < Minitest::Test
 
   def test_midnight_is_zero_hours
     skip
-    assert_equal "00:00", Clock.new(hour: 24, minute: 0).to_s
+    assert_equal "00:00", Clock.new(hour: 24).to_s
   end
 
   def test_hour_rolls_over
     skip
-    assert_equal "01:00", Clock.new(hour: 25, minute: 0).to_s
+    assert_equal "01:00", Clock.new(hour: 25).to_s
   end
 
   def test_hour_rolls_over_continuously
     skip
-    assert_equal "04:00", Clock.new(hour: 100, minute: 0).to_s
+    assert_equal "04:00", Clock.new(hour: 100).to_s
   end
 
   def test_sixty_minutes_is_next_hour
@@ -35,12 +35,12 @@ class ClockTest < Minitest::Test
 
   def test_minutes_roll_over
     skip
-    assert_equal "02:40", Clock.new(hour: 0, minute: 160).to_s
+    assert_equal "02:40", Clock.new(minute: 160).to_s
   end
 
   def test_minutes_roll_over_continuously
     skip
-    assert_equal "04:43", Clock.new(hour: 0, minute: 1723).to_s
+    assert_equal "04:43", Clock.new(minute: 1723).to_s
   end
 
   def test_hour_and_minutes_roll_over
@@ -65,12 +65,12 @@ class ClockTest < Minitest::Test
 
   def test_negative_hour_rolls_over
     skip
-    assert_equal "23:00", Clock.new(hour: -25, minute: 0).to_s
+    assert_equal "23:00", Clock.new(hour: -25).to_s
   end
 
   def test_negative_hour_rolls_over_continuously
     skip
-    assert_equal "05:00", Clock.new(hour: -91, minute: 0).to_s
+    assert_equal "05:00", Clock.new(hour: -91).to_s
   end
 
   def test_negative_minutes

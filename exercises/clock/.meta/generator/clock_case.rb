@@ -26,13 +26,23 @@ class ClockCase < Generator::ExerciseCase
   private
 
   def compare_clocks
-    "clock1 = Clock.new(hour: #{input['clock1']['hour']}, minute: #{input['clock1']['minute']})
-    clock2 = Clock.new(hour: #{input['clock2']['hour']}, minute: #{input['clock2']['minute']})
+    first_hour = input['clock1']['hour']
+    first_minute = input['clock1']['minute']
+    second_hour = input['clock2']['hour']
+    second_minute = input['clock2']['minute']
+
+    "clock1 = Clock.new(hour: #{first_hour}, minute: #{first_minute})
+    clock2 = Clock.new(hour: #{second_hour}, minute: #{second_minute})
     #{assert} clock1 == clock2"
   end
 
   def simple_test
-    "assert_equal #{expected.inspect}, Clock.new(hour: #{input['hour']}, minute: #{input['minute']}).to_s"
+    [
+      "assert_equal #{expected.inspect}, ",
+      "Clock.new(#{"hour: #{input['hour']}" unless input['hour'] == 0}",
+      "#{", " unless input['hour'] == 0 || input['minute'] == 0}",
+      "#{"minute: #{input['minute']}" unless input['minute'] == 0}).to_s"
+    ].join
   end
 
   def add_to_clock
