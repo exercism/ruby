@@ -12,10 +12,12 @@ class Clock
 
   def +(other)
     @internal += other.internal
+    self
   end
 
   def -(other)
-    @internal += other.internal
+    @internal -= other.internal
+    self
   end
 
   def ==(other)
