@@ -4,21 +4,18 @@ end
 
 # Clock without dates exercise
 class Clock
-  def self.at(*args)
-    Clock.new(*args)
+
+  attr_reader :internal
+  def initialize(hour: 0, minute: 0)
+    @internal = hour * 60 + minute
   end
 
-  def initialize(hours=0, minutes=0)
-    @internal = hours * 60 + minutes
+  def +(other)
+    @internal += other.internal
   end
 
-  def +(hours=0, minutes)
-    @internal += hours * 60 + minutes
-    self
-  end
-
-  def -(*args)
-    self.+(*args.map(&:-@))
+  def -(other)
+    @internal += other.internal
   end
 
   def ==(other)
