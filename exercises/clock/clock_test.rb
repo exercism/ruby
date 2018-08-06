@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'clock'
 
-# Common test data version: 1.0.1 54c3b74
+# Common test data version: 2.2.1 8b96944
 class ClockTest < Minitest::Test
   def test_on_the_hour
     # skip
@@ -100,114 +100,98 @@ class ClockTest < Minitest::Test
 
   def test_add_minutes
     skip
-    clock = Clock.new(hour: 10, minute: 0)
-    clock + Clock.new(minute: 3)
-    assert_equal "10:03", clock.to_s
+    clock1 = Clock.new(hour: 10, minute: 0)
+    assert_equal "10:03", (clock1 + Clock.new(minute: 3)).to_s
   end
 
   def test_add_no_minutes
     skip
-    clock = Clock.new(hour: 6, minute: 41)
-    clock + Clock.new(minute: 0)
-    assert_equal "06:41", clock.to_s
+    clock1 = Clock.new(hour: 6, minute: 41)
+    assert_equal "06:41", (clock1 + Clock.new(minute: 0)).to_s
   end
 
   def test_add_to_next_hour
     skip
-    clock = Clock.new(hour: 0, minute: 45)
-    clock + Clock.new(minute: 40)
-    assert_equal "01:25", clock.to_s
+    clock1 = Clock.new(hour: 0, minute: 45)
+    assert_equal "01:25", (clock1 + Clock.new(minute: 40)).to_s
   end
 
   def test_add_more_than_one_hour
     skip
-    clock = Clock.new(hour: 10, minute: 0)
-    clock + Clock.new(minute: 61)
-    assert_equal "11:01", clock.to_s
+    clock1 = Clock.new(hour: 10, minute: 0)
+    assert_equal "11:01", (clock1 + Clock.new(minute: 61)).to_s
   end
 
   def test_add_more_than_two_hours_with_carry
     skip
-    clock = Clock.new(hour: 0, minute: 45)
-    clock + Clock.new(minute: 160)
-    assert_equal "03:25", clock.to_s
+    clock1 = Clock.new(hour: 0, minute: 45)
+    assert_equal "03:25", (clock1 + Clock.new(minute: 160)).to_s
   end
 
   def test_add_across_midnight
     skip
-    clock = Clock.new(hour: 23, minute: 59)
-    clock + Clock.new(minute: 2)
-    assert_equal "00:01", clock.to_s
+    clock1 = Clock.new(hour: 23, minute: 59)
+    assert_equal "00:01", (clock1 + Clock.new(minute: 2)).to_s
   end
 
   def test_add_more_than_one_day__1500_min_is_equal_to_25_hrs
     skip
-    clock = Clock.new(hour: 5, minute: 32)
-    clock + Clock.new(minute: 1500)
-    assert_equal "06:32", clock.to_s
+    clock1 = Clock.new(hour: 5, minute: 32)
+    assert_equal "06:32", (clock1 + Clock.new(minute: 1500)).to_s
   end
 
   def test_add_more_than_two_days
     skip
-    clock = Clock.new(hour: 1, minute: 1)
-    clock + Clock.new(minute: 3500)
-    assert_equal "11:21", clock.to_s
+    clock1 = Clock.new(hour: 1, minute: 1)
+    assert_equal "11:21", (clock1 + Clock.new(minute: 3500)).to_s
   end
 
   def test_subtract_minutes
     skip
-    clock = Clock.new(hour: 10, minute: 3)
-    clock + Clock.new(minute: -3)
-    assert_equal "10:00", clock.to_s
+    clock1 = Clock.new(hour: 10, minute: 3)
+    assert_equal "10:00", (clock1 - Clock.new(minute: 3)).to_s
   end
 
   def test_subtract_to_previous_hour
     skip
-    clock = Clock.new(hour: 10, minute: 3)
-    clock + Clock.new(minute: -30)
-    assert_equal "09:33", clock.to_s
+    clock1 = Clock.new(hour: 10, minute: 3)
+    assert_equal "09:33", (clock1 - Clock.new(minute: 30)).to_s
   end
 
   def test_subtract_more_than_an_hour
     skip
-    clock = Clock.new(hour: 10, minute: 3)
-    clock + Clock.new(minute: -70)
-    assert_equal "08:53", clock.to_s
+    clock1 = Clock.new(hour: 10, minute: 3)
+    assert_equal "08:53", (clock1 - Clock.new(minute: 70)).to_s
   end
 
   def test_subtract_across_midnight
     skip
-    clock = Clock.new(hour: 0, minute: 3)
-    clock + Clock.new(minute: -4)
-    assert_equal "23:59", clock.to_s
+    clock1 = Clock.new(hour: 0, minute: 3)
+    assert_equal "23:59", (clock1 - Clock.new(minute: 4)).to_s
   end
 
   def test_subtract_more_than_two_hours
     skip
-    clock = Clock.new(hour: 0, minute: 0)
-    clock + Clock.new(minute: -160)
-    assert_equal "21:20", clock.to_s
+    clock1 = Clock.new(hour: 0, minute: 0)
+    assert_equal "21:20", (clock1 - Clock.new(minute: 160)).to_s
   end
 
   def test_subtract_more_than_two_hours_with_borrow
     skip
-    clock = Clock.new(hour: 6, minute: 15)
-    clock + Clock.new(minute: -160)
-    assert_equal "03:35", clock.to_s
+    clock1 = Clock.new(hour: 6, minute: 15)
+    assert_equal "03:35", (clock1 - Clock.new(minute: 160)).to_s
   end
 
   def test_subtract_more_than_one_day__1500_min_is_equal_to_25_hrs
     skip
-    clock = Clock.new(hour: 5, minute: 32)
-    clock + Clock.new(minute: -1500)
-    assert_equal "04:32", clock.to_s
+    clock1 = Clock.new(hour: 5, minute: 32)
+    assert_equal "04:32", (clock1 - Clock.new(minute: 1500)).to_s
   end
 
   def test_subtract_more_than_two_days
     skip
-    clock = Clock.new(hour: 2, minute: 20)
-    clock + Clock.new(minute: -3000)
-    assert_equal "00:20", clock.to_s
+    clock1 = Clock.new(hour: 2, minute: 20)
+    assert_equal "00:20", (clock1 - Clock.new(minute: 3000)).to_s
   end
 
   def test_clocks_with_same_time

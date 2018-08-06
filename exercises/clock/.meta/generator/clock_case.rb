@@ -9,20 +9,25 @@ class ClockCase < Generator::ExerciseCase
   end
 
   def workload
-    if property == 'create'
+    case property
+    when 'create'
       simple_test
-    elsif property == 'add minutes'
+    when 'add'
       add_to_clock
-    else
+    when 'subtract'
+      subtract_from_clock
+    when 'equal'
       compare_clocks
+    else
+      raise "Encountered unknown property in canonical-data.json"
     end
   end
 
   private
 
   def compare_clocks
-    "clock1 = Clock.new(hour: #{clock1['hour']}, minute: #{clock1['minute']})
-    clock2 = Clock.new(hour: #{clock2['hour']}, minute: #{clock2['minute']})
+    "clock1 = Clock.new(hour: #{input['clock1']['hour']}, minute: #{input['clock1']['minute']})
+    clock2 = Clock.new(hour: #{input['clock2']['hour']}, minute: #{input['clock2']['minute']})
     #{assert} clock1 == clock2"
   end
 
@@ -31,9 +36,12 @@ class ClockCase < Generator::ExerciseCase
   end
 
   def add_to_clock
-    "clock = Clock.new(hour: #{input['hour']}, minute: #{input['minute']})
-    clock + Clock.new(minute: #{input['value']})
-    assert_equal #{expected.inspect}, clock.to_s"
+    "clock1 = Clock.new(hour: #{input['hour']}, minute: #{input['minute']})
+    assert_equal #{expected.inspect}, (clock1 + Clock.new(minute: #{input['value']})).to_s"
   end
 
+  def subtract_from_clock
+    "clock1 = Clock.new(hour: #{input['hour']}, minute: #{input['minute']})
+    assert_equal #{expected.inspect}, (clock1 - Clock.new(minute: #{input['value']})).to_s"
+  end
 end
