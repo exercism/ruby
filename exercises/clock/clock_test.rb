@@ -252,14 +252,14 @@ class ClockTest < Minitest::Test
     assert clock1 == clock2
   end
 
-  def test_clocks_with_negative_hour_thnew_wraps
+  def test_clocks_with_negative_hour_that_wraps
     skip
     clock1 = Clock.new(hour: 17, minute: 3)
     clock2 = Clock.new(hour: -31, minute: 3)
     assert clock1 == clock2
   end
 
-  def test_clocks_with_negative_hour_thnew_wraps_multiple_times
+  def test_clocks_with_negative_hour_that_wraps_multiple_times
     skip
     clock1 = Clock.new(hour: 13, minute: 49)
     clock2 = Clock.new(hour: -83, minute: 49)
@@ -287,14 +287,14 @@ class ClockTest < Minitest::Test
     assert clock1 == clock2
   end
 
-  def test_clocks_with_negative_minute_thnew_wraps
+  def test_clocks_with_negative_minute_that_wraps
     skip
     clock1 = Clock.new(hour: 4, minute: 10)
     clock2 = Clock.new(hour: 5, minute: -1490)
     assert clock1 == clock2
   end
 
-  def test_clocks_with_negative_minute_thnew_wraps_multiple_times
+  def test_clocks_with_negative_minute_that_wraps_multiple_times
     skip
     clock1 = Clock.new(hour: 6, minute: 15)
     clock2 = Clock.new(hour: 6, minute: -4305)
@@ -308,7 +308,7 @@ class ClockTest < Minitest::Test
     assert clock1 == clock2
   end
 
-  def test_clocks_with_negative_hours_and_minutes_thnew_wrap
+  def test_clocks_with_negative_hours_and_minutes_that_wrap
     skip
     clock1 = Clock.new(hour: 18, minute: 7)
     clock2 = Clock.new(hour: -54, minute: -11513)
