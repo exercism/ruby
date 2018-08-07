@@ -5,18 +5,18 @@ end
 # Clock without dates exercise
 class Clock
 
-  attr_reader :internal
+  attr_reader :total_minutes
   def initialize(hour: 0, minute: 0)
-    @internal = hour * 60 + minute
+    @total_minutes = hour * 60 + minute
   end
 
   def +(other)
-    @internal += other.internal
+    @total_minutes += other.total_minutes
     self
   end
 
   def -(other)
-    @internal -= other.internal
+    @total_minutes -= other.total_minutes
     self
   end
 
@@ -31,7 +31,7 @@ class Clock
   private
 
   def time
-    [hours_from(@internal), just_minutes(@internal)]
+    [hours_from(@total_minutes), just_minutes(@total_minutes)]
   end
 
   def hours_from(minutes)
