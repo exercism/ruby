@@ -1,24 +1,23 @@
 module BookKeeping
-  VERSION = 2
+  VERSION = 3
 end
 
 # Clock without dates exercise
 class Clock
-  def self.at(*args)
-    Clock.new(*args)
+
+  attr_reader :total_minutes
+  def initialize(hour: 0, minute: 0)
+    @total_minutes = hour * 60 + minute
   end
 
-  def initialize(hours=0, minutes=0)
-    @internal = hours * 60 + minutes
-  end
-
-  def +(hours=0, minutes)
-    @internal += hours * 60 + minutes
+  def +(other)
+    @total_minutes += other.total_minutes
     self
   end
 
-  def -(*args)
-    self.+(*args.map(&:-@))
+  def -(other)
+    @total_minutes -= other.total_minutes
+    self
   end
 
   def ==(other)
@@ -32,7 +31,7 @@ class Clock
   private
 
   def time
-    [hours_from(@internal), just_minutes(@internal)]
+    [hours_from(@total_minutes), just_minutes(@total_minutes)]
   end
 
   def hours_from(minutes)
