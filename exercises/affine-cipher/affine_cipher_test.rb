@@ -1,54 +1,69 @@
 require 'minitest/autorun'
 require_relative 'affine_cipher'
 
-class AffineTest < Minitest::Test
+# Common test data version: 1.0.0 377d917
+class AffineCipherTest < Minitest::Test
   def test_encode_yes
-    #skip
+    # skip
     cipher = Affine.new
     cipher.addkey(5, 7)
-    assert_equal 'xbt', cipher.encode('yes')
+    plaintext = 'yes'
+    ciphertext = 'xbt'
+    assert_equal ciphertext, cipher.encode(plaintext)
   end
 
   def test_encode_no
     skip
     cipher = Affine.new
     cipher.addkey(15, 18)
-    assert_equal 'fu', cipher.encode('no')
+    plaintext = 'no'
+    ciphertext = 'fu'
+    assert_equal ciphertext, cipher.encode(plaintext)
   end
 
-  def test_encode_OMG
+  def test_encode_omg
     skip
     cipher = Affine.new
     cipher.addkey(21, 3)
-    assert_equal 'lvz', cipher.encode('OMG')
+    plaintext = 'OMG'
+    ciphertext = 'lvz'
+    assert_equal ciphertext, cipher.encode(plaintext)
   end
 
-  def test_encode_O_M_G
+  def test_encode_o_m_g
     skip
     cipher = Affine.new
     cipher.addkey(25, 47)
-    assert_equal 'hjp', cipher.encode('O M G')
+    plaintext = 'O M G'
+    ciphertext = 'hjp'
+    assert_equal ciphertext, cipher.encode(plaintext)
   end
 
   def test_encode_mindblowingly
     skip
     cipher = Affine.new
     cipher.addkey(11, 15)
-    assert_equal 'rzcwa gnxzc dgt', cipher.encode('mindblowingly')
+    plaintext = 'mindblowingly'
+    ciphertext = 'rzcwa gnxzc dgt'
+    assert_equal ciphertext, cipher.encode(plaintext)
   end
 
   def test_encode_numbers
     skip
-    cipher= Affine.new
+    cipher = Affine.new
     cipher.addkey(3, 4)
-    assert_equal 'jqgjc rw123 jqgjc rw', cipher.encode('Testing,1 2 3, testing')
+    plaintext = 'Testing,1 2 3, testing.'
+    ciphertext = 'jqgjc rw123 jqgjc rw'
+    assert_equal ciphertext, cipher.encode(plaintext)
   end
 
   def test_encode_deep_thought
     skip
     cipher = Affine.new
     cipher.addkey(5, 17)
-    assert_equal 'iynia fdqfb ifje', cipher.encode('Truth is fiction.')
+    plaintext = 'Truth is fiction.'
+    ciphertext = 'iynia fdqfb ifje'
+    assert_equal ciphertext, cipher.encode(plaintext)
   end
 
   def test_encode_all_the_letters
@@ -70,7 +85,9 @@ class AffineTest < Minitest::Test
     skip
     cipher = Affine.new
     cipher.addkey(3, 7)
-    assert_equal 'exercism', cipher.decode('tytgn fjr')
+    plaintext = 'exercism'
+    ciphertext = 'tytgn fjr'
+    assert_equal plaintext, cipher.decode(ciphertext)
   end
 
   def test_decode_a_sentence
@@ -86,7 +103,9 @@ class AffineTest < Minitest::Test
     skip
     cipher = Affine.new
     cipher.addkey(25, 7)
-    assert_equal 'testing123testing', cipher.decode('odpoz ub123 odpoz ub')
+    plaintext = 'testing123testing'
+    ciphertext = 'odpoz ub123 odpoz ub'
+    assert_equal plaintext, cipher.decode(ciphertext)
   end
 
   def test_decode_all_the_letters
@@ -111,12 +130,36 @@ class AffineTest < Minitest::Test
     skip
     cipher = Affine.new
     cipher.addkey(15, 16)
-    assert_equal 'jollygreengiant', cipher.decode('vszzm    cly   yd cg    qdp')
+    plaintext = 'jollygreengiant'
+    ciphertext = 'vszzm    cly   yd cg    qdp'
+    assert_equal plaintext, cipher.decode(ciphertext)
   end
 
   def test_decode_with_a_not_coprime_to_m
     skip
     cipher = Affine.new
     assert_raises(ArgumentError) { cipher.addkey(13, 5) }
+  end
+
+  # Problems in exercism evolve over time, as we find better ways to ask
+  # questions.
+  # The version number refers to the version of the problem you solved,
+  # not your solution.
+  #
+  # Define a constant named VERSION inside of the top level BookKeeping
+  # module, which may be placed near the end of your file.
+  #
+  # In your file, it will look like this:
+  #
+  # module BookKeeping
+  #   VERSION = 1 # Where the version number matches the one in the test.
+  # end
+  #
+  # If you are curious, read more about constants on RubyDoc:
+  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
+
+  def test_bookkeeping
+    skip
+    assert_equal 1, BookKeeping::VERSION
   end
 end
