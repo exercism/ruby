@@ -3,23 +3,25 @@ require 'generator/exercise_case'
 class AffineCipherCase < Generator::ExerciseCase
 
   def workload
-    if expected.start_with?("Error:")
-      error_workload
-    elsif property == "encode"
-      encode_workload
-    elsif property == "decode"
-      decode_workload
+    return error_workload if error_expected?
+    case property
+    when 'encode' then encode_workload
+    when 'decode' then decode_workload
+    else raise 'unexpected property encountered'
     end
   end
 
   private
 
+  def error_expected?
+    Hash === expected && expected.key?('error')
+  end
+
   def encode_workload
-    a, b = input['key']['a'], input['key']['b']
+    key_a, key_b = input['key']['a'], input['key']['b']
     indent_lines(
       [
-        "cipher = Affine.new",
-        "cipher.addkey(#{a}, #{b})",
+        "cipher = Affine.new(#{key_a}, #{key_b})",
         "plaintext = '#{input['phrase']}'",
         "ciphertext = '#{expected}'",
         "assert_equal ciphertext, cipher.encode(plaintext)"
@@ -28,11 +30,10 @@ class AffineCipherCase < Generator::ExerciseCase
   end
 
   def decode_workload
-    a, b = input['key']['a'], input['key']['b']
+    key_a, key_b = input['key']['a'], input['key']['b']
     indent_lines(
       [
-        "cipher = Affine.new",
-        "cipher.addkey(#{a}, #{b})",
+        "cipher = Affine.new(#{key_a}, #{key_b})",
         "plaintext = '#{expected}'",
         "ciphertext = '#{input['phrase']}'",
         "assert_equal plaintext, cipher.decode(ciphertext)"
@@ -41,12 +42,10 @@ class AffineCipherCase < Generator::ExerciseCase
   end
 
   def error_workload
-    a, b = input['key']['a'], input['key']['b']
-    indent_lines(
-      [
-        "cipher = Affine.new",
-        "assert_raises(ArgumentError) { cipher.addkey(#{a}, #{b}) }"
-      ], 4
+    key_a, key_b = input['key']['a'], input['key']['b']
+    indent_text(
+        4,
+        "assert_raises(ArgumentError) { Affine.new(#{key_a}, #{key_b}) }"
     )
   end
 end

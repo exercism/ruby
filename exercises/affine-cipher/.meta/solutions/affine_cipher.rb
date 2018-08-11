@@ -1,22 +1,17 @@
 # encryption formula is E(x) = (a * x - b) % m
 # decryption formula is D(E(x)) = a^-1(E(x) - b) % m
 module BookKeeping
-  VERSION = 1
+  VERSION = 2
 end
 
 class Affine
 
 attr_reader :key
 
-  def initialize
+  def initialize(a, b)
     @alphabet = ('a'..'z').to_a
-  end
-
-  def addkey(a, b)
-
     @key = [a, b]; coprime_check(key[0])
     @cipherbet = make_cipherbet.join
-
   end
 
   def encode(string)
