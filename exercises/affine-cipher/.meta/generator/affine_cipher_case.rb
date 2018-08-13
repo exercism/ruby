@@ -17,8 +17,15 @@ class AffineCipherCase < Generator::ExerciseCase
     Hash === expected && expected.key?('error')
   end
 
+  def key_a
+    input['key']['a']
+  end
+
+  def key_b
+    input['key']['b']
+  end
+
   def encode_workload
-    key_a, key_b = input['key']['a'], input['key']['b']
     indent_lines(
       [
         "cipher = Affine.new(#{key_a}, #{key_b})",
@@ -30,19 +37,17 @@ class AffineCipherCase < Generator::ExerciseCase
   end
 
   def decode_workload
-    key_a, key_b = input['key']['a'], input['key']['b']
     indent_lines(
       [
         "cipher = Affine.new(#{key_a}, #{key_b})",
-        "plaintext = '#{expected}'",
         "ciphertext = '#{input['phrase']}'",
+        "plaintext = '#{expected}'",
         "assert_equal plaintext, cipher.decode(ciphertext)"
       ], 4
     )
   end
 
   def error_workload
-    key_a, key_b = input['key']['a'], input['key']['b']
     indent_text(
         4,
         "assert_raises(ArgumentError) { Affine.new(#{key_a}, #{key_b}) }"

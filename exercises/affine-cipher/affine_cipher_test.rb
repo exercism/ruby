@@ -75,48 +75,48 @@ class AffineCipherTest < Minitest::Test
   def test_decode_exercism
     skip
     cipher = Affine.new(3, 7)
-    plaintext = 'exercism'
     ciphertext = 'tytgn fjr'
+    plaintext = 'exercism'
     assert_equal plaintext, cipher.decode(ciphertext)
   end
 
   def test_decode_a_sentence
     skip
     cipher = Affine.new(19, 16)
-    plaintext = 'anobstacleisoftenasteppingstone'
     ciphertext = 'qdwju nqcro muwhn odqun oppmd aunwd o'
+    plaintext = 'anobstacleisoftenasteppingstone'
     assert_equal plaintext, cipher.decode(ciphertext)
   end
 
   def test_decode_numbers
     skip
     cipher = Affine.new(25, 7)
-    plaintext = 'testing123testing'
     ciphertext = 'odpoz ub123 odpoz ub'
+    plaintext = 'testing123testing'
     assert_equal plaintext, cipher.decode(ciphertext)
   end
 
   def test_decode_all_the_letters
     skip
     cipher = Affine.new(17, 33)
-    plaintext = 'thequickbrownfoxjumpsoverthelazydog'
     ciphertext = 'swxtj npvyk lruol iejdc blaxk swxmh qzglf'
+    plaintext = 'thequickbrownfoxjumpsoverthelazydog'
     assert_equal plaintext, cipher.decode(ciphertext)
   end
 
   def test_decode_with_no_spaces_in_input
     skip
     cipher = Affine.new(17, 33)
-    plaintext = 'thequickbrownfoxjumpsoverthelazydog'
     ciphertext = 'swxtjnpvyklruoliejdcblaxkswxmhqzglf'
+    plaintext = 'thequickbrownfoxjumpsoverthelazydog'
     assert_equal plaintext, cipher.decode(ciphertext)
   end
 
   def test_decode_with_too_many_spaces
     skip
     cipher = Affine.new(15, 16)
-    plaintext = 'jollygreengiant'
     ciphertext = 'vszzm    cly   yd cg    qdp'
+    plaintext = 'jollygreengiant'
     assert_equal plaintext, cipher.decode(ciphertext)
   end
 
@@ -144,6 +144,6 @@ class AffineCipherTest < Minitest::Test
 
   def test_bookkeeping
     skip
-    assert_equal 2, BookKeeping::VERSION
+    assert_equal 1, BookKeeping::VERSION
   end
 end
