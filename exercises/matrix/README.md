@@ -1,7 +1,6 @@
 # Matrix
 
-Given a string representing a matrix of numbers, return the rows and columns of
-that matrix.
+Given a string representing a matrix of numbers, return the rows and columns of that matrix.
 
 So given a string with embedded newlines like:
 
@@ -23,10 +22,8 @@ representing this matrix:
 
 your code should be able to spit out:
 
-- A list of the rows, reading each row left-to-right while moving
-  top-to-bottom across the rows,
-- A list of the columns, reading each column top-to-bottom while moving
-  from left-to-right.
+- A list of the rows, reading each row left-to-right while moving top-to-bottom across the rows,
+- A list of the columns, reading each column top-to-bottom while moving from left-to-right.
 
 The rows for our example matrix:
 
@@ -45,14 +42,11 @@ And its columns:
 For installation and learning resources, refer to the
 [exercism help page](http://exercism.io/languages/ruby).
 
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
+For running the tests provided, you will need the Minitest gem. Open aterminal window and run the following command to install minitest:
 
     gem install minitest
 
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
+If you would like color output, you can `require 'minitest/pride'` in the test file, or note the alternative instruction, below, for running the test file.
 
 Run the tests from the exercise directory using the following command:
 
