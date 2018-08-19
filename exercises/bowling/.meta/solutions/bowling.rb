@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 3
-end
-
 class Game
   PINS = { MIN: 0, MAX: 10 }.freeze
   at_exit { public :roll, :score }

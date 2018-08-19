@@ -87,8 +87,4 @@ class RobotTest < Minitest::Test
     assert seen_names.values.all? { |count| count == 1 }, "Some names used more than once"
     assert seen_names.keys.all? { |name| name.match(NAME_REGEXP) }, "Not all names match #{NAME_REGEXP}"
   end
-
-  def test_version
-    assert_equal 3, BookKeeping::VERSION
-  end
 end

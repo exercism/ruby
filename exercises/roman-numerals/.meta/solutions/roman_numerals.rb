@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 2
-end
-
 class Integer
   def to_roman
     i = self

@@ -69,7 +69,7 @@ INPUT
       g
       l
       e
-       
+
       l
       i
       n
@@ -90,13 +90,13 @@ INPUT
       TT
       hh
       ee
-        
+
       ff
       oi
       uf
       rt
       th
-      h 
+      h
        l
       li
       in
@@ -118,14 +118,14 @@ INPUT
       TT
       hh
       ee
-        
+
       fs
       ie
       rc
       so
       tn
        d
-      l 
+      l
       il
       ni
       en
@@ -223,49 +223,49 @@ INPUT
       hnrhr hohnhshh
       o oeopotedi ea
       rfmrmash  cn t
-      .a e ie fthow 
+      .a e ie fthow
        ia fr weh,whh
       Trnco miae  ie
       w ciroitr btcr
       oVivtfshfcuhhe
-       eeih a uote  
+       eeih a uote
       hrnl sdtln  is
       oot ttvh tttfh
       un bhaeepihw a
       saglernianeoyl
       e,ro -trsui ol
-      h uofcu sarhu 
+      h uofcu sarhu
       owddarrdan o m
       lhg to'egccuwi
       deemasdaeehris
       sr als t  ists
       ,ebk 'phool'h,
-        reldi ffd   
+        reldi ffd
       bweso tb  rtpo
       oea ileutterau
       t kcnoorhhnatr
-      hl isvuyee'fi 
+      hl isvuyee'fi
        atv es iisfet
       ayoior trr ino
       l  lfsoh  ecti
       ion   vedpn  l
-      kuehtteieadoe 
+      kuehtteieadoe
       erwaharrar,fas
          nekt te  rh
       ismdsehphnnosa
       ncuse ra-tau l
        et  tormsural
-      dniuthwea'g t 
+      dniuthwea'g t
       iennwesnr hsts
       g,ycoi tkrttet
       n ,l r s'a anr
       i  ef  'dgcgdi
       t  aol   eoe,v
       y  nei sl,u; e
-      ,  .sf to l   
+      ,  .sf to l
            e rv d  t
            ; ie    o
-             f, r   
+             f, r
              e  e  m
              .  m  e
                 o  n
@@ -274,27 +274,5 @@ INPUT
                 ,
 EXPECTED
     assert_equal expected.strip, actual
-  end
-
-  # Problems in exercism evolve over time, as we find better ways to ask
-  # questions.
-  # The version number refers to the version of the problem you solved,
-  # not your solution.
-  #
-  # Define a constant named VERSION inside of the top level BookKeeping
-  # module, which may be placed near the end of your file.
-  #
-  # In your file, it will look like this:
-  #
-  # module BookKeeping
-  #   VERSION = 1 # Where the version number matches the one in the test.
-  # end
-  #
-  # If you are curious, read more about constants on RubyDoc:
-  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-
-  def test_bookkeeping
-    skip
-    assert_equal 1, BookKeeping::VERSION
   end
 end

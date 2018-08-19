@@ -34,19 +34,6 @@ class FoodChainTest < Minitest::Test
       assert_raises(NoCheating) { FoodChain.send :class_eval, trigger }
     end
   end
-
-  # Problems in exercism evolve over time,
-  # as we find better ways to ask questions.
-  # The version number refers to the version of the problem you solved,
-  # not your solution.
-  #
-  # Define a constant named VERSION inside of BookKeeping.
-  # If you are curious, read more about constants on RubyDoc:
-  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-  def test_version
-    skip
-    assert_equal 2, BookKeeping::VERSION
-  end
 end
 
 module RestrictedClasses

@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 2
-end
-
 class BaseConverter
   def self.convert(base_from, number_array, base_to)
     fail ArgumentError if invalid_inputs?(base_from, number_array, base_to)

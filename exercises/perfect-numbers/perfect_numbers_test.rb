@@ -19,8 +19,4 @@ class PerfectNumberTest < Minitest::Test
   def test_classify_abundant
     assert_equal 'abundant', PerfectNumber.classify(12)
   end
-
-  def test_bookkeeping
-    assert_equal 1, BookKeeping::VERSION
-  end
 end

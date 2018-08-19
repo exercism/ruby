@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 6
-end
-
 class Gigasecond
   SECONDS = 10**9
 

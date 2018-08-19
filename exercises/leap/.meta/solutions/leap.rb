@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 3
-end
-
 class Year
   attr_reader :number
 

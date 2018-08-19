@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 3
-end
-
 # Clock without dates exercise
 class Clock
 

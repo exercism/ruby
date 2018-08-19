@@ -1,6 +1,3 @@
-module Bookkeeping
-  VERSION = 1
-end
 class Diamond
   def self.make_diamond(letter)
     script = ""

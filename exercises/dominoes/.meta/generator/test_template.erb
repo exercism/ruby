@@ -10,11 +10,6 @@ class DominoesTest < Minitest::Test
   end
 
 <% end %>
-<%= IO.read(EXERCISM_RUBY_LIB + '/bookkeeping.md') %>
-  def test_bookkeeping
-    skip
-    assert_equal <%= version %>, BookKeeping::VERSION
-  end
 
   # It's infeasible to use example-based tests for this exercise,
   # because the list of acceptable answers for a given input can be quite large.

@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 1
-end
-
 class Transpose
   def self.transpose(input)
     lines = input.split("\n")

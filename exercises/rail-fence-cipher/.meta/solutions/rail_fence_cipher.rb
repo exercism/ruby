@@ -1,7 +1,5 @@
 # rubocop:enable all
 class RailFenceCipher
-  VERSION = 1
-
   def self.encode(message, rails)
     return message if message.empty? || rails == 1
     empty_fences = create_empty_fences_array(message, rails)

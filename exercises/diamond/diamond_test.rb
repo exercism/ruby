@@ -32,9 +32,4 @@ class DiamondTest < Minitest::Test
              "    A    \n"
     assert_equal string, answer
   end
-
-  def test_bookkeeping
-    skip
-    assert_equal 1, Bookkeeping::VERSION
-  end
 end

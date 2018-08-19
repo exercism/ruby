@@ -24,7 +24,3 @@ class Luhn
     @string.match(/^\d{2,}$/)
   end
 end
-
-module BookKeeping
-  VERSION = 1
-end

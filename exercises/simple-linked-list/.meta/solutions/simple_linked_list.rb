@@ -53,7 +53,3 @@ class SimpleLinkedList
     array.each { |value| push(Element.new(value)) }
   end
 end
-
-module BookKeeping
-  VERSION = 1
-end

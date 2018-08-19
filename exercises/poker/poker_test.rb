@@ -193,8 +193,4 @@ class PokerTest < Minitest::Test
     game = Poker.new(hands)
     assert_equal [spade_straight_to_9, diamond_straight_to_9], game.best_hand
   end
-
-  def test_bookkeeping
-    assert_equal 2, BookKeeping::VERSION
-  end
 end

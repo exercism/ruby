@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 2
-end
-
 class Change
   attr_reader :coins, :target
 
@@ -28,7 +24,7 @@ class Change
   attr_accessor :total_change
 
   def calculate_change(current_coins, current_change, current_value)
-    available_coins = current_coins.reject {|d| d > current_value } 
+    available_coins = current_coins.reject {|d| d > current_value }
 
     save_change(current_change) if current_value.zero?
 

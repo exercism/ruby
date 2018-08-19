@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 2
-end
-
 class Poker
 
   def initialize(hand_arrays)

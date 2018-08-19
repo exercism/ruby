@@ -20,7 +20,3 @@ class School
     { grade: level, students: students(level) }
   end
 end
-
-module BookKeeping
-  VERSION = 3
-end

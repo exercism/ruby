@@ -43,7 +43,3 @@ class ComplexNumber
    self.class.new(Math.exp(@real)) * self.class.new(Math.cos(@imaginary), Math.sin(@imaginary))
   end
 end
-
-module BookKeeping
-  VERSION = 1
-end

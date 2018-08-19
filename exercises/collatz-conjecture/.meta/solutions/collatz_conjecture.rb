@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 1
-end
-
 module CollatzConjecture
   def self.steps(num)
     raise ArgumentError if num < 1
@@ -18,5 +14,3 @@ module CollatzConjecture
     steps
   end
 end
-
-

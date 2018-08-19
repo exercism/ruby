@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 1
-end
-
 class Triangle
   attr_reader :sides
 

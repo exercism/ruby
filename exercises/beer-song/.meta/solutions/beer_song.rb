@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 3
-end
-
 class BeerSong
   def verses(upper_bound, lower_bound)
     upper_bound.downto(lower_bound).map { |i| verse(i) }.join("\n")
