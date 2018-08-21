@@ -31,17 +31,6 @@ A few exercises use a custom test template:
 
 * `.meta/generator/test_template.erb`
 
-### BookKeeping::VERSION
-
-For some, even perhaps many, of the exercises, you will find a reference to
-the `BookKeeping` module, but this is only included when tests have been
-generated; see [Generated Test Suites](#generated-test-suites).  This
-`VERSION` number helps make sure exercise solvers and exercise reviewers know
-which revision of the test suite they are talking about, and it theoretically
-helps avoid reviewer feedback like *"Your solution doesn't make the tests
-pass,"* if they are looking at a different version of the tests than the
-solver used.
-
 ### Canonical Data
 
 **Most exercises can be generated from shared inputs/outputs, called canonical
@@ -183,14 +172,7 @@ This will autogenerate all of the test cases for which generators exist.  Use
 `git diff` (or your preferred method) to find out which test files have
 changed.  Some exercises will update because someone updated the description
 or other exercise metadata.  Others will change because the actual test suite
-has changed.  If you find that an exercise's test suite (i.e. the actual
-tests, not just the line at the test data version number at the top of the
-tests) has changed, be sure to use `generate` to update the
-[BookKeeping::VERSION](#bookkeeping-version) number by running:
-
-```bash
-bin/generate --update <exercise-slug>
-```
+has changed.
 
 Once everything has been regenerated and updated, you're almost ready to
 submit your changes via pull request.  Please be sure to only update one
