@@ -16,6 +16,10 @@ module Generator
 
     attr_reader :repository, :exercise
 
+    def slug
+      exercise.slug
+    end
+
     def version
       tests_version.to_i
     end
