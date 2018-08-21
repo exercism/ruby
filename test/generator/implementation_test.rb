@@ -60,6 +60,7 @@ class AlphaTest < Minitest::Test
     # skip
     assert true
   end
+
 end
 TESTS_FILE
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
