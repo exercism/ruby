@@ -1,9 +1,5 @@
 # encryption formula is E(x) = (a * x - b) % m
 # decryption formula is D(E(x)) = a^-1(E(x) - b) % m
-module BookKeeping
-  VERSION = 1
-end
-
 class Affine
 
 attr_reader :key

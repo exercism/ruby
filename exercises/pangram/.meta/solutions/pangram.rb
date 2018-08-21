@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 6
-end
-
 class Pangram
   def self.pangram?(str)
     downcased_str = str.downcase

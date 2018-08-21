@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 71
-end
-
 Node = Struct.new(:value, :left, :right)
 
 Crumb = Struct.new(:direction, :value, :tree)

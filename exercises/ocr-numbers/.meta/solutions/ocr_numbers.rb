@@ -55,7 +55,3 @@ class OcrNumbers
     @first_row_width ||= rows.first.size
   end
 end
-
-module BookKeeping
-  VERSION = 1
-end

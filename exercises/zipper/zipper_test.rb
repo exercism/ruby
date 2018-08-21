@@ -17,7 +17,7 @@ class ZipperTest < Minitest::Test
           nil))
     zipper = Zipper.from_tree(tree)
     value = zipper.to_tree
-    expected = 
+    expected =
       Node.new(1,
         Node.new(2,
           nil,
@@ -80,7 +80,7 @@ class ZipperTest < Minitest::Test
           nil))
     zipper = Zipper.from_tree(tree)
     value = zipper.left.right.to_tree
-    expected = 
+    expected =
       Node.new(1,
         Node.new(2,
           nil,
@@ -143,7 +143,7 @@ class ZipperTest < Minitest::Test
           nil))
     zipper = Zipper.from_tree(tree)
     value = zipper.left.set_value(5).to_tree
-    expected = 
+    expected =
       Node.new(1,
         Node.new(5,
           nil,
@@ -170,7 +170,7 @@ class ZipperTest < Minitest::Test
           nil))
     zipper = Zipper.from_tree(tree)
     value = zipper.left.right.up.set_value(5).to_tree
-    expected = 
+    expected =
       Node.new(1,
         Node.new(5,
           nil,
@@ -200,7 +200,7 @@ class ZipperTest < Minitest::Test
       Node.new(5,
         nil,
         nil)).to_tree
-    expected = 
+    expected =
       Node.new(1,
         Node.new(2,
           Node.new(5,
@@ -229,7 +229,7 @@ class ZipperTest < Minitest::Test
           nil))
     zipper = Zipper.from_tree(tree)
     value = zipper.left.set_right(nil).to_tree
-    expected = 
+    expected =
       Node.new(1,
         Node.new(2,
           nil,
@@ -261,7 +261,7 @@ class ZipperTest < Minitest::Test
         Node.new(8,
           nil,
           nil))).to_tree
-    expected = 
+    expected =
       Node.new(1,
         Node.new(2,
           nil,
@@ -292,7 +292,7 @@ class ZipperTest < Minitest::Test
           nil))
     zipper = Zipper.from_tree(tree)
     value = zipper.left.right.set_value(5).to_tree
-    expected = 
+    expected =
       Node.new(1,
         Node.new(2,
           nil,
@@ -332,27 +332,5 @@ class ZipperTest < Minitest::Test
     expected_zipper = Zipper.from_tree(expected_tree)
     expected = expected_zipper.right
     assert_equal expected, value
-  end
-
-  # Problems in exercism evolve over time, as we find better ways to ask
-  # questions.
-  # The version number refers to the version of the problem you solved,
-  # not your solution.
-  #
-  # Define a constant named VERSION inside of the top level BookKeeping
-  # module, which may be placed near the end of your file.
-  #
-  # In your file, it will look like this:
-  #
-  # module BookKeeping
-  #   VERSION = 1 # Where the version number matches the one in the test.
-  # end
-  #
-  # If you are curious, read more about constants on RubyDoc:
-  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-
-  def test_bookkeeping
-    skip
-    assert_equal 71, BookKeeping::VERSION
   end
 end

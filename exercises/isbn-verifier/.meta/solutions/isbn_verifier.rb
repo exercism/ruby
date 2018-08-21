@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 1
-end
-
 class IsbnVerifier
   def self.valid?(str)
     return false unless /\A\d-?\d{3}-?\d{5}-?[\dX]\z/.match(str)

@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 3
-end
-
 class Tournament
   def self.tally(input)
     teams = Hash.new { |h, k| h[k] = Hash.new { |h, k| h[k] = 0 } }

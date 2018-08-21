@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 1
-end
-
 class RotationalCipher
   SMALL_LETTERS_RANGE = (97..122)
   BIG_LETTERS_RANGE   = (65..90)

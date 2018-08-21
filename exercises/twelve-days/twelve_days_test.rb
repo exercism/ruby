@@ -15,16 +15,4 @@ class TwelveDaysTest < Minitest::Test
     expected = IO.read(song_file)
     assert_equal expected, TwelveDays.song
   end
-
-  # Problems in exercism evolve over time,
-  # as we find better ways to ask questions.
-  # The version number refers to the version of the problem you solved,
-  # not your solution.
-  #
-  # Define a constant named VERSION inside of TwelveDays.
-  # If you're curious, read more about constants on RubyDoc:
-  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-  def test_version
-    assert_equal 2, BookKeeping::VERSION
-  end
 end

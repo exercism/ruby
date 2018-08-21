@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 4
-end
-
 class Squares
   attr_reader :max
 

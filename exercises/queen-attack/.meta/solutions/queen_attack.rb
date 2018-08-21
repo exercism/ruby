@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 2
-end
-
 class Queens
   attr_reader :white, :black
   def initialize(positions = {})

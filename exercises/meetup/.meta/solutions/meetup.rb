@@ -1,9 +1,5 @@
 require 'date'
 
-module BookKeeping
-  VERSION = 1
-end
-
 class Meetup
   def self.days_of_week
     [:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday]

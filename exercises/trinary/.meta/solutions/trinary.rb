@@ -15,7 +15,3 @@ class Trinary
     decimal
   end
 end
-
-module BookKeeping
-  VERSION = 1
-end

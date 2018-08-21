@@ -102,9 +102,4 @@ class ListOpsTest < Minitest::Test
     input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     assert_equal 3_628_800, ListOps.factorial_reducer(input)
   end
-
-  def test_bookkeeping
-    skip
-    assert_equal 2, BookKeeping::VERSION
-  end
 end

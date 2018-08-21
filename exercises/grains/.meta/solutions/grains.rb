@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 1
-end
-
 module Grains
   def self.square(number)
     fail ArgumentError if number <= 0 || number > 64

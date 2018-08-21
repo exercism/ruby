@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 1
-end
-
 class SpaceAge
   attr_reader :seconds
 
@@ -23,6 +19,5 @@ class SpaceAge
     define_method("on_#{planet}") do
       seconds / orbital_period
     end
-
   end
 end

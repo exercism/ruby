@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 4
-end
-
 class TwoBucket
   attr_reader :goal_bucket, :other_bucket
 

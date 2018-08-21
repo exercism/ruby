@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 4
-end
-
 class Acronym
   def self.abbreviate(phrase)
     [].tap do |letters|

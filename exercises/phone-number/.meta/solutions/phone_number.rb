@@ -23,7 +23,3 @@ module PhoneNumber
     matches.names.map(&:to_sym).zip(matches.captures).to_h if matches
   end
 end
-
-module BookKeeping
-  VERSION = 2
-end

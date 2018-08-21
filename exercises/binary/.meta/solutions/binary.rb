@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 3
-end
-
 class Binary
   def self.to_decimal binary
     fail ArgumentError.new("invalid binary input #{binary}") if invalid?(binary)

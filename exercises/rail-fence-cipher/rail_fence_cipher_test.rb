@@ -58,9 +58,4 @@ class RailFenceCipherTest < Minitest::Test
     assert_equal 'THEDEVILISINTHEDETAILS',
                  RailFenceCipher.decode('TEITELHDVLSNHDTISEIIEA', 3)
   end
-
-  def test_bookkeeping
-    skip
-    assert_equal 1, RailFenceCipher::VERSION
-  end
 end

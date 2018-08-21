@@ -1,7 +1,3 @@
-module BookKeeping
-  VERSION = 1
-end
-
 class PerfectNumber
   def self.classify(num)
     raise 'not a natural number' if num < 0
