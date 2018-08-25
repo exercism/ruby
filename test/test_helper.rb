@@ -29,4 +29,4 @@ end
 require 'minitest/autorun'
 
 # So we can be sure we have coverage on the whole lib directory:
-Dir.glob('lib/*.rb').each { |file| require file.gsub(%r{(^lib\/|\.rb$)}, '') }
+Dir.glob('lib/**/*.rb').each { |file| require file.gsub(%r{(^lib\/|\.rb$)}, '') }

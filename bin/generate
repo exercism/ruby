@@ -9,4 +9,19 @@ paths = Generator::Paths.new(track: EXERCISM_RUBY_ROOT, metadata: METADATA_REPOS
 generators = Generator::CommandLine.new(paths).parse(ARGV)
 exit 1 unless generators
 
-generators.map(&:call)
+broken_generator_slugs = []
+
+generators.each do |generator|
+  begin
+    generator.call
+  rescue
+    raise if generators.size == 1
+    broken_generator_slugs << generator.slug
+  end
+end
+
+unless broken_generator_slugs.empty?
+  puts "\n\nBroken generators: (Run these individually to see the error raised.)\n\n"
+  puts broken_generator_slugs
+end
+

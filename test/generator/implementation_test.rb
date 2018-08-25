@@ -8,6 +8,13 @@ module Generator
       track: 'test/fixtures/ruby'
     )
 
+    def test_slug
+      exercise = Minitest::Mock.new.expect :slug, 'alpha'
+      repository = nil
+      subject = Implementation.new(repository: repository, exercise: exercise)
+      assert_equal 'alpha', subject.slug
+    end
+
     def test_version
       exercise = Minitest::Mock.new.expect :slug, 'alpha'
       repository = Repository.new(paths: FixturePaths, slug: 'alpha')
