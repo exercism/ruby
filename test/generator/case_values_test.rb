@@ -10,6 +10,76 @@ module Generator
   end
 
   module CaseValues
+    class CanonicalTest < Minitest::Test
+      def test_works_when_expected_is_not_a_hash
+        subject = Canonical.new(expected: 123)
+        assert_equal 123, subject.expected
+      end
+
+      def test_accessor_by_input_key
+        subject = Canonical.new(input: { 'somevalue' => true })
+        assert subject.somevalue
+      end
+
+      def test_accessor_by_snake_cased_input_key
+        subject = Canonical.new(input: { 'someValue' => true })
+        assert subject.some_value
+      end
+
+      def test_accessor_by_input_prefixed_key
+        subject = Canonical.new(input: { 'value' => true })
+        assert subject.input_value
+      end
+
+      def test_alias_by_input_prefix_and_snake_case
+        subject = Canonical.new(input: { 'someValue' => true })
+        assert subject.input_some_value
+      end
+
+      def test_accessor_by_expected_key
+        subject = Canonical.new(expected: { 'value' => true })
+        assert subject.value
+      end
+
+      def test_accessor_by_snake_cased_expected_key
+        subject = Canonical.new(expected: { 'someValue' => true })
+        assert subject.some_value
+      end
+
+      def test_accessor_by_expected_prefixed_key
+        subject = Canonical.new(expected: { 'value' => true })
+        assert subject.expected_value
+      end
+
+      def test_accessor_by_expected_prefix_and_snake_case
+        subject = Canonical.new(expected: { 'someValue' => true })
+        assert subject.expected_some_value
+      end
+
+      def test_accessor_precedence_input_preferred_to_expected
+        subject = Canonical.new(
+          input: { 'somevalue' => :input_version },
+          expected: { 'somevalue' => :expected_version }
+        )
+        assert_equal :input_version, subject.somevalue
+      end
+
+      def test_respond_to_via_input
+        subject = Canonical.new( input: { 'somevalue' => true } )
+        assert subject.respond_to?(:somevalue)
+      end
+
+      def test_respond_to_via_expected
+        subject = Canonical.new( expected: { 'somevalue' => true } )
+        assert subject.respond_to?(:somevalue)
+      end
+
+      def test_respond_to_via_super
+        subject = Canonical.new( expected: { 'somevalue' => true } )
+        assert subject.respond_to?(:object_id)
+      end
+    end
+
     class ExtractorTest < Minitest::Test
       def test_multi_level_auto_extraction
         canonical_data = File.read('test/fixtures/metadata/exercises/complex/canonical-data.json')
