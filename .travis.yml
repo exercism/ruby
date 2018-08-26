@@ -6,7 +6,7 @@ rvm:
 install:
   - bundle install --quiet
 script:
-  - rubocop -fs -D
   - rake test
+  - rubocop -fs -D
   - bin/fetch-configlet
   - bin/configlet lint .
