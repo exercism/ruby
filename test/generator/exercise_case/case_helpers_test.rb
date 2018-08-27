@@ -3,6 +3,18 @@ require_relative '../../test_helper'
 module Generator
   class ExerciseCase
     class CaseHelpersTest < Minitest::Test
+      include CaseHelpers
+
+      def test_underscore_with_integer
+        assert_equal '1_234_567', underscore(1_234_567)
+      end
+
+      def test_underscore_with_string
+        err = assert_raises(ArgumentError) { underscore('A string') }
+        expected_message = /"A string" is not an Integer/
+        assert_match expected_message, err.message
+      end
+
       class MultiLineCase
         include CaseHelpers
 

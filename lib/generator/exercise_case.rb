@@ -1,11 +1,9 @@
 require 'ostruct'
 require 'generator/exercise_case/assertion'
 require 'generator/exercise_case/case_helpers'
-require 'generator/underscore'
 
 module Generator
   class ExerciseCase
-    using Generator::Underscore
     include CaseHelpers
     include Assertion
 
@@ -15,7 +13,7 @@ module Generator
     end
 
     def name
-      'test_%s' % canonical.description.strip.underscore
+      'test_%s' % canonical.description.strip.tr(' ', '_')
     end
 
     def skipped(index)
@@ -34,20 +32,5 @@ module Generator
     def respond_to?(sym, include_private = false)
       canonical.respond_to?(sym) || super
     end
-
-    protected
-
-    def literal(number)
-      number.underscore
-    end
-
-    def underscore(string)
-      string.underscore
-    end
-
-    def camel_case(string)
-      string.camel_case
-    end
-
   end
 end
