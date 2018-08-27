@@ -20,6 +20,32 @@ module Generator
         assert_equal 'some_camel_case_thing', snake_case(string)
       end
 
+      def test_indent_by
+        string = 'hello world'
+        assert_equal '  hello world', indent_by(2, string)
+      end
+
+      def test_indent_by_on_multiline_string
+        string = "hello\nworld\n"
+        assert_equal "  hello\n  world\n", indent_by(2, string)
+      end
+
+      def test_indent_by_on_multiline_string_without_newline
+        string = "hello\nworld"
+        assert_equal "  hello\n  world", indent_by(2, string)
+      end
+
+      def test_indent_by_multiple_calls_on_multiline_string
+        string = "hello\nworld\n"
+        step_1 = indent_by(1, string)
+        assert_equal "   hello\n   world\n", indent_by(2, step_1)
+      end
+
+      def test_indent_by_ignores_blank_lines
+        string = "hello\n\nworld"
+        assert_equal "  hello\n\n  world", indent_by(2, string)
+      end
+
       class MultiLineCase
         include CaseHelpers
 

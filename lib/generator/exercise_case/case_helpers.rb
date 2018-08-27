@@ -7,6 +7,14 @@ module Generator
         string.gsub(/([A-Z])/, '_\1').downcase
       end
 
+      # Takes a string and indents each line by 'depth' spaces.
+      # Will NOT add spaces to empty lines.
+      #
+      # usage:  indent_by( 2, "line 1\n\nline 2\n" )
+      def indent_by(depth, string)
+        string.gsub(/^(.+)$/, ' ' * depth + '\1')
+      end
+
       # indent multi line workloads
       #
       #   indent_lines(
