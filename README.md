@@ -219,8 +219,33 @@ minitest `test_<whatever>` methods. An exercise's generator lives in
 
 The test case generator is a derived class of `ExerciseCase` (in
 `lib/generator/exercise_case.rb`). `ExerciseCase` does most of the work of
-extracting the canonical data. The derived class wraps the JSON for a single
-test case. The default version looks something like this:
+extracting the canonical data and provides you with some accessor methods to
+access the values you are likely to need to use.
+
+For example:
+
+If a section of the `canonical-data.json` file looks like this:
+```json
+  , { "description": "Bar'ing a name with numbers gives an error"
+	, "property"   : "bar"
+	, "input"      : {
+		"firstName"  : "HAL",
+		"lastName"   : "9000"
+	  }
+	, "expected"   : { "error": "You should never bar a number" }
+	}
+```
+
+You will be able to access input['firstName'] by the Ruby methods `first_name`
+(or `input_first_name`)
+
+And the `expected["error"]` as: `error` or `expected_error`
+
+If there is a property name conflict the "input" version will take precedence,
+or you can use the `input_` and `expected_` prefixes to disambiguate.
+
+
+The test template you need to write looks like this:
 
 ```ruby
 require 'generator/exercise_case'
