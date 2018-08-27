@@ -22,6 +22,10 @@ module Generator
       index.zero? ? '# skip' : 'skip'
     end
 
+    def workload
+      fail StandardError, "You need to subclass and implement the 'workload' method"
+    end
+
     def method_missing(sym, *args, &block)
       return canonical.send(sym) if canonical.respond_to?(sym)
       super(sym, *args, &block)

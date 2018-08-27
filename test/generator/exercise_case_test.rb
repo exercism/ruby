@@ -49,5 +49,12 @@ module Generator
       subject = ExerciseCase.new(canonical: OpenStruct.new())
       refute subject.respond_to?(:key)
     end
+
+    def test_workload
+      subject = ExerciseCase.new(canonical: nil)
+      error = assert_raises(StandardError) { subject.workload }
+      expected_message = /You need to subclass and implement the 'workload' method/
+      assert_match expected_message, error.message
+    end
   end
 end
