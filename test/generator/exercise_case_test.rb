@@ -4,17 +4,20 @@ module Generator
   class ExerciseCaseTest < Minitest::Test
     # We double-up on 'test' here because the method is called 'test_name'
     def test_test_name
-      subject = ExerciseCase.new(canonical: OpenStruct.new(description: 'foo'))
+      mock_canonical = Minitest::Mock.new.expect(:description, 'foo')
+      subject = ExerciseCase.new(canonical: mock_canonical)
       assert_equal 'test_foo', subject.test_name
     end
 
     def test_test_name_with_trailing_whitespace
-      subject = ExerciseCase.new(canonical: OpenStruct.new(description: 'foo '))
+      mock_canonical = Minitest::Mock.new.expect(:description, 'foo ')
+      subject = ExerciseCase.new(canonical: mock_canonical)
       assert_equal 'test_foo', subject.test_name
     end
 
     def test_test_name_with_leading_whitespace
-      subject = ExerciseCase.new(canonical: OpenStruct.new(description: ' foo'))
+      mock_canonical = Minitest::Mock.new.expect(:description, ' foo')
+      subject = ExerciseCase.new(canonical: mock_canonical)
       assert_equal 'test_foo', subject.test_name
     end
 
@@ -37,7 +40,8 @@ module Generator
     end
 
     def test_test_name_with_uppercase_letters
-      subject = ExerciseCase.new(canonical: OpenStruct.new(description: 'FOO'))
+      mock_canonical = Minitest::Mock.new.expect(:description, 'FOO')
+      subject = ExerciseCase.new(canonical: mock_canonical)
       assert_equal 'test_foo', subject.test_name
     end
 
@@ -58,20 +62,25 @@ module Generator
     end
 
     def test_method_mising_calls_super
-      subject = ExerciseCase.new(canonical: nil)
-      assert_raises NoMethodError do
-        subject.key
+      mock_canonical = Minitest::Mock.new
+      subject = ExerciseCase.new(canonical: mock_canonical)
+      error = assert_raises NoMethodError do
+        subject.unknown
       end
+      expected_message = /undefined method `unknown' for #<Generator::ExerciseCase/
+      assert_match expected_message, error.message
     end
 
-    def test_true_respond_to?
-      subject = ExerciseCase.new(canonical: OpenStruct.new(key: 'value'))
+    def test_respond_to_forwards_request
+      mock_canonical = Minitest::Mock.new.expect(:key, 'value')
+      subject = ExerciseCase.new(canonical: mock_canonical)
       assert subject.respond_to?(:key)
     end
 
     def test_false_respond_to?
-      subject = ExerciseCase.new(canonical: OpenStruct.new())
-      refute subject.respond_to?(:key)
+      mock_canonical = Minitest::Mock.new
+      subject = ExerciseCase.new(canonical: mock_canonical)
+      refute subject.respond_to?(:nonexisting_key)
     end
 
     def test_workload
@@ -82,13 +91,14 @@ module Generator
     end
 
     def test_error_expected?
-      canonical = CaseValues::Canonical.new(expected: { 'error' => 'moo' })
-      subject = ExerciseCase.new(canonical: canonical)
+      mock_canonical = Minitest::Mock.new.expect(:expected_error, 'foo')
+      subject = ExerciseCase.new(canonical: mock_canonical)
       assert subject.error_expected?
     end
 
     def test_not_error_expected?
-      subject = ExerciseCase.new(canonical: CaseValues::Canonical.new(expected: 'value'))
+      mock_canonical = Minitest::Mock.new
+      subject = ExerciseCase.new(canonical: mock_canonical)
       refute subject.error_expected?
     end
 
