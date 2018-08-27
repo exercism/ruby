@@ -32,5 +32,9 @@ module Generator
     def respond_to?(sym, include_private = false)
       canonical.respond_to?(sym) || super
     end
+
+    def error_expected?
+      canonical.respond_to?(:expected_error)
+    end
   end
 end

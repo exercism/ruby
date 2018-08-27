@@ -56,5 +56,16 @@ module Generator
       expected_message = /You need to subclass and implement the 'workload' method/
       assert_match expected_message, error.message
     end
+
+    def test_error_expected?
+      canonical = CaseValues::Canonical.new(expected: { 'error' => 'moo' })
+      subject = ExerciseCase.new(canonical: canonical)
+      assert subject.error_expected?
+    end
+
+    def test_not_error_expected?
+      subject = ExerciseCase.new(canonical: CaseValues::Canonical.new(expected: 'value'))
+      refute subject.error_expected?
+    end
   end
 end
