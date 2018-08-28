@@ -3,13 +3,11 @@ module Generator
     class Canonical < OpenStruct
       def method_missing(sym, *args, &block)
         # `input` and `expected` are required key names
-        if key = key_variant(:input, sym)
-          return input[key]
-        end
+        input_key = key_variant(:input, sym)
+        return input[input_key] if input_key
 
-        if key = key_variant(:expected, sym)
-          return expected[key]
-        end
+        expected_key = key_variant(:expected, sym)
+        return expected[expected_key] if expected_key
 
         super(sym, *args, &block)
       end
@@ -34,7 +32,7 @@ module Generator
       end
 
       def camel_case(string)
-        string.gsub(/_([a-z])/) { $1.upcase }
+        string.gsub(/_([a-z])/) { Regexp.last_match(1).upcase }
       end
     end
 

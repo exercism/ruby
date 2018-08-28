@@ -3,12 +3,17 @@ require 'rake/testtask'
 
 require_relative 'lib/tasks/exercise_test_tasks'
 
-task default: 'test'
+task default: [:test, :rubocop]
 
 desc 'Run individual exercises or run all development and exercise tests'
 task :test do
   Rake::Task['test:dev'].invoke
   Rake::Task['test:exercises'].invoke
+end
+
+desc 'Run Rubocop'
+task :rubocop do
+  system('rubocop --display-cop-names')
 end
 
 namespace :test do
