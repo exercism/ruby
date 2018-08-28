@@ -24,4 +24,3 @@ unless broken_generator_slugs.empty?
   puts "\n\nBroken generators: (Run these individually to see the error raised.)\n\n"
   puts broken_generator_slugs
 end
-
