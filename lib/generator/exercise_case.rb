@@ -12,6 +12,17 @@ module Generator
       @canonical = canonical
     end
 
+    def to_s(index)
+      body = skipped(index) + "\n" + workload
+
+      method = [
+        "def #{name}\n",
+        indent_by(2, body),
+        "end\n"
+      ].join
+      indent_by(2, method)
+    end
+
     def name
       'test_%s' % canonical.description.strip.tr(' ', '_')
     end

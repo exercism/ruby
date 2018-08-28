@@ -67,5 +67,39 @@ module Generator
       subject = ExerciseCase.new(canonical: CaseValues::Canonical.new(expected: 'value'))
       refute subject.error_expected?
     end
+
+    class ImplementedCase < ExerciseCase
+      def workload
+        ["the workload\n", "more workload\n"].join
+      end
+    end
+
+    def test_to_s_without_skip
+      mock_canonical = Minitest::Mock.new.expect(:description, 'the description')
+      subject = ImplementedCase.new(canonical: mock_canonical)
+      expected = [
+        "  def test_the_description\n",
+        "    # skip\n",
+        "    the workload\n",
+        "    more workload\n",
+        "  end\n"
+      ].join
+
+      assert_equal expected, subject.to_s(0)
+    end
+
+    def test_to_s_with_skip
+      mock_canonical = Minitest::Mock.new.expect(:description, 'the description')
+      subject = ImplementedCase.new(canonical: mock_canonical)
+      expected = [
+        "  def test_the_description\n",
+        "    skip\n",
+        "    the workload\n",
+        "    more workload\n",
+        "  end\n"
+      ].join
+
+      assert_equal expected, subject.to_s(1)
+    end
   end
 end
