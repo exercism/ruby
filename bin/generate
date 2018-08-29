@@ -13,6 +13,7 @@ broken_generator_slugs = []
 
 generators.each do |generator|
   begin
+    File.write('.last_generator_run', generator.slug)
     generator.call
   rescue
     raise if generators.size == 1
