@@ -15,27 +15,6 @@ module Generator
         string.gsub(/^(.+)$/, ' ' * depth + '\1')
       end
 
-      # indent multi line workloads
-      #
-      #   indent_lines(
-      #     [
-      #       "string = #{input.inspect}",
-      #       "#{assert} Isogram.is_isogram?(string)"
-      #     ], 4
-      #   )
-      def indent_lines(code, depth, separator = "\n")
-        code.join(separator + ' ' * depth)
-      end
-
-      # indent multi line workloads with (unindented) blank lines
-      #
-      #   indent_text(4, text)
-      def indent_text(depth, text)
-        text.lines.reduce do |obj, line|
-          obj << (line == "\n" ? line : ' ' * depth + line)
-        end
-      end
-
       # generate heredoc (as part of workload) with optional indentation
       #
       #    indent_heredoc(["foo", "bar"], 'TEXT', 1)
