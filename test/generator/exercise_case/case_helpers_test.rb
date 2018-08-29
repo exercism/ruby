@@ -15,6 +15,11 @@ module Generator
         assert_match expected_message, err.message
       end
 
+      def test_snake_case
+        string = 'someCamelCaseThing'
+        assert_equal 'some_camel_case_thing', snake_case(string)
+      end
+
       class MultiLineCase
         include CaseHelpers
 
