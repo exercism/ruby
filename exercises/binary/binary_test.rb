@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'binary'
 
-# Common test data version: 1.0.0 969717d
+# Common test data version: 1.1.0 dd3c07e
 class BinaryTest < Minitest::Test
   def test_binary_0_is_decimal_0
     # skip
@@ -50,31 +50,43 @@ class BinaryTest < Minitest::Test
 
   def test_2_is_not_a_valid_binary_digit
     skip
-    assert_raises(ArgumentError) { Binary.to_decimal('2') }
+    assert_raises(ArgumentError) do
+      Binary.to_decimal('2')
+    end
   end
 
   def test_a_number_containing_a_non_binary_digit_is_invalid
     skip
-    assert_raises(ArgumentError) { Binary.to_decimal('01201') }
+    assert_raises(ArgumentError) do
+      Binary.to_decimal('01201')
+    end
   end
 
   def test_a_number_with_trailing_non_binary_characters_is_invalid
     skip
-    assert_raises(ArgumentError) { Binary.to_decimal('10nope') }
+    assert_raises(ArgumentError) do
+      Binary.to_decimal('10nope')
+    end
   end
 
   def test_a_number_with_leading_non_binary_characters_is_invalid
     skip
-    assert_raises(ArgumentError) { Binary.to_decimal('nope10') }
+    assert_raises(ArgumentError) do
+      Binary.to_decimal('nope10')
+    end
   end
 
   def test_a_number_with_internal_non_binary_characters_is_invalid
     skip
-    assert_raises(ArgumentError) { Binary.to_decimal('10nope10') }
+    assert_raises(ArgumentError) do
+      Binary.to_decimal('10nope10')
+    end
   end
 
-  def test_a_number_and_a_word_whitespace_spearated_is_invalid
+  def test_a_number_and_a_word_whitespace_separated_is_invalid
     skip
-    assert_raises(ArgumentError) { Binary.to_decimal('001 nope') }
+    assert_raises(ArgumentError) do
+      Binary.to_decimal('001 nope')
+    end
   end
 end
