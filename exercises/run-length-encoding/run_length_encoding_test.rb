@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'run_length_encoding'
 
-# Common test data version: 1.0.0 503a57a
+# Common test data version: 1.1.0 1b7900e
 class RunLengthEncodingTest < Minitest::Test
   def test_encode_empty_string
     # skip
@@ -90,8 +90,7 @@ class RunLengthEncodingTest < Minitest::Test
   def test_consistency_encode_followed_by_decode_gives_original_string
     skip
     input = 'zzz ZZ  zZ'
-    output = 'zzz ZZ  zZ'
-    assert_equal output,
-                 RunLengthEncoding.decode(RunLengthEncoding.encode(input))
+    encoded = RunLengthEncoding.encode(input)
+    assert_equal input, RunLengthEncoding.decode(encoded)
   end
 end
