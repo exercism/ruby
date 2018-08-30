@@ -1,5 +1,5 @@
 module Dominoes
-  def self.chain(dominoes)
+  def self.chain?(dominoes)
     return dominoes if dominoes.empty?
 
     first = dominoes.first
