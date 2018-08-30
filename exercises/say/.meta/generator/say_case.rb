@@ -1,35 +1,29 @@
 require 'generator/exercise_case'
 
 class SayCase < Generator::ExerciseCase
-
   def workload
     [
-      "question = #{underscore_format(input)}",
-      indent(4, assertion),
-    ].join("\n")
+      "number = #{underscore(number)}",
+      assertion,
+    ]
   end
 
   private
 
-  def indent(size, lines)
-    lines.lines.each_with_object('') { |line, obj| obj << ' ' * size + line }
+  # non-standard so override
+  def error_expected?
+    expected == -1
   end
 
   def assertion
-    return error_assertion if expected == -1
-
-    "assert_equal('#{expected}', Say.new(question).in_english)"
+    if error_expected?
+      assert_raises(ArgumentError, subject_of_test)
+    else
+      assert_equal(expected, subject_of_test)
+    end
   end
 
-  def error_assertion
-    [
-      'assert_raises ArgumentError do',
-      indent(2, 'Say.new(question).in_english'),
-      'end',
-    ].join("\n")
-  end
-
-  def underscore_format(number)
-    number.to_s.reverse.gsub(/...(?=.)/, '\&_').reverse
+  def subject_of_test
+    'Say.new(number).in_english'
   end
 end
