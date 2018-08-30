@@ -1,73 +1,48 @@
 require 'generator/exercise_case'
 
 class AllYourBaseCase < Generator::ExerciseCase
-
   def workload
-    indent_text(4, (assignments + assertion).join("\n"))
+    assignments + assertion
   end
 
   private
 
   def assignments
-      [
-        "digits = #{input_digits}",
-        "input_base = #{input_base}",
-        "output_base = #{output_base}",
-      ]
+    [
+      "digits = #{input_digits}",
+      "input_base = #{input_base}",
+      "output_base = #{output_base}"
+    ]
   end
 
   def assertion
-    return error_assertion unless expected_value
-
-    [
-      "expected = #{expected_value}",
-      "",
-      "converted = BaseConverter.convert(input_base, digits, output_base)",
-      "",
-      "assert_equal expected, converted,",
-      indent_text(13, error_message),
-    ]
-  end
-
-  def error_assertion
-    [
-      "",
-      "assert_raises ArgumentError do",
-      "  BaseConverter.convert(input_base, digits, output_base)",
-      "end",
-    ]
-  end
-
-  def error_message
-    %q(             "Input base: #{input_base}, output base #{output_base}. " \\) \
-      "\n" + %q("Expected #{expected} but got #{converted}.")
-  end
-
-  def expected_value
-    return expected if expected
-
-    case
-    when invalid_input_digits? || invalid_bases? then nil
-    when input_digits.empty? then []
-    when input_of_zero? then [0]
+    if error_expected?
+      [error_assertion]
     else
-      handle_special_cases
+      standard_assertion
     end
   end
 
-  def invalid_input_digits?
-    input_digits.any? { |x| x < 0 || x >= input_base }
+  def standard_assertion
+    [
+      "expected = #{expected}",
+      '',
+      'converted = BaseConverter.convert(input_base, digits, output_base)',
+      '',
+      "hint = #{hint}",
+      '',
+      'assert_equal expected, converted, hint',
+    ]
   end
 
-  def invalid_bases?
-    input_base <= 1 || output_base <= 1
+  def hint
+    [
+      "\"Input base: #{input_base}, output base #{output_base}. \" +\n",
+      indent_by(7, %q("Expected #{expected} but got #{converted}.") + "\n")
+    ].join
   end
 
-  def input_of_zero?
-    input_digits.all? { |x| x == 0 }
-  end
-
-  def handle_special_cases
-    [4, 2] if input_digits == [0, 6, 0]
+  def error_assertion
+    assert_raises(ArgumentError, 'BaseConverter.convert(input_base, digits, output_base)')
   end
 end
