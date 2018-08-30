@@ -18,12 +18,7 @@ module Generator
         format_workload(workload)
       ].join
 
-      method = [
-        "def #{test_name}\n",
-        indent_by(2, body),
-        "end\n"
-      ].join
-      indent_by(2, method)
+      indent_by(2, test_method(body))
     end
 
     def test_name
@@ -61,6 +56,14 @@ module Generator
     end
 
     private
+
+    def test_method(body)
+      [
+        "def #{test_name}\n",
+        indent_by(2, body),
+        "end\n"
+      ].join
+    end
 
     def clean_description
       description = self.description.downcase.strip
