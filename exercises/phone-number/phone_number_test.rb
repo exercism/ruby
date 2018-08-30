@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'phone_number'
 
-# Common test data version: 1.2.0 39cba0d
+# Common test data version: 1.4.0 0783171
 class PhoneNumberTest < Minitest::Test
   def test_cleans_the_number
     # skip
@@ -53,13 +53,23 @@ class PhoneNumberTest < Minitest::Test
     assert_nil PhoneNumber.clean("123-@:!-7890")
   end
 
-  def test_invalid_if_area_code_does_not_start_with_2_9
+  def test_invalid_if_area_code_starts_with_0
+    skip
+    assert_nil PhoneNumber.clean("(023) 456-7890")
+  end
+
+  def test_invalid_if_area_code_starts_with_1
     skip
     assert_nil PhoneNumber.clean("(123) 456-7890")
   end
 
-  def test_invalid_if_exchange_code_does_not_start_with_2_9
+  def test_invalid_if_exchange_code_starts_with_0
     skip
     assert_nil PhoneNumber.clean("(223) 056-7890")
+  end
+
+  def test_invalid_if_exchange_code_starts_with_1
+    skip
+    assert_nil PhoneNumber.clean("(223) 156-7890")
   end
 end
