@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'luhn'
 
-# Common test data version: 1.0.0 c826372
+# Common test data version: 1.2.0 3930b0a
 class LuhnTest < Minitest::Test
   def test_single_digit_strings_can_not_be_valid
     # skip
@@ -66,5 +66,10 @@ class LuhnTest < Minitest::Test
   def test_input_digit_9_is_correctly_converted_to_output_digit_9
     skip
     assert Luhn.valid?("091")
+  end
+
+  def test_strings_with_non_digits_is_invalid
+    skip
+    refute Luhn.valid?(":9")
   end
 end
