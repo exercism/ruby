@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'crypto_square'
 
-# Common test data version: 3.1.0 e937744
+# Common test data version: 3.2.0 e00dfb3
 class CryptoSquareTest < Minitest::Test
   def test_empty_plaintext_results_in_an_empty_ciphertext
     # skip
