@@ -16,15 +16,15 @@ module Generator
       body = skipped(index) + "\n" + workload
 
       method = [
-        "def #{name}\n",
+        "def #{test_name}\n",
         indent_by(2, body),
         "end\n"
       ].join
       indent_by(2, method)
     end
 
-    def name
-      'test_%s' % canonical.description.strip.tr(' ', '_')
+    def test_name
+      "test_#{clean_description}"
     end
 
     def skipped(index)
@@ -46,6 +46,15 @@ module Generator
 
     def error_expected?
       canonical.respond_to?(:expected_error)
+    end
+
+   private
+
+    def clean_description
+      description = self.description.downcase.strip
+      description.gsub!(/\W/, '_') # no non-word characters
+      description.gsub!(/__*/, '_') # no multiple underscores
+      description.sub!(/_*$/, '') # no trailing underscores
     end
   end
 end
