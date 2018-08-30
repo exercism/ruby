@@ -1,9 +1,10 @@
 class BeerSong
-  def verses(upper_bound, lower_bound)
-    upper_bound.downto(lower_bound).map { |i| verse(i) }.join("\n")
+  def self.recite(start_verse, take_down)
+    lower_bound = start_verse - take_down + 1
+    start_verse.downto(lower_bound).map { |i| verse(i) }.join("\n")
   end
 
-  def verse(number)
+  def self.verse(number)
     case number
     when 0
       "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n"
