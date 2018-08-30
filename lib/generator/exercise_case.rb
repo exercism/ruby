@@ -13,7 +13,10 @@ module Generator
     end
 
     def to_s(index)
-      body = skipped(index) + "\n" + workload
+      body = [
+        skipped(index) + "\n",
+        format_workload(workload)
+      ].join
 
       method = [
         "def #{test_name}\n",
@@ -48,7 +51,16 @@ module Generator
       canonical.respond_to?(:expected_error)
     end
 
-   private
+    def format_workload(workload)
+      case workload
+      when String
+        workload.chomp + "\n"
+      when Array
+        workload.map { |line| line.chomp + "\n" }.join
+      end
+    end
+
+    private
 
     def clean_description
       description = self.description.downcase.strip

@@ -125,5 +125,33 @@ module Generator
 
       assert_equal expected, subject.to_s(1)
     end
+
+    def test_format_workload_as_array_with_newlines
+      workload = ["the workload\n", "more workload\n"]
+      expected = "the workload\nmore workload\n"
+      subject = ExerciseCase.new(canonical: nil)
+      assert_equal expected, subject.format_workload(workload)
+    end
+
+    def test_format_workload_as_array_without_newlines
+      workload = ["the workload", "more workload"]
+      expected = "the workload\nmore workload\n"
+      subject = ExerciseCase.new(canonical: nil)
+      assert_equal expected, subject.format_workload(workload)
+    end
+
+    def test_format_workload_as_string_with_last_newline
+      workload = "the workload\nmore workload\n"
+      expected = "the workload\nmore workload\n"
+      subject = ExerciseCase.new(canonical: nil)
+      assert_equal expected, subject.format_workload(workload)
+    end
+
+    def test_format_workload_as_string_without_last_newline
+      workload = "the workload\nmore workload"
+      expected = "the workload\nmore workload\n"
+      subject = ExerciseCase.new(canonical: nil)
+      assert_equal expected, subject.format_workload(workload)
+    end
   end
 end
