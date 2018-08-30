@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'rotational_cipher'
 
-# Common test data version: 1.1.0 9c658d1
+# Common test data version: 1.2.0 cf23851
 class RotationalCipherTest < Minitest::Test
   def test_rotate_a_by_0_same_output_as_input
     # skip
