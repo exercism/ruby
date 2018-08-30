@@ -5,7 +5,7 @@ require_relative '<%= exercise_name %>'
 class <%= exercise_name_camel %>Test < Minitest::Test
 <% test_cases.each_with_index do |test_case, idx| %>
   def <%= test_case.name %>
-    <%= test_case.skipped(idx) %>
+    <%= test_case.skip(idx.zero?) %>
     <%= test_case.workload %>
   end
 

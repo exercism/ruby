@@ -45,12 +45,12 @@ module Generator
       assert_equal 'test_foo', subject.test_name
     end
 
-    def test_skipped_index_zero
-      assert_equal '# skip', ExerciseCase.new(canonical: nil).skipped(0)
+    def test_skip
+      assert_equal 'skip', ExerciseCase.new(canonical: nil).skip(false)
     end
 
-    def test_skipped_index_nonzero
-      assert_equal 'skip', ExerciseCase.new(canonical: nil).skipped(1)
+    def test_skip_commented_out
+      assert_equal '# skip', ExerciseCase.new(canonical: nil).skip(true)
     end
 
     def test_forwarding_to_canonical
@@ -119,7 +119,7 @@ module Generator
         "  end\n"
       ].join
 
-      assert_equal expected, subject.to_s(0)
+      assert_equal expected, subject.to_s(true)
     end
 
     def test_to_s_with_skip
@@ -133,7 +133,7 @@ module Generator
         "  end\n"
       ].join
 
-      assert_equal expected, subject.to_s(1)
+      assert_equal expected, subject.to_s
     end
 
     def test_format_workload_as_array_with_newlines

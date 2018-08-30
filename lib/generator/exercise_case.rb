@@ -12,9 +12,9 @@ module Generator
       @canonical = canonical
     end
 
-    def to_s(index)
+    def to_s(comment_out_skip = false)
       body = [
-        skipped(index) + "\n",
+        skip(comment_out_skip) + "\n",
         format_workload(workload)
       ].join
 
@@ -25,8 +25,8 @@ module Generator
       "test_#{clean_description}"
     end
 
-    def skipped(index)
-      index.zero? ? '# skip' : 'skip'
+    def skip(comment_out)
+      comment_out ? '# skip' : 'skip'
     end
 
     def workload

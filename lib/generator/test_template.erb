@@ -5,6 +5,6 @@ require_relative '<%= exercise_name %>'
 class <%= exercise_test_classname %> < Minitest::Test
 <%=
   test_cases.map.with_index do |test_case, index|
-    test_case.to_s(index)
+    test_case.to_s(index.zero?)
   end.join("\n")
 %>end
