@@ -8,11 +8,8 @@ class <%= exercise_test_classname %> < Minitest::Test
   # than the allowed delta
   DELTA = 0.01
 
-<% test_cases.each_with_index do |test_case, idx| %>
-  def <%= test_case.name %>
-    <%= test_case.skipped(idx) %>
-    <%= test_case.workload %>
-  end
-
-<% end %>
-end
+<%=
+  test_cases.map.with_index do |test_case, index|
+    test_case.to_s(index.zero?)
+  end.join("\n")
+%>end
