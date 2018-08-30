@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'queen_attack'
 
-# Common test data version: 2.0.0 44a1e12
+# Common test data version: 2.1.0 7a8bcba
 class QueenAttackTest < Minitest::Test
   def test_queen_with_a_valid_position
     # skip
@@ -10,28 +10,28 @@ class QueenAttackTest < Minitest::Test
 
   def test_queen_must_have_positive_row
     skip
-    assert_raises ArgumentError do
+    assert_raises(ArgumentError) do
       Queens.new(white: [-2, 2])
     end
   end
 
   def test_queen_must_have_row_on_board
     skip
-    assert_raises ArgumentError do
+    assert_raises(ArgumentError) do
       Queens.new(white: [8, 4])
     end
   end
 
   def test_queen_must_have_positive_column
     skip
-    assert_raises ArgumentError do
+    assert_raises(ArgumentError) do
       Queens.new(white: [2, -2])
     end
   end
 
   def test_queen_must_have_column_on_board
     skip
-    assert_raises ArgumentError do
+    assert_raises(ArgumentError) do
       Queens.new(white: [4, 8])
     end
   end
