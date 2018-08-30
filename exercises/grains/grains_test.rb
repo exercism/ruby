@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'grains'
 
-# Common test data version: 1.0.0 2e0e77e
+# Common test data version: 1.1.0 f079c2d
 class GrainsTest < Minitest::Test
   def test_1
     # skip
@@ -40,17 +40,23 @@ class GrainsTest < Minitest::Test
 
   def test_square_0_raises_an_exception
     skip
-    assert_raises(ArgumentError) { Grains.square(0) }
+    assert_raises(ArgumentError) do
+      Grains.square(0)
+    end
   end
 
   def test_negative_square_raises_an_exception
     skip
-    assert_raises(ArgumentError) { Grains.square(-1) }
+    assert_raises(ArgumentError) do
+      Grains.square(-1)
+    end
   end
 
   def test_square_greater_than_64_raises_an_exception
     skip
-    assert_raises(ArgumentError) { Grains.square(65) }
+    assert_raises(ArgumentError) do
+      Grains.square(65)
+    end
   end
 
   def test_returns_the_total_number_of_grains_on_the_board
