@@ -1,19 +1,21 @@
 require 'generator/exercise_case'
 
 class LargestSeriesProductCase < Generator::ExerciseCase
-
   def workload
-    if raises_error?
-      assert_raises(ArgumentError) { test_case }
+    if error_expected?
+      assert_raises(ArgumentError, subject_of_test)
     else
-      assert_equal { test_case }
+      assert_equal(expected, subject_of_test)
     end
   end
 
   private
 
-  def test_case
-    "Series.new('#{digits}').largest_product(#{span})"
+  def error_expected?
+    expected == -1
   end
 
+  def subject_of_test
+    "Series.new('#{digits}').largest_product(#{span})"
+  end
 end
