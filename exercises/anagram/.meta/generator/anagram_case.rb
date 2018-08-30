@@ -3,7 +3,7 @@ require 'generator/exercise_case'
 class AnagramCase < Generator::ExerciseCase
 
   def workload
-    indent_lines([show_comment, detector, anagram, wanted, assert].compact)
+    [show_comment, detector, anagram, wanted, assert].join
   end
 
   private
@@ -13,24 +13,24 @@ class AnagramCase < Generator::ExerciseCase
   end
 
   def show_comment
-    "# #{comment}" if respond_to?(:comment)
+    "# #{comment}\n" if respond_to?(:comment)
   end
 
   def detector
-    "detector = Anagram.new('#{subject}')"
+    "detector = Anagram.new('#{subject}')\n"
   end
 
   def anagram
-    "anagrams = detector.match(#{candidates})"
+    "anagrams = detector.match(#{candidates})\n"
   end
 
   def wanted
-    "expected = #{expected.sort}"
+    "expected = #{expected.sort}\n"
   end
 
   def assert
     actual = expected.size > 1 ? 'anagrams.sort' : 'anagrams'
-    "assert_equal expected, #{actual}"
+    "assert_equal expected, #{actual}\n"
   end
 
 end
