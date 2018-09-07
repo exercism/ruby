@@ -1,43 +1,31 @@
-Palindrome = Struct.new(:value, :factors)
-
 class Palindromes
-  attr_reader :range
-  def initialize(options)
-    max = options.fetch(:max_factor)
-    min = options.fetch(:min_factor) { 1 }
-    @range = (min..max)
-  end
 
-  def generate
-    @palindromes = {}
+  attr_reader :min, :max, :combinations
+
+  def initialize(min_factor: 1, max_factor: )
+    @min = min_factor
+    @max = max_factor
+    range = (min..max)
+
+    @combinations = []
     range.each do |i|
       range.each do |j|
-        product = i * j
-        if palindrome?(product)
-          palindrome = @palindromes[product] || Palindrome.new(product, [])
-          palindrome.factors << [i, j].sort
-          palindrome.factors.uniq!
-          @palindromes[product] = palindrome
+        if is_palindrome?(i * j)
+          @combinations << [i,j]
         end
       end
     end
   end
 
-  def palindrome?(number)
-    number.to_s == number.to_s.reverse
-  end
-
-  def sort
-    @palindromes.sort_by do |key, _palindrome|
-      key
-    end
+  def is_palindrome?(val)
+    val.to_s == val.to_s.reverse
   end
 
   def largest
-    sort.last[1]
+    combinations.sort_by{|combination| combination.inject(:*)}.last.inject(:*)
   end
 
   def smallest
-    sort.first[1]
+    combinations.sort_by{|combination| combination.inject(:*)}.first.inject(:*)
   end
 end
