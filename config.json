@@ -249,7 +249,7 @@
       "slug": "phone-number",
       "uuid": "b68665d5-14ef-4351-ac4a-c28a80c27b3d",
       "core": false,
-      "unlocked_by": "clock",
+      "unlocked_by": "two-fer",
       "difficulty": 3,
       "topics": [
         "conditionals",
