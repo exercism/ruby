@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'change'
 
-# Common test data version: 1.1.0 52cf1cf
+# Common test data version: 1.2.0 044d09a
 class ChangeTest < Minitest::Test
   def test_single_coin_change
     # skip

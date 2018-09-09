@@ -1,14 +1,11 @@
 require 'generator/exercise_case'
 
 class IsogramCase < Generator::ExerciseCase
-
   def workload
-    indent_lines(
-      [
-        "input = #{input.inspect}",
-        "#{assert} Isogram.isogram?(input), #{failure_message}"
-      ], 4
-    )
+    [
+      "input = #{phrase.inspect}",
+      assert_or_refute(expected, "Isogram.isogram?(input), #{failure_message}")
+    ]
   end
 
   private
@@ -24,5 +21,4 @@ class IsogramCase < Generator::ExerciseCase
   def is_or_not
     expected ? 'is' : 'is not'
   end
-
 end

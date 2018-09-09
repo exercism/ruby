@@ -2,32 +2,33 @@ require 'generator/exercise_case'
 
 class AllergiesCase < Generator::ExerciseCase
   def workload
-    assertions = list_expected? ? list_assertion : individual_assertions
-    allergies_declaration = "allergies = Allergies.new(#{score})"
-    indent_lines(assertions.unshift(allergies_declaration), 4)
+    [
+      "allergies = Allergies.new(#{score})\n",
+       assertions
+    ].join
   end
 
-  def list_expected?
-    property == 'list'
-  end
-
-  def list_assertion
-    ["assert_equal %w(#{expected.join(' ')}), allergies.list"]
-  end
-
-  def individual_assertions
-    expected.map do |assertion|
-      substance = assertion['substance']
-      result = assertion['result']
-      "#{result ? assert(substance) : refute(substance)}"
+  def assertions
+    case property
+    when 'list' then list_assertion
+    when 'allergicTo' then substance_assertions
     end
   end
 
-  def refute(allergen)
-    "refute allergies.allergic_to?('#{allergen}')"
+  def list_assertion
+    [
+      "expected_items = #{expected.sort.inspect}\n",
+      "assert_equal expected_items, allergies.list.sort\n"
+    ]
   end
 
-  def assert(allergen)
-    "assert allergies.allergic_to?('#{allergen}')"
+  def substance_assertions
+    expected.map do |test|
+      "#{assert_or_refute(test['result'])} allergies.allergic_to?('#{test['substance']}')\n"
+    end
+  end
+
+  def assert_or_refute(status)
+    status ? 'assert' : 'refute'
   end
 end

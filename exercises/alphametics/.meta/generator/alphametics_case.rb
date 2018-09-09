@@ -1,58 +1,60 @@
 require 'generator/exercise_case'
 
 class AlphameticsCase < Generator::ExerciseCase
-  def workload
-    body =
-      "input = %s\n" % input,
-      "expected = %s\n" % expect,
-      "assert_equal expected, Alphametics.solve(input)"
-    indent(body, 4)
+  def to_s(index)
+    indent_by(2, runtime_comment) + super(index)
   end
 
-  def runtime_comment
-    if slow?
-      comments =
-        '',
-        "# The obvious algorithm can take a long time to solve this puzzle,\n",
-        "# but an optimised solution can solve it fairly quickly.\n",
-        "# (It's OK to submit your solution without getting this test to pass.)\n"
-      indent(comments, 2)
-    end
+  def test_name
+    super.sub(/(test_puzzle_with_ten_letters_and_199_addends)/, 'do_not_\1')
+    ## Remove 'do_not_' from the test name to run this test.
+  end
+
+  def workload
+    [
+      "puzzle = #{format_puzzle}\n",
+      "expected = #{format_expected}\n",
+      "assert_equal expected, Alphametics.solve(puzzle)\n"
+    ].join
   end
 
   private
 
-  def input
-    "'#{puzzle}'"
-  end
+  def runtime_comment
+    comment = ''
+    if slow?
+      comment += [
+        "# The obvious algorithm can take a long time to solve this puzzle,\n",
+        "# but an optimised solution can solve it fairly quickly.\n",
+        "# (It's OK to submit your solution without getting this test to pass.)\n",
+      ].join
+    end
 
-  def expect
-    expected.nil? ? {} : expected_values
+    if test_name == "do_not_test_puzzle_with_ten_letters_and_199_addends"
+      comment += "#\n# Remove 'do_not_' from the test name to run this test.\n"
+    end
+
+    comment
   end
 
   def slow?
-    (expected||{}).size > 7
+    expected && expected.size > 7
   end
 
-  def expected_values
-    "{ #{indent(expected_values_as_lines, 17)} }"
+  def format_puzzle
+    "'#{puzzle}'"
   end
 
-  def expected_values_as_lines
-    lines = expected_values_as_strings.each_slice(4).map { |line| line.join(', ') }
-    add_trailing_comma_and_newline(lines)
-  end
+  def format_expected
+    return "{}" if expected.nil?
 
-  def expected_values_as_strings
-    expected.sort.map { |(key, value)| "'#{key}' => #{value}" }
-  end
+    pairs =  expected.sort.map { |(key, value)| "'#{key}' => #{value}" }
+    groups = pairs.each_slice(4).map { |pair| pair.join(', ') }
 
-  def add_trailing_comma_and_newline(lines)
-    lines[0...-1].map { |line| "#{line},\n" }.push(lines.last)
-  end
+    indented_groups = indent_by(13, groups.join(",\n"))
+    # Strip the first indenting spaces.
+    indented_groups.sub!(/^ {13}/,'')
 
-  def indent(lines, spaces)
-    lines.join(' ' * spaces)
+    "{ #{indented_groups} }"
   end
-
 end

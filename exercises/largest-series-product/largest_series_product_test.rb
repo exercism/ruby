@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'largest_series_product'
 
-# Common test data version: 1.0.0 e79b832
+# Common test data version: 1.1.0 92b86a8
 class LargestSeriesProductTest < Minitest::Test
   def test_finds_the_largest_product_if_span_equals_length
     # skip
@@ -50,7 +50,9 @@ class LargestSeriesProductTest < Minitest::Test
 
   def test_rejects_span_longer_than_string_length
     skip
-    assert_raises(ArgumentError) { Series.new('123').largest_product(4) }
+    assert_raises(ArgumentError) do
+      Series.new('123').largest_product(4)
+    end
   end
 
   def test_reports_1_for_empty_string_and_empty_product_0_span
@@ -65,16 +67,22 @@ class LargestSeriesProductTest < Minitest::Test
 
   def test_rejects_empty_string_and_nonzero_span
     skip
-    assert_raises(ArgumentError) { Series.new('').largest_product(1) }
+    assert_raises(ArgumentError) do
+      Series.new('').largest_product(1)
+    end
   end
 
   def test_rejects_invalid_character_in_digits
     skip
-    assert_raises(ArgumentError) { Series.new('1234a5').largest_product(2) }
+    assert_raises(ArgumentError) do
+      Series.new('1234a5').largest_product(2)
+    end
   end
 
   def test_rejects_negative_span
     skip
-    assert_raises(ArgumentError) { Series.new('12345').largest_product(-1) }
+    assert_raises(ArgumentError) do
+      Series.new('12345').largest_product(-1)
+    end
   end
 end

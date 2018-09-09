@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'acronym'
 
-# Common test data version: 1.1.0 cae7ae1
+# Common test data version: 1.4.0 dc9a5af
 class AcronymTest < Minitest::Test
   def test_basic
     # skip
@@ -18,18 +18,18 @@ class AcronymTest < Minitest::Test
     assert_equal "FIFO", Acronym.abbreviate('First In, First Out')
   end
 
-  def test_all_caps_words
-    skip
-    assert_equal "PHP", Acronym.abbreviate('PHP: Hypertext Preprocessor')
-  end
-
-  def test_non_acronym_all_caps_word
+  def test_all_caps_word
     skip
     assert_equal "GIMP", Acronym.abbreviate('GNU Image Manipulation Program')
   end
 
-  def test_hyphenated
+  def test_punctuation_without_whitespace
     skip
     assert_equal "CMOS", Acronym.abbreviate('Complementary metal-oxide semiconductor')
+  end
+
+  def test_very_long_abbreviation
+    skip
+    assert_equal "ROTFLSHTMDCOALM", Acronym.abbreviate('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me')
   end
 end

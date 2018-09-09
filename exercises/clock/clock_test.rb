@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'clock'
 
-# Common test data version: 2.2.1 8b96944
+# Common test data version: 2.3.0 1680779
 class ClockTest < Minitest::Test
   def test_on_the_hour
     # skip
@@ -134,7 +134,7 @@ class ClockTest < Minitest::Test
     assert_equal "00:01", (clock1 + Clock.new(minute: 2)).to_s
   end
 
-  def test_add_more_than_one_day__1500_min_is_equal_to_25_hrs
+  def test_add_more_than_one_day
     skip
     clock1 = Clock.new(hour: 5, minute: 32)
     assert_equal "06:32", (clock1 + Clock.new(minute: 1500)).to_s
@@ -182,7 +182,7 @@ class ClockTest < Minitest::Test
     assert_equal "03:35", (clock1 - Clock.new(minute: 160)).to_s
   end
 
-  def test_subtract_more_than_one_day__1500_min_is_equal_to_25_hrs
+  def test_subtract_more_than_one_day
     skip
     clock1 = Clock.new(hour: 5, minute: 32)
     assert_equal "04:32", (clock1 - Clock.new(minute: 1500)).to_s
@@ -296,6 +296,13 @@ class ClockTest < Minitest::Test
     skip
     clock1 = Clock.new(hour: 18, minute: 7)
     clock2 = Clock.new(hour: -54, minute: -11513)
+    assert clock1 == clock2
+  end
+
+  def test_full_clock_and_zeroed_clock
+    skip
+    clock1 = Clock.new(hour: 24, minute: 0)
+    clock2 = Clock.new(hour: 0, minute: 0)
     assert clock1 == clock2
   end
 end

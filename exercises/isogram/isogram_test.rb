@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'isogram'
 
-# Common test data version: 1.2.0 f9e0ebb
+# Common test data version: 1.5.0 63f3d96
 class IsogramTest < Minitest::Test
   def test_empty_string
     # skip
@@ -21,6 +21,12 @@ class IsogramTest < Minitest::Test
     refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
   end
 
+  def test_word_with_one_duplicated_character_from_the_end_of_the_alphabet
+    skip
+    input = "zzyzx"
+    refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
+  end
+
   def test_longest_reported_english_isogram
     skip
     input = "subdermatoglyphic"
@@ -30,6 +36,12 @@ class IsogramTest < Minitest::Test
   def test_word_with_duplicated_character_in_mixed_case
     skip
     input = "Alphabet"
+    refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
+  end
+
+  def test_word_with_duplicated_character_in_mixed_case_lowercase_first
+    skip
+    input = "alphAbet"
     refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
   end
 

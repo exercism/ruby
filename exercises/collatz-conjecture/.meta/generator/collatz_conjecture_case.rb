@@ -1,30 +1,20 @@
 require 'generator/exercise_case'
 
 class CollatzConjectureCase < Generator::ExerciseCase
-
   def workload
-    case expected
-    when Integer
-      standard_assertion
-    when Hash
-      error_assertion
-    end
-  end
-
-  def standard_assertion
-    assert_equal { subject_of_test }
+    error_expected? ? error_assertion : standard_assertion
   end
 
   def error_assertion
-    "assert_raises(ArgumentError) { #{subject_of_test} }"
+    assert_raises(ArgumentError, subject_of_test)
+  end
+
+  def standard_assertion
+    assert_equal(expected, subject_of_test)
   end
 
   def subject_of_test
-    "CollatzConjecture.steps(#{input})"
-  end
-
-  def input
-    literal(number)
+    "CollatzConjecture.steps(#{underscore(input_number)})"
   end
 end
 

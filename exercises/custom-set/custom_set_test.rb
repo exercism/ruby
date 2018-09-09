@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'custom_set'
 
-# Common test data version: 1.0.1 4527635
+# Common test data version: 1.3.0 1ef368e
 class CustomSetTest < Minitest::Test
   def test_sets_with_no_elements_are_empty
     # skip
@@ -145,6 +145,13 @@ class CustomSetTest < Minitest::Test
     skip
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [1, 2, 4]
+    refute_equal set1, set2
+  end
+
+  def test_set_is_not_equal_to_larger_set_with_same_elements
+    skip
+    set1 = CustomSet.new [1, 2, 3]
+    set2 = CustomSet.new [1, 2, 3, 4]
     refute_equal set1, set2
   end
 

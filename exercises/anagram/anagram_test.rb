@@ -1,28 +1,12 @@
 require 'minitest/autorun'
 require_relative 'anagram'
 
-# Common test data version: 1.0.1 196fc1a
+# Common test data version: 1.3.0 3faf343
 class AnagramTest < Minitest::Test
   def test_no_matches
     # skip
     detector = Anagram.new('diaper')
     anagrams = detector.match(["hello", "world", "zombies", "pants"])
-    expected = []
-    assert_equal expected, anagrams
-  end
-
-  def test_detects_simple_anagram
-    skip
-    detector = Anagram.new('ant')
-    anagrams = detector.match(["tan", "stand", "at"])
-    expected = ["tan"]
-    assert_equal expected, anagrams
-  end
-
-  def test_does_not_detect_false_positives
-    skip
-    detector = Anagram.new('galea')
-    anagrams = detector.match(["eagle"])
     expected = []
     assert_equal expected, anagrams
   end
@@ -59,14 +43,6 @@ class AnagramTest < Minitest::Test
     assert_equal expected, anagrams.sort
   end
 
-  def test_does_not_detect_identical_words
-    skip
-    detector = Anagram.new('corn')
-    anagrams = detector.match(["corn", "dark", "Corn", "rank", "CORN", "cron", "park"])
-    expected = ["cron"]
-    assert_equal expected, anagrams
-  end
-
   def test_does_not_detect_non_anagrams_with_identical_checksum
     skip
     detector = Anagram.new('mass')
@@ -96,14 +72,6 @@ class AnagramTest < Minitest::Test
     detector = Anagram.new('orchestra')
     anagrams = detector.match(["cashregister", "Carthorse", "radishes"])
     expected = ["Carthorse"]
-    assert_equal expected, anagrams
-  end
-
-  def test_does_not_detect_a_word_as_its_own_anagram
-    skip
-    detector = Anagram.new('banana')
-    anagrams = detector.match(["Banana"])
-    expected = []
     assert_equal expected, anagrams
   end
 

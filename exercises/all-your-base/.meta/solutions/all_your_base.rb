@@ -1,7 +1,7 @@
 class BaseConverter
   def self.convert(base_from, number_array, base_to)
     fail ArgumentError if invalid_inputs?(base_from, number_array, base_to)
-    return [] unless number_array.any?
+    return [0] unless number_array.any?
     number_in_canonical_base = convert_to_canonical_base(number_array, base_from)
     convert_from_canonical_base(number_in_canonical_base, base_to)
   end

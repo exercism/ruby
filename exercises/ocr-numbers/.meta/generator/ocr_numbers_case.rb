@@ -2,16 +2,31 @@ require 'generator/exercise_case'
 
 class OcrNumbersCase < Generator::ExerciseCase
   def workload
-    if raises_error?
-      assert_raises(ArgumentError) { test_case }
-    else
-      assert_equal { test_case }
-    end
+    [
+      formatted_rows,
+      if expected == -1
+        assert_raises(ArgumentError, subject_of_test)
+      else
+        assert_equal(expected, subject_of_test)
+      end
+    ]
+  end
+
+  def description
+    super.gsub(/\?/,'question_mark')
   end
 
   private
 
-  def test_case
-    %Q(OcrNumbers.convert(#{(input.join("\n")).inspect}))
+  def formatted_rows
+    [
+      "input = [",
+      indent_by(9, rows.map(&:inspect).join(",\n")).sub(/^ */,''),
+      %Q{].join("\\n")\n}
+    ].join
+  end
+
+  def subject_of_test
+    "OcrNumbers.convert(input)"
   end
 end

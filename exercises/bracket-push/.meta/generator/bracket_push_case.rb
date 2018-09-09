@@ -9,20 +9,22 @@ class BracketPushCase < Generator::ExerciseCase
   private
 
   def long_input?
-    input.length > 80
+    value.length > 80
   end
 
   def simple_test
-    "#{assert} Brackets.paired?('#{input}')"
+    assert_or_refute(expected,  "Brackets.paired?('#{value}')")
   end
 
   def split_test
-    "str = '#{split_input[0]}'\\
-          '#{split_input[1]}'
-    #{assert} Brackets.paired?(str)"
+    [
+      "string = '#{split_input[0]}' +\n",
+      "         '#{split_input[1]}'\n",
+      assert_or_refute(expected,  "Brackets.paired?(string)")
+    ].join
   end
 
   def split_input
-    @split_input ||= input.scan(/.{1,#{input.length / 2}}/)
+    value.scan(/.{1,#{value.length / 2}}/)
   end
 end

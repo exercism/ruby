@@ -1,12 +1,11 @@
 require 'generator/exercise_case'
 
 class TwoFerCase < Generator::ExerciseCase
-
   def workload
-    if input == nil
-      assert_equal {"TwoFer.two_fer"}
+    if name.nil?
+      assert_equal(expected, "TwoFer.two_fer")
     else
-      assert_equal { "TwoFer.two_fer(#{input.inspect})" }
+      assert_equal(expected, "TwoFer.two_fer(#{name.inspect})")
     end
   end
 end

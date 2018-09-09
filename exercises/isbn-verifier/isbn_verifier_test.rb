@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'isbn_verifier'
 
-# Common test data version: 2.0.0 3251fa6
+# Common test data version: 2.7.0 3134243
 class IsbnVerifierTest < Minitest::Test
   def test_valid_isbn_number
     # skip
@@ -29,7 +29,7 @@ class IsbnVerifierTest < Minitest::Test
 
   def test_invalid_character_in_isbn
     skip
-    string = "3-598-2K507-0"
+    string = "3-598-P1581-X"
     refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
   end
 
@@ -63,21 +63,45 @@ class IsbnVerifierTest < Minitest::Test
     refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
   end
 
+  def test_too_short_isbn
+    skip
+    string = "00"
+    refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
+  end
+
   def test_isbn_without_check_digit
     skip
     string = "3-598-21507"
     refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
   end
 
-  def test_too_long_isbn
-    skip
-    string = "3-598-21507-XX"
-    refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
-  end
-
   def test_check_digit_of_x_should_not_be_used_for_0
     skip
     string = "3-598-21515-X"
+    refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
+  end
+
+  def test_empty_isbn
+    skip
+    string = ""
+    refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
+  end
+
+  def test_input_is_9_characters
+    skip
+    string = "134456729"
+    refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
+  end
+
+  def test_invalid_characters_are_not_ignored
+    skip
+    string = "3132P34035"
+    refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
+  end
+
+  def test_input_is_too_long_but_contains_a_valid_isbn
+    skip
+    string = "98245726788"
     refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
   end
 end
