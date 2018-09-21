@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'bob'
 
-# Common test data version: 1.3.0 a64ef34
+# Common test data version: 1.4.0 ca79943
 class BobTest < Minitest::Test
   def test_stating_something
     # skip
@@ -125,8 +125,8 @@ class BobTest < Minitest::Test
 
   def test_multiple_line_question
     skip
-    remark = "\nDoes this cryogenic chamber make me look fat?\nno"
-    assert_equal "Whatever.", Bob.hey(remark), %q{Bob hears "\nDoes this cryogenic chamber make me look fat?\nno", and..}
+    remark = "\nDoes this cryogenic chamber make me look fat?\nNo."
+    assert_equal "Whatever.", Bob.hey(remark), %q{Bob hears "\nDoes this cryogenic chamber make me look fat?\nNo.", and..}
   end
 
   def test_starting_with_whitespace

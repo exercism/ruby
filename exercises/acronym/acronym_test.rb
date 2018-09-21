@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'acronym'
 
-# Common test data version: 1.4.0 dc9a5af
+# Common test data version: 1.5.0 787d24e
 class AcronymTest < Minitest::Test
   def test_basic
     # skip
@@ -31,5 +31,10 @@ class AcronymTest < Minitest::Test
   def test_very_long_abbreviation
     skip
     assert_equal "ROTFLSHTMDCOALM", Acronym.abbreviate('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me')
+  end
+
+  def test_consecutive_delimiters
+    skip
+    assert_equal "SIMUFTA", Acronym.abbreviate('Something - I made up from thin air')
   end
 end
