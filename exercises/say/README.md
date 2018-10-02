@@ -24,7 +24,7 @@ Some good test cases for this program are:
 ### Extension
 
 If you're on a Mac, shell out to Mac OS X's `say` program to talk out
-loud.
+loud. If you're on Linux or Windows, eSpeakNG may be available with the command `espeak`.
 
 ## Step 2
 
@@ -65,7 +65,7 @@ Use _and_ (correctly) when spelling out the number in English:
 * * * *
 
 For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/ruby).
+[Ruby resources page](http://exercism.io/languages/ruby/resources).
 
 For running the tests provided, you will need the Minitest gem. Open a
 terminal window and run the following command to install minitest:

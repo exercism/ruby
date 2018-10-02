@@ -30,7 +30,7 @@ If you want to know more about linked lists, check [Wikipedia](https://en.wikipe
 * * * *
 
 For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/ruby).
+[Ruby resources page](http://exercism.io/languages/ruby/resources).
 
 For running the tests provided, you will need the Minitest gem. Open a
 terminal window and run the following command to install minitest:

@@ -27,12 +27,12 @@ To conclude, the only valid moves are:
 - emptying one bucket and doing nothing to the other
 - filling one bucket and doing nothing to the other
 
-Written with <3 at [Fullstack Academy](http://www.fullstackacademy.com/) by [Lindsay](http://lindsaylevine.com).
+Written with <3 at [Fullstack Academy](http://www.fullstackacademy.com/) by Lindsay Levine.
 
 * * * *
 
 For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/ruby).
+[Ruby resources page](http://exercism.io/languages/ruby/resources).
 
 For running the tests provided, you will need the Minitest gem. Open a
 terminal window and run the following command to install minitest:

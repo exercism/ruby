@@ -19,10 +19,7 @@ The reciprocal of a non-zero complex number is
 Dividing a complex number `a + i * b` by another `c + i * d` gives:
 `(a + i * b) / (c + i * d) = (a * c + b * d)/(c^2 + d^2) + (b * c - a * d)/(c^2 + d^2) * i`.
 
-Exponent of a complex number can be expressed as
-`exp(a + i * b) = exp(a) * exp(i * b)`,
-and the last term is given by Euler's formula `exp(i * b) = cos(b) + i * sin(b)`.
-
+Raising e to a complex exponent can be expressed as `e^(a + i * b) = e^a * e^(i * b)`, the last term of which is given by Euler's formula `e^(i * b) = cos(b) + i * sin(b)`.
 
 Implement the following operations:
  - addition, subtraction, multiplication and division of two complex numbers,
@@ -34,7 +31,7 @@ Assume the programming language you are using does not have an implementation of
 * * * *
 
 For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/ruby).
+[Ruby resources page](http://exercism.io/languages/ruby/resources).
 
 For running the tests provided, you will need the Minitest gem. Open a
 terminal window and run the following command to install minitest:

@@ -23,13 +23,15 @@ A matrix may have zero or more saddle points.
 Your code should be able to provide the (possibly empty) list of all the
 saddle points for any given matrix.
 
+The matrix can have a different number of rows and columns (Non square).
+
 Note that you may find other definitions of matrix saddle points online,
 but the tests for this exercise follow the above unambiguous definition.
 
 * * * *
 
 For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/ruby).
+[Ruby resources page](http://exercism.io/languages/ruby/resources).
 
 For running the tests provided, you will need the Minitest gem. Open a
 terminal window and run the following command to install minitest:

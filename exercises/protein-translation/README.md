@@ -20,11 +20,11 @@ All subsequent codons after are ignored, like this:
 
 RNA: `"AUGUUUUCUUAAAUG"` =>
 
-Codons: `"AUG", "UUU", "UCU", "UAG", "AUG"` =>
+Codons: `"AUG", "UUU", "UCU", "UAA", "AUG"` =>
 
 Protein: `"Methionine", "Phenylalanine", "Serine"`
 
-Note the stop codon terminates the translation and the final methionine is not translated into the protein sequence.
+Note the stop codon `"UAA"` terminates the translation and the final methionine is not translated into the protein sequence.
 
 Below are the codons and resulting Amino Acids needed for the exercise.
 
@@ -44,7 +44,7 @@ Learn more about [protein translation on Wikipedia](http://en.wikipedia.org/wiki
 * * * *
 
 For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/ruby).
+[Ruby resources page](http://exercism.io/languages/ruby/resources).
 
 For running the tests provided, you will need the Minitest gem. Open a
 terminal window and run the following command to install minitest:
