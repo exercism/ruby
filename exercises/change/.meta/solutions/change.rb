@@ -11,8 +11,9 @@ class Change
     return [] if target.zero?
 
     calculate_change(coins, [], target)
+    raise ArgumentError if total_change.none?
 
-    total_change.any? ? total_change.sort : -1
+    total_change.sort
   end
 
   def self.generate(coins, target)
