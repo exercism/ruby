@@ -6,7 +6,7 @@ class ConnectCase < Generator::ExerciseCase
     [
       'board = [',
       indent_by(2,board.map(&method(:single_quote)).join(",\n")),
-      ']',
+      "].map {|row| row.gsub(/^ */, '')}",
       'game = Board.new(board)',
       "assert_equal #{single_quote(expected)}, game.winner, #{single_quote(description)}"
     ].map {|line| line + "\n" }.join
