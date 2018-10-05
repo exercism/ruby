@@ -11,7 +11,8 @@ module PhoneNumber
   def self.clean(number)
     sanitized = digits_only(number)
     sections = nanp_parse(sanitized)
-    format '%<area_code>s%<exchange_code>s%<subscriber>s', sections if sections
+    raise ArgumentError unless sections
+    format '%<area_code>s%<exchange_code>s%<subscriber>s', sections
   end
 
   def self.digits_only(number)
