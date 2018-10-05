@@ -11,10 +11,6 @@ class LargestSeriesProductCase < Generator::ExerciseCase
 
   private
 
-  def error_expected?
-    expected == -1
-  end
-
   def subject_of_test
     "Series.new('#{digits}').largest_product(#{span})"
   end
