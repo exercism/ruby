@@ -9,7 +9,6 @@ module Generator
 
     def default_options
       {
-        update: false,
         all: false,
         verbose: false,
         slug: nil

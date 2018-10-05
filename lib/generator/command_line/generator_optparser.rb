@@ -4,7 +4,6 @@ require 'generator/files/generator_cases'
 module Generator
   class GeneratorOptparser
     DEFAULT_OPTIONS = {
-      update: false,
       all: false,
       verbose: false,
       slug: nil

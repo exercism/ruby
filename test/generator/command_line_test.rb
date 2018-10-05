@@ -70,7 +70,7 @@ module Generator
     def test_update_option
       args = %w(-u beta)
       Files::GeneratorCases.stub :available, %w(beta) do
-        assert_instance_of UpdateVersionAndGenerateTests, CommandLine.new(FixturePaths).parse(args).first
+        assert_instance_of GenerateTests, CommandLine.new(FixturePaths).parse(args).first
       end
     end
 

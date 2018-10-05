@@ -32,11 +32,7 @@ module Generator
     end
 
     def generator_class
-      update? ? UpdateVersionAndGenerateTests : GenerateTests
-    end
-
-    def update?
-      @options[:update]
+      GenerateTests
     end
 
     def implementation(slug)
