@@ -10,11 +10,6 @@ class SayCase < Generator::ExerciseCase
 
   private
 
-  # non-standard so override
-  def error_expected?
-    expected == -1
-  end
-
   def assertion
     if error_expected?
       assert_raises(ArgumentError, subject_of_test)
