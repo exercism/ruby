@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'anagram'
 
-# Common test data version: 1.3.0 3faf343
+# Common test data version: 1.4.0 baaf092
 class AnagramTest < Minitest::Test
   def test_no_matches
     # skip
@@ -91,10 +91,10 @@ class AnagramTest < Minitest::Test
     assert_equal expected, anagrams
   end
 
-  def test_capital_word_is_not_own_anagram
+  def test_words_are_not_anagrams_of_themselves_case_insensitive
     skip
     detector = Anagram.new('BANANA')
-    anagrams = detector.match(["Banana"])
+    anagrams = detector.match(["BANANA", "Banana", "banana"])
     expected = []
     assert_equal expected, anagrams
   end
