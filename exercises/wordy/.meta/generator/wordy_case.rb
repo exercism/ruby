@@ -8,10 +8,6 @@ class WordyCase < Generator::ExerciseCase
 
   private
 
-  def error_expected?
-    expected == false
-  end
-
   def assertion
     return error_assertion if error_expected?
     return message_assertion if message
