@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'alphametics'
 
-# Common test data version: 1.2.0 a86a774
+# Common test data version: 1.3.0 361cf3c
 class AlphameticsTest < Minitest::Test
   def test_puzzle_with_three_letters
     # skip
@@ -21,6 +21,13 @@ class AlphameticsTest < Minitest::Test
     skip
     puzzle = 'ACA + DD == BD'
     expected = {}
+    assert_equal expected, Alphametics.solve(puzzle)
+  end
+
+  def test_puzzle_with_two_digits_final_carry
+    skip
+    puzzle = 'A + A + A + A + A + A + A + A + A + A + A + B == BCC'
+    expected = { 'A' => 9, 'B' => 1, 'C' => 0 }
     assert_equal expected, Alphametics.solve(puzzle)
   end
 
