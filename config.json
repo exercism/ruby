@@ -87,7 +87,7 @@
       "slug": "pangram",
       "uuid": "fcf07149-b2cb-4042-90e6-fb3350e0fdf6",
       "core": false,
-      "unlocked_by": "isogram",
+      "unlocked_by": "acronym",
       "difficulty": 2,
       "topics": [
         "loops",
@@ -343,8 +343,8 @@
       "slug": "anagram",
       "uuid": "36df18ba-580d-4982-984e-ba50eb1f8c0b",
       "core": false,
-      "unlocked_by": "isogram",
-      "difficulty": 3,
+      "unlocked_by": "acronym",
+      "difficulty": 5,
       "topics": [
         "filtering",
         "parsing",
