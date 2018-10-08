@@ -425,7 +425,7 @@
       "slug": "acronym",
       "uuid": "74468206-68a2-4efb-8caa-782634674c7f",
       "core": true,
-      "unlocked_by": "two-fer",
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
         "regular_expressions",
