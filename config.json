@@ -161,7 +161,7 @@
       "slug": "word-count",
       "uuid": "e9d29769-8d4d-4159-8d6f-762db5339707",
       "core": false,
-      "unlocked_by": "two-fer",
+      "unlocked_by": "acronym",
       "difficulty": 3,
       "topics": [
         "sorting",
