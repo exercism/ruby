@@ -8,10 +8,6 @@ module Generator
         MinitestTestsFile.new(filename: File.join(exercise_path, minitest_tests_filename))
       end
 
-      def tests_version
-        TestsVersionFile.new(filename: File.join(meta_path, version_filename))
-      end
-
       def example_solution
         ExampleSolutionFile.new(filename: File.join(solutions_path, example_filename))
       end

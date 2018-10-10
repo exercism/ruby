@@ -7,7 +7,7 @@ module Generator
     extend Forwardable
     include TemplateValuesFactory
 
-    def_delegators :@repository, :tests_version, :example_solution, :tests_template, :minitest_tests, :canonical_data, :test_case
+    def_delegators :@repository, :example_solution, :tests_template, :minitest_tests, :canonical_data, :test_case
 
     def initialize(repository:, exercise:)
       @repository = repository
@@ -18,18 +18,6 @@ module Generator
 
     def slug
       exercise.slug
-    end
-
-    def version
-      tests_version.to_i
-    end
-
-    def update_tests_version
-      tests_version.increment
-    end
-
-    def update_example_solution
-      example_solution.update_version(version)
     end
 
     def build_tests
@@ -51,19 +39,9 @@ module Generator
       @logger = logger
     end
 
-    def update_tests_version
-      @implementation.update_tests_version
-      @logger.debug "Incremented tests version to #{version}"
-    end
-
-    def update_example_solution
-      @implementation.update_example_solution
-      @logger.debug "Updated version in example solution to #{version}"
-    end
-
     def build_tests
       @implementation.build_tests
-      @logger.info "Generated #{exercise.slug} tests version #{version}"
+      @logger.info "Generated #{exercise.slug} tests"
     end
   end
 end

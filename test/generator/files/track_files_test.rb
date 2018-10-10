@@ -18,11 +18,6 @@ module Generator
         include TrackFiles
       end
 
-      def test_tests_version
-        subject = TestTrackFiles.new
-        assert_instance_of TestsVersionFile, subject.tests_version
-      end
-
       def test_example_solution
         subject = TestTrackFiles.new
         expected_filename = FixturePaths.track + '/exercises/alpha-beta/.meta/solutions/alpha_beta.rb'
