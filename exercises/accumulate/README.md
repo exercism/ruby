@@ -35,7 +35,7 @@ Here is an additional test you could add:
 def test_accumulate_when_block_is_deferred
   skip
   accumulate_enumerator = [1, 2, 3].accumulate
-  accumulated_result = accumulate_enumerator.each do |number|
+  accumulated_result = accumulate_enumerator.map do |number|
     number * number
   end
   assert_equal [1, 4, 9], accumulated_result
