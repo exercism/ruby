@@ -57,19 +57,6 @@ module Generator
       end
     end
 
-    class TestsVersionFileTest < Minitest::Test
-      class TestTestsVersionFile < TestsVersionFile
-        def save(content)
-          content
-        end
-      end
-
-      def test_increment
-        subject = TestTestsVersionFile.new(filename: 'test/fixtures/ruby/exercises/alpha/.meta/.version')
-        assert_equal 2, subject.increment
-      end
-    end
-
     class ExampleSolutionFileTest < Minitest::Test
       class TestExampleSolutionFile < ExampleSolutionFile
         def save(content)

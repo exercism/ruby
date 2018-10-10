@@ -42,10 +42,6 @@ module Generator
         "#{slug_underscored}_test.rb"
       end
 
-      def version_filename
-        '.version'
-      end
-
       def example_filename
         "#{slug_underscored}.rb"
       end
