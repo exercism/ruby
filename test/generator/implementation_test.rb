@@ -52,4 +52,21 @@ TESTS_FILE
       Object.send(:remove_const, :AlphaCase)
     end
   end
+
+  class LoggingImplementationTest < Minitest::Test
+    def test_build_tests
+      exercise = Exercise.new(slug: 'alpha')
+      mock_implementation = Minitest::Mock.new
+      mock_implementation.expect :build_tests, nil
+      mock_implementation.expect :exercise, exercise
+      # mock_implementation.expect :version, 2
+      mock_logger = Minitest::Mock.new
+      mock_logger.expect :info, nil, ['Generated alpha tests']
+
+      subject = LoggingImplementation.new(implementation: mock_implementation, logger: mock_logger)
+      subject.build_tests
+
+      mock_implementation.verify
+    end
+  end
 end

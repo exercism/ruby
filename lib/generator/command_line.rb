@@ -28,11 +28,7 @@ module Generator
     end
 
     def generator(implementation)
-      generator_class.new(implementation)
-    end
-
-    def generator_class
-      GenerateTests
+      GenerateTests.new(implementation)
     end
 
     def implementation(slug)
