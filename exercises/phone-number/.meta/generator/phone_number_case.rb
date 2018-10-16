@@ -3,7 +3,7 @@ require 'generator/exercise_case'
 class PhoneNumberCase < Generator::ExerciseCase
   def workload
     if error_expected?
-      assert_raises(ArgumentError, subject_of_test)
+      assert_equal(nil, subject_of_test)
     else
       assert_equal(expected, subject_of_test)
     end
