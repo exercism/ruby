@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'leap'
 
-# Common test data version: 1.3.0 e348053
+# Common test data version: 1.4.0 3134d31
 class Date
   def leap?
     raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."
@@ -30,5 +30,10 @@ class YearTest < Minitest::Test
   def test_year_divisible_by_400_leap_year
     skip
     assert Year.leap?(2000), "Expected 'true', 2000 is a leap year."
+  end
+
+  def test_year_divisible_by_200_not_divisible_by_400_common_year
+    skip
+    refute Year.leap?(1800), "Expected 'false', 1800 is not a leap year."
   end
 end
