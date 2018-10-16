@@ -1,4 +1,3 @@
-# rubocop:enable all
 class RailFenceCipher
   def self.encode(message, rails)
     return message if message.empty? || rails == 1
