@@ -28,6 +28,44 @@
       ]
     },
     {
+      "slug": "acronym",
+      "uuid": "74468206-68a2-4efb-8caa-782634674c7f",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "regular_expressions",
+        "strings",
+        "transforming"
+      ]
+    },
+    {
+      "slug": "isogram",
+      "uuid": "a79eb8cd-d2db-48f5-a7dc-055039dcee62",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "sequences",
+        "strings", 
+        "regular_expressions"
+      ]
+    },
+    {
+      "slug": "matrix",
+      "uuid": "3de21c18-a533-4150-8a73-49df8fcb8c61",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "arrays",
+        "exception_handling",
+        "matrices",
+        "strings",
+        "type_conversion"
+      ]
+    },
+    {
       "slug": "hamming",
       "uuid": "d33dec8a-e2b4-40bc-8be9-3f49de084d43",
       "core": true,
@@ -37,27 +75,6 @@
         "equality",
         "loops",
         "strings"
-      ]
-    },
-    {
-      "slug": "gigasecond",
-      "uuid": "0fb594a1-193b-4ccf-8de2-eb6a81708b29",
-      "core": false,
-      "unlocked_by": "hello-world",
-      "difficulty": 1,
-      "topics": [
-        "time"
-      ]
-    },
-    {
-      "slug": "rna-transcription",
-      "uuid": "41f66d2a-1883-4a2c-875f-663c46fa88aa",
-      "core": false,
-      "unlocked_by": "hamming",
-      "difficulty": 2,
-      "topics": [
-        "maps",
-        "transforming"
       ]
     },
     {
@@ -83,6 +100,116 @@
         "math"
       ]
     },
+    {
+      "slug": "grains",
+      "uuid": "22519f53-4516-43bc-915e-07d58e48f617",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "bitwise_operations",
+        "if_else_statements",
+        "integers",
+        "type_conversion"
+      ]
+    },
+    {
+      "slug": "scrabble-score",
+      "uuid": "d934ebce-9ac3-4a41-bcb8-d70480170438",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "loops",
+        "maps",
+        "strings"
+      ]
+    },
+    {
+      "slug": "robot-name",
+      "uuid": "76a0fd0a-cc65-4be3-acc8-7348bb67ad5a",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "randomness"
+      ]
+    },
+    {
+      "slug": "luhn",
+      "uuid": "bee97539-b8c1-460e-aa14-9336008df2b6",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "algorithms",
+        "integers",
+        "strings"
+      ]
+    },
+    {
+      "slug": "clock",
+      "uuid": "f95ebf09-0f32-4e60-867d-60cb81dd9a62",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "equality",
+        "text_formatting",
+        "time"
+      ]
+    },
+    {
+      "slug": "twelve-days",
+      "uuid": "eeb64dda-b79f-4920-8fa3-04810e8d37ab",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "algorithms",
+        "pattern_recognition",
+        "sequences",
+        "strings",
+        "text_formatting"
+      ]
+    },
+    {
+      "slug": "tournament",
+      "uuid": "486becee-9d85-4139-ab89-db254d385ade",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "integers",
+        "parsing",
+        "records",
+        "sorting",
+        "strings",
+        "text_formatting",
+        "transforming"
+      ]
+    },
+    {
+      "slug": "gigasecond",
+      "uuid": "0fb594a1-193b-4ccf-8de2-eb6a81708b29",
+      "core": false,
+      "unlocked_by": "hello-world",
+      "difficulty": 1,
+      "topics": [
+        "time"
+      ]
+    },
+    {
+      "slug": "rna-transcription",
+      "uuid": "41f66d2a-1883-4a2c-875f-663c46fa88aa",
+      "core": false,
+      "unlocked_by": "hamming",
+      "difficulty": 2,
+      "topics": [
+        "maps",
+        "transforming"
+      ]
+    },    
     {
       "slug": "pangram",
       "uuid": "fcf07149-b2cb-4042-90e6-fb3350e0fdf6",
@@ -142,19 +269,6 @@
         "conditionals",
         "integers",
         "logic"
-      ]
-    },
-    {
-      "slug": "grains",
-      "uuid": "22519f53-4516-43bc-915e-07d58e48f617",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "bitwise_operations",
-        "if_else_statements",
-        "integers",
-        "type_conversion"
       ]
     },
     {
@@ -382,18 +496,6 @@
       ]
     },
     {
-      "slug": "clock",
-      "uuid": "f95ebf09-0f32-4e60-867d-60cb81dd9a62",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "equality",
-        "text_formatting",
-        "time"
-      ]
-    },
-    {
       "slug": "alphametics",
       "uuid": "2323a2a5-c181-4c1e-9c5f-f6b92b2de511",
       "core": false,
@@ -419,30 +521,6 @@
         "strings",
         "text_formatting",
         "transforming"
-      ]
-    },
-    {
-      "slug": "acronym",
-      "uuid": "74468206-68a2-4efb-8caa-782634674c7f",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "regular_expressions",
-        "strings",
-        "transforming"
-      ]
-    },
-    {
-      "slug": "scrabble-score",
-      "uuid": "d934ebce-9ac3-4a41-bcb8-d70480170438",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "loops",
-        "maps",
-        "strings"
       ]
     },
     {
@@ -504,16 +582,6 @@
       ]
     },
     {
-      "slug": "robot-name",
-      "uuid": "76a0fd0a-cc65-4be3-acc8-7348bb67ad5a",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "randomness"
-      ]
-    },
-    {
       "slug": "queen-attack",
       "uuid": "2ce9b158-e730-4c86-8639-bd08af9f80f4",
       "core": false,
@@ -560,20 +628,6 @@
         "recursion",
         "strings",
         "text_formatting"
-      ]
-    },
-    {
-      "slug": "matrix",
-      "uuid": "3de21c18-a533-4150-8a73-49df8fcb8c61",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 4,
-      "topics": [
-        "arrays",
-        "exception_handling",
-        "matrices",
-        "strings",
-        "type_conversion"
       ]
     },
     {
@@ -682,18 +736,6 @@
       "topics": [
         "arrays",
         "loops"
-      ]
-    },
-    {
-      "slug": "luhn",
-      "uuid": "bee97539-b8c1-460e-aa14-9336008df2b6",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "algorithms",
-        "integers",
-        "strings"
       ]
     },
     {
@@ -825,18 +867,6 @@
       ]
     },
     {
-      "slug": "isogram",
-      "uuid": "a79eb8cd-d2db-48f5-a7dc-055039dcee62",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "sequences",
-        "strings", 
-        "regular_expressions"
-      ]
-    },
-    {
       "slug": "circular-buffer",
       "uuid": "f3419fe3-a5f5-4bc9-bc40-49f450b8981e",
       "core": false,
@@ -871,20 +901,6 @@
         "filtering",
         "loops",
         "sets"
-      ]
-    },
-    {
-      "slug": "twelve-days",
-      "uuid": "eeb64dda-b79f-4920-8fa3-04810e8d37ab",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 4,
-      "topics": [
-        "algorithms",
-        "pattern_recognition",
-        "sequences",
-        "strings",
-        "text_formatting"
       ]
     },
     {
@@ -934,22 +950,6 @@
         "arrays",
         "searching",
         "sorting"
-      ]
-    },
-    {
-      "slug": "tournament",
-      "uuid": "486becee-9d85-4139-ab89-db254d385ade",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "integers",
-        "parsing",
-        "records",
-        "sorting",
-        "strings",
-        "text_formatting",
-        "transforming"
       ]
     },
     {
