@@ -45,21 +45,21 @@ class ChangeTest < Minitest::Test
 
   def test_error_testing_for_change_smaller_than_the_smallest_of_coins
     skip
-    assert_raises(ArgumentError) do
+    assert_raises(Change::ImpossibleCombinationError) do
       Change.generate([5, 10], 3)
     end
   end
 
   def test_error_if_no_combination_can_add_up_to_target
     skip
-    assert_raises(ArgumentError) do
+    assert_raises(Change::ImpossibleCombinationError) do
       Change.generate([5, 10], 94)
     end
   end
 
   def test_cannot_find_negative_change_values
     skip
-    assert_raises(ArgumentError) do
+    assert_raises(Change::NegativeTargetError) do
       Change.generate([1, 2, 5], -5)
     end
   end
