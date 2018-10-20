@@ -1,0 +1,3 @@
+- [ ] Do we want to keep `add`? How will that work in the test generator?
+- [ ] Should we change the generator so we split big lines into two or more? (by using variables, for example)
+- [ ] Add content to README.md (I thought this file was generated - weird)
