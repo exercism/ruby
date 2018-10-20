@@ -1,4 +1,4 @@
-class HighScoreList
+class HighScore
   def initialize(scores)
     @scores = scores
   end

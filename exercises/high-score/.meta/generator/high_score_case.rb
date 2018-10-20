@@ -1,6 +1,6 @@
 require 'generator/exercise_case'
 
-class HighScoreListCase < Generator::ExerciseCase
+class HighScoreCase < Generator::ExerciseCase
   def workload
     assert_equal(expected, subject_of_test)
   end
@@ -8,6 +8,6 @@ class HighScoreListCase < Generator::ExerciseCase
   private
 
   def subject_of_test
-    "HighScoreList.new(#{scores}).#{property}"
+    "HighScore.new(#{scores}).#{property}"
   end
 end
