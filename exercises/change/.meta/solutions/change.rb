@@ -1,6 +1,9 @@
 class Change
   attr_reader :coins, :target
 
+  class NegativeTargetError < ArgumentError; end
+  class ImpossibleCombinationError < StandardError; end
+
   def initialize(coins, target)
     @coins  = coins.sort.reverse
     @target = target
@@ -8,11 +11,13 @@ class Change
   end
 
   def generate
+    raise NegativeTargetError if target < 0
     return [] if target.zero?
 
     calculate_change(coins, [], target)
+    raise ImpossibleCombinationError if total_change.none?
 
-    total_change.any? ? total_change.sort : -1
+    total_change.sort
   end
 
   def self.generate(coins, target)
