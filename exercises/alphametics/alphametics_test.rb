@@ -1,106 +1,86 @@
 require 'minitest/autorun'
 require_relative 'alphametics'
 
-# Common test data version: 1.0.0 b9bada8
+# Common test data version: 1.2.0 a86a774
 class AlphameticsTest < Minitest::Test
-
   def test_puzzle_with_three_letters
     # skip
-    input = 'I + BB == ILL'
+    puzzle = 'I + BB == ILL'
     expected = { 'B' => 9, 'I' => 1, 'L' => 0 }
-    assert_equal expected, Alphametics.solve(input)
+    assert_equal expected, Alphametics.solve(puzzle)
   end
 
   def test_solution_must_have_unique_value_for_each_letter
-    skip
-    input = 'A == B'
+    # skip
+    puzzle = 'A == B'
     expected = {}
-    assert_equal expected, Alphametics.solve(input)
+    assert_equal expected, Alphametics.solve(puzzle)
   end
 
   def test_leading_zero_solution_is_invalid
-    skip
-    input = 'ACA + DD == BD'
+    # skip
+    puzzle = 'ACA + DD == BD'
     expected = {}
-    assert_equal expected, Alphametics.solve(input)
+    assert_equal expected, Alphametics.solve(puzzle)
   end
 
   def test_puzzle_with_four_letters
-    skip
-    input = 'AS + A == MOM'
+    # skip
+    puzzle = 'AS + A == MOM'
     expected = { 'A' => 9, 'M' => 1, 'O' => 0, 'S' => 2 }
-    assert_equal expected, Alphametics.solve(input)
+    assert_equal expected, Alphametics.solve(puzzle)
   end
 
   def test_puzzle_with_six_letters
-    skip
-    input = 'NO + NO + TOO == LATE'
+    # skip
+    puzzle = 'NO + NO + TOO == LATE'
     expected = { 'A' => 0, 'E' => 2, 'L' => 1, 'N' => 7,
                  'O' => 4, 'T' => 9 }
-    assert_equal expected, Alphametics.solve(input)
+    assert_equal expected, Alphametics.solve(puzzle)
   end
 
   def test_puzzle_with_seven_letters
-    skip
-    input = 'HE + SEES + THE == LIGHT'
+    # skip
+    puzzle = 'HE + SEES + THE == LIGHT'
     expected = { 'E' => 4, 'G' => 2, 'H' => 5, 'I' => 0,
                  'L' => 1, 'S' => 9, 'T' => 7 }
-    assert_equal expected, Alphametics.solve(input)
+    assert_equal expected, Alphametics.solve(puzzle)
   end
 
   # The obvious algorithm can take a long time to solve this puzzle,
   # but an optimised solution can solve it fairly quickly.
   # (It's OK to submit your solution without getting this test to pass.)
   def test_puzzle_with_eight_letters
-    skip
-    input = 'SEND + MORE == MONEY'
+    # skip
+    puzzle = 'SEND + MORE == MONEY'
     expected = { 'D' => 7, 'E' => 5, 'M' => 1, 'N' => 6,
                  'O' => 0, 'R' => 8, 'S' => 9, 'Y' => 2 }
-    assert_equal expected, Alphametics.solve(input)
-  end
-
-  # It was found to have a solution, so why not?
-  def test_puzzle_with_nine_letters
-    skip
-    input = 'FAKE + NEWS == LIES'
-    expected = {"E"=>0, "S"=>1, "F"=>2, "A"=>4,
-                "K"=>3, "N"=>6, "W"=>7, "L"=>8, "I"=>5}
-    assert_equal expected, Alphametics.solve(input)
+    assert_equal expected, Alphametics.solve(puzzle)
   end
 
   # The obvious algorithm can take a long time to solve this puzzle,
   # but an optimised solution can solve it fairly quickly.
   # (It's OK to submit your solution without getting this test to pass.)
   def test_puzzle_with_ten_letters
-    skip
-    input = 'AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE'
+    # skip
+    puzzle = 'AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE'
     expected = { 'A' => 5, 'D' => 3, 'E' => 4, 'F' => 7,
                  'G' => 8, 'N' => 0, 'O' => 2, 'R' => 1,
                  'S' => 6, 'T' => 9 }
-    assert_equal expected, Alphametics.solve(input)
+    assert_equal expected, Alphametics.solve(puzzle)
   end
-  
 
-
-  # Problems in exercism evolve over time, as we find better ways to ask
-  # questions.
-  # The version number refers to the version of the problem you solved,
-  # not your solution.
-  #
-  # Define a constant named VERSION inside of the top level BookKeeping
-  # module, which may be placed near the end of your file.
-  #
-  # In your file, it will look like this:
-  #
-  # module BookKeeping
-  #   VERSION = 1 # Where the version number matches the one in the test.
-  # end
-  #
-  # If you are curious, read more about constants on RubyDoc:
-  # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
-
-  def test_bookkeeping
-    skip
-    assert_equal 4, BookKeeping::VERSION
+=begin
+  # The obvious algorithm can take a long time to solve this puzzle,
+  # but an optimised solution can solve it fairly quickly.
+  # (It's OK to submit your solution without getting this test to pass.)
+  def test_puzzle_with_ten_letters_and_199_addends
+    # skip
+    puzzle = 'THIS + A + FIRE + THEREFORE + FOR + ALL + HISTORIES + I + TELL + A + TALE + THAT + FALSIFIES + ITS + TITLE + TIS + A + LIE + THE + TALE + OF + THE + LAST + FIRE + HORSES + LATE + AFTER + THE + FIRST + FATHERS + FORESEE + THE + HORRORS + THE + LAST + FREE + TROLL + TERRIFIES + THE + HORSES + OF + FIRE + THE + TROLL + RESTS + AT + THE + HOLE + OF + LOSSES + IT + IS + THERE + THAT + SHE + STORES + ROLES + OF + LEATHERS + AFTER + SHE + SATISFIES + HER + HATE + OFF + THOSE + FEARS + A + TASTE + RISES + AS + SHE + HEARS + THE + LEAST + FAR + HORSE + THOSE + FAST + HORSES + THAT + FIRST + HEAR + THE + TROLL + FLEE + OFF + TO + THE + FOREST + THE + HORSES + THAT + ALERTS + RAISE + THE + STARES + OF + THE + OTHERS + AS + THE + TROLL + ASSAILS + AT + THE + TOTAL + SHIFT + HER + TEETH + TEAR + HOOF + OFF + TORSO + AS + THE + LAST + HORSE + FORFEITS + ITS + LIFE + THE + FIRST + FATHERS + HEAR + OF + THE + HORRORS + THEIR + FEARS + THAT + THE + FIRES + FOR + THEIR + FEASTS + ARREST + AS + THE + FIRST + FATHERS + RESETTLE + THE + LAST + OF + THE + FIRE + HORSES + THE + LAST + TROLL + HARASSES + THE + FOREST + HEART + FREE + AT + LAST + OF + THE + LAST + TROLL + ALL + OFFER + THEIR + FIRE + HEAT + TO + THE + ASSISTERS + FAR + OFF + THE + TROLL + FASTS + ITS + LIFE + SHORTER + AS + STARS + RISE + THE + HORSES + REST + SAFE + AFTER + ALL + SHARE + HOT + FISH + AS + THEIR + AFFILIATES + TAILOR + A + ROOFS + FOR + THEIR + SAFE == FORTRESSES'
+    expected = { 'A' => 1, 'E' => 0, 'F' => 5, 'H' => 8,
+                 'I' => 7, 'L' => 2, 'O' => 6, 'R' => 3,
+                 'S' => 4, 'T' => 9 }
+    assert_equal expected, Alphametics.solve(puzzle)
   end
+=end
 end
