@@ -72,16 +72,6 @@ module Generator
       end
     end
 
-    class TestsVersionFile < Writable
-      def to_i
-        to_s.to_i
-      end
-
-      def increment
-        save(to_i + 1)
-      end
-    end
-
     class ExampleSolutionFile < Writable
     end
 
