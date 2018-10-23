@@ -11,7 +11,6 @@ module Generator
   end
 
   # This contains the order for updating/generating the files. (Strategy pattern).
-  # Doesn't update the version information.
   class GenerateTests < ImplementationDelegator
     def call
       build_tests
