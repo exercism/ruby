@@ -222,6 +222,16 @@
       ]
     },
     {
+      "slug": "high-scores",
+      "uuid": "9124339c-94fb-46eb-aad2-25944214799d",
+      "core": false,
+      "unlocked_by": "acronym",
+      "difficulty": 2,
+      "topics": [
+        "arrays"
+      ]
+    },
+    {
       "slug": "sieve",
       "uuid": "80f9af5a-ea29-4937-9333-b4494aaf2446",
       "core": false,
