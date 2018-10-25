@@ -33,8 +33,7 @@ module Generator
     def option_parser
       @option_parser ||= OptionParser.new do |parser|
         parser.banner = "Usage: #{$PROGRAM_NAME} [options] exercise-generator"
-        parser.on('-u', '--update', 'Update test version') { |value| options[:update] = value }
-        parser.on('-a', '--all', 'Regenerate all available test suites (does not update version)') do |value|
+        parser.on('-a', '--all', 'Regenerate all available test suites') do |value|
           options[:all] = value
         end
         parser.on('-h', '--help', 'Displays this help message') { |value| options[:help] = value }

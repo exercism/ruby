@@ -25,16 +25,6 @@ module Generator
       end
     end
 
-    def test_update_option
-      args = %w(-u beta)
-      Files::GeneratorCases.stub :available, %w(beta) do
-        assert_equal(
-          default_options.merge(slug: 'beta', update: true),
-          GeneratorOptparser.new(args, FixturePaths).options
-        )
-      end
-    end
-
     def test_all_option
       args = %w(-a)
       assert_equal(
