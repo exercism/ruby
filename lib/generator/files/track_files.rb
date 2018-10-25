@@ -73,6 +73,10 @@ module Generator
     end
 
     class ExampleSolutionFile < Writable
+      def update_version(version)
+        content = to_s.gsub(/VERSION = \d+/, "VERSION = #{version}")
+        save(content)
+      end
     end
 
     class MinitestTestsFile < Writable

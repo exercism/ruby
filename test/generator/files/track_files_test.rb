@@ -63,6 +63,13 @@ module Generator
           content
         end
       end
+
+      def test_update_version
+        subject = TestExampleSolutionFile.new(
+          filename: 'test/fixtures/ruby/exercises/alpha/.meta/solutions/alpha.rb'
+        )
+        assert_match(/VERSION = 2/, subject.update_version(2))
+      end
     end
 
     class MinitestTestsFileTest < Minitest::Test
