@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'high_scores'
 
-# Common test data version: 0.0.0
+# Common test data version: 1.0.0 3204fc2
 class HighScoresTest < Minitest::Test
   def test_list_of_scores
     # skip
