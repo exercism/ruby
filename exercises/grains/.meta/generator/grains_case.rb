@@ -7,11 +7,6 @@ class GrainsCase < Generator::ExerciseCase
 
   private
 
-  # non-standard so override
-  def error_expected?
-    expected == -1
-  end
-
   def square_workload
     subject_of_test = "Grains.square(#{square})"
     if error_expected?
