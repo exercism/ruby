@@ -4,7 +4,7 @@ module Generator
   class TestTemplateValuesTest < Minitest::Test
     def setup
       @arguments = {
-        abbreviated_commit_hash: nil, version: nil, exercise_name: nil, test_cases: nil
+        abbreviated_commit_hash: nil, exercise_name: nil, test_cases: nil
       }
     end
 
@@ -12,12 +12,6 @@ module Generator
       expected_abbreviated_commit_hash = '1234567'
       subject = TemplateValues.new(@arguments.merge(abbreviated_commit_hash: expected_abbreviated_commit_hash))
       assert_equal expected_abbreviated_commit_hash, subject.abbreviated_commit_hash
-    end
-
-    def test_version
-      expected_version = '1234567'
-      subject = TemplateValues.new(@arguments.merge(version: expected_version))
-      assert_equal expected_version, subject.version
     end
 
     def test_exercise_name
@@ -48,10 +42,6 @@ module Generator
     class TestTemplateValuesFactory
       def exercise
         Exercise.new(slug: 'alpha')
-      end
-
-      def version
-        2
       end
 
       def canonical_data

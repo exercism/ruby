@@ -67,13 +67,6 @@ module Generator
       end
     end
 
-    def test_update_option
-      args = %w(-u beta)
-      Files::GeneratorCases.stub :available, %w(beta) do
-        assert_instance_of UpdateVersionAndGenerateTests, CommandLine.new(FixturePaths).parse(args).first
-      end
-    end
-
     def test_all_option
       args = %w(--all)
       fake_generators = %w(some fake generator names also-hyphen-ated)

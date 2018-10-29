@@ -18,11 +18,6 @@ module Generator
         include TrackFiles
       end
 
-      def test_tests_version
-        subject = TestTrackFiles.new
-        assert_instance_of TestsVersionFile, subject.tests_version
-      end
-
       def test_example_solution
         subject = TestTrackFiles.new
         expected_filename = FixturePaths.track + '/exercises/alpha-beta/.meta/solutions/alpha_beta.rb'
@@ -59,19 +54,6 @@ module Generator
         subject = TestTrackFilesUseDefault.new
         expected_filename = FixturePaths.track + '/lib/generator/test_template.erb'
         assert_equal expected_filename, subject.tests_template.filename
-      end
-    end
-
-    class TestsVersionFileTest < Minitest::Test
-      class TestTestsVersionFile < TestsVersionFile
-        def save(content)
-          content
-        end
-      end
-
-      def test_increment
-        subject = TestTestsVersionFile.new(filename: 'test/fixtures/ruby/exercises/alpha/.meta/.version')
-        assert_equal 2, subject.increment
       end
     end
 

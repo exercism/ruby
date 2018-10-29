@@ -24,7 +24,6 @@ e.g., `clock` or `atbash_cipher`.
 
 If the exercise has a test generator, the directory will also contain:
 
-* `.version`
 * the test generator, `.meta/generator/<exercise_name>_case.rb`
 
 A few exercises use a custom test template:
