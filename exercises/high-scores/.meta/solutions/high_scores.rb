@@ -7,7 +7,7 @@ class HighScores
     @scores
   end
 
-  def highest
+  def personal_best
     scores.max
   end
 
@@ -15,12 +15,12 @@ class HighScores
     scores.last
   end
 
-  def top
+  def personal_top
     scores.sort.reverse.take(3)
   end
 
   def report
-    difference = "#{highest - latest} short of" if highest != latest
+    difference = "#{personal_best - latest} short of" if personal_best != latest
 
     "Your latest score was #{latest}. That's #{difference} your personal best!".squeeze
   end
