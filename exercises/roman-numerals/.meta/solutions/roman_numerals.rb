@@ -1,18 +1,6 @@
 class Integer
-  def to_roman
-    i = self
-    s = ''
-    roman_mappings.each do |arabic, roman|
-      while i >= arabic
-        s << roman
-        i -= arabic
-      end
-    end
-    s
-  end
-
-  def roman_mappings
-    {
+  ROMAN_MAPPINGS = 
+   {
       1000 => 'M',
       900 => 'CM',
       500 => 'D',
@@ -27,5 +15,16 @@ class Integer
       4 => 'IV',
       1 => 'I'
     }
+
+  def to_roman
+    i = self
+    s = ''
+    ROMAN_MAPPINGS.each do |arabic, roman|
+      while i >= arabic
+        s << roman
+        i -= arabic
+      end
+    end
+    s
   end
 end
