@@ -5,6 +5,23 @@
 
 Exercism Exercises in Ruby
 
+#### Table of Contents
+- [Setup](#setup)
+- [Anatomy of an Exercise](#anatomy-of-an-exercise)
+  - [Cannonical Data](#cannonical-data)
+- [Running the Tests](#running-the-tests)
+  - [Generated Test Suites](#generated-test-suites)
+    - [Regenerating a Test Suite](#regenerating-a-test-suite)
+    - [Changing a Generated Exercise](#changing-a-generated-exercise)
+    - [Implementing a Generator](#implementing-a-generator)
+    - [Workload Philosophy](#workload-philosophy)
+- [Pull Requests](#pull-requests)
+  - [Style Guide](#style-guide)
+- [READMEs](#readmes)
+- [Contributing Guide](#contributing-guide)
+- [Ruby icon](#ruby-icon)
+
+
 ## Setup
 
 You'll need a recent (2.1+) version of Ruby, but that's it. Minitest ships
