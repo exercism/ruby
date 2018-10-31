@@ -57,7 +57,20 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
-        "arrays"
+        "arrays",
+        "sequences",
+        "strings",
+        "regular_expressions"
+      ]
+    },
+    {
+      "slug": "armstrong-numbers",
+      "uuid": "77c5c7e6-265a-4f1a-9bc4-851f8f825420",
+      "core": false,
+      "unlocked_by": "isogram",
+      "difficulty": 3,
+      "topics": [
+        "math"
       ]
     },
     {
