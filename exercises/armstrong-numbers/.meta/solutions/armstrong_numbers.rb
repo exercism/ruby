@@ -1,4 +1,4 @@
-class ArmstrongNumber
+class ArmstrongNumbers
   def self.is_valid?(number)
     digits = number.to_s.split('').map(&:to_i)
     exponent = digits.size
