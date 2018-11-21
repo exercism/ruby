@@ -5,7 +5,7 @@ class HighScoresCase < Generator::ExerciseCase
     [
       "scores = #{scores}",
       "expected = #{expected.inspect}",
-      "assert_equal expected, HighScores.new(scores).#{property}"
+      "assert_equal expected, HighScores.new(scores).#{snake_case(property)}"
     ]
   end
 end
