@@ -25,26 +25,26 @@ class ArmstrongNumbersTest < Minitest::Test
   end
 
   def test_four_digit_number_that_is_the_armstrong_numbers
-    assert ArmstrongNumbers.is_valid?(1634)
+    assert ArmstrongNumbers.is_valid?(1_634)
   end
 
   def test_four_digit_number_that_is_not_the_armstrong_numbers
-    refute ArmstrongNumbers.is_valid?(9989)
+    refute ArmstrongNumbers.is_valid?(9_989)
   end
 
   def test_seven_digit_number_that_is_the_armstrong_numbers
-    assert ArmstrongNumbers.is_valid?(9926315)
+    assert ArmstrongNumbers.is_valid?(9_926_315)
   end
 
   def test_seven_digit_number_that_is_not_the_armstrong_numbers
-    refute ArmstrongNumbers.is_valid?(2369989)
+    refute ArmstrongNumbers.is_valid?(2_369_989)
   end
 
   def test_ten_digit_number_that_is_the_armstrong_numbers
-    assert ArmstrongNumbers.is_valid?(4679307774)
+    assert ArmstrongNumbers.is_valid?(4_679_307_774)
   end
 
   def test_fourteen_digit_number_that_is_the_armstrong_numbers
-    assert ArmstrongNumbers.is_valid?(28116440335967)
+    assert ArmstrongNumbers.is_valid?(28_116_440_335_967)
   end
 end
