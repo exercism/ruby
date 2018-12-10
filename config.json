@@ -47,8 +47,18 @@
       "difficulty": 2,
       "topics": [
         "sequences",
-        "strings", 
+        "strings",
         "regular_expressions"
+      ]
+    },
+    {
+      "slug": "armstrong_numbers",
+      "uuid": "77c5c7e6-265a-4f1a-9bc4-851f8f825420",
+      "core": false,
+      "unlocked_by": isogram,
+      "difficulty": 3,
+      "topics": [
+        "math"
       ]
     },
     {
@@ -209,7 +219,7 @@
         "maps",
         "transforming"
       ]
-    },    
+    },
     {
       "slug": "pangram",
       "uuid": "fcf07149-b2cb-4042-90e6-fb3350e0fdf6",
