@@ -40,15 +40,13 @@
       ]
     },
     {
-      "slug": "isogram",
-      "uuid": "a79eb8cd-d2db-48f5-a7dc-055039dcee62",
+      "slug": "high-scores",
+      "uuid": "9124339c-94fb-46eb-aad2-25944214799d",
       "core": true,
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
-        "sequences",
-        "strings", 
-        "regular_expressions"
+        "arrays"
       ]
     },
     {
@@ -87,6 +85,18 @@
         "conditionals",
         "filtering",
         "strings"
+      ]
+    },
+    {
+      "slug": "isogram",
+      "uuid": "a79eb8cd-d2db-48f5-a7dc-055039dcee62",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "sequences",
+        "strings", 
+        "regular_expressions"
       ]
     },
     {
@@ -219,16 +229,6 @@
       "topics": [
         "loops",
         "strings"
-      ]
-    },
-    {
-      "slug": "high-scores",
-      "uuid": "9124339c-94fb-46eb-aad2-25944214799d",
-      "core": false,
-      "unlocked_by": "acronym",
-      "difficulty": 2,
-      "topics": [
-        "arrays"
       ]
     },
     {
