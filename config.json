@@ -582,7 +582,7 @@
       "slug": "meetup",
       "uuid": "8120e133-9561-4f82-8081-10c19f7f6ba3",
       "core": false,
-      "unlocked_by": "clock",
+      "unlocked_by": "twelve-days",
       "difficulty": 3,
       "topics": [
         "dates",
@@ -595,7 +595,7 @@
       "slug": "queen-attack",
       "uuid": "2ce9b158-e730-4c86-8639-bd08af9f80f4",
       "core": false,
-      "unlocked_by": "clock",
+      "unlocked_by": "tournament",
       "difficulty": 5,
       "topics": [
         "booleans",
@@ -630,7 +630,7 @@
       "slug": "food-chain",
       "uuid": "6f0919eb-2160-4cca-8504-286acc2ae9c8",
       "core": false,
-      "unlocked_by": "twelve-days",
+      "unlocked_by": "tournament",
       "difficulty": 4,
       "topics": [
         "conditionals",
@@ -891,7 +891,7 @@
       "slug": "diamond",
       "uuid": "c55c75fb-6140-4042-967a-39c75b7781bd",
       "core": false,
-      "unlocked_by": "clock",
+      "unlocked_by": "twelve-days",
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -905,7 +905,7 @@
       "slug": "custom-set",
       "uuid": "4f74b3cd-f995-4b8c-9b57-23f073261d0e",
       "core": false,
-      "unlocked_by": "luhn",
+      "unlocked_by": "clock",
       "difficulty": 4,
       "topics": [
         "filtering",
@@ -929,7 +929,7 @@
       "slug": "pascals-triangle",
       "uuid": "4ff8b056-f27d-4bdf-b7af-214448db4260",
       "core": false,
-      "unlocked_by": "twelve-days",
+      "unlocked_by": "tournament",
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -1006,7 +1006,7 @@
       "slug": "connect",
       "uuid": "538a6768-bae5-437c-9cdf-765d73a79643",
       "core": false,
-      "unlocked_by": "twelve-days",
+      "unlocked_by": "tournament",
       "difficulty": 9,
       "topics": [
         "arrays",
@@ -1046,7 +1046,7 @@
       "slug": "book-store",
       "uuid": "0ec96460-08be-49a0-973a-4336f21b763c",
       "core": false,
-      "unlocked_by": "twelve-days",
+      "unlocked_by": "tournament",
       "difficulty": 8,
       "topics": [
         "algorithms",
@@ -1059,7 +1059,7 @@
       "slug": "rotational-cipher",
       "uuid": "af5ccf14-eff2-4dc6-b1db-e209cddca62a",
       "core": false,
-      "unlocked_by": "luhn",
+      "unlocked_by": "clock",
       "difficulty": 2,
       "topics": [
         "cryptography",
@@ -1158,7 +1158,7 @@
       "slug": "zipper",
       "uuid": "239b8e79-2983-4ce0-9dda-9bb999e79d11",
       "core": false,
-      "unlocked_by": "clock",
+      "unlocked_by": "twelve-days",
       "difficulty": 7,
       "topics": [
         "data_structures"
