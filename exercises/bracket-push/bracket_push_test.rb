@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'bracket_push'
 
-# Common test data version: 1.4.0 602c610
+# Common test data version: 1.5.0 20dd164
 class BracketPushTest < Minitest::Test
   def test_paired_square_brackets
     # skip
@@ -71,6 +71,11 @@ class BracketPushTest < Minitest::Test
   def test_paired_and_incomplete_brackets
     skip
     refute Brackets.paired?('{}[')
+  end
+
+  def test_too_many_closing_brackets
+    skip
+    refute Brackets.paired?('[]]')
   end
 
   def test_math_expression
