@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'phone_number'
 
-# Common test data version: 1.6.0 a317aa4
+# Common test data version: 1.6.1 fc57696
 class PhoneNumberTest < Minitest::Test
   def test_cleans_the_number
     # skip
