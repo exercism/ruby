@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'clock'
 
-# Common test data version: 2.3.0 1680779
+# Common test data version: 2.4.0 b344762
 class ClockTest < Minitest::Test
   def test_on_the_hour
     # skip
@@ -86,6 +86,11 @@ class ClockTest < Minitest::Test
   def test_negative_minutes_roll_over_continuously
     skip
     assert_equal "16:40", Clock.new(hour: 1, minute: -4820).to_s
+  end
+
+  def test_negative_sixty_minutes_is_previous_hour
+    skip
+    assert_equal "01:00", Clock.new(hour: 2, minute: -60).to_s
   end
 
   def test_negative_hour_and_minutes_both_roll_over
