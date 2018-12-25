@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'isogram'
 
-# Common test data version: 1.6.0 7cea153
+# Common test data version: 1.7.0 74869e8
 class IsogramTest < Minitest::Test
   def test_empty_string
     # skip
@@ -49,6 +49,12 @@ class IsogramTest < Minitest::Test
     skip
     input = "thumbscrew-japingly"
     assert Isogram.isogram?(input), "Expected true, '#{input}' is an isogram"
+  end
+
+  def test_hypothetical_word_with_duplicated_character_following_hyphen
+    skip
+    input = "thumbscrew-jappingly"
+    refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
   end
 
   def test_isogram_with_duplicated_hyphen
