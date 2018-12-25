@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'luhn'
 
-# Common test data version: 1.2.0 3930b0a
+# Common test data version: 1.4.0 4a80663
 class LuhnTest < Minitest::Test
   def test_single_digit_strings_can_not_be_valid
     # skip
@@ -38,9 +38,19 @@ class LuhnTest < Minitest::Test
     refute Luhn.valid?("8273 1232 7352 0569")
   end
 
+  def test_valid_number_with_an_even_number_of_digits
+    skip
+    assert Luhn.valid?("095 245 88")
+  end
+
   def test_valid_strings_with_a_non_digit_included_become_invalid
     skip
     refute Luhn.valid?("055a 444 285")
+  end
+
+  def test_valid_strings_with_a_non_digit_added_at_the_end_become_invalid
+    skip
+    refute Luhn.valid?("059a")
   end
 
   def test_valid_strings_with_punctuation_included_become_invalid
