@@ -54,7 +54,7 @@
       "uuid": "3de21c18-a533-4150-8a73-49df8fcb8c61",
       "core": true,
       "unlocked_by": null,
-      "difficulty": ,
+      "difficulty": 4,
       "topics": [
         "arrays",
         "exception_handling",
