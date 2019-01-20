@@ -213,7 +213,7 @@
     {
       "slug": "grains",
       "uuid": "22519f53-4516-43bc-915e-07d58e48f617",
-      "core": true,
+      "core": false,
       "unlocked_by": "series",
       "difficulty": 4,
       "topics": [
