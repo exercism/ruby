@@ -76,6 +76,18 @@
       ]
     },
     {
+      "slug": "word-count",
+      "uuid": "e9d29769-8d4d-4159-8d6f-762db5339707",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "hash",
+        "loops",
+        "enumerable"
+      ]
+    },
+    {
       "slug": "hamming",
       "uuid": "d33dec8a-e2b4-40bc-8be9-3f49de084d43",
       "core": true,
@@ -291,17 +303,6 @@
         "conditionals",
         "integers",
         "logic"
-      ]
-    },
-    {
-      "slug": "word-count",
-      "uuid": "e9d29769-8d4d-4159-8d6f-762db5339707",
-      "core": false,
-      "unlocked_by": "hamming",
-      "difficulty": 3,
-      "topics": [
-        "sorting",
-        "strings"
       ]
     },
     {
@@ -537,8 +538,8 @@
       "slug": "nucleotide-count",
       "uuid": "8ad2bffd-1d79-4e1f-8ef3-ece0214d2804",
       "core": false,
-      "unlocked_by": "hamming",
-      "difficulty": 2,
+      "unlocked_by": "word-count",
+      "difficulty": 4,
       "topics": [
         "maps",
         "parsing",
@@ -833,7 +834,7 @@
       "slug": "pythagorean-triplet",
       "uuid": "43aad536-0e24-464c-9554-cbc2699d0543",
       "core": false,
-      "unlocked_by": "hamming",
+      "unlocked_by": "word-count",
       "difficulty": 5,
       "topics": [
         "algorithms",
