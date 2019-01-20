@@ -8,7 +8,7 @@ Exercism Exercises in Ruby
 #### Table of Contents
 - [Setup](#setup)
 - [Anatomy of an Exercise](#anatomy-of-an-exercise)
-  - [Cannonical Data](#cannonical-data)
+  - [Canonical Data](#canonical-data)
 - [Running the Tests](#running-the-tests)
   - [Generated Test Suites](#generated-test-suites)
     - [Regenerating a Test Suite](#regenerating-a-test-suite)
