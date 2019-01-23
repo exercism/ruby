@@ -76,6 +76,18 @@
       ]
     },
     {
+      "slug": "word-count",
+      "uuid": "e9d29769-8d4d-4159-8d6f-762db5339707",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "hash",
+        "loops",
+        "enumerable"
+      ]
+    },
+    {
       "slug": "hamming",
       "uuid": "d33dec8a-e2b4-40bc-8be9-3f49de084d43",
       "core": true,
@@ -112,30 +124,6 @@
       ]
     },
     {
-      "slug": "difference-of-squares",
-      "uuid": "f1e4ee0c-8718-43f2-90a5-fb1e915288da",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "algorithms",
-        "math"
-      ]
-    },
-    {
-      "slug": "grains",
-      "uuid": "22519f53-4516-43bc-915e-07d58e48f617",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "bitwise_operations",
-        "if_else_statements",
-        "integers",
-        "type_conversion"
-      ]
-    },
-    {
       "slug": "scrabble-score",
       "uuid": "d934ebce-9ac3-4a41-bcb8-d70480170438",
       "core": true,
@@ -145,16 +133,6 @@
         "loops",
         "maps",
         "strings"
-      ]
-    },
-    {
-      "slug": "robot-name",
-      "uuid": "76a0fd0a-cc65-4be3-acc8-7348bb67ad5a",
-      "core": false,
-      "unlocked_by": "luhn",
-      "difficulty": 3,
-      "topics": [
-        "randomness"
       ]
     },
     {
@@ -212,6 +190,17 @@
       ]
     },
     {
+      "slug": "difference-of-squares",
+      "uuid": "f1e4ee0c-8718-43f2-90a5-fb1e915288da",
+      "core": false,
+      "unlocked_by": "matrix",
+      "difficulty": 2,
+      "topics": [
+        "algorithms",
+        "math"
+      ]
+    },
+    {
       "slug": "gigasecond",
       "uuid": "0fb594a1-193b-4ccf-8de2-eb6a81708b29",
       "core": false,
@@ -219,6 +208,17 @@
       "difficulty": 1,
       "topics": [
         "time"
+      ]
+    },
+    {
+      "slug": "grains",
+      "uuid": "22519f53-4516-43bc-915e-07d58e48f617",
+      "core": false,
+      "unlocked_by": "series",
+      "difficulty": 4,
+      "topics": [
+        "bitwise_operations",
+        "math"
       ]
     },
     {
@@ -231,7 +231,17 @@
         "maps",
         "transforming"
       ]
-    },    
+    }, 
+    {
+      "slug": "robot-name",
+      "uuid": "76a0fd0a-cc65-4be3-acc8-7348bb67ad5a",
+      "core": false,
+      "unlocked_by": "luhn",
+      "difficulty": 3,
+      "topics": [
+        "randomness"
+      ]
+    },
     {
       "slug": "pangram",
       "uuid": "fcf07149-b2cb-4042-90e6-fb3350e0fdf6",
@@ -247,7 +257,7 @@
       "slug": "sieve",
       "uuid": "80f9af5a-ea29-4937-9333-b4494aaf2446",
       "core": false,
-      "unlocked_by": "grains",
+      "unlocked_by": "hamming",
       "difficulty": 3,
       "topics": [
         "algorithms",
@@ -261,7 +271,7 @@
       "slug": "roman-numerals",
       "uuid": "b7ca9519-c33b-418b-a4ef-858a3d4d6855",
       "core": false,
-      "unlocked_by": "raindrops",
+      "unlocked_by": "clock",
       "difficulty": 2,
       "topics": [
         "numbers",
@@ -272,7 +282,7 @@
       "slug": "nth-prime",
       "uuid": "16baef71-6234-4928-a2d4-a19eb8e110b8",
       "core": false,
-      "unlocked_by": "difference-of-squares",
+      "unlocked_by": "raindrops",
       "difficulty": 3,
       "topics": [
         "algorithms",
@@ -291,17 +301,6 @@
         "conditionals",
         "integers",
         "logic"
-      ]
-    },
-    {
-      "slug": "word-count",
-      "uuid": "e9d29769-8d4d-4159-8d6f-762db5339707",
-      "core": false,
-      "unlocked_by": "hamming",
-      "difficulty": 3,
-      "topics": [
-        "sorting",
-        "strings"
       ]
     },
     {
@@ -350,7 +349,7 @@
       "slug": "sum-of-multiples",
       "uuid": "4fc25295-5d6a-4d13-9b87-064167d8980e",
       "core": false,
-      "unlocked_by": "difference-of-squares",
+      "unlocked_by": "matrix",
       "difficulty": 5,
       "topics": [
         "loops",
@@ -361,7 +360,7 @@
       "slug": "grade-school",
       "uuid": "4460742c-2beb-48d7-94e6-72ff13c68c71",
       "core": false,
-      "unlocked_by": "difference-of-squares",
+      "unlocked_by": "luhn",
       "difficulty": 5,
       "topics": [
         "lists",
@@ -537,8 +536,8 @@
       "slug": "nucleotide-count",
       "uuid": "8ad2bffd-1d79-4e1f-8ef3-ece0214d2804",
       "core": false,
-      "unlocked_by": "hamming",
-      "difficulty": 2,
+      "unlocked_by": "word-count",
+      "difficulty": 4,
       "topics": [
         "maps",
         "parsing",
@@ -608,7 +607,7 @@
       "slug": "palindrome-products",
       "uuid": "abd68340-91b9-48c1-8567-79822bb2165c",
       "core": false,
-      "unlocked_by": "grains",
+      "unlocked_by": "hamming",
       "difficulty": 6,
       "topics": [
         "algorithms",
@@ -780,7 +779,7 @@
       "slug": "allergies",
       "uuid": "b306bdaa-438e-46a2-ba54-82cb2c0be882",
       "core": false,
-      "unlocked_by": "grains",
+      "unlocked_by": "isogram",
       "difficulty": 4,
       "topics": [
         "bitwise_operations",
@@ -820,7 +819,7 @@
       "slug": "largest-series-product",
       "uuid": "7cb55328-1b11-4544-94c0-945444d9a6a4",
       "core": false,
-      "unlocked_by": "difference-of-squares",
+      "unlocked_by": "clock",
       "difficulty": 3,
       "topics": [
         "algorithms",
@@ -833,7 +832,7 @@
       "slug": "pythagorean-triplet",
       "uuid": "43aad536-0e24-464c-9554-cbc2699d0543",
       "core": false,
-      "unlocked_by": "hamming",
+      "unlocked_by": "word-count",
       "difficulty": 5,
       "topics": [
         "algorithms",
@@ -867,7 +866,7 @@
       "slug": "perfect-numbers",
       "uuid": "76ad732a-6e58-403b-ac65-9091d355241f",
       "core": false,
-      "unlocked_by": "grains",
+      "unlocked_by": "raindrops",
       "difficulty": 4,
       "topics": [
         "algorithms",
@@ -994,7 +993,7 @@
       "slug": "all-your-base",
       "uuid": "3ce4bd3e-0380-498a-8d0a-b79cf3fedc10",
       "core": false,
-      "unlocked_by": "grains",
+      "unlocked_by": "isogram",
       "difficulty": 3,
       "topics": [
         "integers",
@@ -1033,7 +1032,7 @@
       "slug": "collatz-conjecture",
       "uuid": "af961c87-341c-4dd3-a1eb-272501b9b0e4",
       "core": false,
-      "unlocked_by": "isogram",
+      "unlocked_by": "hamming",
       "difficulty": 1,
       "topics": [
         "conditionals",
@@ -1071,7 +1070,7 @@
       "slug": "isbn-verifier",
       "uuid": "a0aac827-8f7a-4065-9d05-a57009f5668d",
       "core": false,
-      "unlocked_by": "hamming",
+      "unlocked_by": "twelve-days",
       "difficulty": 2,
       "topics": [
         "arrays"
@@ -1105,7 +1104,7 @@
       "slug": "list-ops",
       "uuid": "f62e8acb-8370-46e1-ad7f-a6a2644f8602",
       "core": false,
-      "unlocked_by": "difference-of-squares",
+      "unlocked_by": "luhn",
       "difficulty": 3,
       "topics": [
         "functional_programming",
@@ -1127,7 +1126,7 @@
       "slug": "affine-cipher",
       "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
       "core": false,
-      "unlocked_by": "grains",
+      "unlocked_by": "clock",
       "difficulty": 3,
       "topics": [
         "cryptography",
@@ -1139,7 +1138,7 @@
       "slug": "complex-numbers",
       "uuid": "d75bd7c0-52c5-44f2-a046-f63cb332425f",
       "core": false,
-      "unlocked_by": "grains",
+      "unlocked_by": "twelve-days",
       "difficulty": 3,
       "topics": [
         "math"
