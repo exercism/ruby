@@ -20,7 +20,7 @@ module Generator
       #    indent_heredoc(["foo", "bar"], 'TEXT', 1)
       def indent_heredoc(lines, delimiter, depth = 0, delimiter_method = nil)
         [
-          "<<-#{delimiter}#{delimiter_method}",
+          "<<~#{delimiter}#{delimiter_method}",
           lines.map { |line| ' ' * depth + line }.join("\n"),
           delimiter
         ].join("\n")

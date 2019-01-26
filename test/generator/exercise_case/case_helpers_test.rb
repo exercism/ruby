@@ -54,7 +54,7 @@ module Generator
         end
       end
       def test_heredoc
-        expected = "<<-TEXT\n foo\n bar\nTEXT"
+        expected = "<<~TEXT\n foo\n bar\nTEXT"
         assert_equal expected, HeredocCase.new.workload
       end
     end
