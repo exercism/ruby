@@ -17,7 +17,7 @@ class GigasecondCase < Generator::ExerciseCase
   end
 
   def start_values
-    ts = Time.parse(birthdate)
+    ts = Time.parse(moment)
     [ts.year, ts.month, ts.day, ts.hour, ts.min, ts.sec]
   end
 
