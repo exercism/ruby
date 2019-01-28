@@ -1,7 +1,7 @@
 class SumOfMultiples
   attr_reader :multiples
   def initialize(*multiples)
-    @multiples = multiples
+    @multiples = multiples.reject(&:zero?)
   end
 
   def to(limit)

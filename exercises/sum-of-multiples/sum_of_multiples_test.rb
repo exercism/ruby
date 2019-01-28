@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'sum_of_multiples'
 
-# Common test data version: 1.4.1 8f89751
+# Common test data version: 1.5.0 bd2d4d9
 class SumOfMultiplesTest < Minitest::Test
   def test_no_multiples_within_limit
     # skip
@@ -85,6 +85,12 @@ class SumOfMultiplesTest < Minitest::Test
     skip
     sum_of_multiples = SumOfMultiples.new(0)
     assert_equal 0, sum_of_multiples.to(1)
+  end
+
+  def test_the_factor_0_does_not_affect_the_sum_of_multiples_of_other_factors
+    skip
+    sum_of_multiples = SumOfMultiples.new(3, 0)
+    assert_equal 3, sum_of_multiples.to(4)
   end
 
   def test_solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3
