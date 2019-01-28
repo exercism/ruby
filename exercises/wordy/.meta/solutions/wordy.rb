@@ -10,8 +10,10 @@ class WordProblem
     end
 
     unless @answer
-      @answer = n1.send(operation(2), n2)
-      @answer = @answer.send(operation(5), n3) if chain?
+      @answer = matches[1].to_i
+      matches[2..-1].compact.each_slice(2) do |op, number|
+        @answer = @answer.public_send(operation(op), number.to_i)
+      end
     end
 
     @answer
@@ -29,31 +31,15 @@ class WordProblem
 
   def pattern
     operations = '(plus|minus|multiplied by|divided by)'
-    /What is (-?\d+) #{operations} (-?\d+)( #{operations} (-?\d+))?\?/
+    /What is (-?\d+)(?: #{operations} (-?\d+))?(?: #{operations} (-?\d+))?\?/
   end
 
-  def operation(index)
-    case matches[index]
+  def operation(op)
+    case op
     when 'plus' then :+
     when 'minus' then :-
     when 'multiplied by' then :*
     when 'divided by' then :/
     end
-  end
-
-  def n1
-    matches[1].to_i
-  end
-
-  def n2
-    matches[3].to_i
-  end
-
-  def n3
-    matches[6].to_i
-  end
-
-  def chain?
-    !!matches[4]
   end
 end

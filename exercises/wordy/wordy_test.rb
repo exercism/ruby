@@ -1,10 +1,16 @@
 require 'minitest/autorun'
 require_relative 'wordy'
 
-# Common test data version: 1.2.0 86d0069
+# Common test data version: 1.5.0 51c9b0b
 class WordyTest < Minitest::Test
-  def test_addition
+  def test_just_a_number
     # skip
+    problem = WordProblem.new("What is 5?")
+    assert_equal(5, problem.answer)
+  end
+
+  def test_addition
+    skip
     problem = WordProblem.new("What is 1 plus 1?")
     assert_equal(2, problem.answer)
   end
@@ -99,6 +105,54 @@ class WordyTest < Minitest::Test
   def test_non_math_question
     skip
     problem = WordProblem.new("Who is the President of the United States?")
+    assert_raises(ArgumentError) do
+      problem.answer
+    end
+  end
+
+  def test_reject_problem_missing_an_operand
+    skip
+    problem = WordProblem.new("What is 1 plus?")
+    assert_raises(ArgumentError) do
+      problem.answer
+    end
+  end
+
+  def test_reject_problem_with_no_operands_or_operators
+    skip
+    problem = WordProblem.new("What is?")
+    assert_raises(ArgumentError) do
+      problem.answer
+    end
+  end
+
+  def test_reject_two_operations_in_a_row
+    skip
+    problem = WordProblem.new("What is 1 plus plus 2?")
+    assert_raises(ArgumentError) do
+      problem.answer
+    end
+  end
+
+  def test_reject_two_numbers_in_a_row
+    skip
+    problem = WordProblem.new("What is 1 plus 2 1?")
+    assert_raises(ArgumentError) do
+      problem.answer
+    end
+  end
+
+  def test_reject_postfix_notation
+    skip
+    problem = WordProblem.new("What is 1 2 plus?")
+    assert_raises(ArgumentError) do
+      problem.answer
+    end
+  end
+
+  def test_reject_prefix_notation
+    skip
+    problem = WordProblem.new("What is plus 1 2?")
     assert_raises(ArgumentError) do
       problem.answer
     end
