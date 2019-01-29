@@ -13,7 +13,7 @@
     },
     {
       "github_username": "bernardoamc",
-      "alumnus": false,
+      "alumnus": true,
       "show_on_website": false,
       "name": null,
       "link_text": null,
@@ -23,7 +23,7 @@
     },
     {
       "github_username": "tommyschaefer",
-      "alumnus": false,
+      "alumnus": true,
       "show_on_website": false,
       "name": null,
       "link_text": null,
@@ -43,7 +43,7 @@
     },
     {
       "github_username": "bmulvihill",
-      "alumnus": false,
+      "alumnus": true,
       "show_on_website": false,
       "name": null,
       "link_text": null,
