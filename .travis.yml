@@ -2,7 +2,7 @@
 language: ruby
 sudo: false
 rvm:
-  - 2.1.2
+  - 2.5
 install:
   - bundle install --quiet
 script:
