@@ -15,8 +15,8 @@ class HighScores
     scores.last
   end
 
-  def personal_top
-    scores.sort.reverse.take(3)
+  def personal_top_three
+    scores.max(3)
   end
 
   def report
