@@ -221,6 +221,16 @@
         "math"
       ]
     },
+    { "slug": "resistor-colors",
+      "uuid": "57b0c57e-26a5-4ccf-aaf2-2fefddd918c1",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "array",
+        "loops"
+      ]
+    },
     {
       "slug": "rna-transcription",
       "uuid": "41f66d2a-1883-4a2c-875f-663c46fa88aa",
