@@ -7,6 +7,11 @@ teal: 008080, navy: 000080).
 
 The program should handle invalid hexadecimal strings.
 
+## Note
+
+- Implement the conversion yourself.
+  Do not use something else to perform the conversion for you.
+
 * * * *
 
 For installation and learning resources, refer to the
