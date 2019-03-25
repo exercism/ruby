@@ -5,11 +5,11 @@ require_relative 'transpose'
 class TransposeTest < Minitest::Test
   def test_empty_string
     # skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
 
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
 
     EXPECTED
 
@@ -18,11 +18,11 @@ class TransposeTest < Minitest::Test
 
   def test_two_characters_in_a_row
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       A1
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       A
       1
     EXPECTED
@@ -32,12 +32,12 @@ class TransposeTest < Minitest::Test
 
   def test_two_characters_in_a_column
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       A
       1
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       A1
     EXPECTED
 
@@ -46,12 +46,12 @@ class TransposeTest < Minitest::Test
 
   def test_simple
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       ABC
       123
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       A1
       B2
       C3
@@ -62,11 +62,11 @@ class TransposeTest < Minitest::Test
 
   def test_single_line
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       Single line.
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       S
       i
       n
@@ -86,12 +86,12 @@ class TransposeTest < Minitest::Test
 
   def test_first_line_longer_than_second_line
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       The fourth line.
       The fifth line.
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       TT
       hh
       ee
@@ -115,12 +115,12 @@ class TransposeTest < Minitest::Test
 
   def test_second_line_longer_than_first_line
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       The first line.
       The second line.
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       TT
       hh
       ee
@@ -144,14 +144,14 @@ class TransposeTest < Minitest::Test
 
   def test_mixed_line_length
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       The longest line.
       A long line.
       A longer line.
       A line.
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       TAAA
       h   
       elll
@@ -176,7 +176,7 @@ class TransposeTest < Minitest::Test
 
   def test_square
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       HEART
       EMBER
       ABUSE
@@ -184,7 +184,7 @@ class TransposeTest < Minitest::Test
       TREND
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       HEART
       EMBER
       ABUSE
@@ -197,14 +197,14 @@ class TransposeTest < Minitest::Test
 
   def test_rectangle
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       FRACTURE
       OUTLINED
       BLOOMING
       SEPTETTE
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       FOBS
       RULE
       ATOP
@@ -220,7 +220,7 @@ class TransposeTest < Minitest::Test
 
   def test_triangle
     skip
-    input = <<-INPUT.gsub(/^ {6}/, '').strip
+    input = <<~INPUT.strip
       T
       EE
       AAA
@@ -229,7 +229,7 @@ class TransposeTest < Minitest::Test
       RRRRRR
     INPUT
 
-    expected = <<-EXPECTED.gsub(/^ {6}/, '').strip
+    expected = <<~EXPECTED.strip
       TEASER
        EASER
         ASER

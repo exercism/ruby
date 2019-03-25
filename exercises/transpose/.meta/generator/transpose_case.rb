@@ -15,7 +15,7 @@ class TransposeCase < Generator::ExerciseCase
   private
 
   def delimiter_mod
-    ".gsub(/^ {6}/, '').strip"
+    ".strip"
   end
 
 end
