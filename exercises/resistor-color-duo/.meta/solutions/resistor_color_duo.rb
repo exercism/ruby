@@ -1,4 +1,4 @@
-module ResistorColors
+module ResistorColorDuo
   COLORS = %w(
     black
     brown
