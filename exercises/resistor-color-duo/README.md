@@ -1,4 +1,4 @@
-# Resistor Colors
+# Resistor Color Duo
 
 If you want to build something using a Raspberry Pi, you'll probably use _resistors_. For this exercise, you need to know two things about them:
 
@@ -37,11 +37,11 @@ the test file.
 
 Run the tests from the exercise directory using the following command:
 
-    ruby resistor_colors_test.rb
+    ruby resistor_color_duo_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride resistor_colors_test.rb
+    ruby -r minitest/pride resistor_color_duo_test.rb
 
 
 ## Source
