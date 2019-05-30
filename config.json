@@ -420,8 +420,8 @@
       "slug": "etl",
       "uuid": "0d66f3db-69a4-44b9-80be-9366f8b189ec",
       "core": false,
-      "unlocked_by": "scrabble-score",
-      "difficulty": 1,
+      "unlocked_by": "word-count",
+      "difficulty": 4,
       "topics": [
         "loops",
         "maps",
