@@ -1172,6 +1172,21 @@
       "topics": [
         "data_structures"
       ]
+    },
+    {
+      "slug": "grep",
+      "uuid": "99485900-5d16-4848-af1c-2f1a62ad35ab",
+      "core": false,
+      "unlocked_by": "twelve-days",
+      "difficulty": 8,
+      "topics": [
+        "files",
+        "parsing",
+        "pattern_matching",
+        "regular_expressions",
+        "strings",
+        "text_formatting"
+      ]
     }
   ]
 }
