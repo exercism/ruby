@@ -1,4 +1,4 @@
-# Bracket Push
+# Matching Brackets
 
 Given a string containing brackets `[]`, braces `{}`, parentheses `()`,
 or any combination thereof, verify that any and all pairs are matched
@@ -20,11 +20,11 @@ the test file.
 
 Run the tests from the exercise directory using the following command:
 
-    ruby bracket_push_test.rb
+    ruby matching_brackets_test.rb
 
 To include color from the command line:
 
-    ruby -r minitest/pride bracket_push_test.rb
+    ruby -r minitest/pride matching_brackets_test.rb
 
 
 ## Source

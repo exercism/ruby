@@ -625,7 +625,7 @@
       ]
     },
     {
-      "slug": "bracket-push",
+      "slug": "matching-brackets",
       "uuid": "26f6e297-7980-4472-8ce7-157b62b0ff40",
       "core": false,
       "unlocked_by": "raindrops",
