@@ -304,7 +304,7 @@
       "slug": "leap",
       "uuid": "06eaa2dd-dc80-4d38-b10d-11174183b0b6",
       "core": false,
-      "unlocked_by": "two-fer",
+      "unlocked_by": "resistor-color-duo",
       "difficulty": 1,
       "topics": [
         "booleans",
