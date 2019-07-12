@@ -27,6 +27,16 @@
         "strings"
       ]
     },
+    { "slug": "resistor-color-duo",
+      "uuid": "57b0c57e-26a5-4ccf-aaf2-2fefddd918c1",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "array",
+        "loops"
+      ]
+    },
     {
       "slug": "acronym",
       "uuid": "74468206-68a2-4efb-8caa-782634674c7f",
@@ -219,16 +229,6 @@
       "topics": [
         "bitwise_operations",
         "math"
-      ]
-    },
-    { "slug": "resistor-color-duo",
-      "uuid": "57b0c57e-26a5-4ccf-aaf2-2fefddd918c1",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "array",
-        "loops"
       ]
     },
     {
