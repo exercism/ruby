@@ -27,7 +27,8 @@
         "strings"
       ]
     },
-    { "slug": "resistor-color-duo",
+    {
+      "slug": "resistor-color-duo",
       "uuid": "57b0c57e-26a5-4ccf-aaf2-2fefddd918c1",
       "core": true,
       "unlocked_by": null,
@@ -81,8 +82,8 @@
       "difficulty": 3,
       "topics": [
         "arrays",
-        "loops",
-        "enumerable"
+        "enumerable",
+        "loops"
       ]
     },
     {
@@ -92,9 +93,9 @@
       "unlocked_by": null,
       "difficulty": 3,
       "topics": [
+        "enumerable",
         "hash",
-        "loops",
-        "enumerable"
+        "loops"
       ]
     },
     {
@@ -128,9 +129,9 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
+        "regular_expressions",
         "sequences",
-        "strings", 
-        "regular_expressions"
+        "strings"
       ]
     },
     {
@@ -241,7 +242,7 @@
         "maps",
         "transforming"
       ]
-    }, 
+    },
     {
       "slug": "robot-name",
       "uuid": "76a0fd0a-cc65-4be3-acc8-7348bb67ad5a",
