@@ -1187,6 +1187,16 @@
         "strings",
         "text_formatting"
       ]
+    },
+    {
+      "slug": "resistor-color",
+      "uuid": "685634dd-0b38-40bc-b0ad-e8aa2904035f",
+      "core": false,
+      "unlocked_by": "hello-world",
+      "difficulty": 1,
+      "topics": [
+        "arrays"
+      ]
     }
   ]
 }
