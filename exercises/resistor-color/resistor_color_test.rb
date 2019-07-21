@@ -21,6 +21,6 @@ class ResistorColorTest < Minitest::Test
   def test_colors
     skip
     expected = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]
-    assert_equal expected, ResistorColor.colors
+    assert_equal expected, ResistorColor::COLORS
   end
 end
