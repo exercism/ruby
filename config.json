@@ -17,6 +17,16 @@
       ]
     },
     {
+      "slug": "reverse-string",
+      "uuid": "64c64613-9dd9-461e-90ba-90f84e17e197",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "strings"
+      ]
+    },
+    {
       "slug": "two-fer",
       "uuid": "1304b188-6d08-4361-be40-c6b1b88e5e54",
       "core": true,
