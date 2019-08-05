@@ -26,6 +26,15 @@ module Generator
         ].join("\n")
       end
 
+      # combine array of string elements into a single string
+      # as part of workload with optional separator
+      #
+      #  example usage:  to_string(["foo", "bar"])
+      #  example output: "foo\nbar"
+      def to_string(phrases, separator="\n")
+        phrases.join(separator).inspect
+      end
+
       def underscore(number)
         fail ArgumentError, "#{number.inspect} is not an Integer" unless number.is_a? Integer
         number.to_s.reverse.gsub(/...(?=.)/, '\&_').reverse
