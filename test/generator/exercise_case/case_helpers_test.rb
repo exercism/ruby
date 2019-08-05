@@ -53,9 +53,36 @@ module Generator
           indent_heredoc(["foo", "bar"], 'TEXT', 1)
         end
       end
+
       def test_heredoc
         expected = "<<~TEXT\n foo\n bar\nTEXT"
         assert_equal expected, HeredocCase.new.workload
+      end
+
+      class ToStringCase
+        include CaseHelpers
+
+        def workload(phrases)
+          to_string(phrases)
+        end
+      end
+
+      def test_to_string_with_two_strings
+        phrases = ["foo", "bar"]
+        expected = "foo\nbar".inspect
+        assert_equal expected, ToStringCase.new.workload(phrases)
+      end
+
+      def test_to_string_with_string_and_integer
+        phrases = ["foo", 123]
+        expected = "foo\n123".inspect
+        assert_equal expected, ToStringCase.new.workload(phrases)
+      end
+
+      def test_to_string_with_string_and_nil
+        phrases = ["foo", nil]
+        expected = "foo\n".inspect
+        assert_equal expected, ToStringCase.new.workload(phrases)
       end
     end
   end
