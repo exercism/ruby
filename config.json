@@ -559,8 +559,8 @@
       "slug": "flatten-array",
       "uuid": "2df8ed82-2a04-4112-a17b-7813bcdc0e84",
       "core": false,
-      "unlocked_by": "series",
-      "difficulty": 3,
+      "unlocked_by": "hello-world",
+      "difficulty": 1,
       "topics": [
         "arrays",
         "recursion"
