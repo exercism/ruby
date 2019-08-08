@@ -1,59 +1,50 @@
 require 'minitest/autorun'
 require_relative 'armstrong_numbers'
 
+# Common test data version: 1.1.0 b3c2522
 class ArmstrongNumbersTest < Minitest::Test
-  def test_one_digit_numbers_are_armstrong_numbers
-    assert ArmstrongNumbers.is_valid?(1)
-    assert ArmstrongNumbers.is_valid?(6)
-    assert ArmstrongNumbers.is_valid?(9)
+  def test_zero_is_an_armstrong_number
+    # skip
+    assert ArmstrongNumbers.include?(0)
   end
 
-  def test_two_digit_numbers_aren_t_armstrong_numbers
+  def test_single_digit_numbers_are_armstrong_numbers
     skip
-    refute ArmstrongNumbers.is_valid?(11)
-    refute ArmstrongNumbers.is_valid?(89)
-    refute ArmstrongNumbers.is_valid?(44)
+    assert ArmstrongNumbers.include?(5)
   end
 
-  def test_three_digit_numbers_that_are_armstrong_numbers
+  def test_there_are_no_2_digit_armstrong_numbers
     skip
-    assert ArmstrongNumbers.is_valid?(153)
-    assert ArmstrongNumbers.is_valid?(370)
+    refute ArmstrongNumbers.include?(10)
   end
 
-  def test_three_digit_numbers_that_aren_t_armstrong_numbers
+  def test_three_digit_number_that_is_an_armstrong_number
     skip
-    refute ArmstrongNumbers.is_valid?(555)
-    refute ArmstrongNumbers.is_valid?(662)
+    assert ArmstrongNumbers.include?(153)
   end
 
-  def test_four_digit_number_that_is_armstrong_number
+  def test_three_digit_number_that_is_not_an_armstrong_number
     skip
-    assert ArmstrongNumbers.is_valid?(1_634)
+    refute ArmstrongNumbers.include?(100)
   end
 
-  def test_four_digit_number_that_is_not_armstrong_number
+  def test_four_digit_number_that_is_an_armstrong_number
     skip
-    refute ArmstrongNumbers.is_valid?(9_989)
+    assert ArmstrongNumbers.include?(9_474)
   end
 
-  def test_seven_digit_number_that_is_armstrong_number
+  def test_four_digit_number_that_is_not_an_armstrong_number
     skip
-    assert ArmstrongNumbers.is_valid?(9_926_315)
+    refute ArmstrongNumbers.include?(9_475)
   end
 
-  def test_seven_digit_number_that_is_not_armstrong_number
+  def test_seven_digit_number_that_is_an_armstrong_number
     skip
-    refute ArmstrongNumbers.is_valid?(2_369_989)
+    assert ArmstrongNumbers.include?(9_926_315)
   end
 
-  def test_ten_digit_number_that_is_armstrong_number
+  def test_seven_digit_number_that_is_not_an_armstrong_number
     skip
-    assert ArmstrongNumbers.is_valid?(4_679_307_774)
-  end
-
-  def test_fourteen_digit_number_that_is_armstrong_number
-    skip
-    assert ArmstrongNumbers.is_valid?(28_116_440_335_967)
+    refute ArmstrongNumbers.include?(9_926_314)
   end
 end

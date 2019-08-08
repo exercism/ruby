@@ -33,6 +33,7 @@ To include color from the command line:
 
     ruby -r minitest/pride armstrong_numbers_test.rb
 
+
 ## Source
 
 Wikipedia [https://en.wikipedia.org/wiki/Narcissistic_number](https://en.wikipedia.org/wiki/Narcissistic_number)
