@@ -1,24 +1,14 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ruby
 
-# Run this script from the ruby repo root and get
-# a list of the exercises missing a generator.
-# Special thaks to @kotp for the 'find' command
+EXERCISES = File.expand_path('../exercises', __dir__)
 
-# associative array
-declare -A has_a_genny
-# indexed array
-declare -a has_no_genny
+genny_path = ->(slug) {
+  File.join(EXERCISES, slug, '.meta', 'generator')
+}
 
-# split on '/'  destructured like (0, 1, ..)
-while IFS='/' read -r base slug rest; do
-  has_a_genny[$slug]='true'
-done < <(find exercises/ -name generator)
+genny_path_exists = ->(slug) { Dir.exist?(genny_path[slug]) }
 
-for exercise in exercises/*; do
-  # remove prefix
-  slug=${exercise##*/}
-  # check if key is set
-  [[ -n ${has_a_genny[$slug]} ]] || has_no_genny+=( "$slug" )
-done
+need_gennies = Dir.children(EXERCISES)
+  .reject(&genny_path_exists).sort
 
-printf '%s\n' "${has_no_genny[@]}"
+puts need_gennies
