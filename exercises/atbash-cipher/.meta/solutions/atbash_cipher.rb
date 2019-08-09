@@ -1,16 +1,24 @@
-class Atbash
+class AtbashCipher
   def self.encode(plaintext)
     new(plaintext).encode
   end
 
-  attr_reader :plaintext
+  def self.decode(ciphertext)
+    new(ciphertext).decode
+  end
 
-  def initialize(plaintext)
-    @plaintext = plaintext
+  attr_reader :text
+
+  def initialize(text)
+    @text = text
   end
 
   def encode
-    chunk convert(normalize(plaintext))
+    chunk convert(normalize(text))
+  end
+
+  def decode
+    convert(normalize(text))
   end
 
   private

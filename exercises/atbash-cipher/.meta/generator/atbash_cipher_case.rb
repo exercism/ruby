@@ -1,0 +1,27 @@
+require 'generator/exercise_case'
+
+class AtbashCipherCase < Generator::ExerciseCase
+  def workload
+    case property
+    when 'encode' then encode_workload
+    when 'decode' then decode_workload
+    else raise 'unexpected property encountered'
+    end
+  end
+
+  def encode_workload
+    [
+      "plaintext = '#{phrase}'",
+      "ciphertext = '#{expected}'",
+      "assert_equal ciphertext, AtbashCipher.encode(plaintext)"
+    ].join("\n")
+  end
+
+  def decode_workload
+    [
+      "ciphertext = '#{phrase}'",
+      "plaintext = '#{expected}'",
+      "assert_equal plaintext, AtbashCipher.decode(ciphertext)"
+    ].join("\n")
+  end
+end
