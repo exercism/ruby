@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Run this script from the ruby repo root and get
+# a list of the exercises missing a generator.
+# Special thaks to @kotp for the 'find' command
+
+# associative array
+declare -A has_a_genny
+# indexed array
+declare -a has_no_genny
+
+# split on '/'  destructured like (0, 1, ..)
+while IFS='/' read -r base slug rest; do
+  has_a_genny[$slug]='true'
+done < <(find exercises/ -name generator)
+
+for exercise in exercises/*; do
+  # remove prefix
+  slug=${exercise##*/}
+  # check if key is set
+  [[ -n ${has_a_genny[$slug]} ]] || has_no_genny+=( "$slug" )
+done
+
+printf '%s\n' "${has_no_genny[@]}"
