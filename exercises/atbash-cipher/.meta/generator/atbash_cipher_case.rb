@@ -13,7 +13,7 @@ class AtbashCipherCase < Generator::ExerciseCase
     [
       "plaintext = '#{phrase}'",
       "ciphertext = '#{expected}'",
-      "assert_equal ciphertext, AtbashCipher.encode(plaintext)"
+      "assert_equal ciphertext, Atbash.encode(plaintext)"
     ].join("\n")
   end
 
@@ -21,7 +21,7 @@ class AtbashCipherCase < Generator::ExerciseCase
     [
       "ciphertext = '#{phrase}'",
       "plaintext = '#{expected}'",
-      "assert_equal plaintext, AtbashCipher.decode(ciphertext)"
+      "assert_equal plaintext, Atbash.decode(ciphertext)"
     ].join("\n")
   end
 end

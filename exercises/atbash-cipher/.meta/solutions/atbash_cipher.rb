@@ -1,4 +1,4 @@
-class AtbashCipher
+class Atbash
   def self.encode(plaintext)
     new(plaintext).encode
   end
@@ -14,25 +14,25 @@ class AtbashCipher
   end
 
   def encode
-    chunk convert(normalize(text))
+    chunk(convert)
   end
 
   def decode
-    convert(normalize(text))
+    convert
   end
 
   private
 
-  def convert(s)
-    s.tr(alphabet, key)
+  def convert
+    normalize.tr(alphabet, key)
   end
 
   def chunk(s)
     s.scan(/.{1,5}/).join(' ')
   end
 
-  def normalize(s)
-    s.downcase.gsub(/[^a-z0-9]/, '')
+  def normalize
+    text.downcase.gsub(/[^a-z0-9]/, '')
   end
 
   def alphabet
