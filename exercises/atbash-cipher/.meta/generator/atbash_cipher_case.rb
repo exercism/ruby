@@ -14,7 +14,7 @@ class AtbashCipherCase < Generator::ExerciseCase
       "plaintext = '#{phrase}'",
       "ciphertext = '#{expected}'",
       "assert_equal ciphertext, Atbash.encode(plaintext)"
-    ].join("\n")
+    ]
   end
 
   def decode_workload
@@ -22,6 +22,6 @@ class AtbashCipherCase < Generator::ExerciseCase
       "ciphertext = '#{phrase}'",
       "plaintext = '#{expected}'",
       "assert_equal plaintext, Atbash.decode(ciphertext)"
-    ].join("\n")
+    ]
   end
 end
