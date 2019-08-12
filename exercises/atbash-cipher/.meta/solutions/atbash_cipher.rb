@@ -3,28 +3,36 @@ class Atbash
     new(plaintext).encode
   end
 
-  attr_reader :plaintext
+  def self.decode(ciphertext)
+    new(ciphertext).decode
+  end
 
-  def initialize(plaintext)
-    @plaintext = plaintext
+  attr_reader :text
+
+  def initialize(text)
+    @text = text
   end
 
   def encode
-    chunk convert(normalize(plaintext))
+    chunk(convert)
+  end
+
+  def decode
+    convert
   end
 
   private
 
-  def convert(s)
-    s.tr(alphabet, key)
+  def convert
+    normalize.tr(alphabet, key)
   end
 
   def chunk(s)
     s.scan(/.{1,5}/).join(' ')
   end
 
-  def normalize(s)
-    s.downcase.gsub(/[^a-z0-9]/, '')
+  def normalize
+    text.downcase.gsub(/[^a-z0-9]/, '')
   end
 
   def alphabet
