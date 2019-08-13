@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'high_scores'
 
-# Common test data version: 4.0.0 ad1f9c4
+# Common test data version: 5.0.0 7dfb96c
 class HighScoresTest < Minitest::Test
   def test_list_of_scores
     # skip
@@ -57,5 +57,17 @@ class HighScoresTest < Minitest::Test
     scores = [40]
     expected = [40]
     assert_equal expected, HighScores.new(scores).personal_top_three
+  end
+
+  def test_latest_score_is_not_the_personal_best
+    skip
+    scores = [100, 40, 10, 70]
+    refute HighScores.new(scores).latest_is_personal_best?
+  end
+
+  def test_latest_score_is_the_personal_best
+    skip
+    scores = [70, 40, 10, 100]
+    assert HighScores.new(scores).latest_is_personal_best?
   end
 end
