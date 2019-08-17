@@ -8,19 +8,8 @@ To get around this problem, manufacturers print color-coded bands onto the resis
 
 In this exercise you are going to create a helpful program so that you don't have to remember the values of the bands. The program will take color names as input and output a two digit number, even if the input is more than two colors!
 
-
-The band colors are encoded as follows:
-
-- Black: 0
-- Brown: 1
-- Red: 2
-- Orange: 3
-- Yellow: 4
-- Green: 5
-- Blue: 6
-- Violet: 7
-- Grey: 8
-- White: 9
+The colors are mapped to the numbers from 0 to 9 in the sequence:
+Black - Brown - Red - Orange - Yellow - Green - Blue - Violet - Grey - White
 
 From the example above:
 brown-green should return 15
