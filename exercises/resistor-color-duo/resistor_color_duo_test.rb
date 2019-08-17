@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'resistor_color_duo'
 
-# Common test data version: 2.0.0 8b44ce1
+# Common test data version: 2.1.0 00dda3a
 class ResistorColorDuoTest < Minitest::Test
   def test_brown_and_black
     # skip
@@ -21,5 +21,10 @@ class ResistorColorDuoTest < Minitest::Test
   def test_orange_and_orange
     skip
     assert_equal 33, ResistorColorDuo.value(["orange", "orange"])
+  end
+
+  def test_ignore_additional_colors
+    skip
+    assert_equal 51, ResistorColorDuo.value(["green", "brown", "orange"])
   end
 end
