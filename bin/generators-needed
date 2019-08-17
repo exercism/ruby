@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+EXERCISES = File.expand_path('../exercises', __dir__)
+
+genny_path = ->(slug) {
+  File.join(EXERCISES, slug, '.meta', 'generator')
+}
+
+genny_path_exists = ->(slug) { Dir.exist?(genny_path[slug]) }
+
+need_gennies = Dir.children(EXERCISES)
+  .reject(&genny_path_exists).sort
+
+puts need_gennies
