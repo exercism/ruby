@@ -61,16 +61,6 @@
       ]
     },
     {
-      "slug": "armstrong-numbers",
-      "uuid": "77c5c7e6-265a-4f1a-9bc4-851f8f825420",
-      "core": false,
-      "unlocked_by": "series",
-      "difficulty": 3,
-      "topics": [
-        "math"
-      ]
-    },
-    {
       "slug": "matrix",
       "uuid": "3de21c18-a533-4150-8a73-49df8fcb8c61",
       "core": true,
@@ -208,6 +198,16 @@
         "strings",
         "text_formatting",
         "transforming"
+      ]
+    },
+    {
+      "slug": "armstrong-numbers",
+      "uuid": "77c5c7e6-265a-4f1a-9bc4-851f8f825420",
+      "core": false,
+      "unlocked_by": "series",
+      "difficulty": 3,
+      "topics": [
+        "math"
       ]
     },
     {
