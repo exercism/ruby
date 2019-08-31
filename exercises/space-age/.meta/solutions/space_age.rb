@@ -3,21 +3,22 @@ class SpaceAge
 
   def initialize(seconds)
     @seconds = seconds
+    @earth_yr_in_secs = 31_557_600.to_f
   end
 
   {
-    mercury: 7_600_530.24,
-    venus: 19_413_907.2,
-    earth: 31_558_149.76,
-    mars: 59_354_294.4,
-    jupiter: 374_335_776.0,
-    saturn: 929_596_608.0,
-    uranus: 2_661_041_808.0,
-    neptune: 5_200_418_592.0
-  }.each do |planet, orbital_period|
+    earth: 1,
+    mercury: 0.2408467,
+    venus: 0.61519726,
+    mars: 1.8808158,
+    jupiter: 11.862615,
+    saturn: 29.447498,
+    uranus: 84.016846,
+    neptune: 164.79132
+  }.each do |planet, planet_in_earth_yrs|
 
     define_method("on_#{planet}") do
-      seconds / orbital_period
+      seconds / (planet_in_earth_yrs * @earth_yr_in_secs)
     end
   end
 end
