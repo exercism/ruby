@@ -14,13 +14,6 @@ class Matrix
   end
 
   def extract_columns(rows)
-    columns = []
-    rows.each do |row|
-      row.each_with_index do |number, i|
-        columns[i] ||= []
-        columns[i] << number
-      end
-    end
-    columns
+    rows.transpose
   end
 end
