@@ -8,8 +8,8 @@ class Matrix
   private
 
   def extract_rows(s)
-    s.lines.map do |row|
-      row.lines(' ').map(&:to_i)
+    s.split.map do |row|
+      row.split(' ').map(&:to_i)
     end
   end
 
