@@ -1213,8 +1213,8 @@
       "slug": "resistor-color-trio",
       "uuid": "2df14b68-75c8-4984-8ae2-ecd2cb7ed1d4",
       "core": false,
-      "unlocked_by": "high-scores",
-      "difficulty": 4,
+      "unlocked_by": "series",
+      "difficulty": 5,
       "topics": [
         "loops"
       ]
