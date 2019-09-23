@@ -36,4 +36,16 @@ class MatrixTest < Minitest::Test
     matrix = Matrix.new("89 1903 3\n18 3 1\n9 4 800")
     assert_equal [1903, 3, 4], matrix.columns[1]
   end
+  
+  def test_asymmetric_matrix_rows
+    skip
+    matrix = Matrix.new("1 2\n3 4\n5 6")
+    assert_equal [1, 2], matrix.rows[0]
+  end
+  
+  def test_asymmetric_matrix_columns
+    skip
+    matrix = Matrix.new("1 2\n3 4\n5 6")
+    assert_equal [1, 3, 5], matrix.columns[0]
+  end
 end
