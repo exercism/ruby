@@ -7,7 +7,7 @@
   "editor": {
     "tab_width": 2,
     "soft_tabs": true
-  }
+  },
   "exercises": [
     {
       "slug": "hello-world",
