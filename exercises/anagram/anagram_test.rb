@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'anagram'
 
-# Common test data version: 1.4.0 baaf092
+# Common test data version: 1.5.0 49a36fe
 class AnagramTest < Minitest::Test
   def test_no_matches
     # skip
@@ -43,6 +43,14 @@ class AnagramTest < Minitest::Test
     assert_equal expected, anagrams.sort
   end
 
+  def test_detects_multiple_anagrams_with_different_case
+    skip
+    detector = Anagram.new('nose')
+    anagrams = detector.match(["Eons", "ONES"])
+    expected = ["Eons", "ONES"]
+    assert_equal expected, anagrams.sort
+  end
+
   def test_does_not_detect_non_anagrams_with_identical_checksum
     skip
     detector = Anagram.new('mass')
@@ -75,7 +83,7 @@ class AnagramTest < Minitest::Test
     assert_equal expected, anagrams
   end
 
-  def test_does_not_detect_a_anagram_if_the_original_word_is_repeated
+  def test_does_not_detect_an_anagram_if_the_original_word_is_repeated
     skip
     detector = Anagram.new('go')
     anagrams = detector.match(["go Go GO"])
@@ -96,6 +104,14 @@ class AnagramTest < Minitest::Test
     detector = Anagram.new('BANANA')
     anagrams = detector.match(["BANANA", "Banana", "banana"])
     expected = []
+    assert_equal expected, anagrams
+  end
+
+  def test_words_other_than_themselves_can_be_anagrams
+    skip
+    detector = Anagram.new('LISTEN')
+    anagrams = detector.match(["Listen", "Silent", "LISTEN"])
+    expected = ["Silent"]
     assert_equal expected, anagrams
   end
 end
