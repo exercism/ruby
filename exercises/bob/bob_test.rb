@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'bob'
 
-# Common test data version: 1.4.0 ca79943
+# Common test data version: 1.6.0 42b9d45
 class BobTest < Minitest::Test
   def test_stating_something
     # skip
@@ -41,20 +41,20 @@ class BobTest < Minitest::Test
 
   def test_talking_forcefully
     skip
-    remark = "Let's go make out behind the gym!"
-    assert_equal "Whatever.", Bob.hey(remark), %q{Bob hears "Let's go make out behind the gym!", and..}
+    remark = "Hi there!"
+    assert_equal "Whatever.", Bob.hey(remark), %q{Bob hears "Hi there!", and..}
   end
 
   def test_using_acronyms_in_regular_speech
     skip
-    remark = "It's OK if you don't want to go to the DMV."
-    assert_equal "Whatever.", Bob.hey(remark), %q{Bob hears "It's OK if you don't want to go to the DMV.", and..}
+    remark = "It's OK if you don't want to go work for NASA."
+    assert_equal "Whatever.", Bob.hey(remark), %q{Bob hears "It's OK if you don't want to go work for NASA.", and..}
   end
 
   def test_forceful_question
     skip
-    remark = "WHAT THE HELL WERE YOU THINKING?"
-    assert_equal "Calm down, I know what I'm doing!", Bob.hey(remark), %q{Bob hears "WHAT THE HELL WERE YOU THINKING?", and..}
+    remark = "WHAT'S GOING ON?"
+    assert_equal "Calm down, I know what I'm doing!", Bob.hey(remark), %q{Bob hears "WHAT'S GOING ON?", and..}
   end
 
   def test_shouting_numbers
@@ -83,8 +83,8 @@ class BobTest < Minitest::Test
 
   def test_shouting_with_no_exclamation_mark
     skip
-    remark = "I HATE THE DMV"
-    assert_equal "Whoa, chill out!", Bob.hey(remark), %q{Bob hears "I HATE THE DMV", and..}
+    remark = "I HATE THE DENTIST"
+    assert_equal "Whoa, chill out!", Bob.hey(remark), %q{Bob hears "I HATE THE DENTIST", and..}
   end
 
   def test_statement_containing_question_mark
