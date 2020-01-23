@@ -100,6 +100,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": "I build Ruby on Rails backends professionally. Ruby is my main language, and I really enjoy its expressiveness. I'd like to learn Haskell and Rust, and get better at shell scripting"
+    },
+    {
+      "github_username": "compostbrain",
+      "alumnus": false,
+      "show_on_website": false,
+      "name": "Joel Cahalan",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "I ❤️ ruby!"
     }
   ]
 }
