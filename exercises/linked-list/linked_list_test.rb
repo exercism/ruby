@@ -53,6 +53,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_pop_to_empty
+    skip
     deque = Deque.new
     deque.push(10)
     assert_equal 10, deque.pop
@@ -61,6 +62,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_shift_to_empty
+    skip
     deque = Deque.new
     deque.unshift(10)
     assert_equal 10, deque.shift
