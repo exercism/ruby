@@ -1,5 +1,3 @@
-# Hints
-
 ### General
 
 - The [rubymostas strings guide][ruby-for-beginners.rubymonstas.org-strings] has a nice introduction to Ruby strings.
