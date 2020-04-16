@@ -38,4 +38,3 @@ This exercise does not require any specific logic to be added to the [analyzer][
 [analyzer]: https://github.com/exercism/ruby-analyzer
 [representer]: https://github.com/exercism/ruby-representer
 [ruby-doc.org-string]: https://ruby-doc.org/core-2.7.0/String.html
-

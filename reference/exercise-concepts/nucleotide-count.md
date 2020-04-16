@@ -43,6 +43,6 @@
 - Use Regex to validate the input.
 
 ## Approach: Use collections + String#count.
+
 - Similar to the previous approach but using `String#count` and `String#size` to validate the input.
 - For the input validation part it's also possible to use array difference to remove nucleotides from the input resulting in an empty collection for the valid inputs.
-
