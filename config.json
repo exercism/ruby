@@ -1222,6 +1222,17 @@
       "topics": [
         "loops"
       ]
+    },
+    {
+      "slug": "darts",
+      "uuid": "15b73808-78a4-4854-b7cf-82a478107024",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "math",
+        "geometry"
+      ]
     }
   ]
 }
