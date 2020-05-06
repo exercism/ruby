@@ -1,7 +1,4 @@
 class Lasagna
-  EXPECTED_MINUTES_IN_OVEN = 40
-  PREPARATION_MINUTES_PER_LAYER = 2
-
   def remaining_minutes_in_oven(actual_minutes_in_oven)
     raise NotImplementedError, 'Please implement the remaining_minutes_in_oven method'
   end
