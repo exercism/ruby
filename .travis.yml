@@ -1,5 +1,5 @@
 ---
-github_token=$NOT_KYTRINYX_TOKEN
+GITHUB_TOKEN=$NOT_KYTRINYX_TOKEN
 language: ruby
 sudo: false
 rvm:
