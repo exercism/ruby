@@ -1,21 +1,21 @@
-### 1. Define the expected oven time in minutes
+## 1. Define the expected oven time in minutes
 
 - You need to define a [constant][constant] which should contain the [integer][integers] value specified in the recipe.
 
-### 2. Calculate the remaining oven time in minutes
+## 2. Calculate the remaining oven time in minutes
 
 - You need to define a [method][methods] with a single parameter for the actual time so far.
 - You can [implicitly return an integer][return] from the method.
 - You can use the [mathematical operator for subtraction][operators] to subtract values.
 
-### 3. Calculate the preparation time in minutes
+## 3. Calculate the preparation time in minutes
 
 - You need to define a [method][methods] with a single parameter for the number of layers.
 - You can [implicitly return an integer][return] from the method.
 - You can use the [mathematical operator for multiplicaton][operators] to multiply values.
 - You could define an extra constant for the time in minutes per layer, or use a "magic number" in the code.
 
-### 4. Calculate the total working time in minutes
+## 4. Calculate the total working time in minutes
 
 - You need to define a [method][methods] with two named parameters: `number_of_layers` and `actual_minutes_in_oven`.
 - You can [implicitly return an integer][return] from the method.
