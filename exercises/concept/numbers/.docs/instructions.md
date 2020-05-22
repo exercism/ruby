@@ -9,7 +9,7 @@ At its slowest speed (`1`), `221` cars are produced each hour. The production in
 
 You have two tasks.
 
-### 1. Calculate the production rate per hour
+## 1. Calculate the production rate per hour
 
 Implement the `AssemblyLine.production_rate_per_hour` method to calculate the assembly line's production rate per hour, taking into account its success rate:
 
@@ -20,7 +20,7 @@ AssemblyLine.production_rate_per_hour(6)
 
 Note that the value returned is an instance of `Float`.
 
-### 2. Calculate the number of working items produced per minute
+## 2. Calculate the number of working items produced per minute
 
 Implement the `AssemblyLine.working_items_per_minute` method to calculate how many working cars are produced per minute:
 
