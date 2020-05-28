@@ -9,6 +9,6 @@ class Microwave
   end
 
   def timer
-    %02<minutes>i:%02<seconds>i' % {minutes: minutes, seconds: seconds}
+    '%02<minutes>i:%02<seconds>i' % {minutes: minutes, seconds: seconds}
   end
 end
