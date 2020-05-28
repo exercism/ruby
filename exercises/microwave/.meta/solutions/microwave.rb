@@ -1,13 +1,12 @@
 class Microwave
-  attr_reader :buttons_pressed, :minutes, :seconds
+  attr_reader :minutes, :seconds
 
   def initialize(input)
-    @buttons_pressed = input.join.to_i
-
+    buttons_pressed = input.join.to_i
     base = buttons_pressed > 99 ? 100 : 60
 
     @minutes = buttons_pressed / base
-    @seconds = (buttons_pressed - (minutes * base)) % base
+    @seconds = (buttons_pressed - minutes * base) % base
   end
 
   def timer
