@@ -11,12 +11,12 @@ class Microwave
   end
 
   def timer
-    "#{add_zeros(minutes.to_s)}:#{add_zeros(seconds.to_s)}"
+    "#{prepend_zero(minutes.to_s)}:#{prepend_zero(seconds.to_s)}"
   end
 
   private
 
-  def add_zeros(time_str)
+  def prepend_zero(time_str)
     time_str.length == 1 ? time_str.prepend('0') : time_str
   end
 end
