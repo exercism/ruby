@@ -1,5 +1,3 @@
-# Design
-
 ## Goal
 
 The goal of this exercise is to teach the student how the concept of numbers is implemented in Ruby. It will introduce this concept through the two most common numeric types in Ruby: [`Integer`][integer-ruby] (whole number) and [`Float`][float-ruby] (floating-point number).

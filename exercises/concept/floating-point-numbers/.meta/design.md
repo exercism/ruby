@@ -1,5 +1,3 @@
-# Design
-
 ## Goal
 
 The goal of this exercise is to teach the student the concept of floating-point numbers and introduce them to loops.
