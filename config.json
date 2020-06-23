@@ -1233,6 +1233,18 @@
         "math",
         "geometry"
       ]
+    },
+    {
+      "slug": "microwave",
+      "uuid": "b960d0fe-a07f-11ea-bb37-0242ac130002",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "math",
+        "strings",
+        "interpolation"
+      ]
     }
   ]
 }
