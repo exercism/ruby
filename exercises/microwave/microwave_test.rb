@@ -52,4 +52,9 @@ class MicrowaveTest < Minitest::Test
     # skip
     assert_equal '10:01', Microwave.new(1001).timer
   end
+
+  def test_minute_overflow_adds_to_input_minutes
+    skip
+    assert_equal '03:12', Microwave.new(272).timer
+  end
 end
