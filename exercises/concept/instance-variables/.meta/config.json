@@ -1,0 +1,19 @@
+{
+  "authors": [
+    {
+      "github_username": "neenjaw",
+      "exercism_username": "neenjaw"
+    },
+    {
+      "github_username": "iHiD",
+      "exercism_username": "iHiD"
+    }
+  ],
+  "contributors": [
+    {
+      "github_username": "kotp",
+      "exercism_username": "kotp"
+    }
+  ],
+  "language_versions": ">=2.6.6"
+}
