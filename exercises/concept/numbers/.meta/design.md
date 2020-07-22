@@ -26,7 +26,7 @@ The Concepts this exercise unlocks are:
 
 This exercise's prerequisite Concepts are:
 
-- `basics`: know how to define methods.
+- `booleans`: know about `true`/`false` and truthy/falsey values.
 
 ## Representer
 
