@@ -20,5 +20,3 @@ else
   # Execute logic in all other cases
 end
 ```
-
-The condition of an `if` statement does not have to be only `true` or `false`. It can be any value. But it's important to know that any value other than `nil` and `false` (_truthy_ values) will be treated as `true`, meaning that the code inside the `if` statement will be executed.
