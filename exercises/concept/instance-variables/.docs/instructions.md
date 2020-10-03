@@ -2,7 +2,7 @@ Working with an amusement park, you've been handed a specification to design a s
 
 ## 1. Make new attendees
 
-Implement the `initialize` method of the `Attendee` class, it should take a height (in centimeters) and store it as an instance variable
+Implement the `Attendee#initialize` method of the `Attendee` class, it should take a height (in centimeters) and store it as an instance variable
 
 ```ruby
 Attendee.new(106)
@@ -11,7 +11,7 @@ Attendee.new(106)
 
 ## 2. How tall is the attendee
 
-Implement the `height` getter of the `Attendee` class, it should return the instances height
+Implement the `Attendee#height` getter of the `Attendee` class, it should return the instances height
 
 ```ruby
 Attendee.new(106).height
@@ -20,7 +20,7 @@ Attendee.new(106).height
 
 ## 3. What is the ride pass' id
 
-Not all attendees have bought a ride pass, but we need to know if they have a pass or not. Implement the `pass_id` getter for the `Attendee` class, it should return the instance's pass_id or `nil` if the Attendee doesn't have one.
+Not all attendees have bought a ride pass, but we need to know if they have a pass or not. Implement the `Attendee#pass_id` getter for the `Attendee` class, it should return the instance's pass_id or `nil` if the Attendee doesn't have one.
 
 ```ruby
 Attendee.new(106).pass_id
@@ -29,7 +29,7 @@ Attendee.new(106).pass_id
 
 ## 4. Allow people to buy a pass
 
-Implement `issue_pass!` to mutate the state of the instance, and set the pass id instance varaiable to the argument. It should return the pass id.
+Implement `Attendee#issue_pass!` to mutate the state of the instance, and set the pass id instance varaiable to the argument. It should return the pass id.
 
 ```ruby
 attendee = Attendee.new(106)
@@ -40,7 +40,7 @@ attendee.pass_id
 
 ## 4. Revoke the pass
 
-Some guests break the rules with unsafe behavior, so the park wants to be able to revoke passes. Implement `revoke_pass` to mutate the state of the instance, and set the pass id to `nil`
+Some guests break the rules with unsafe behavior, so the park wants to be able to revoke passes. Implement `Attendee#revoke_pass` to mutate the state of the instance, and set the pass id to `nil`
 
 ```ruby
 attendee = Attendee.new(106)
