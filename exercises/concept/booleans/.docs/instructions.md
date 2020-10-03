@@ -2,7 +2,7 @@ Continuing your work with the amusement park, you are tasked with writing some u
 
 ## 1. Check if an attendee has a ride pass
 
-Implement the `pass?` method to return a boolean (`true`/`false`) value based on the presence of a ride pass.
+Implement the `Attendee#pass?` method to return a boolean (`true`/`false`) value based on the presence of a ride pass.
 
 ```ruby
 Attendee.new(100).has_pass?
@@ -11,7 +11,7 @@ Attendee.new(100).has_pass?
 
 ## 2. Check if an attendee fits a ride
 
-Implement the `fits_ride?` method to see if an attendee fits a ride based on their height and the minimum height of required by the ride.
+Implement the `Attendee#fits_ride?` method to see if an attendee fits a ride based on their height and the minimum height of required by the ride.
 
 ```ruby
 Attendee.new(140).fits_ride?(100)
@@ -20,7 +20,7 @@ Attendee.new(140).fits_ride?(100)
 
 ## 3. Check if an attendee is allowed to ride
 
-Implement the `allowed_to_ride?` method to see if an attendee is allowed to go on a ride. The ride's required minimum height is provided as an argument. An attendee must have a ride pass and be able to fit the ride.
+Implement the `Attendee#allowed_to_ride?` method to see if an attendee is allowed to go on a ride. The ride's required minimum height is provided as an argument. An attendee must have a ride pass and be able to fit the ride.
 
 ```ruby
 attendee = Attendee.new(100)
