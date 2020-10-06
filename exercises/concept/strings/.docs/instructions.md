@@ -12,7 +12,7 @@ You have three tasks, each of which will take a log line and ask you to do somet
 
 ## 1. Get message from a log line
 
-Implement a method to return a log line's message:
+Implement the `LogLineParser.message` method to return a log line's message:
 
 ```ruby
 LogLineParser.message('[ERROR]: Invalid operation')
@@ -28,7 +28,7 @@ LogLineParser.message('[WARNING]:  Disk almost full\r\n')
 
 ## 2. Get log level from a log line
 
-Implement a method to return a log line's log level, which should be returned in lowercase:
+Implement the `LogLineParser.log_level` method to return a log line's log level, which should be returned in lowercase:
 
 ```ruby
 LogLineParser.log_level('[ERROR]: Invalid operation')
@@ -37,7 +37,7 @@ LogLineParser.log_level('[ERROR]: Invalid operation')
 
 ## 3. Reformat a log line
 
-Implement a method that reformats the log line, putting the message first and the log level after it in parentheses:
+Implement the `LogLineParser.reformat` method that reformats the log line, putting the message first and the log level after it in parentheses:
 
 ```ruby
 LogLineParser.reformat('[INFO]: Operation completed')
