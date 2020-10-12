@@ -1,4 +1,4 @@
-In this exercise you will be building error handling for a simple integer calculator.
+In this exercise you will be building error handling for a simple calculator.
 
 The goal is to have a working calculator that returns a string with the following pattern: `16 + 51 = 67`, when provided with arguments `16`, `51` and `+`.
 
@@ -10,7 +10,7 @@ SimpleCalculator.calculate(512, 4, "/"); // => returns "512 / 4 = 128"
 
 ## 1. Handle the code that may raise errors within the method `calculate`
 
-The main method for implementation in this task will be the class method `SimpleCalculator.calculate()` method. It takes three arguments. The first two arguments are integer numbers on which an operation is going to be conducted. The third argument is of type string and for this exercise it is necessary to implement the following operations:
+The main method for implementation in this task will be the class method `SimpleCalculator.calculate()` method. It takes three arguments. The first two arguments are numbers on which an operation is going to be conducted. The third argument is of type string and for this exercise it is necessary to implement the following operations:
 
 - addition using the `+` string
 - multiplication using the `*` string
