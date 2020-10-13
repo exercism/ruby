@@ -29,8 +29,10 @@ The goal of this exercise is to teach the student the Concept of Exceptions in R
 
 ### Hints
 
-TODO: Find nice online documentation to link here
+- [Exceptions in Ruby][exceptions]: The Pragmatic Programmer's Guide. Exceptions chapter.
 
 ### After
 
-TODO: Find nice online documentation to link here
+- [Exceptions in Ruby][exceptions]: The Pragmatic Programmer's Guide. Exceptions chapter.
+
+[exceptions]: https://ruby-doc.com/docs/ProgrammingRuby/html/tut_exceptions.html
