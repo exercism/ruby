@@ -1,0 +1,73 @@
+Exceptions in Ruby as in most languages provide a way of dealing with unexpected events. Proper handling of exceptions is important when trying to prevent your program from crashing.
+
+When an exception is raised in your code, either by raising it explicitly or by Ruby interpreter raising it itself. The program stops and eventually exit with an error message:
+
+```ruby
+raise ArgumentError.new("Something went wrong!")
+=> Traceback (most recent call last):
+.
+.
+ArgumentError (Something went wrong!)
+```
+
+```ruby
+1/0
+=> Traceback (most recent call last):
+.
+.
+ZeroDivisionError (divided by 0)
+```
+
+In case we want to stop this shut down process we need to react to the error. This is called "rescuing" and exception:
+
+```ruby
+begin
+  # ...any code that raises an exception
+rescue
+  puts 'Got an exception'
+end
+```
+
+This program will not crash and it'll output "Got an exception". Instead of exiting, Ruby runs the code in the rescue block, which prints out a message.
+
+As everything in Ruby, exceptions are also objects and they usually hold data about the exception. This is how we can get the exception object:
+
+```ruby
+begin
+  # ...any code that raises an exception
+rescue => e
+  puts "Exception class: #{ e.class.name }"
+  puts"Exception Message:#{e.message}"
+end
+```
+
+In Ruby it's also possible to raise your own exceptions. For example:
+
+```ruby
+begin
+  raise ArgumentError.new("Invalid argument")
+rescue ArgumentError => e
+  puts e.message
+end
+```
+
+The previous exception is one of the [Ruby's built in exceptions][ruby-exceptions] but it's also possible to define custom exceptions and raise them:
+
+```ruby
+
+class CustomError < StandardError
+end
+
+raise CustomError.new()
+
+```
+
+```ruby
+UnsupportedOperation = Class.new(StandardError)
+
+raise UnsupportedOperation.new()
+end
+
+
+[ruby-exceptions]: https://www.honeybadger.io/blog/understanding-the-ruby-exception-hierarchy
+```
