@@ -58,7 +58,6 @@ class CustomError < StandardError
 end
 
 raise CustomError.new()
-
 ```
 
 ```ruby
