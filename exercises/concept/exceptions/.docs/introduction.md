@@ -18,7 +18,7 @@ ArgumentError (Something went wrong!)
 ZeroDivisionError (divided by 0)
 ```
 
-In case we want to stop this shut down process we need to react to the error. This is called "rescuing" and exception:
+In case we want to stop this shut down process we need to react to the exception. This is called "rescuing" an exception:
 
 ```ruby
 begin
