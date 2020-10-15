@@ -37,7 +37,7 @@ begin
   # ...any code that raises an exception
 rescue => e
   puts "Exception class: #{ e.class.name }"
-  puts"Exception Message:#{e.message}"
+  puts "Exception Message:#{e.message}"
 end
 ```
 
