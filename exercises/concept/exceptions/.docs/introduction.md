@@ -65,7 +65,7 @@ UnsupportedOperation = Class.new(StandardError)
 
 raise UnsupportedOperation.new()
 end
+```
 
 
 [ruby-exceptions]: https://www.honeybadger.io/blog/understanding-the-ruby-exception-hierarchy
-```
