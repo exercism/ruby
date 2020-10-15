@@ -54,7 +54,6 @@ end
 The previous exception is one of the [Ruby's built in exceptions][ruby-exceptions] but it's also possible to define custom exceptions and raise them:
 
 ```ruby
-
 class CustomError < StandardError
 end
 
