@@ -29,5 +29,5 @@ SimpleCalculator.calculate(1, '2', '+'); // => Raises an ArgumentError
 When a `ZeroDivisionError` exception is raised, the handling code should return the string with the content `Division by zero is not allowed.`. Any other exception should not be handled by the `SimpleCalculator.calculate()` method.
 
 ```ruby
-SimpleCalculator.calculate(512, 0, "/"); // => returns "Division by zero is not allowed."
+SimpleCalculator.calculate(512, 0, "/"); # => returns "Division by zero is not allowed."
 ```
