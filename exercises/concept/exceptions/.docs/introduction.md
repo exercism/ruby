@@ -76,4 +76,3 @@ end
 
 raise CustomError.new("Something went wrong", :send_notification)
 ```
-
