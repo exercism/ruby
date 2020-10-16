@@ -21,7 +21,7 @@ The main method for implementation in this task will be the class method `Simple
 Any other operation symbol should raise the `UnsupportedOperation` exception.
 
 ```ruby
-SimpleCalculator.calculate(1, '2', '+'); // => Raises an ArgumentError
+SimpleCalculator.calculate(1, '2', '-'); // => Raises an UnsupportedOperation
 ```
 
 ## 4. Handle DivideByZero exceptions
