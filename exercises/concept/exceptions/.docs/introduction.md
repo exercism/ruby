@@ -60,13 +60,6 @@ end
 raise CustomError.new("Something went wrong")
 ```
 
-```ruby
-UnsupportedOperation = Class.new(StandardError)
-
-raise UnsupportedOperation.new("Something went wrong")
-end
-```
-
 These custom errors are subclasses of the `StandardError` class. Because custom errors are also a class, it's possible to add methods to it like in any other class.
 
 ```ruby
