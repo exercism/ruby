@@ -1,5 +1,5 @@
 class SimpleCalculator
-  ALLOWED_OPERATIONS = ['+', '-', '/', '*']
+  ALLOWED_OPERATIONS = ['+', '/', '*']
 
   UnsupportedOperation = Class.new(StandardError)
 
