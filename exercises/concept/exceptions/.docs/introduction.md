@@ -51,7 +51,7 @@ rescue ArgumentError => e
 end
 ```
 
-The previous exception is one of the [Ruby's built in exceptions][ruby-exceptions] but it's also possible to define custom exceptions and raise them:
+The previous exception is one of the Ruby's built in exceptions but it's also possible to define custom exceptions and raise them:
 
 ```ruby
 class CustomError < StandardError
@@ -67,4 +67,3 @@ raise UnsupportedOperation.new()
 end
 ```
 
-[ruby-exceptions]: https://www.honeybadger.io/blog/understanding-the-ruby-exception-hierarchy
