@@ -23,7 +23,7 @@ jobs:
 
       - uses: actions/setup-ruby@v1
         with:
-          version: ${{ matrix.ruby-version }}
+          ruby-version: ${{ matrix.ruby-version }}
 
       # - uses: actions/cache@v2
       #   with:
