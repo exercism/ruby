@@ -1,6 +1,8 @@
 # Exercism Ruby Track
 
 [![Build Status](https://travis-ci.org/exercism/ruby.svg?branch=master)](https://travis-ci.org/exercism/ruby)
+[![Configlet Status](https://github.com/exercism/ruby/workflows/Configlet%20CI/badge.svg)]
+[![Exercise Test Status](https://github.com/exercism/ruby/workflows/Exercise%20tests/badge.svg)]
 [![Join the chat at https://gitter.im/exercism/ruby](https://badges.gitter.im/exercism/ruby.svg)](https://gitter.im/exercism/ruby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Exercism Exercises in Ruby
