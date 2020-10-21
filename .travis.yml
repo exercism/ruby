@@ -1,0 +1,12 @@
+---
+language: ruby
+sudo: false
+rvm:
+  - 2.5
+install:
+  - bundle install --quiet
+script:
+  - rake test
+  - rubocop -fs -D
+  - bin/fetch-configlet
+  - bin/configlet lint .
