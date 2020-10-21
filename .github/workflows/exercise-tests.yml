@@ -10,30 +10,20 @@ on:
 
 jobs:
   test:
-    name: Go ${{ matrix.julia-version }} - ${{ matrix.os }} - ${{ github.event_name }}
+    name: Go ${{ matrix.ruby-version }} - ${{ matrix.os }} - ${{ github.event_name }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        go-version: [1.14.x, 1.15.x]
         os: [ubuntu-latest, windows-latest, macOS-latest]
-        test-arch: [amd64, '386']
-        race: ['', '-race']
-
-        # Race detection is valuable for our problems that involve concurrency.
-        # The race detector isn't supported on 386 though.
-        exclude:
-          - test-arch: '386'
-            race: -race
-          - test-arch: amd64
-            race: ''
+        ruby-version: [2.5]
 
     steps:
       - uses: actions/checkout@v2
 
       - uses: actions/setup-ruby@v1
         with:
-          version: 2.5
+          version: ${{ matrix.ruby-version }}
 
       - uses: actions/cache@v2
         with:
