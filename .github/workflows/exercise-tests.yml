@@ -25,16 +25,16 @@ jobs:
         with:
           version: ${{ matrix.ruby-version }}
 
-      - uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: vendor/bundle
+      #     key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-gems-
 
       - name: Bundle install
         run: |
-          bundle config path vendor/bundle
+          # bundle config path vendor/bundle
           bundle install --quiet
 
       - name: Lint 
