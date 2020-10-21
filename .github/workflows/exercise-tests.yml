@@ -41,6 +41,4 @@ jobs:
         run: rubocop -fs -D
 
       - name: Test exercises
-        env:
-          TESTARCH: ${{ test-arch }}
         run: rake test
