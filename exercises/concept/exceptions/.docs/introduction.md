@@ -59,20 +59,3 @@ end
 
 raise CustomError.new("Something went wrong")
 ```
-
-These custom errors are subclasses of the `StandardError` class. Because custom errors are also a class, it's possible to add methods to it like in any other class.
-
-```ruby
-class CustomError < StandardError
-  attr_reader :action
-
-  def initialize(message, action)
-    # Call the parent's constructor to set the message
-    super(message)
-
-    @action = action
-  end
-end
-
-raise CustomError.new("Something went wrong", :send_notification)
-```
