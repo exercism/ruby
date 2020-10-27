@@ -21,7 +21,7 @@ The Concepts this exercise unlocks are:
 
 - `strings-basic`: know of the existence of the `String` object; know of some basic functions (like looking up a character at a position, or slicing the string); know how to do basic string interpolation.
 
-## Prequisites
+## Prerequisites
 
 There are no prerequisites.
 

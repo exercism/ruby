@@ -31,7 +31,7 @@ This Concepts Exercise's Concepts are:
 - `arrays`: know of the existence of the `Array` object; know how to define an array; know how to access elements in an array by index; know how to iterate over elements in an array; know of some basic functions.
 - `each loops`: know how to iterate over a collection.
 
-## Prequisites
+## Prerequisites
 
 This exercise's prerequisites Concepts are:
 
