@@ -8,5 +8,9 @@
       "github_username": "pvcarrera",
       "exercism_username": "pvcarrera"
     }
-  ]
+  ],
+  "editor": {
+    "solution_files": ["lasagna.rb"],
+    "test_files": ["lasagna_test.rb"]
+  }
 }
