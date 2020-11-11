@@ -12,7 +12,7 @@ Please also watch the following video:
 
 - [The Anatomy of a Concept Exercise][anatomy-of-a-concept-exercise].
 
-As this document is generic, `<NAME>` will be use as the placeholder for the name of the exercise in underscore-case (e.g. `string_interpolation`)
+As this document is generic, `<NAME>` will be used as the placeholder for the name of the exercise in underscore-case (e.g. `calculator_conundrum`) and `<CONCEPT>` will be used as the placeholder for the name of a concept.
 
 Before implementing the exercise, please make sure you have a good understanding of what the exercise should be teaching (and what not). This information can be found in the exercise's GitHub issue. Having done this, please read the [Ruby concept exercises introduction][concept-exercises].
 
@@ -21,6 +21,10 @@ To implement a concept exercise, the following files must be added:
 <pre>
 languages
 └── ruby
+    ├── concepts
+    |   └── &lt;CONCEPT&gt;
+    |       ├── about.md
+    |       └── links.json
     └── exercises
         └── concept
             └── <NAME>
@@ -28,7 +32,6 @@ languages
                 |   ├── instructions.md
                 |   ├── introduction.md
                 |   ├── hints.md
-                |   ├── after.md
                 |   └── source.md (required if there are third-party sources)
                 ├── .meta
                 |   |── config.json
