@@ -1,3 +1,7 @@
+## numbers
+
+## conditionals
+
 Two common types of numbers in Ruby are:
 
 - Integers: numbers with no digits behind the decimal separator (whole numbers). Examples are `-6`, `0`, `1`, `25`, `976` and `500000`.
