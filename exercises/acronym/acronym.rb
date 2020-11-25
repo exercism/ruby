@@ -1,8 +1,14 @@
-=begin
-Write your code for the 'Acronym' exercise in this file. Make the tests in
-`acronym_test.rb` pass.
+class Acronym
+  def self.abbreviate(word)
+    result = ""
 
-To get started with TDD, see the `README.md` file in your
-`ruby/acronym` directory.
-=end
+    new_word = word.split(/[\s,-]/)
 
+    new_word = new_word.reject { |element| element.empty? }
+
+    new_word.each do |word|
+      result << word.slice(0)
+    end
+    result.upcase
+  end
+end
