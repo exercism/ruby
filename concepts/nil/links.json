@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "url": "https://www.rubyguides.com/2019/01/ruby-initialize-method/",
+    "description": "rg-initialize-method"
+  },
+  {
+    "url": "http://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html",
+    "description": "rfb-instance-variables"
+  },
+  {
+    "url": "https://www.rubyguides.com/2019/07/ruby-instance-variables/",
+    "description": "rg-instance-variables"
+  },
+  {
+    "url": "https://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/instancevars.html",
+    "description": "rug-instance-variables"
+  },
+  {
+    "url": "https://www.geeksforgeeks.org/ruby-getters-and-setters-method/",
+    "description": "gfg-getter-setters"
+  },
+  {
+    "url": "https://mixandgo.com/learn/ruby_attr_accessor_attr_reader_attr_writer",
+    "description": "mg-attr"
+  }
+]
