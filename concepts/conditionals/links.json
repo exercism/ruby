@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "url": "https://ruby-doc.org/core-2.7.1/Integer.html",
+    "description": "integer-ruby"
+  },
+  {
+    "url": "https://ruby-doc.org/core-2.7.1/Float.html",
+    "description": "float-ruby"
+  },
+  {
+    "url": "https://www.tutorialspoint.com/ruby/ruby_operators.htm",
+    "description": "arithmetic-operators"
+  },
+  {
+    "url": "https://www.w3resource.com/ruby/ruby-comparison-operators.php",
+    "description": "comparison-operators"
+  }
+]
