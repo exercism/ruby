@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "url": "https://ruby-doc.org/core-2.7.0/String.html",
+    "description": "ruby-doc.org-string"
+  },
+  {
+    "url": "http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html",
+    "description": "ruby-for-beginners.rubymonstas.org-interpolation"
+  },
+  {
+    "url": "https://www.rubyguides.com/2018/11/ruby-heredoc/",
+    "description": "ruby-heredoc"
+  }
+]
