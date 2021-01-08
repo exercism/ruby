@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "url": "https://docs.ruby-lang.org/en/master/TrueClass.html",
+    "description": "true-class"
+  },
+  {
+    "url": "https://docs.ruby-lang.org/en/master/FalseClass.html",
+    "description": "false-class"
+  },
+  {
+    "url": "https://docs.ruby-lang.org/en/master/Comparable.html",
+    "description": "comparable-class"
+  },
+  {
+    "url": "https://docs.ruby-lang.org/en/master/syntax/control_expressions_rdoc.html",
+    "description": "control-expressions"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/List_of_C-family_programming_languages",
+    "description": "c-family"
+  },
+  {
+    "url": "https://docs.ruby-lang.org/en/master/syntax/control_expressions_rdoc.html#label-Modifier\u002Bif\u002Band\u002Bunless",
+    "description": "if-modifier"
+  }
+]
