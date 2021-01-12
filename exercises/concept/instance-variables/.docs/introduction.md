@@ -1,6 +1,6 @@
-## instance-variables
+## Instance Variables
 
-## nil
+## Nil
 
 ## Object state, instance variables
 

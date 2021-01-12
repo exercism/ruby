@@ -1,6 +1,6 @@
-## numbers
+## Numbers
 
-## conditionals
+## Conditionals
 
 Two common types of numbers in Ruby are:
 
