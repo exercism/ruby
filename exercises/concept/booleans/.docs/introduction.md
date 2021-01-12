@@ -1,5 +1,3 @@
-## booleans
-
 ## True and False
 
 True and false logical states are represented with `true` and `false` in Ruby. These may either be used as literals on their own, or as a result of logical or comparison methods.
