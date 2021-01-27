@@ -22,28 +22,8 @@
   end
   ```
 
-- It is common to use _truthy_ and _falsey_ values to determine the outcome of [conditional statements][control-expressions].
-
-  - `if`…`else` exists as a construct, similar to the [_C-family_ of programming languages][c-family]
-  - it is often more idiomatic to use `if` and `unless` as [expression modifiers to "guard" an expression][if-modifier]
-
-  ```ruby
-  1 + 1 if truthy
-  # => this will evaluate and return 2
-
-  2 + 2 if falsey
-  # => the numbers are not added because of the modifier, nil is returned
-
-  3 + 3 unless truthy
-  # => the numbers are not added because of the modifier, nil is returned
-
-  4 + 4 unless falsey
-  # => this will evaluate and return 8
-  ```
-
 [c-family]: https://en.wikipedia.org/wiki/List_of_C-family_programming_languages
-[control-expressions]: https://docs.ruby-lang.org/en/master/syntax/control_expressions_rdoc.html
-[if-modifier]: https://docs.ruby-lang.org/en/master/syntax/control_expressions_rdoc.html#label-Modifier+if+and+unless
+[control-expressions]: https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Control_Structures
 [true-class]: https://docs.ruby-lang.org/en/master/TrueClass.html
 [false-class]: https://docs.ruby-lang.org/en/master/FalseClass.html
 [nil-class]: https://docs.ruby-lang.org/en/master/NilClass.html

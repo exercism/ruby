@@ -28,6 +28,7 @@ The goal of this exercise is to teach the student the basics of the Concept of "
 ## Prerequisites
 
 - `basics`
+- `numbers`
 
 ## Resources
 
