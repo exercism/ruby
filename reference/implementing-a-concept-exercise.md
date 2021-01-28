@@ -36,7 +36,7 @@ languages
                 ├── .meta
                 |   |── config.json
                 |   |── design.md
-                |   └── example.rb
+                |   └── exemplar.rb
                 ├── <NAME>.rb
                 └── <NAME>_test.rb
 </pre>
@@ -47,7 +47,7 @@ The code files are track-specific and should be designed to help the student lea
 
 - `<NAME>.rb`. the stub implementation file, which is the starting point for students to work on the exercise.
 - `<NAME>_test.rb`: the test suite.
-- `.meta/example.rb`: an example implementation that passes all the tests.
+- `.meta/exemplar.rb`: an exemplar implementation that passes all the tests.
 
 ## Step 2: Add documentation files
 
