@@ -1,5 +1,6 @@
 {
   "language": "Ruby",
+  "slug": "ruby",
   "active": true,
   "status": {
     "concept_exercises": false,
