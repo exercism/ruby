@@ -1339,5 +1339,79 @@
         ]
       }
     ]
-  }
+  },
+  "concepts": [
+    {
+      "uuid": "7f2bf3a7-9771-48e8-bb6a-3022ca073a41",
+      "slug": "arrays",
+      "name": "Arrays",
+      "blurb": "TODO: add blurb for arrays concept"
+    },
+    {
+      "uuid": "fe345fe6-229b-4b4b-a489-4ed3b77a1d7e",
+      "slug": "basics",
+      "name": "Basics",
+      "blurb": "TODO: add blurb for basics concept"
+    },
+    {
+      "uuid": "bf57350d-9e18-4ec6-9341-e4d2c289724d",
+      "slug": "blocks",
+      "name": "Blocks",
+      "blurb": "TODO: add blurb for blocks concept"
+    },
+    {
+      "uuid": "831b4db4-6b75-4a8d-a835-4c2555aacb61",
+      "slug": "booleans",
+      "name": "Booleans",
+      "blurb": "TODO: add blurb for booleans concept"
+    },
+    {
+      "uuid": "acec3b2a-c1cc-4583-bd4b-9f7ae41acfb3",
+      "slug": "classes",
+      "name": "Classes",
+      "blurb": "TODO: add blurb for classes concept"
+    },
+    {
+      "uuid": "dedd9182-66b7-4fbc-bf4b-ba6603edbfca",
+      "slug": "conditionals",
+      "name": "Conditionals",
+      "blurb": "TODO: add blurb for conditionals concept"
+    },
+    {
+      "uuid": "01d61b5c-8f50-4b12-9fe0-0723e6f00999",
+      "slug": "floating-point-numbers",
+      "name": "Floating Point Numbers",
+      "blurb": "TODO: add blurb for floating-point-numbers concept"
+    },
+    {
+      "uuid": "35001ed1-a7b9-4a80-a766-26725a29dc50",
+      "slug": "instance-variables",
+      "name": "Instance Variables",
+      "blurb": "TODO: add blurb for instance-variables concept"
+    },
+    {
+      "uuid": "152d3976-dbcb-4a16-9f89-c61e0cdda4e5",
+      "slug": "loops",
+      "name": "Loops",
+      "blurb": "TODO: add blurb for loops concept"
+    },
+    {
+      "uuid": "aa31cd95-54b2-4728-8fe3-2fdc244b3f53",
+      "slug": "nil",
+      "name": "Nil",
+      "blurb": "TODO: add blurb for nil concept"
+    },
+    {
+      "uuid": "162721bd-3d64-43ff-889e-6fb2eac75709",
+      "slug": "numbers",
+      "name": "Numbers",
+      "blurb": "TODO: add blurb for numbers concept"
+    },
+    {
+      "uuid": "3b1da281-7099-4c93-a109-178fc9436d68",
+      "slug": "strings",
+      "name": "Strings",
+      "blurb": "TODO: add blurb for strings concept"
+    }
+  ]
 }
