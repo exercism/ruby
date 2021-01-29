@@ -1,0 +1,7 @@
+{
+  "files": {
+    "solution": ["moviegoer.rb"],
+    "test": ["moviegoer_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
+  }
+}
