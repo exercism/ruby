@@ -213,7 +213,7 @@ In the first case, the changes need to be made to the `canonical-data.json`
 file for the exercise, which lives in the problem-specifications repository.
 
 ```
-../problem-specifications/exercises/<slug>/
+https://github.com/exercism/v3/blob/main/problem-specifications/exercises/<slug>/
 ├── canonical-data.json
 ├── description.md
 └── metadata.yml
