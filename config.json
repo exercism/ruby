@@ -29,7 +29,8 @@
           "booleans",
           "conditionals",
           "blocks"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "slug": "strings",
@@ -39,7 +40,8 @@
         ],
         "prerequisites": [
           "basics"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "slug": "lasagna",
@@ -47,7 +49,8 @@
         "concepts": [
           "basics"
         ],
-        "prerequisites": []
+        "prerequisites": [],
+        "status": "wip"
       },
       {
         "slug": "numbers",
@@ -58,7 +61,8 @@
         ],
         "prerequisites": [
           "booleans"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "slug": "floating-point-numbers",
@@ -70,7 +74,8 @@
         "prerequisites": [
           "numbers",
           "conditionals"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "slug": "amusement_park_rides",
@@ -80,7 +85,8 @@
         ],
         "prerequisites": [
           "instance-variables"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "slug": "instance-variables",
@@ -91,7 +97,8 @@
         ],
         "prerequisites": [
           "basics"
-        ]
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
