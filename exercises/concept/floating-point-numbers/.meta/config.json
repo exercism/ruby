@@ -5,5 +5,10 @@
       "exercism_username": "dvik1950"
     }
   ],
-  "forked_from": ["csharp/floating-point-numbers"]
+  "forked_from": ["csharp/floating-point-numbers"],
+  "files": {
+    "solution": [],
+    "test": [],
+    "exemplar": [".meta/exemplar.rb"]
+  }
 }
