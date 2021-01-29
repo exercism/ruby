@@ -366,7 +366,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "accumulate",
@@ -458,7 +459,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "beer-song",
@@ -595,7 +597,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "say",
@@ -1153,7 +1156,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "affine-cipher",
@@ -1184,7 +1188,8 @@
       "unlocked_by": null,
       "difficulty": 0,
       "topics": null,
-      "deprecated": true
+      "deprecated": true,
+      "status": "deprecated"
     },
     {
       "slug": "zipper",
