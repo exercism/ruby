@@ -9,8 +9,9 @@
       "exercism_username": "pvcarrera"
     }
   ],
-  "editor": {
-    "solution_files": ["lasagna.rb"],
-    "test_files": ["lasagna_test.rb"]
+  "files": {
+    "solution": ["lasagna.rb"],
+    "test": ["lasagna_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
   }
 }

@@ -15,5 +15,10 @@
       "exercism_username": "kotp"
     }
   ],
-  "language_versions": ">=2.6.6"
+  "language_versions": ">=2.6.6",
+  "files": {
+    "solution": [],
+    "test": [],
+    "exemplar": [".meta/exemplar.rb"]
+  }
 }

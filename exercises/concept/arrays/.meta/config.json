@@ -5,5 +5,10 @@
       "exercism_username": "pvcarrera"
     }
   ],
-  "forked_from": ["csharp/arrays"]
+  "forked_from": ["csharp/arrays"],
+  "files": {
+    "solution": [],
+    "test": [],
+    "exemplar": [".meta/exemplar.rb"]
+  }
 }

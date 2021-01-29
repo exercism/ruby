@@ -4,5 +4,10 @@
       "github_username": "pvcarrera",
       "exercism_username": "pvcarrera"
     }
-  ]
+  ],
+  "files": {
+    "solution": [],
+    "test": [],
+    "exemplar": [".meta/exemplar.rb"]
+  }
 }
