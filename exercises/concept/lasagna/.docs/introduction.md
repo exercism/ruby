@@ -51,5 +51,5 @@ calc.multiply(num1: 2, num_2: 5)
 ```
 
 [object-oriented-programming]: https://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/oothinking.html
-[object]: ../../../../../../reference/concepts/objects.md
+[object]: https://github.com/exercism/v3/blob/main/reference/concepts/objects.md
 [snake-case]: https://en.wikipedia.org/wiki/Snake_case
