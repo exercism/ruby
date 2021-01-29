@@ -17,6 +17,83 @@
     "indent_size": 2
   },
   "exercises": {
+    "concept": [
+      {
+        "slug": "arrays",
+        "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
+        "concepts": [
+          "arrays"
+        ],
+        "prerequisites": [
+          "classes",
+          "booleans",
+          "conditionals",
+          "blocks"
+        ]
+      },
+      {
+        "slug": "strings",
+        "uuid": "e5476046-5289-11ea-8d77-2e728ce88125",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "basics"
+        ]
+      },
+      {
+        "slug": "lasagna",
+        "uuid": "71ae39c4-7364-11ea-bc55-0242ac130003",
+        "concepts": [
+          "basics"
+        ],
+        "prerequisites": []
+      },
+      {
+        "slug": "numbers",
+        "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
+        "concepts": [
+          "numbers",
+          "conditionals"
+        ],
+        "prerequisites": [
+          "booleans"
+        ]
+      },
+      {
+        "slug": "floating-point-numbers",
+        "uuid": "970d3f26-1891-40c7-9550-42d529f5780f",
+        "concepts": [
+          "floating-point-numbers",
+          "loops"
+        ],
+        "prerequisites": [
+          "numbers",
+          "conditionals"
+        ]
+      },
+      {
+        "slug": "amusement_park_rides",
+        "uuid": "06ea7869-4907-454d-a5e5-9d5b71098b17",
+        "concepts": [
+          "booleans"
+        ],
+        "prerequisites": [
+          "instance-variables"
+        ]
+      },
+      {
+        "slug": "instance-variables",
+        "uuid": "6905e411-ae01-46b6-a31c-8867b768856e",
+        "concepts": [
+          "instance-variables",
+          "nil"
+        ],
+        "prerequisites": [
+          "basics"
+        ]
+      }
+    ],
     "practice": [
       {
         "slug": "hello-world",
