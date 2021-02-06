@@ -14,28 +14,28 @@ class TranslationTest < Minitest::Test
 
   def test_identifies_Leucine_codons
     skip
-    %w(UUA UUG).each do |codon|
+    %w[UUA UUG].each do |codon|
       assert_equal 'Leucine', Translation.of_codon(codon)
     end
   end
 
   def test_identifies_Serine_codons
     skip
-    %w(UCU UCC UCA UCG).each do |codon|
+    %w[UCU UCC UCA UCG].each do |codon|
       assert_equal 'Serine', Translation.of_codon(codon)
     end
   end
 
   def test_identifies_Tyrosine_codons
     skip
-    %w(UAU UAC).each do |codon|
+    %w[UAU UAC].each do |codon|
       assert_equal 'Tyrosine', Translation.of_codon(codon)
     end
   end
 
   def test_identifies_Cysteine_codons
     skip
-    %w(UGU UGC).each do |codon|
+    %w[UGU UGC].each do |codon|
       assert_equal 'Cysteine', Translation.of_codon(codon)
     end
   end
@@ -47,7 +47,7 @@ class TranslationTest < Minitest::Test
 
   def test_identifies_stop_codons
     skip
-    %w(UAA UAG UGA).each do |codon|
+    %w[UAA UAG UGA].each do |codon|
       assert_equal 'STOP', Translation.of_codon(codon)
     end
   end
@@ -55,21 +55,21 @@ class TranslationTest < Minitest::Test
   def test_translates_rna_strand_into_correct_protein
     skip
     strand = 'AUGUUUUGG'
-    expected = %w(Methionine Phenylalanine Tryptophan)
+    expected = %w[Methionine Phenylalanine Tryptophan]
     assert_equal expected, Translation.of_rna(strand)
   end
 
   def test_stops_translation_if_stop_codon_present
     skip
     strand = 'AUGUUUUAA'
-    expected = %w(Methionine Phenylalanine)
+    expected = %w[Methionine Phenylalanine]
     assert_equal expected, Translation.of_rna(strand)
   end
 
   def test_stops_translation_of_longer_strand
     skip
     strand = 'UGGUGUUAUUAAUGGUUU'
-    expected = %w(Tryptophan Cysteine Tyrosine)
+    expected = %w[Tryptophan Cysteine Tyrosine]
     assert_equal expected, Translation.of_rna(strand)
   end
 

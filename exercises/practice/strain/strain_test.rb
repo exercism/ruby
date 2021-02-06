@@ -23,9 +23,9 @@ class ArrayTest < Minitest::Test
 
   def test_keep_strings
     skip
-    words = %w(apple zebra banana zombies cherimoya zelot)
+    words = %w[apple zebra banana zombies cherimoya zelot]
     result = words.keep { |word| word.start_with?('z') }
-    assert_equal %w(zebra zombies zelot), result
+    assert_equal %w[zebra zombies zelot], result
   end
 
   def test_keep_arrays
@@ -65,9 +65,9 @@ class ArrayTest < Minitest::Test
 
   def test_discard_strings
     skip
-    words = %w(apple zebra banana zombies cherimoya zelot)
+    words = %w[apple zebra banana zombies cherimoya zelot]
     result = words.discard { |word| word.start_with?('z') }
-    assert_equal %w(apple banana cherimoya), result
+    assert_equal %w[apple banana cherimoya], result
   end
 
   def test_discard_arrays
