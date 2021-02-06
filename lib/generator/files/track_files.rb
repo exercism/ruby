@@ -81,7 +81,7 @@ module Generator
 
     class MinitestTestsFile < Writable
       def generate(template:, values:)
-        content = ERB.new(template, nil, '<>').result values.get_binding
+        content = ERB.new(template, trim_mode: '<>').result values.get_binding
         save(content)
       end
     end
