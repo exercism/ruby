@@ -6,7 +6,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && ./bin/rubocop-quick"
     }
   }
 }

@@ -44,9 +44,9 @@ class ListOpsTest < Minitest::Test
 
   def test_concat_gigantic
     skip
-    input1 = (1..1_000_000).to_a
-    input2 = (1_000_001..2_000_000).to_a
-    assert_equal (1..2_000_000).to_a, ListOps.concatter(input1, input2)
+    input_1 = (1..1_000_000).to_a
+    input_2 = (1_000_001..2_000_000).to_a
+    assert_equal (1..2_000_000).to_a, ListOps.concatter(input_1, input_2)
   end
 
   def test_mapper_empty
