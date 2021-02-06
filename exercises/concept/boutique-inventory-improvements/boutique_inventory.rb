@@ -17,7 +17,7 @@ class BoutiqueInventory
     raise NotImplementError "Refactor the code in total_stock"
 
     items.sum do |item| 
-      item[:quantity_by_size].sum { |_,quantity| quantity }
+      item[:quantity_by_size].sum { |_, quantity| quantity }
     end
   end
 end
