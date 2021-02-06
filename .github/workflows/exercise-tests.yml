@@ -18,7 +18,7 @@ jobs:
           - ubuntu-latest
           # - windows-latest
           # - macOS-latest
-        ruby-version: [2.5, 2.6, 2.7, 3.0]
+        ruby-version: [2.5, 2.6, 2.7]
 
     steps:
       - uses: actions/checkout@v2
