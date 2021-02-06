@@ -27,6 +27,7 @@ unless ENV['CI']
 end
 
 require 'minitest/autorun'
+require 'mocha/minitest'
 
 # So we can be sure we have coverage on the whole lib directory:
 Dir.glob('lib/**/*.rb').each { |file| require file.gsub(%r{(^lib\/|\.rb$)}, '') }

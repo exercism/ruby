@@ -1,25 +1,36 @@
 class Exercise
   class << self
     def all
-      slugs.map { |e| new(e) }
+      concept + practice
     end
 
-    private
+    def concept
+      concept_slugs.map { |e| new(e, :concept) }
+    end
 
-    def slugs
-      FileList['exercises/*'].pathmap('%f').exclude('TRACK_HINTS.md')
+    def practice
+      practice_slugs.map { |e| new(e, :practice) }
+    end
+
+    def concept_slugs
+      FileList['exercises/concept/*'].pathmap('%f')
+    end
+
+    def practice_slugs
+      FileList['exercises/practice/*'].pathmap('%f')
     end
   end
 
-  attr_reader :slug
+  attr_reader :slug, :type
   alias :to_s :slug
 
-  def initialize(slug)
+  def initialize(slug, type)
     @slug = slug
+    @type = type
   end
 
   def directory
-    "exercises/#{slug}/."
+    "exercises/#{type}/#{slug}/."
   end
 
   def example_file
