@@ -3,7 +3,7 @@ require 'rake/testtask'
 
 require_relative 'lib/tasks/exercise_test_tasks'
 
-task default: [:test, :rubocop]
+task default: %i[test rubocop]
 
 desc 'Run individual exercises or run all development and exercise tests'
 task :test do

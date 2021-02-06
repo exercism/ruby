@@ -66,7 +66,7 @@ module Generator
     end
 
     def teardown
-      [:AlphaCase, :AlphaCases].each do |classname|
+      %i[AlphaCase AlphaCases].each do |classname|
         if Object.const_defined?(classname)
           Object.send(:remove_const, classname)
         end
