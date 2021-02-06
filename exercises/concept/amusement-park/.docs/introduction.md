@@ -1,9 +1,5 @@
 ## Instance Variables
 
-## Nil
-
-## Object state, instance variables
-
 Objects can hold their own state by setting _instance variables_, which are created by prefixing `@` to a variable name.
 
 ```ruby

@@ -48,8 +48,8 @@
       {
         "slug": "boutique-inventory",
         "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
-        "concepts": [ "enumeration" ],
-        "prerequisites": [ ],
+        "concepts": [ "blocks", "enumeration" ],
+        "prerequisites": [ "hash" ],
         "status": "wip"
       },
       {
