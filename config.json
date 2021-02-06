@@ -19,7 +19,7 @@
   "exercises": {
     "concept": [
       {
-        "slug": "arrays",
+        "slug": "bird-count",
         "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
         "concepts": [
           "arrays"
@@ -33,7 +33,7 @@
         "status": "wip"
       },
       {
-        "slug": "strings",
+        "slug": "log-line-parser",
         "uuid": "e5476046-5289-11ea-8d77-2e728ce88125",
         "concepts": [
           "strings"
@@ -43,6 +43,27 @@
         ],
         "status": "wip"
       },
+
+      {
+        "slug": "moviegoer",
+        "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
+        "concepts": [
+          "basics"
+        ],
+        "prerequisites": [],
+        "status": "wip"
+      },
+
+      {
+        "slug": "simple-calculator",
+        "uuid": "ef6dca29-a990-4a6e-8b2c-4703fd0f751a",
+        "concepts": [
+          "basics"
+        ],
+        "prerequisites": [],
+        "status": "wip"
+      },
+
       {
         "slug": "lasagna",
         "uuid": "71ae39c4-7364-11ea-bc55-0242ac130003",
@@ -53,7 +74,7 @@
         "status": "wip"
       },
       {
-        "slug": "numbers",
+        "slug": "assembly-line",
         "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
         "concepts": [
           "numbers",
@@ -65,7 +86,7 @@
         "status": "wip"
       },
       {
-        "slug": "floating-point-numbers",
+        "slug": "savings-account",
         "uuid": "970d3f26-1891-40c7-9550-42d529f5780f",
         "concepts": [
           "floating-point-numbers",
@@ -78,7 +99,7 @@
         "status": "wip"
       },
       {
-        "slug": "amusement_park_rides",
+        "slug": "amusement-park-improvements",
         "uuid": "06ea7869-4907-454d-a5e5-9d5b71098b17",
         "concepts": [
           "booleans"
@@ -89,7 +110,7 @@
         "status": "wip"
       },
       {
-        "slug": "instance-variables",
+        "slug": "amusement-park",
         "uuid": "6905e411-ae01-46b6-a31c-8867b768856e",
         "concepts": [
           "instance-variables",
