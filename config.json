@@ -22,7 +22,7 @@
         "slug": "bird-count",
         "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
         "concepts": [
-          "arrays"
+          "strings"
         ],
         "prerequisites": [
           "classes",
@@ -35,14 +35,31 @@
       {
         "slug": "log-line-parser",
         "uuid": "e5476046-5289-11ea-8d77-2e728ce88125",
+
         "concepts": [
           "strings"
         ],
         "prerequisites": [
-          "basics"
+          "basics",
         ],
         "status": "wip"
       },
+
+      {
+        "slug": "boutique-inventory",
+        "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
+        "concepts": [ "enumeration" ],
+        "prerequisites": [ ],
+        "status": "wip"
+      },
+      {
+        "slug": "boutique-inventory-improvements",
+        "uuid": "cf415960-ceff-4a1c-b65a-c4b5b1a80155",
+        "concepts": ["ostruct" ],
+        "prerequisites": [ "enumeration" ],
+        "status": "wip"
+      },
+
 
       {
         "slug": "moviegoer",
@@ -64,6 +81,29 @@
         "status": "wip"
       },
 
+<<<<<<< HEAD
+      {
+        "slug": "moviegoer",
+        "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
+        "concepts": [
+          "basics"
+        ],
+        "prerequisites": [],
+        "status": "wip"
+      },
+
+      {
+        "slug": "simple-calculator",
+        "uuid": "ef6dca29-a990-4a6e-8b2c-4703fd0f751a",
+        "concepts": [
+          "basics"
+        ],
+        "prerequisites": [],
+        "status": "wip"
+      },
+
+=======
+>>>>>>> 95687a7e (Add boutique exercises)
       {
         "slug": "lasagna",
         "uuid": "71ae39c4-7364-11ea-bc55-0242ac130003",
@@ -1465,6 +1505,12 @@
     ]
   },
   "concepts": [
+    {
+      "uuid": "fa482f4a-19d6-4d13-ad9e-5121c536dc76",
+      "slug": "ostruct",
+      "name": "Ostruct",
+      "blurb": "TODO: add blurb for ostruct concept"
+    },
     {
       "uuid": "7f2bf3a7-9771-48e8-bb6a-3022ca073a41",
       "slug": "arrays",
