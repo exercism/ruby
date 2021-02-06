@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "pretty-quick": "^2.0.1",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && ./bin/rubocop-quick"
+    }
+  }
+}

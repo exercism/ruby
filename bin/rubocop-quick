@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git diff --name-status --staged | grep '^[MA]' | grep -o '\s\+.*rb' | xargs bundle exec rubocop --except Metrics --auto-correct --format quiet --force-exclusion Gemfile.lock && \
+git diff --name-status --staged | grep '^[MA]' | grep -o '\s\+.*rb' | xargs git add
