@@ -21,10 +21,6 @@ mat
 ```
 
 In this example, we have called the `Array#each` method and passed in a _block_, which takes one parameter (`word`) and prints it. 
-Blocks are small groupings of statements that can be executed multiple times. 
-They can be thought of as closures or anonymous functions. 
-Blocks are defined using the `do...end` syntax (above), or the `{}` (below). 
-The styles are interchangeable and differing opinions exist about when each should be used.
 
 We can also chain enumerable methods. 
 For example, we can chain `.with_index` onto `each` to print out the index of an object as well as it's value:
