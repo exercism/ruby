@@ -1,20 +1,11 @@
 require:
-  - rubocop-rails
   - rubocop-minitest
-  - rubocop-performance
 
 AllCops:
   NewCops: disable
   Exclude:
-    - "app/controllers/tmp/**/*"
     - "bin/**/*"
-    - "bin/{bundle,rails,rake,setup,webpack,webpack-dev-server,yarn}"
-    - "db/schema.rb"
-    - "db/migrate/*"
-    - "db/seeds.rb"
     - "node_modules/**/*"
-    - "lib/solargraph-rails.rb"
-    - "scripts/**/*"
 
 Bundler/OrderedGems:
   Enabled: false
@@ -37,14 +28,16 @@ Layout/EmptyLinesAroundAccessModifier:
 Layout/LineLength:
   Max: 125
   AutoCorrect: true
-  Exclude:
-    - "config/**/*"
-    - "test/models/notifications/*"
-    - "test/helpers/react_components/maintaining/submissions_summary_table_test.rb"
 
 Lint/SuppressedException:
   Exclude:
     - "test/**/*"
+
+# Because we use NotImplementErrors, we should
+# not care about this in exercises
+Lint/UnusedMethodArgument:
+  Exclude:
+    - "exercises/**/*"
 
 Metrics/BlockLength:
   Exclude:
@@ -55,9 +48,6 @@ Metrics/MethodLength:
   Max: 20
   Exclude:
     - "test/**/*"
-
-Metrics/AbcSize:
-  IgnoredMethods: ["CLI::PrepareUploadedFiles.call"]
 
 Naming/PredicateName:
   Enabled: false
@@ -97,27 +87,5 @@ Naming/VariableNumber:
 Style/LambdaCall:
   EnforcedStyle: braces
 
-Rails/HasManyOrHasOneDependent:
-  Exclude:
-    - "app/models/exercise/representation.rb"
-    - "app/models/submission/representation.rb"
-
-Rails/FilePath:
-  EnforcedStyle: arguments
-
-Rails/LexicallyScopedActionFilter:
+Style/BlockComments:
   Enabled: false
-
-Rails/RefuteMethods:
-  EnforcedStyle: refute
-
-Rails/OutputSafety:
-  Enabled: false
-
-Rails/SkipsModelValidations:
-  Enabled: false
-
-Rails/HelperInstanceVariable:
-  Exclude:
-    - "app/helpers/view_components/**/*"
-    - "app/helpers/react_components/**/*"
