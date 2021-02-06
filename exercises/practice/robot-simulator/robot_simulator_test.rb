@@ -9,7 +9,7 @@ class RobotTurningTest < Minitest::Test
   end
 
   def test_robot_bearing
-    [:east, :west, :north, :south].each do |direction|
+    %i[east west north south].each do |direction|
       robot.orient(direction)
       assert_equal direction, robot.bearing
     end
@@ -145,7 +145,7 @@ class RobotSimulatorTest < Minitest::Test
 
   def test_series_of_instructions
     skip
-    commands = [:turn_right, :advance, :advance, :turn_left]
+    commands = %i[turn_right advance advance turn_left]
     assert_equal commands, simulator.instructions('RAAL')
   end
 
