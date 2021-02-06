@@ -8,7 +8,7 @@ A simple enumeration to print each word in an array would look like this:
 ```ruby
 words = %w[the cat sat on the mat]
 words.each do |word| 
-  print word 
+  puts word 
 end
 
 # Output
