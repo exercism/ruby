@@ -53,7 +53,7 @@ Naming/PredicateName:
   Enabled: false
 
 Style/ConditionalAssignment:
-  EnforcedStyle: assign_inside_condition
+  Enabled: false
 
 Style/StringLiterals:
   Enabled: false
@@ -67,20 +67,6 @@ Style/Documentation:
 Style/DocumentationMethod:
   Enabled: false
 
-Style/DoubleNegation:
-  Enabled: false
-
-Style/RedundantSelf:
-  Enabled: false
-
-Style/ZeroLengthPredicate:
-  Enabled: false
-
-# I don't mind this being enabled if
-# someone fixes all the fails.
-Style/ClassAndModuleChildren:
-  Enabled: false
-
 Naming/VariableNumber:
   EnforcedStyle: snake_case
 
@@ -88,4 +74,9 @@ Style/LambdaCall:
   EnforcedStyle: braces
 
 Style/BlockComments:
+  Enabled: false
+
+# We use Heredoc indentation in exercises
+# where variable indentiation is desirable
+Layout/HeredocIndentation:
   Enabled: false

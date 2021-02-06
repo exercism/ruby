@@ -5,9 +5,9 @@ module Generator
     class GeneratorCasesTest < Minitest::Test
       def test_available
         track_path = '/track'
-        fake_filenames = %w(/track/zzz/alpha_case.rb /track/aaa/hy_phen_ated_case.rb)
+        fake_filenames = %w[/track/zzz/alpha_case.rb /track/aaa/hy_phen_ated_case.rb]
         Dir.stub :glob, fake_filenames do
-          assert_equal %w(alpha hy-phen-ated), GeneratorCases.available(track_path)
+          assert_equal %w[alpha hy-phen-ated], GeneratorCases.available(track_path)
         end
       end
 

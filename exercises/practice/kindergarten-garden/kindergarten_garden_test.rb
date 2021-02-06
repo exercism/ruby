@@ -101,7 +101,7 @@ class DisorderedTest < Minitest::Test
   def setup
     skip
     diagram = "VCRRGVRG\nRVGCCGCV"
-    students = %w(Samantha Patricia Xander Roger)
+    students = %w[Samantha Patricia Xander Roger]
     @garden = Garden.new(diagram, students)
   end
 
@@ -134,11 +134,11 @@ class TwoGardensDifferentStudents < Minitest::Test
   end
 
   def garden_1
-    @garden_1 ||= Garden.new(diagram, %w(Alice Bob Charlie Dan))
+    @garden_1 ||= Garden.new(diagram, %w[Alice Bob Charlie Dan])
   end
 
   def garden_2
-    @garden_2 ||= Garden.new(diagram, %w(Bob Charlie Dan Erin))
+    @garden_2 ||= Garden.new(diagram, %w[Bob Charlie Dan Erin])
   end
 
   def test_bob_and_charlie_per_garden

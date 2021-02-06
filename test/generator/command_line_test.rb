@@ -28,22 +28,22 @@ module Generator
     end
 
     def test_usage_help
-      args = %w(-h)
+      args = %w[-h]
       assert_output(/Usage:/, nil) do
         refute CommandLine.new(FixturePaths).parse(args)
       end
     end
 
     def test_usage_help_with_exercise
-      args = %w(-h beta)
+      args = %w[-h beta]
       assert_output(/Usage:/, nil) do
         refute CommandLine.new(FixturePaths).parse(args)
       end
     end
 
     def test_usage_help_includes_available_generators
-      args = %w(-h)
-      fake_generators = %w(some fake generator names also-hyphen-ated)
+      args = %w[-h]
+      fake_generators = %w[some fake generator names also-hyphen-ated]
       Files::GeneratorCases.stub :available, fake_generators do
         assert_output(/#{fake_generators.sort.join(' ')}/, nil) do
           refute CommandLine.new(FixturePaths).parse(args)
@@ -52,7 +52,7 @@ module Generator
     end
 
     def test_validate_missing_generator
-      args = %w(nonexistent)
+      args = %w[nonexistent]
       Files::GeneratorCases.stub :available, [] do
         assert_output(nil, /A generator does not currently exist fo/) do
           refute CommandLine.new(FixturePaths).parse(args)
@@ -61,15 +61,15 @@ module Generator
     end
 
     def test_default_options
-      args = %w(beta)
-      Files::GeneratorCases.stub :available, %w(beta) do
+      args = %w[beta]
+      Files::GeneratorCases.stub :available, %w[beta] do
         assert_instance_of GenerateTests, CommandLine.new(FixturePaths).parse(args).first
       end
     end
 
     def test_all_option
-      args = %w(--all)
-      fake_generators = %w(some fake generator names also-hyphen-ated)
+      args = %w[--all]
+      fake_generators = %w[some fake generator names also-hyphen-ated]
       Files::GeneratorCases.stub :available, fake_generators do
         generators = CommandLine.new(FixturePaths).parse(args)
         assert_equal fake_generators.size, generators.size
@@ -78,8 +78,8 @@ module Generator
     end
 
     def test_verbose_option
-      args = %w(-v beta)
-      Files::GeneratorCases.stub :available, %w(beta) do
+      args = %w[-v beta]
+      Files::GeneratorCases.stub :available, %w[beta] do
         assert_instance_of GenerateTests, CommandLine.new(FixturePaths).parse(args).first
       end
     end

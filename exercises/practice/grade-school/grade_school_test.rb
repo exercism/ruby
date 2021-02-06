@@ -29,7 +29,7 @@ class SchoolTest < Minitest::Test
     skip
     school = School.new
     grade    = 6
-    students = %w(Aimee Beemee Ceemee)
+    students = %w[Aimee Beemee Ceemee]
     students.each { |student| school.add(student, grade) }
     assert_equal students, school.students(grade)
   end
@@ -38,7 +38,7 @@ class SchoolTest < Minitest::Test
     skip
     school = School.new
     grade    = 6
-    students = %w(Beemee Aimee Ceemee)
+    students = %w[Beemee Aimee Ceemee]
     students.each { |student| school.add(student, grade) }
     expected = students.sort
     assert_equal expected, school.students(grade)
@@ -55,7 +55,7 @@ class SchoolTest < Minitest::Test
     skip
     school = School.new
     grade    = 6
-    students = %w(Beemee Aimee Ceemee)
+    students = %w[Beemee Aimee Ceemee]
     students.each { |student| school.add(student, grade) }
     expected = [{ grade: grade, students: students.sort }]
     assert_equal expected, school.students_by_grade
@@ -73,17 +73,17 @@ class SchoolTest < Minitest::Test
 
   def everyone
     [
-      { grade: 3, students: %w(Deemee Eeemee) },
-      { grade: 1, students: %w(Effmee Geemee) },
-      { grade: 2, students: %w(Aimee Beemee Ceemee) }
+      { grade: 3, students: %w[Deemee Eeemee] },
+      { grade: 1, students: %w[Effmee Geemee] },
+      { grade: 2, students: %w[Aimee Beemee Ceemee] }
     ]
   end
 
   def everyone_sorted
     [
-      { grade: 1, students: %w(Effmee Geemee) },
-      { grade: 2, students: %w(Aimee Beemee Ceemee) },
-      { grade: 3, students: %w(Deemee Eeemee) }
+      { grade: 1, students: %w[Effmee Geemee] },
+      { grade: 2, students: %w[Aimee Beemee Ceemee] },
+      { grade: 3, students: %w[Deemee Eeemee] }
     ]
   end
 end
