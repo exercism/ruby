@@ -80,7 +80,7 @@ module Generator
     def test_false_respond_to?
       mock_canonical = Minitest::Mock.new
       subject = ExerciseCase.new(canonical: mock_canonical)
-      refute subject.respond_to?(:nonexisting_key)
+      refute_respond_to subject, :nonexisting_key
     end
 
     def test_workload
