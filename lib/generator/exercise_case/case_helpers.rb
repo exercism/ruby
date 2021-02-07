@@ -30,7 +30,7 @@ module Generator
       #
       #  example usage:  to_string(["foo", "bar"])
       #  example output: "foo\nbar"
-      def to_string(phrases, separator="\n")
+      def to_string(phrases, separator = "\n")
         phrases.join(separator).inspect
       end
 
