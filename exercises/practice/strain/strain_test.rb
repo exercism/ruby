@@ -3,12 +3,12 @@ require_relative 'strain'
 
 class ArrayTest < Minitest::Test
   def test_empty_keep
-    assert_equal [], [].keep { |e| e < 10 }
+    assert_equal [], ([].keep { |e| e < 10 })
   end
 
   def test_keep_everything
     skip
-    assert_equal [1, 2, 3], [1, 2, 3].keep { |e| e < 10 }
+    assert_equal [1, 2, 3], ([1, 2, 3].keep { |e| e < 10 })
   end
 
   def test_keep_first_and_last
@@ -45,12 +45,12 @@ class ArrayTest < Minitest::Test
 
   def test_empty_discard
     skip
-    assert_equal [], [].discard { |e| e < 10 }
+    assert_equal [], ([].discard { |e| e < 10 })
   end
 
   def test_discard_nothing
     skip
-    assert_equal [1, 2, 3], [1, 2, 3].discard { |e| e > 10 }
+    assert_equal [1, 2, 3], ([1, 2, 3].discard { |e| e > 10 })
   end
 
   def test_discard_first_and_last

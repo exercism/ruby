@@ -58,13 +58,13 @@ module Generator
     end
 
     def metadata_repository_missing_message(repository)
-      <<-EOM.gsub(/^ {6}/, '')
+      <<-MSG.gsub(/^ {6}/, '')
 
       'problem-specifications' repository not found.
       Try running the command:
         git clone https://github.com/exercism/problem-specifications.git "#{repository}"
 
-      EOM
+      MSG
     end
 
     def validate_options

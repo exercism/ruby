@@ -62,7 +62,6 @@ class ZipperTest < Minitest::Test
           nil))
     zipper = Zipper.from_tree(tree)
     value = zipper.left.left
-    expected = nil
     assert_nil value
   end
 
@@ -107,7 +106,6 @@ class ZipperTest < Minitest::Test
           nil))
     zipper = Zipper.from_tree(tree)
     value = zipper.up
-    expected = nil
     assert_nil value
   end
 

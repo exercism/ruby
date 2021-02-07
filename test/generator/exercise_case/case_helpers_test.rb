@@ -35,11 +35,13 @@ module Generator
         assert_equal "  hello\n  world", indent_by(2, string)
       end
 
+      # rubocop:disable Naming/VariableNumber
       def test_indent_by_multiple_calls_on_multiline_string
         string = "hello\nworld\n"
         step_1 = indent_by(1, string)
         assert_equal "   hello\n   world\n", indent_by(2, step_1)
       end
+      # rubocop:enable Naming/VariableNumber
 
       def test_indent_by_ignores_blank_lines
         string = "hello\n\nworld"

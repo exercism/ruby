@@ -2,45 +2,45 @@ require 'minitest/autorun'
 require_relative 'protein_translation'
 
 class TranslationTest < Minitest::Test
-  def test_AUG_translates_to_methionine
+  def test_AUG_translates_to_methionine # rubocop:disable Naming/MethodName
     assert_equal 'Methionine', Translation.of_codon('AUG')
   end
 
-  def test_identifies_Phenylalanine_codons
+  def test_identifies_phenylalanine_codons
     skip
     assert_equal 'Phenylalanine', Translation.of_codon('UUU')
     assert_equal 'Phenylalanine', Translation.of_codon('UUC')
   end
 
-  def test_identifies_Leucine_codons
+  def test_identifies_leucine_codons
     skip
     %w[UUA UUG].each do |codon|
       assert_equal 'Leucine', Translation.of_codon(codon)
     end
   end
 
-  def test_identifies_Serine_codons
+  def test_identifies_serine_codons
     skip
     %w[UCU UCC UCA UCG].each do |codon|
       assert_equal 'Serine', Translation.of_codon(codon)
     end
   end
 
-  def test_identifies_Tyrosine_codons
+  def test_identifies_tyrosine_codons
     skip
     %w[UAU UAC].each do |codon|
       assert_equal 'Tyrosine', Translation.of_codon(codon)
     end
   end
 
-  def test_identifies_Cysteine_codons
+  def test_identifies_cysteine_codons
     skip
     %w[UGU UGC].each do |codon|
       assert_equal 'Cysteine', Translation.of_codon(codon)
     end
   end
 
-  def test_identifies_Tryptophan_codons
+  def test_identifies_tryptophan_codons
     skip
     assert_equal 'Tryptophan', Translation.of_codon('UGG')
   end
