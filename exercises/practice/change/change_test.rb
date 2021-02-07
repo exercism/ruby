@@ -25,7 +25,7 @@ class ChangeTest < Minitest::Test
 
   def test_large_target_values
     skip
-    assert_equal [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100], 
+    assert_equal [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100],
 Change.generate([1, 2, 5, 10, 20, 50, 100], 999)
   end
 
