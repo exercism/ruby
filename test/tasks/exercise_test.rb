@@ -19,9 +19,9 @@ class ExerciseTest < Minitest::Test
       assert Exercise.practice.all? { |e| e.instance_of?(Exercise) }
       assert Exercise.all.all? { |e| e.instance_of?(Exercise) }
 
-      assert_equal ['test', 'test2'], Exercise.concept.map(&:slug)
-      assert_equal ['test3', 'test4'], Exercise.practice.map(&:slug)
-      assert_equal ['test', 'test2', 'test3', 'test4'], Exercise.all.map(&:slug)
+      assert_equal %w[test test2], Exercise.concept.map(&:slug)
+      assert_equal %w[test3 test4], Exercise.practice.map(&:slug)
+      assert_equal %w[test test2 test3 test4], Exercise.all.map(&:slug)
     end
   end
 
