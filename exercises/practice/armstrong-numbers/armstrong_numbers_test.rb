@@ -15,7 +15,7 @@ class ArmstrongNumbersTest < Minitest::Test
 
   def test_there_are_no_2_digit_armstrong_numbers
     skip
-    refute ArmstrongNumbers.include?(10)
+    refute_includes ArmstrongNumbers, 10
   end
 
   def test_three_digit_number_that_is_an_armstrong_number
@@ -25,7 +25,7 @@ class ArmstrongNumbersTest < Minitest::Test
 
   def test_three_digit_number_that_is_not_an_armstrong_number
     skip
-    refute ArmstrongNumbers.include?(100)
+    refute_includes ArmstrongNumbers, 100
   end
 
   def test_four_digit_number_that_is_an_armstrong_number
@@ -35,7 +35,7 @@ class ArmstrongNumbersTest < Minitest::Test
 
   def test_four_digit_number_that_is_not_an_armstrong_number
     skip
-    refute ArmstrongNumbers.include?(9_475)
+    refute_includes ArmstrongNumbers, 9_475
   end
 
   def test_seven_digit_number_that_is_an_armstrong_number
@@ -45,6 +45,6 @@ class ArmstrongNumbersTest < Minitest::Test
 
   def test_seven_digit_number_that_is_not_an_armstrong_number
     skip
-    refute ArmstrongNumbers.include?(9_926_314)
+    refute_includes ArmstrongNumbers, 9_926_314
   end
 end
