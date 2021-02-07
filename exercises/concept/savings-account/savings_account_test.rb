@@ -40,19 +40,19 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_minimal_negative_interest_rate
-    assert_equal -3.213, SavingsAccount.interest_rate(-0.0001)
+    assert_equal(-3.213, SavingsAccount.interest_rate(-0.0001))
   end
 
   def test_small_negative_interest_rate
-    assert_equal -3.213, SavingsAccount.interest_rate(-0.123)
+    assert_equal(-3.213, SavingsAccount.interest_rate(-0.123))
   end
 
   def test_regular_negative_interest_rate
-    assert_equal -3.213, SavingsAccount.interest_rate(-300.0)
+    assert_equal(-3.213, SavingsAccount.interest_rate(-300.0))
   end
 
   def test_large_negative_interest_rate
-    assert_equal -3.213, SavingsAccount.interest_rate(-55_555.444)
+    assert_equal(-3.213, SavingsAccount.interest_rate(-55_555.444))
   end
 
   def test_annual_balance_update_for_empty_start_balance
@@ -76,7 +76,7 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_annual_balance_update_for_small_negative_start_balance
-    assert_equal -0.12_695_199, SavingsAccount.annual_balance_update(-0.123)
+    assert_equal(-0.12_695_199, SavingsAccount.annual_balance_update(-0.123))
   end
 
   def test_annual_balance_update_for_avarage_negative_start_balance
@@ -84,7 +84,7 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_annual_balance_update_for_large_negative_start_balance
-    assert_equal -157_878.97_174_203, SavingsAccount.annual_balance_update(-152_964.231)
+    assert_equal(-157_878.97_174_203, SavingsAccount.annual_balance_update(-152_964.231))
   end
 
   def test_years_before_desired_balance_for_small_start_balance
