@@ -21,7 +21,7 @@ class FoodChainTest < Minitest::Test
   # There's no need to submit the tests you write, unless you
   # specifically want feedback on them.
   def test_the_whole_song
-    song_file = File.expand_path('../song.txt', __FILE__)
+    song_file = File.expand_path('song.txt', __dir__)
     expected  = IO.read(song_file)
     assert_equal expected, FoodChain.song
   end
@@ -29,7 +29,7 @@ class FoodChainTest < Minitest::Test
   # Tests that an error is effectively raised when IO.read or
   # File.open are used within FoodChain.
   def test_read_guard
-    song_file = File.expand_path('../song.txt', __FILE__)
+    song_file = File.expand_path('song.txt', __dir__)
     ["IO.read '#{song_file}'", "File.open '#{song_file}'"].each do |trigger|
       assert_raises(NoCheating) { FoodChain.send :class_eval, trigger }
     end
