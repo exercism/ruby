@@ -50,7 +50,7 @@ module Generator
   track_tests_template_filename
         else
   default_tests_template_filename
-end
+        end
       end
 
       def track_tests_template_filename
