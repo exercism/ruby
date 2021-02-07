@@ -7,7 +7,7 @@ module Generator
       mock_exercise.expect :build_tests, nil
 
       subject = GenerateTests.new(mock_exercise)
-      subject.call
+      subject.()
 
       mock_exercise.verify
     end
