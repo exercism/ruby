@@ -7,7 +7,7 @@ module Generator
       def test_read_existing_file
         expected = 'content unimportant'
         File.stub(:exist?, true) do
-          File.stub(:read, expected ) do
+          File.stub(:read, expected) do
             assert_equal expected, Files.read('pretend/this/exists')
           end
         end
