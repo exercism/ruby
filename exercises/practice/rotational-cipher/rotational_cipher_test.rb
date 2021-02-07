@@ -50,6 +50,7 @@ class RotationalCipherTest < Minitest::Test
 
   def test_rotate_all_letters
     skip
-    assert_equal "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.", RotationalCipher.rotate("The quick brown fox jumps over the lazy dog.", 13)
+    assert_equal "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.", 
+RotationalCipher.rotate("The quick brown fox jumps over the lazy dog.", 13)
   end
 end

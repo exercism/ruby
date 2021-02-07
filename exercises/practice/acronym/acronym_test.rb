@@ -30,7 +30,8 @@ class AcronymTest < Minitest::Test
 
   def test_very_long_abbreviation
     skip
-    assert_equal "ROTFLSHTMDCOALM", Acronym.abbreviate('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me')
+    assert_equal "ROTFLSHTMDCOALM", 
+Acronym.abbreviate('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me')
   end
 
   def test_consecutive_delimiters
