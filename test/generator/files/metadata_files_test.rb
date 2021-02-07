@@ -32,14 +32,14 @@ module Generator
 
       def test_version
         subject = CanonicalDataFile.new(filename: 'has version key')
-        Files.stub(:read, '{"version": "1.2.3"}' ) do
+        Files.stub(:read, '{"version": "1.2.3"}') do
           assert_equal "1.2.3", subject.version
         end
       end
 
       def test_version_not_present
         subject = CanonicalDataFile.new(filename: 'no version key')
-        Files.stub(:read, '{ "json": true }' ) do
+        Files.stub(:read, '{ "json": true }') do
           assert_nil subject.version
         end
       end
