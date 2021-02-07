@@ -23,4 +23,3 @@ class BirdCount
     raise NotImplementedError, 'Please implement the BirdCount#day_without_birds method'
   end
 end
-

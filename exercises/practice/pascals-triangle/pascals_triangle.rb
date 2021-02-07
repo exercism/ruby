@@ -5,4 +5,3 @@ Write your code for the 'Pascals Triangle' exercise in this file. Make the tests
 To get started with TDD, see the `README.md` file in your
 `ruby/pascals-triangle` directory.
 =end
-

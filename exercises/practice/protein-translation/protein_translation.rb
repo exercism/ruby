@@ -5,4 +5,3 @@ Write your code for the 'Protein Translation' exercise in this file. Make the te
 To get started with TDD, see the `README.md` file in your
 `ruby/protein-translation` directory.
 =end
-

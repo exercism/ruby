@@ -5,4 +5,3 @@ Write your code for the 'Scrabble Score' exercise in this file. Make the tests i
 To get started with TDD, see the `README.md` file in your
 `ruby/scrabble-score` directory.
 =end
-

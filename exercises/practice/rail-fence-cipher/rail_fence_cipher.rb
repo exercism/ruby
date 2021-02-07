@@ -5,4 +5,3 @@ Write your code for the 'Rail Fence Cipher' exercise in this file. Make the test
 To get started with TDD, see the `README.md` file in your
 `ruby/rail-fence-cipher` directory.
 =end
-
