@@ -38,18 +38,18 @@ class AlphaTest < Minitest::Test
 
 end
 TESTS_FILE
-     mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
-     exercise = Exercise.new(slug: 'alpha')
-     repository = Repository.new(paths: FixturePaths, slug: 'alpha')
-     subject = Implementation.new(repository: repository, exercise: exercise)
-     GitCommand.stub(:abbreviated_commit_hash, '123456789') do
-       File.stub(:open, true, mock_file) do
-         assert_equal expected_content, subject.build_tests
-       end
-     end
-     mock_file.verify
+      mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
+      exercise = Exercise.new(slug: 'alpha')
+      repository = Repository.new(paths: FixturePaths, slug: 'alpha')
+      subject = Implementation.new(repository: repository, exercise: exercise)
+      GitCommand.stub(:abbreviated_commit_hash, '123456789') do
+        File.stub(:open, true, mock_file) do
+          assert_equal expected_content, subject.build_tests
+        end
+      end
+      mock_file.verify
       # Don't pollute the namespace
-     Object.send(:remove_const, :AlphaCase)
+      Object.send(:remove_const, :AlphaCase)
     end
   end
 
