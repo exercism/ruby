@@ -35,7 +35,7 @@ module Generator
   # A implementation that also logs its progress.
   class LoggingImplementation < ImplementationDelegator
     def initialize(implementation:, logger:)
-      super()
+      super
 
       __setobj__ @implementation = implementation
       @logger = logger
