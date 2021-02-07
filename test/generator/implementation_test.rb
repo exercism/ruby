@@ -23,7 +23,7 @@ module Generator
       #
       # Q: Where in the call stack should the testing logically stop?
       # A: It should be able to stop when minitest_tests is called with the correct arguments.
-     expected_content = <<TESTS_FILE
+      expected_content = <<TESTS_FILE
 require 'minitest/autorun'
 require_relative 'alpha'
 
