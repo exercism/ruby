@@ -10,7 +10,7 @@ unless ENV['CI']
 
     groups = [
       CoverageGroup.new('Generator', %r{lib/generator}),
-      CoverageGroup.new('Tasks', %r{tasks}),
+      CoverageGroup.new('Tasks', /tasks/),
       CoverageGroup.new('Cases', %r{exercises/.*_case.rb$})
     ]
 
