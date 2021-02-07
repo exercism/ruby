@@ -84,7 +84,7 @@ module Generator
       def test_multi_level_auto_extraction
         canonical_data = File.read('test/fixtures/metadata/exercises/complex/canonical-data.json')
         cases = Extractor.new(
-          case_class: ComplexCase,
+          case_class: ComplexCase
         ).cases(canonical_data)
 
         expected = [

@@ -28,12 +28,12 @@ class ExerciseTestTasksTest < Minitest::Test
         mock_test_runner.expect(
           :new,
           mock_test_runner_instance,
-          [exercise: 'test1', test_options: '-p'],
+          [exercise: 'test1', test_options: '-p']
         )
         mock_test_runner.expect(
           :new,
           mock_test_runner_instance,
-          [exercise: 'test2', test_options: '-p'],
+          [exercise: 'test2', test_options: '-p']
         )
 
         ExerciseTestTasks.new(options: '-p', test_runner: mock_test_runner)
