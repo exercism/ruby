@@ -36,7 +36,7 @@ module Generator
         private
 
         def write(_content)
-          fail StandardError, 'write should not be called'
+          raise StandardError, 'write should not be called'
         end
       end
 

@@ -30,7 +30,7 @@ module Generator
     end
 
     def workload
-      fail StandardError, "You need to subclass and implement the 'workload' method"
+      raise StandardError, "You need to subclass and implement the 'workload' method"
     end
 
     def method_missing(sym, *args, &block)
