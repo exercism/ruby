@@ -66,17 +66,17 @@ module Generator
 
       def test_respond_to_via_input
         subject = Canonical.new(input: { 'somevalue' => true })
-        assert subject.respond_to?(:somevalue)
+        assert_respond_to subject, :somevalue
       end
 
       def test_respond_to_via_expected
         subject = Canonical.new(expected: { 'somevalue' => true })
-        assert subject.respond_to?(:somevalue)
+        assert_respond_to subject, :somevalue
       end
 
       def test_respond_to_via_super
         subject = Canonical.new(expected: { 'somevalue' => true })
-        assert subject.respond_to?(:object_id)
+        assert_respond_to subject, :object_id
       end
     end
 
