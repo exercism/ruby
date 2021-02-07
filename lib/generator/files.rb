@@ -9,6 +9,7 @@ module Generator
 
     class Readable
       attr_reader :filename, :repository_root
+
       def initialize(filename:, repository_root: nil)
         @filename = filename
         @repository_root = repository_root
