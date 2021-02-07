@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require_relative 'savings_account'
 
 class SavingsAccountTest < Minitest::Test
-
   def test_minimal_first_interest_rate
     assert_equal 0.5, SavingsAccount.interest_rate(0)
   end
