@@ -8,6 +8,7 @@ module Generator
     include Assertion
 
     attr_reader :canonical
+
     def initialize(canonical:)
       @canonical = canonical
     end

@@ -15,6 +15,7 @@ module Generator
           @slug = 'alpha'
         end
         attr_reader :paths, :slug
+
         include MetadataFiles
       end
 

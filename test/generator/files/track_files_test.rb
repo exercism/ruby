@@ -15,6 +15,7 @@ module Generator
           @slug  = 'alpha-beta'
         end
         attr_reader :paths, :slug
+
         include TrackFiles
       end
 
@@ -47,6 +48,7 @@ module Generator
           @slug = 'no-template'
         end
         attr_reader :paths, :slug
+
         include TrackFiles
       end
 
