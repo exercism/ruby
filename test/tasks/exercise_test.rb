@@ -15,9 +15,9 @@ class ExerciseTest < Minitest::Test
       FileList.expects(:[]).with('exercises/concept/*').returns(concept_file_list).at_least_once
       FileList.expects(:[]).with('exercises/practice/*').returns(practice_file_list).at_least_once
 
-      assert_equal true, Exercise.concept.all? { |e| e.instance_of?(Exercise) }
-      assert_equal true, Exercise.practice.all? { |e| e.instance_of?(Exercise) }
-      assert_equal true, Exercise.all.all? { |e| e.instance_of?(Exercise) }
+      assert Exercise.concept.all? { |e| e.instance_of?(Exercise) }
+      assert Exercise.practice.all? { |e| e.instance_of?(Exercise) }
+      assert Exercise.all.all? { |e| e.instance_of?(Exercise) }
 
       assert_equal ['test', 'test2'], Exercise.concept.map(&:slug)
       assert_equal ['test3', 'test4'], Exercise.practice.map(&:slug)
