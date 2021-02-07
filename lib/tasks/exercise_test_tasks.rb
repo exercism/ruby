@@ -16,14 +16,14 @@ class ExerciseTestTasks
   def define
     define_task_for_all_exercises
 
-    #Exercise.concept.each { |exercise| define_task_for(exercise) }
+    # Exercise.concept.each { |exercise| define_task_for(exercise) }
     Exercise.practice.each { |exercise| define_task_for(exercise) }
   end
 
   private
   def define_task_for_all_exercises
     desc 'Run the tests for all exercises'
-    # TODO: Also add concept exercises
+    #  TODO: Also add concept exercises
     task exercises: Exercise.practice
   end
 
