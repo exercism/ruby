@@ -10,7 +10,7 @@ class ExerciseTestTasksTest < Minitest::Test
     Exercise.stub :practice, ['test1', 'test2'] do
       ExerciseTestTasks.new(options: '')
 
-      assert_equal ['test1', 'test2'], Rake::Task['exercises'].prerequisites
+      assert_equal %w[test1 test2], Rake::Task['exercises'].prerequisites
       assert_equal 'Run the tests for all exercises', Rake::Task['exercises'].comment
     end
   end

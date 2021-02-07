@@ -65,35 +65,35 @@ class AllergiesTest < Minitest::Test
   def test_allergic_to_eggs_and_peanuts
     skip
     allergies = Allergies.new(3)
-    expected_items = ["eggs", "peanuts"]
+    expected_items = %w[eggs peanuts]
     assert_equal expected_items, allergies.list.sort
   end
 
   def test_allergic_to_more_than_eggs_but_not_peanuts
     skip
     allergies = Allergies.new(5)
-    expected_items = ["eggs", "shellfish"]
+    expected_items = %w[eggs shellfish]
     assert_equal expected_items, allergies.list.sort
   end
 
   def test_allergic_to_lots_of_stuff
     skip
     allergies = Allergies.new(248)
-    expected_items = ["cats", "chocolate", "pollen", "strawberries", "tomatoes"]
+    expected_items = %w[cats chocolate pollen strawberries tomatoes]
     assert_equal expected_items, allergies.list.sort
   end
 
   def test_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    expected_items = ["cats", "chocolate", "eggs", "peanuts", "pollen", "shellfish", "strawberries", "tomatoes"]
+    expected_items = %w[cats chocolate eggs peanuts pollen shellfish strawberries tomatoes]
     assert_equal expected_items, allergies.list.sort
   end
 
   def test_ignore_non_allergen_score_parts
     skip
     allergies = Allergies.new(509)
-    expected_items = ["cats", "chocolate", "eggs", "pollen", "shellfish", "strawberries", "tomatoes"]
+    expected_items = %w[cats chocolate eggs pollen shellfish strawberries tomatoes]
     assert_equal expected_items, allergies.list.sort
   end
 end

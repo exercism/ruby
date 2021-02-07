@@ -50,7 +50,7 @@ module Generator
         include CaseHelpers
 
         def workload
-          indent_heredoc(["foo", "bar"], 'TEXT', 1)
+          indent_heredoc(%w[foo bar], 'TEXT', 1)
         end
       end
 
@@ -68,7 +68,7 @@ module Generator
       end
 
       def test_to_string_with_two_strings
-        phrases = ["foo", "bar"]
+        phrases = %w[foo bar]
         expected = "foo\nbar".inspect
         assert_equal expected, ToStringCase.new.workload(phrases)
       end
