@@ -36,7 +36,7 @@ module Generator
       end
 
       def underscore(number)
-        fail ArgumentError, "#{number.inspect} is not an Integer" unless number.is_a? Integer
+        raise ArgumentError, "#{number.inspect} is not an Integer" unless number.is_a? Integer
         number.to_s.reverse.gsub(/...(?=.)/, '\&_').reverse
       end
     end
