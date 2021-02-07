@@ -133,19 +133,19 @@ class TwoGardensDifferentStudents < Minitest::Test
     "VCRRGVRG\nRVGCCGCV"
   end
 
-  def garden_1
-    @garden_1 ||= Garden.new(diagram, %w[Alice Bob Charlie Dan])
+  def garden1
+    @garden1 ||= Garden.new(diagram, %w[Alice Bob Charlie Dan])
   end
 
-  def garden_2
-    @garden_2 ||= Garden.new(diagram, %w[Bob Charlie Dan Erin])
+  def garden2
+    @garden2 ||= Garden.new(diagram, %w[Bob Charlie Dan Erin])
   end
 
   def test_bob_and_charlie_per_garden
     skip
-    assert_equal %i[radishes radishes grass clover], garden_1.bob
-    assert_equal %i[violets clover radishes violets], garden_2.bob
-    assert_equal %i[grass violets clover grass], garden_1.charlie
-    assert_equal %i[radishes radishes grass clover], garden_2.charlie
+    assert_equal %i[radishes radishes grass clover], garden1.bob
+    assert_equal %i[violets clover radishes violets], garden2.bob
+    assert_equal %i[grass violets clover grass], garden1.charlie
+    assert_equal %i[radishes radishes grass clover], garden2.charlie
   end
 end

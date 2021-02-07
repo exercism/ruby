@@ -160,23 +160,23 @@ class RobotSimulatorTest < Minitest::Test
 
   def test_instruct_many_robots
     skip
-    robot_1 = Robot.new
-    robot_2 = Robot.new
-    robot_3 = Robot.new
-    simulator.place(robot_1, x: 0, y: 0, direction: :north)
-    simulator.place(robot_2, x: 2, y: -7, direction: :east)
-    simulator.place(robot_3, x: 8, y: 4, direction: :south)
-    simulator.evaluate(robot_1, 'LAAARALA')
-    simulator.evaluate(robot_2, 'RRAAAAALA')
-    simulator.evaluate(robot_3, 'LAAARRRALLLL')
+    robot1 = Robot.new
+    robot2 = Robot.new
+    robot3 = Robot.new
+    simulator.place(robot1, x: 0, y: 0, direction: :north)
+    simulator.place(robot2, x: 2, y: -7, direction: :east)
+    simulator.place(robot3, x: 8, y: 4, direction: :south)
+    simulator.evaluate(robot1, 'LAAARALA')
+    simulator.evaluate(robot2, 'RRAAAAALA')
+    simulator.evaluate(robot3, 'LAAARRRALLLL')
 
-    assert_equal [-4, 1], robot_1.coordinates
-    assert_equal :west, robot_1.bearing
+    assert_equal [-4, 1], robot1.coordinates
+    assert_equal :west, robot1.bearing
 
-    assert_equal [-3, -8], robot_2.coordinates
-    assert_equal :south, robot_2.bearing
+    assert_equal [-3, -8], robot2.coordinates
+    assert_equal :south, robot2.bearing
 
-    assert_equal [11, 5], robot_3.coordinates
-    assert_equal :north, robot_3.bearing
+    assert_equal [11, 5], robot3.coordinates
+    assert_equal :north, robot3.bearing
   end
 end

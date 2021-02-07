@@ -68,7 +68,7 @@ Style/DocumentationMethod:
   Enabled: false
 
 Naming/VariableNumber:
-  EnforcedStyle: snake_case
+  EnforcedStyle: normalcase
 
 Style/LambdaCall:
   EnforcedStyle: braces

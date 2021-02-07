@@ -63,12 +63,12 @@ class RobotTest < Minitest::Test
     skip
     same_seed = 1234
     Kernel.srand same_seed
-    robot_1 = Robot.new
-    name_1  = robot_1.name
+    robot1 = Robot.new
+    name1  = robot1.name
     Kernel.srand same_seed
-    robot_2 = Robot.new
-    name_2 = robot_2.name
-    refute_equal name_1, name_2
+    robot2 = Robot.new
+    name2 = robot2.name
+    refute_equal name1, name2
   end
 
   def test_generate_all_robots

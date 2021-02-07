@@ -2,6 +2,8 @@ require 'minitest/autorun'
 require_relative 'trinary'
 
 class TrinaryTest < Minitest::Test
+  # rubocop:disable Naming/VariableNumber
+
   def test_trinary_1_is_decimal_1
     assert_equal 1, Trinary.new('1').to_decimal
   end
@@ -60,4 +62,6 @@ class TrinaryTest < Minitest::Test
     skip
     assert_equal 0, Trinary.new('4').to_decimal
   end
+
+  # rubocop:enable Naming/VariableNumber
 end
