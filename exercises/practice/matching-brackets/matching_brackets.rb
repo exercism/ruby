@@ -5,4 +5,3 @@ Write your code for the 'Matching Brackets' exercise in this file. Make the test
 To get started with TDD, see the `README.md` file in your
 `ruby/matching-brackets` directory.
 =end
-

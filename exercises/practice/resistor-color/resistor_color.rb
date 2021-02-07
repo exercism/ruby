@@ -5,4 +5,3 @@ Write your code for the 'Resistor Color' exercise in this file. Make the tests i
 To get started with TDD, see the `README.md` file in your
 `ruby/resistor-color` directory.
 =end
-

@@ -64,4 +64,3 @@ class LasagnaTest < Minitest::Test
     refute bird_count.day_without_birds?
   end
 end
-

@@ -5,4 +5,3 @@ Write your code for the 'Collatz Conjecture' exercise in this file. Make the tes
 To get started with TDD, see the `README.md` file in your
 `ruby/collatz-conjecture` directory.
 =end
-

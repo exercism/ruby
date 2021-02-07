@@ -5,4 +5,3 @@ Write your code for the 'Difference Of Squares' exercise in this file. Make the 
 To get started with TDD, see the `README.md` file in your
 `ruby/difference-of-squares` directory.
 =end
-

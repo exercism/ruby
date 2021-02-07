@@ -5,4 +5,3 @@ Write your code for the 'Binary Search' exercise in this file. Make the tests in
 To get started with TDD, see the `README.md` file in your
 `ruby/binary-search` directory.
 =end
-
