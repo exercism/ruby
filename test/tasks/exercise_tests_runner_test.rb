@@ -32,20 +32,20 @@ class ExerciseTestsRunnerTest < Minitest::Test
       mv_mock = Minitest::Mock.new.expect(
         :call,
         nil,
-        ['dir/.meta/solutions/test.rb', 'dir/test.rb'],
+        ['dir/.meta/solutions/test.rb', 'dir/test.rb']
       )
 
       ruby_mock = Minitest::Mock.new.expect(
         :call,
         nil,
-        ['-I lib -r disable_skip.rb dir/test_test.rb -p'],
+        ['-I lib -r disable_skip.rb dir/test_test.rb -p']
       )
 
       FileUtils.stub :cp_r, cp_mock do
         FileUtils.stub :mv, mv_mock do
           runner = ExerciseTestsRunner.new(
             exercise: FakeExercise.new,
-            test_options: '-p',
+            test_options: '-p'
           )
 
           runner.stub :ruby, ruby_mock do
