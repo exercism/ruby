@@ -2,7 +2,6 @@ require_relative '../test_helper'
 
 module Generator
   module Files
-
     class ReadTest < Minitest::Test
       def test_read_existing_file
         expected = 'content unimportant'
