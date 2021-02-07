@@ -300,7 +300,7 @@ class ClockTest < Minitest::Test
   def test_clocks_with_negative_hours_and_minutes_that_wrap
     skip
     clock1 = Clock.new(hour: 18, minute: 7)
-    clock2 = Clock.new(hour: -54, minute: -11513)
+    clock2 = Clock.new(hour: -54, minute: -11_513)
     assert_equal clock1, clock2
   end
 

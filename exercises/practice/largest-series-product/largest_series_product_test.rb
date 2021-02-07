@@ -30,12 +30,12 @@ class LargestSeriesProductTest < Minitest::Test
 
   def test_can_find_the_largest_product_of_5_with_numbers_in_order
     skip
-    assert_equal 15120, Series.new('0123456789').largest_product(5)
+    assert_equal 15_120, Series.new('0123456789').largest_product(5)
   end
 
   def test_can_get_the_largest_product_of_a_big_number
     skip
-    assert_equal 23520, Series.new('73167176531330624919225119674426574742355349194934').largest_product(6)
+    assert_equal 23_520, Series.new('73167176531330624919225119674426574742355349194934').largest_product(6)
   end
 
   def test_reports_zero_if_the_only_digits_are_zero

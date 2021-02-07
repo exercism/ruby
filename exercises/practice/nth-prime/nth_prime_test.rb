@@ -20,7 +20,7 @@ class NthPrimeTest < Minitest::Test
 
   def test_big_prime
     skip
-    assert_equal 104743, Prime.nth(10001)
+    assert_equal 104_743, Prime.nth(10_001)
   end
 
   def test_there_is_no_zeroth_prime
