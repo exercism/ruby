@@ -45,7 +45,7 @@ class HighScoresTest < Minitest::Test
     assert_equal expected, HighScores.new(scores).personal_top_three
   end
 
-  def test_personal_top_when_there_are_less_than_3
+  def test_personal_top_when_there_are_less_than_3 # rubocop:disable Naming/VariableNumber
     skip
     scores = [30, 70]
     expected = [70, 30]

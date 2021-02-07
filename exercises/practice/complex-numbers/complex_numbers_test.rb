@@ -171,7 +171,7 @@ class ComplexNumbersTest < Minitest::Test
     assert_equal expected, ComplexNumber.new(0, Math::PI).exp
   end
 
-  def test_exponential_of_0
+  def test_exponential_of_0 # rubocop:disable Naming/VariableNumber
     skip
     expected = ComplexNumber.new(1, 0)
     assert_equal expected, ComplexNumber.new(0, 0).exp

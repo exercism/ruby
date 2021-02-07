@@ -2,36 +2,36 @@ require 'minitest/autorun'
 require_relative 'hexadecimal'
 
 class HexadecimalTest < Minitest::Test
-  def test_hex_1_is_decimal_1
+  def test_hex_1_is_decimal_1 # rubocop:disable Naming/VariableNumber
     assert_equal 1, Hexadecimal.new('1').to_decimal
   end
 
-  def test_hex_c_is_decimal_12
+  def test_hex_c_is_decimal_12 # rubocop:disable Naming/VariableNumber
     skip
     assert_equal 12, Hexadecimal.new('c').to_decimal
   end
 
-  def test_hex_10_is_decimal_16
+  def test_hex_10_is_decimal_16 # rubocop:disable Naming/VariableNumber
     skip
     assert_equal 16, Hexadecimal.new('10').to_decimal
   end
 
-  def test_hex_af_is_decimal_175
+  def test_hex_af_is_decimal_175 # rubocop:disable Naming/VariableNumber
     skip
     assert_equal 175, Hexadecimal.new('af').to_decimal
   end
 
-  def test_hex_100_is_decimal_256
+  def test_hex_100_is_decimal_256 # rubocop:disable Naming/VariableNumber
     skip
     assert_equal 256, Hexadecimal.new('100').to_decimal
   end
 
-  def test_hex_19ace_is_decimal_105166
+  def test_hex_19ace_is_decimal_105166 # rubocop:disable Naming/VariableNumber
     skip
     assert_equal 105_166, Hexadecimal.new('19ace').to_decimal
   end
 
-  def test_invalid_hex_is_decimal_0
+  def test_invalid_hex_is_decimal_0 # rubocop:disable Naming/VariableNumber
     skip
     assert_equal 0, Hexadecimal.new('carrot').to_decimal
   end
