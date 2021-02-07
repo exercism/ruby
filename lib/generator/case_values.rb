@@ -41,8 +41,8 @@ module Generator
       end
 
       def cases(exercise_data)
-        extract_test_cases(data: JSON.parse(exercise_data)['cases'])
-          .map { |case_properties| @case_class.new(canonical: Canonical.new(case_properties)) }
+        extract_test_cases(data: JSON.parse(exercise_data)['cases']).
+          map { |case_properties| @case_class.new(canonical: Canonical.new(case_properties)) }
       end
 
       private
