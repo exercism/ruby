@@ -1,7 +1,6 @@
 module Generator
   class ExerciseCase
     module Assertion
-
       # generates assertions of the form
       #
       #   assert whatever
