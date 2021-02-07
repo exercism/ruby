@@ -18,7 +18,7 @@ module Generator
     end
 
     def exercise_test_classname
-      exercise_name_camel + 'Test'
+      "#{exercise_name_camel}Test"
     end
 
     private

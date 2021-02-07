@@ -11,7 +11,7 @@ module Generator
     end
 
     def case_class
-      slug.split('-').map(&:capitalize).join + 'Case'
+      "#{slug.split('-').map(&:capitalize).join}Case"
     end
   end
 end

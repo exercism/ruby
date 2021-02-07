@@ -12,7 +12,7 @@ module Generator
       #
       # usage:  indent_by( 2, "line 1\n\nline 2\n" )
       def indent_by(depth, string)
-        string.gsub(/^(.+)$/, ' ' * depth + '\1')
+        string.gsub(/^(.+)$/, "#{' ' * depth}\\1")
       end
 
       # generate heredoc (as part of workload) with optional indentation

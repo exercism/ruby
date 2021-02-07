@@ -25,7 +25,7 @@ module Generator
       def test_source_filepath
         track_path = '/track'
         slug = 'slug'
-        expected_filename = track_path + '/exercises/slug/.meta/generator/slug_case.rb'
+        expected_filename = "#{track_path}/exercises/slug/.meta/generator/slug_case.rb"
         assert_equal expected_filename, GeneratorCases.source_filepath(track_path, slug)
       end
     end
