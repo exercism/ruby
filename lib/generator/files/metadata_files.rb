@@ -7,7 +7,7 @@ module Generator
         CanonicalDataFile.new(
           filename: File.join(metadata_path, 'canonical-data.json'),
           repository_root: paths.metadata
-)
+        )
       end
 
       private
