@@ -8,7 +8,7 @@ module Generator
 
         def source_filepath(track_path, slug)
           path = meta_generator_path(track_path, slug)
-          filename = filename(slug) + '.rb'
+          filename = "#{filename(slug)}.rb"
           File.join(path, filename)
         end
 

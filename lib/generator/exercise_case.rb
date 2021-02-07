@@ -14,7 +14,7 @@ module Generator
 
     def to_s(comment_out_skip = false)
       body = [
-        skip(comment_out_skip) + "\n",
+        "#{skip(comment_out_skip)}\n",
         format_workload(workload)
       ].join
 
@@ -49,9 +49,9 @@ module Generator
     def format_workload(workload)
       case workload
       when String
-        workload.chomp + "\n"
+        "#{workload.chomp}\n"
       when Array
-        workload.map { |line| line.chomp + "\n" }.join
+        workload.map { |line| "#{line.chomp}\n" }.join
       end
     end
 
