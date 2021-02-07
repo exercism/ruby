@@ -74,7 +74,7 @@ module Generator
     def test_respond_to_forwards_request
       mock_canonical = Minitest::Mock.new.expect(:key, 'value')
       subject = ExerciseCase.new(canonical: mock_canonical)
-      assert subject.respond_to?(:key)
+      assert_respond_to subject, :key
     end
 
     def test_false_respond_to?
