@@ -1,4 +1,4 @@
-require_relative '../../test_helper.rb'
+require_relative '../../test_helper'
 require 'generator/files/track_files'
 
 module Generator
