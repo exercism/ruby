@@ -10,7 +10,6 @@ module Generator
       end
 
       private
-
       def metadata_path
         File.join(paths.metadata, 'exercises', slug)
       end

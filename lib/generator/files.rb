@@ -24,7 +24,6 @@ module Generator
       end
 
       private
-
       def relative_filename
         Pathname.new(filename).relative_path_from(Pathname.new(repository_root)).to_s
       end
@@ -41,7 +40,6 @@ module Generator
       end
 
       private
-
       def write(content)
         File.open(filename, 'w') do |file|
           file.write content

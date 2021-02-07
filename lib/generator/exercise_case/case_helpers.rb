@@ -2,7 +2,6 @@ module Generator
   class ExerciseCase
     module CaseHelpers
       protected
-
       def snake_case(string)
         string.gsub(/([A-Z])/, '_\1').downcase
       end

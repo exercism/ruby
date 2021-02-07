@@ -23,7 +23,6 @@ module Generator
     end
 
     private
-
     def parse_options
       @options = DEFAULT_OPTIONS.dup
       option_parser.parse!(@args)

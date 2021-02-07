@@ -17,7 +17,6 @@ module Generator
       end
 
       private
-
       def key_variant(hash_name, sym)
         if self[hash_name].is_a? Hash
           candidate_keys(key: sym.to_s, prefix: hash_name).find { |key| self[hash_name].key?(key) }
@@ -47,7 +46,6 @@ module Generator
       end
 
       private
-
       def extract_test_cases(data:)
         data.flat_map do |entry|
           entry.key?('cases') ? extract_test_cases(data: entry['cases']) : entry

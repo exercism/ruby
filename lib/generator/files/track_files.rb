@@ -21,7 +21,6 @@ module Generator
       end
 
       private
-
       def exercise_path
         File.join(paths.track, 'exercises', slug)
       end
