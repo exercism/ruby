@@ -7,7 +7,7 @@ class Moviegoer
   end
 
   # Do not edit above methods, add your own methods below.
-  
+
   def ticket_price
     raise NotImplementedError, 'Please implement the Moviegoer#ticket_price method'
   end
