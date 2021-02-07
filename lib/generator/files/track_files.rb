@@ -47,9 +47,9 @@ module Generator
 
       def tests_template_absolute_filename
         if File.exist?(track_tests_template_filename)
-  track_tests_template_filename
+          track_tests_template_filename
         else
-  default_tests_template_filename
+          default_tests_template_filename
         end
       end
 
