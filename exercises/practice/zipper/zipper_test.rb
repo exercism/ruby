@@ -199,7 +199,8 @@ class ZipperTest < Minitest::Test
     value = zipper.left.set_left(
       Node.new(5,
         nil,
-        nil)).to_tree
+        nil)
+).to_tree
     expected =
       Node.new(1,
         Node.new(2,
@@ -260,7 +261,8 @@ class ZipperTest < Minitest::Test
           nil),
         Node.new(8,
           nil,
-          nil))).to_tree
+          nil))
+).to_tree
     expected =
       Node.new(1,
         Node.new(2,
