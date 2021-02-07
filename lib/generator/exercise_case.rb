@@ -36,6 +36,7 @@ module Generator
 
     def method_missing(sym, *args, &block)
       return canonical.send(sym) if canonical.respond_to?(sym)
+
       super(sym, *args, &block)
     end
 
