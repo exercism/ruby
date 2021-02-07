@@ -49,7 +49,7 @@ class ExerciseTestsRunnerTest < Minitest::Test
           )
 
           runner.stub :ruby, ruby_mock do
-            assert_output "\n\n#{'-'*64}\nrunning tests for: test\n" do
+            assert_output "\n\n#{'-' * 64}\nrunning tests for: test\n" do
               runner.run
             end
           end
