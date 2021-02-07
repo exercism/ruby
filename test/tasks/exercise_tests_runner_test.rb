@@ -5,7 +5,7 @@ class FakeExercise
     'test'
   end
 
-  alias :to_s :slug
+  alias to_s slug
 
   def directory
     'test/.'
