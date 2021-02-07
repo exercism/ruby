@@ -1,6 +1,6 @@
 class BirdCount
-  def self.lastWeek
-    raise NotImplementedError, 'Please implement the BirdCount.lastWeek method'
+  def self.last_week
+    raise NotImplementedError, 'Please implement the BirdCount.last_week method'
   end
 
   def initialize(birds_per_day)

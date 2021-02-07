@@ -18,9 +18,9 @@ module Generator
 
       private
       def key_variant(hash_name, sym)
-        if self[hash_name].is_a? Hash
-          candidate_keys(key: sym.to_s, prefix: hash_name).find { |key| self[hash_name].key?(key) }
-        end
+        return unless self[hash_name].is_a? Hash
+
+        candidate_keys(key: sym.to_s, prefix: hash_name).find { |key| self[hash_name].key?(key) }
       end
 
       def candidate_keys(key:, prefix:)
