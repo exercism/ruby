@@ -24,13 +24,13 @@ class LasagnaTest < Minitest::Test
     assert_equal 32, Lasagna.new.total_time_in_minutes(
       number_of_layers: 1,
       actual_minutes_in_oven: 30
-                     )
+    )
   end
 
   def test_total_time_in_minutes_for_multiple_layer
     assert_equal 16, Lasagna.new.total_time_in_minutes(
       number_of_layers: 4,
       actual_minutes_in_oven: 8
-                     )
+    )
   end
 end
