@@ -16,7 +16,6 @@ module Generator
     end
 
     private
-
     attr_reader :paths
 
     def generators

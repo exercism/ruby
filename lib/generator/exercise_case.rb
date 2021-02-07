@@ -57,7 +57,6 @@ module Generator
     end
 
     private
-
     def test_method(body)
       [
         "def #{test_name}\n",

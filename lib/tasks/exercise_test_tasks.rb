@@ -21,7 +21,6 @@ class ExerciseTestTasks
   end
 
   private
-
   def define_task_for_all_exercises
     desc 'Run the tests for all exercises'
     # TODO: Also add concept exercises

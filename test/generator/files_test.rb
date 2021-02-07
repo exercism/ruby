@@ -34,7 +34,6 @@ module Generator
     class WritableTest < Minitest::Test
       class TestWritableDoesntCallWrite < Writable
         private
-
         def write(_content)
           raise StandardError, 'write should not be called'
         end

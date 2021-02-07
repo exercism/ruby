@@ -46,7 +46,6 @@ class Exercise
   end
 
   private
-
   def exercise_name
     @exercise_name ||= slug.tr('-', '_')
   end

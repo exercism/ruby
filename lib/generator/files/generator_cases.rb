@@ -13,7 +13,6 @@ module Generator
         end
 
         private
-
         def cases_filepaths(track_path)
           generator_glob = File.join(meta_generator_path(track_path, '*'), '*_case.rb')
           Dir.glob(generator_glob, File::FNM_DOTMATCH)

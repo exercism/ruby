@@ -19,7 +19,6 @@ class ExerciseTestsRunner
   end
 
   private
-
   def setup_exercise_files_in(dir)
     FileUtils.cp_r @exercise.directory, dir
     FileUtils.mv "#{dir}/#{@exercise.example_file}", "#{dir}/#{@exercise.testable_example_file}"

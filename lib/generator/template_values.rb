@@ -22,7 +22,6 @@ module Generator
     end
 
     private
-
     def exercise_name_camel
       exercise_name.split('_').map(&:capitalize).join
     end
@@ -39,7 +38,6 @@ module Generator
     end
 
     private
-
     def extract
       load cases_load_name
       extractor.cases(canonical_data.to_s)
