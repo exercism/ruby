@@ -25,7 +25,7 @@ inventory.items.size
 # 2. Refactor `item_names` 
 
 Refactor `item_names` to use the new block shortcut you've learnt rather than hashes.
-As a reminder, the output should look like this:
+As a reminder, the method should return:
 
 ```ruby
 BoutiqueInventory.new([
