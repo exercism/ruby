@@ -42,7 +42,7 @@ BoutiqueInventory.new([
 # 2. Refactor `total_stock`
 
 Refactor `total_stock` to use the new block shortcut you've learnt rather than hashes.
-As a reminder, the output should look like this:
+As a reminder, the method should return::
 
 ```ruby
 BoutiqueInventory.new([
