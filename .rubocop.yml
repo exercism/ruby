@@ -55,10 +55,10 @@ Metrics/MethodLength:
     - "test/**/*"
 
 Naming/PredicateName:
-  Enabled: false
+  Enabled: true
 
 Style/ConditionalAssignment:
-  Enabled: false
+  Enabled: true
 
 Style/StringLiterals:
   Enabled: false
