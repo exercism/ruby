@@ -23,21 +23,21 @@ module Generator
       #
       # Q: Where in the call stack should the testing logically stop?
       # A: It should be able to stop when minitest_tests is called with the correct arguments.
-      expected_content = <<TESTS_FILE
-require 'minitest/autorun'
-require_relative 'alpha'
+      expected_content = <<~TESTS_FILE
+        require 'minitest/autorun'
+        require_relative 'alpha'
 
-# Hi. I am a custom comment
+        # Hi. I am a custom comment
 
-# Common test data version: 123456789
-class AlphaTest < Minitest::Test
-  def test_add_2_numbers
-    # skip
-    assert true
-  end
+        # Common test data version: 123456789
+        class AlphaTest < Minitest::Test
+          def test_add_2_numbers
+            # skip
+            assert true
+          end
 
-end
-TESTS_FILE
+        end
+      TESTS_FILE
       mock_file = Minitest::Mock.new.expect :write, expected_content.length, [expected_content]
       exercise = Exercise.new(slug: 'alpha')
       repository = Repository.new(paths: FixturePaths, slug: 'alpha')
