@@ -82,6 +82,6 @@ Style/BlockComments:
   Enabled: false
 
 # We use Heredoc indentation in exercises
-# where variable indentiation is desirable
+# where variable indentation is desirable
 Layout/HeredocIndentation:
-  Enabled: false
+  Enabled: true
