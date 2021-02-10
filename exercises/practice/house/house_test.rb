@@ -3,7 +3,7 @@ require_relative 'house'
 
 class HouseTest < Minitest::Test
   def test_rhyme
-    expected = <<-RHYME
+    expected = <<~RHYME
       This is the house that Jack built.
 
       This is the malt
