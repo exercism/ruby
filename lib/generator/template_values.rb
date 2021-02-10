@@ -13,7 +13,7 @@ module Generator
       @canonical_data_version = canonical_data_version
     end
 
-    def get_binding
+    def get_binding # rubocop:disable Naming/AccessorMethodName
       binding
     end
 
