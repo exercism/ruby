@@ -13,7 +13,7 @@ module Generator
       @canonical = canonical
     end
 
-    def to_s(comment_out_skip = false)
+    def to_s(comment_out_skip: false)
       body = [
         "#{skip(comment_out_skip)}\n",
         format_workload(workload)
