@@ -12,7 +12,7 @@ module Generator
         super(sym, *args, &block)
       end
 
-      def respond_to?(sym)
+      def respond_to_missing?(sym)
         key_variant(:input, sym) || key_variant(:expected, sym) || super
       end
 
