@@ -2,7 +2,7 @@ class BoutiqueInventory
   def initialize(items)
     @items = items
   end
-  
+
   def item_names
     raise NotImplementedError, 'Implement the BoutiqueInventory#item_names method'
   end
