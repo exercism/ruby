@@ -119,7 +119,7 @@ module Generator
         "  end\n"
       ].join
 
-      assert_equal expected, subject.to_s(true)
+      assert_equal expected, subject.to_s(comment_out_skip: true)
     end
 
     def test_to_s_with_skip

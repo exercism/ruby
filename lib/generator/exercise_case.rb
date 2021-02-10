@@ -40,7 +40,7 @@ module Generator
       super(sym, *args, &block)
     end
 
-    def respond_to_missing?(sym, include_private: false)
+    def respond_to_missing?(sym, include_private = false)
       canonical.respond_to?(sym) || super
     end
 
