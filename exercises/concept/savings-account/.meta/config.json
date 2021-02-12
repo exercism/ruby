@@ -1,4 +1,10 @@
 {
+  "authors": [
+    {
+      "github_username": "TBD",
+      "exercism_username": "TBD"
+    }
+  ],
   "contributors": [
     {
       "github_username": "dvik1950",
@@ -7,8 +13,8 @@
   ],
   "forked_from": ["csharp/floating-point-numbers"],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": ["savings_account.rb"],
+    "test": ["savings_account_test.rb"],
     "exemplar": [".meta/exemplar.rb"]
   }
 }

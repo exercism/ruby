@@ -3,7 +3,11 @@
     {
       "github_username": "iHiD",
       "exercism_username": "iHiD"
-   }
+   },
   ],
-  "forked_from": "elixir/enum"
+  "files": {
+    "solution": ["boutique_inventory.rb"],
+    "test": ["boutique_inventory_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
+  }
 }

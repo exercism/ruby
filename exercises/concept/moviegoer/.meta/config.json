@@ -1,4 +1,10 @@
 {
+  "authors": [
+    {
+      "github_username": "TBD",
+      "exercism_username": "TBD"
+    }
+  ],
   "files": {
     "solution": ["moviegoer.rb"],
     "test": ["moviegoer_test.rb"],
