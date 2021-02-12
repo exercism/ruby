@@ -22,7 +22,7 @@ To implement a concept exercise, the following files must be added:
 languages
 └── ruby
     ├── concepts
-    |   └── &lt;CONCEPT&gt;
+    |   └── <CONCEPT>
     |       ├── about.md
     |       └── links.json
     └── exercises
