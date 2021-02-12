@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 ## 1. Calculate the interest rate

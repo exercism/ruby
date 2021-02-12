@@ -1,3 +1,5 @@
+# About
+
 Enumeration is the act of stepping through a collection (`Array`, `Hash`, etc) and performing some action on each object.
 
 Enumeration is a key concept in Ruby and is used for sorting (`sort_by`), grouping (`group_by`), mapping (`map`), reducing (`reduce`), and much more. 

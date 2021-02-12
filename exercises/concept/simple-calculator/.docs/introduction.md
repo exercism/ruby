@@ -1,3 +1,5 @@
+# Introduction
+
 Exceptions in Ruby, as in many languages, provide a way of dealing with unexpected events. Proper handling of exceptions is important when trying to prevent your program from crashing.
 
 When an exception is raised, either by raising it explicitly or by the Ruby interpreter raising it, the program diverts normal operation and eventually exits with an error message:

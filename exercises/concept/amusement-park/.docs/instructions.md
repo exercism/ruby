@@ -1,3 +1,5 @@
+# Instructions
+
 Working with an amusement park, you've been handed a specification to design a system to administer attendance and rides. You've been tasked with modeling the Attendee (person visiting the park).
 
 ## 1. Make new attendees

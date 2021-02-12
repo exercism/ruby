@@ -1,3 +1,5 @@
+# Introduction
+
 
 [Nil][nil-dictionary] is an English word meaning "nothing" or "zero". In Ruby, `nil` is used to express the _absence_ of an object. In other programming languages, `null` or `none` values may play a similar role.
 

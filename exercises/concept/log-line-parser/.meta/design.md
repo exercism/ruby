@@ -1,3 +1,5 @@
+# Design
+
 ## Goal
 
 The goal of this exercise is to teach the student the basics of the Concept of Strings in [Ruby][ruby-doc.org-string].
