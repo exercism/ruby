@@ -1,3 +1,5 @@
+# Introduction
+
 In Ruby, **arrays** are ordered, integer-indexed collections of any object. Array indexing starts at `0`. A negative index is assumed to be relative to the end of the array — i.e. an index of `-1` indicates the last element of the array, `-2` is the next to last element in the array, and so on.
 Ruby arrays mix in the [Enumerable module][enumerable-module], which adds several traversal and searching methods, and with the ability to sort.
 

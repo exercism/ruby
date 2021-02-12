@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 About initializing object instances:

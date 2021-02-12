@@ -1,4 +1,4 @@
-## 24 Pull Requests for Exercism - Ruby Edition!
+# 24 Pull Requests for Exercism - Ruby Edition!
 
 We are welcoming contributors to the project.
 

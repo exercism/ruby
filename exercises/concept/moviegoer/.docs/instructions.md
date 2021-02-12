@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise you will rewrite `if/else` statements from a movie theater's website into ternary conditionals.
 
 ## 1. Check if a moviegoer is entitled to the seniors' discount

@@ -1,3 +1,5 @@
+# Hints
+
 ### General
 
 - The bird count per day is stored in a [instance variable][instace-variable] named `birds_per_day`.

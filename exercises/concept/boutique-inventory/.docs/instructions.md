@@ -1,3 +1,5 @@
+# Instructions
+
 You run an online fashion boutique. Your big annual sale is coming up, so you want to create some functionality to help you take stock of your inventory to make sure you're ready.
 
 A single item in the inventory is represented by a hash, and the whole inventory is an array of these hashes.

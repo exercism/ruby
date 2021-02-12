@@ -1,4 +1,4 @@
-## Recommended Resources
+# Recommended Resources
 
 ### Environment
 * [Ruby](https://www.ruby-lang.org/)
