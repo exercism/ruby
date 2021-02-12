@@ -12,15 +12,15 @@ GEM
     rake (13.0.3)
     regexp_parser (2.0.3)
     rexml (3.2.4)
-    rubocop (1.7.0)
+    rubocop (1.9.1)
       parallel (~> 1.10)
-      parser (>= 2.7.1.5)
+      parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
       rubocop-ast (>= 1.2.0, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 2.0)
+      unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.4.1)
       parser (>= 2.7.1.5)
     rubocop-minitest (0.10.3)
@@ -34,7 +34,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.2)
-    unicode-display_width (1.7.0)
+    unicode-display_width (2.0.0)
 
 PLATFORMS
   ruby
@@ -43,7 +43,7 @@ DEPENDENCIES
   minitest
   mocha
   rake
-  rubocop (= 1.7)
+  rubocop (= 1.9.1)
   rubocop-minitest
   rubocop-rake
   simplecov
