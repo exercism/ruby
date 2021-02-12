@@ -15,16 +15,16 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-latest
+          - ubuntu-20.04
           # - windows-latest
           # - macOS-latest
-        ruby-version: [2.6, 2.7]
+        ruby-version: [2.6, 2.7, '3.0']
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@a699edbce608a2c128dedad88e3b6a0e28687b3c
+        uses: ruby/setup-ruby@fdcfbcf14ec9672f6f615cb9589a1bc5dd69d262
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
