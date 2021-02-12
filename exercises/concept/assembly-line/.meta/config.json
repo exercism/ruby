@@ -17,8 +17,8 @@
   ],
   "forked_from": ["csharp/numbers"],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": ["assembly_line.rb"],
+    "test": ["assembly_line_test.rb"],
     "exemplar": [".meta/exemplar.rb"]
   }
 }

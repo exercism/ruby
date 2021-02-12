@@ -7,8 +7,8 @@
   ],
   "forked_from": ["csharp/arrays"],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": ["bird_count.rb"],
+    "test": ["bird_count_test.rB"],
     "exemplar": [".meta/exemplar.rb"]
   }
 }

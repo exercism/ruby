@@ -21,8 +21,8 @@
   ],
   "language_versions": ">=2.6.6",
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": ["attendee_test.rb"],
+    "test": ["attendee_test.rb"],
     "exemplar": [".meta/exemplar.rb"]
   }
 }

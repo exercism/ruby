@@ -7,8 +7,8 @@
   ],
   "forked_from": ["csharp/exceptions"],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": ["simple_calculator.rb"],
+    "test": ["simple_calculator_test.rb"],
     "exemplar": [".meta/exemplar.rb"]
   }
 }
