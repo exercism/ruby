@@ -30,7 +30,7 @@ jobs:
           bundler-cache: true
 
       - name: Lint
-        run: bundle exec rubocop -fs --except Metrics
+        run: bundle exec rubocop -fs --except Metrics --config .rubocop.yml
 
       - name: Test exercises
         run: bundle exec rake test
