@@ -10,7 +10,7 @@ To repeatedly execute logic, one can use loops. In this example the `while` loop
 
 The `#years_before_desired_balance` method from the previous exercise could have been written by using any of the three mentioned loops:
 
-### `while`
+## `while`
 
 ```ruby
 def self.years_before_desired_balance(current_balance, desired_balance)
@@ -23,7 +23,7 @@ def self.years_before_desired_balance(current_balance, desired_balance)
 end
 ```
 
-### `until`
+## `until`
 
 ```ruby
 def self.years_before_desired_balance(current_balance, desired_balance)
@@ -36,7 +36,7 @@ def self.years_before_desired_balance(current_balance, desired_balance)
 end
 ```
 
-### `loop`
+## `loop`
 
 ```ruby
 def self.years_before_desired_balance(current_balance, desired_balance)
