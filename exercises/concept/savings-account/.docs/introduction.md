@@ -7,7 +7,6 @@ In Ruby, floating-point numbers are implemented through the [Float](https://ruby
 
 ## Loops
 
-
 In this exercise you may also want to use a loop. There are several ways to write loops in Ruby, one of them is the `while` loop:
 
 ```ruby
