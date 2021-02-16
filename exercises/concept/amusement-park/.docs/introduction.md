@@ -1,3 +1,5 @@
+# Introduction
+
 ## Instance Variables
 
 Objects can hold their own state by setting _instance variables_, which are created by prefixing `@` to a variable name.

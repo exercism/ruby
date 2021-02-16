@@ -1,3 +1,5 @@
+# Introduction
+
 A ternary conditional in Ruby is a shorter way of writing simple `if/else` statements. If an `if/else` statement contains only two branches, one for when the condition is true and one for when it is false, it can be re-written as a ternary conditional.
 
 It uses a combination of the `?` and `:` symbols, often called the ternary operator(s).

@@ -1,3 +1,5 @@
+# About
+
 ## Key Points:
 
 - When a class' `.new` method is called to create an object instance, the `.initialize` method is passed all arguments to initialize the instance's state.

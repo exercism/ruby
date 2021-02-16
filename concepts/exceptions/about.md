@@ -1,3 +1,5 @@
+# About
+
 It is important to note that exceptions should be used in cases where something exceptional happens, an error that needs special handling. Exceptions should not be used for control-flow of a program, as that is considered bad design, which often leads to bad performance and maintainability.
 
 In Ruby exceptions follow a class hierarchy where `Exception` is the base class. These are the most common Ruby's built-in exceptions:

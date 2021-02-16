@@ -1,3 +1,5 @@
+# Introduction
+
 Ruby comes with a Standard Library (often shortened to "stdlib") - a collection of classes for working with things such as dates, json, and networking.
 It also provides some useful functionality for making your code easier to work with.
 

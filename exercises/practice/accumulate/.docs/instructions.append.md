@@ -1,4 +1,4 @@
-## Advanced
+# Advanced
 
 It is typical to call [#to_enum](http://ruby-doc.org/core-2.3.1/Object.html#method-i-to_enum) when defining methods for a generic Enumerable, in case no block is passed.
 

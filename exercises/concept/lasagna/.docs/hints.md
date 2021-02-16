@@ -1,3 +1,5 @@
+# Hints
+
 ## 1. Define the expected oven time in minutes
 
 - You need to define a [constant][constant] which should contain the [integer][integers] value specified in the recipe.

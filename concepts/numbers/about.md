@@ -1,3 +1,5 @@
+# About
+
 One of the key aspects of working with numbers in Ruby is the distinction between integers (numbers with no digits after the decimal separator) and floating-point numbers (numbers with zero or more digits after the decimal separator).
 They are implemented through the [`Integer`][integer-ruby] and [`Float`][float-ruby] class.
 

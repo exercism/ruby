@@ -1,3 +1,5 @@
+# About
+
 A floating-point number is a number with zero or more digits behind the decimal separator. Examples are `4.0`, `0.1`, `3.14`, `-6.4` `16.984025` and `1024.0`. In Ruby, floating-point numbers are implemented through the [Float](https://ruby-doc.org/core-2.7.0/Float.html) class.
 
 You can find a short introduction to floating-point numbers at [0.30000000000000004.com][0.30000000000000004.com].
@@ -8,7 +10,7 @@ To repeatedly execute logic, one can use loops. In this example the `while` loop
 
 The `#years_before_desired_balance` method from the previous exercise could have been written by using any of the three mentioned loops:
 
-### `while`
+## `while`
 
 ```ruby
 def self.years_before_desired_balance(current_balance, desired_balance)
@@ -21,7 +23,7 @@ def self.years_before_desired_balance(current_balance, desired_balance)
 end
 ```
 
-### `until`
+## `until`
 
 ```ruby
 def self.years_before_desired_balance(current_balance, desired_balance)
@@ -34,7 +36,7 @@ def self.years_before_desired_balance(current_balance, desired_balance)
 end
 ```
 
-### `loop`
+## `loop`
 
 ```ruby
 def self.years_before_desired_balance(current_balance, desired_balance)

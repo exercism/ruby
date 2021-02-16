@@ -6,7 +6,7 @@
 
 Exercism Exercises in Ruby
 
-#### Table of Contents
+## Table of Contents
 - [Setup](#setup)
 - [Anatomy of an Exercise](#anatomy-of-an-exercise)
   - [Canonical Data](#canonical-data)
