@@ -100,7 +100,7 @@
         "name": "High Score",
         "uuid": "58237782-2c30-4418-bd3b-7802d7f9e16e",
         "concepts": ["hashes"],
-        "prerequisites": ["strings"],
+        "prerequisites": ["strings", "instance-variables"],
         "status": "wip"
       }
     ],
