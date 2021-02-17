@@ -38,6 +38,6 @@ class HighScoreTest < Minitest::Test
 
   def test_get_players
     score_board = { 'Ted' => 34, 'Hassan' => 50, 'Pierre' => 20 }
-    assert_equal ['Ted', 'Hassan', 'Pierre'], HighScore.get_players(score_board)
+    assert_equal %w[Ted Hassan Pierre], HighScore.get_players(score_board)
   end
 end
