@@ -18,16 +18,16 @@
   },
   "files": {
     "solution": [
-      "path/to/%{kebab_slug}.ext"
+      "%{kebab_slug}/%{snake_slug}.rb"
     ],
     "test": [
-      "path/to/%{kebab_slug}.ext"
+      "%{kebab_slug}/%{snake_slug}_test.rb"
     ],
     "example": [
-      "path/to/%{kebab_slug}.ext"
+      "%{kebab_slug}/.meta/example.rb"
     ],
     "exemplar": [
-      "path/to/%{kebab_slug}.ext"
+      "%{kebab_slug}/.meta/exemplar.rb"
     ]
   },
   "exercises": {
