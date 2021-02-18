@@ -24,7 +24,7 @@
       "%{snake_slug}_test.rb"
     ],
     "example": [
-      "%{kebab_slug}/.meta/example.rb"
+      ".meta/example.rb"
     ],
     "exemplar": [
       "%{kebab_slug}/.meta/exemplar.rb"
