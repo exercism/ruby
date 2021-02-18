@@ -11,10 +11,11 @@ y = x + 'n'
 
 **But**
 
-````ruby
+```ruby
 x = '2'
 y = x + 2
 => TypeError (no implicit conversion of Integer into String)
+```
 
 Remember, in Ruby everything is an object. Even classes are instances of the class `Class`. For example:
 
@@ -27,7 +28,7 @@ Integer.is_a?(Object)
 
 Class.is_a?(Object)
 # => true
-````
+```
 
 This means that we can also define classes like this:
 
