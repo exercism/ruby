@@ -27,7 +27,7 @@
       ".meta/example.rb"
     ],
     "exemplar": [
-      "%{kebab_slug}/.meta/exemplar.rb"
+      ".meta/exemplar.rb"
     ]
   },
   "exercises": {
