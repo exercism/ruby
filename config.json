@@ -18,7 +18,7 @@
   },
   "files": {
     "solution": [
-      "%{kebab_slug}/%{snake_slug}.rb"
+      "%{snake_slug}.rb"
     ],
     "test": [
       "%{snake_slug}_test.rb"
