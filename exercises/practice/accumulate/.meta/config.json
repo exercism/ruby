@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "accumulate.rb"
+    ],
+    "test": [
+      "accumulate_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/accumulate.rb"
+    ]
   },
   "source": "Conversation with James Edward Gray II",
   "source_url": "https://twitter.com/jeg2"

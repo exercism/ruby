@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "acronym.rb"
+    ],
+    "test": [
+      "acronym_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/acronym.rb"
+    ]
   },
   "source": "Julien Vanier",
   "source_url": "https://github.com/monkbroc"

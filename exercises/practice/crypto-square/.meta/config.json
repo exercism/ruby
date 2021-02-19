@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "crypto_square.rb"
+    ],
+    "test": [
+      "crypto_square_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/crypto_square.rb"
+    ]
   },
   "source": "J Dalbey's Programming Practice problems",
   "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"

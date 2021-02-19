@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "robot_name.rb"
+    ],
+    "test": [
+      "robot_name_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/robot_name.rb"
+    ]
   },
   "source": "A debugging session with Paul Blackwell at gSchool."
 }

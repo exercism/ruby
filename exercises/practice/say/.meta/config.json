@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "say.rb"
+    ],
+    "test": [
+      "say_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/say.rb"
+    ]
   },
   "source": "A variation on JavaRanch CattleDrive, exercise 4a",
   "source_url": "http://www.javaranch.com/say.jsp"

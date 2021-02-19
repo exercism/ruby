@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "matching_brackets.rb"
+    ],
+    "test": [
+      "matching_brackets_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/matching_brackets.rb"
+    ]
   },
   "source": "Ginna Baker"
 }

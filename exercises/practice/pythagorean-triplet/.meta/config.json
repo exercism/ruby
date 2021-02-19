@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "pythagorean_triplet.rb"
+    ],
+    "test": [
+      "pythagorean_triplet_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/pythagorean_triplet.rb"
+    ]
   },
   "source": "Problem 9 at Project Euler",
   "source_url": "http://projecteuler.net/problem=9"

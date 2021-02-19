@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "dominoes.rb"
+    ],
+    "test": [
+      "dominoes_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/dominoes.rb"
+    ]
   }
 }

@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "binary_search.rb"
+    ],
+    "test": [
+      "binary_search_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/binary_search.rb"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"

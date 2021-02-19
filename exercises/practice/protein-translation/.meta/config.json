@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "protein_translation.rb"
+    ],
+    "test": [
+      "protein_translation_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/protein_translation.rb"
+    ]
   },
   "source": "Tyler Long"
 }

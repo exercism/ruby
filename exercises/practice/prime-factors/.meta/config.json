@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "prime_factors.rb"
+    ],
+    "test": [
+      "prime_factors_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/prime_factors.rb"
+    ]
   },
   "source": "The Prime Factors Kata by Uncle Bob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata"

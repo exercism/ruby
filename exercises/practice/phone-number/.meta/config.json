@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "phone_number.rb"
+    ],
+    "test": [
+      "phone_number_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/phone_number.rb"
+    ]
   },
   "source": "Event Manager by JumpstartLab",
   "source_url": "http://tutorials.jumpstartlab.com/projects/eventmanager.html"

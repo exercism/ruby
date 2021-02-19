@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "circular_buffer.rb"
+    ],
+    "test": [
+      "circular_buffer_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/circular_buffer.rb"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Circular_buffer"

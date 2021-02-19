@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "high_scores.rb"
+    ],
+    "test": [
+      "high_scores_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/high_scores.rb"
+    ]
   },
   "source": "Tribute to the eighties' arcade game Frogger"
 }

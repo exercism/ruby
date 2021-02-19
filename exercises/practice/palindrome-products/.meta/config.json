@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "palindrome_products.rb"
+    ],
+    "test": [
+      "palindrome_products_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/palindrome_products.rb"
+    ]
   },
   "source": "Problem 4 at Project Euler",
   "source_url": "http://projecteuler.net/problem=4"
