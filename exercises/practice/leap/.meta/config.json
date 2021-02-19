@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "leap.rb"
+    ],
+    "test": [
+      "leap_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/leap.rb"
+    ]
   },
   "source": "JavaRanch Cattle Drive, exercise 3",
   "source_url": "http://www.javaranch.com/leap.jsp"

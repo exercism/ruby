@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "wordy.rb"
+    ],
+    "test": [
+      "wordy_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/wordy.rb"
+    ]
   },
   "source": "Inspired by one of the generated questions in the Extreme Startup game.",
   "source_url": "https://github.com/rchatley/extreme_startup"

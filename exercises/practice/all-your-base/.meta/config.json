@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "all_your_base.rb"
+    ],
+    "test": [
+      "all_your_base_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/all_your_base.rb"
+    ]
   }
 }

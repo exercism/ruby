@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "connect.rb"
+    ],
+    "test": [
+      "connect_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/connect.rb"
+    ]
   }
 }

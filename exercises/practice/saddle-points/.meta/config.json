@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "saddle_points.rb"
+    ],
+    "test": [
+      "saddle_points_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/saddle_points.rb"
+    ]
   },
   "source": "J Dalbey's Programming Practice problems",
   "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"

@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "armstrong_numbers.rb"
+    ],
+    "test": [
+      "armstrong_numbers_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/armstrong_numbers.rb"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"

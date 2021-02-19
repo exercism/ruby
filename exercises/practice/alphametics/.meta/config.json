@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "alphametics.rb"
+    ],
+    "test": [
+      "alphametics_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/alphametics.rb"
+    ]
   }
 }

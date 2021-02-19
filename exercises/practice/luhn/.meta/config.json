@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "luhn.rb"
+    ],
+    "test": [
+      "luhn_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/luhn.rb"
+    ]
   },
   "source": "The Luhn Algorithm on Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Luhn_algorithm"

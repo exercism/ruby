@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "book_store.rb"
+    ],
+    "test": [
+      "book_store_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/book_store.rb"
+    ]
   },
   "source": "Inspired by the harry potter kata from Cyber-Dojo.",
   "source_url": "http://cyber-dojo.org"

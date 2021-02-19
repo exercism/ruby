@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "queen_attack.rb"
+    ],
+    "test": [
+      "queen_attack_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/queen_attack.rb"
+    ]
   },
   "source": "J Dalbey's Programming Practice problems",
   "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"

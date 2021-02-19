@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "two_fer.rb"
+    ],
+    "test": [
+      "two_fer_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/two_fer.rb"
+    ]
   },
   "source_url": "https://github.com/exercism/problem-specifications/issues/757"
 }

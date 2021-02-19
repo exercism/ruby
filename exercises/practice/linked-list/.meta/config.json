@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "linked_list.rb"
+    ],
+    "test": [
+      "linked_list_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/linked_list.rb"
+    ]
   },
   "source": "Classic computer science topic"
 }

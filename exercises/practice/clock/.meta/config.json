@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "clock.rb"
+    ],
+    "test": [
+      "clock_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/clock.rb"
+    ]
   },
   "source": "Pairing session with Erin Drummond",
   "source_url": "https://twitter.com/ebdrummond"

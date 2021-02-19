@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "atbash_cipher.rb"
+    ],
+    "test": [
+      "atbash_cipher_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/atbash_cipher.rb"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Atbash"

@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "microwave.rb"
+    ],
+    "test": [
+      "microwave_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/microwave.rb"
+    ]
   }
 }

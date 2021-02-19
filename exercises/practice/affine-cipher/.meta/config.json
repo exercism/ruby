@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "affine_cipher.rb"
+    ],
+    "test": [
+      "affine_cipher_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/affine_cipher.rb"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Affine_cipher"

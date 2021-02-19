@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "anagram.rb"
+    ],
+    "test": [
+      "anagram_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/anagram.rb"
+    ]
   },
   "source": "Inspired by the Extreme Startup game",
   "source_url": "https://github.com/rchatley/extreme_startup"

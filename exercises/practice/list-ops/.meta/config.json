@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "list_ops.rb"
+    ],
+    "test": [
+      "list_ops_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/list_ops.rb"
+    ]
   }
 }

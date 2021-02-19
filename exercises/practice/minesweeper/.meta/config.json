@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "minesweeper.rb"
+    ],
+    "test": [
+      "minesweeper_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/minesweeper.rb"
+    ]
   }
 }

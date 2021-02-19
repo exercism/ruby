@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "custom_set.rb"
+    ],
+    "test": [
+      "custom_set_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/custom_set.rb"
+    ]
   }
 }

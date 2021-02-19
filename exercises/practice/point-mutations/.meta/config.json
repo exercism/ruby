@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "point_mutations.rb"
+    ],
+    "test": [
+      "point_mutations_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/point_mutations.rb"
+    ]
   },
   "source": "The Calculating Point Mutations problem at Rosalind",
   "source_url": "http://rosalind.info/problems/hamm/"

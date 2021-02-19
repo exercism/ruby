@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "zipper.rb"
+    ],
+    "test": [
+      "zipper_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/zipper.rb"
+    ]
   }
 }

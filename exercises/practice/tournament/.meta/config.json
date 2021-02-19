@@ -1,8 +1,14 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "tournament.rb"
+    ],
+    "test": [
+      "tournament_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/tournament.rb"
+    ]
   }
 }
