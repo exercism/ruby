@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for lasagna exercise",
   "authors": [
     {
       "github_username": "iHiD",
@@ -10,8 +11,14 @@
     }
   ],
   "files": {
-    "solution": ["lasagna.rb"],
-    "test": ["lasagna_test.rb"],
-    "exemplar": [".meta/exemplar.rb"]
+    "solution": [
+      "lasagna.rb"
+    ],
+    "test": [
+      "lasagna_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
   }
 }
