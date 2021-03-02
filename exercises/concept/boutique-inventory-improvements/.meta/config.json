@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for boutique-inventory-improvements exercise",
   "authors": [
     {
       "github_username": "iHiD",
@@ -6,8 +7,14 @@
     }
   ],
   "files": {
-    "solution": ["boutique_inventory.rb"],
-    "test": ["boutique_inventory_test.rb"],
-    "exemplar": [".meta/exemplar.rb"]
+    "solution": [
+      "boutique_inventory.rb"
+    ],
+    "test": [
+      "boutique_inventory_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
   }
 }

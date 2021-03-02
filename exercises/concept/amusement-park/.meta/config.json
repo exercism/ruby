@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for amusement-park exercise",
   "authors": [
     {
       "github_username": "neenjaw",
@@ -17,8 +18,14 @@
   ],
   "language_versions": ">=2.6.6",
   "files": {
-    "solution": ["attendee.rb"],
-    "test": ["attendee_test.rb"],
-    "exemplar": [".meta/exemplar.rb"]
+    "solution": [
+      "attendee.rb"
+    ],
+    "test": [
+      "attendee_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
   }
 }

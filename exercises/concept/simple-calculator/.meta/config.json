@@ -1,14 +1,23 @@
 {
+  "blurb": "TODO: add blurb for simple-calculator exercise",
   "authors": [
     {
       "github_username": "pvcarrera",
       "exercism_username": "pvcarrera"
     }
   ],
-  "forked_from": ["csharp/exceptions"],
+  "forked_from": [
+    "csharp/exceptions"
+  ],
   "files": {
-    "solution": ["simple_calculator.rb"],
-    "test": ["simple_calculator_test.rb"],
-    "exemplar": [".meta/exemplar.rb"]
+    "solution": [
+      "simple_calculator.rb"
+    ],
+    "test": [
+      "simple_calculator_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
   }
 }

@@ -1,14 +1,23 @@
 {
+  "blurb": "TODO: add blurb for bird-count exercise",
   "authors": [
     {
       "github_username": "pvcarrera",
       "exercism_username": "pvcarrera"
     }
   ],
-  "forked_from": ["csharp/arrays"],
+  "forked_from": [
+    "csharp/arrays"
+  ],
   "files": {
-    "solution": ["bird_count.rb"],
-    "test": ["bird_count_test.rB"],
-    "exemplar": [".meta/exemplar.rb"]
+    "solution": [
+      "bird_count.rb"
+    ],
+    "test": [
+      "bird_count_test.rB"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
   }
 }
