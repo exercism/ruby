@@ -1,32 +1,23 @@
 # frozen_string_literal: true
 
 class LaunchStatusCheck
-  class LaunchStatusError < StandardError
-  end
+  # create a custom `LaunchStatusError` error
 
-  class AbortLaunchError < StandardError
-  end
-
-  LAUNCH_STATUS_MESSAGE = 'Launch flight team(s) have not given a go/no-go status.'
-  ABORT_LAUNCH_MESSAGE = 'Launch flight team(s) have given a no-go status.'
-
-  GO = :go
-  NO_GO = :no_go
+  # create a custom `AbortLaunchError` error
 
   def initialize(flight_teams)
-    @flight_teams = flight_teams
+    raise NotImplementedError, 'Please implement the LaunchStatusCheck#initialize method'
   end
 
   def all_teams_checked_in(status_checks)
-    @flight_teams.all? { |team| status_checks.key?(team) }
+    raise NotImplementedError, 'Please implement the LaunchStatusCheck#all_teams_checked_in method'
   end
 
   def all_teams_are_go(status_checks)
-    status_checks.values.none? { |status_check| status_check == NO_GO }
+    raise NotImplementedError, 'Please implement the LaunchStatusCheck#all_teams_are_go method'
   end
 
   def check(status_checks)
-    raise LaunchStatusError, LAUNCH_STATUS_MESSAGE unless all_teams_checked_in(status_checks)
-    raise AbortLaunchError, ABORT_LAUNCH_MESSAGE unless all_teams_are_go(status_checks)
+    raise NotImplementedError, 'Please implement the LaunchStatusCheck#check method'
   end
 end
