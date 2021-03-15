@@ -12,5 +12,6 @@
     "solution": ["lucas_numbers.rb"],
     "test": ["lucas_numbers_test.rb"],
     "examplar": [".meta/exemplar.rb"]
-  }
+  },
+  "forked_from": ["elixir/lucas-numbers"]
 }
