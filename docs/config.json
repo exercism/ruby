@@ -11,8 +11,8 @@
       "uuid": "8504e036-d5bb-4736-a560-52b12d40425c",
       "slug": "installation",
       "path": "docs/INSTALLATION.md",
-      "title": "Installing Ruby on your machine",
-      "blurb": "Learn how to install Ruby to solve Exercism's exercises locally"
+      "title": "Installing Ruby locally",
+      "blurb": "Learn how to install Ruby to solve Exercism's exercises on your own machine"
     },
         {
       "uuid": "32445bf2-fc71-4352-99b4-f0834601bbd4",
