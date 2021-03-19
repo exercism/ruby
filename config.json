@@ -36,7 +36,7 @@
         "slug": "bird-count",
         "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
         "concepts": [
-          "strings"
+          "arrays"
         ],
         "prerequisites": [
           "classes",
