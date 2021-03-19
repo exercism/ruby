@@ -83,19 +83,19 @@
       {
         "slug": "moviegoer",
         "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
-        "concepts": [
+        "concepts": [],
+        "prerequisites": [
           "basics"
         ],
-        "prerequisites": [],
         "status": "wip"
       },
       {
         "slug": "simple-calculator",
         "uuid": "ef6dca29-a990-4a6e-8b2c-4703fd0f751a",
-        "concepts": [
+        "concepts": [],
+        "prerequisites": [
           "basics"
         ],
-        "prerequisites": [],
         "status": "wip"
       },
       {
