@@ -1,20 +1,11 @@
 {
   "blurb": "TODO: add blurb for amusement-park exercise",
   "authors": [
-    {
-      "github_username": "neenjaw",
-      "exercism_username": "neenjaw"
-    },
-    {
-      "github_username": "iHiD",
-      "exercism_username": "iHiD"
-    }
+    "neenjaw",
+    "iHiD"
   ],
   "contributors": [
-    {
-      "github_username": "kotp",
-      "exercism_username": "kotp"
-    }
+    "kotp"
   ],
   "language_versions": ">=2.6.6",
   "files": {

@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for bird-count exercise",
   "authors": [
-    {
-      "github_username": "pvcarrera",
-      "exercism_username": "pvcarrera"
-    }
+    "pvcarrera"
   ],
   "forked_from": [
     "csharp/arrays"

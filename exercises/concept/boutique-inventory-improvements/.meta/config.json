@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for boutique-inventory-improvements exercise",
   "authors": [
-    {
-      "github_username": "iHiD",
-      "exercism_username": "iHiD"
-    }
+    "iHiD"
   ],
   "files": {
     "solution": [

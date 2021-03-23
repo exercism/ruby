@@ -1,20 +1,11 @@
 {
   "blurb": "TODO: add blurb for assembly-line exercise",
   "authors": [
-    {
-      "github_username": "dvik1950",
-      "exercism_username": "dvik1950"
-    }
+    "dvik1950"
   ],
   "contributors": [
-    {
-      "github_username": "kotp",
-      "exercism_username": "kotp"
-    },
-    {
-      "github_username": "iHiD",
-      "exercism_username": "iHiD"
-    }
+    "kotp",
+    "iHiD"
   ],
   "forked_from": [
     "csharp/numbers"

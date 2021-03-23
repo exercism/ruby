@@ -1,14 +1,8 @@
 {
   "blurb": "TODO: add blurb for lasagna exercise",
   "authors": [
-    {
-      "github_username": "iHiD",
-      "exercism_username": "iHiD"
-    },
-    {
-      "github_username": "pvcarrera",
-      "exercism_username": "pvcarrera"
-    }
+    "iHiD",
+    "pvcarrera"
   ],
   "files": {
     "solution": [
