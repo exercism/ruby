@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for moviegoer exercise",
   "authors": [
-    {
-      "github_username": "TBD",
-      "exercism_username": "TBD"
-    }
+    "TBD"
   ],
   "files": {
     "solution": [

@@ -1,16 +1,10 @@
 {
   "blurb": "TODO: add blurb for savings-account exercise",
   "authors": [
-    {
-      "github_username": "TBD",
-      "exercism_username": "TBD"
-    }
+    "TBD"
   ],
   "contributors": [
-    {
-      "github_username": "dvik1950",
-      "exercism_username": "dvik1950"
-    }
+    "dvik1950"
   ],
   "forked_from": [
     "csharp/floating-point-numbers"

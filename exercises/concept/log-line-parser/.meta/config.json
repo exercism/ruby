@@ -1,10 +1,7 @@
 {
   "blurb": "TODO: add blurb for log-line-parser exercise",
   "authors": [
-    {
-      "github_username": "pvcarrera",
-      "exercism_username": "pvcarrera"
-    }
+    "pvcarrera"
   ],
   "files": {
     "solution": [
