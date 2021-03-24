@@ -1,6 +1,22 @@
 {
   "blurb": "Manage robot factory settings.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "callahat",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "mambocab",
+    "StevenXL",
+    "tryantwit",
+    "vitoreiji"
+  ],
   "files": {
     "solution": [
       "robot_name.rb"

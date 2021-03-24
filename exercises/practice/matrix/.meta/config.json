@@ -1,6 +1,18 @@
 {
   "blurb": "Given a string representing a matrix of numbers, return the rows and columns of that matrix.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "coolbrg",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "mambocab",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "matrix.rb"

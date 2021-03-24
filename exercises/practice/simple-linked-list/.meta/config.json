@@ -1,6 +1,25 @@
 {
   "blurb": "Write a simple linked list implementation that uses Elements and a List",
-  "authors": [],
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "copiousfreetime",
+    "dkinzer",
+    "etrepum",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "mambocab",
+    "tryantwit",
+    "zvkemp"
+  ],
   "files": {
     "solution": [
       "simple_linked_list.rb"

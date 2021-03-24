@@ -1,6 +1,19 @@
 {
   "blurb": "Given a diagram, determine which plants each child in the kindergarten class is responsible for.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alexpchin",
+    "budmc29",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "mambocab",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "kindergarten_garden.rb"

@@ -1,6 +1,20 @@
 {
   "blurb": "Given two buckets of different size, demonstrate how to measure an exact number of liters.",
-  "authors": [],
+  "authors": [
+    "repinel"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kvsm",
+    "kytrinyx",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "two_bucket.rb"

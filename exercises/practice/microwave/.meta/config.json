@@ -1,5 +1,11 @@
 {
-  "authors": [],
+  "authors": [
+    "gatorjuice"
+  ],
+  "contributors": [
+    "aleksandrilyin",
+    "petertseng"
+  ],
   "files": {
     "solution": [
       "microwave.rb"

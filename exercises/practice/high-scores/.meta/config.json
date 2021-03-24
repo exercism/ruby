@@ -1,6 +1,14 @@
 {
   "blurb": "Manage a player's High Score list",
-  "authors": [],
+  "authors": [
+    "pgaspar"
+  ],
+  "contributors": [
+    "emcoding",
+    "iHiD",
+    "Insti",
+    "kotp"
+  ],
   "files": {
     "solution": [
       "high_scores.rb"

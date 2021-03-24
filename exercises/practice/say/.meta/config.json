@@ -1,6 +1,23 @@
 {
   "blurb": "Given a number from 0 to 999,999,999,999, spell out that number in English.",
-  "authors": [],
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kangkyu",
+    "kotp",
+    "kytrinyx",
+    "mambocab",
+    "pgaspar",
+    "tommyschaefer",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "say.rb"

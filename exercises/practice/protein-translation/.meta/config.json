@@ -1,6 +1,22 @@
 {
   "blurb": "Translate RNA sequences into proteins.",
-  "authors": [],
+  "authors": [
+    "Teapane"
+  ],
+  "contributors": [
+    "budmc29",
+    "chrisvroberts",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "kytrinyx",
+    "mambocab",
+    "mamenama",
+    "pendletons",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "protein_translation.rb"

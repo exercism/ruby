@@ -1,6 +1,24 @@
 {
   "blurb": "Parse and evaluate simple math word problems returning the answer as an integer.",
-  "authors": [],
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "mambocab",
+    "pgaspar",
+    "srabuini",
+    "tommyschaefer",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "wordy.rb"

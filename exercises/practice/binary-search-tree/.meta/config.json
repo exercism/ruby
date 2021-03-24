@@ -1,6 +1,23 @@
 {
   "blurb": "Insert and search for numbers in a binary tree.",
-  "authors": [],
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "kytrinyx",
+    "mambocab",
+    "pendletons",
+    "remcopeereboom",
+    "Ryan1729",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "binary_search_tree.rb"

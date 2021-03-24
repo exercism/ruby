@@ -1,6 +1,22 @@
 {
   "blurb": "A data structure that uses a single, fixed-size buffer as if it were connected end-to-end.",
-  "authors": [],
+  "authors": [
+    "anthonygreen"
+  ],
+  "contributors": [
+    "budmc29",
+    "dalexj",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "julianandrews",
+    "kotp",
+    "kytrinyx",
+    "mambocab",
+    "pendletons",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "circular_buffer.rb"

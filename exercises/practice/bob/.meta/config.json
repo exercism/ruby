@@ -1,6 +1,38 @@
 {
   "blurb": "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "ajwann",
+    "austinlyons",
+    "avit",
+    "budmc29",
+    "cadwallion",
+    "copiousfreetime",
+    "doncruse",
+    "Gaelan",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jmay",
+    "jpotts244",
+    "koriroys",
+    "kotp",
+    "mambocab",
+    "markijbema",
+    "martyhines",
+    "Nadrioc",
+    "Nerian",
+    "PatrickMcSweeny",
+    "Pavling",
+    "prathamesh-sonpatki",
+    "seeflanigan",
+    "shingara",
+    "toddsiegel",
+    "Tonkpils",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "bob.rb"

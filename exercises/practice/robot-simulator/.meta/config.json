@@ -1,6 +1,20 @@
 {
   "blurb": "Write a robot simulator.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "mambocab",
+    "pendletons",
+    "tryantwit",
+    "vosechu"
+  ],
   "files": {
     "solution": [
       "robot_simulator.rb"

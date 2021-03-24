@@ -1,6 +1,27 @@
 {
   "blurb": "Given a year, report if it is a leap year.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "Gaelan",
+    "henrik",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jcasimir",
+    "jmay",
+    "jpotts244",
+    "kotp",
+    "mambocab",
+    "markijbema",
+    "mike-hewitson",
+    "NeimadTL",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "leap.rb"

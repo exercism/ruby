@@ -1,6 +1,25 @@
 {
   "blurb": "Create a custom set type.",
-  "authors": [],
+  "authors": [
+    "fluxusfrequency"
+  ],
+  "contributors": [
+    "aarti",
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "mambocab",
+    "mamenama",
+    "pendletons",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "custom_set.rb"

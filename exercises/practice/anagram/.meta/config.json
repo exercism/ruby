@@ -1,6 +1,28 @@
 {
   "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "fredrb",
+    "henrik",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jmay",
+    "jpotts244",
+    "kotp",
+    "mambocab",
+    "markijbema",
+    "martinsvalin",
+    "pgaspar",
+    "pvcarrera",
+    "sbagdat",
+    "Thrillberg",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "anagram.rb"

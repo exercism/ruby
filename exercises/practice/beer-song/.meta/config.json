@@ -1,6 +1,23 @@
 {
   "blurb": "Produce the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "ccouzens",
+    "dkinzer",
+    "emcoding",
+    "henrik",
+    "hilary",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "mambocab",
+    "pendletons",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "beer_song.rb"

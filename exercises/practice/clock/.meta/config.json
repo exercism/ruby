@@ -1,6 +1,25 @@
 {
   "blurb": "Implement a clock that handles times without dates.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "guygastineau",
+    "henrik",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "mambocab",
+    "pendletons",
+    "pgaspar",
+    "tryantwit",
+    "wvmitchell"
+  ],
   "files": {
     "solution": [
       "clock.rb"

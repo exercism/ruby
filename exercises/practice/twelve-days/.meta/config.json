@@ -1,6 +1,23 @@
 {
   "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alexpchin",
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kenliu",
+    "kickinbahk",
+    "kotp",
+    "mambocab",
+    "PatrickMcSweeny",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "twelve_days.rb"

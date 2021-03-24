@@ -1,6 +1,24 @@
 {
   "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "claytonflesher",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jmay",
+    "jpotts244",
+    "kickinbahk",
+    "kotp",
+    "mambocab",
+    "pvcarrera",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "word_count.rb"

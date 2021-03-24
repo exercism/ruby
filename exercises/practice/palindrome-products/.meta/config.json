@@ -1,6 +1,21 @@
 {
   "blurb": "Detect palindrome products in a given range.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "dalexj",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "mambocab",
+    "markijbema",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "palindrome_products.rb"
