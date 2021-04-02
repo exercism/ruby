@@ -29,7 +29,7 @@ class LaunchStatusCheck
   end
 
   def check(status_checks)
-    raise LaunchStatusError, LAUNCH_STATUS_MESSAGE unless all_teams_checked_in(status_checks)
-    raise AbortLaunchError, ABORT_LAUNCH_MESSAGE unless all_teams_are_go(status_checks)
+    raise LaunchStatusError unless all_teams_checked_in(status_checks)
+    raise AbortLaunchError unless all_teams_are_go(status_checks)
   end
 end
