@@ -1,12 +1,6 @@
 {
-  "authors": {
-    "github_username": "neenjaw",
-    "exercism_username": "neenjaw"
-  },
-  "contributors": {
-    "github_username": "ihid",
-    "exercism_username": "ihid"
-  },
+  "authors": ["neenjaw"],
+  "contributors": ["ihid", "kotp"],
   "language_versions": ">= 2.6.6",
   "files": {
     "solution": ["high_score.rb"],
