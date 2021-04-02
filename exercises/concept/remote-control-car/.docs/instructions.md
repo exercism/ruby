@@ -2,7 +2,9 @@
 
 In this exercise you will be playing with a remote controlled car, which you have finally saved enough money to buy.
 
-Cars start with full (100%) batteries. Each time you drive the car using the remote control, it covers 20 meters and drains one percent of the battery. The car's nickname is not known until it is created.
+Cars start with full (100%) batteries. Each time you drive the car using the remote control, it covers 20 meters and drains one percent of the battery.
+
+The car's nickname is not known until it is created.
 
 The remote controlled car has a fancy LED display that shows two bits of information:
 
