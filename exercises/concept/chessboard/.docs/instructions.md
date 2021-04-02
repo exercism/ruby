@@ -24,7 +24,7 @@ Chessboard.file_range()
 
 ## 3. Transform the rank range into a list of ranks
 
-Implement the `ranks` method. It should return a list of integers, from 1 to 8. Do not write the list by hand, generate it from the range returned by the `rank_range` method.
+Implement the `ranks` method. It should return a list of integers, from `1` to `8`. Do not write the list by hand, generate it from the range returned by the `rank_range` method.
 
 ```ruby
 Chessboard.ranks()
