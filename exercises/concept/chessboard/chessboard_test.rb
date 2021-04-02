@@ -9,7 +9,7 @@ class ChessboardTest < Minitest::Test
   end
 
   def test_file_range_is_a_range_of_letters
-    assert_equal ?A..?H, Chessboard.file_range
+    assert_equal ('A'..'H'), Chessboard.file_range
   end
 
   def test_ranks_is_a_array_of_integers
