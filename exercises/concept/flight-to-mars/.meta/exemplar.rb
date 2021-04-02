@@ -2,13 +2,16 @@
 
 class LaunchStatusCheck
   class LaunchStatusError < StandardError
+    def initalize(message = 'Launch flight team(s) have not given a go/no-go status.')
+      super
+    end
   end
 
   class AbortLaunchError < StandardError
+    def initialize(message = 'Launch flight team(s) have given a no-go status.')
+      super
+    end
   end
-
-  LAUNCH_STATUS_MESSAGE = 'Launch flight team(s) have not given a go/no-go status.'
-  ABORT_LAUNCH_MESSAGE = 'Launch flight team(s) have given a no-go status.'
 
   GO = :go
   NO_GO = :no_go
