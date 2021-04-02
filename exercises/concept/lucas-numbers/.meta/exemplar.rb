@@ -6,7 +6,7 @@ class LucasNumbers
   end
 
   def to_a(count)
-    raise ArgumentError, "count must be a number greater than or equal to 0" if !count.is_a?(Integer) || count < 1
+    raise ArgumentError, "count must be an integer greater than or equal to 0" unless count.is_a?(Integer) && count >= 0
 
     sequence.take(count)
   end
