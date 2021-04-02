@@ -8,7 +8,7 @@ Each square of the chessboard is identified by a letter-number pair. The vertica
 
 ## 1. Define the rank range
 
-Implement the `rank_range` method. It should return a range of integers, from 1 to 8.
+Implement the `rank_range` method. It should return a range of integers, from `1` to `8`.
 
 ```ruby
 Chessboard.rank_range()
