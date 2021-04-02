@@ -19,7 +19,7 @@ class RemoteControlCarTest < Minitest::Test
     end
   end
 
-  def test_new_car_hasnt_been_driven
+  def test_new_car_has_not_been_driven
     car = RemoteControlCar.new("test_car")
     assert_equal 0, car.distance_driven
   end
