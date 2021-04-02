@@ -1,12 +1,6 @@
 {
-  "authors": {
-    "github_username": "neenjaw",
-    "exercism_username": "neenjaw"
-  },
-  "contributors": {
-    "github_username": "iHiD",
-    "exercism_username": "ihid"
-  },
+  "authors": ["neenjaw"],
+  "contributors": ["iHiD", "kotp"],
   "language_versions": ">= 2.6.6",
   "forked_from": ["csharp/classes"],
   "files": {
