@@ -33,7 +33,7 @@ Chessboard.ranks()
 
 ## 4. Transform the file range into a list of files
 
-Implement the `files` method. It should return a list of letters (strings), from "A" to "H". Do not write the list by hand, generate it from the range returned by the `file_range` method.
+Implement the `files` method. It should return a list of letters (strings), from `"A"` to `"H"`. Do not write the list by hand, generate it from the range returned by the `file_range` method.
 
 ```ruby
 Chessboard.files()
