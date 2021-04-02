@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise you'll be playing around with a remote controlled car, which you've finally saved enough money for to buy.
+In this exercise you will be playing with a remote controlled car, which you have finally saved enough money to buy.
 
 Cars start with full (100%) batteries. Each time you drive the car using the remote control, it covers 20 meters and drains one percent of the battery. The car's nickname is not known until it is created.
 
