@@ -123,7 +123,7 @@
           "enumeration"
         ],
         "prerequisites": [
-          "array"
+          "arrays"
         ],
         "status": "wip"
       },
@@ -1577,6 +1577,12 @@
       "slug": "strings",
       "name": "Strings",
       "blurb": "TODO: add blurb for strings concept"
+    },
+    {
+      "uuid": "cd6a05cd-e605-4fbb-83cd-3014f35d3935-7099-4c93-a109-178fc9436d68",
+      "slug": "enumeration",
+      "name": "Enumeration",
+      "blurb": "TODO: add blurb for enumeration concept"
     }
   ],
   "key_features": [],
