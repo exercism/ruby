@@ -41,20 +41,20 @@ class AttendeeTest < Minitest::Test
   # New tests for `booleans` exercise
 
   def test_new_instance_doesnt_have_pass
-    refute Attendee.new(100).pass?
+    refute Attendee.new(100).has_pass?
   end
 
   def test_when_issued_pass
     attendee = Attendee.new(100)
     attendee.issue_pass!(1)
-    assert attendee.pass?
+    assert attendee.has_pass?
   end
 
   def test_when_revoked_doesnt_have_pass
     attendee = Attendee.new(100)
     attendee.issue_pass!(1)
     attendee.revoke_pass!
-    refute attendee.pass?
+    refute attendee.has_pass?
   end
 
   def test_fits_ride_exactly

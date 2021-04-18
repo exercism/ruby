@@ -42,6 +42,43 @@
         "status": "wip"
       },
       {
+        "slug": "amusement-park",
+        "uuid": "6905e411-ae01-46b6-a31c-8867b768856e",
+        "concepts": [
+          "instance-variables",
+          "nil"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "amusement-park-improvements",
+        "uuid": "06ea7869-4907-454d-a5e5-9d5b71098b17",
+        "concepts": [
+          "booleans"
+        ],
+        "prerequisites": [
+          "instance-variables"
+        ],
+        "status": "wip"
+      }
+      {
+        "slug": "savings-account",
+        "uuid": "970d3f26-1891-40c7-9550-42d529f5780f",
+        "concepts": [
+          "floating-point-numbers",
+          "loops"
+        ],
+        "prerequisites": [
+          "numbers",
+          "conditionals"
+        ],
+        "status": "wip"
+      },
+
+      {
         "slug": "bird-count",
         "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
         "concepts": [
@@ -108,7 +145,6 @@
         ],
         "status": "wip"
       },
-
       {
         "slug": "assembly-line",
         "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
@@ -118,42 +154,6 @@
         ],
         "prerequisites": [
           "booleans"
-        ],
-        "status": "wip"
-      },
-      {
-        "slug": "savings-account",
-        "uuid": "970d3f26-1891-40c7-9550-42d529f5780f",
-        "concepts": [
-          "floating-point-numbers",
-          "loops"
-        ],
-        "prerequisites": [
-          "numbers",
-          "conditionals"
-        ],
-        "status": "wip"
-      },
-      {
-        "slug": "amusement-park-improvements",
-        "uuid": "06ea7869-4907-454d-a5e5-9d5b71098b17",
-        "concepts": [
-          "booleans"
-        ],
-        "prerequisites": [
-          "instance-variables"
-        ],
-        "status": "wip"
-      },
-      {
-        "slug": "amusement-park",
-        "uuid": "6905e411-ae01-46b6-a31c-8867b768856e",
-        "concepts": [
-          "instance-variables",
-          "nil"
-        ],
-        "prerequisites": [
-          "basics"
         ],
         "status": "wip"
       }

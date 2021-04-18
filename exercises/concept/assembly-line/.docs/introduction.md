@@ -2,8 +2,6 @@
 
 ## Numbers
 
-## Conditionals
-
 Two common types of numbers in Ruby are:
 
 - Integers: numbers with no digits behind the decimal separator (whole numbers). Examples are `-6`, `0`, `1`, `25`, `976` and `500000`.
@@ -13,7 +11,10 @@ They are implemented through the `Integer` and `Float` classes.
 
 The `Float` and `Integer` classes have methods that will coerce values from one to the other. `Integer` numbers are precise to a whole unit, while `Float` has precision that is fractional to an whole number.
 
-In this exercise you must conditionally execute logic. A common way to do this in Ruby is by using an `if/else` statement:
+## Conditionals
+
+In this exercise you must conditionally execute logic. 
+A common way to do this in Ruby is by using an `if/else` statement:
 
 ```ruby
 x = 5

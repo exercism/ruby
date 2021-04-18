@@ -11,7 +11,7 @@
   "language_versions": ">=2.6.6",
   "files": {
     "solution": [
-      "attendee_test.rb"
+      "attendee.rb"
     ],
     "test": [
       "attendee_test.rb"

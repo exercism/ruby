@@ -4,7 +4,7 @@ Continuing your work with the amusement park, you are tasked with writing some u
 
 ## 1. Check if an attendee has a ride pass
 
-Implement the `Attendee#pass?` method to return a boolean (`true`/`false`) value based on the presence of a ride pass.
+Implement the `Attendee#has_pass?` method to return a boolean (`true`/`false`) value based on the presence of a ride pass.
 
 ```ruby
 Attendee.new(100).has_pass?
