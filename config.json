@@ -60,10 +60,23 @@
           "booleans"
         ],
         "prerequisites": [
-          "instance-variables"
+          "instance-variables",
+          "nil"
         ],
         "status": "wip"
-      }
+      },
+      {
+        "slug": "assembly-line",
+        "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
+        "concepts": [
+          "numbers",
+          "conditionals"
+        ],
+        "prerequisites": [
+          "booleans"
+        ],
+        "status": "wip"
+      },
       {
         "slug": "savings-account",
         "uuid": "970d3f26-1891-40c7-9550-42d529f5780f",
@@ -77,7 +90,6 @@
         ],
         "status": "wip"
       },
-
       {
         "slug": "bird-count",
         "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
@@ -142,18 +154,6 @@
         "concepts": [],
         "prerequisites": [
           "basics"
-        ],
-        "status": "wip"
-      },
-      {
-        "slug": "assembly-line",
-        "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
-        "concepts": [
-          "numbers",
-          "conditionals"
-        ],
-        "prerequisites": [
-          "booleans"
         ],
         "status": "wip"
       }
