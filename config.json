@@ -81,6 +81,7 @@
         "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
         "concepts": [
           "numbers",
+          "floating-point-numbers",
           "conditionals"
         ],
         "prerequisites": [
@@ -92,11 +93,12 @@
         "slug": "savings-account",
         "uuid": "970d3f26-1891-40c7-9550-42d529f5780f",
         "concepts": [
-          "floating-point-numbers",
-          "loops"
+          "loops",
+          "modules"
         ],
         "prerequisites": [
           "numbers",
+          "floating-point-numbers",
           "conditionals"
         ],
         "status": "wip"
@@ -1590,6 +1592,12 @@
       "slug": "advanced-enumeration",
       "name": "Advanced Enumeration",
       "blurb": "TODO: add blurb for advanced-enumeration concept"
+    },
+    {
+      "uuid": "b12c64cc-cbfc-48c1-b3e2-a58079fe2b7e",
+      "slug": "modules",
+      "name": "Modules",
+      "blurb": "TODO: add blurb for modules concept"
     }
   ],
   "key_features": [],
