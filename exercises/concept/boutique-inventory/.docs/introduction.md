@@ -5,12 +5,12 @@ Enumeration is the act of stepping through a collection (`Array`, `Hash`, etc) a
 Enumeration is a key concept in Ruby and is used for sorting (`sort_by`), grouping (`group_by`), mapping (`map`), reducing (`reduce`), and much more. 
 You will most frequently see enumeration as the idiomatic way iterating through collections rather than using loops.
 
-A simple enumeration to print each word in an array would look like this:
+An enumeration to print each word in an array would look like this:
 
 ```ruby
-words = %w[the cat sat on the mat]
+words = ["the", "cat", "sat", "on", "the", "mat"]
 words.each do |word| 
-  puts word 
+  puts word
 end
 
 # Output

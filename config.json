@@ -74,7 +74,8 @@
           "enumeration"
         ],
         "prerequisites": [
-          "hash"
+          "hash",
+          "array"
         ],
         "status": "wip"
       },
