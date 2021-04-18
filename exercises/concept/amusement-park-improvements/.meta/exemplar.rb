@@ -3,6 +3,10 @@ class Attendee
     @height = height
   end
 
+  def has_pass?
+    !!@pass_id
+  end
+
   def issue_pass!(pass_id)
     @pass_id = pass_id
   end
@@ -11,11 +15,9 @@ class Attendee
     @pass_id = nil
   end
 
-  # Do not edit above methods, add your own methods below.
-
-  def has_pass?
-    !!@pass_id
-  end
+  # #########################################
+  # Do not edit the methods above this line #
+  # #########################################
 
   def fits_ride?(ride_minimum_height)
     @height >= ride_minimum_height
