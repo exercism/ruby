@@ -66,6 +66,17 @@
         "status": "wip"
       },
       {
+        "slug": "log-line-parser",
+        "uuid": "e5476046-5289-11ea-8d77-2e728ce88125",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "assembly-line",
         "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
         "concepts": [
@@ -104,17 +115,7 @@
         ],
         "status": "wip"
       },
-      {
-        "slug": "log-line-parser",
-        "uuid": "e5476046-5289-11ea-8d77-2e728ce88125",
-        "concepts": [
-          "strings"
-        ],
-        "prerequisites": [
-          "basics"
-        ],
-        "status": "wip"
-      },
+
       {
         "slug": "boutique-inventory",
         "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
