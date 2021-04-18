@@ -99,8 +99,7 @@
         "prerequisites": [
           "classes",
           "booleans",
-          "conditionals",
-          "blocks"
+          "conditionals"
         ],
         "status": "wip"
       },
@@ -120,10 +119,10 @@
         "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
         "concepts": [
           "blocks",
-          "enumeration"
+          "advanced-enumeration"
         ],
         "prerequisites": [
-          "arrays"
+          "enumeration"
         ],
         "status": "wip"
       },
@@ -1583,6 +1582,12 @@
       "slug": "enumeration",
       "name": "Enumeration",
       "blurb": "TODO: add blurb for enumeration concept"
+    },
+    {
+      "uuid": "73e07ed4-702f-4529-9027-f35bc1624b12",
+      "slug": "advanced-enumeration",
+      "name": "Advanced Enumeration",
+      "blurb": "TODO: add blurb for advanced-enumeration concept"
     }
   ],
   "key_features": [],
