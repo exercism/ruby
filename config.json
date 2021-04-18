@@ -117,13 +117,11 @@
         ],
         "status": "wip"
       },
-
       {
         "slug": "boutique-inventory",
         "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
         "concepts": [
-          "blocks",
-          "advanced-enumeration"
+          "hashes",
         ],
         "prerequisites": [
           "enumeration"
@@ -1583,9 +1581,9 @@
     },
     {
       "uuid": "73e07ed4-702f-4529-9027-f35bc1624b12",
-      "slug": "advanced-enumeration",
-      "name": "Advanced Enumeration",
-      "blurb": "TODO: add blurb for advanced-enumeration concept"
+      "slug": "hashes",
+      "name": "Hashes",
+      "blurb": "TODO: add blurb for hashes concept"
     },
     {
       "uuid": "b12c64cc-cbfc-48c1-b3e2-a58079fe2b7e",
