@@ -20,7 +20,7 @@ Attendee.new(106).height
 # => 106
 ```
 
-## 3. What is the ride pass' id
+## 3. What is the ride pass id
 
 Not all attendees have bought a ride pass, but we need to know if they have a pass or not. Implement the `Attendee#pass_id` getter for the `Attendee` class, it should return the instance's pass_id or `nil` if the Attendee doesn't have one.
 
