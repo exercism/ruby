@@ -1,6 +1,6 @@
 # Introduction
 
-This exercise will teach the basics building blocks of Ruby.
+This exercise will teach the fundamental building blocks of Ruby.
 It covers a lot of ground, but don't worry if it feels overwhelming, we'll go into everything in much more depth as we continue through the track.
 
 One of the key things to understand about Ruby is that it is an [object-oriented language][object-oriented-programming], and that **verything in Ruby is an [object][object]**. Numbers, strings, methods - they're all objects.

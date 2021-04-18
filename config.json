@@ -123,7 +123,6 @@
           "enumeration"
         ],
         "prerequisites": [
-          "hash",
           "array"
         ],
         "status": "wip"
