@@ -2,7 +2,8 @@
 
 ## 1. Define the expected oven time in minutes
 
-- You need to define a [constant][constant] which should contain the [integer][integers] value specified in the recipe.
+- You need to define a [constant][constant] that should contain the [integer][integers] value specified in the recipe.
+- The `::` used in `Lasagna::EXPECTED_MINUTES_IN_OVEN` means that `EXPECTED_MINUTES_IN_OVEN` needs to be defined within the `Lasagna` class.
 
 ## 2. Calculate the remaining oven time in minutes
 

@@ -33,6 +33,15 @@
   "exercises": {
     "concept": [
       {
+        "slug": "lasagna",
+        "uuid": "71ae39c4-7364-11ea-bc55-0242ac130003",
+        "concepts": [
+          "basics"
+        ],
+        "prerequisites": [],
+        "status": "wip"
+      },
+      {
         "slug": "bird-count",
         "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
         "concepts": [
@@ -98,15 +107,7 @@
         ],
         "status": "wip"
       },
-      {
-        "slug": "lasagna",
-        "uuid": "71ae39c4-7364-11ea-bc55-0242ac130003",
-        "concepts": [
-          "basics"
-        ],
-        "prerequisites": [],
-        "status": "wip"
-      },
+
       {
         "slug": "assembly-line",
         "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
