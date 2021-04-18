@@ -111,7 +111,7 @@
           "enumeration"
         ],
         "prerequisites": [
-          "classes",
+          "instance-variables",
           "booleans",
           "conditionals"
         ],
@@ -1532,12 +1532,6 @@
       "slug": "booleans",
       "name": "Booleans",
       "blurb": "TODO: add blurb for booleans concept"
-    },
-    {
-      "uuid": "acec3b2a-c1cc-4583-bd4b-9f7ae41acfb3",
-      "slug": "classes",
-      "name": "Classes",
-      "blurb": "TODO: add blurb for classes concept"
     },
     {
       "uuid": "dedd9182-66b7-4fbc-bf4b-ba6603edbfca",
