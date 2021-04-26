@@ -79,6 +79,6 @@ fibonacci = [0, 1, 1, 2, 3, 5, 8, 13]
 fibonacci.count  { |number| number == 1 }   #=> 2
 fibonacci.any?   { |number| number == 6 }   #=> false
 fibonacci.select { |number| number.odd? }   #=> [1, 1, 3, 5, 13]
-fibonacci.all?   { |number| number < 20? }  #=> true
-fibonacci.map    { |number| number * 2  }   #=>  [0, 2, 2, 4, 6, 10, 16, 26]
+fibonacci.all?   { |number| number < 20 }   #=> true
+fibonacci.map    { |number| number * 2  }   #=> [0, 2, 2, 4, 6, 10, 16, 26]
 ```
