@@ -1,8 +1,6 @@
 # Introduction
 
-## Hashes
-
-## Enumerating
+## Enumerating Hashes
 
 Enumerating `Hash` objects is exactly the same as enumerating `Array` objects, except that the block receives two arguments: the key and the value:
 

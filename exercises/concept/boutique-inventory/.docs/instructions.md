@@ -32,7 +32,7 @@ BoutiqueInventory.new([
 
 ## 2. Return any items that are cheap
 
-Implement `BoutiqueInventory.cheap` which should return any items that cost less than \$30.
+Implement `BoutiqueInventory.cheap` which should return any items that cost less than $30.
 
 ```ruby
 BoutiqueInventory.new([
