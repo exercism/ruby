@@ -813,7 +813,7 @@
       {
         "slug": "allergies",
         "name": "Allergies",
-        "uuid": "b306bdaa-438e-46a2-ba54-82cb2c0be882",
+        "uuid": "7a67a62f-9331-4776-a5b5-aaba7ad1e1e6",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
@@ -885,7 +885,7 @@
       {
         "slug": "beer-song",
         "name": "Beer Song",
-        "uuid": "50c34698-7767-42b3-962f-21c735e49787",
+        "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -898,7 +898,7 @@
       {
         "slug": "protein-translation",
         "name": "Protein Translation",
-        "uuid": "00c6f623-2e54-4f90-ae3f-07e493f93c7c",
+        "uuid": "607a3515-e53b-427f-8e3b-1e22912fa29a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -1336,7 +1336,7 @@
       {
         "slug": "grep",
         "name": "Grep",
-        "uuid": "99485900-5d16-4848-af1c-2f1a62ad35ab",
+        "uuid": "4ad4ea80-945d-4b37-b40c-bd05bed82266",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8,
