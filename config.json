@@ -34,7 +34,7 @@
     "concept": [
       {
         "slug": "bird-count",
-        "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
+        "uuid": "874e7d1f-d047-4183-875a-5345896f9fc1",
         "concepts": [
           "arrays"
         ],
@@ -48,7 +48,7 @@
       },
       {
         "slug": "log-line-parser",
-        "uuid": "e5476046-5289-11ea-8d77-2e728ce88125",
+        "uuid": "13e2d7d8-0c03-4bdf-9fe2-8dfe884a9eb6",
         "concepts": [
           "strings"
         ],
@@ -100,7 +100,7 @@
       },
       {
         "slug": "lasagna",
-        "uuid": "71ae39c4-7364-11ea-bc55-0242ac130003",
+        "uuid": "9d2a67a8-0eef-48bb-b8eb-4a6ff0437d21",
         "concepts": [
           "basics"
         ],
@@ -813,7 +813,7 @@
       {
         "slug": "allergies",
         "name": "Allergies",
-        "uuid": "b306bdaa-438e-46a2-ba54-82cb2c0be882",
+        "uuid": "7a67a62f-9331-4776-a5b5-aaba7ad1e1e6",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
@@ -885,7 +885,7 @@
       {
         "slug": "beer-song",
         "name": "Beer Song",
-        "uuid": "50c34698-7767-42b3-962f-21c735e49787",
+        "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -898,7 +898,7 @@
       {
         "slug": "protein-translation",
         "name": "Protein Translation",
-        "uuid": "00c6f623-2e54-4f90-ae3f-07e493f93c7c",
+        "uuid": "607a3515-e53b-427f-8e3b-1e22912fa29a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -1336,7 +1336,7 @@
       {
         "slug": "grep",
         "name": "Grep",
-        "uuid": "99485900-5d16-4848-af1c-2f1a62ad35ab",
+        "uuid": "4ad4ea80-945d-4b37-b40c-bd05bed82266",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8,
@@ -1474,7 +1474,7 @@
       {
         "slug": "microwave",
         "name": "Microwave",
-        "uuid": "b960d0fe-a07f-11ea-bb37-0242ac130002",
+        "uuid": "34e715a6-4d22-4b74-a26a-409283ac419c",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
