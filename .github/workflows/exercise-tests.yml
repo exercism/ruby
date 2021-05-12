@@ -21,7 +21,7 @@ jobs:
         ruby-version: [2.6, 2.7, 3.0]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@fdcfbcf14ec9672f6f615cb9589a1bc5dd69d262
