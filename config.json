@@ -18,6 +18,9 @@
     "ace_editor_language": "ruby",
     "highlightjs_language": "ruby"
   },
+  "test_runner": {
+    "average_run_time": 2.0
+  },
   "files": {
     "solution": [
       "%{snake_slug}.rb"
