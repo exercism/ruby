@@ -1,0 +1,88 @@
+- name: "Epic"
+  description: ""
+  color: "3E4B9E"
+
+- name: "Hacktoberfest"
+  description: ""
+  color: "b0581d"
+
+- name: "Project Track Anatomy"
+  description: "Changes related to the Ruby Track Anatomy."
+  color: "009cab"
+
+- name: "abandoned?"
+  description: ""
+  color: "cc8eac"
+
+- name: "bug"
+  description: ""
+  color: "fc2929"
+
+- name: "duplicate"
+  description: ""
+  color: "cccccc"
+
+- name: "enhancement"
+  description: ""
+  color: "84b6eb"
+
+- name: "first-timers only"
+  description: ""
+  color: "159818"
+
+- name: "github_actions"
+  description: "Pull requests that update Github_actions code"
+  color: "000000"
+
+- name: "good first patch"
+  description: ""
+  color: "159818"
+
+- name: "in progress"
+  description: ""
+  color: "ededed"
+
+- name: "invalid"
+  description: ""
+  color: "e6e6e6"
+
+- name: "new concept exercise :tulip:"
+  description: ""
+  color: "AD595A"
+
+- name: "pinned"
+  description: ""
+  color: "006b75"
+
+- name: "question"
+  description: ""
+  color: "cc317c"
+
+- name: "ready"
+  description: ""
+  color: "5319e7"
+
+- name: "ruby"
+  description: "Pull requests that update Ruby code"
+  color: "ce2d2d"
+
+- name: "security"
+  description: ""
+  color: "fbca04"
+
+- name: "stale"
+  description: ""
+  color: "ffffff"
+
+- name: "v3-migration 🤖"
+  description: "Preparing for Exercism v3"
+  color: "E99695"
+
+- name: "waiting on dependency"
+  description: ""
+  color: "ededed"
+
+- name: "wontfix"
+  description: ""
+  color: "ffffff"
+
