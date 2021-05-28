@@ -15,7 +15,6 @@
   "online_editor": {
     "indent_style": "space",
     "indent_size": 2,
-    "ace_editor_language": "ruby",
     "highlightjs_language": "ruby"
   },
   "test_runner": {
