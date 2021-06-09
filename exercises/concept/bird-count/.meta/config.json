@@ -11,7 +11,7 @@
       "bird_count.rb"
     ],
     "test": [
-      "bird_count_test.rB"
+      "bird_count_test.rb"
     ],
     "exemplar": [
       ".meta/exemplar.rb"
