@@ -130,6 +130,16 @@
       "link_url": "https://biancapower.com/",
       "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/6181646/avatar.png",
       "bio": "Passionate about Ruby, Open Source, vim and git. I love helping people learn how to code, and am privileged to help people shift careers into tech through my role as a bootcamp educator at Coder Academy, Sydney."
+    },
+    {
+      "github_username": "hiljusti",
+      "alumna": false,
+      "show_on_website": true,
+      "name": "J.R. \"hiljusti\" Hill",
+      "link_text": "https://github.com/hiljusti",
+      "link_url": "https://github.com/hiljusti",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17605298",
+      "bio": "Build automation engineer at AWS by day, language enthusiast and tinkerer by night."
     }
   ]
 }
