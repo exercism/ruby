@@ -1,6 +1,19 @@
 {
   "blurb": "Implement run-length encoding and decoding.",
-  "authors": [],
+  "authors": [
+    "Cohen-Carlisle"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "run_length_encoding.rb"

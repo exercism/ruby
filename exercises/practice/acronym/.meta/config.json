@@ -1,6 +1,23 @@
 {
   "blurb": "Convert a long phrase to its acronym",
-  "authors": [],
+  "authors": [
+    "monkbroc"
+  ],
+  "contributors": [
+    "bmulvihill",
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kickinbahk",
+    "kotp",
+    "kytrinyx",
+    "PatrickMcSweeny",
+    "pgaspar",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "acronym.rb"

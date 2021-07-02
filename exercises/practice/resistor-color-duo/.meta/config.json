@@ -1,6 +1,12 @@
 {
   "blurb": "Convert color codes, as used on resistors, to a numeric value.",
-  "authors": [],
+  "authors": [
+    "pgaspar"
+  ],
+  "contributors": [
+    "iHiD",
+    "kotp"
+  ],
   "files": {
     "solution": [
       "resistor_color_duo.rb"

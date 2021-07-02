@@ -1,6 +1,21 @@
 {
   "blurb": "Calculate the date of meetups.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "ajwann",
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kangkyu",
+    "kotp",
+    "pendletons",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "meetup.rb"

@@ -1,6 +1,23 @@
 {
   "blurb": "Implement a doubly linked list",
-  "authors": [],
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "dkinzer",
+    "etrepum",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kewlar",
+    "kotp",
+    "kytrinyx",
+    "pendletons",
+    "ryanplusplus",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "linked_list.rb"

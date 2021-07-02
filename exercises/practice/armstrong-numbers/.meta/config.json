@@ -1,6 +1,13 @@
 {
   "blurb": "Determine if a number is an Armstrong number",
-  "authors": [],
+  "authors": [
+    "Tuxified"
+  ],
+  "contributors": [
+    "guygastineau",
+    "iHiD",
+    "kotp"
+  ],
   "files": {
     "solution": [
       "armstrong_numbers.rb"

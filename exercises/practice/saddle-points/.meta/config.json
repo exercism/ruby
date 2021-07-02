@@ -1,6 +1,18 @@
 {
   "blurb": "Detect saddle points in a matrix.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "dkinzer",
+    "etrepum",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "saddle_points.rb"

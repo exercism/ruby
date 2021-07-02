@@ -1,6 +1,16 @@
 {
   "blurb": "Creating a zipper for a binary tree.",
-  "authors": [],
+  "authors": [
+    "tuxagon"
+  ],
+  "contributors": [
+    "cadwallion",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "zipper.rb"

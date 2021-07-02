@@ -1,6 +1,17 @@
 {
   "blurb": "Implement complex numbers.",
-  "authors": [],
+  "authors": [
+    "m1kal"
+  ],
+  "contributors": [
+    "cadwallion",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "mftaff",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "complex_numbers.rb"

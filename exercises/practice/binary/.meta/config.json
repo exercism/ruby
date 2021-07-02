@@ -1,6 +1,25 @@
 {
   "blurb": "Convert a binary number, represented as a string (e.g. '101010'), to its decimal equivalent using first principles",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "bmulvihill",
+    "budmc29",
+    "cadwallion",
+    "casto101",
+    "henrik",
+    "hilary",
+    "Insti",
+    "jpotts244",
+    "kickinbahk",
+    "kotp",
+    "pendletons",
+    "samjonester",
+    "scottcrawford03",
+    "tommyschaefer",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "binary.rb"

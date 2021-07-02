@@ -1,6 +1,22 @@
 {
   "blurb": "Given a number, find the sum of all the multiples of particular numbers up to but not including that number.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "ajwann",
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "etmoore",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "julianandrews",
+    "kotp",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "sum_of_multiples.rb"

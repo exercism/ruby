@@ -1,6 +1,21 @@
 {
   "blurb": "Convert a number to a string, the content of which depends on the number's factors.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "bmulvihill",
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "mike-hewitson",
+    "notapatch",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "raindrops.rb"

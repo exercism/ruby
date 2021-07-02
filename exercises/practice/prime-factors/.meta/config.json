@@ -1,6 +1,18 @@
 {
   "blurb": "Compute the prime factors of a given natural number.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "joshgoebel",
+    "kotp",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "prime_factors.rb"

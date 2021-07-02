@@ -1,6 +1,20 @@
 {
   "blurb": "Implement a binary search algorithm.",
-  "authors": [],
+  "authors": [
+    "fluxusfrequency"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "dkinzer",
+    "fredrb",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "kytrinyx",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "binary_search.rb"

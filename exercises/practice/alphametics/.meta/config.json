@@ -1,6 +1,22 @@
 {
   "blurb": "Write a function to solve alphametics puzzles.",
-  "authors": [],
+  "authors": [
+    "repinel"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "mattkimmel",
+    "n8chz",
+    "NeimadTL",
+    "pgaspar",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "alphametics.rb"

@@ -1,6 +1,18 @@
 {
   "blurb": "Pick the best hand(s) from a list of poker hands.",
-  "authors": [],
+  "authors": [
+    "fabienalbi"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "moveson",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "poker.rb"

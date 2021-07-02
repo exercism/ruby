@@ -1,6 +1,20 @@
 {
   "blurb": "Compute the result for a game of Hex / Polygon",
-  "authors": [],
+  "authors": [
+    "jonatas"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "NeimadTL",
+    "pendletons",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "connect.rb"

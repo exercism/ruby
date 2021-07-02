@@ -1,6 +1,22 @@
 {
   "blurb": "Make sure the brackets and braces all match.",
-  "authors": [],
+  "authors": [
+    "moofkit"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "ebiven",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "pgaspar",
+    "SleeplessByte",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "matching_brackets.rb"

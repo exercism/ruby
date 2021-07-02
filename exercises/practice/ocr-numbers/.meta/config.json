@@ -1,6 +1,23 @@
 {
   "blurb": "Given a 3 x 4 grid of pipes, underscores, and spaces, determine which number is represented, or whether it is garbled.",
-  "authors": [],
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "emcoding",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "pendletons",
+    "pgaspar",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "ocr_numbers.rb"

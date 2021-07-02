@@ -1,6 +1,17 @@
 {
   "blurb": "Given a word, compute the Scrabble score for that word.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "scrabble_score.rb"

@@ -1,6 +1,21 @@
 {
   "blurb": "Given a string of digits, output all the contiguous substrings of length `n` in that string.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "emcoding",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jeporcher",
+    "kotp",
+    "mikegehard",
+    "pgaspar",
+    "stevensonmt",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "series.rb"
