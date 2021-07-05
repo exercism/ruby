@@ -3,10 +3,10 @@
   "slug": "ruby",
   "active": true,
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": true,
-    "representer": false,
-    "analyzer": false
+    "representer": true,
+    "analyzer": true
   },
   "blurb": "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.",
   "version": 3,
