@@ -15,7 +15,7 @@ class BoutiqueInventory
     raise NotImplementedError, 'Implement the BoutiqueInventory#out_of_stock method'
   end
 
-  def stock_for_item
+  def stock_for_item(name)
     raise NotImplementedError, 'Implement the BoutiqueInventory#stock_for_item method'
   end
 
