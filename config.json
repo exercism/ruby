@@ -38,6 +38,7 @@
     "concept": [
       {
         "slug": "lasagna",
+        "name": "Lasagna",
         "uuid": "9d2a67a8-0eef-48bb-b8eb-4a6ff0437d21",
         "concepts": [
           "basics"
@@ -47,6 +48,7 @@
       },
       {
         "slug": "amusement-park",
+        "name": "Amusement Park",
         "uuid": "6905e411-ae01-46b6-a31c-8867b768856e",
         "concepts": [
           "instance-variables",
@@ -59,6 +61,7 @@
       },
       {
         "slug": "amusement-park-improvements",
+        "name": "Amusement Park Improvements",
         "uuid": "06ea7869-4907-454d-a5e5-9d5b71098b17",
         "concepts": [
           "booleans"
@@ -71,6 +74,7 @@
       },
       {
         "slug": "log-line-parser",
+        "name": "Log line Parser",
         "uuid": "13e2d7d8-0c03-4bdf-9fe2-8dfe884a9eb6",
         "concepts": [
           "strings"
@@ -82,6 +86,7 @@
       },
       {
         "slug": "assembly-line",
+        "name": "Assembly Line",
         "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
         "concepts": [
           "numbers",
@@ -95,6 +100,7 @@
       },
       {
         "slug": "savings-account",
+        "name": "Savings Account",
         "uuid": "970d3f26-1891-40c7-9550-42d529f5780f",
         "concepts": [
           "loops",
@@ -109,6 +115,7 @@
       },
       {
         "slug": "bird-count",
+        "name": "Bird Count",
         "uuid": "874e7d1f-d047-4183-875a-5345896f9fc1",
         "concepts": [
           "arrays",
@@ -123,6 +130,7 @@
       },
       {
         "slug": "boutique-inventory",
+        "name": "Boutique Inventory",
         "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
         "concepts": [
           "advanced-enumeration"
@@ -135,6 +143,7 @@
       },
       {
         "slug": "boutique-inventory-improvements",
+        "name": "Boutique Inventory Improvements",
         "uuid": "cf415960-ceff-4a1c-b65a-c4b5b1a80155",
         "concepts": [
           "ostruct"
@@ -146,6 +155,7 @@
       },
       {
         "slug": "moviegoer",
+        "name": "Moviegoer",
         "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
         "concepts": ["ternary-operator", "raising-exceptions"],
         "prerequisites": [
@@ -156,6 +166,7 @@
       },
       {
         "slug": "simple-calculator",
+        "name": "Simple Calculator",
         "uuid": "ef6dca29-a990-4a6e-8b2c-4703fd0f751a",
         "concepts": [],
         "prerequisites": [
@@ -1569,7 +1580,7 @@
       "blurb": "TODO: add blurb for strings concept"
     },
     {
-      "uuid": "cd6a05cd-e605-4fbb-83cd-3014f35d3935-7099-4c93-a109-178fc9436d68",
+      "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
       "slug": "enumeration",
       "name": "Enumeration",
       "blurb": "TODO: add blurb for enumeration concept"
