@@ -1533,14 +1533,6 @@
       "name": "Booleans"
     },
     {
-<<<<<<< HEAD
-=======
-      "uuid": "acec3b2a-c1cc-4583-bd4b-9f7ae41acfb3",
-      "slug": "classes",
-      "name": "Classes"
-    },
-    {
->>>>>>> origin
       "uuid": "dedd9182-66b7-4fbc-bf4b-ba6603edbfca",
       "slug": "conditionals",
       "name": "Conditionals"
@@ -1573,7 +1565,6 @@
     {
       "uuid": "3b1da281-7099-4c93-a109-178fc9436d68",
       "slug": "strings",
-<<<<<<< HEAD
       "name": "Strings",
       "blurb": "TODO: add blurb for strings concept"
     },
@@ -1612,9 +1603,6 @@
       "slug": "ternary-operator",
       "name": "Ternary operator",
       "blurb": "TODO: add blurb for modules concept"
-=======
-      "name": "Strings"
->>>>>>> origin
     }
   ],
   "key_features": [],
