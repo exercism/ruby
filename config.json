@@ -1619,8 +1619,8 @@
   "key_features": [
     {
       "icon": "",
-      "title": "Designed for developer happiness",
-      "content": "Ruby puts developer-happiness first. . It has an elegant syntax that is natural to read and easy to write."
+      "title": "Designed for developers' joy",
+      "content": "Ruby puts developer-happiness first. It has an elegant syntax that is natural to read and write."
     },
     {
       "icon": "",
@@ -1635,36 +1635,35 @@
     {
       "icon": "",
       "title": "Large standard library",
-      "content": "Interaction with common formats and protocols can be had by loading additional functionality through the standard library."
+      "content": "Ruby's standard library provides a wealth of classes utilities for common tasks."
     },
     {
       "icon": "",
-      "title": "Flexible package management system",
+      "title": "Flexible package manager",
       "content": "Packages (gems) can be centrally managed, but can also include custom or private gem stores."
     },
     {
       "icon": "",
-      "title": "Strongly, dynamically typed objects",
+      "title": "Strong, dynamic typing",
       "content": "Ruby is strong and dynamically typed and supports 'Duck Typing'. Everything in Ruby is an object"
     }
   ],
   "tags": [
     "paradigm/functional",
     "paradigm/object_oriented",
-    "platform/beos",
-    "platform/dos",
     "platform/linux",
     "platform/windows",
-    "platform/os2",
-    "platform/macos",
+    "platform/mac",
+    "runtime/language_specific",
+    "execution_mode/interpreted",
+    "typing/dynamic",
+    "typing/strong",
     "used_for/backends",
     "used_for/cross_platform_development",
-    "used_for/data_analysis",
     "used_for/embedded_systems",
-    "used_for/exploit_testing",
     "used_for/games",
-    "used_for/prototyping",
     "used_for/robotics",
-    "used_for/scripts"
+    "used_for/scripts",
+    "used_for/web_development"
   ]
 }
