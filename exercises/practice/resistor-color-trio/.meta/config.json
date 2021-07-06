@@ -1,6 +1,12 @@
 {
   "blurb": "Convert color codes, as used on resistors, to a human-readable label.",
-  "authors": [],
+  "authors": [
+    "pgaspar"
+  ],
+  "contributors": [
+    "iHiD",
+    "kotp"
+  ],
   "files": {
     "solution": [
       "resistor_color_trio.rb"

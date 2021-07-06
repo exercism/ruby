@@ -1,6 +1,17 @@
 {
   "blurb": "Check if a given string is a valid ISBN-10 number.",
-  "authors": [],
+  "authors": [
+    "bmkiefer"
+  ],
+  "contributors": [
+    "cadwallion",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "pgaspar",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "isbn_verifier.rb"

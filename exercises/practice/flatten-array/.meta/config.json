@@ -1,6 +1,21 @@
 {
   "blurb": "Take a nested list and return a single list with all values except nil/null",
-  "authors": [],
+  "authors": [
+    "dougtebay"
+  ],
+  "contributors": [
+    "ajwann",
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "snoozer05",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "flatten_array.rb"

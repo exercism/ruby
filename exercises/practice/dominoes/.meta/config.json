@@ -1,6 +1,19 @@
 {
   "blurb": "Make a chain of dominoes.",
-  "authors": [],
+  "authors": [
+    "petertseng"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "NeimadTL",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "dominoes.rb"

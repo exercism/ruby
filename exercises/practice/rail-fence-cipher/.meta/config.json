@@ -1,6 +1,18 @@
 {
   "blurb": "Implement encoding and decoding for the rail fence cipher.",
-  "authors": [],
+  "authors": [
+    "raysapida"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "emcoding",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "rail_fence_cipher.rb"

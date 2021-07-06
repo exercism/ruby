@@ -1,6 +1,22 @@
 {
   "blurb": "Take input text and output it transposed.",
-  "authors": [],
+  "authors": [
+    "gchan"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "ccouzens",
+    "emcoding",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jbergenson",
+    "jpotts244",
+    "kotp",
+    "pgaspar",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "transpose.rb"

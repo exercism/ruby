@@ -1,6 +1,28 @@
 {
   "blurb": "Calculate the Hamming difference between two DNA strands.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "Eventlessdrop",
+    "glamouracademy",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kickinbahk",
+    "kotp",
+    "KyleMartin901",
+    "mike-hewitson",
+    "mjansen401",
+    "pgaspar",
+    "siakaramalegos",
+    "StevenXL",
+    "trayo",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "hamming.rb"

@@ -1,6 +1,29 @@
 {
   "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
-  "authors": [],
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "Cohen-Carlisle",
+    "connorlay",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jmay",
+    "jpotts244",
+    "kickinbahk",
+    "kotp",
+    "mhelmetag",
+    "mike-hewitson",
+    "NobbZ",
+    "pck",
+    "tryantwit",
+    "tylerferraro"
+  ],
   "files": {
     "solution": [
       "rna_transcription.rb"

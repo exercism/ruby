@@ -1,6 +1,18 @@
 {
   "blurb": "Correctly determine change to be given using the least number of coins",
-  "authors": [],
+  "authors": [
+    "adimasuhid"
+  ],
+  "contributors": [
+    "cadwallion",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "njbbaer",
+    "pgaspar",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "change.rb"

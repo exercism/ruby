@@ -1,6 +1,21 @@
 {
   "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher",
-  "authors": [],
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "budmc29",
+    "dalexj",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "kytrinyx",
+    "markijbema",
+    "snoozer05",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "simple_cipher.rb"

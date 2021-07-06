@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'minitest/autorun'
 require_relative 'boutique_inventory'
 
@@ -122,6 +120,4 @@ class BoutiqueInventoryTest < Minitest::Test
     items = [shoes, coat, handkerchief]
     assert_equal 13, BoutiqueInventory.new(items).total_stock
   end
-
-
 end

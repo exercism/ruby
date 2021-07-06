@@ -3,10 +3,10 @@
   "slug": "ruby",
   "active": true,
   "status": {
-    "concept_exercises": false,
-    "test_runner": false,
-    "representer": false,
-    "analyzer": false
+    "concept_exercises": true,
+    "test_runner": true,
+    "representer": true,
+    "analyzer": true
   },
   "blurb": "Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.",
   "version": 3,
@@ -14,7 +14,11 @@
   "solution_pattern": "[Ee]xample|\\.meta/solutions/[^/]*\\.rb",
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 2
+    "indent_size": 2,
+    "highlightjs_language": "ruby"
+  },
+  "test_runner": {
+    "average_run_time": 2.0
   },
   "files": {
     "solution": [
@@ -34,7 +38,7 @@
     "concept": [
       {
         "slug": "lasagna",
-        "uuid": "71ae39c4-7364-11ea-bc55-0242ac130003",
+        "uuid": "9d2a67a8-0eef-48bb-b8eb-4a6ff0437d21",
         "[
           "basics"
         ],
@@ -67,7 +71,7 @@
       },
       {
         "slug": "log-line-parser",
-        "uuid": "e5476046-5289-11ea-8d77-2e728ce88125",
+        "uuid": "13e2d7d8-0c03-4bdf-9fe2-8dfe884a9eb6",
         "concepts": [
           "strings"
         ],
@@ -105,7 +109,7 @@
       },
       {
         "slug": "bird-count",
-        "uuid": "4d271980-ab4b-11ea-bb37-0242ac130002",
+        "uuid": "874e7d1f-d047-4183-875a-5345896f9fc1",
         "concepts": [
           "arrays",
           "enumeration"
@@ -817,7 +821,7 @@
       {
         "slug": "allergies",
         "name": "Allergies",
-        "uuid": "b306bdaa-438e-46a2-ba54-82cb2c0be882",
+        "uuid": "7a67a62f-9331-4776-a5b5-aaba7ad1e1e6",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
@@ -889,7 +893,7 @@
       {
         "slug": "beer-song",
         "name": "Beer Song",
-        "uuid": "50c34698-7767-42b3-962f-21c735e49787",
+        "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -902,7 +906,7 @@
       {
         "slug": "protein-translation",
         "name": "Protein Translation",
-        "uuid": "00c6f623-2e54-4f90-ae3f-07e493f93c7c",
+        "uuid": "607a3515-e53b-427f-8e3b-1e22912fa29a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -1340,7 +1344,7 @@
       {
         "slug": "grep",
         "name": "Grep",
-        "uuid": "99485900-5d16-4848-af1c-2f1a62ad35ab",
+        "uuid": "4ad4ea80-945d-4b37-b40c-bd05bed82266",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8,
@@ -1478,7 +1482,7 @@
       {
         "slug": "microwave",
         "name": "Microwave",
-        "uuid": "b960d0fe-a07f-11ea-bb37-0242ac130002",
+        "uuid": "34e715a6-4d22-4b74-a26a-409283ac419c",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
@@ -1506,72 +1510,70 @@
     {
       "uuid": "fa482f4a-19d6-4d13-ad9e-5121c536dc76",
       "slug": "ostruct",
-      "name": "Ostruct",
-      "blurb": "TODO: add blurb for ostruct concept"
+      "name": "Ostruct"
     },
     {
       "uuid": "7f2bf3a7-9771-48e8-bb6a-3022ca073a41",
       "slug": "arrays",
-      "name": "Arrays",
-      "blurb": "TODO: add blurb for arrays concept"
+      "name": "Arrays"
     },
     {
       "uuid": "fe345fe6-229b-4b4b-a489-4ed3b77a1d7e",
       "slug": "basics",
-      "name": "Basics",
-      "blurb": "TODO: add blurb for basics concept"
+      "name": "Basics"
     },
     {
       "uuid": "bf57350d-9e18-4ec6-9341-e4d2c289724d",
       "slug": "blocks",
-      "name": "Blocks",
-      "blurb": "TODO: add blurb for blocks concept"
+      "name": "Blocks"
     },
     {
       "uuid": "831b4db4-6b75-4a8d-a835-4c2555aacb61",
       "slug": "booleans",
-      "name": "Booleans",
-      "blurb": "TODO: add blurb for booleans concept"
+      "name": "Booleans"
     },
     {
+<<<<<<< HEAD
+=======
+      "uuid": "acec3b2a-c1cc-4583-bd4b-9f7ae41acfb3",
+      "slug": "classes",
+      "name": "Classes"
+    },
+    {
+>>>>>>> origin
       "uuid": "dedd9182-66b7-4fbc-bf4b-ba6603edbfca",
       "slug": "conditionals",
-      "name": "Conditionals",
-      "blurb": "TODO: add blurb for conditionals concept"
+      "name": "Conditionals"
     },
     {
       "uuid": "01d61b5c-8f50-4b12-9fe0-0723e6f00999",
       "slug": "floating-point-numbers",
-      "name": "Floating Point Numbers",
-      "blurb": "TODO: add blurb for floating-point-numbers concept"
+      "name": "Floating Point Numbers"
     },
     {
       "uuid": "35001ed1-a7b9-4a80-a766-26725a29dc50",
       "slug": "instance-variables",
-      "name": "Instance Variables",
-      "blurb": "TODO: add blurb for instance-variables concept"
+      "name": "Instance Variables"
     },
     {
       "uuid": "152d3976-dbcb-4a16-9f89-c61e0cdda4e5",
       "slug": "loops",
-      "name": "Loops",
-      "blurb": "TODO: add blurb for loops concept"
+      "name": "Loops"
     },
     {
       "uuid": "aa31cd95-54b2-4728-8fe3-2fdc244b3f53",
       "slug": "nil",
-      "name": "Nil",
-      "blurb": "TODO: add blurb for nil concept"
+      "name": "Nil"
     },
     {
       "uuid": "162721bd-3d64-43ff-889e-6fb2eac75709",
       "slug": "numbers",
-      "name": "Numbers",
-      "blurb": "TODO: add blurb for numbers concept"
+      "name": "Numbers"
     },
     {
       "uuid": "3b1da281-7099-4c93-a109-178fc9436d68",
       "slug": "strings",
+<<<<<<< HEAD
       "name": "Strings",
       "blurb": "TODO: add blurb for strings concept"
     },
@@ -1610,6 +1612,9 @@
       "slug": "ternary-operator",
       "name": "Ternary operator",
       "blurb": "TODO: add blurb for modules concept"
+=======
+      "name": "Strings"
+>>>>>>> origin
     }
   ],
   "key_features": [],

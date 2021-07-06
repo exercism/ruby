@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'minitest/autorun'
 require_relative 'boutique_inventory'
 
@@ -61,5 +59,4 @@ class BoutiqueInventoryTest < Minitest::Test
     assert_equal Array, BoutiqueInventory.new(items).items.class
     assert_equal OpenStruct, BoutiqueInventory.new(items).items.first.class
   end
-
 end

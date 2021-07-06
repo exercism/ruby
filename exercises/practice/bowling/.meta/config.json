@@ -1,6 +1,21 @@
 {
   "blurb": "Score a bowling game",
-  "authors": [],
+  "authors": [
+    "bernardoamc"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "gchan",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "NeimadTL",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "bowling.rb"

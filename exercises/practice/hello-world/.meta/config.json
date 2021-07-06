@@ -1,6 +1,28 @@
 {
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
-  "authors": [],
+  "authors": [
+    "ramonh"
+  ],
+  "contributors": [
+    "abartov",
+    "bgrabow",
+    "budmc29",
+    "gilmatic",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "Kosmas",
+    "kotp",
+    "kytrinyx",
+    "mike-hewitson",
+    "NeimadTL",
+    "sivabudh",
+    "skeskali",
+    "thejoycekung",
+    "trayo",
+    "tryantwit"
+  ],
   "files": {
     "solution": [
       "hello_world.rb"
