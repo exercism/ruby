@@ -143,7 +143,7 @@
       {
         "slug": "moviegoer",
         "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
-        "concepts": ["ternaries", "raising-exceptions"],
+        "concepts": ["ternary-operator", "raising-exceptions"],
         "prerequisites": [
           "basics",
           "conditionals"
@@ -1603,6 +1603,12 @@
       "uuid": "ad546bc1-7583-482d-9159-44e08c50c7b8",
       "slug": "exceptions",
       "name": "Raising Exceptions",
+      "blurb": "TODO: add blurb for modules concept"
+    },
+    {
+      "uuid": "e15a88ad-a43c-47bb-bd9f-d9d83513c73e",
+      "slug": "ternary-operator",
+      "name": "Ternary operator",
       "blurb": "TODO: add blurb for modules concept"
     }
   ],

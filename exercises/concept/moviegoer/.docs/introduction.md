@@ -1,6 +1,6 @@
 # Introduction
 
-## Ternaries
+## The ternary operator
 
 A ternary conditional is a shorter way of writing simple `if/else` statements. 
 If an `if/else` statement contains only two branches, one for when the condition is true and one for when it is false, it can be re-written as a ternary conditional.
@@ -59,3 +59,5 @@ For example, if you try dividing something by zero, you will see something like 
 
 We can stop exceptions from causing our program to exit using the `rescue` keyword.
 We'll look at this in more depth in a future exercise.
+
+Check out [this brilliant tutorial on exceptions](https://www.honeybadger.io/blog/a-beginner-s-guide-to-exceptions-in-ruby/) for more details.
