@@ -1616,6 +1616,55 @@
       "blurb": "TODO: add blurb for modules concept"
     }
   ],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "icon": "",
+      "title": "Designed for developer happiness",
+      "content": "Ruby puts developer-happiness first. . It has an elegant syntax that is natural to read and easy to write."
+    },
+    {
+      "icon": "",
+      "title": "Metaprogramming magic",
+      "content": "Ruby code can write and invoke Ruby code."
+    },
+    {
+      "icon": "",
+      "title": "Garbage Collection",
+      "content": "Garbage collection done via mark and sweep, stays out of your way."
+    },
+    {
+      "icon": "",
+      "title": "Large standard library",
+      "content": "Interaction with common formats and protocols can be had by loading additional functionality through the standard library."
+    },
+    {
+      "icon": "",
+      "title": "Flexible package management system",
+      "content": "Packages (gems) can be centrally managed, but can also include custom or private gem stores."
+    },
+    {
+      "icon": "",
+      "title": "Strongly, dynamically typed objects",
+      "content": "Ruby is strong and dynamically typed and supports 'Duck Typing'. Everything in Ruby is an object"
+    }
+  ],
+  "tags": [
+    "paradigm/functional",
+    "paradigm/object_oriented",
+    "platform/beos",
+    "platform/dos",
+    "platform/linux",
+    "platform/windows",
+    "platform/os2",
+    "platform/macos",
+    "used_for/backends",
+    "used_for/cross_platform_development",
+    "used_for/data_analysis",
+    "used_for/embedded_systems",
+    "used_for/exploit_testing",
+    "used_for/games",
+    "used_for/prototyping",
+    "used_for/robotics",
+    "used_for/scripts"
+  ]
 }
