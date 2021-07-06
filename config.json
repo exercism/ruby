@@ -121,7 +121,7 @@
         "slug": "boutique-inventory",
         "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
         "concepts": [
-          "advanced-enumeration",
+          "advanced-enumeration"
         ],
         "prerequisites": [
           "enumeration",
@@ -143,9 +143,10 @@
       {
         "slug": "moviegoer",
         "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
-        "concepts": [],
+        "concepts": ["ternaries", "raising-exceptions"],
         "prerequisites": [
-          "basics"
+          "basics",
+          "conditionals"
         ],
         "status": "wip"
       },
@@ -1596,6 +1597,12 @@
       "uuid": "b12c64cc-cbfc-48c1-b3e2-a58079fe2b7e",
       "slug": "modules",
       "name": "Modules",
+      "blurb": "TODO: add blurb for modules concept"
+    },
+    {
+      "uuid": "ad546bc1-7583-482d-9159-44e08c50c7b8",
+      "slug": "exceptions",
+      "name": "Raising Exceptions",
       "blurb": "TODO: add blurb for modules concept"
     }
   ],
