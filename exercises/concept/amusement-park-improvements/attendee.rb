@@ -1,6 +1,4 @@
 class Attendee
-  attr_reader :height, :pass_id
-
   def initialize(height)
     @height = height
   end
@@ -15,7 +13,7 @@ class Attendee
 
   # Do not edit above methods, add your own methods below.
 
-  def pass?
+  def has_pass?
     raise NotImplementedError, 'Please implement the Attendee#pass? method'
   end
 

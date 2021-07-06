@@ -27,7 +27,7 @@ class BoutiqueInventory
 
       # This would also be acceptable, but isn't explicitly 
       # taught in this exercise:
-      #item[:quantity_by_size].sum(&:value)
+      #item[:quantity_by_size].values.sum
     end
   end
 

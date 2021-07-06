@@ -37,21 +37,44 @@
   "exercises": {
     "concept": [
       {
-        "slug": "bird-count",
-        "uuid": "874e7d1f-d047-4183-875a-5345896f9fc1",
+        "slug": "lasagna",
+        "name": "Lasagna",
+        "uuid": "9d2a67a8-0eef-48bb-b8eb-4a6ff0437d21",
         "concepts": [
-          "arrays"
+          "basics"
+        ],
+        "prerequisites": [],
+        "status": "wip"
+      },
+      {
+        "slug": "amusement-park",
+        "name": "Amusement Park",
+        "uuid": "6905e411-ae01-46b6-a31c-8867b768856e",
+        "concepts": [
+          "instance-variables",
+          "nil"
         ],
         "prerequisites": [
-          "classes",
-          "booleans",
-          "conditionals",
-          "blocks"
+          "basics"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "amusement-park-improvements",
+        "name": "Amusement Park Improvements",
+        "uuid": "06ea7869-4907-454d-a5e5-9d5b71098b17",
+        "concepts": [
+          "booleans"
+        ],
+        "prerequisites": [
+          "instance-variables",
+          "nil"
         ],
         "status": "wip"
       },
       {
         "slug": "log-line-parser",
+        "name": "Log line Parser",
         "uuid": "13e2d7d8-0c03-4bdf-9fe2-8dfe884a9eb6",
         "concepts": [
           "strings"
@@ -62,60 +85,12 @@
         "status": "wip"
       },
       {
-        "slug": "boutique-inventory",
-        "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
-        "concepts": [
-          "blocks",
-          "enumeration"
-        ],
-        "prerequisites": [
-          "hash"
-        ],
-        "status": "wip"
-      },
-      {
-        "slug": "boutique-inventory-improvements",
-        "uuid": "cf415960-ceff-4a1c-b65a-c4b5b1a80155",
-        "concepts": [
-          "ostruct"
-        ],
-        "prerequisites": [
-          "enumeration"
-        ],
-        "status": "wip"
-      },
-      {
-        "slug": "moviegoer",
-        "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
-        "concepts": [],
-        "prerequisites": [
-          "basics"
-        ],
-        "status": "wip"
-      },
-      {
-        "slug": "simple-calculator",
-        "uuid": "ef6dca29-a990-4a6e-8b2c-4703fd0f751a",
-        "concepts": [],
-        "prerequisites": [
-          "basics"
-        ],
-        "status": "wip"
-      },
-      {
-        "slug": "lasagna",
-        "uuid": "9d2a67a8-0eef-48bb-b8eb-4a6ff0437d21",
-        "concepts": [
-          "basics"
-        ],
-        "prerequisites": [],
-        "status": "wip"
-      },
-      {
         "slug": "assembly-line",
+        "name": "Assembly Line",
         "uuid": "d7108eb2-326c-446d-9140-228e0f220975",
         "concepts": [
           "numbers",
+          "floating-point-numbers",
           "conditionals"
         ],
         "prerequisites": [
@@ -125,35 +100,75 @@
       },
       {
         "slug": "savings-account",
+        "name": "Savings Account",
         "uuid": "970d3f26-1891-40c7-9550-42d529f5780f",
         "concepts": [
-          "floating-point-numbers",
-          "loops"
+          "loops",
+          "modules"
         ],
         "prerequisites": [
           "numbers",
+          "floating-point-numbers",
           "conditionals"
         ],
         "status": "wip"
       },
       {
-        "slug": "amusement-park-improvements",
-        "uuid": "06ea7869-4907-454d-a5e5-9d5b71098b17",
+        "slug": "bird-count",
+        "name": "Bird Count",
+        "uuid": "874e7d1f-d047-4183-875a-5345896f9fc1",
         "concepts": [
-          "booleans"
+          "arrays",
+          "enumeration"
         ],
         "prerequisites": [
-          "instance-variables"
+          "instance-variables",
+          "booleans",
+          "conditionals"
         ],
         "status": "wip"
       },
       {
-        "slug": "amusement-park",
-        "uuid": "6905e411-ae01-46b6-a31c-8867b768856e",
+        "slug": "boutique-inventory",
+        "name": "Boutique Inventory",
+        "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
         "concepts": [
-          "instance-variables",
-          "nil"
+          "advanced-enumeration"
         ],
+        "prerequisites": [
+          "enumeration",
+          "hashes"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "boutique-inventory-improvements",
+        "name": "Boutique Inventory Improvements",
+        "uuid": "cf415960-ceff-4a1c-b65a-c4b5b1a80155",
+        "concepts": [
+          "ostruct"
+        ],
+        "prerequisites": [
+          "advanced-enumeration"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "moviegoer",
+        "name": "Moviegoer",
+        "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
+        "concepts": ["ternary-operator", "raising-exceptions"],
+        "prerequisites": [
+          "basics",
+          "conditionals"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "simple-calculator",
+        "name": "Simple Calculator",
+        "uuid": "ef6dca29-a990-4a6e-8b2c-4703fd0f751a",
+        "concepts": [],
         "prerequisites": [
           "basics"
         ],
@@ -1529,11 +1544,6 @@
       "name": "Booleans"
     },
     {
-      "uuid": "acec3b2a-c1cc-4583-bd4b-9f7ae41acfb3",
-      "slug": "classes",
-      "name": "Classes"
-    },
-    {
       "uuid": "dedd9182-66b7-4fbc-bf4b-ba6603edbfca",
       "slug": "conditionals",
       "name": "Conditionals"
@@ -1566,9 +1576,94 @@
     {
       "uuid": "3b1da281-7099-4c93-a109-178fc9436d68",
       "slug": "strings",
-      "name": "Strings"
+      "name": "Strings",
+      "blurb": "TODO: add blurb for strings concept"
+    },
+    {
+      "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
+      "slug": "enumeration",
+      "name": "Enumeration",
+      "blurb": "TODO: add blurb for enumeration concept"
+    },
+    {
+      "uuid": "ed6e1642-3f85-404f-85fa-6d014662d1e4",
+      "slug": "advanced-enumeration",
+      "name": "Advanced Enumeration",
+      "blurb": "TODO: add blurb for enumeration concept"
+    },
+    {
+      "uuid": "73e07ed4-702f-4529-9027-f35bc1624b12",
+      "slug": "hashes",
+      "name": "Hashes",
+      "blurb": "TODO: add blurb for hashes concept"
+    },
+    {
+      "uuid": "b12c64cc-cbfc-48c1-b3e2-a58079fe2b7e",
+      "slug": "modules",
+      "name": "Modules",
+      "blurb": "TODO: add blurb for modules concept"
+    },
+    {
+      "uuid": "ad546bc1-7583-482d-9159-44e08c50c7b8",
+      "slug": "exceptions",
+      "name": "Raising Exceptions",
+      "blurb": "TODO: add blurb for modules concept"
+    },
+    {
+      "uuid": "e15a88ad-a43c-47bb-bd9f-d9d83513c73e",
+      "slug": "ternary-operator",
+      "name": "Ternary operator",
+      "blurb": "TODO: add blurb for modules concept"
     }
   ],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "icon": "",
+      "title": "Developer happiness",
+      "content": "Ruby puts developer-happiness first. It has an elegant syntax that is natural to read and write."
+    },
+    {
+      "icon": "",
+      "title": "Metaprogramming magic",
+      "content": "Ruby code can write and invoke Ruby code."
+    },
+    {
+      "icon": "",
+      "title": "Garbage Collection",
+      "content": "Garbage collection done via mark and sweep, stays out of your way."
+    },
+    {
+      "icon": "",
+      "title": "Large standard library",
+      "content": "Ruby's standard library provides a wealth of classes utilities for common tasks."
+    },
+    {
+      "icon": "",
+      "title": "Flexible package manager",
+      "content": "Packages (gems) can be centrally managed, but can also include custom or private gem stores."
+    },
+    {
+      "icon": "",
+      "title": "Strong, dynamic typing",
+      "content": "Ruby is strong and dynamically typed and supports 'Duck Typing'. Everything in Ruby is an object"
+    }
+  ],
+  "tags": [
+    "paradigm/functional",
+    "paradigm/object_oriented",
+    "platform/linux",
+    "platform/windows",
+    "platform/mac",
+    "runtime/language_specific",
+    "execution_mode/interpreted",
+    "typing/dynamic",
+    "typing/strong",
+    "used_for/backends",
+    "used_for/cross_platform_development",
+    "used_for/embedded_systems",
+    "used_for/games",
+    "used_for/robotics",
+    "used_for/scripts",
+    "used_for/web_development"
+  ]
 }

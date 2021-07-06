@@ -1,15 +1,17 @@
-# frozen_string_literal: true
-
-module LogLineParser
-  def self.message(line)
-    line.slice(line.index(':') + 1, line.size).strip
+class LogLineParser
+  def initialize(line)
+    @line = line
   end
 
-  def self.log_level(line)
-    line.slice(1, line.index(']') - 1).downcase
+  def message
+    @line.slice(@line.index(':') + 1, @line.size).strip
   end
 
-  def self.reformat(line)
-    "#{self.message(line)} (#{self.log_level(line)})"
+  def log_level
+    @line.slice(1, @line.index(']') - 1).downcase
+  end
+
+  def reformat
+    "#{message} (#{log_level})"
   end
 end

@@ -4,19 +4,20 @@ class BoutiqueInventory
   def initialize(items)
     @items = items
 
-    raise NotImplementError "Refactor this code so that items have methods"
+    raise NotImplementedError, "Refactor this code so that items is an array of openstructs"
   end
 
   def item_names
     items.map { |item| item[:name] }.sort
-    raise NotImplementError "Refactor the code in item_names"
+
+    raise NotImplementedError, "Refactor the code in item_names"
   end
 
   def total_stock
     items.sum do |item|
-      item[:quantity_by_size].sum { |_, quantity| quantity }
+      item[:quantity_by_size].values.sum
     end
 
-    raise NotImplementError "Refactor the code in total_stock"
+    raise NotImplementedError, "Refactor the code in total_stock"
   end
 end

@@ -11,6 +11,7 @@ There are three different log levels:
 - `ERROR`
 
 You have three tasks, each of which will take a log line and ask you to do something with it.
+There are lots of ways to solve these tasks - choose your favourite methods from the examples above and see what you can come up with.
 
 ## 1. Get message from a log line
 
