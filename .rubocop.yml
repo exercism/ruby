@@ -57,6 +57,8 @@ Metrics/MethodLength:
 
 Naming/PredicateName:
   Enabled: true
+  Exclude:
+    - "exercises/concept/amusement-park-improvements/attendee.rb"
 
 Style/ConditionalAssignment:
   Enabled: true
@@ -86,3 +88,8 @@ Style/BlockComments:
 # where variable indentation is desirable
 Layout/HeredocIndentation:
   Enabled: true
+
+Style/AsciiComments:
+  Enabled: true
+  Exclude:
+    - "exercises/concept/moviegoer/moviegoer.rb"
