@@ -4,14 +4,14 @@ class LogLineParser
   end
 
   def message
-    raise NotImplementedError, 'Please implement the LogLineParser#message method'
+    raise NoMethodError, 'Please implement the LogLineParser#message method'
   end
 
   def log_level
-    raise NotImplementedError, 'Please implement the LogLineParser#log_level method'
+    raise NoMethodError, 'Please implement the LogLineParser#log_level method'
   end
 
   def reformat
-    raise NotImplementedError, 'Please implement the LogLineParser#reformat method'
+    raise NoMethodError, 'Please implement the LogLineParser#reformat method'
   end
 end

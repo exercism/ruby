@@ -4,10 +4,10 @@ class AssemblyLine
   end
 
   def production_rate_per_hour
-    raise NotImplementedError, 'Please implement the AssemblyLine#production_rate_per_hour method'
+    raise NoMethodError, 'Please implement the AssemblyLine#production_rate_per_hour method'
   end
 
   def working_items_per_minute
-    raise NotImplementedError, 'Please implement the AssemblyLine#working_items_per_minute method'
+    raise NoMethodError, 'Please implement the AssemblyLine#working_items_per_minute method'
   end
 end
