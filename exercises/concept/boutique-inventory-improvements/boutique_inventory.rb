@@ -4,13 +4,13 @@ class BoutiqueInventory
   def initialize(items)
     @items = items
 
-    raise NoMethodError, "Refactor this code so that items is an array of openstructs"
+    raise "Refactor this code so that items is an array of openstructs"
   end
 
   def item_names
     items.map { |item| item[:name] }.sort
 
-    raise NoMethodError, "Refactor the code in item_names"
+    raise "Refactor the code in item_names"
   end
 
   def total_stock
@@ -18,6 +18,6 @@ class BoutiqueInventory
       item[:quantity_by_size].values.sum
     end
 
-    raise NoMethodError, "Refactor the code in total_stock"
+    raise "Refactor the code in total_stock"
   end
 end
