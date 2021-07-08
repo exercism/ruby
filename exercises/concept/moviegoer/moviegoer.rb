@@ -11,15 +11,15 @@ class Moviegoer
   end
 
   def ticket_price
-    raise NoMethodError, 'Please implement the Moviegoer#ticket_price method'
+    raise 'Please implement the Moviegoer#ticket_price method'
   end
 
   def watch_scary_movie?
-    raise NoMethodError, 'Please implement the Moviegoer#watch_scary_movie method'
+    raise 'Please implement the Moviegoer#watch_scary_movie method'
   end
 
   # Popcorn is 🍿
   def claim_free_popcorn!
-    raise NoMethodError, 'Please implement the Moviegoer#claim_free_popcorn method'
+    raise 'Please implement the Moviegoer#claim_free_popcorn method'
   end
 end
