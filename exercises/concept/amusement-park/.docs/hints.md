@@ -21,7 +21,7 @@ About instance variables:
 
 - Create a getter for the saved height state.
 
-## 3. What is the ride pass's id
+## 3. What is the ride pass id
 
 - Create a getter for the pass id.
 - It is okay and expected to return `nil` before a pass is issued to the `Attendee`.
