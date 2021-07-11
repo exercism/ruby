@@ -26,7 +26,7 @@
 - You can use the [mathematical operator for addition][operators] to add values.
 
 [methods]: https://launchschool.com/books/ruby/read/methods
-[return]: https://www.freecodecamp.org/news/idiomatic-ruby-writing-beautiful-code-6845c830c664/
+[return]: https://www.freecodecamp.org/news/idiomatic-ruby-writing-beautiful-code-6845c830c664/#implicit-return
 [operators]: https://www.w3resource.com/ruby/ruby-arithmetic-operators.php
 [constants]: https://www.rubyguides.com/2017/07/ruby-constants/
 [invocation]: http://ruby-for-beginners.rubymonstas.org/objects/calling.html
