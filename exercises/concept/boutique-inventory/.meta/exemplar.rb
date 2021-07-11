@@ -13,7 +13,7 @@ class BoutiqueInventory
 
   def out_of_stock
     items.select do |item|
-      item[:quantity_by_size].none {|size, quantity| quantity > 0 }
+      item[:quantity_by_size].none? {|size, quantity| quantity > 0 }
     end
   end
 
