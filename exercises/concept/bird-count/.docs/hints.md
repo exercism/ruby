@@ -2,7 +2,7 @@
 
 ## General
 
-- The bird count per day is stored in a [instance variable][instace-variable] named `birds_per_day`.
+- The bird count per day is stored in a [instance variable][instance-variables] named `birds_per_day`.
 - The bird count per day is an array that contains exactly 7 integers.
 
 ## 1. Check what the counts were last week
@@ -25,7 +25,7 @@
 
 ## 5. Check if there was a day with no visiting birds
 
-- There are some methods that can be use to check the existence on an element on a colection. For example [Enumerable#any?][enumerable-any] and [Enumerable#all?][enumerable-all]
+- There are some methods that can be use to check the existence on an element on a collection. For example [Enumerable#any?][enumerable-any] and [Enumerable#all?][enumerable-all]
 
 [instance-variables]: http://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html
 [class-method]: http://www.rubyfleebie.com/2007/04/09/understanding-class-methods-in-ruby/

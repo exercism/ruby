@@ -63,7 +63,7 @@ Exception
 ```
 
 Rescuing errors of a specific class also rescues errors of its children. This is why rescuing from `Exception` can be dangerous.
-Ruby uses exceptions toalso handle messages from the operative system "Signals", for example `ctrl-c`. This means that rescuing from `Exception` will also capture this system "Signals". So in order to prevent unexpected behaviours the common practice to capture "all errors" is to rescue form `StandardError`.
+Ruby uses exceptions to also handle messages from the operative system "Signals", for example `ctrl-c`. This means that rescuing from `Exception` will also capture this system "Signals". So in order to prevent unexpected behaviours the common practice to capture "all errors" is to rescue form `StandardError`.
 
 ## Rescue Syntax
 Ruby also provide extended rescue clauses for situations that require an special treatment:

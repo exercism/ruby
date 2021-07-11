@@ -15,7 +15,7 @@
 
 - You need to define a [method][methods] with a single parameter for the number of layers.
 - You can [implicitly return an integer][return] from the method.
-- You can use the [mathematical operator for multiplicaton][operators] to multiply values.
+- You can use the [mathematical operator for multiplication][operators] to multiply values.
 - You could define an extra constant for the time in minutes per layer, or use a "magic number" in the code.
 
 ## 4. Calculate the total working time in minutes

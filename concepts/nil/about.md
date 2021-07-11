@@ -40,7 +40,7 @@ end
 ```
 
 - Why use getters and setters rather than the instance variable directly?
-  - If there was a typogrpahical error (we call this "typo") in the previous example (e.g. `@ownar`), it would silently be assigned `nil`, potentially introducing a bug into the system.
+  - If there was a typographical error (we call this "typo") in the previous example (e.g. `@ownar`), it would silently be assigned `nil`, potentially introducing a bug into the system.
   - Getters and setters make this explicit, and will raise an error when a typo is made
 
 ## References

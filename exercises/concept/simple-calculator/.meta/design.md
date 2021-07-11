@@ -21,7 +21,7 @@ The goal of this exercise is to teach the student the Concept of Exceptions in R
 
 - `exceptions`: know what exceptions are; know when an exception should be raised; know how to raised an exception; know how to rescue an when to re-raise an exception; know the most important built-in exceptions (`Error`, `StandardError`, `ArgumentError`); know how to create custom exceptions
 
-## Prequisites
+## Prerequisites
 
 - `basics`: know how to do string interpolation and how to work with `int`s
 - `inheritance`: know about class hierarchies

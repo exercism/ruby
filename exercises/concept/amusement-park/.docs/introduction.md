@@ -12,7 +12,7 @@ For example:
 ```ruby
 class Repeater
   def hear(something)
-    # Save what's been heard into a new instance varaible called @heard
+    # Save what's been heard into a new instance variable called @heard
     @heard = something
   end
 
