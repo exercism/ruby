@@ -1,7 +1,7 @@
 # Introduction
 
 Like everything in Ruby, a `String` is an object.
-Strings are made up of an arbitrary sequence of byte (normally characters) and are initialized and manipulated like any other object.
+Strings are made up of an arbitrary sequence of bytes (normally characters) and are initialized and manipulated like any other object.
 In fact, one of the most useful things about Ruby is the numerous methods that can be called on strings (and other objects) to save you a lot of time writing code. 
 In this method we're going to explore and play with some of those helper methods.
 
@@ -54,7 +54,7 @@ str[1, 3]         #=> "ome"
 str.slice(1, 3)   #=> "ome"
 ```
 
-The semantic values of strings can also be maniplulated.
+The semantic values of strings can also be manipulated.
 It's worth exploring the Ruby docs to learn about all the methods, but here are a few commonly used examples:
 ```
 "hello".capitalize   #=> "Hello"
@@ -75,7 +75,7 @@ You can also use methods such as `gsub` to substitute characters:
 ```
 
 In all of the examples above, a new string is returned.
-However, many methods have equivelants which end in `!` which actually modify the string itself.
+However, many methods have equivalents which end in `!` which actually modify the string itself.
 
 ```
 # Use normal methods to return new strings
