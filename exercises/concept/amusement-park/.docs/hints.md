@@ -2,12 +2,7 @@
 
 ## General
 
-About initializing object instances:
-
 - [Ruby Guides: Initialize Method][rg-initialize-method]
-
-About instance variables:
-
 - [Ruby For Beginners: Instance variables][rfb-instance-variables]
 - [Ruby Guides: Instance variables][rg-instance-variables]
 - [Ruby User's Guide: Instance variables][rug-instance-variables]
