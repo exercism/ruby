@@ -55,7 +55,7 @@ str.slice(1, 3)   #=> "ome"
 ```
 
 The semantic values of strings can also be manipulated.
-It's worth exploring the Ruby docs to learn about all the methods, but here are a few commonly used examples:
+It's worth exploring the [Ruby docs][docs-string] to learn about all the methods, but here are a few commonly used examples:
 ```
 "hello".capitalize   #=> "Hello"
 "HELLO".downcase     #=> "hello"
@@ -88,3 +88,5 @@ str = "hello"
 str.capitalize!  #=> nil
 puts str         #=> "HELLO"
 ```
+
+[docs-string]: https://ruby-doc.org/core-2.7.0/String.html
