@@ -5,7 +5,7 @@ It covers a lot of ground, but don't worry if it feels overwhelming, we'll go in
 
 One of the key things to understand about Ruby is that it is an [object-oriented language][object-oriented-programming], and that **everything in Ruby is an [object][object]**. Numbers, strings, methods - they're all objects.
 
-## Varables and Constants
+## Variables and Constants
 
 We tend to make use of objects by assigning them names, either using variables or constants.
 

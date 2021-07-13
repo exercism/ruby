@@ -2,12 +2,7 @@
 
 ## General
 
-About initializing object instances:
-
 - [Ruby Guides: Initialize Method][rg-initialize-method]
-
-About instance variables:
-
 - [Ruby For Beginners: Instance variables][rfb-instance-variables]
 - [Ruby Guides: Instance variables][rg-instance-variables]
 - [Ruby User's Guide: Instance variables][rug-instance-variables]
@@ -21,18 +16,18 @@ About instance variables:
 
 - Create a getter for the saved height state.
 
-## 3. What is the ride pass's id
+## 3. What is the ride pass id
 
 - Create a getter for the pass id.
 - It is okay and expected to return `nil` before a pass is issued to the `Attendee`.
 
 ## 4. Allow people to buy a pass
 
-- Using the `Attendee#issue_pass!` method, set the instance's state to the argument.
+- In the `Attendee#issue_pass!` method, set the instance's state to the argument.
 
 ## 4. Revoke the pass
 
-- Using the `Attendee#revoke_pass!` setter method set the instance's state so that no pass exists.
+- In the `Attendee#revoke_pass!` setter method set the instance's state so that no pass exists.
 
 [rfb-instance-variables]: http://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html
 [rg-initialize-method]: https://www.rubyguides.com/2019/01/ruby-initialize-method/

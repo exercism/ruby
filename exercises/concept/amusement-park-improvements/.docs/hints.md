@@ -2,8 +2,6 @@
 
 ## General
 
-Review:
-
 - [Ruby for beginners: Nothingness and the truth][rfb-nothingness-and-truth]
 
 ## 1. Check if an attendee has a ride pass

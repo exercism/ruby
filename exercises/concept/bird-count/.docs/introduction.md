@@ -66,7 +66,7 @@ cat
 sat
 ```
 
-In this example, we have called the `.each` method on our array and passed in a _block_ that takes one paramater (`word`) and prints it out.
+In this example, we have called the `.each` method on our array and passed in a _block_ that takes one parameter (`word`) and prints it out.
 
 We'll look at _blocks_ in much more depth later in the Track, but for now think of them as anonymous functions that can take zero or more arguments.
 They can be defined using the `do...end` syntax (above), or the `{}` syntax (below).

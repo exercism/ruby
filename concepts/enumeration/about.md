@@ -45,7 +45,7 @@ Enumerating `Hash` objects is exactly the same as enumerating `Array` objects, e
 pet_names = {cat: "bob", horse: "caris", mouse: "arya"}
 words.each { |animal, name| ... }
 
-# The two arguments should be put in brakets when chaining
+# The two arguments should be put in brackets when chaining
 words.each.with_index { |(animal, name), index| ... }
 ```
 

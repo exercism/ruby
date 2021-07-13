@@ -61,7 +61,7 @@ module Generator
       mock_canonical.verify
     end
 
-    def test_method_mising_calls_super
+    def test_method_missing_calls_super
       mock_canonical = Minitest::Mock.new
       subject = ExerciseCase.new(canonical: mock_canonical)
       error = assert_raises NoMethodError do
