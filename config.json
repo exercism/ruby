@@ -43,8 +43,7 @@
         "concepts": [
           "basics"
         ],
-        "prerequisites": [],
-        "status": "wip"
+        "prerequisites": []
       },
       {
         "slug": "amusement-park",
@@ -56,8 +55,7 @@
         ],
         "prerequisites": [
           "basics"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "amusement-park-improvements",
@@ -69,8 +67,7 @@
         "prerequisites": [
           "instance-variables",
           "nil"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "log-line-parser",
@@ -81,8 +78,7 @@
         ],
         "prerequisites": [
           "basics"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "assembly-line",
@@ -95,8 +91,7 @@
         ],
         "prerequisites": [
           "booleans"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "savings-account",
@@ -110,8 +105,7 @@
           "numbers",
           "floating-point-numbers",
           "conditionals"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "bird-count",
@@ -125,8 +119,7 @@
           "instance-variables",
           "booleans",
           "conditionals"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "boutique-inventory",
@@ -138,8 +131,7 @@
         "prerequisites": [
           "enumeration",
           "hashes"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "boutique-inventory-improvements",
@@ -150,8 +142,7 @@
         ],
         "prerequisites": [
           "advanced-enumeration"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "moviegoer",
@@ -161,8 +152,7 @@
         "prerequisites": [
           "basics",
           "conditionals"
-        ],
-        "status": "wip"
+        ]
       },
       {
         "slug": "simple-calculator",
@@ -171,8 +161,7 @@
         "concepts": [],
         "prerequisites": [
           "basics"
-        ],
-        "status": "wip"
+        ]
       }
     ],
     "practice": [
