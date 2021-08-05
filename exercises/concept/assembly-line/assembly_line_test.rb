@@ -6,12 +6,32 @@ class AssemblyLineTest < Minitest::Test
     assert_equal 221.0, AssemblyLine.new(1).production_rate_per_hour
   end
 
+  def test_production_rate_per_hour_for_speed_two
+    assert_equal 442.0, AssemblyLine.new(2).production_rate_per_hour
+  end
+
+  def test_production_rate_per_hour_for_speed_three
+    assert_equal 663.0, AssemblyLine.new(3).production_rate_per_hour
+  end
+
   def test_production_rate_per_hour_for_speed_four
     assert_equal 884.0, AssemblyLine.new(4).production_rate_per_hour
   end
 
+  def test_production_rate_per_hour_for_speed_five
+    assert_equal 994.5, AssemblyLine.new(5).production_rate_per_hour
+  end
+
+  def test_production_rate_per_hour_for_speed_six
+    assert_equal 1193.4, AssemblyLine.new(6).production_rate_per_hour
+  end
+
   def test_production_rate_per_hour_for_speed_seven
     assert_equal 1392.3, AssemblyLine.new(7).production_rate_per_hour
+  end
+
+  def test_production_rate_per_hour_for_speed_eight
+    assert_equal 1591.2, AssemblyLine.new(8).production_rate_per_hour
   end
 
   def test_production_rate_per_hour_for_speed_nine

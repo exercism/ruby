@@ -2,13 +2,13 @@
 
 ## General
 
-## 1. Calculate the production rate per second
+## 1. Calculate the production rate per hour
 
 - Determining the success rate can be done through a [conditional statement][if-else-unless].
 - Multiplication can be done between instances of `Integer` and `Float`. The result will always be an instance of `Float`.
 - Numbers can be compared using the built-in [comparison-operators][comparison-operators].
 
-## 2. Calculate the number of working items produced per second
+## 2. Calculate the number of working items produced per minute
 
 - The `Float` class implements a [method][to_i] to return an instance of `Integer`.
 - The `Integer` class implements a [method][to_f] to return an instance of `Float`.
