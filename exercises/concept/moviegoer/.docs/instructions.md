@@ -22,9 +22,9 @@ Moviegoer.new(65).ticket_price
 
 The cinema has a simplified age-verification system.
 If you are 18 or over you can watch scary movies.
-If you are younger, an exception is raised.
+If you are younger, you cannot.
 
-Implement the `Moviegoer.watch_scary_movie!` method.
+Implement the `Moviegoer.watch_scary_movie?` method.
 It should return whether someone is allowed to watch the movie or not.
 
 ```ruby
@@ -37,7 +37,7 @@ Moviegoer.new(17).watch_scary_movie?
 
 ## 3. Check if a moviegoer is entitled to free popcorn
 
-The cinema has Movie Club program.
+The cinema has a Movie Club program.
 Members get free popcorn when they watch any movie.
 
 Implement the `Moviegoer.claim_free_popcorn!` method.

@@ -147,7 +147,7 @@
         "slug": "moviegoer",
         "name": "Moviegoer",
         "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
-        "concepts": ["ternary-operator", "raising-exceptions"],
+        "concepts": ["ternary-operator", "exceptions"],
         "prerequisites": [
           "basics",
           "conditionals"
