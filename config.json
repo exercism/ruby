@@ -1606,32 +1606,32 @@
   ],
   "key_features": [
     {
-      "icon": "",
+      "icon": "fun",
       "title": "Developer happiness",
       "content": "Ruby puts developer-happiness first. It has an elegant syntax that is natural to read and write."
     },
     {
-      "icon": "",
+      "icon": "extensible",
       "title": "Metaprogramming magic",
       "content": "Ruby code can write and invoke Ruby code."
     },
     {
-      "icon": "",
+      "icon": "garbage-collected",
       "title": "Garbage Collection",
       "content": "Garbage collection done via mark and sweep, stays out of your way."
     },
     {
-      "icon": "",
+      "icon": "powerful",
       "title": "Large standard library",
       "content": "Ruby's standard library provides a wealth of classes utilities for common tasks."
     },
     {
-      "icon": "",
+      "icon": "tooling",
       "title": "Flexible package manager",
       "content": "Packages (gems) can be centrally managed, but can also include custom or private gem stores."
     },
     {
-      "icon": "",
+      "icon": "dynamically-typed",
       "title": "Strong, dynamic typing",
       "content": "Ruby is strong and dynamically typed and supports 'Duck Typing'. Everything in Ruby is an object"
     }
