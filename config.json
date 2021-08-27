@@ -170,7 +170,7 @@
         "slug": "series",
         "name": "Series",
         "uuid": "2de036e4-576d-47fc-bb03-4ed1612e79da",
-        "practices": ["arrays", "blocks", "loops", "exceptions"],
+        "practices": ["arrays", "exceptions"],
         "prerequisites": [
           "arrays",
           "strings",
@@ -241,7 +241,7 @@
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "bee97539-b8c1-460e-aa14-9336008df2b6",
-        "practices": ["chars", "loops"],
+        "practices": ["chars"],
         "prerequisites": ["strings", "chars", "loops", "numbers"],
         "difficulty": 2,
         "topics": ["algorithms", "integers", "strings"]
@@ -350,7 +350,7 @@
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "5c797eb2-155d-47ca-8f85-2ba5803f9713",
-        "practices": ["floating-point-numbers", "conditionals"],
+        "practices": ["floating-point-numbers"],
         "prerequisites": ["floating-point-numbers", "conditionals", "booleans"],
         "difficulty": 3,
         "topics": ["booleans", "conditionals", "logic"]
@@ -530,7 +530,7 @@
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "3c5193ab-6471-4be2-9d24-1d2b51ad822a",
-        "practices": ["arrays"],
+        "practices": ["string-formatting"],
         "prerequisites": ["strings", "arrays", "loops"],
         "difficulty": 4,
         "topics": ["arrays", "loops", "strings"]
@@ -575,7 +575,7 @@
         "slug": "nth-prime",
         "name": "Nth Prime",
         "uuid": "16baef71-6234-4928-a2d4-a19eb8e110b8",
-        "practices": ["lazy-evaluation", "blocks"],
+        "practices": ["lazy-evaluation"],
         "prerequisites": ["numbers", "exceptions"],
         "difficulty": 3,
         "topics": ["algorithms", "integers", "math"]
@@ -602,7 +602,7 @@
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "b1ba445d-4908-4922-acc0-de3a0ec92c53",
-        "practices": ["arrays", "loops"],
+        "practices": ["loops"],
         "prerequisites": ["arrays", "numbers", "loops"],
         "difficulty": 5,
         "topics": ["algorithms", "arrays", "searching", "sorting"]
@@ -634,7 +634,7 @@
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "3ce4bd3e-0380-498a-8d0a-b79cf3fedc10",
-        "practices": ["loops", "arrays", "math-operators"],
+        "practices": ["loops", "math-operators"],
         "prerequisites": [
           "numbers",
           "loops",
@@ -732,7 +732,7 @@
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
-        "practices": ["conditionals", "string-formatting"],
+        "practices": ["string-formatting"],
         "prerequisites": ["strings", "numbers", "loops"],
         "difficulty": 3,
         "topics": ["loops", "strings", "text_formatting"]
@@ -938,7 +938,7 @@
         "slug": "affine-cipher",
         "name": "Affine Cipher",
         "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
-        "practices": ["loops", "enumeration"],
+        "practices": ["enumeration"],
         "prerequisites": ["strings", "numbers", "exceptions"],
         "difficulty": 3,
         "topics": ["cryptography", "math", "strings"]
@@ -1087,7 +1087,7 @@
         "slug": "ocr-numbers",
         "name": "Ocr Numbers",
         "uuid": "dd13bb29-589c-497d-9580-3f288f353fb2",
-        "practices": ["arrays", "loops", "chars"],
+        "practices": ["chars"],
         "prerequisites": [
           "strings",
           "chars",
@@ -1102,7 +1102,7 @@
         "slug": "say",
         "name": "Say",
         "uuid": "2a410923-6445-41fc-9cf3-a60209e1c1c2",
-        "practices": ["integral-numbers", "loops", "conditionals"],
+        "practices": ["integral-numbers", "conditionals"],
         "prerequisites": [
           "integral-numbers",
           "strings",
@@ -1126,7 +1126,7 @@
         "slug": "grep",
         "name": "Grep",
         "uuid": "4ad4ea80-945d-4b37-b40c-bd05bed82266",
-        "practices": ["conditionals", "conditionals"],
+        "practices": ["conditionals"],
         "prerequisites": ["strings", "conditionals", "string-formatting"],
         "difficulty": 8,
         "topics": [
@@ -1163,7 +1163,7 @@
         "slug": "pascals-triangle",
         "name": "Pascals Triangle",
         "uuid": "4ff8b056-f27d-4bdf-b7af-214448db4260",
-        "practices": ["blocks", "enumerables"],
+        "practices": ["enumerables"],
         "prerequisites": ["loops", "enumerables", "numbers"],
         "difficulty": 4,
         "topics": ["algorithms", "arrays", "math", "recursion"]
@@ -1207,7 +1207,7 @@
         "slug": "connect",
         "name": "Connect",
         "uuid": "538a6768-bae5-437c-9cdf-765d73a79643",
-        "practices": ["symbols", "conditionals"],
+        "practices": ["symbols"],
         "prerequisites": [
           "strings",
           "chars",
