@@ -146,8 +146,8 @@
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "9124339c-94fb-46eb-aad2-25944214799d",
-        "practices": ["lists", "ordering", "linq"],
-        "prerequisites": ["lists", "ordering", "constructors", "numbers"],
+        "practices": ["arrays", "ordering", "advanced-enumeration"],
+        "prerequisites": ["arrays", "ordering", "constructors", "numbers"],
         "difficulty": 2,
         "topics": ["arrays"]
       },
@@ -155,8 +155,8 @@
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "3de21c18-a533-4150-8a73-49df8fcb8c61",
-        "practices": ["properties", "classes", "arrays"],
-        "prerequisites": ["arrays", "classes", "numbers", "properties"],
+        "practices": ["instance-variables", "classes", "arrays"],
+        "prerequisites": ["arrays", "classes", "numbers", "instance-variables"],
         "difficulty": 4,
         "topics": [
           "arrays",
@@ -170,7 +170,7 @@
         "slug": "series",
         "name": "Series",
         "uuid": "2de036e4-576d-47fc-bb03-4ed1612e79da",
-        "practices": ["arrays", "yield", "loops", "exceptions"],
+        "practices": ["arrays", "blocks", "loops", "exceptions"],
         "prerequisites": [
           "arrays",
           "strings",
@@ -185,8 +185,8 @@
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "e9d29769-8d4d-4159-8d6f-762db5339707",
-        "practices": ["dictionaries", "regular-expressions"],
-        "prerequisites": ["strings", "dictionaries", "numbers"],
+        "practices": ["hashes", "regular-expressions"],
+        "prerequisites": ["strings", "hashes", "numbers"],
         "difficulty": 3,
         "topics": ["enumerable", "hash", "loops"]
       },
@@ -194,7 +194,12 @@
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "d33dec8a-e2b4-40bc-8be9-3f49de084d43",
-        "practices": ["conditionals", "loops", "linq", "exceptions"],
+        "practices": [
+          "conditionals",
+          "loops",
+          "advanced-enumeration",
+          "exceptions"
+        ],
         "prerequisites": [
           "conditionals",
           "loops",
@@ -227,7 +232,7 @@
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "d934ebce-9ac3-4a41-bcb8-d70480170438",
-        "practices": ["dictionaries"],
+        "practices": ["hashes"],
         "prerequisites": ["numbers", "strings"],
         "difficulty": 2,
         "topics": ["loops", "maps", "strings"]
@@ -269,8 +274,8 @@
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "486becee-9d85-4139-ab89-db254d385ade",
-        "practices": ["streams", "string-formatting"],
-        "prerequisites": ["streams", "strings", "string-formatting"],
+        "practices": ["string-formatting"],
+        "prerequisites": ["strings", "string-formatting"],
         "difficulty": 3,
         "topics": [
           "integers",
@@ -286,8 +291,8 @@
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "0fb594a1-193b-4ccf-8de2-eb6a81708b29",
-        "practices": ["datetimes"],
-        "prerequisites": ["datetimes", "numbers"],
+        "practices": ["time"],
+        "prerequisites": ["time", "numbers"],
         "difficulty": 1,
         "topics": ["time"]
       },
@@ -304,7 +309,7 @@
         "slug": "rna-transcription",
         "name": "Rna Transcription",
         "uuid": "41f66d2a-1883-4a2c-875f-663c46fa88aa",
-        "practices": ["chars", "linq"],
+        "practices": ["chars", "advanced-enumeration"],
         "prerequisites": ["chars", "strings"],
         "difficulty": 2,
         "topics": ["maps", "transforming"]
@@ -354,7 +359,7 @@
         "slug": "difference-of-squares",
         "name": "Difference Of Squares",
         "uuid": "f1e4ee0c-8718-43f2-90a5-fb1e915288da",
-        "practices": ["linq", "math-operators", "numbers"],
+        "practices": ["advanced-enumeration", "math-operators", "numbers"],
         "prerequisites": ["numbers", "math-operators"],
         "difficulty": 2,
         "topics": ["algorithms", "math"]
@@ -372,11 +377,11 @@
         "slug": "sum-of-multiples",
         "name": "Sum Of Multiples",
         "uuid": "4fc25295-5d6a-4d13-9b87-064167d8980e",
-        "practices": ["enumerables", "enumeration-loops", "numbers"],
+        "practices": ["enumerables", "enumeration", "numbers"],
         "prerequisites": [
           "enumerables",
           "numbers",
-          "enumeration-loops",
+          "enumeration",
           "conditionals"
         ],
         "difficulty": 5,
@@ -404,8 +409,8 @@
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "2df8ed82-2a04-4112-a17b-7813bcdc0e84",
-        "practices": ["enumerables", "recursion", "enumeration-loops"],
-        "prerequisites": ["enumerables", "enumeration-loops"],
+        "practices": ["enumerables", "recursion", "enumeration"],
+        "prerequisites": ["enumerables", "enumeration"],
         "difficulty": 3,
         "topics": ["arrays", "recursion"]
       },
@@ -458,14 +463,8 @@
         "slug": "saddle-points",
         "name": "Saddle Points",
         "uuid": "38bb4ac6-a5ec-4448-8b86-cdaff13a8be3",
-        "practices": ["multi-dimensional-arrays", "tuples"],
-        "prerequisites": [
-          "multi-dimensional-arrays",
-          "tuples",
-          "enumerables",
-          "generic-methods",
-          "numbers"
-        ],
+        "practices": ["arrays"],
+        "prerequisites": ["arrays", "enumerables", "numbers"],
         "difficulty": 5,
         "topics": ["arrays", "integers", "matrices", "searching"]
       },
@@ -473,8 +472,8 @@
         "slug": "etl",
         "name": "Etl",
         "uuid": "0d66f3db-69a4-44b9-80be-9366f8b189ec",
-        "practices": ["linq", "dictionaries"],
-        "prerequisites": ["strings", "numbers", "dictionaries"],
+        "practices": ["advanced-enumeration", "hashes"],
+        "prerequisites": ["strings", "numbers", "hashes"],
         "difficulty": 4,
         "topics": ["loops", "maps", "transforming"]
       },
@@ -482,13 +481,13 @@
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "8ad2bffd-1d79-4e1f-8ef3-ece0214d2804",
-        "practices": ["dictionaries", "exceptions"],
+        "practices": ["hashes", "exceptions"],
         "prerequisites": [
-          "dictionaries",
+          "hashes",
           "strings",
           "chars",
           "conditionals",
-          "enumeration-loops",
+          "enumeration",
           "exceptions"
         ],
         "difficulty": 4,
@@ -498,9 +497,10 @@
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "43aad536-0e24-464c-9554-cbc2699d0543",
-        "practices": ["tuples", "generic-methods"],
+        "practices": ["classes", "constructors"],
         "prerequisites": [
-          "tuples",
+          "classes",
+          "constructors",
           "numbers",
           "enumerables",
           "generic-methods"
@@ -539,13 +539,8 @@
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "abd68340-91b9-48c1-8567-79822bb2165c",
-        "practices": ["tuples", "generic-methods"],
-        "prerequisites": [
-          "enumerables",
-          "generic-methods",
-          "tuples",
-          "numbers"
-        ],
+        "practices": ["loops"],
+        "prerequisites": ["enumerables", "numbers", "loops"],
         "difficulty": 6,
         "topics": ["algorithms", "math"]
       },
@@ -553,30 +548,16 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "2c71fc3a-2c93-402b-b091-697b795ce3ba",
-        "practices": [
-          "lambdas",
-          "enumeration",
-          "yield",
-          "extension-methods",
-          "generic-methods",
-          "enumerables"
-        ],
-        "prerequisites": [
-          "lambdas",
-          "generic-types",
-          "generic-methods",
-          "enumeration",
-          "enumerables",
-          "extension-methods"
-        ],
+        "practices": ["lambdas", "enumeration", "blocks", "enumerables"],
+        "prerequisites": ["lambdas", "enumeration", "enumerables"],
         "difficulty": 1,
-        "topics": ["lists"]
+        "topics": ["arrays"]
       },
       {
         "slug": "bob",
         "name": "Bob",
         "uuid": "70fec82e-3038-468f-96ef-bfb48ce03ef3",
-        "practices": ["strings", "extension-methods"],
+        "practices": ["strings"],
         "prerequisites": ["strings", "conditionals"],
         "difficulty": 2,
         "topics": ["conditionals", "strings"]
@@ -585,18 +566,8 @@
         "slug": "strain",
         "name": "Strain",
         "uuid": "ac0966a9-822b-45be-91d9-36f6706ea76f",
-        "practices": [
-          "generic-methods",
-          "higher-order-functions",
-          "yield",
-          "lazy-evaluation"
-        ],
-        "prerequisites": [
-          "generic-types",
-          "generic-methods",
-          "numbers",
-          "higher-order-functions"
-        ],
+        "practices": ["higher-order-functions", "blocks", "lazy-evaluation"],
+        "prerequisites": ["numbers", "higher-order-functions"],
         "difficulty": 2,
         "topics": ["arrays", "filtering", "loops"]
       },
@@ -604,7 +575,7 @@
         "slug": "nth-prime",
         "name": "Nth Prime",
         "uuid": "16baef71-6234-4928-a2d4-a19eb8e110b8",
-        "practices": ["lazy-evaluation", "yield"],
+        "practices": ["lazy-evaluation", "blocks"],
         "prerequisites": ["numbers", "exceptions"],
         "difficulty": 3,
         "topics": ["algorithms", "integers", "math"]
@@ -614,7 +585,7 @@
         "name": "Perfect Numbers",
         "uuid": "76ad732a-6e58-403b-ac65-9091d355241f",
         "practices": ["numbers"],
-        "prerequisites": ["enums", "numbers", "exceptions"],
+        "prerequisites": ["symbols", "numbers", "exceptions"],
         "difficulty": 4,
         "topics": ["algorithms", "filtering", "integers", "math"]
       },
@@ -640,8 +611,13 @@
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "e5a2d445-437d-46a8-889b-fbcd62c70fa9",
-        "practices": ["properties", "constructors"],
-        "prerequisites": ["enums", "constructors", "properties", "numbers"],
+        "practices": ["instance-variables", "constructors"],
+        "prerequisites": [
+          "symbols",
+          "constructors",
+          "instance-variables",
+          "numbers"
+        ],
         "difficulty": 5,
         "topics": ["algorithms", "conditionals", "searching"]
       },
@@ -673,8 +649,8 @@
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "4134d491-8ec5-480b-aa61-37a02689db1f",
-        "practices": ["enumeration-loops"],
-        "prerequisites": ["strings", "arrays", "enumeration-loops"],
+        "practices": ["enumeration"],
+        "prerequisites": ["strings", "arrays", "enumeration"],
         "difficulty": 3,
         "topics": ["pattern_matching", "strings"]
       },
@@ -682,9 +658,9 @@
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "7a67a62f-9331-4776-a5b5-aaba7ad1e1e6",
-        "practices": ["bit-manipulation", "enums", "flag-enums"],
+        "practices": ["bit-manipulation", "symbols"],
         "prerequisites": [
-          "enums",
+          "symbols",
           "arrays",
           "booleans",
           "bit-manipulation",
@@ -715,12 +691,7 @@
         "name": "Run Length Encoding",
         "uuid": "9d6a8c89-41c1-4c4e-b24c-476ba0dfa5f9",
         "practices": ["strings"],
-        "prerequisites": [
-          "strings",
-          "conditionals",
-          "enumeration-loops",
-          "booleans"
-        ],
+        "prerequisites": ["strings", "conditionals", "enumeration", "booleans"],
         "difficulty": 4,
         "topics": ["parsing", "strings", "transforming"]
       },
@@ -744,18 +715,14 @@
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "724e6a6e-2e6e-45a9-ab0e-0d8d50a06085",
-        "practices": [
-          "switch-statements",
-          "switch-expressions",
-          "constructors"
-        ],
+        "practices": ["conditionals", "constructors"],
         "prerequisites": [
-          "enums",
+          "symbols",
           "classes",
           "constructors",
-          "properties",
+          "instance-variables",
           "chars",
-          "switch-statements",
+          "conditionals",
           "exceptions"
         ],
         "difficulty": 6,
@@ -765,7 +732,7 @@
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
-        "practices": ["switch-statements", "string-formatting"],
+        "practices": ["conditionals", "string-formatting"],
         "prerequisites": ["strings", "numbers", "loops"],
         "difficulty": 3,
         "topics": ["loops", "strings", "text_formatting"]
@@ -774,7 +741,7 @@
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "607a3515-e53b-427f-8e3b-1e22912fa29a",
-        "practices": ["loops", "linq"],
+        "practices": ["loops", "advanced-enumeration"],
         "prerequisites": ["strings", "loops", "arrays", "exceptions"],
         "difficulty": 3,
         "topics": ["filtering", "maps", "sequences"]
@@ -783,7 +750,7 @@
         "slug": "wordy",
         "name": "Wordy",
         "uuid": "cb58e4cf-e3af-469c-9f2d-02557b9f61ed",
-        "practices": ["switch-statements", "regular-expressions"],
+        "practices": ["conditionals", "regular-expressions"],
         "prerequisites": ["strings", "numbers", "exceptions"],
         "difficulty": 3,
         "topics": [
@@ -807,8 +774,8 @@
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "1e737640-9785-4a47-866a-46298104d891",
-        "practices": ["enumeration-loops"],
-        "prerequisites": ["strings", "chars", "enumeration-loops"],
+        "practices": ["enumeration"],
+        "prerequisites": ["strings", "chars", "enumeration"],
         "difficulty": 3,
         "topics": ["algorithms", "cryptography", "strings", "transforming"]
       },
@@ -817,7 +784,7 @@
         "name": "Crypto Square",
         "uuid": "86f8e33d-31b7-43e3-8ea3-2e391133704a",
         "practices": ["enumerables"],
-        "prerequisites": ["strings", "enumerables", "generic-methods"],
+        "prerequisites": ["strings", "enumerables"],
         "difficulty": 3,
         "topics": [
           "cryptography",
@@ -831,23 +798,12 @@
         "slug": "list-ops",
         "name": "List Ops",
         "uuid": "f62e8acb-8370-46e1-ad7f-a6a2644f8602",
-        "practices": [
-          "higher-order-functions",
-          "generic-methods",
-          "lists",
-          "parameters"
-        ],
-        "prerequisites": [
-          "parameters",
-          "lists",
-          "generic-methods",
-          "generic-types",
-          "higher-order-functions"
-        ],
+        "practices": ["higher-order-functions", "arrays", "parameters"],
+        "prerequisites": ["parameters", "arrays", "higher-order-functions"],
         "difficulty": 3,
         "topics": [
           "functional_programming",
-          "lists",
+          "arrays",
           "recursion",
           "type_conversion"
         ]
@@ -865,11 +821,11 @@
         "slug": "simple-cipher",
         "name": "Simple Cipher",
         "uuid": "29c66e8a-b1b0-4bbd-be7b-9979ff51ba8f",
-        "practices": ["classes", "properties", "randomness"],
+        "practices": ["classes", "instance-variables", "randomness"],
         "prerequisites": [
           "strings",
           "classes",
-          "properties",
+          "instance-variables",
           "randomness",
           "loops",
           "exceptions"
@@ -887,8 +843,8 @@
         "slug": "dominoes",
         "name": "Dominoes",
         "uuid": "705f3eb6-55a9-476c-b3f2-e9f3cb0bbe37",
-        "practices": ["tuples", "lazy-evaluation"],
-        "prerequisites": ["enumerables", "tuples", "numbers", "booleans"],
+        "practices": ["lazy-evaluation"],
+        "prerequisites": ["enumerables", "numbers", "booleans"],
         "difficulty": 4,
         "topics": ["algorithms", "arrays", "searching"]
       },
@@ -905,18 +861,8 @@
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "fa7b91c2-842c-42c8-bdf9-00bb3e71a7f5",
-        "practices": [
-          "interfaces",
-          "generic-types",
-          "properties",
-          "enumerables"
-        ],
-        "prerequisites": [
-          "interfaces",
-          "generic-types",
-          "properties",
-          "numbers"
-        ],
+        "practices": ["interfaces", "instance-variables", "enumerables"],
+        "prerequisites": ["interfaces", "instance-variables", "numbers"],
         "difficulty": 4,
         "topics": ["arrays", "loops"]
       },
@@ -924,11 +870,10 @@
         "slug": "binary-search-tree",
         "name": "Binary Search Tree",
         "uuid": "0e05bfcf-17ae-4884-803a-fa1428bc1702",
-        "practices": ["generic-types", "properties", "constructors"],
+        "practices": ["instance-variables", "constructors"],
         "prerequisites": [
           "enumerables",
-          "generic-types",
-          "properties",
+          "instance-variables",
           "numbers",
           "classes",
           "constructors",
@@ -948,7 +893,7 @@
         "slug": "change",
         "name": "Change",
         "uuid": "dc6c3e44-1027-4d53-9653-ba06824f8bcf",
-        "practices": ["exceptions", "linq"],
+        "practices": ["exceptions", "advanced-enumeration"],
         "prerequisites": ["numbers", "arrays", "exceptions"],
         "difficulty": 5,
         "topics": ["algorithms", "arrays", "loops", "searching"]
@@ -957,14 +902,8 @@
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "f3419fe3-a5f5-4bc9-bc40-49f450b8981e",
-        "practices": ["queues", "generic-types", "exceptions"],
-        "prerequisites": [
-          "queues",
-          "classes",
-          "generic-types",
-          "numbers",
-          "exceptions"
-        ],
+        "practices": ["queues", "exceptions"],
+        "prerequisites": ["queues", "classes", "numbers", "exceptions"],
         "difficulty": 5,
         "topics": ["queues", "structs"]
       },
@@ -972,17 +911,17 @@
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "4460742c-2beb-48d7-94e6-72ff13c68c71",
-        "practices": ["dictionaries", "ordering"],
+        "practices": ["hashes", "ordering"],
         "prerequisites": ["strings", "numbers", "enumerables", "ordering"],
         "difficulty": 5,
-        "topics": ["lists", "sorting", "structs"]
+        "topics": ["arrays", "sorting", "structs"]
       },
       {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "b7ca9519-c33b-418b-a4ef-858a3d4d6855",
-        "practices": ["numbers", "loops", "extension-methods"],
-        "prerequisites": ["strings", "loops", "numbers", "extension-methods"],
+        "practices": ["numbers", "loops"],
+        "prerequisites": ["strings", "loops", "numbers"],
         "difficulty": 2,
         "topics": ["numbers", "transforming"]
       },
@@ -999,7 +938,7 @@
         "slug": "affine-cipher",
         "name": "Affine Cipher",
         "uuid": "d1267415-aff5-411d-b267-49a4a2c8fda2",
-        "practices": ["loops", "enumeration-loops"],
+        "practices": ["loops", "enumeration"],
         "prerequisites": ["strings", "numbers", "exceptions"],
         "difficulty": 3,
         "topics": ["cryptography", "math", "strings"]
@@ -1008,8 +947,8 @@
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "04bde625-e363-4d8b-880f-db7bf86286eb",
-        "practices": ["enums", "generic-methods"],
-        "prerequisites": ["strings", "enums", "enumerables", "generic-methods"],
+        "practices": ["symbols"],
+        "prerequisites": ["strings", "symbols", "enumerables"],
         "difficulty": 3,
         "topics": ["parsing", "records", "searching", "strings", "structs"]
       },
@@ -1067,8 +1006,8 @@
         "slug": "linked-list",
         "name": "Linked List",
         "uuid": "92c9aafc-791d-4aaf-a136-9bee14f6ff95",
-        "practices": ["generic-types"],
-        "prerequisites": ["numbers", "generic-types", "classes"],
+        "practices": [],
+        "prerequisites": ["numbers", "classes"],
         "difficulty": 4,
         "topics": ["data_structure", "pointer"]
       },
@@ -1077,13 +1016,7 @@
         "name": "Poker",
         "uuid": "9a59ba44-34f5-410b-a1e6-9a5c47c52d9e",
         "practices": ["ordering"],
-        "prerequisites": [
-          "enumerables",
-          "generic-methods",
-          "strings",
-          "ordering",
-          "conditionals"
-        ],
+        "prerequisites": ["enumerables", "strings", "ordering", "conditionals"],
         "difficulty": 5,
         "topics": [
           "equality",
@@ -1107,14 +1040,8 @@
         "slug": "complex-numbers",
         "name": "Complex Numbers",
         "uuid": "d75bd7c0-52c5-44f2-a046-f63cb332425f",
-        "practices": [
-          "structs",
-          "immutability",
-          "extension-methods",
-          "math-operators"
-        ],
+        "practices": ["structs", "immutability", "math-operators"],
         "prerequisites": [
-          "extension-methods",
           "numbers",
           "structs",
           "immutability",
@@ -1127,8 +1054,8 @@
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "8120e133-9561-4f82-8081-10c19f7f6ba3",
-        "practices": ["datetimes"],
-        "prerequisites": ["datetimes"],
+        "practices": ["dates", "time"],
+        "prerequisites": ["dates", "time"],
         "difficulty": 3,
         "topics": ["dates", "time", "transforming", "type_conversion"]
       },
@@ -1136,7 +1063,7 @@
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "c55c75fb-6140-4042-967a-39c75b7781bd",
-        "practices": ["chars", "string-formatting", "string-builder"],
+        "practices": ["chars", "string-formatting"],
         "prerequisites": ["strings", "string-formatting", "chars"],
         "difficulty": 4,
         "topics": [
@@ -1199,18 +1126,8 @@
         "slug": "grep",
         "name": "Grep",
         "uuid": "4ad4ea80-945d-4b37-b40c-bd05bed82266",
-        "practices": [
-          "flag-enums",
-          "conditionals",
-          "switch-statements",
-          "switch-expressions"
-        ],
-        "prerequisites": [
-          "strings",
-          "flag-enums",
-          "conditionals",
-          "string-formatting"
-        ],
+        "practices": ["conditionals", "conditionals"],
+        "prerequisites": ["strings", "conditionals", "string-formatting"],
         "difficulty": 8,
         "topics": [
           "files",
@@ -1246,7 +1163,7 @@
         "slug": "pascals-triangle",
         "name": "Pascals Triangle",
         "uuid": "4ff8b056-f27d-4bdf-b7af-214448db4260",
-        "practices": ["yield", "enumerables"],
+        "practices": ["blocks", "enumerables"],
         "prerequisites": ["loops", "enumerables", "numbers"],
         "difficulty": 4,
         "topics": ["algorithms", "arrays", "math", "recursion"]
@@ -1271,7 +1188,12 @@
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "0ec96460-08be-49a0-973a-4336f21b763c",
-        "practices": ["linq", "loops", "floating-point-numbers", "recursion"],
+        "practices": [
+          "advanced-enumeration",
+          "loops",
+          "floating-point-numbers",
+          "recursion"
+        ],
         "prerequisites": [
           "floating-point-numbers",
           "numbers",
@@ -1279,17 +1201,17 @@
           "loops"
         ],
         "difficulty": 8,
-        "topics": ["algorithms", "floating_point_numbers", "integers", "lists"]
+        "topics": ["algorithms", "floating_point_numbers", "integers", "arrays"]
       },
       {
         "slug": "connect",
         "name": "Connect",
         "uuid": "538a6768-bae5-437c-9cdf-765d73a79643",
-        "practices": ["enums", "switch-statements"],
+        "practices": ["symbols", "conditionals"],
         "prerequisites": [
           "strings",
           "chars",
-          "enums",
+          "symbols",
           "arrays",
           "conditionals"
         ],
