@@ -377,9 +377,9 @@
         "slug": "sum-of-multiples",
         "name": "Sum Of Multiples",
         "uuid": "4fc25295-5d6a-4d13-9b87-064167d8980e",
-        "practices": ["enumerables", "enumeration", "numbers"],
+        "practices": ["enumerable", "enumeration", "numbers"],
         "prerequisites": [
-          "enumerables",
+          "enumerable",
           "numbers",
           "enumeration",
           "conditionals"
@@ -409,8 +409,8 @@
         "slug": "flatten-array",
         "name": "Flatten Array",
         "uuid": "2df8ed82-2a04-4112-a17b-7813bcdc0e84",
-        "practices": ["enumerables", "recursion", "enumeration"],
-        "prerequisites": ["enumerables", "enumeration"],
+        "practices": ["enumerable", "recursion", "enumeration"],
+        "prerequisites": ["enumerable", "enumeration"],
         "difficulty": 3,
         "topics": ["arrays", "recursion"]
       },
@@ -464,7 +464,7 @@
         "name": "Saddle Points",
         "uuid": "38bb4ac6-a5ec-4448-8b86-cdaff13a8be3",
         "practices": ["arrays"],
-        "prerequisites": ["arrays", "enumerables", "numbers"],
+        "prerequisites": ["arrays", "enumerable", "numbers"],
         "difficulty": 5,
         "topics": ["arrays", "integers", "matrices", "searching"]
       },
@@ -502,7 +502,7 @@
           "classes",
           "constructors",
           "numbers",
-          "enumerables",
+          "enumerable",
           "generic-methods"
         ],
         "difficulty": 5,
@@ -540,7 +540,7 @@
         "name": "Palindrome Products",
         "uuid": "abd68340-91b9-48c1-8567-79822bb2165c",
         "practices": ["loops"],
-        "prerequisites": ["enumerables", "numbers", "loops"],
+        "prerequisites": ["enumerable", "numbers", "loops"],
         "difficulty": 6,
         "topics": ["algorithms", "math"]
       },
@@ -548,8 +548,8 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "2c71fc3a-2c93-402b-b091-697b795ce3ba",
-        "practices": ["lambdas", "enumeration", "blocks", "enumerables"],
-        "prerequisites": ["lambdas", "enumeration", "enumerables"],
+        "practices": ["lambdas", "enumeration", "blocks", "enumerable"],
+        "prerequisites": ["lambdas", "enumeration", "enumerable"],
         "difficulty": 1,
         "topics": ["arrays"]
       },
@@ -783,8 +783,8 @@
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "86f8e33d-31b7-43e3-8ea3-2e391133704a",
-        "practices": ["enumerables"],
-        "prerequisites": ["strings", "enumerables"],
+        "practices": ["enumerable"],
+        "prerequisites": ["strings", "enumerable"],
         "difficulty": 3,
         "topics": [
           "cryptography",
@@ -844,7 +844,7 @@
         "name": "Dominoes",
         "uuid": "705f3eb6-55a9-476c-b3f2-e9f3cb0bbe37",
         "practices": ["lazy-evaluation"],
-        "prerequisites": ["enumerables", "numbers", "booleans"],
+        "prerequisites": ["enumerable", "numbers", "booleans"],
         "difficulty": 4,
         "topics": ["algorithms", "arrays", "searching"]
       },
@@ -861,7 +861,7 @@
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "fa7b91c2-842c-42c8-bdf9-00bb3e71a7f5",
-        "practices": ["instance-variables", "enumerables"],
+        "practices": ["instance-variables", "enumerable"],
         "prerequisites": ["instance-variables", "numbers"],
         "difficulty": 4,
         "topics": ["arrays", "loops"]
@@ -872,7 +872,7 @@
         "uuid": "0e05bfcf-17ae-4884-803a-fa1428bc1702",
         "practices": ["instance-variables", "constructors"],
         "prerequisites": [
-          "enumerables",
+          "enumerable",
           "instance-variables",
           "numbers",
           "classes",
@@ -912,7 +912,7 @@
         "name": "Grade School",
         "uuid": "4460742c-2beb-48d7-94e6-72ff13c68c71",
         "practices": ["hashes", "ordering"],
-        "prerequisites": ["strings", "numbers", "enumerables", "ordering"],
+        "prerequisites": ["strings", "numbers", "enumerable", "ordering"],
         "difficulty": 5,
         "topics": ["arrays", "sorting", "structs"]
       },
@@ -948,7 +948,7 @@
         "name": "Kindergarten Garden",
         "uuid": "04bde625-e363-4d8b-880f-db7bf86286eb",
         "practices": ["symbols"],
-        "prerequisites": ["strings", "symbols", "enumerables"],
+        "prerequisites": ["strings", "symbols", "enumerable"],
         "difficulty": 3,
         "topics": ["parsing", "records", "searching", "strings", "structs"]
       },
@@ -1016,7 +1016,7 @@
         "name": "Poker",
         "uuid": "9a59ba44-34f5-410b-a1e6-9a5c47c52d9e",
         "practices": ["ordering"],
-        "prerequisites": ["enumerables", "strings", "ordering", "conditionals"],
+        "prerequisites": ["enumerable", "strings", "ordering", "conditionals"],
         "difficulty": 5,
         "topics": [
           "equality",
@@ -1163,8 +1163,8 @@
         "slug": "pascals-triangle",
         "name": "Pascals Triangle",
         "uuid": "4ff8b056-f27d-4bdf-b7af-214448db4260",
-        "practices": ["enumerables"],
-        "prerequisites": ["loops", "enumerables", "numbers"],
+        "practices": ["enumerable"],
+        "prerequisites": ["loops", "enumerable", "numbers"],
         "difficulty": 4,
         "topics": ["algorithms", "arrays", "math", "recursion"]
       },
@@ -1197,7 +1197,7 @@
         "prerequisites": [
           "floating-point-numbers",
           "numbers",
-          "enumerables",
+          "enumerable",
           "loops"
         ],
         "difficulty": 8,
