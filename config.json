@@ -861,8 +861,8 @@
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "fa7b91c2-842c-42c8-bdf9-00bb3e71a7f5",
-        "practices": ["interfaces", "instance-variables", "enumerables"],
-        "prerequisites": ["interfaces", "instance-variables", "numbers"],
+        "practices": ["instance-variables", "enumerables"],
+        "prerequisites": ["instance-variables", "numbers"],
         "difficulty": 4,
         "topics": ["arrays", "loops"]
       },
