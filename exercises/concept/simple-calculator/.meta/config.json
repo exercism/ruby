@@ -1,20 +1,10 @@
 {
-  "blurb": "TODO: add blurb for simple-calculator exercise",
-  "authors": [
-    "pvcarrera"
-  ],
-  "forked_from": [
-    "csharp/calculator-conundrum"
-  ],
+  "blurb": "Learn about exceptions and error handling by building a simple calculator.",
+  "authors": ["pvcarrera"],
+  "forked_from": ["csharp/calculator-conundrum"],
   "files": {
-    "solution": [
-      "simple_calculator.rb"
-    ],
-    "test": [
-      "simple_calculator_test.rb"
-    ],
-    "exemplar": [
-      ".meta/exemplar.rb"
-    ]
+    "solution": ["simple_calculator.rb"],
+    "test": ["simple_calculator_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
   }
 }

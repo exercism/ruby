@@ -1,23 +1,11 @@
 {
-  "blurb": "TODO: add blurb for savings-account exercise",
-  "authors": [
-    "TBD"
-  ],
-  "contributors": [
-    "dvik1950"
-  ],
-  "forked_from": [
-    "csharp/interest-is-interesting"
-  ],
+  "blurb": "Learn about floating point numbers by adding interest to savings accounts.",
+  "authors": ["TBD"],
+  "contributors": ["dvik1950"],
+  "forked_from": ["csharp/interest-is-interesting"],
   "files": {
-    "solution": [
-      "savings_account.rb"
-    ],
-    "test": [
-      "savings_account_test.rb"
-    ],
-    "exemplar": [
-      ".meta/exemplar.rb"
-    ]
+    "solution": ["savings_account.rb"],
+    "test": ["savings_account_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
   }
 }

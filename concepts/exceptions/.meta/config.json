@@ -1,9 +1,5 @@
 {
-  "blurb": "TODO: add blurb for exceptions concept",
-  "authors": [
-    "iHiD"
-  ],
+  "blurb": "Exceptions should be thrown when an error that needs special handling occurs.",
+  "authors": ["iHiD"],
   "contributors": []
 }
-
-

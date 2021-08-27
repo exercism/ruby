@@ -1,17 +1,9 @@
 {
-  "blurb": "TODO: add blurb for log-line-parser exercise",
-  "authors": [
-    "pvcarrera"
-  ],
+  "blurb": "Learn about strings by processing logs.",
+  "authors": ["pvcarrera"],
   "files": {
-    "solution": [
-      "log_line_parser.rb"
-    ],
-    "test": [
-      "log_line_parser_test.rb"
-    ],
-    "exemplar": [
-      ".meta/exemplar.rb"
-    ]
+    "solution": ["log_line_parser.rb"],
+    "test": ["log_line_parser_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
   }
 }

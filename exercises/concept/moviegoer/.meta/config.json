@@ -1,17 +1,9 @@
 {
-  "blurb": "TODO: add blurb for moviegoer exercise",
-  "authors": [
-    "lxmrc", "iHiD"
-  ],
+  "blurb": "Learn about the ternary operator by building out rules for a movie theater's website.",
+  "authors": ["lxmrc", "iHiD"],
   "files": {
-    "solution": [
-      "moviegoer.rb"
-    ],
-    "test": [
-      "moviegoer_test.rb"
-    ],
-    "exemplar": [
-      ".meta/exemplar.rb"
-    ]
+    "solution": ["moviegoer.rb"],
+    "test": ["moviegoer_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
   }
 }

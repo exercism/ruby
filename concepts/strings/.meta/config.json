@@ -1,7 +1,5 @@
 {
-  "blurb": "TODO: add blurb for strings concept",
-  "authors": [
-    "pvcarrera"
-  ],
+  "blurb": "Strings are objects containing a sequence of bytes, usually representing characters.",
+  "authors": ["pvcarrera"],
   "contributors": []
 }

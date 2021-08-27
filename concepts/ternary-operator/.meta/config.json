@@ -1,7 +1,5 @@
 {
-  "blurb": "TODO: add blurb for ternary concept",
-  "authors": [
-    "lxmrc", "iHiD"
-  ],
+  "blurb": "A ternary conditional is a shorter way of writing simple if/else statements.",
+  "authors": ["lxmrc", "iHiD"],
   "contributors": []
 }

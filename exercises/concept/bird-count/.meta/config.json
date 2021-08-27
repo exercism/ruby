@@ -1,20 +1,10 @@
 {
-  "blurb": "TODO: add blurb for bird-count exercise",
-  "authors": [
-    "pvcarrera"
-  ],
-  "forked_from": [
-    "csharp/bird-watcher"
-  ],
+  "blurb": "Learn about arrays by keeping track of how many birds visit your garden.",
+  "authors": ["pvcarrera"],
+  "forked_from": ["csharp/bird-watcher"],
   "files": {
-    "solution": [
-      "bird_count.rb"
-    ],
-    "test": [
-      "bird_count_test.rb"
-    ],
-    "exemplar": [
-      ".meta/exemplar.rb"
-    ]
+    "solution": ["bird_count.rb"],
+    "test": ["bird_count_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
   }
 }

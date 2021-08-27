@@ -1,11 +1,5 @@
 {
-  "blurb": "TODO: add blurb for booleans concept",
-  "authors": [
-    "neenjaw"
-  ],
-  "contributors": [
-    "kotp",
-    "iHiD",
-    "kayn1"
-  ]
+  "blurb": "Booleans are either true or false. They support NOT, AND, and OR operators. Ruby can also treat non-boolean values as truthy or falsey.",
+  "authors": ["neenjaw"],
+  "contributors": ["kotp", "iHiD", "kayn1"]
 }

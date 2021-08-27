@@ -1,8 +1,5 @@
 {
-  "blurb": "TODO: add blurb for basics concept",
-  "authors": [
-    "iHiD",
-    "pvcarrera"
-  ],
+  "blurb": "Ruby is a dynamic and strongly typed language. In Ruby, everything is an object. An object's type is resolved at runtime.",
+  "authors": ["iHiD", "pvcarrera"],
   "contributors": []
 }

@@ -147,17 +147,17 @@
         "slug": "moviegoer",
         "name": "Moviegoer",
         "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
-        "concepts": ["ternary-operator", "exceptions"],
+        "concepts": ["ternary-operator"],
         "prerequisites": [
-          "basics",
-          "conditionals"
+          "conditionals",
+          "exceptions"
         ]
       },
       {
         "slug": "simple-calculator",
         "name": "Simple Calculator",
         "uuid": "ef6dca29-a990-4a6e-8b2c-4703fd0f751a",
-        "concepts": [],
+        "concepts": ["exceptions"],
         "prerequisites": [
           "basics"
         ]
@@ -1564,44 +1564,37 @@
     {
       "uuid": "3b1da281-7099-4c93-a109-178fc9436d68",
       "slug": "strings",
-      "name": "Strings",
-      "blurb": "TODO: add blurb for strings concept"
+      "name": "Strings"
     },
     {
       "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
       "slug": "enumeration",
-      "name": "Enumeration",
-      "blurb": "TODO: add blurb for enumeration concept"
+      "name": "Enumeration"
     },
     {
       "uuid": "ed6e1642-3f85-404f-85fa-6d014662d1e4",
       "slug": "advanced-enumeration",
-      "name": "Advanced Enumeration",
-      "blurb": "TODO: add blurb for enumeration concept"
+      "name": "Advanced Enumeration"
     },
     {
       "uuid": "73e07ed4-702f-4529-9027-f35bc1624b12",
       "slug": "hashes",
-      "name": "Hashes",
-      "blurb": "TODO: add blurb for hashes concept"
+      "name": "Hashes"
     },
     {
       "uuid": "b12c64cc-cbfc-48c1-b3e2-a58079fe2b7e",
       "slug": "modules",
-      "name": "Modules",
-      "blurb": "TODO: add blurb for modules concept"
+      "name": "Modules"
     },
     {
       "uuid": "ad546bc1-7583-482d-9159-44e08c50c7b8",
       "slug": "exceptions",
-      "name": "Raising Exceptions",
-      "blurb": "TODO: add blurb for modules concept"
+      "name": "Raising Exceptions"
     },
     {
       "uuid": "e15a88ad-a43c-47bb-bd9f-d9d83513c73e",
       "slug": "ternary-operator",
-      "name": "Ternary operator",
-      "blurb": "TODO: add blurb for modules concept"
+      "name": "Ternary operator"
     }
   ],
   "key_features": [

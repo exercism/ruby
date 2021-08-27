@@ -1,7 +1,5 @@
 {
-  "blurb": "TODO: add blurb for arrays concept",
-  "authors": [
-    "pvcarrera"
-  ],
+  "blurb": "Arrays are a collection of multiple values. Values can be of different types.",
+  "authors": ["pvcarrera"],
   "contributors": []
 }

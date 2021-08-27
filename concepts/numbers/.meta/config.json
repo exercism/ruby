@@ -1,10 +1,5 @@
 {
-  "blurb": "TODO: add blurb for numbers concept",
-  "authors": [
-    "dvik1950"
-  ],
-  "contributors": [
-    "kotp",
-    "iHiD"
-  ]
+  "blurb": "The two most commonly used number types in Ruby are Integer and Float.",
+  "authors": ["dvik1950"],
+  "contributors": ["kotp", "iHiD"]
 }

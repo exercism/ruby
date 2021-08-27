@@ -1,7 +1,5 @@
 {
-  "blurb": "TODO: add blurb for blocks concept",
-  "authors": [
-    "iHiD"
-  ],
+  "blurb": "Blocks are small groupings of statements that can be executed multiple times. They can be thought of as closures or anonymous functions.",
+  "authors": ["iHiD"],
   "contributors": []
 }

@@ -1,10 +1,5 @@
 {
-  "blurb": "TODO: add blurb for nil concept",
-  "authors": [
-    "neenjaw",
-    "iHiD"
-  ],
-  "contributors": [
-    "kotp"
-  ]
+  "blurb": "In Ruby, nil is used to express the absence of an object.",
+  "authors": ["neenjaw", "iHiD"],
+  "contributors": ["kotp"]
 }
