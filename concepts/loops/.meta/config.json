@@ -1,9 +1,5 @@
 {
-  "blurb": "TODO: add blurb for loops concept",
-  "authors": [
-    "TBD"
-  ],
-  "contributors": [
-    "dvik1950"
-  ]
+  "blurb": "There are several ways to write loops in Ruby: while loops, until loops and loop loops.",
+  "authors": ["TBD"],
+  "contributors": ["dvik1950"]
 }

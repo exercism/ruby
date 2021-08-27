@@ -1,6 +1,6 @@
 # Instructions
 
-Continuing your work with the amusement park, you are tasked with writing some utility methods to facilitate checking an attendee can use a ride.
+Continuing your work with the amusement park, you are tasked with writing some utility methods to facilitate checking if an attendee can use a ride.
 
 ## 1. Check if an attendee has a ride pass
 

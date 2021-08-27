@@ -1,18 +1,9 @@
 {
-  "blurb": "TODO: add blurb for lasagna exercise",
-  "authors": [
-    "iHiD",
-    "pvcarrera"
-  ],
+  "blurb": "Learn about the basics of Ruby by following a lasagna recipe.",
+  "authors": ["iHiD", "pvcarrera"],
   "files": {
-    "solution": [
-      "lasagna.rb"
-    ],
-    "test": [
-      "lasagna_test.rb"
-    ],
-    "exemplar": [
-      ".meta/exemplar.rb"
-    ]
+    "solution": ["lasagna.rb"],
+    "test": ["lasagna_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
   }
 }

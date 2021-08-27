@@ -1,10 +1,5 @@
 {
-  "blurb": "TODO: add blurb for instance-variables concept",
-  "authors": [
-    "neenjaw",
-    "iHiD"
-  ],
-  "contributors": [
-    "kotp"
-  ]
+  "blurb": "Objects can hold their own state by setting instance variables, which are created by prefixing '@' to a variable name.",
+  "authors": ["neenjaw", "iHiD"],
+  "contributors": ["kotp"]
 }

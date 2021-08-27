@@ -1,17 +1,9 @@
 {
-  "blurb": "TODO: add blurb for boutique-inventory-improvements exercise",
-  "authors": [
-    "iHiD"
-  ],
+  "blurb": "Learn about ostruct by refactoring your online fashion boutique's inventory management system.",
+  "authors": ["iHiD"],
   "files": {
-    "solution": [
-      "boutique_inventory.rb"
-    ],
-    "test": [
-      "boutique_inventory_test.rb"
-    ],
-    "exemplar": [
-      ".meta/exemplar.rb"
-    ]
+    "solution": ["boutique_inventory.rb"],
+    "test": ["boutique_inventory_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
   }
 }
