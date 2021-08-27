@@ -559,7 +559,7 @@
         "uuid": "70fec82e-3038-468f-96ef-bfb48ce03ef3",
         "practices": ["strings"],
         "prerequisites": ["strings", "conditionals"],
-        "difficulty": 2,
+        "difficulty": 5,
         "topics": ["conditionals", "strings"]
       },
       {
