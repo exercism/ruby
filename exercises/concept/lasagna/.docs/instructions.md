@@ -39,6 +39,6 @@ Define the `Lasagna#total_time_in_minutes` method that takes two named parameter
 
 ```ruby
 lasagna = Lasagna.new
-lasagna.total_time_in_minutes(number_of_layers: 3, actual_minutes_in_oven: 20);
+lasagna.total_time_in_minutes(number_of_layers: 3, actual_minutes_in_oven: 20)
 # => 26
 ```

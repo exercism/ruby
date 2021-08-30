@@ -12,7 +12,7 @@
 
 ## Concepts
 
-- `enumeration`: Know how to use basic enumerable methods (e.g. each, map, find, group_by, sort)
+- `advanced-enumeration`: Know how to use basic enumerable methods (e.g. each, map, find, group_by, sort)
 - `using-blocks`: Know how to use a block.
 
 ## Prerequisites

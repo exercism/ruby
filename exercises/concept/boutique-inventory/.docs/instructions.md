@@ -42,10 +42,10 @@ BoutiqueInventory.new([
   {price: 20.00, name: "Bamboo Socks Cats", quantity_by_size: {s: 7, m: 2}}
 ]).cheap
 
-#=> [
-      {price: 29.99, name: "Black Short Skirt", quantity_by_size: {s: 1, xl: 4}},
-      {price: 20.00, name: "Bamboo Socks Cats", quantity_by_size: {s: 7, m: 2}}
-    ]
+# => [
+#      {price: 29.99, name: "Black Short Skirt", quantity_by_size: {s: 1, xl: 4}},
+#      {price: 20.00, name: "Bamboo Socks Cats", quantity_by_size: {s: 7, m: 2}}
+#    ]
 ```
 
 ## 3. Return any items that are out of stock

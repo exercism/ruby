@@ -1,8 +1,8 @@
-# Introduction
+# About
 
 ## More enumeration methods
 
-In Bird Count, you were introduced to the `count`, `any?`, `select`, `all` and `map` enumeration methods.
+In Enumeration, you were introduced to the `count`, `any?`, `select`, `all` and `map` enumeration methods.
 Here's a recap of those, with a few extras added:
 
 ```ruby

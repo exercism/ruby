@@ -92,7 +92,7 @@ favorite_color = nil
 
 Ruby gives any instance variable the default value of `nil` when it is first encountered, until it is otherwise given a value.
 
-```
+```ruby
 print @favourite_color # prints nil
 @favourite_color = "blue"
 print @favourite_color # prints "blue"

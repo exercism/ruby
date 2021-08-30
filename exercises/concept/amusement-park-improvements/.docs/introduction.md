@@ -28,7 +28,7 @@ Here are some examples:
 true == false # false
 
 # Is "true not equal to false"
-true != false # true
+true != false # true
 
 # Is 5 greater than 4?
 5 > 4 # true

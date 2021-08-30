@@ -10,8 +10,8 @@ You can also use the shorthand syntax of `raise(ExceptionObject, params)`.
 If the exception class is omitted, `RuntimeError` is used by default.
 For example:
 
-```
-# These are equivelent
+```ruby
+# These are equivalent
 raise RuntimeError.new("Please implement this method")
 raise RuntimeError, "Please implement this method"
 raise "Please implement this method"
@@ -19,7 +19,7 @@ raise "Please implement this method"
 
 When Ruby sees this it bubbles the error to the top of the program and then exits.
 For example, if you try dividing something by zero, you will see something like this:
-```
+```ruby
 5/0
 
 #=> Traceback (most recent call last):

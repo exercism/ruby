@@ -60,10 +60,10 @@ words.each do |word|
   puts word
 end
 
-# Output
-the
-cat
-sat
+# Output:
+# the
+# cat
+# sat
 ```
 
 In this example, we have called the `.each` method on our array and passed in a _block_ that takes one parameter (`word`) and prints it out.

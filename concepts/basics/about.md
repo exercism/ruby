@@ -6,7 +6,7 @@ And what do we mean with strongly typed? Once we know the type of a variable or 
 ```ruby
 x = '2'
 y = x + 'n'
-=>  '2n'
+# =>  '2n'
 ```
 
 **But**
@@ -14,14 +14,14 @@ y = x + 'n'
 ```ruby
 x = '2'
 y = x + 2
-=> TypeError (no implicit conversion of Integer into String)
+# => TypeError (no implicit conversion of Integer into String)
 ```
 
 Remember, in Ruby everything is an object. Even classes are instances of the class `Class`. For example:
 
 ```ruby
 1.class
-=> Integer
+# => Integer
 
 Integer.is_a?(Object)
 # => true
@@ -40,7 +40,7 @@ Car = Class.new do
 end
 
 Car.new.run
-=> 'running'
+# => 'running'
 ```
 
 Finally, bear in mind that the `Integer` object holds values that may be defined as one or more (consecutive) digits and its methods support many of the [mathematical operators][integers-docs].
