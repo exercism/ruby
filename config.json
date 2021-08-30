@@ -119,8 +119,8 @@
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "1304b188-6d08-4361-be40-c6b1b88e5e54",
-        "practices": ["optional-parameters", "string-formatting"],
-        "prerequisites": ["optional-parameters", "string-formatting"],
+        "practices": ["basics", "strings"],
+        "prerequisites": ["basics", "strings"],
         "difficulty": 1,
         "topics": ["conditionals", "strings"]
       },
@@ -137,8 +137,8 @@
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "74468206-68a2-4efb-8caa-782634674c7f",
-        "practices": ["chars", "strings", "regular-expressions"],
-        "prerequisites": ["chars", "strings", "booleans"],
+        "practices": ["strings", "regular-expressions"],
+        "prerequisites": ["strings", "booleans"],
         "difficulty": 1,
         "topics": ["regular_expressions", "strings", "transforming"]
       },
@@ -223,8 +223,8 @@
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "a79eb8cd-d2db-48f5-a7dc-055039dcee62",
-        "practices": ["chars", "strings", "sets"],
-        "prerequisites": ["chars", "strings", "booleans"],
+        "practices": ["strings", "sets"],
+        "prerequisites": ["strings", "booleans"],
         "difficulty": 2,
         "topics": ["regular_expressions", "sequences", "strings"]
       },
@@ -241,8 +241,8 @@
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "bee97539-b8c1-460e-aa14-9336008df2b6",
-        "practices": ["chars"],
-        "prerequisites": ["strings", "chars", "loops", "numbers"],
+        "practices": ["strings"],
+        "prerequisites": ["strings", "loops", "numbers"],
         "difficulty": 2,
         "topics": ["algorithms", "integers", "strings"]
       },
@@ -259,8 +259,8 @@
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "eeb64dda-b79f-4920-8fa3-04810e8d37ab",
-        "practices": ["string-formatting"],
-        "prerequisites": ["strings", "numbers", "loops", "string-formatting"],
+        "practices": ["strings"],
+        "prerequisites": ["numbers", "loops", "strings"],
         "difficulty": 4,
         "topics": [
           "algorithms",
@@ -274,8 +274,8 @@
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "486becee-9d85-4139-ab89-db254d385ade",
-        "practices": ["string-formatting"],
-        "prerequisites": ["strings", "string-formatting"],
+        "practices": ["strings"],
+        "prerequisites": ["strings"],
         "difficulty": 3,
         "topics": [
           "integers",
@@ -309,8 +309,8 @@
         "slug": "rna-transcription",
         "name": "Rna Transcription",
         "uuid": "41f66d2a-1883-4a2c-875f-663c46fa88aa",
-        "practices": ["chars", "advanced-enumeration"],
-        "prerequisites": ["chars", "strings"],
+        "practices": ["strings", "advanced-enumeration"],
+        "prerequisites": ["strings"],
         "difficulty": 2,
         "topics": ["maps", "transforming"]
       },
@@ -327,8 +327,8 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "fcf07149-b2cb-4042-90e6-fb3350e0fdf6",
-        "practices": ["chars", "strings", "sets"],
-        "prerequisites": ["chars", "strings", "booleans"],
+        "practices": ["strings", "sets"],
+        "prerequisites": ["strings", "booleans"],
         "difficulty": 2,
         "topics": ["loops", "strings"]
       },
@@ -448,12 +448,11 @@
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
         "uuid": "2df14b68-75c8-4984-8ae2-ecd2cb7ed1d4",
-        "practices": ["string-formatting"],
+        "practices": ["strings"],
         "prerequisites": [
           "arrays",
           "strings",
           "numbers",
-          "string-formatting",
           "exceptions"
         ],
         "difficulty": 5,
@@ -485,7 +484,6 @@
         "prerequisites": [
           "hashes",
           "strings",
-          "chars",
           "conditionals",
           "enumeration",
           "exceptions"
@@ -530,7 +528,7 @@
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "3c5193ab-6471-4be2-9d24-1d2b51ad822a",
-        "practices": ["string-formatting"],
+        "practices": ["strings"],
         "prerequisites": ["strings", "arrays", "loops"],
         "difficulty": 4,
         "topics": ["arrays", "loops", "strings"]
@@ -626,7 +624,7 @@
         "name": "Matching Brackets",
         "uuid": "26f6e297-7980-4472-8ce7-157b62b0ff40",
         "practices": ["stacks"],
-        "prerequisites": ["stacks", "strings", "chars", "booleans"],
+        "prerequisites": ["stacks", "strings", "booleans"],
         "difficulty": 7,
         "topics": ["parsing", "strings"]
       },
@@ -699,11 +697,9 @@
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "9d6808fb-d367-4df9-a1f0-47ff83b75544",
-        "practices": ["string-formatting", "chars"],
+        "practices": ["strings"],
         "prerequisites": [
           "strings",
-          "chars",
-          "string-formatting",
           "arrays",
           "conditionals",
           "exceptions"
@@ -721,7 +717,7 @@
           "classes",
           "constructors",
           "instance-variables",
-          "chars",
+          "strings",
           "conditionals",
           "exceptions"
         ],
@@ -732,7 +728,7 @@
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
-        "practices": ["string-formatting"],
+        "practices": ["strings"],
         "prerequisites": ["strings", "numbers", "loops"],
         "difficulty": 3,
         "topics": ["loops", "strings", "text_formatting"]
@@ -775,7 +771,7 @@
         "name": "Atbash Cipher",
         "uuid": "1e737640-9785-4a47-866a-46298104d891",
         "practices": ["enumeration"],
-        "prerequisites": ["strings", "chars", "enumeration"],
+        "prerequisites": ["strings", "enumeration"],
         "difficulty": 3,
         "topics": ["algorithms", "cryptography", "strings", "transforming"]
       },
@@ -929,8 +925,8 @@
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "af5ccf14-eff2-4dc6-b1db-e209cddca62a",
-        "practices": ["chars", "strings"],
-        "prerequisites": ["chars", "strings", "numbers"],
+        "practices": ["strings"],
+        "prerequisites": ["strings", "numbers"],
         "difficulty": 2,
         "topics": ["cryptography", "integers", "strings"]
       },
@@ -961,7 +957,6 @@
           "integral-numbers",
           "math-operators",
           "strings",
-          "chars",
           "loops",
           "exceptions"
         ],
@@ -997,8 +992,8 @@
         "slug": "house",
         "name": "House",
         "uuid": "df5d771a-e57b-4a96-8a29-9bd4ce7f88d2",
-        "practices": ["string-formatting"],
-        "prerequisites": ["strings", "string-formatting", "numbers"],
+        "practices": ["strings"],
+        "prerequisites": ["strings", "numbers"],
         "difficulty": 4,
         "topics": ["recursion", "strings", "text_formatting"]
       },
@@ -1031,8 +1026,8 @@
         "slug": "isbn-verifier",
         "name": "Isbn Verifier",
         "uuid": "a0aac827-8f7a-4065-9d05-a57009f5668d",
-        "practices": ["chars", "regular-expressions"],
-        "prerequisites": ["strings", "chars", "booleans"],
+        "practices": ["strings", "regular-expressions"],
+        "prerequisites": ["strings", "booleans"],
         "difficulty": 2,
         "topics": ["arrays"]
       },
@@ -1063,8 +1058,8 @@
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "c55c75fb-6140-4042-967a-39c75b7781bd",
-        "practices": ["chars", "string-formatting"],
-        "prerequisites": ["strings", "string-formatting", "chars"],
+        "practices": ["strings"],
+        "prerequisites": ["strings"],
         "difficulty": 4,
         "topics": [
           "algorithms",
@@ -1087,10 +1082,9 @@
         "slug": "ocr-numbers",
         "name": "Ocr Numbers",
         "uuid": "dd13bb29-589c-497d-9580-3f288f353fb2",
-        "practices": ["chars"],
+        "practices": ["strings"],
         "prerequisites": [
           "strings",
-          "chars",
           "loops",
           "conditionals",
           "exceptions"
@@ -1127,7 +1121,7 @@
         "name": "Grep",
         "uuid": "4ad4ea80-945d-4b37-b40c-bd05bed82266",
         "practices": ["conditionals"],
-        "prerequisites": ["strings", "conditionals", "string-formatting"],
+        "prerequisites": ["conditionals", "strings"],
         "difficulty": 8,
         "topics": [
           "files",
@@ -1142,10 +1136,9 @@
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "6f0919eb-2160-4cca-8504-286acc2ae9c8",
-        "practices": ["string-formatting", "conditionals"],
+        "practices": ["strings", "conditionals"],
         "prerequisites": [
           "strings",
-          "string-formatting",
           "numbers",
           "conditionals",
           "loops"
@@ -1210,7 +1203,6 @@
         "practices": ["symbols"],
         "prerequisites": [
           "strings",
-          "chars",
           "symbols",
           "arrays",
           "conditionals"
