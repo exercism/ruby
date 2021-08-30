@@ -119,8 +119,8 @@
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "1304b188-6d08-4361-be40-c6b1b88e5e54",
-        "practices": ["optional-parameters", "string-formatting"],
-        "prerequisites": ["optional-parameters", "string-formatting"],
+        "practices": ["basics", "strings"],
+        "prerequisites": ["basics", "strings"],
         "difficulty": 1,
         "topics": ["conditionals", "strings"]
       },
@@ -259,8 +259,8 @@
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "eeb64dda-b79f-4920-8fa3-04810e8d37ab",
-        "practices": ["string-formatting"],
-        "prerequisites": ["strings", "numbers", "loops", "string-formatting"],
+        "practices": ["strings"],
+        "prerequisites": ["strings", "numbers", "loops", "strings"],
         "difficulty": 4,
         "topics": [
           "algorithms",
@@ -274,8 +274,8 @@
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "486becee-9d85-4139-ab89-db254d385ade",
-        "practices": ["string-formatting"],
-        "prerequisites": ["strings", "string-formatting"],
+        "practices": ["strings"],
+        "prerequisites": ["strings", "strings"],
         "difficulty": 3,
         "topics": [
           "integers",
@@ -448,12 +448,12 @@
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
         "uuid": "2df14b68-75c8-4984-8ae2-ecd2cb7ed1d4",
-        "practices": ["string-formatting"],
+        "practices": ["strings"],
         "prerequisites": [
           "arrays",
           "strings",
           "numbers",
-          "string-formatting",
+          "strings",
           "exceptions"
         ],
         "difficulty": 5,
@@ -530,7 +530,7 @@
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "3c5193ab-6471-4be2-9d24-1d2b51ad822a",
-        "practices": ["string-formatting"],
+        "practices": ["strings"],
         "prerequisites": ["strings", "arrays", "loops"],
         "difficulty": 4,
         "topics": ["arrays", "loops", "strings"]
@@ -699,11 +699,11 @@
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "9d6808fb-d367-4df9-a1f0-47ff83b75544",
-        "practices": ["string-formatting", "chars"],
+        "practices": ["strings", "chars"],
         "prerequisites": [
           "strings",
           "chars",
-          "string-formatting",
+          "strings",
           "arrays",
           "conditionals",
           "exceptions"
@@ -732,7 +732,7 @@
         "slug": "beer-song",
         "name": "Beer Song",
         "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
-        "practices": ["string-formatting"],
+        "practices": ["strings"],
         "prerequisites": ["strings", "numbers", "loops"],
         "difficulty": 3,
         "topics": ["loops", "strings", "text_formatting"]
@@ -997,8 +997,8 @@
         "slug": "house",
         "name": "House",
         "uuid": "df5d771a-e57b-4a96-8a29-9bd4ce7f88d2",
-        "practices": ["string-formatting"],
-        "prerequisites": ["strings", "string-formatting", "numbers"],
+        "practices": ["strings"],
+        "prerequisites": ["strings", "strings", "numbers"],
         "difficulty": 4,
         "topics": ["recursion", "strings", "text_formatting"]
       },
@@ -1063,8 +1063,8 @@
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "c55c75fb-6140-4042-967a-39c75b7781bd",
-        "practices": ["chars", "string-formatting"],
-        "prerequisites": ["strings", "string-formatting", "chars"],
+        "practices": ["chars", "strings"],
+        "prerequisites": ["strings", "strings", "chars"],
         "difficulty": 4,
         "topics": [
           "algorithms",
@@ -1127,7 +1127,7 @@
         "name": "Grep",
         "uuid": "4ad4ea80-945d-4b37-b40c-bd05bed82266",
         "practices": ["conditionals"],
-        "prerequisites": ["strings", "conditionals", "string-formatting"],
+        "prerequisites": ["strings", "conditionals", "strings"],
         "difficulty": 8,
         "topics": [
           "files",
@@ -1142,10 +1142,10 @@
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "6f0919eb-2160-4cca-8504-286acc2ae9c8",
-        "practices": ["string-formatting", "conditionals"],
+        "practices": ["strings", "conditionals"],
         "prerequisites": [
           "strings",
-          "string-formatting",
+          "strings",
           "numbers",
           "conditionals",
           "loops"
