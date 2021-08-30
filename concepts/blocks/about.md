@@ -8,7 +8,7 @@ The styles are interchangeable and differing opinions exist about when each shou
 ## Shortcut Syntax
 In situations where a block calls a single method, you can replace the block with `&:` followed by the method name. For example, these two lines are synonymous:
 
-```
+```ruby
 people.sum { |person| person.age }
 people.sum(&:age)
 ```

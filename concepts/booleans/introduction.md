@@ -43,20 +43,20 @@ else
 end
 
 1 + 1 if truthy
-# => this will evaluate and return 2
+# this will evaluate and return 2
 
 2 + 2 if falsey
-# => the numbers are not added because of the modifier, nil is returned
+# the numbers are not added because of the modifier, nil is returned
 ```
 
 Ruby provides `unless` to make code read well. E.g.) Rather than `eat_desert if not too_full`, we can also write `eat_desert unless too_full`.
 
 ```ruby
 3 + 3 unless truthy
-# => the numbers are not added because of the modifier, nil is returned
+# the numbers are not added because of the modifier, nil is returned
 
 4 + 4 unless falsey
-# => this will evaluate and return 8
+# this will evaluate and return 8
 ```
 
 [nil-dictionary]: https://www.merriam-webster.com/dictionary/nil

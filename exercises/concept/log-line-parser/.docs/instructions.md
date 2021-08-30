@@ -19,14 +19,14 @@ Implement the `LogLineParser.message` method to return a log line's message:
 
 ```ruby
 LogLineParser.message('[ERROR]: Invalid operation')
-// Returns: "Invalid operation"
+# => "Invalid operation"
 ```
 
 Any leading or trailing white space should be removed:
 
 ```ruby
 LogLineParser.message('[WARNING]:  Disk almost full\r\n')
-// Returns: "Disk almost full"
+# => "Disk almost full"
 ```
 
 ## 2. Get log level from a log line
@@ -35,7 +35,7 @@ Implement the `LogLineParser.log_level` method to return a log line's log level,
 
 ```ruby
 LogLineParser.log_level('[ERROR]: Invalid operation')
-// Returns: "error"
+# => "error"
 ```
 
 ## 3. Reformat a log line
@@ -44,5 +44,5 @@ Implement the `LogLineParser.reformat` method that reformats the log line, putti
 
 ```ruby
 LogLineParser.reformat('[INFO]: Operation completed')
-// Returns: "Operation completed (info)"
+# => "Operation completed (info)"
 ```

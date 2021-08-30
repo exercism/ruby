@@ -15,11 +15,11 @@ end
 
 puts list
 
-# Output
-0. the
-1. cat
-2. sat
-3. on
-4. the
-5. mat
+# Output:
+# 0. the
+# 1. cat
+# 2. sat
+# 3. on
+# 4. the
+# 5. mat
 ```

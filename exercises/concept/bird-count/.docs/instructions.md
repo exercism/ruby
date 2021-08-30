@@ -53,7 +53,7 @@ Implement the `BirdCount#day_without_birds?` method that returns `true` if there
 
 ```ruby
 birds_per_day = [2, 5, 0, 7, 4, 1]
-ird_count = new BirdCount(birds_per_day)
+bird_count = new BirdCount(birds_per_day)
 bird_count.day_without_birds?
 # => true
 ```

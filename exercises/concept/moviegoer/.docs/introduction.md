@@ -7,7 +7,7 @@ If an `if/else` statement contains only two branches, one for when the condition
 
 Ternaries use a combination of the `?` and `:` symbols to split up a conditional:
 
-```
+```ruby
 condition ? true_branch : false_branch
 ```
 

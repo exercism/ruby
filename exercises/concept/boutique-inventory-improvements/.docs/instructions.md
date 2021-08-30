@@ -15,13 +15,13 @@ inventory = BoutiqueInventory.new([
 ])
 
 inventory.items.first.name
-=> "Maxi Brown Dress"
+# => "Maxi Brown Dress"
 
 inventory.items.first.price
-=> 65
+# => 65
 
 inventory.items.size
-=> 4
+# => 4
 ```
 
 # 2. Refactor `item_names` 
@@ -37,7 +37,7 @@ BoutiqueInventory.new([
   {price: 20.00, name: "Bamboo Socks Cats", quantity_by_size: {s: 7, m: 2}}
 ]).item_names
 
-#=> ["Bamboo Socks Cats", "Black Short Skirt", "Maxi Brown Dress", "Red Short Skirt"]
+# => ["Bamboo Socks Cats", "Black Short Skirt", "Maxi Brown Dress", "Red Short Skirt"]
 ```
 
 
@@ -54,5 +54,5 @@ BoutiqueInventory.new([
   {price: 20.00, name: "Bamboo Socks Cats", quantity_by_size: {s: 7, m: 2}}
 ]).total_stock
 
-#=> 36
+# => 36
 ```

@@ -4,11 +4,11 @@ Data structures that can hold zero or more elements are known as _collections_. 
 
 ```ruby
 # Declare an array containing two values
-two_ints = [1,2];
+two_ints = [1,2]
 
 # Assign first and second element by index
-two_ints[0] = 7;
-two_ints[1] = 8;
+two_ints[0] = 7
+two_ints[1] = 8
 
 # Retrieve the second element by index
 two_ints[1] # => 8

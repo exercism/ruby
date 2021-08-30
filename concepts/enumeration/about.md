@@ -13,13 +13,13 @@ words.each do |word|
   puts word 
 end
 
-# Output
-the
-cat
-sat
-on
-the
-mat
+# Output:
+# the
+# cat
+# sat
+# on
+# the
+# mat
 ```
 
 In this example, we have called the `Array#each` method and passed in a _block_, which takes one parameter (`word`) and prints it. 
@@ -32,11 +32,11 @@ words = %w[the cat sat on the mat]
 list = words.map.with_index { |word, index| "#{index}: #{word}" }
 puts list
 
-# Output
-0. the
-1. cat
-...
-5. mat
+# Output:
+# 0. the
+# 1. cat
+# ...
+# 5. mat
 ```
 
 Enumerating `Hash` objects is exactly the same as enumerating `Array` objects, except that the block receives two arguments: the key and the value:
