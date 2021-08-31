@@ -2,16 +2,16 @@
 
 Like everything in Ruby, a `String` is an object.
 Strings are made up of an arbitrary sequence of bytes (normally characters) and are initialized and manipulated like any other object.
-In fact, one of the most useful things about Ruby is the numerous methods that can be called on strings (and other objects) to save you a lot of time writing code. 
-In this method we're going to explore and play with some of those helper methods.
+In fact, one of the most useful things about Ruby is the numerous methods that can be called on strings (and other objects) to save you a lot of time writing code.
+In this method we are going to explore and play with some of those helper methods.
 
 ## Creating a string.
 
 Although you can use `String.new(...)` to create a string, it is much more common to use a literal.
-There are lots of different literals you can use - but the split into two categories: those that allow interpolation and those that don't.
+There are lots of different literals you can use - and they split into two categories: those that allow interpolation and those that don't.
 
-The most common literals are single and double quotes (`'...'` and `"..."`). 
-Single quotes do not allow interpolation, whereas double quotes do. 
+The most common literals are single and double quotes (`'...'` and `"..."`).
+Single quotes do not allow interpolation, whereas double quotes do.
 Interpolation is where one string is included in another using the `#{}` syntax.
 
 ```
@@ -33,25 +33,25 @@ It is helpful to think of Strings in Ruby in a similar way to how you think of A
 They have a size and their characters are indexed (with `0` as the first index):
 
 ```ruby
-str = "Some string"
+my_string = "Some string"
 
-str.size   #=> 11
+my_string.size   #=> 11
 
-str[0]    #=> 'S'
-str[1]    #=> 'o'
-str[-1]   #=> 'g'
+my_string[0]    #=> 'S'
+my_string[1]    #=> 'o'
+my_string[-1]   #=> 'g'
 
-# Find the first index of a character
-str.index('m')   #=> 2
+# Find the first index of a character
+my_string.index('m')   #=> 2
 ```
 
 Parts of strings can be extracted using indexes or `slice`:
 ```ruby
-str = "Some string"
+my_string = "Some string"
 
 # Find three characters starting with the second character (index 1)
-str[1, 3]         #=> "ome"
-str.slice(1, 3)   #=> "ome"
+my_string[1, 3]         #=> "ome"
+my_string.slice(1, 3)   #=> "ome"
 ```
 
 The semantic values of strings can also be manipulated.
@@ -71,22 +71,22 @@ You can also use methods such as `gsub` to substitute characters:
 "noob".gsub("o","0")   #=> "n00b"
 
 # (Advanced) Replace a regular expression
-"ruby really rocks".gsub(/[aieou]/,'')   #=> "rby rlly rcks"
+"Ruby really rocks".gsub(/[aieou]/,'')   #=> "Rby rlly rcks"
 ```
 
-In all of the examples above, a new string is returned.
+In all of the examples above, a new `String` is returned.
 However, many methods have equivalents which end in `!` which actually modify the string itself.
 
 ```
-# Use normal methods to return new strings
-str = "hello"
-str.capitalize   #=> "Hello"
-puts str         #=> "hello"
+# Use normal methods to return new strings
+my_string = "hello"
+my_string.capitalize   #=> "Hello"
+puts my_string         #=> "hello"
 
 # And bang-methods (...!) to modify the object
-str = "hello"
-str.capitalize!  #=> nil
-puts str         #=> "HELLO"
+my_string = "hello"
+my_string.capitalize!  #=> nil
+puts my_string         #=> "HELLO"
 ```
 
 [docs-string]: https://ruby-doc.org/core-2.7.0/String.html
