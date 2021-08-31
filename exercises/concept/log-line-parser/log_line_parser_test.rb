@@ -44,7 +44,7 @@ class LogLineParserTest < Minitest::Test
     assert_equal 'Disk defragmented (info)', LogLineParser.new('[INFO]: Disk defragmented').reformat
   end
 
-  def rest_reformat_with_leading_and_trailing_space
+  def test_reformat_with_leading_and_trailing_space
     assert_equal 'Corrupt disk (error)', LogLineParser.new("[ERROR]: \t Corrupt disk\t \t \r\n").reformat
   end
 end
