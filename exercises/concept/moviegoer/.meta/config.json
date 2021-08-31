@@ -1,5 +1,6 @@
 {
   "blurb": "Learn about the ternary operator by building out rules for a movie theater's website.",
+  "icon": "movie-goer",
   "authors": ["lxmrc", "iHiD"],
   "files": {
     "solution": ["moviegoer.rb"],
