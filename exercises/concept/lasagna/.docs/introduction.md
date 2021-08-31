@@ -1,9 +1,9 @@
 # Introduction
 
 This exercise will teach the fundamental building blocks of Ruby.
-It covers a lot of ground, but don't worry if it feels overwhelming, we'll go into everything in much more depth as we continue through the track.
+It covers a lot of ground, but do not worry if it feels overwhelming, we will go into everything in much more depth as we continue through the track.
 
-One of the key things to understand about Ruby is that it is an [object-oriented language][object-oriented-programming], and that **everything in Ruby is an [object][object]**. Numbers, strings, methods - they're all objects.
+One of the key things to understand about Ruby is that it is an [object-oriented language][object-oriented-programming], and that **everything in Ruby is an [object][object]**. Numbers, strings, arrays - they're all objects.
 
 ## Variables and Constants
 
@@ -49,11 +49,11 @@ my_first_calc = Calculator.new
 
 ## Methods
 
-Units of functionality are encapsulated in methods - similar to _functions_ in other languages. 
+Units of functionality are encapsulated in methods - similar to _functions_ in other languages.
 
-A method can be defined with positional arguments, keyword arguments (which are defined and called using the `:` syntax) or have no arguments at all. 
+A method can be defined with positional arguments, keyword arguments (which are defined and called using the `:` syntax) or have no arguments at all.
 
-Methods either implicitly return the result of the last evaluated statement, or can explicitly return an object via the `return` keyword. 
+Methods either implicitly return the result of the last evaluated statement, or can explicitly return an object via the `return` keyword.
 
 ```ruby
 class Calculator
