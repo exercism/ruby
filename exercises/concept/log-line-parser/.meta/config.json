@@ -1,6 +1,6 @@
 {
   "blurb": "Learn about strings by processing logs.",
-  "icon": "log-levels",
+  "icon": "logs-logs-logs",
   "authors": ["pvcarrera"],
   "files": {
     "solution": ["log_line_parser.rb"],
