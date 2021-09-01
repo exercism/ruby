@@ -1,6 +1,6 @@
 {
   "authors": ["neenjaw"],
-  "contributors": ["ihid", "kotp"],
+  "contributors": ["ihid", "kotp", "angelikatyborska"],
   "language_versions": ">= 2.6.6",
   "files": {
     "solution": ["high_score.rb"],

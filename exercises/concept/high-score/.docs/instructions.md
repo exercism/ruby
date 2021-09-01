@@ -4,13 +4,37 @@ In this exercise, you're implementing a way to keep track of the high scores for
 
 ## 1. Define a new high score map
 
-To make a new high score map, define the `HighScore#initialize` function which doesn't take any arguments and initializes the new Scoreboard object instance. It should take an optional argument, with the default value of an empty hash.
+To make a new high score map, define the `HighScore#initialize` function which doesn't take any arguments and initializes the new Scoreboard object instance.
 
 ```ruby
 HighScore.new
+=> #<HighScore:0x000055a1a4d192c8 @scores={}>
 ```
 
-## 2. Add players to the high score map
+## 2. Build a new high score map from an existing hash
+
+Modify `HighScore#initialize` to take an optional argument, with the default value of an empty hash.
+
+```ruby
+HighScore.new({ "Bill Paxton" => 2 })
+=> #<HighScore:0x000055a1a4f14bb8 @scores={"Bill Paxton" => 2}>
+```
+
+## 3. Get a list of players
+
+To get a list of players, define `HighScore#players`.
+
+```ruby
+score_map = HighScore.new()
+score_map.players
+# => []
+
+score_map = HighScore.new({ "Dave Thomas" => 2_374, "José Valim" => 486_373 })
+score_map.players
+# => ["Dave Thomas", "José Valim"]
+```
+
+## 4. Add players to the high score map
 
 To add a player to the high score map, define `HighScore#add_player`, which is a function which takes 2 arguments:
 
@@ -25,7 +49,7 @@ score_map.add_player("Dave Thomas")
 score_map.add_player("José Valim", 486_373)
 ```
 
-## 3. Remove players from the score map
+## 5. Remove players from the score map
 
 To remove a player from the high score map, define `HighScore#remove_player`, which takes 1 arguments:
 
@@ -37,7 +61,7 @@ score_map.add_player("Dave Thomas")
 score_map.remove_player("Dave Thomas")
 ```
 
-## 4. Reset a player's score
+## 6. Reset a player's score
 
 To reset a player's score, define `HighScore#reset_score`, which takes 1 argument:
 
@@ -51,7 +75,7 @@ score_map.add_player("José Valim", 486_373)
 score_map.reset_player_score("José Valim")
 ```
 
-## 5. Update a player's score
+## 7. Update a player's score
 
 To update a players score by adding to the previous score, define `HighScore#update_player_score`, which takes 2 arguments:
 
@@ -64,7 +88,7 @@ score_map.add_player("José Valim", 486_373)
 score_map.update_player_score("José Valim", 5)
 ```
 
-## 6. Get a player's score
+## 8. Get a player's score
 
 To get a player's score, define `HighScore#player_score` which takes one argument:
 
@@ -76,16 +100,4 @@ score_map.add_player("Dave Thomas", 2_374)
 score_map.add_player("José Valim", 486_373)
 score_map.player_score("Dave Thomas")
 # => 2374
-```
-
-## 7. Get a list of players
-
-To get a list of players, define `HighScore#players`.
-
-```ruby
-score_map = HighScore.new
-score_map.add_player("Dave Thomas", 2_374)
-score_map.add_player("José Valim", 486_373)
-score_map.players
-# => ["Dave Thomas", "José Valim"]
 ```

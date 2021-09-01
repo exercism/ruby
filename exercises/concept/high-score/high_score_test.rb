@@ -2,10 +2,17 @@ require 'minitest/autorun'
 require_relative '.meta/exemplar'
 
 class HighScoreTest < Minitest::Test
-  def test_blank
-    expected = {}
-    scoreboard = Scoreboard.new
-    assert_equal [], scoreboard.players
+  def test_initialize_exists
+    Scoreboard.new
+  end
+
+  def test_initializer_takes_optional_parameter
+    Scoreboard.new({ "Billy" => 3 })
+  end
+
+  def test_get_players
+    scores = { 'Ted' => 34, 'Hassan' => 50, 'Pierre' => 20 }
+    assert_equal %w[Ted Hassan Pierre], Scoreboard.new(scores).players
   end
 
   def test_initial_state
@@ -49,10 +56,5 @@ class HighScoreTest < Minitest::Test
 
     expected = { player => 867 }
     assert_equal 867, scoreboard.player_score(player)
-  end
-
-  def test_get_players
-    scores = { 'Ted' => 34, 'Hassan' => 50, 'Pierre' => 20 }
-    assert_equal %w[Ted Hassan Pierre], Scoreboard.new(scores).players
   end
 end

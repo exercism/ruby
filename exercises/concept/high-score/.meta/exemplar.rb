@@ -5,6 +5,10 @@ class Scoreboard
     @scores = initial_scores
   end
 
+  def players
+    @scores.keys
+  end
+
   def add_player(name, initial_score = INITIAL_SCORE)
     @scores[name] = initial_score
   end
@@ -23,9 +27,5 @@ class Scoreboard
 
   def player_score(name)
     @scores[name]
-  end
-
-  def players
-    @scores.keys
   end
 end
