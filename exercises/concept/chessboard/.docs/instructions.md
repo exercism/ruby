@@ -16,7 +16,7 @@ Chessboard.rank_range()
 
 ## 2. Define the file range
 
-Implement the `file_range` method. It should return a range of strings, from the uppercase letter A, to the uppercase letter H.
+Implement the `file_range` method. It should return a range of strings, from the uppercase letter `"A"`, to the uppercase letter `"H"`.
 
 ```ruby
 Chessboard.file_range()
