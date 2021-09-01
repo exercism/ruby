@@ -12,7 +12,7 @@ HighScore.new
 
 ## 2. Add players to the high score map
 
-To add a player to the high score map, define `HighScore.add_player/3`, which is a function which takes 3 arguments:
+To add a player to the high score map, define `HighScore#add_player`, which is a function which takes 2 arguments:
 
 - The first argument is the name of a player as a string.
 - The second argument is the score as an integer. The argument is optional, implement the second argument with a default value of 0.
@@ -74,8 +74,8 @@ To get a player's score, define `HighScore#player_score` which takes one argumen
 score_map = HighScore.new
 score_map.add_player("Dave Thomas", 2_374)
 score_map.add_player("José Valim", 486_373)
-score_map.get_players
-# => ["Dave Thomas", "José Valim"]
+score_map.player_score("Dave Thomas")
+# => 2374
 ```
 
 ## 7. Get a list of players
@@ -86,6 +86,6 @@ To get a list of players, define `HighScore#players`.
 score_map = HighScore.new
 score_map.add_player("Dave Thomas", 2_374)
 score_map.add_player("José Valim", 486_373)
-score_map.get_players
+score_map.players
 # => ["Dave Thomas", "José Valim"]
 ```
