@@ -18,7 +18,7 @@ class Repeater
 
   def repeat
     # Outputs the value of the instance variable
-    print @name
+    print @heard
   end
 end
 
