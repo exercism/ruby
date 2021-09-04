@@ -17,14 +17,14 @@ class Repeater
   end
 
   def repeat
-    # Outputs the value of the instance variable
-    print @heard
+    # Return the value of the instance variable
+    @heard
   end
 end
 
 repeater = Repeater.new
 repeater.hear("Hello, friend!")
-repeater.repeat # Prints "Hello, friend!"
+print repeater.repeat # Prints "Hello, friend!"
 ```
 
 Objects usually set their initial state in an `initialize` method, which is automatically called when calling `new` on a class.
