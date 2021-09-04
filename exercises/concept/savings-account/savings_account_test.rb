@@ -79,7 +79,7 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_annual_balance_update_for_avarage_negative_start_balance
-    assert_equal 1_016.21, SavingsAccount.annual_balance_update(1_000.0)
+    assert_equal 1_016.21, SavingsAccount.annual_balance_update(-1_000.0)
   end
 
   def test_annual_balance_update_for_large_negative_start_balance
