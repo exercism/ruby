@@ -62,7 +62,7 @@ class SavingsAccountTest < Minitest::Test
     assert_equal 0.000_001_005, SavingsAccount.annual_balance_update(0.000_001)
   end
 
-  def test_annual_balance_update_for_avarage_positive_start_balance
+  def test_annual_balance_update_for_average_positive_start_balance
     assert_equal 1_016.21, SavingsAccount.annual_balance_update(1_000.0)
   end
 
@@ -78,7 +78,7 @@ class SavingsAccountTest < Minitest::Test
     assert_equal(-0.12_695_199, SavingsAccount.annual_balance_update(-0.123))
   end
 
-  def test_annual_balance_update_for_avarage_negative_start_balance
+  def test_annual_balance_update_for_average_negative_start_balance
     assert_equal(-1_032.13, SavingsAccount.annual_balance_update(-1_000.0))
   end
 
