@@ -33,10 +33,10 @@ class BirdCountTest < Minitest::Test
   end
 
   def test_has_day_without_birds
-    assert BirdCount.new([5, 5, 4, 0, 7, 6]).day_without_birds?
+    assert BirdCount.new([5, 5, 4, 0, 7, 6]).day_without_birds?.equal?(true)
   end
 
   def test_has_day_without_birds_whith_no_day_without_birds
-    refute BirdCount.new([4, 5, 9, 10, 9, 4, 3]).day_without_birds?
+    assert BirdCount.new([4, 5, 9, 10, 9, 4, 3]).day_without_birds?.equal?(false)
   end
 end
