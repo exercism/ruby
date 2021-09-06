@@ -16,11 +16,11 @@ class BirdCount
   end
 
   def busy_days
-    @birds_per_day.count { |num| num >= 5}
+    @birds_per_day.count { |birds| birds >= 5}
   end
 
   def day_without_birds?
-    @birds_per_day.any? { |num| num.zero? }
+    @birds_per_day.any? { |birds| birds.zero? }
   end
 end
 
