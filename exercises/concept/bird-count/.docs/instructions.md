@@ -19,7 +19,7 @@ Implement the `BirdCount#yesterday` method to return how many birds visited your
 
 ```ruby
 birds_per_day = [2, 5, 0, 7, 4, 1]
-bird_count = new BirdCount(birds_per_day)
+bird_count = BirdCount.new(birds_per_day)
 bird_count.yesterday
 # => 4
 ```
@@ -30,7 +30,7 @@ Implement the `BirdCount#total` method to return the total number of birds that 
 
 ```ruby
 birds_per_day = [2, 5, 0, 7, 4, 1]
-bird_count = new BirdCount(birds_per_day)
+bird_count = BirdCount.new(birds_per_day)
 bird_count.total
 # => 19
 ```
@@ -42,7 +42,7 @@ Implement the `BirdCount#busy_days` method to return the number of busy days:
 
 ```ruby
 birds_per_day = [2, 5, 0, 7, 4, 1]
-bird_count = new BirdCount(birds_per_day)
+bird_count = BirdCount.new(birds_per_day)
 bird_count.busy_days
 # => 2
 ```
@@ -53,7 +53,7 @@ Implement the `BirdCount#day_without_birds?` method that returns `true` if there
 
 ```ruby
 birds_per_day = [2, 5, 0, 7, 4, 1]
-bird_count = new BirdCount(birds_per_day)
+bird_count = BirdCount.new(birds_per_day)
 bird_count.day_without_birds?
 # => true
 ```
