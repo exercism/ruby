@@ -8,7 +8,7 @@ class BirdCountTest < Minitest::Test
     assert_equal [0, 2, 5, 3, 7, 8, 4], BirdCount.last_week
   end
 
-  def test_yesterday_for_dissapointing_week
+  def test_yesterday_for_disappointing_week
     assert_equal 1, BirdCount.new([0, 0, 1, 0, 0, 1, 0]).yesterday
   end
 
@@ -16,7 +16,7 @@ class BirdCountTest < Minitest::Test
     assert_equal 7, BirdCount.new([8, 8, 9, 5, 4, 7, 10]).yesterday
   end
 
-  def test_total_for_dissapointing_week
+  def test_total_for_disappointing_week
     assert_equal 2, BirdCount.new([0, 0, 1, 0, 0, 1, 0]).total
   end
 
