@@ -81,7 +81,7 @@
         "name": "Boutique Inventory",
         "uuid": "9f3a89f2-196b-4d53-8481-1360b565c797",
         "concepts": ["advanced-enumeration"],
-        "prerequisites": ["enumeration", "hashes"]
+        "prerequisites": ["enumeration"]
       },
       {
         "slug": "boutique-inventory-improvements",
@@ -449,12 +449,7 @@
         "name": "Resistor Color Trio",
         "uuid": "2df14b68-75c8-4984-8ae2-ecd2cb7ed1d4",
         "practices": ["strings"],
-        "prerequisites": [
-          "arrays",
-          "strings",
-          "numbers",
-          "exceptions"
-        ],
+        "prerequisites": ["arrays", "strings", "numbers", "exceptions"],
         "difficulty": 5,
         "topics": ["loops"]
       },
@@ -698,12 +693,7 @@
         "name": "Minesweeper",
         "uuid": "9d6808fb-d367-4df9-a1f0-47ff83b75544",
         "practices": ["strings"],
-        "prerequisites": [
-          "strings",
-          "arrays",
-          "conditionals",
-          "exceptions"
-        ],
+        "prerequisites": ["strings", "arrays", "conditionals", "exceptions"],
         "difficulty": 5,
         "topics": ["arrays", "games", "loops", "matrices", "transforming"]
       },
@@ -1083,12 +1073,7 @@
         "name": "Ocr Numbers",
         "uuid": "dd13bb29-589c-497d-9580-3f288f353fb2",
         "practices": ["strings"],
-        "prerequisites": [
-          "strings",
-          "loops",
-          "conditionals",
-          "exceptions"
-        ],
+        "prerequisites": ["strings", "loops", "conditionals", "exceptions"],
         "difficulty": 7,
         "topics": ["parsing", "pattern_recognition"]
       },
@@ -1137,12 +1122,7 @@
         "name": "Food Chain",
         "uuid": "6f0919eb-2160-4cca-8504-286acc2ae9c8",
         "practices": ["strings", "conditionals"],
-        "prerequisites": [
-          "strings",
-          "numbers",
-          "conditionals",
-          "loops"
-        ],
+        "prerequisites": ["strings", "numbers", "conditionals", "loops"],
         "difficulty": 4,
         "topics": [
           "conditionals",
@@ -1201,12 +1181,7 @@
         "name": "Connect",
         "uuid": "538a6768-bae5-437c-9cdf-765d73a79643",
         "practices": ["symbols"],
-        "prerequisites": [
-          "strings",
-          "symbols",
-          "arrays",
-          "conditionals"
-        ],
+        "prerequisites": ["strings", "symbols", "arrays", "conditionals"],
         "difficulty": 9,
         "topics": ["arrays", "games", "graphs", "loops", "searching"]
       },
