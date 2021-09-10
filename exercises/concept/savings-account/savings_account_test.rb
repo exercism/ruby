@@ -59,31 +59,33 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_annual_balance_update_for_small_positive_start_balance
-    assert_equal 0.000_001_005, SavingsAccount.annual_balance_update(0.000_001)
+    assert_in_delta 0.000_001_005, SavingsAccount.annual_balance_update(0.000_001), 0.000_000_0001
   end
 
   def test_annual_balance_update_for_avarage_positive_start_balance
-    assert_equal 1_016.21, SavingsAccount.annual_balance_update(1_000.0)
+    assert_in_delta 1_016.21, SavingsAccount.annual_balance_update(1_000.0), 0.01
   end
 
   def test_annual_balance_update_for_large_positive_start_balance
-    assert_equal 1_016.2_101_016_209_999, SavingsAccount.annual_balance_update(1_000.0001)
+    assert_in_delta 1_016.2_101_016_209_999, SavingsAccount.annual_balance_update(1_000.0001), 0.0_000_000_000_01
   end
 
   def test_annual_balance_update_for_huge_positive_start_balance
-    assert_equal 920_352_587.26_744_292_868_451_875, SavingsAccount.annual_balance_update(898_124_017.826_243_404_425)
+    assert_in_delta 920_352_587.26_744_292_868_451_875,
+      SavingsAccount.annual_balance_update(898_124_017.826_243_404_425),
+      0.00_000_000_000_000_001
   end
 
   def test_annual_balance_update_for_small_negative_start_balance
-    assert_equal(-0.12_695_199, SavingsAccount.annual_balance_update(-0.123))
+    assert_in_delta(-0.12_695_199, SavingsAccount.annual_balance_update(-0.123), 0.00_000_01)
   end
 
   def test_annual_balance_update_for_avarage_negative_start_balance
-    assert_equal 1_016.21, SavingsAccount.annual_balance_update(1_000.0)
+    assert_in_delta 1_016.21, SavingsAccount.annual_balance_update(1_000.0), 0.01
   end
 
   def test_annual_balance_update_for_large_negative_start_balance
-    assert_equal(-157_878.97_174_203, SavingsAccount.annual_balance_update(-152_964.231))
+    assert_in_delta(-157_878.97_174_203, SavingsAccount.annual_balance_update(-152_964.231), 0.00_000_001)
   end
 
   def test_years_before_desired_balance_for_small_start_balance
