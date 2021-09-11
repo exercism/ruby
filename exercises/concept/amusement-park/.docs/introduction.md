@@ -55,7 +55,7 @@ end
 ```
 
 It is good practice to consider _instance_ variables to be private from external read and writes.
-We instead methods define methods to get and set their values.
+We instead define methods to get and set their values.
 For example:
 
 ```ruby
