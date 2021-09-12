@@ -3,7 +3,7 @@
 ## Instance Variables
 
 Objects can hold their own state by setting _instance variables_.
-These variables live within an object and are normally used to store some internal state.
+These variables live within an object are normally used to store some internal state.
 
 Instance variables always start with an `@`.
 You can create a new instance variable by setting a variable starting with an `@`.
@@ -35,13 +35,13 @@ class Airplane
     @wings = 2
   end
 
-  def number_of_wings
+  def wings
     @wings
   end
 end
 
 plane = Airplane.new
-plane.number_of_wings # returns 2
+plane.wings # returns 2
 ```
 
 The `initialize` method may also take arguments, so that each instance can start with a custom state:
