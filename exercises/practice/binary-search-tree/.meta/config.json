@@ -24,9 +24,7 @@
     "test": [
       "binary_search_tree_test.rb"
     ],
-    "example": [
-      ".meta/solutions/binary_search_tree.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Josh Cheek",
   "source_url": "https://twitter.com/josh_cheek"

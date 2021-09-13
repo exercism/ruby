@@ -20,9 +20,7 @@
     "test": [
       "kindergarten_garden_test.rb"
     ],
-    "example": [
-      ".meta/solutions/kindergarten_garden.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Random musings during airplane trip.",
   "source_url": "http://jumpstartlab.com"

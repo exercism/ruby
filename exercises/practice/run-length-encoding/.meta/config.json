@@ -21,9 +21,7 @@
     "test": [
       "run_length_encoding_test.rb"
     ],
-    "example": [
-      ".meta/solutions/run_length_encoding.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"

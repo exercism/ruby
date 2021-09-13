@@ -26,8 +26,6 @@
     "test": [
       "custom_set_test.rb"
     ],
-    "example": [
-      ".meta/solutions/custom_set.rb"
-    ]
+    "example": ".meta/example.rb"
   }
 }

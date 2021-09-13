@@ -6,8 +6,7 @@ class ExerciseTestTasksTest < Minitest::Test
   def test_all_exercises_task
     setup_rake
 
-    # TODO: Change to `stub :all` once concept exercises pass
-    Exercise.stub :practice, ['test1', 'test2'] do
+    Exercise.stub :all, ['test1', 'test2'] do
       ExerciseTestTasks.new(options: '')
 
       assert_equal %w[test1 test2], Rake::Task['exercises'].prerequisites

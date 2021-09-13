@@ -25,9 +25,7 @@
     "test": [
       "grade_school_test.rb"
     ],
-    "example": [
-      ".meta/solutions/grade_school.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "A pairing session with Phil Battos at gSchool",
   "source_url": "http://gschool.it"

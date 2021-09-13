@@ -21,8 +21,6 @@
     "test": [
       "all_your_base_test.rb"
     ],
-    "example": [
-      ".meta/solutions/all_your_base.rb"
-    ]
+    "example": ".meta/example.rb"
   }
 }

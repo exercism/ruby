@@ -26,9 +26,7 @@
     "test": [
       "clock_test.rb"
     ],
-    "example": [
-      ".meta/solutions/clock.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Pairing session with Erin Drummond",
   "source_url": "https://twitter.com/ebdrummond"

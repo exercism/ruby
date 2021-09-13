@@ -22,9 +22,7 @@
     "test": [
       "palindrome_products_test.rb"
     ],
-    "example": [
-      ".meta/solutions/palindrome_products.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Problem 4 at Project Euler",
   "source_url": "http://projecteuler.net/problem=4"

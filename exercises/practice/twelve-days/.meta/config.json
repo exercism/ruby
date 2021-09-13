@@ -24,9 +24,7 @@
     "test": [
       "twelve_days_test.rb"
     ],
-    "example": [
-      ".meta/solutions/twelve_days.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"

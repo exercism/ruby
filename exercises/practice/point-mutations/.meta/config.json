@@ -20,9 +20,7 @@
     "test": [
       "point_mutations_test.rb"
     ],
-    "example": [
-      ".meta/solutions/point_mutations.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "The Calculating Point Mutations problem at Rosalind",
   "source_url": "http://rosalind.info/problems/hamm/"

@@ -24,9 +24,7 @@
     "test": [
       "say_test.rb"
     ],
-    "example": [
-      ".meta/solutions/say.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "A variation on JavaRanch CattleDrive, exercise 4a",
   "source_url": "http://www.javaranch.com/say.jsp"

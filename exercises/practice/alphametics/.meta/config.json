@@ -24,8 +24,6 @@
     "test": [
       "alphametics_test.rb"
     ],
-    "example": [
-      ".meta/solutions/alphametics.rb"
-    ]
+    "example": ".meta/example.rb"
   }
 }

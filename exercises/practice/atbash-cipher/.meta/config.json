@@ -21,9 +21,7 @@
     "test": [
       "atbash_cipher_test.rb"
     ],
-    "example": [
-      ".meta/solutions/atbash_cipher.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Atbash"

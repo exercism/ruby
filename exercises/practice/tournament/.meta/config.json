@@ -21,8 +21,6 @@
     "test": [
       "tournament_test.rb"
     ],
-    "example": [
-      ".meta/solutions/tournament.rb"
-    ]
+    "example": ".meta/example.rb"
   }
 }

@@ -29,9 +29,7 @@
     "test": [
       "phone_number_test.rb"
     ],
-    "example": [
-      ".meta/solutions/phone_number.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Event Manager by JumpstartLab",
   "source_url": "http://tutorials.jumpstartlab.com/projects/eventmanager.html"

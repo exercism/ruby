@@ -20,9 +20,7 @@
     "test": [
       "prime_factors_test.rb"
     ],
-    "example": [
-      ".meta/solutions/prime_factors.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "The Prime Factors Kata by Uncle Bob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata"
