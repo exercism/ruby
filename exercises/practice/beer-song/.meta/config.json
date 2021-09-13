@@ -24,9 +24,7 @@
     "test": [
       "beer_song_test.rb"
     ],
-    "example": [
-      ".meta/solutions/beer_song.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Learn to Program by Chris Pine",
   "source_url": "http://pine.fm/LearnToProgram/?Chapter=06"

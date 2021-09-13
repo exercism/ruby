@@ -22,9 +22,7 @@
     "test": [
       "luhn_test.rb"
     ],
-    "example": [
-      ".meta/solutions/luhn.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "The Luhn Algorithm on Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Luhn_algorithm"

@@ -30,9 +30,7 @@
     "test": [
       "hamming_test.rb"
     ],
-    "example": [
-      ".meta/solutions/hamming.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "The Calculating Point Mutations problem at Rosalind",
   "source_url": "http://rosalind.info/problems/hamm/"

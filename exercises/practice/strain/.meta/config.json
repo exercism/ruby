@@ -20,9 +20,7 @@
     "test": [
       "strain_test.rb"
     ],
-    "example": [
-      ".meta/solutions/strain.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Conversation with James Edward Gray II",
   "source_url": "https://twitter.com/jeg2"

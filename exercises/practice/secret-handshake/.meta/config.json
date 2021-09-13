@@ -20,9 +20,7 @@
     "test": [
       "secret_handshake_test.rb"
     ],
-    "example": [
-      ".meta/solutions/secret_handshake.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Bert, in Mary Poppins",
   "source_url": "http://www.imdb.com/title/tt0058331/quotes/qt0437047"

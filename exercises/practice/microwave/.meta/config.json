@@ -14,8 +14,6 @@
     "test": [
       "microwave_test.rb"
     ],
-    "example": [
-      ".meta/solutions/microwave.rb"
-    ]
+    "example": ".meta/example.rb"
   }
 }

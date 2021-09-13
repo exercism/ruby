@@ -18,9 +18,7 @@
     "test": [
       "hexadecimal_test.rb"
     ],
-    "example": [
-      ".meta/solutions/hexadecimal.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "All of Computer Science",
   "source_url": "http://www.wolframalpha.com/examples/NumberBases.html"

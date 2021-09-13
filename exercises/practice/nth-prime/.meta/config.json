@@ -24,9 +24,7 @@
     "test": [
       "nth_prime_test.rb"
     ],
-    "example": [
-      ".meta/solutions/nth_prime.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "A variation on Problem 7 at Project Euler",
   "source_url": "http://projecteuler.net/problem=7"

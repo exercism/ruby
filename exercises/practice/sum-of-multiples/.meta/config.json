@@ -24,9 +24,7 @@
     "test": [
       "sum_of_multiples_test.rb"
     ],
-    "example": [
-      ".meta/solutions/sum_of_multiples.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "A variation on Problem 1 at Project Euler",
   "source_url": "http://projecteuler.net/problem=1"

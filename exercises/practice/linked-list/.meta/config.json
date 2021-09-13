@@ -25,9 +25,7 @@
     "test": [
       "linked_list_test.rb"
     ],
-    "example": [
-      ".meta/solutions/linked_list.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Classic computer science topic"
 }

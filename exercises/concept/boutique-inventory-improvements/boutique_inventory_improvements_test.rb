@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'boutique_inventory'
+require_relative 'boutique_inventory_improvements'
 
 class BoutiqueInventoryTest < Minitest::Test
   def test_no_item_names

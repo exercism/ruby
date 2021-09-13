@@ -1,6 +1,5 @@
 require 'rake/file_utils_ext'
 require 'tmpdir'
-
 class ExerciseTestsRunner
   include Rake::FileUtilsExt
 

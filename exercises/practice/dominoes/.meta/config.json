@@ -21,8 +21,6 @@
     "test": [
       "dominoes_test.rb"
     ],
-    "example": [
-      ".meta/solutions/dominoes.rb"
-    ]
+    "example": ".meta/example.rb"
   }
 }

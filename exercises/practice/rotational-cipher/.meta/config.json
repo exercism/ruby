@@ -19,9 +19,7 @@
     "test": [
       "rotational_cipher_test.rb"
     ],
-    "example": [
-      ".meta/solutions/rotational_cipher.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Caesar_cipher"

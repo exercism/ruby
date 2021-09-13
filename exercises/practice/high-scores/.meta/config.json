@@ -16,9 +16,7 @@
     "test": [
       "high_scores_test.rb"
     ],
-    "example": [
-      ".meta/solutions/high_scores.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Tribute to the eighties' arcade game Frogger"
 }

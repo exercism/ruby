@@ -15,9 +15,7 @@
     "test": [
       "armstrong_numbers_test.rb"
     ],
-    "example": [
-      ".meta/solutions/armstrong_numbers.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"

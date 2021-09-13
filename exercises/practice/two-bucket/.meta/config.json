@@ -22,9 +22,7 @@
     "test": [
       "two_bucket_test.rb"
     ],
-    "example": [
-      ".meta/solutions/two_bucket.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Water Pouring Problem",
   "source_url": "http://demonstrations.wolfram.com/WaterPouringProblem/"

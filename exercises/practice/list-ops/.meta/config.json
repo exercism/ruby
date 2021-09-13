@@ -20,8 +20,6 @@
     "test": [
       "list_ops_test.rb"
     ],
-    "example": [
-      ".meta/solutions/list_ops.rb"
-    ]
+    "example": ".meta/example.rb"
   }
 }

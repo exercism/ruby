@@ -20,9 +20,7 @@
     "test": [
       "proverb_test.rb"
     ],
-    "example": [
-      ".meta/solutions/proverb.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/For_Want_of_a_Nail"

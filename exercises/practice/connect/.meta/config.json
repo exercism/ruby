@@ -22,8 +22,6 @@
     "test": [
       "connect_test.rb"
     ],
-    "example": [
-      ".meta/solutions/connect.rb"
-    ]
+    "example": ".meta/example.rb"
   }
 }

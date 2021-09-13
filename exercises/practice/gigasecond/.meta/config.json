@@ -27,9 +27,7 @@
     "test": [
       "gigasecond_test.rb"
     ],
-    "example": [
-      ".meta/solutions/gigasecond.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Chapter 9 in Chris Pine's online Learn to Program tutorial.",
   "source_url": "http://pine.fm/LearnToProgram/?Chapter=09"

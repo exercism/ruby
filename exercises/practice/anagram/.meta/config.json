@@ -29,9 +29,7 @@
     "test": [
       "anagram_test.rb"
     ],
-    "example": [
-      ".meta/solutions/anagram.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Inspired by the Extreme Startup game",
   "source_url": "https://github.com/rchatley/extreme_startup"

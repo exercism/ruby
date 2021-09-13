@@ -24,9 +24,7 @@
     "test": [
       "isogram_test.rb"
     ],
-    "example": [
-      ".meta/solutions/isogram.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Isogram"

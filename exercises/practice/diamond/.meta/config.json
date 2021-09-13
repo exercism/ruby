@@ -20,9 +20,7 @@
     "test": [
       "diamond_test.rb"
     ],
-    "example": [
-      ".meta/solutions/diamond.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "Seb Rose",
   "source_url": "http://claysnow.co.uk/recycling-tests-in-tdd/"

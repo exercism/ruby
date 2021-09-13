@@ -23,9 +23,7 @@
     "test": [
       "roman_numerals_test.rb"
     ],
-    "example": [
-      ".meta/solutions/roman_numerals.rb"
-    ]
+    "example": ".meta/example.rb"
   },
   "source": "The Roman Numeral Kata",
   "source_url": "http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals"
