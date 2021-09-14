@@ -23,7 +23,9 @@
     "test": [
       "robot_name_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "A debugging session with Paul Blackwell at gSchool."
 }

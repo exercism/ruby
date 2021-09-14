@@ -21,6 +21,8 @@
     "test": [
       "minesweeper_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   }
 }

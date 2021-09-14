@@ -21,7 +21,9 @@
     "test": [
       "pythagorean_triplet_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "Problem 9 at Project Euler",
   "source_url": "http://projecteuler.net/problem=9"

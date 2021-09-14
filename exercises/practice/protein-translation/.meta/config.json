@@ -23,7 +23,9 @@
     "test": [
       "protein_translation_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "Tyler Long"
 }

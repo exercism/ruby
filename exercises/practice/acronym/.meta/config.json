@@ -25,7 +25,9 @@
     "test": [
       "acronym_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "Julien Vanier",
   "source_url": "https://github.com/monkbroc"

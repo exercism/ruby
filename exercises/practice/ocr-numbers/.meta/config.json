@@ -25,7 +25,9 @@
     "test": [
       "ocr_numbers_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "Inspired by the Bank OCR kata",
   "source_url": "http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR"

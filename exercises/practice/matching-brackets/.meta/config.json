@@ -24,7 +24,9 @@
     "test": [
       "matching_brackets_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "Ginna Baker"
 }

@@ -23,6 +23,8 @@
     "test": [
       "scale_generator_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   }
 }

@@ -21,7 +21,9 @@
     "test": [
       "robot_simulator_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "Inspired by an interview question at a famous company."
 }

@@ -4,7 +4,7 @@
   "contributors": ["kotp", "iHiD", "kayn1"],
   "language_versions": ">=2.6.6",
   "files": {
-    "solution": ["amusement_park.rb"],
+    "solution": ["amusement_park_improvements.rb"],
     "test": ["amusement_park_improvements_test.rb"],
     "exemplar": [".meta/exemplar.rb"]
   }
