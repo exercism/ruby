@@ -2,8 +2,11 @@
 
 ## Modules
 
-So far all the exercises you've seen have used classes. 
-Some times we don't need the overhead of creating an object with state, so instead we use a `module`.
+So far all the exercises you have seen have used classes.
+Sometimes we do not need the overhead of creating an object with state, so instead we use `module`.
+
+A module is very similar to a class (in fact, `Module` is `Class`' parent in the object hierarchy) - the main difference being that rather than using instance methods, we use class methods.
+Class methods start with `self.` and are directly called on a module.
 
 A module is very similar to a class (in fact, `Module` is `Classes` parent in the object hierarchy) - the main difference being that rather than using instance methods, we use class methods.
 Class methods start with `self.` and are directly called on a module. 

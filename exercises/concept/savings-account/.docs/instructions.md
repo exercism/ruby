@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise you'll be working with savings accounts. Each year, the balance of a savings account is updated based on the interest rate. The interest rate the bank gives depends on the amount of money in the accounts (its balance):
+In this exercise you will be working with savings accounts. Each year, the balance of a savings account is updated based on the interest rate. The interest rate the bank gives depends on the amount of money in the accounts (its balance):
 
 - -3.213% for a negative balance.
 - 0.5% for a positive balance less than `1000` dollars.
