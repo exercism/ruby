@@ -15,34 +15,34 @@ There are lots of ways to solve these tasks - choose your favourite methods from
 
 ## 1. Get message from a log line
 
-Implement the `LogLineParser.message` method to return a log line's message:
+Implement the `LogLineParser#message` method to return a log line's message:
 
 ```ruby
-LogLineParser.message('[ERROR]: Invalid operation')
+LogLineParser.new('[ERROR]: Invalid operation').message
 # => "Invalid operation"
 ```
 
 Any leading or trailing white space should be removed:
 
 ```ruby
-LogLineParser.message('[WARNING]:  Disk almost full\r\n')
+LogLineParser.new('[WARNING]:  Disk almost full\r\n').message
 # => "Disk almost full"
 ```
 
 ## 2. Get log level from a log line
 
-Implement the `LogLineParser.log_level` method to return a log line's log level, which should be returned in lowercase:
+Implement the `LogLineParser#log_level` method to return a log line's log level, which should be returned in lowercase:
 
 ```ruby
-LogLineParser.log_level('[ERROR]: Invalid operation')
+LogLineParser.new('[ERROR]: Invalid operation').log_level
 # => "error"
 ```
 
 ## 3. Reformat a log line
 
-Implement the `LogLineParser.reformat` method that reformats the log line, putting the message first and the log level after it in parentheses:
+Implement the `LogLineParser#reformat` method that reformats the log line, putting the message first and the log level after it in parentheses:
 
 ```ruby
-LogLineParser.reformat('[INFO]: Operation completed')
+LogLineParser.new('[INFO]: Operation completed').reformat
 # => "Operation completed (info)"
 ```
