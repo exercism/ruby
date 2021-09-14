@@ -30,7 +30,16 @@ SimpleCalculator.calculate(1, '2', '-')
 # => Raises an UnsupportedOperation
 ```
 
-## 3. Handle DivideByZero exceptions
+## 3. Handle invalid arguments
+
+Update the `SimpleCalculator.calculate()` method to raise an `ArgumentError` exception for invalid argument types.
+
+```ruby
+SimpleCalculator.calculate(1, '2', '*')
+# => Raises an ArgumentError
+```
+
+## 4. Handle DivideByZero exceptions
 
 Update the `SimpleCalculator.calculate()` to handle `ZeroDivisionError` exceptions. The handling code should return the string with the content `Division by zero is not allowed.`. Any other exception should not be handled by the `SimpleCalculator.calculate()` method.
 
