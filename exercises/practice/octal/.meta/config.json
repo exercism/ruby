@@ -19,7 +19,9 @@
     "test": [
       "octal_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "All of Computer Science",
   "source_url": "http://www.wolframalpha.com/input/?i=base+8"

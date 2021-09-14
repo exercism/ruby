@@ -31,7 +31,9 @@
     "test": [
       "rna_transcription_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "Hyperphysics",
   "source_url": "http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"

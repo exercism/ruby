@@ -13,7 +13,9 @@
     "test": [
       "darts_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "Inspired by an exercise created by a professor Della Paolera in Argentina"
 }

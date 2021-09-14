@@ -19,7 +19,9 @@
     "test": [
       "house_test.rb"
     ],
-    "example": ".meta/example.rb"
+    "example": [
+      ".meta/example.rb"
+    ]
   },
   "source": "British nursery rhyme",
   "source_url": "http://en.wikipedia.org/wiki/This_Is_The_House_That_Jack_Built"
