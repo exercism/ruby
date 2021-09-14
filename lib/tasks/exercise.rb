@@ -34,8 +34,8 @@ class Exercise
   end
 
   def example_file
-    case @type 
-    when :practice  
+    case @type
+    when :practice
       File.join('.meta', "example.rb")
     when :concept
       File.join('.meta', "exemplar.rb")
