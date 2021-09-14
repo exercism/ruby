@@ -62,7 +62,7 @@ class SavingsAccountTest < Minitest::Test
     assert_in_delta 0.000_001_005, SavingsAccount.annual_balance_update(0.000_001), 0.000_000_0001
   end
 
-  def test_annual_balance_update_for_avarage_positive_start_balance
+  def test_annual_balance_update_for_average_positive_start_balance
     assert_in_delta 1_016.21, SavingsAccount.annual_balance_update(1_000.0), 0.01
   end
 
