@@ -7,7 +7,7 @@ In this exercise you will be working with savings accounts. Each year, the balan
 - 1.621% for a positive balance greater or equal than `1000` dollars and less than `5000` dollars.
 - 2.475% for a positive balance greater or equal than `5000` dollars.
 
-You have three tasks, each of which will deal the balance and its interest rate.
+You have three tasks, each of which will deal with the balance and its interest rate.
 
 ## 1. Calculate the interest rate
 
