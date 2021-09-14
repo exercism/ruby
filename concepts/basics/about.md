@@ -47,3 +47,7 @@ Finally, bear in mind that the `Integer` object holds values that may be defined
 
 [integers-docs]: https://ruby-doc.org/core-2.7.0/Integer.html
 
+**NOTE:** The communication in documentation often will reference instance methods using syntax like `Class#method_name` while class or module level methods are referenced as `Class::method_name`.
+The `::` is called the _Scope Resolution Operator_, the constant or method at the class or module level being referenced.
+You will encounter this in the Ruby documentation, and in mailing lists and other support areas.
+You will find that we reference class and module methods in our writing as `ClassName.method_name` or `ModuleName.method_name`, instead.
