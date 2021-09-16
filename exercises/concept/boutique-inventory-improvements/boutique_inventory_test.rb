@@ -3,7 +3,7 @@ require_relative 'boutique_inventory'
 
 class BoutiqueInventoryTest < Minitest::Test
   def test_no_item_names
-    assert_equal [], BoutiqueInventory.new([]).item_names
+    assert_empty BoutiqueInventory.new([]).item_names
   end
 
   def test_one_item_name

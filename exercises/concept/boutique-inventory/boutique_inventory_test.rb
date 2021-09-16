@@ -3,7 +3,7 @@ require_relative 'boutique_inventory'
 
 class BoutiqueInventoryTest < Minitest::Test
   def test_no_item_names
-    assert_equal [], BoutiqueInventory.new([]).item_names
+    assert_empty BoutiqueInventory.new([]).item_names
   end
 
   def test_one_item_name
@@ -25,14 +25,14 @@ class BoutiqueInventoryTest < Minitest::Test
   end
 
   def test_cheap_for_no_items
-    assert_equal [], BoutiqueInventory.new([]).cheap
+    assert_empty BoutiqueInventory.new([]).cheap
   end
 
   def test_cheap_for_no_cheap_items
     shoes = { price: 30.00, name: "Shoes", quantity_by_size: {} }
     coat = { price: 65.00, name: "Coat", quantity_by_size: {} }
     items = [shoes, coat]
-    assert_equal [], BoutiqueInventory.new(items).cheap
+    assert_empty BoutiqueInventory.new(items).cheap
   end
 
   def test_one_cheap_item
@@ -53,7 +53,7 @@ class BoutiqueInventoryTest < Minitest::Test
   end
 
   def test_out_of_stock_for_no_items
-    assert_equal [], BoutiqueInventory.new([]).out_of_stock
+    assert_empty BoutiqueInventory.new([]).out_of_stock
   end
 
   def test_out_of_stock_for_all_items
@@ -75,7 +75,7 @@ class BoutiqueInventoryTest < Minitest::Test
     shoes = { price: 30.00, name: "Shoes", quantity_by_size: {} }
     coat = { price: 65.00, name: "Coat", quantity_by_size: {} }
     items = [shoes, coat]
-    assert_equal({}, BoutiqueInventory.new(items).stock_for_item("Coat"))
+    assert_empty(BoutiqueInventory.new(items).stock_for_item("Coat"))
   end
 
   def test_stock_for_item_for_some_in_stock
