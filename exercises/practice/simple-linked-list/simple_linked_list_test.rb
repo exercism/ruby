@@ -60,7 +60,7 @@ class LinkedListTest < Minitest::Test
   def test_list_empty_to_array
     skip
     list = SimpleLinkedList.new
-    assert_empty list.to_a
+    assert_equal [], list.to_a
   end
 
   def test_list_single_to_array

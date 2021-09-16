@@ -5,39 +5,39 @@ module Generator
     def test_abbreviated_commit_hash
       expected_abbreviated_commit_hash = '1234567'
       subject = TemplateValues.new(abbreviated_commit_hash: expected_abbreviated_commit_hash,
-        exercise_name: nil,
-        test_cases: nil)
+                                   exercise_name: nil,
+                                   test_cases: nil)
       assert_equal expected_abbreviated_commit_hash, subject.abbreviated_commit_hash
     end
 
     def test_exercise_name
       expected_exercise_name = 'alpha_beta'
       subject = TemplateValues.new(abbreviated_commit_hash: nil,
-        exercise_name: expected_exercise_name,
-        test_cases: nil)
+                                   exercise_name: expected_exercise_name,
+                                   test_cases: nil)
       assert_equal expected_exercise_name, subject.exercise_name
     end
 
     def test_exercise_test_classname
       expected = 'AlphaBetaTest'
       subject = TemplateValues.new(abbreviated_commit_hash: nil,
-        test_cases: nil,
-        exercise_name: 'alpha_beta')
+                                   test_cases: nil,
+                                   exercise_name: 'alpha_beta')
       assert_equal expected, subject.exercise_test_classname
     end
 
     def test_test_cases
       expected_test_cases = 'should be TemplateValues class'
       subject = TemplateValues.new(abbreviated_commit_hash: nil,
-        exercise_name: nil,
-        test_cases: expected_test_cases)
+                                   exercise_name: nil,
+                                   test_cases: expected_test_cases)
       assert_equal expected_test_cases, subject.test_cases
     end
 
     def test_get_binding
       subject = TemplateValues.new(abbreviated_commit_hash: nil,
-        exercise_name: nil,
-        test_cases: nil)
+                                   exercise_name: nil,
+                                   test_cases: nil)
       assert_instance_of Binding, subject.get_binding
     end
   end

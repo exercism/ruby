@@ -4,8 +4,8 @@
   "contributors": ["kotp"],
   "language_versions": ">=2.6.6",
   "files": {
-    "solution": ["attendee.rb"],
-    "test": ["attendee_test.rb"],
+    "solution": ["amusement_park.rb"],
+    "test": ["amusement_park_test.rb"],
     "exemplar": [".meta/exemplar.rb"]
   }
 }

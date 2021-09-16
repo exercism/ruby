@@ -2,8 +2,8 @@
   "blurb": "Learn about ostruct by refactoring your online fashion boutique's inventory management system.",
   "authors": ["iHiD"],
   "files": {
-    "solution": ["boutique_inventory.rb"],
-    "test": ["boutique_inventory_test.rb"],
+    "solution": ["boutique_inventory_improvements.rb"],
+    "test": ["boutique_inventory_improvements_test.rb"],
     "exemplar": [".meta/exemplar.rb"]
   }
 }

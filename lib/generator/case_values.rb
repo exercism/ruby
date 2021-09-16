@@ -1,5 +1,3 @@
-require 'ostruct'
-
 module Generator
   module CaseValues
     class Canonical < OpenStruct

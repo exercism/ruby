@@ -5,7 +5,7 @@ class PrimeFactorsTest < Minitest::Test
   # rubocop:disable Naming/VariableNumber
 
   def test_1
-    assert_empty PrimeFactors.of(1)
+    assert_equal [], PrimeFactors.of(1)
   end
 
   def test_2
