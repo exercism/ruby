@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative 'amusement_park_improvements'
+require_relative 'attendee'
 
 class AttendeeTest < Minitest::Test
   def test_new_instance_doesnt_have_pass
