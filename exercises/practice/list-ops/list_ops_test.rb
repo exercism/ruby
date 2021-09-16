@@ -18,7 +18,7 @@ class ListOpsTest < Minitest::Test
 
   def test_reverse_empty
     skip
-    assert_equal [], ListOps.reverser([])
+    assert_empty ListOps.reverser([])
   end
 
   def test_reverse_normal
@@ -34,7 +34,7 @@ class ListOpsTest < Minitest::Test
 
   def test_concat_empty
     skip
-    assert_equal [], ListOps.concatter([], [])
+    assert_empty ListOps.concatter([], [])
   end
 
   def test_concat_normal
@@ -51,7 +51,7 @@ class ListOpsTest < Minitest::Test
 
   def test_mapper_empty
     skip
-    assert_equal [], ListOps.mapper([])
+    assert_empty ListOps.mapper([])
   end
 
   def test_mapper_normal
@@ -67,7 +67,7 @@ class ListOpsTest < Minitest::Test
 
   def test_filterer_empty
     skip
-    assert_equal [], ListOps.filterer([])
+    assert_empty ListOps.filterer([])
   end
 
   def test_filterer_normal

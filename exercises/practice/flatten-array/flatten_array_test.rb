@@ -36,6 +36,6 @@ class FlattenArrayTest < Minitest::Test
   def test_all_values_in_nested_list_are_nil
     skip
     flat_array = FlattenArray.flatten([nil, [[[nil]]], nil, nil, [[nil, nil], nil], nil])
-    assert_equal [], flat_array
+    assert_empty flat_array
   end
 end
