@@ -19,9 +19,6 @@ Bundler/OrderedGems:
 Layout/ArgumentAlignment:
   EnforcedStyle: with_fixed_indentation
 
-Layout/HashAlignment:
-  EnforcedHashRocketStyle: key
-
 Layout/DotPosition:
   EnforcedStyle: trailing
 

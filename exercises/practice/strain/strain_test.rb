@@ -3,7 +3,7 @@ require_relative 'strain'
 
 class ArrayTest < Minitest::Test
   def test_empty_keep
-    assert_empty([].keep { |e| e < 10 })
+    assert_equal [], ([].keep { |e| e < 10 })
   end
 
   def test_keep_everything
@@ -45,7 +45,7 @@ class ArrayTest < Minitest::Test
 
   def test_empty_discard
     skip
-    assert_empty([].discard { |e| e < 10 })
+    assert_equal [], ([].discard { |e| e < 10 })
   end
 
   def test_discard_nothing

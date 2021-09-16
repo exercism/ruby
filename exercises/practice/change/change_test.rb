@@ -41,7 +41,7 @@ class ChangeTest < Minitest::Test
 
   def test_no_coins_make_0_change
     skip
-    assert_empty Change.generate([1, 5, 10, 21, 25], 0)
+    assert_equal [], Change.generate([1, 5, 10, 21, 25], 0)
   end
 
   def test_error_testing_for_change_smaller_than_the_smallest_of_coins

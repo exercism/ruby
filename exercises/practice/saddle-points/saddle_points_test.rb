@@ -40,7 +40,7 @@ class MatrixTest < Minitest::Test
   def test_no_saddle_point
     skip
     matrix = Matrix.new("2 1\n1 2")
-    assert_empty matrix.saddle_points
+    assert_equal [], matrix.saddle_points
   end
 
   def test_a_saddle_point

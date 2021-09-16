@@ -3,7 +3,7 @@ require_relative 'accumulate'
 
 class ArrayTest < Minitest::Test
   def test_empty_accumulation
-    assert_empty([].accumulate { |e| e * e })
+    assert_equal [], ([].accumulate { |e| e * e })
   end
 
   def test_accumulate_squares

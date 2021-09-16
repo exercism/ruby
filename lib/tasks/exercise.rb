@@ -1,6 +1,3 @@
-require 'json'
-require 'rake'
-
 class Exercise
   class << self
     def all
@@ -46,19 +43,15 @@ class Exercise
   end
 
   def testable_example_file
-    config[:files][:solution][0]
+    "#{exercise_name}.rb"
   end
 
   def test_file
-    config[:files][:test][0]
+    "#{exercise_name}_test.rb"
   end
 
   private
   def exercise_name
     @exercise_name ||= slug.tr('-', '_')
-  end
-
-  def config
-    JSON.parse(File.read("#{directory}/.meta/config.json"), symbolize_names: true)
   end
 end
