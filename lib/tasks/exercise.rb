@@ -50,7 +50,7 @@ class Exercise
   end
 
   def test_file
-    p config[:files][:test][0]
+    config[:files][:test][0]
   end
 
   private
