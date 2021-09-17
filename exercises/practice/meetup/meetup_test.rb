@@ -467,6 +467,96 @@ class MeetupTest < Minitest::Test
     assert_equal Date.parse("2013-04-28"), meetup
   end
 
+  def test_fifth_monday_of_september_2013
+    skip
+    meetup = Meetup.new(9, 2013).day(:monday, :fifth)
+    assert_equal Date.parse("2013-09-30"), meetup
+  end
+
+  def test_fifth_monday_of_december_2013
+    skip
+    meetup = Meetup.new(12, 2013).day(:monday, :fifth)
+    assert_equal Date.parse("2013-12-30"), meetup
+  end
+
+  def test_fifth_tuesday_of_january_2013
+    skip
+    meetup = Meetup.new(1, 2013).day(:tuesday, :fifth)
+    assert_equal Date.parse("2013-01-29"), meetup
+  end
+
+  def test_fifth_tuesday_of_april_2013
+    skip
+    meetup = Meetup.new(4, 2013).day(:tuesday, :fifth)
+    assert_equal Date.parse("2013-04-30"), meetup
+  end
+
+  def test_fifth_wednesday_of_july_2013
+    skip
+    meetup = Meetup.new(7, 2013).day(:wednesday, :fifth)
+    assert_equal Date.parse("2013-07-31"), meetup
+  end
+
+  def test_fifth_wednesday_of_april_2014
+    skip
+    meetup = Meetup.new(4, 2014).day(:wednesday, :fifth)
+    assert_equal Date.parse("2014-04-30"), meetup
+  end
+
+  def test_fifth_thursday_of_january_2013
+    skip
+    meetup = Meetup.new(1, 2013).day(:thursday, :fifth)
+    assert_equal Date.parse("2013-01-31"), meetup
+  end
+
+  def test_fifth_thursday_of_april_2015
+    skip
+    meetup = Meetup.new(4, 2015).day(:thursday, :fifth)
+    assert_equal Date.parse("2015-04-30"), meetup
+  end
+
+  def test_fifth_friday_of_august_2013
+    skip
+    meetup = Meetup.new(8, 2013).day(:friday, :fifth)
+    assert_equal Date.parse("2013-08-30"), meetup
+  end
+
+  def test_fifth_friday_of_november_2013
+    skip
+    meetup = Meetup.new(11, 2013).day(:friday, :fifth)
+    assert_equal Date.parse("2013-11-29"), meetup
+  end
+
+  def test_fifth_saturday_of_june_2013
+    skip
+    meetup = Meetup.new(6, 2013).day(:saturday, :fifth)
+    assert_equal Date.parse("2013-06-29"), meetup
+  end
+
+  def test_fifth_saturday_of_august_2013
+    skip
+    meetup = Meetup.new(8, 2013).day(:saturday, :fifth)
+    assert_equal Date.parse("2013-08-31"), meetup
+  end
+
+  def test_fifth_sunday_of_june_2013
+    skip
+    meetup = Meetup.new(6, 2013).day(:sunday, :fifth)
+    assert_equal Date.parse("2013-06-30"), meetup
+  end
+
+  def test_fifth_sunday_of_december_2013
+    skip
+    meetup = Meetup.new(12, 2013).day(:sunday, :fifth)
+    assert_equal Date.parse("2013-12-29"), meetup
+  end
+
+  def test_fifth_monday_of_february_2016
+    skip
+    meetup = Meetup.new(2, 2016).day(:monday, :fifth)
+    assert_equal Date.parse("2016-02-29"), meetup
+  end
+
   def test_last_monday_of_march_2013
     skip
     meetup = Meetup.new(3, 2013).day(:monday, :last)
