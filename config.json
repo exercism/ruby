@@ -1239,8 +1239,8 @@
         "slug": "microwave",
         "name": "Microwave",
         "uuid": "34e715a6-4d22-4b74-a26a-409283ac419c",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["string-formatting"],
+        "prerequisites": ["string-formatting"],
         "difficulty": 2,
         "topics": ["math", "strings", "interpolation"]
       },
