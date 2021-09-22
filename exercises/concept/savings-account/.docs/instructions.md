@@ -6,6 +6,7 @@ In this exercise you'll be working with savings accounts. Each year, the balance
 - 0.5% for a non-negative balance less than `1000` dollars.
 - 1.621% for a positive balance greater or equal than `1000` dollars and less than `5000` dollars.
 - 2.475% for a positive balance greater or equal than `5000` dollars.
+- 0% for a balance of `0` dollars (it neither earns interest, nor is penalised).
 
 You have three tasks, each of which will deal the balance and its interest rate.
 
