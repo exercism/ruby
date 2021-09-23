@@ -75,7 +75,7 @@ Methods are invoked using `.` syntax:
 ```ruby
 calc = Calculator.new
 calc.add(1, 3)
-calc.multiply(num1: 2, num_2: 5)
+calc.multiply(num1: 2, num2: 5)
 ```
 
 [object-oriented-programming]: https://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/oothinking.html
