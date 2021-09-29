@@ -39,7 +39,7 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_minimal_negative_interest_rate
-    assert_in_delta(-3.213, SavingsAccount.interest_rate(-0.0001), 0.000_1)
+    assert_in_delta(-3.213, SavingsAccount.interest_rate(-0.000_1), 0.000_1)
   end
 
   def test_small_negative_interest_rate
