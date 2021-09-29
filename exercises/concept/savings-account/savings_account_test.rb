@@ -3,59 +3,59 @@ require_relative 'savings_account'
 
 class SavingsAccountTest < Minitest::Test
   def test_minimal_first_interest_rate
-    assert_equal 0.5, SavingsAccount.interest_rate(0)
+    assert_in_delta 0.5, SavingsAccount.interest_rate(0), 0.000_1
   end
 
   def test_tiny_first_interest_rate
-    assert_equal 0.5, SavingsAccount.interest_rate(0.000_001)
+    assert_in_delta 0.5, SavingsAccount.interest_rate(0.000_001), 0.000_1
   end
 
   def test_maximal_first_interest_rate
-    assert_equal 0.5, SavingsAccount.interest_rate(999.999)
+    assert_in_delta 0.5, SavingsAccount.interest_rate(999.999), 0.000_1
   end
 
   def test_minimal_second_interest_rate
-    assert_equal 1.621, SavingsAccount.interest_rate(1_000.0)
+    assert_in_delta 1.621, SavingsAccount.interest_rate(1_000.0), 0.000_1
   end
 
   def test_tiny_second_interest_rate
-    assert_equal 1.621, SavingsAccount.interest_rate(1_000.001)
+    assert_in_delta 1.621, SavingsAccount.interest_rate(1_000.001), 0.000_1
   end
 
   def test_maximal_second_interest_rate
-    assert_equal 1.621, SavingsAccount.interest_rate(4_999.999)
+    assert_in_delta 1.621, SavingsAccount.interest_rate(4_999.999), 0.000_1
   end
 
   def test_minimal_third_interest_rate
-    assert_equal 2.475, SavingsAccount.interest_rate(5_000.0)
+    assert_in_delta 2.475, SavingsAccount.interest_rate(5_000.0), 0.000_1
   end
 
   def test_tiny_third_interest_rate
-    assert_equal 2.475, SavingsAccount.interest_rate(5_000.001)
+    assert_in_delta 2.475, SavingsAccount.interest_rate(5_000.001), 0.000_1
   end
 
   def test_large_third_interest_rate
-    assert_equal 2.475, SavingsAccount.interest_rate(555_555_555.555)
+    assert_in_delta 2.475, SavingsAccount.interest_rate(555_555_555.555), 0.000_1
   end
 
   def test_minimal_negative_interest_rate
-    assert_equal(-3.213, SavingsAccount.interest_rate(-0.000_1))
+    assert_in_delta -3.213, SavingsAccount.interest_rate(-0.0001), 0.000_1
   end
 
   def test_small_negative_interest_rate
-    assert_equal(-3.213, SavingsAccount.interest_rate(-0.123))
+    assert_in_delta -3.213, SavingsAccount.interest_rate(-0.123), 0.000_1
   end
 
   def test_regular_negative_interest_rate
-    assert_equal(-3.213, SavingsAccount.interest_rate(-300.0))
+    assert_in_delta -3.213, SavingsAccount.interest_rate(-300.0), 0.000_1
   end
 
   def test_large_negative_interest_rate
-    assert_equal(-3.213, SavingsAccount.interest_rate(-55_555.444))
+    assert_in_delta -3.213, SavingsAccount.interest_rate(-55_555.444), 0.000_1
   end
 
   def test_annual_balance_update_for_empty_start_balance
-    assert_equal 0, SavingsAccount.annual_balance_update(0.0)
+    assert_in_delta 0, SavingsAccount.annual_balance_update(0.0), 0.000_1
   end
 
   def test_annual_balance_update_for_small_positive_start_balance
