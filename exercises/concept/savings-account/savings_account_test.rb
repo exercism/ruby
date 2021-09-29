@@ -39,7 +39,7 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_minimal_negative_interest_rate
-    assert_equal(-3.213, SavingsAccount.interest_rate(-0.0001))
+    assert_equal(-3.213, SavingsAccount.interest_rate(-0.000_1))
   end
 
   def test_small_negative_interest_rate
@@ -72,8 +72,7 @@ class SavingsAccountTest < Minitest::Test
 
   def test_annual_balance_update_for_huge_positive_start_balance
     assert_in_delta 920_352_587.26_744_292_868_451_875,
-      SavingsAccount.annual_balance_update(898_124_017.826_243_404_425),
-      0.000_000_000_000_000_01
+      SavingsAccount.annual_balance_update(898_124_017.826_243_404_425), 0.000_000_000_000_000_01
   end
 
   def test_annual_balance_update_for_small_negative_start_balance
