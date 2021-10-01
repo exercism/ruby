@@ -3,7 +3,7 @@ require_relative 'savings_account'
 
 class SavingsAccountTest < Minitest::Test
   def test_minimal_first_interest_rate
-    assert_in_delta 0.5, SavingsAccount.interest_rate(0), 0.000_1
+    assert_in_delta 0, SavingsAccount.interest_rate(0), 0.000_1
   end
 
   def test_tiny_first_interest_rate
