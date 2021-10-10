@@ -17,7 +17,7 @@ fibonacci.map    { |number| number * 2  }   #=> [0, 2, 2, 4, 6, 10, 16, 26]
 fibonacci.select { |number| number >= 5}    #=> [5, 8, 13]
 fibonacci.find   { |number| number >= 5}    #=> 5
 
-# Some methods work with our without a block
+# Some methods work with or without a block
 fibonacci.sum  #=> 33
 fibonacci.sum {| number | number * number }  #=> 273
 
