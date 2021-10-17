@@ -1,9 +1,7 @@
 class Palindrome
   attr_reader :value, :factors
   private
-  def initialize(palindrome)
-    @value, @factors = palindrome
-  end
+  def initialize(palindrome) @value, @factors = palindrome end
 end
 
 class Palindromes
@@ -26,19 +24,20 @@ class Palindromes
   end
 
   def palindrome_and_factors(palindrome)
-    [palindrome] << factors(palindrome)
+    [palindrome, factors(palindrome)]
   end
 
   public
 
   def generate
-    @candidates = range.map do |r1|
-      range.each_with_object([]) do |r2, candidates|
-        candidates << r1 * r2 if r2 >= r1
-      end.select do |candidate|
-        candidate == candidate.to_s.reverse.to_i
+    @candidates ||= range.each_with_object([]) do |r1, candidates|
+      (r1..range.last).each do |r2|
+        candidate = r1 * r2
+        if candidate == candidate.to_s.reverse.to_i
+          candidates << candidate
+        end
       end
-    end.flatten
+    end
   end
 
   def largest
