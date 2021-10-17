@@ -100,6 +100,7 @@ class BowlingTest < Minitest::Test
   end
 
   def test_a_spare_followed_by_a_strike_should_not_get_bonus_from_next_frame
+    skip
     game = Game.new
     rolls = [5, 5, 10, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     rolls.each { |pins| game.roll(pins) }
