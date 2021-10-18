@@ -1,8 +1,4 @@
-class Palindrome
-  attr_reader :value, :factors
-  private
-  def initialize(palindrome) @value, @factors = palindrome end
-end
+Palindrome = Struct.new(:value, :factors)
 
 class Palindromes
 
@@ -24,7 +20,7 @@ class Palindromes
   end
 
   def palindrome_and_factors(palindrome)
-    [palindrome, factors(palindrome)]
+    Palindrome.new palindrome, factors(palindrome)
   end
 
   public
@@ -41,11 +37,11 @@ class Palindromes
   end
 
   def largest
-    @largest ||= Palindrome.new palindrome_and_factors(candidates.max)
+    @largest ||= palindrome_and_factors(candidates.max)
   end
 
   def smallest
-    @smallest ||= Palindrome.new palindrome_and_factors(candidates.min)
+    @smallest ||= palindrome_and_factors(candidates.min)
   end
 
 end
