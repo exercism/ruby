@@ -99,6 +99,14 @@ class BowlingTest < Minitest::Test
     assert_equal 30, game.score
   end
 
+  def test_a_spare_followed_by_a_strike_should_not_get_bonus_from_next_frame
+    skip
+    game = Game.new
+    rolls = [5, 5, 10, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    rolls.each { |pins| game.roll(pins) }
+    assert_equal 42, game.score
+  end
+
   def test_a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus
     skip
     game = Game.new
