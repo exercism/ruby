@@ -3,9 +3,9 @@
 Like everything in Ruby, a `String` is an object.
 Strings are made up of an arbitrary sequence of bytes (normally characters) and are initialized and manipulated like any other object.
 In fact, one of the most useful things about Ruby is the numerous methods that can be called on strings (and other objects) to save you a lot of time writing code.
-In this method we are going to explore and play with some of those helper methods.
+In this exercise we are going to explore and play with some of those helper methods.
 
-## Creating a string.
+## Creating a string
 
 Although you can use `String.new(...)` to create a string, it is much more common to use a literal.
 There are lots of different literals you can use - and they split into two categories: those that allow interpolation and those that don't.
