@@ -22,6 +22,6 @@ that end in '-teenth'. Therefore, one is guaranteed that each day of the week
 (Monday, Tuesday, ...) will have exactly one date that is named with '-teenth'
 in every month.
 
-Given examples of a meetup dates, each containing a month, day, year, and
+Given examples of meetup dates, each containing a month, day, year, and
 descriptor calculate the date of the actual meetup.  For example, if given
 "The first Monday of January 2017", the correct meetup date is 2017/1/2.
