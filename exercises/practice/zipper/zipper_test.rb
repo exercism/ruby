@@ -127,6 +127,24 @@ class ZipperTest < Minitest::Test
     assert_equal expected, value
   end
 
+  def test_left_right_up_and_up
+    skip
+    tree =
+      Node.new(1,
+        Node.new(2,
+          nil,
+          Node.new(3,
+            nil,
+            nil)),
+        Node.new(4,
+          nil,
+          nil))
+    zipper = Zipper.from_tree(tree)
+    value = zipper.left.right.up.up.value
+    expected = 1
+    assert_equal expected, value
+  end
+
   def test_set_value
     skip
     tree =
