@@ -97,26 +97,26 @@ If not, you will need to [implement a new generator][#implementing-a-generator].
 
 Generated exercises depend on the [the shared metadata][problem-specifications], which must be cloned to the same directory that contains your clone of the ruby repository:
 
-```
+```text
 tree -L 1 ~/code/exercism
 ├── problem-specifications
 └── ruby
 ```
 To explain a bit more, you must follow this commands step-by-step:
 
-``` bash
-  $ mkdir exercism
-  $ cd exercism
+```sh
+mkdir exercism
+cd exercism
 ```
 
-* Fork the [exercism/ruby][exercism ruby]
-* Fork the [exercism/problem-specifications][exercism specification]
-* Clone both the above repositories
+Now you need to clone both the above repositories
 
-$ git clone https://github.com/YOUR-USERNAME/YOUR-RUBY-REPOSITORY
-$ git clone https://github.com/YOUR-USERNAME/YOUR-PROBLEM-S-REPOSITORY
+```sh
+git clone https://github.com/YOUR-USERNAME/YOUR-RUBY-REPOSITORY
+git clone https://github.com/YOUR-USERNAME/YOUR-PROBLEM-S-REPOSITORY
+```
 
-Next, you need to [configure the remote][configure the remote] and [synchronize][synchronize] it.
+Next, you need to [configure the remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/) and [synchronize](https://help.github.com/articles/syncing-a-fork/) it.
 
 Make sure you have synced up local `main` branch and upstream `main` branch.
 Since this will keep local `main` branch up-to-date with the upstream repository.
@@ -129,14 +129,14 @@ Regenerating these tests is a quick and easy way to help maintain the track and 
 
 If it's your first time cloning/contributing to the repository, you'll need to install any dependencies via `bundle`:
 
-```bash
+```sh
 bundle install
 ```
 
 Be sure that you're working on the most up-to-date version of the repo.
 From the root of your copy of the repository:
 
-```bash
+```sh
 # Add the exercism repo as upstream if you haven't yet:
 git remote add upstream https://github.com/exercism/ruby.git
 
@@ -156,7 +156,7 @@ Make sure you've got an *up-to-date* version of the specifications in a `problem
 
 To check which problems have possibly been updated, run:
 
-```bash
+```sh
 bin/generate --all
 ```
 
@@ -182,7 +182,7 @@ There are two reasons why a test suite might change:
 
 In the first case, the changes need to be made to the `canonical-data.json` file for the exercise, which lives in the problem-specifications repository.
 
-```
+```text
 https://github.com/exercism/v3/blob/main/problem-specifications/exercises/<slug>/
 ├── canonical-data.json
 ├── description.md
