@@ -7,20 +7,20 @@
 Exercism Exercises in Ruby
 
 ## Table of Contents
-- [Setup](#setup)
-- [Anatomy of an Exercise](#anatomy-of-an-exercise)
-  - [Canonical Data](#canonical-data)
-- [Running the Tests](#running-the-tests)
-  - [Generated Test Suites](#generated-test-suites)
-    - [Regenerating a Test Suite](#regenerating-a-test-suite)
-    - [Changing a Generated Exercise](#changing-a-generated-exercise)
-    - [Implementing a Generator](#implementing-a-generator)
-    - [Workload Philosophy](#workload-philosophy)
-- [Pull Requests](#pull-requests)
-  - [Style Guide](#style-guide)
-- [READMEs](#readmes)
-- [Contributing Guide](#contributing-guide)
-- [Ruby icon](#ruby-icon)
+- [Setup][#setup]
+- [Anatomy of an Exercise][#anatomy-of-an-exercise]
+  - [Canonical Data][#canonical-data]
+- [Running the Tests][#running-the-tests]
+  - [Generated Test Suites][#generated-test-suites]
+    - [Regenerating a Test Suite][#regenerating-a-test-suite]
+    - [Changing a Generated Exercise][#changing-a-generated-exercise]
+    - [Implementing a Generator][#implementing-a-generator]
+    - [Workload Philosophy][#workload-philosophy]
+- [Pull Requests][#pull-requests]
+  - [Style Guide][#style-guide]
+- [READMEs][#readmes]
+- [Contributing Guide][#contributing-guide]
+- [Ruby icon][#ruby-icon]
 
 
 ## Setup
@@ -51,9 +51,9 @@ A few exercises use a custom test template:
 ### Canonical Data
 
 **Most exercises can be generated from shared inputs/outputs, called canonical
-data (see [Generated Test Suites](#generated-test-suites) below).** To find
+data (see [Generated Test Suites][#generated-test-suites] below).** To find
 out whether a test has canonical data, check the
-[problem-specifications repo](https://github.com/exercism/problem-specifications/tree/master/exercises).
+[problem-specifications repo][canonical exercises].
 
 ## Running the Tests
 
@@ -99,12 +99,11 @@ some do not. To find out whether an exercise has a generator, run
 In addition to a usage message, the `-h` flag lists all exercises with a
 generator. If a generator is available for your exercise, you can
 
-* [Regenerate the test suite](#regenerating-an-exercise) based on
-  updated canonical data
-* [Make changes to a generated exercise](#changing-a-generated-exercise)
+* [Regenerate the test suite][#regenerating-an-exercise] based on updated canonical data
+* [Make changes to a generated exercise][#changing-a-generated-exercise]
 
 If not, you will need to
-[implement a new generator](#implementing-a-generator).
+[implement a new generator][#implementing-a-generator].
 
 Generated exercises depend on the
 [the shared metadata][problem-specifications], which must be cloned to the
@@ -121,9 +120,9 @@ To explain a bit more, you must follow this commands step-by-step:-
   $ mkdir exercism
   $ cd exercism
 ```
-Fork the [exercism/ruby](https://github.com/exercism/ruby)
+Fork the [exercism/ruby][exercism ruby]
 
-Fork the [exercism/problem-specifications](https://github.com/exercism/problem-specifications)
+Fork the [exercism/problem-specifications][exercism specification]
 
 Now you need to clone both the above repositories
 ``` bash
@@ -131,8 +130,7 @@ Now you need to clone both the above repositories
 $ git clone https://github.com/YOUR-USERNAME/YOUR-RUBY-REPOSITORY
 $ git clone https://github.com/YOUR-USERNAME/YOUR-PROBLEM-S-REPOSITORY
 
-```
-Next, you need to [configure the remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/) and [synchronize](https://help.github.com/articles/syncing-a-fork/) it.
+Next, you need to [configure the remote][configure the remote] and [synchronize][synchronize] it.
 
 Make sure you have synced up local `main` branch and upstream `main` branch.
 Since this will keep local `main` branch up-to-date with the upstream repository.
@@ -142,7 +140,7 @@ Thereby, you will able to get the latest commits.
 #### Regenerating a Test Suite
 
 From time to time, the
-[canonical data](https://github.com/exercism/problem-specifications/tree/master/exercises)
+[canonical data][canonical data]
 for an exercise's tests changes, and we need to keep the Ruby version's tests
 synced up.  Regenerating these tests is a quick and easy way to help maintain
 the track and get involved!
@@ -171,7 +169,7 @@ git merge upstream/main
 
 Depending on your git workflow preferences and the state of your local repo,
 you may want to do some rebasing.
-[See the rebasing documentation for more information.](https://help.github.com/articles/about-git-rebase/)
+[See the rebasing documentation for more information.][rebasing documentation]
 
 The generator also depends on the presence of Exercism's
 `problem-specifications` repository (see the file tree in the section above).
@@ -194,7 +192,7 @@ has changed.
 Once everything has been regenerated and updated, you're almost ready to
 submit your changes via pull request.  Please be sure to only update one
 exercise per pull request.  Also, please follow the guidelines in the [Pull
-Requests](#pull-requests) section, being sure to follow the pattern of
+Requests][#pull-requests] section, being sure to follow the pattern of
 `<slug>: Regenerate Tests`, where slug is the slug of the exercise that your
 pull request is regenerating.
 
@@ -225,7 +223,7 @@ you can regenerate the exercise.
 
 Changes that don't have to do directly with the test inputs and outputs should
 be made to the exercise's test case generator, discussed in
-[implementing a new generator](#implementing-a-generator), next.  Then you can
+[implementing a new generator][#implementing-a-generator], next.  Then you can
 regenerate the exercise with `bin/generate <slug>`.
 
 #### Implementing a Generator
@@ -283,21 +281,21 @@ is important, since the generator script will infer the name of the class from
 
 This class must provide the methods used by the test
 template. A
-[default template](https://github.com/exercism/ruby/blob/master/lib/generator/test_template.erb)
+[default template][default template]
 that most exercises can (and do) use lives in
 `lib/generator/test_template.erb`. The base class provides methods for the
 default template for everything except `#workload`.
 
 `#workload` generates the code for the body of a test, including the assertion
 and any setup required. The base class provides a variety of
-[assertion](https://github.com/exercism/ruby/blob/master/lib/generator/exercise_case/assertion.rb)
+[assertion][assertion]
 and
-[helper](https://github.com/exercism/ruby/blob/master/lib/generator/exercise_case.rb)
+[helper][helper]
 methods.
 
 Beyond that, you can implement any helper methods that you need as private
 methods in your derived class. See below for more information about
-[the intention of #workload](#workload-philosophy)
+[the intention of #workload][#workload-philosophy]
 
 You don't have to do anything other than implement `#workload` to use the
 default template.
@@ -362,7 +360,7 @@ easily ignore the Cops that you think should be ignored.  This is easily done
 by doing `# rubocop:disable CopName`, where the `CopName` is replaced
 appropriately.
 
-For more complete information, see [Rubocop](http://batsov.com/rubocop/).
+For more complete information, see [Rubocop][rubocop].
 
 While `lib/generator/exercise_case.rb` provides helper functions as discussed
 above, it remains the responsibility of an exercise's generator to interpret
@@ -384,29 +382,56 @@ Use the `configlet` tool to generate a README from shared metadata:
 
 If adding a new exercise:
 
-* a [generator](#implementing-a-generator) should be implemented.
+* a [generator][#implementing-a-generator] should be implemented.
 * a minimal, partial, solution should be able to be pushed, in order to create a
   WIP pull request.
 
 For an in-depth discussion of how exercism language tracks and exercises work,
 please see the
-[contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data).
+[contributing guide][contributing guide].
 
 If you're just getting started and looking for a helpful way to get involved,
 take a look at
-[regenerating the test suites](#regenerating-a-test-suite),
-[porting an exercise from another language](https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md),
-or [creating an automated test generator](#implementing-a-generator).
+[regenerating the test suites][#regenerating-a-test-suite],
+[porting an exercise from another language][port exercise],
+or [creating an automated test generator][#implementing-a-generator].
 
 ## Ruby icon
 The Ruby icon is the Vienna.rb logo, and is used with permission. Thanks Floor
 Dress :)
 
-[problem-specifications]: https://github.com/exercism/problem-specifications
-
+[#anatomy-of-an-exercise]: #anatomy-of-an-exercise
+[assertion]: https://github.com/exercism/ruby/blob/master/lib/generator/exercise_case/assertion.rb
+[#canonical-data]: #canonical-data
+[canonical data]: https://github.com/exercism/problem-specifications/tree/master/exercises
+[canonical exercises]: https://github.com/exercism/problem-specifications/tree/master/exercises
+[#changing-a-generated-exercise]: #changing-a-generated-exercise
 [configlet-workflow-badge]: https://github.com/exercism/ruby/workflows/Configlet%20CI/badge.svg
 [configlet-workflow]: https://github.com/exercism/ruby/actions?query=workflow%3A%22Configlet+CI%22+branch%3Amaster
-[tests-workflow-badge]: https://github.com/exercism/ruby/workflows/Exercise%20tests/badge.svg
-[tests-workflow]: https://github.com/exercism/ruby/actions?query=workflow%3A%22Exercise+tests%22+branch%3Amaster
+[configure the remote]: https://help.github.com/articles/configuring-a-remote-for-a-fork/
+[#contributing-guide]: #contributing-guide
+[contributing-guide]: https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data
+[default template]: https://github.com/exercism/ruby/blob/master/lib/generator/test_template.erb
+[exercism ruby]: https://github.com/exercism/ruby
+[#generated-test-suites]: #generated-test-suites
+[helper]: https://github.com/exercism/ruby/blob/master/lib/generator/exercise_case.rb
+[#implementing-a-generator]: #implementing-a-generator
+[port exercise]: https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md
+[problem-specifications]: https://github.com/exercism/problem-specifications
+[problem-specifications]: https://github.com/exercism/problem-specifications
+[#pull-requests]: #pull-requests
+[#readmes]: #readmes
+[rebasing documentation]: https://help.github.com/articles/about-git-rebase/
+[#regenerating-a-test-suite]: #regenerating-a-test-suite
+[#regenerating-a-test-suite]: #regenerating-a-test-suite
+[#ruby-icon]: #ruby-icon
+[#running-the-tests]: #running-the-tests
+[rubocop]: http://batsov.com/rubocop/
 [ruby-gitter-badge]: https://badges.gitter.im/exercism/ruby.svg
 [ruby-gitter-channel]: https://gitter.im/exercism/ruby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+[#setup]: #setup
+[#style-guide]: #style-guide
+[synchronize]: https://help.github.com/articles/syncing-a-fork/
+[tests-workflow-badge]: https://github.com/exercism/ruby/workflows/Exercise%20tests/badge.svg
+[tests-workflow]: https://github.com/exercism/ruby/actions?query=workflow%3A%22Exercise+tests%22+branch%3Amaster
+[#workload-philosophy]: #workload-philosophy
