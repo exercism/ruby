@@ -25,7 +25,7 @@ LogLineParser.new('[ERROR]: Invalid operation').message
 Any leading or trailing white space should be removed:
 
 ```ruby
-LogLineParser.new('[WARNING]:  Disk almost full\r\n').message
+LogLineParser.new("[WARNING]:  Disk almost full\r\n").message
 # => "Disk almost full"
 ```
 
