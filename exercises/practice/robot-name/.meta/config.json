@@ -1,5 +1,6 @@
 {
   "blurb": "Manage robot factory settings.",
+  "test_runner": false,
   "authors": [
     "kytrinyx"
   ],
@@ -26,6 +27,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  },
+  },  
   "source": "A debugging session with Paul Blackwell at gSchool."
 }
