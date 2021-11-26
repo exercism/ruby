@@ -27,6 +27,6 @@ Implement the `Attendee#allowed_to_ride?` method to see if an attendee is allowe
 ```ruby
 attendee = Attendee.new(100)
 attendee.issue_pass!(42)
-attendee.allowed_to_ride(120)
+attendee.allowed_to_ride?(120)
 # => false
 ```
