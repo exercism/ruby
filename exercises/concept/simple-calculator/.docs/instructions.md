@@ -26,7 +26,7 @@ The main method for implementation in this task will be the class method `Simple
 Update the `SimpleCalculator.calculate()` method to raise an `UnsupportedOperation` exception for unknown operation symbols.
 
 ```ruby
-SimpleCalculator.calculate(1, '2', '-')
+SimpleCalculator.calculate(1, 2, '-')
 # => Raises an UnsupportedOperation
 ```
 
