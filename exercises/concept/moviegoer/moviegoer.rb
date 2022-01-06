@@ -3,8 +3,6 @@ class NotMovieClubMemberError < RuntimeError
 end
 
 class Moviegoer
-  attr_reader :age, :member
-
   def initialize(age, member: false)
     @age = age
     @member = member
