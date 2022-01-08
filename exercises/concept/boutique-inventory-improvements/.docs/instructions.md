@@ -1,6 +1,6 @@
 # Instructions
 
-You're continuing to work on the stock management system you built previous. Since discovering `OpenStruct` and block shortcuts, you've decided to refactor the code a little. Rather than storing the items as hashes, you're going to utilize your newfound skills.
+You're continuing to work on the stock management system you built previously. Since discovering `OpenStruct` and block shortcuts, you've decided to refactor the code a little. Rather than storing the items as hashes, you're going to utilize your newfound skills.
 
 ## 1. Allow retrievable of items
 
