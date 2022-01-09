@@ -14,6 +14,8 @@ Attendee.new(100).has_pass?
 ## 2. Check if an attendee fits a ride
 
 Implement the `Attendee#fits_ride?` method to see if an attendee fits a ride based on their height.
+The ride's required minimum height is provided as an argument.
+An attendee must have height greater than or equal to ride's required minimum height.
 
 ```ruby
 Attendee.new(140).fits_ride?(100)
