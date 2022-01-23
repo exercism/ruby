@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'timeout'
 require_relative 'savings_account'
 
 class SavingsAccountTest < Minitest::Test
@@ -101,5 +102,13 @@ class SavingsAccountTest < Minitest::Test
 
   def test_years_before_desired_balance_for_large_difference_between_start_and_desired_balance
     assert_equal 85, SavingsAccount.years_before_desired_balance(2_345.67, 12_345.678_9)
+  end
+
+  def test_years_before_desired_balance_for_negative_current_balance
+    assert_raises(ArgumentError, 'Current balance cannot be negative') do
+      Timeout.timeout(0.1) do
+        SavingsAccount.years_before_desired_balance(-1.0, 1.0)
+      end
+    end
   end
 end

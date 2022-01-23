@@ -22,6 +22,7 @@ module SavingsAccount
   end
 
   def self.years_before_desired_balance(current_balance, desired_balance)
+    raise ArgumentError, 'Current balance cannot be negative' if current_balance.negative?
     years = 0
     while current_balance < desired_balance
       current_balance = annual_balance_update(current_balance)
