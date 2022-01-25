@@ -105,10 +105,13 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_years_before_desired_balance_for_negative_current_balance
-    assert_raises(ArgumentError, 'Current balance cannot be negative') do
+    assert_raises(ArgumentError, 'Current balance must be positive') do
       Timeout.timeout(0.1) do
         SavingsAccount.years_before_desired_balance(-1.0, 1.0)
       end
+    rescue Timeout::Error
+      raise RuntimeError, 'Impossible Solution, raise an ArugmentError if current '\
+                          'balance is not positive.'
     end
   end
 end
