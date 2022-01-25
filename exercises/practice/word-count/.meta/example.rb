@@ -1,4 +1,4 @@
-class Phrase
+class WordCount
   def initialize(source)
     @source = source
   end

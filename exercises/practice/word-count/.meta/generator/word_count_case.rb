@@ -3,7 +3,7 @@ require 'generator/exercise_case'
 class WordCountCase < Generator::ExerciseCase
   def workload
     [
-      "phrase = Phrase.new(#{sentence.inspect})",
+      "phrase = WordCount.new(#{sentence.inspect})",
       "counts = #{expected}",
       "assert_equal counts, phrase.word_count"
     ]
