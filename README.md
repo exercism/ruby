@@ -340,8 +340,8 @@ Dress :)
 [canonical data]: https://github.com/exercism/problem-specifications/tree/master/exercises
 [canonical exercises]: https://github.com/exercism/problem-specifications/tree/master/exercises
 [#changing-a-generated-exercise]: #changing-a-generated-exercise
-[configlet-workflow-badge]: https://github.com/exercism/ruby/workflows/Configlet%20CI/badge.svg
-[configlet-workflow]: https://github.com/exercism/ruby/actions?query=workflow%3A%22Configlet+CI%22+branch%3Amaster
+[configlet-workflow-badge]: https://github.com/exercism/ruby/actions/workflows/configlet.yml/badge.svg
+[configlet-workflow]: https://github.com/exercism/ruby/actions/workflows/configlet.yml
 [configure the remote]: https://help.github.com/articles/configuring-a-remote-for-a-fork/
 [#contributing-guide]: #contributing-guide
 [contributing-guide]: https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data
@@ -366,6 +366,6 @@ Dress :)
 [#setup]: #setup
 [#style-guide]: #style-guide
 [synchronize]: https://help.github.com/articles/syncing-a-fork/
-[tests-workflow-badge]: https://github.com/exercism/ruby/workflows/Exercise%20tests/badge.svg
-[tests-workflow]: https://github.com/exercism/ruby/actions?query=workflow%3A%22Exercise+tests%22+branch%3Amaster
+[tests-workflow-badge]: https://github.com/exercism/ruby/actions/workflows/exercise-tests.yml/badge.svg
+[tests-workflow]: https://github.com/exercism/ruby/actions/workflows/exercise-tests.yml
 [#workload-philosophy]: #workload-philosophy
