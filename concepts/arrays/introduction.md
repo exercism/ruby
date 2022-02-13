@@ -13,7 +13,7 @@ array = [1, "two", 3.0] #=> [1, "two", 3.0]
 
 ## Element Assignment
 
-Elements can accessed or changed using indexes. Subarrays can be accessed by specifying a start index and a size.
+Elements can be accessed or changed using indexes. Subarrays can be accessed by specifying a start index and a size.
 
 ```ruby
 a = ["", "", "", "", ""]
