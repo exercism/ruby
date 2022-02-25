@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'robot_name'
 
 class RobotTest < Minitest::Test
-  NAME_REGEXP = /^[A-Z]{2}\d{3}$/.freeze
+  NAME_REGEXP = /^[A-Z]{2}\d{3}$/
 
   def setup
     Robot.forget
