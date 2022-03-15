@@ -1,12 +1,12 @@
 # Instructions
 
-You're an avid bird watcher that keeps track of how many birds have visited your garden in the last seven days.
+You're an avid bird watcher that keeps track of how many birds have visited your garden. Each bird count lasts seven days.
 
 You have five tasks, all dealing with the numbers of birds that visited your garden.
 
 ## 1. Check what the counts were last week
 
-For comparison purposes, you always keep a copy of last week's counts nearby, which were: 0, 2, 5, 3, 7, 8 and 4. Implement the `BirdCount.last_week` method that returns last week's counts:
+For comparison purposes, you always keep a copy of the previous week's counts nearby, which were: 0, 2, 5, 3, 7, 8 and 4. Implement the `BirdCount.last_week` method that returns previous week's counts:
 
 ```ruby
 BirdCount.last_week
@@ -15,7 +15,7 @@ BirdCount.last_week
 
 ## 2. Check how many birds visited yesterday
 
-Implement the `BirdCount#yesterday` method to return how many birds visited your garden yesterday. The bird counts are ordered by day, with the first element being the count of the oldest day, and the last element being today's count.
+Implement the `BirdCount#yesterday` method to return how many birds visited your garden yesterday. A new bird count for the current week is ordered by day, with the first element being the count of the oldest day, and the last element being today's count.
 
 ```ruby
 birds_per_day = [2, 5, 0, 7, 4, 1]
