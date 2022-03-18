@@ -7,4 +7,4 @@ Two common types of numbers in Ruby are:
 
 They are implemented through the `Integer` and `Float` classes.
 
-The `Float` and `Integer` classes have methods that will coerce values from one to the other. `Integer` numbers are precise to a whole unit, while `Float` has precision that is fractional to an whole number.
+The `Float` and `Integer` classes have methods that will coerce values from one to the other. `Integer` numbers are precise to a whole unit, while `Float` has precision that is fractional to a whole number.
