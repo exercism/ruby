@@ -63,7 +63,7 @@ class BookStoreTest < Minitest::Test
     assert_equal 40.80, BookStore.calculate_price(basket)
   end
 
-  def test_two_each_of_first_four_books_and_one_copy_each_of_rest
+  def test_two_each_of_first_4_books_and_1_copy_each_of_rest
     skip
     basket = [1, 1, 2, 2, 3, 3, 4, 4, 5]
     assert_equal 55.60, BookStore.calculate_price(basket)
@@ -75,13 +75,13 @@ class BookStoreTest < Minitest::Test
     assert_equal 60.00, BookStore.calculate_price(basket)
   end
 
-  def test_three_copies_of_first_book_and_two_each_of_remaining
+  def test_three_copies_of_first_book_and_2_each_of_remaining
     skip
     basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1]
     assert_equal 68.00, BookStore.calculate_price(basket)
   end
 
-  def test_three_each_of_first_two_books_and_two_each_of_remaining_books
+  def test_three_each_of_first_2_books_and_2_each_of_remaining_books
     skip
     basket = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2]
     assert_equal 75.20, BookStore.calculate_price(basket)
