@@ -93,7 +93,7 @@ class BookStoreTest < Minitest::Test
     assert_equal 102.40, BookStore.calculate_price(basket)
   end
 
-  def test_group_of_one_and_four_is_cheaper_than_group_of_two_and_three
+  def test_one_group_of_one_and_four_is_cheaper_than_one_group_of_two_and_three
     skip
     basket = [1, 1, 2, 3, 4]
     assert_equal 33.60, BookStore.calculate_price(basket)
