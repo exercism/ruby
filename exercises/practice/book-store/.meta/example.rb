@@ -22,4 +22,5 @@ class BookStore
     end
 
     groups.sum{|group| INDIVIDUAL_PRICE * group * ONE_MINUS_DISCOUNTS[group - 1]}
+  end
 end
