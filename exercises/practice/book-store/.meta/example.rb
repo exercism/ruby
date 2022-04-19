@@ -10,7 +10,7 @@ class BookStore
 
     # Make the largest groups you can with the books
     while (new_group = basket.uniq).any?
-      new_group.each {|book| basket.delete_at(basket.index(book)) }
+      new_group.each { |book| basket.delete_at(basket.index(book)) }
       groups << new_group.size
     end
 
