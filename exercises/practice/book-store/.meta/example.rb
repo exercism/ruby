@@ -1,6 +1,6 @@
 require 'set'
 
-class BookStore
+module BookStore
 
   ONE_MINUS_DISCOUNTS = [1.0, 0.95, 0.9, 0.8, 0.75]
   INDIVIDUAL_PRICE = 8
