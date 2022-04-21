@@ -6,9 +6,16 @@ class BoutiqueInventoryTest < Minitest::Test
     assert_empty BoutiqueInventory.new([]).item_names
   end
 
-  def test_one_item_name
+  def test_one_item_name_out_of_stock
     items = [
       { price: 65.00, name: "Red Brown Dress", quantity_by_size: {} }
+    ]
+    assert_empty BoutiqueInventory.new(items).item_names
+  end
+
+  def test_one_item_name_in_stock
+    items = [
+      { price: 65.00, name: "Red Brown Dress", quantity_by_size: { s: 1 } }
     ]
     names = ["Red Brown Dress"]
     assert_equal names, BoutiqueInventory.new(items).item_names
@@ -16,9 +23,9 @@ class BoutiqueInventoryTest < Minitest::Test
 
   def test_three_item_names
     items = [
-      { price: 65.00, name: "Red Brown Dress", quantity_by_size: {} },
-      { price: 50.00, name: "Red Short Skirt", quantity_by_size: {} },
-      { price: 29.99, name: "Black Short Skirt", quantity_by_size: {} }
+      { price: 65.00, name: "Red Brown Dress", quantity_by_size: { s: 1 } },
+      { price: 50.00, name: "Red Short Skirt", quantity_by_size: { m: 1 } },
+      { price: 29.99, name: "Black Short Skirt", quantity_by_size: { l: 1 } }
     ]
     names = ["Black Short Skirt", "Red Brown Dress", "Red Short Skirt"]
     assert_equal names, BoutiqueInventory.new(items).item_names
