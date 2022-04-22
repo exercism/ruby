@@ -6,7 +6,7 @@ class BoutiqueInventoryTest < Minitest::Test
     assert_empty BoutiqueInventory.new([]).item_names
   end
 
-  def test_one_item
+  def test_one_item_name
     items = [
       { price: 65.00, name: "Red Brown Dress", quantity_by_size: {} }
     ]
