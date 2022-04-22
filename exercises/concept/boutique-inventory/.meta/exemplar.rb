@@ -4,10 +4,7 @@ class BoutiqueInventory
   end
 
   def item_names
-    items.
-      reject { |item| item[:quantity_by_size].keys&.empty? }.
-      map { |item| item[:name] }.
-      sort
+    items.map { |item| item[:name] }.sort
   end
 
   def cheap
