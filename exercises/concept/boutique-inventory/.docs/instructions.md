@@ -15,7 +15,7 @@ A single item in the inventory is represented by a hash, and the whole inventory
 ]
 ```
 
-## 1. Return a list of the names of the items.
+## 1. Return a list of the names of the items
 
 Implement `BoutiqueInventory.item_names`, which should return a list of the item names ordered alphabetically.
 
