@@ -13,24 +13,23 @@ class BoutiqueInventory
 
   def out_of_stock
     items.select do |item|
-      item[:quantity_by_size].none? {|size, quantity| quantity > 0 }
+      item[:quantity_by_size].none? { |_size, quantity| quantity.positive? }
     end
   end
 
   def stock_for_item(name)
-    items.find {|i|i[:name] == name}[:quantity_by_size]
+    items.find { |i| i[:name] == name }[:quantity_by_size]
   end
 
   def total_stock
     items.sum do |item|
-      item[:quantity_by_size].sum {|_,quantity| quantity }
+      item[:quantity_by_size].sum { |_, quantity| quantity }
 
       # This would also be acceptable, but isn't explicitly
       # taught in this exercise:
-      #item[:quantity_by_size].values.sum
+      # item[:quantity_by_size].values.sum
     end
   end
-
 
   private
   attr_reader :items

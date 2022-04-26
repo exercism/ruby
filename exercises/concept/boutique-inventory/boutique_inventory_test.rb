@@ -16,8 +16,8 @@ class BoutiqueInventoryTest < Minitest::Test
 
   def test_three_item_names
     items = [
-      { price: 65.00, name: "Red Brown Dress", quantity_by_size: {} },
-      { price: 50.00, name: "Red Short Skirt", quantity_by_size: {} },
+      { price: 65.00, name: "Red Brown Dress", quantity_by_size: { s: 1 } },
+      { price: 50.00, name: "Red Short Skirt", quantity_by_size: { m: 1 } },
       { price: 29.99, name: "Black Short Skirt", quantity_by_size: {} }
     ]
     names = ["Black Short Skirt", "Red Brown Dress", "Red Short Skirt"]
