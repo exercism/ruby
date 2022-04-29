@@ -43,6 +43,6 @@ class ScrabbleTest < Minitest::Test
 
   def test_convenient_scoring
     skip
-    assert_equal 13, Scrabble.score('alacrity')
+    assert_equal 13, Scrabble.new('alacrity').score
   end
 end
