@@ -935,7 +935,7 @@
         "uuid": "04bde625-e363-4d8b-880f-db7bf86286eb",
         "practices": ["symbols"],
         "prerequisites": ["strings", "symbols", "enumerable"],
-        "difficulty": 3,
+        "difficulty": 4,
         "topics": ["parsing", "records", "searching", "strings", "structs"]
       },
       {
