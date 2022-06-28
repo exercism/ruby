@@ -86,6 +86,14 @@ class BoutiqueInventoryTest < Minitest::Test
     assert_equal({ s: 1, xl: 4 }, BoutiqueInventory.new(items).stock_for_item("Shoes"))
   end
 
+  def test_stock_for_item_for_some_in_stock_in_last_postion
+    shoes = { price: 30.00, name: "Shoes", quantity_by_size: { s: 1, xl: 4 } }
+    coat = { price: 65.00, name: "Coat", quantity_by_size: { s: 2 } }
+    handkerchief = { price: 19.99, name: "Handkerchief", quantity_by_size: { m: 3, l: 2 } }
+    items = [shoes, coat, handkerchief]
+    assert_equal({ m: 3, l: 2 }, BoutiqueInventory.new(items).stock_for_item("Handkerchief"))
+  end
+
   def test_total_stock_for_no_items
     assert_equal 0, BoutiqueInventory.new([]).total_stock
   end
