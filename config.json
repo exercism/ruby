@@ -934,7 +934,14 @@
         "name": "Kindergarten Garden",
         "uuid": "04bde625-e363-4d8b-880f-db7bf86286eb",
         "practices": ["symbols"],
-        "prerequisites": ["strings", "symbols", "enumerable"],
+        "prerequisites": [
+          "strings",
+          "symbols",
+          "enumerable",
+          "dynamic-programming",
+          "recursion",
+          "meta-programming"
+        ],
         "difficulty": 4,
         "topics": ["parsing", "records", "searching", "strings", "structs"]
       },
