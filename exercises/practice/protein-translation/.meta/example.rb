@@ -4,7 +4,7 @@ class Translation
 
   def self.of_codon(codon)
     found = lookups.keys.find { |sequences| sequences.include?(codon) }
-    fail InvalidCodonError if lookups[found].nil?
+    fail InvalidCodonError unless lookups[found]
     lookups[found]
   end
 
