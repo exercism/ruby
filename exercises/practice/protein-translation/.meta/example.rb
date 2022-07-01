@@ -15,8 +15,6 @@ class Translation
     end
   end
 
-  private
-
   def self.lookups
     {
       ['AUG']             => 'Methionine',
@@ -29,5 +27,7 @@ class Translation
       %w(UAA UAG UGA)     => 'STOP'
     }
   end
+
+  private_class_method :lookups
 
 end
