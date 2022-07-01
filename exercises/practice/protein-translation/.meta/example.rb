@@ -1,6 +1,7 @@
 class InvalidCodonError < StandardError; end
 
 class Translation
+
   def self.of_codon(codon)
     found_key = lookups.keys.find { |sequences| sequences.include?(codon) }
     fail InvalidCodonError if lookups[found_key].nil?
@@ -28,4 +29,5 @@ class Translation
       %w(UAA UAG UGA)     => 'STOP'
     }
   end
+
 end
