@@ -102,4 +102,8 @@ class SavingsAccountTest < Minitest::Test
   def test_years_before_desired_balance_for_large_difference_between_start_and_desired_balance
     assert_equal 85, SavingsAccount.years_before_desired_balance(2_345.67, 12_345.678_9)
   end
+
+  def test_years_before_desired_balance_for_zero_balance
+    assert_equal 0, SavingsAccount.years_before_desired_balance(0, 42)
+  end
 end
