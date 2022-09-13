@@ -104,6 +104,6 @@ class SavingsAccountTest < Minitest::Test
   end
 
   def test_years_before_desired_balance_for_zero_balance
-    assert_equal 0, SavingsAccount.years_before_desired_balance(0, 42)
+    assert_raises(RuntimeError) { SavingsAccount.years_before_desired_balance(0, -Float::INFINITY) }
   end
 end

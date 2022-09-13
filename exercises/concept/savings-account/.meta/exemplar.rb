@@ -22,6 +22,8 @@ module SavingsAccount
   end
 
   def self.years_before_desired_balance(current_balance, desired_balance)
+    raise RuntimeError if current_balance.zero?
+
     years = 0
     while current_balance < desired_balance
       current_balance = annual_balance_update(current_balance)
