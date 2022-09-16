@@ -32,6 +32,6 @@ module SavingsAccount
 
   def self.annual_yield(balance)
     multiplier = interest_rate(balance) / 100
-    balance.abs * multiplier
+    balance * multiplier
   end
 end
