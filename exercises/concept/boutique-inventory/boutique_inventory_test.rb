@@ -20,7 +20,7 @@ class BoutiqueInventoryTest < Minitest::Test
       { price: 50.00, name: "Red Short Skirt", quantity_by_size: { m: 1 } },
       { price: 29.99, name: "Black Short Skirt", quantity_by_size: {} }
     ]
-    names = ["Black Short Skirt", "Red Brown Dress", "Red Short Skirt"]
+    names = ["Red Brown Dress", "Red Short Skirt", "Black Short Skirt"]
     assert_equal names, BoutiqueInventory.new(items).item_names
   end
 
