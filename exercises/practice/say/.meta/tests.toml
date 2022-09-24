@@ -1,46 +1,55 @@
-[canonical-tests]
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
-# zero
-"5d22a120-ba0c-428c-bd25-8682235d83e8" = true
+[5d22a120-ba0c-428c-bd25-8682235d83e8]
+description = "zero"
 
-# one
-"9b5eed77-dbf6-439d-b920-3f7eb58928f6" = true
+[9b5eed77-dbf6-439d-b920-3f7eb58928f6]
+description = "one"
 
-# fourteen
-"7c499be1-612e-4096-a5e1-43b2f719406d" = true
+[7c499be1-612e-4096-a5e1-43b2f719406d]
+description = "fourteen"
 
-# twenty
-"f541dd8e-f070-4329-92b4-b7ce2fcf06b4" = true
+[f541dd8e-f070-4329-92b4-b7ce2fcf06b4]
+description = "twenty"
 
-# twenty-two
-"d78601eb-4a84-4bfa-bf0e-665aeb8abe94" = true
+[d78601eb-4a84-4bfa-bf0e-665aeb8abe94]
+description = "twenty-two"
 
-# one hundred
-"e417d452-129e-4056-bd5b-6eb1df334dce" = true
+[e417d452-129e-4056-bd5b-6eb1df334dce]
+description = "one hundred"
 
-# one hundred twenty-three
-"d6924f30-80ba-4597-acf6-ea3f16269da8" = true
+[d6924f30-80ba-4597-acf6-ea3f16269da8]
+description = "one hundred twenty-three"
 
-# one thousand
-"3d83da89-a372-46d3-b10d-de0c792432b3" = true
+[3d83da89-a372-46d3-b10d-de0c792432b3]
+description = "one thousand"
 
-# one thousand two hundred thirty-four
-"865af898-1d5b-495f-8ff0-2f06d3c73709" = true
+[865af898-1d5b-495f-8ff0-2f06d3c73709]
+description = "one thousand two hundred thirty-four"
 
-# one million
-"b6a3f442-266e-47a3-835d-7f8a35f6cf7f" = true
+[b6a3f442-266e-47a3-835d-7f8a35f6cf7f]
+description = "one million"
 
-# one million two thousand three hundred forty-five
-"2cea9303-e77e-4212-b8ff-c39f1978fc70" = true
+[2cea9303-e77e-4212-b8ff-c39f1978fc70]
+description = "one million two thousand three hundred forty-five"
 
-# one billion
-"3e240eeb-f564-4b80-9421-db123f66a38f" = true
+[3e240eeb-f564-4b80-9421-db123f66a38f]
+description = "one billion"
 
-# a big number
-"9a43fed1-c875-4710-8286-5065d73b8a9e" = true
+[9a43fed1-c875-4710-8286-5065d73b8a9e]
+description = "a big number"
 
-# numbers below zero are out of range
-"49a6a17b-084e-423e-994d-a87c0ecc05ef" = true
+[49a6a17b-084e-423e-994d-a87c0ecc05ef]
+description = "numbers below zero are out of range"
 
-# numbers above 999,999,999,999 are out of range
-"4d6492eb-5853-4d16-9d34-b0f61b261fd9" = true
+[4d6492eb-5853-4d16-9d34-b0f61b261fd9]
+description = "numbers above 999,999,999,999 are out of range"

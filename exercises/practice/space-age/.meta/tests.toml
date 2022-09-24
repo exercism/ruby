@@ -1,25 +1,34 @@
-[canonical-tests]
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
-# age on Earth
-"84f609af-5a91-4d68-90a3-9e32d8a5cd34" = true
+[84f609af-5a91-4d68-90a3-9e32d8a5cd34]
+description = "age on Earth"
 
-# age on Mercury
-"ca20c4e9-6054-458c-9312-79679ffab40b" = true
+[ca20c4e9-6054-458c-9312-79679ffab40b]
+description = "age on Mercury"
 
-# age on Venus
-"502c6529-fd1b-41d3-8fab-65e03082b024" = true
+[502c6529-fd1b-41d3-8fab-65e03082b024]
+description = "age on Venus"
 
-# age on Mars
-"9ceadf5e-a0d5-4388-9d40-2c459227ceb8" = true
+[9ceadf5e-a0d5-4388-9d40-2c459227ceb8]
+description = "age on Mars"
 
-# age on Jupiter
-"42927dc3-fe5e-4f76-a5b5-f737fc19bcde" = true
+[42927dc3-fe5e-4f76-a5b5-f737fc19bcde]
+description = "age on Jupiter"
 
-# age on Saturn
-"8469b332-7837-4ada-b27c-00ee043ebcad" = true
+[8469b332-7837-4ada-b27c-00ee043ebcad]
+description = "age on Saturn"
 
-# age on Uranus
-"999354c1-76f8-4bb5-a672-f317b6436743" = true
+[999354c1-76f8-4bb5-a672-f317b6436743]
+description = "age on Uranus"
 
-# age on Neptune
-"80096d30-a0d4-4449-903e-a381178355d8" = true
+[80096d30-a0d4-4449-903e-a381178355d8]
+description = "age on Neptune"

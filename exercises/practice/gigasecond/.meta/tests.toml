@@ -1,16 +1,25 @@
-[canonical-tests]
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
 
-# date only specification of time
-"92fbe71c-ea52-4fac-bd77-be38023cacf7" = true
+[92fbe71c-ea52-4fac-bd77-be38023cacf7]
+description = "date only specification of time"
 
-# second test for date only specification of time
-"6d86dd16-6f7a-47be-9e58-bb9fb2ae1433" = true
+[6d86dd16-6f7a-47be-9e58-bb9fb2ae1433]
+description = "second test for date only specification of time"
 
-# third test for date only specification of time
-"77eb8502-2bca-4d92-89d9-7b39ace28dd5" = true
+[77eb8502-2bca-4d92-89d9-7b39ace28dd5]
+description = "third test for date only specification of time"
 
-# full time specified
-"c9d89a7d-06f8-4e28-a305-64f1b2abc693" = true
+[c9d89a7d-06f8-4e28-a305-64f1b2abc693]
+description = "full time specified"
 
-# full time with day roll-over
-"09d4e30e-728a-4b52-9005-be44a58d9eba" = true
+[09d4e30e-728a-4b52-9005-be44a58d9eba]
+description = "full time with day roll-over"
