@@ -36,7 +36,7 @@ class CollatzConjectureTest < Minitest::Test
       CollatzConjecture.steps(-15)
     end
   end
-  
+
   def test_positive_value_but_less_than_one_is_an_error
     skip
     assert_raises(ArgumentError) do
