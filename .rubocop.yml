@@ -52,11 +52,21 @@ Metrics/BlockLength:
   Exclude:
     - "test/**/*"
 
+Metrics/ClassLength:
+  Exclude:
+    - "test/**/*"
+    - "exercises/**/*_test.rb"
+
+Metrics/AbcSize:
+  Exclude:
+    - "exercises/**/*_test.rb"
+
 Metrics/MethodLength:
   # We probably want to bring this down but let's start here for now
   Max: 20
   Exclude:
     - "test/**/*"
+    - "exercises/**/*_test.rb"
 
 Naming/PredicateName:
   Enabled: true
@@ -80,6 +90,8 @@ Style/DocumentationMethod:
 
 Naming/VariableNumber:
   EnforcedStyle: normalcase
+  Exclude:
+    - "exercises/**/*_test.rb"
 
 Style/LambdaCall:
   EnforcedStyle: braces

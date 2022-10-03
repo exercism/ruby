@@ -3,7 +3,6 @@ require_relative 'binary'
 
 # Common test data version: 1.1.0 dd3c07e
 class BinaryTest < Minitest::Test
-  # rubocop:disable Naming/VariableNumber
   def test_binary_0_is_decimal_0
     # skip
     assert_equal 0, Binary.to_decimal('0')
@@ -90,5 +89,4 @@ class BinaryTest < Minitest::Test
       Binary.to_decimal('001 nope')
     end
   end
-  # rubocop:enable Naming/VariableNumber
 end

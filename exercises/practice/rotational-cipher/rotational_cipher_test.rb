@@ -8,7 +8,7 @@ class RotationalCipherTest < Minitest::Test
     assert_equal "a", RotationalCipher.rotate("a", 0)
   end
 
-  def test_rotate_a_by_1 # rubocop:disable Naming/VariableNumber
+  def test_rotate_a_by_1
     skip
     assert_equal "b", RotationalCipher.rotate("a", 1)
   end
@@ -18,7 +18,7 @@ class RotationalCipherTest < Minitest::Test
     assert_equal "a", RotationalCipher.rotate("a", 26)
   end
 
-  def test_rotate_m_by_13 # rubocop:disable Naming/VariableNumber
+  def test_rotate_m_by_13
     skip
     assert_equal "z", RotationalCipher.rotate("m", 13)
   end

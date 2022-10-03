@@ -3,7 +3,7 @@ require_relative 'ocr_numbers'
 
 # Common test data version: 1.2.0 965ecad
 class OcrNumbersTest < Minitest::Test
-  def test_recognizes_0 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_0
     # skip
     input = [" _ ",
              "| |",
@@ -12,7 +12,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "0", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_1 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_1
     skip
     input = ["   ",
              "  |",
@@ -51,7 +51,7 @@ class OcrNumbersTest < Minitest::Test
     end
   end
 
-  def test_recognizes_110101100 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_110101100
     skip
     input = ["       _     _        _  _ ",
              "  |  || |  || |  |  || || |",
@@ -69,7 +69,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "11?10?1?0", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_2 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_2
     skip
     input = [" _ ",
              " _|",
@@ -78,7 +78,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "2", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_3 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_3
     skip
     input = [" _ ",
              " _|",
@@ -87,7 +87,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "3", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_4 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_4
     skip
     input = ["   ",
              "|_|",
@@ -96,7 +96,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "4", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_5 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_5
     skip
     input = [" _ ",
              "|_ ",
@@ -105,7 +105,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "5", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_6 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_6
     skip
     input = [" _ ",
              "|_ ",
@@ -114,7 +114,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "6", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_7 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_7
     skip
     input = [" _ ",
              "  |",
@@ -123,7 +123,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "7", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_8 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_8
     skip
     input = [" _ ",
              "|_|",
@@ -132,7 +132,7 @@ class OcrNumbersTest < Minitest::Test
     assert_equal "8", OcrNumbers.convert(input)
   end
 
-  def test_recognizes_9 # rubocop:disable Naming/VariableNumber
+  def test_recognizes_9
     skip
     input = [" _ ",
              "|_|",

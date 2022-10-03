@@ -13,11 +13,9 @@ class Attendee
 
   # Do not edit above methods, add your own methods below.
 
-  # rubocop:disable Naming/PredicateName
   def has_pass?
     raise 'Please implement the Attendee#haspass? method'
   end
-  # rubocop:enable Naming/PredicateName
 
   def fits_ride?(ride_minimum_height)
     raise 'Please implement the Attendee#fits_ride? method'

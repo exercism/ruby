@@ -13,7 +13,7 @@ class LargestSeriesProductTest < Minitest::Test
     assert_equal 72, Series.new('0123456789').largest_product(2)
   end
 
-  def test_can_find_the_largest_product_of_2 # rubocop:disable Naming/VariableNumber
+  def test_can_find_the_largest_product_of_2
     skip
     assert_equal 48, Series.new('576802143').largest_product(2)
   end
@@ -23,7 +23,7 @@ class LargestSeriesProductTest < Minitest::Test
     assert_equal 504, Series.new('0123456789').largest_product(3)
   end
 
-  def test_can_find_the_largest_product_of_3 # rubocop:disable Naming/VariableNumber
+  def test_can_find_the_largest_product_of_3
     skip
     assert_equal 270, Series.new('1027839564').largest_product(3)
   end

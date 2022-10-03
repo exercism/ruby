@@ -2,8 +2,6 @@ require 'minitest/autorun'
 require_relative 'prime_factors'
 
 class PrimeFactorsTest < Minitest::Test
-  # rubocop:disable Naming/VariableNumber
-
   def test_1
     assert_empty PrimeFactors.of(1)
   end
@@ -57,6 +55,4 @@ class PrimeFactorsTest < Minitest::Test
     skip
     assert_equal [11, 9539, 894_119], PrimeFactors.of(93_819_012_551)
   end
-
-  # rubocop:enable Naming/VariableNumber
 end

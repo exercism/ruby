@@ -43,12 +43,12 @@ class RomanNumeralsTest < Minitest::Test
     assert_equal 'XXVII', 27.to_roman
   end
 
-  def test_48_is_not_50_2_but_rather_40_8 # rubocop:disable Naming/VariableNumber
+  def test_48_is_not_50_2_but_rather_40_8
     skip
     assert_equal 'XLVIII', 48.to_roman
   end
 
-  def test_49_is_not_40_5_4_but_rather_50_10_10_1 # rubocop:disable Naming/VariableNumber
+  def test_49_is_not_40_5_4_but_rather_50_10_10_1
     skip
     assert_equal 'XLIX', 49.to_roman
   end
