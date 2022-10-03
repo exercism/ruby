@@ -78,7 +78,7 @@ class SayTest < Minitest::Test
   def test_a_big_number
     skip
     number = 987_654_321_123
-    assert_equal "nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three",  # rubocop:disable Layout/LineLength
+    assert_equal "nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three",
       Say.new(number).in_english
   end
 

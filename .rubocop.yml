@@ -37,6 +37,8 @@ Layout/EmptyLinesAroundAccessModifier:
 Layout/LineLength:
   Max: 125
   AutoCorrect: true
+  Exclude:
+    - "exercises/**/*_test.rb"
 
 Lint/SuppressedException:
   Exclude:
