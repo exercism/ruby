@@ -1,8 +1,6 @@
 require 'minitest/autorun'
 require_relative 'meetup'
 
-# rubocop:disable Naming/VariableNumber
-
 # Common test data version: 1.1.0 56cdfa5
 class MeetupTest < Minitest::Test
   def test_monteenth_of_may_2013
@@ -574,5 +572,4 @@ class MeetupTest < Minitest::Test
     meetup = Meetup.new(12, 2012).day(:friday, :first)
     assert_equal Date.parse("2012-12-07"), meetup
   end
-  # rubocop:enable Naming/VariableNumber
 end

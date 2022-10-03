@@ -21,14 +21,14 @@ class TripletTest < Minitest::Test
     refute Triplet.new(5, 6, 7).pythagorean?
   end
 
-  def test_triplets_upto_10 # rubocop:disable Naming/VariableNumber
+  def test_triplets_upto_10
     skip
     triplets = Triplet.where(max_factor: 10)
     products = triplets.map(&:product).sort
     assert_equal [60, 480], products
   end
 
-  def test_triplets_from_11_upto_20 # rubocop:disable Naming/VariableNumber
+  def test_triplets_from_11_upto_20
     skip
     triplets = Triplet.where(min_factor: 11, max_factor: 20)
     products = triplets.map(&:product).sort
@@ -42,7 +42,7 @@ class TripletTest < Minitest::Test
     assert_equal [118_080, 168_480, 202_500], products
   end
 
-  def test_where_sum_1000 # rubocop:disable Naming/VariableNumber
+  def test_where_sum_1000
     skip
     triplets = Triplet.where(sum: 1_000, min_factor: 200, max_factor: 425)
     products = triplets.map(&:product)
