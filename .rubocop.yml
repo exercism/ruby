@@ -62,6 +62,7 @@ Metrics/ClassLength:
 Metrics/AbcSize:
   Exclude:
     - "exercises/**/*_test.rb"
+    - "test/tasks/*"
 
 Metrics/MethodLength:
   # We probably want to bring this down but let's start here for now
