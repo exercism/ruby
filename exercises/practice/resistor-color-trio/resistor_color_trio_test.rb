@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'resistor_color_trio'
 
-# Common test data version: 1.1.0 2c41a51
 class ResistorColorTrioTest < Minitest::Test
   def test_orange_and_orange_and_black
     # skip

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'leap'
 
-# Common test data version: 1.4.0 3134d31
 class Date
   def leap?
     raise "Implement this yourself instead of using Ruby's implementation."

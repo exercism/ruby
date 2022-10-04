@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'complex_numbers'
 
-# Common test data version: 1.3.0 1e1c9ca
 class ComplexNumbersTest < Minitest::Test
   def test_real_part_of_a_purely_real_number
     # skip

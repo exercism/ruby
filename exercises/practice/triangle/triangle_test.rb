@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'triangle'
 
-# Common test data version: 1.2.0 55f89ca
 class TriangleTest < Minitest::Test
   def test_triangle_is_equilateral_if_all_sides_are_equal
     # skip

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'sum_of_multiples'
 
-# Common test data version: 1.4.1 8f89751
 class SumOfMultiplesTest < Minitest::Test
   def test_no_multiples_within_limit
     # skip

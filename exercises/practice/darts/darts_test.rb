@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'darts'
 
-# Common test data version: 2.2.0 f60c43b
 class DartsTest < Minitest::Test
   def test_missed_target
     # skip

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'atbash_cipher'
 
-# Common test data version: 1.2.0 d5238bd
 class AtbashCipherTest < Minitest::Test
   def test_encode_yes
     # skip

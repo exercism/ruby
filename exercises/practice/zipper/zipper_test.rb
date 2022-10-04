@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'zipper'
 
-# Common test data version: 1.1.0 6fb5601
 class ZipperTest < Minitest::Test
   def test_data_is_retained
     # skip

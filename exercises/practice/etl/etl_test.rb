@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'etl'
 
-# Common test data version: 1.0.0 ca9ed58
 class EtlTest < Minitest::Test
   def test_a_single_letter
     # skip

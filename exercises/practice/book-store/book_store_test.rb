@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'book_store'
 
-# Common test data version: 1.4.0 33c6b60
 class BookStoreTest < Minitest::Test
   def test_only_a_single_book
     # skip

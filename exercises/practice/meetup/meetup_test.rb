@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'meetup'
 
-# Common test data version: 1.1.0 56cdfa5
 class MeetupTest < Minitest::Test
   def test_monteenth_of_may_2013
     # skip

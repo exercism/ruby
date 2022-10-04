@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'sieve'
 
-# Common test data version: 1.1.0 8bbb634
 class SieveTest < Minitest::Test
   def test_no_primes_under_two
     # skip

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'word_count'
 
-# Common test data version: 1.2.0 77623ec
 class WordCountTest < Minitest::Test
   def test_count_one_word
     # skip

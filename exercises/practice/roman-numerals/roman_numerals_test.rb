@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'roman_numerals'
 
-# Common test data version: 1.2.0 3c78ac4
 class RomanNumeralsTest < Minitest::Test
   def test_1_is_a_single_i
     # skip

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'isbn_verifier'
 
-# Common test data version: 2.7.0 3134243
 class IsbnVerifierTest < Minitest::Test
   def test_valid_isbn_number
     # skip
