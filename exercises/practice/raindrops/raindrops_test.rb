@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'raindrops'
 
-# Common test data version: 1.1.0 99de15d
 class RaindropsTest < Minitest::Test
   def test_the_sound_for_1_is_1
     # skip

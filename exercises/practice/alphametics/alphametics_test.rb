@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'alphametics'
 
-# Common test data version: 1.3.0 361cf3c
 class AlphameticsTest < Minitest::Test
   def test_puzzle_with_three_letters
     # skip

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'pangram'
 
-# Common test data version: 1.4.1 2c020bc
 class PangramTest < Minitest::Test
   def test_sentence_empty
     # skip

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'collatz_conjecture'
 
-# Common test data version: 1.2.1 d94e348
 class CollatzConjectureTest < Minitest::Test
   def test_zero_steps_for_one
     # skip

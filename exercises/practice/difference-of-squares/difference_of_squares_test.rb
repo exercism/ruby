@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'difference_of_squares'
 
-# Common test data version: 1.2.0 1b6851d
 class DifferenceOfSquaresTest < Minitest::Test
   def test_square_of_sum_1
     # skip

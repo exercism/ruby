@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'pig_latin'
 
-# Common test data version: 1.2.0 d77de78
 class PigLatinTest < Minitest::Test
   def test_word_beginning_with_a
     # skip

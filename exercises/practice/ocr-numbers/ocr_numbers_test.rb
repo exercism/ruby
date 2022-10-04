@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'ocr_numbers'
 
-# Common test data version: 1.2.0 965ecad
 class OcrNumbersTest < Minitest::Test
   def test_recognizes_0
     # skip

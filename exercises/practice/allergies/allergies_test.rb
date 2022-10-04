@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'allergies'
 
-# Common test data version: 1.2.0 17a2ab2
 class AllergiesTest < Minitest::Test
   def test_no_allergies_means_not_allergic
     # skip

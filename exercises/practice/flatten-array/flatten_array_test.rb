@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'flatten_array'
 
-# Common test data version: 1.2.0 0290376
 class FlattenArrayTest < Minitest::Test
   def test_no_nesting
     # skip
