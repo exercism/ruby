@@ -4,7 +4,7 @@
 
 The key to this exercise is the optional paramater in the method definition.
 Using a default value there, rather than a conditional, makes the code much more readable, simple, and idiomatic.
-This is a pretty standard solution.
+This is a typical, idiomatic solution:
 
 ```ruby
 module TwoFer
