@@ -27,7 +27,7 @@ class SimpleCalculatorTest < Minitest::Test
   end
 
   def test_raises_exception_for_non_valid_operations
-    assert_raises(SimpleCalculator::UnsupportedOperation) { SimpleCalculator.calculate(1, 2, '**') }
+    assert_raises(SimpleCalculator::UnsupportedOperation) { SimpleCalculator.calculate(1, 2, '*******') }
   end
 
   def test_raises_exception_when_operation_is_nil
