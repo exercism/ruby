@@ -35,6 +35,11 @@ description = "normalize case"
 
 [4185a902-bdb0-4074-864c-f416e42a0f19]
 description = "with apostrophes"
+include = false
+
+[4ff6c7d7-fcfc-43ef-b8e7-34ff1837a2d3]
+description = "with apostrophes"
+reimplements = "4185a902-bdb0-4074-864c-f416e42a0f19"
 
 [be72af2b-8afe-4337-b151-b297202e4a7b]
 description = "with quotations"
