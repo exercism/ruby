@@ -307,7 +307,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "41f66d2a-1883-4a2c-875f-663c46fa88aa",
         "practices": ["strings", "advanced-enumeration"],
         "prerequisites": ["strings"],
@@ -357,7 +357,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference Of Squares",
+        "name": "Difference of Squares",
         "uuid": "f1e4ee0c-8718-43f2-90a5-fb1e915288da",
         "practices": ["advanced-enumeration", "math-operators", "numbers"],
         "prerequisites": ["numbers", "math-operators"],
@@ -375,7 +375,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "4fc25295-5d6a-4d13-9b87-064167d8980e",
         "practices": ["enumerable", "enumeration", "numbers"],
         "prerequisites": [
@@ -464,7 +464,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "0d66f3db-69a4-44b9-80be-9366f8b189ec",
         "practices": ["advanced-enumeration", "hashes"],
         "prerequisites": ["strings", "numbers", "hashes"],
@@ -681,7 +681,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "9d6a8c89-41c1-4c4e-b24c-476ba0dfa5f9",
         "practices": ["strings"],
         "prerequisites": ["strings", "conditionals", "enumeration", "booleans"],
@@ -1021,7 +1021,7 @@
       },
       {
         "slug": "isbn-verifier",
-        "name": "Isbn Verifier",
+        "name": "ISBN Verifier",
         "uuid": "a0aac827-8f7a-4065-9d05-a57009f5668d",
         "practices": ["strings", "regular-expressions"],
         "prerequisites": ["strings", "booleans"],
@@ -1077,7 +1077,7 @@
       },
       {
         "slug": "ocr-numbers",
-        "name": "Ocr Numbers",
+        "name": "OCR Numbers",
         "uuid": "dd13bb29-589c-497d-9580-3f288f353fb2",
         "practices": ["strings"],
         "prerequisites": ["strings", "loops", "conditionals", "exceptions"],
@@ -1141,7 +1141,7 @@
       },
       {
         "slug": "pascals-triangle",
-        "name": "Pascals Triangle",
+        "name": "Pascal's Triangle",
         "uuid": "4ff8b056-f27d-4bdf-b7af-214448db4260",
         "practices": ["enumerable"],
         "prerequisites": ["loops", "enumerable", "numbers"],
