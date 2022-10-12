@@ -71,6 +71,11 @@ Metrics/MethodLength:
     - "test/**/*"
     - "exercises/**/*_test.rb"
 
+Naming/MethodName:
+  Enabled: true
+  Exclude:
+    - "exercises/practice/protein-translation/protein_translation_test.rb"
+
 Naming/PredicateName:
   Enabled: true
   Exclude:
