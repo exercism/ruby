@@ -14,7 +14,7 @@ class DominoesTest < Minitest::Test
     assert Dominoes.chain?(dominoes)
   end
 
-  def test_singleton_that_can_not_be_chained
+  def test_singleton_that_cant_be_chained
     skip
     dominoes = [[1, 2]]
     refute Dominoes.chain?(dominoes)
@@ -32,7 +32,7 @@ class DominoesTest < Minitest::Test
     assert Dominoes.chain?(dominoes)
   end
 
-  def test_can_not_be_chained
+  def test_cant_be_chained
     skip
     dominoes = [[1, 2], [4, 1], [2, 3]]
     refute Dominoes.chain?(dominoes)
@@ -72,5 +72,11 @@ class DominoesTest < Minitest::Test
     skip
     dominoes = [[1, 2], [5, 3], [3, 1], [1, 2], [2, 4], [1, 6], [2, 3], [3, 4], [5, 6]]
     assert Dominoes.chain?(dominoes)
+  end
+
+  def test_separate_three_domino_loops
+    skip
+    dominoes = [[1, 2], [2, 3], [3, 1], [4, 5], [5, 6], [6, 4]]
+    refute Dominoes.chain?(dominoes)
   end
 end
