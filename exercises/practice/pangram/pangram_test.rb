@@ -2,72 +2,72 @@ require 'minitest/autorun'
 require_relative 'pangram'
 
 class PangramTest < Minitest::Test
-  def test_sentence_empty
+  def test_empty_sentence
     # skip
-    sentence = ''
+    sentence = ""
     result = Pangram.pangram?(sentence)
     refute result, "Expected false, got: #{result.inspect}. #{sentence.inspect} is NOT a pangram"
   end
 
-  def test_recognizes_a_perfect_lower_case_pangram
+  def test_perfect_lower_case
     skip
-    sentence = 'abcdefghijklmnopqrstuvwxyz'
+    sentence = "abcdefghijklmnopqrstuvwxyz"
     result = Pangram.pangram?(sentence)
     assert result, "Expected true, got: #{result.inspect}. #{sentence.inspect} IS a pangram"
   end
 
-  def test_pangram_with_only_lower_case
+  def test_only_lower_case
     skip
-    sentence = 'the quick brown fox jumps over the lazy dog'
+    sentence = "the quick brown fox jumps over the lazy dog"
     result = Pangram.pangram?(sentence)
     assert result, "Expected true, got: #{result.inspect}. #{sentence.inspect} IS a pangram"
   end
 
-  def test_missing_character_x
+  def test_missing_the_letter_x
     skip
-    sentence = 'a quick movement of the enemy will jeopardize five gunboats'
+    sentence = "a quick movement of the enemy will jeopardize five gunboats"
     result = Pangram.pangram?(sentence)
     refute result, "Expected false, got: #{result.inspect}. #{sentence.inspect} is NOT a pangram"
   end
 
-  def test_missing_character_h
+  def test_missing_the_letter_h
     skip
-    sentence = 'five boxing wizards jump quickly at it'
+    sentence = "five boxing wizards jump quickly at it"
     result = Pangram.pangram?(sentence)
     refute result, "Expected false, got: #{result.inspect}. #{sentence.inspect} is NOT a pangram"
   end
 
-  def test_pangram_with_underscores
+  def test_with_underscores
     skip
-    sentence = 'the_quick_brown_fox_jumps_over_the_lazy_dog'
+    sentence = "the_quick_brown_fox_jumps_over_the_lazy_dog"
     result = Pangram.pangram?(sentence)
     assert result, "Expected true, got: #{result.inspect}. #{sentence.inspect} IS a pangram"
   end
 
-  def test_pangram_with_numbers
+  def test_with_numbers
     skip
-    sentence = 'the 1 quick brown fox jumps over the 2 lazy dogs'
+    sentence = "the 1 quick brown fox jumps over the 2 lazy dogs"
     result = Pangram.pangram?(sentence)
     assert result, "Expected true, got: #{result.inspect}. #{sentence.inspect} IS a pangram"
   end
 
   def test_missing_letters_replaced_by_numbers
     skip
-    sentence = '7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog'
+    sentence = "7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"
     result = Pangram.pangram?(sentence)
     refute result, "Expected false, got: #{result.inspect}. #{sentence.inspect} is NOT a pangram"
   end
 
-  def test_pangram_with_mixed_case_and_punctuation
+  def test_mixed_case_and_punctuation
     skip
-    sentence = '"Five quacking Zephyrs jolt my wax bed."'
+    sentence = "\"Five quacking Zephyrs jolt my wax bed.\""
     result = Pangram.pangram?(sentence)
     assert result, "Expected true, got: #{result.inspect}. #{sentence.inspect} IS a pangram"
   end
 
-  def test_upper_and_lower_case_versions_of_the_same_character_should_not_be_counted_separately
+  def test_a_m_and_a_m_are_26_different_characters_but_not_a_pangram
     skip
-    sentence = 'the quick brown fox jumps over with lazy FX'
+    sentence = "abcdefghijklm ABCDEFGHIJKLM"
     result = Pangram.pangram?(sentence)
     refute result, "Expected false, got: #{result.inspect}. #{sentence.inspect} is NOT a pangram"
   end
