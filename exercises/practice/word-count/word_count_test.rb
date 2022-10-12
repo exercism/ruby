@@ -92,4 +92,11 @@ class WordCountTest < Minitest::Test
     counts = { "one" => 1, "two" => 1, "three" => 1 }
     assert_equal counts, phrase.word_count
   end
+
+  def test_quotation_for_word_with_apostrophe
+    skip
+    phrase = Phrase.new("can, can't, 'can't'")
+    counts = { "can" => 1, "can't" => 2 }
+    assert_equal counts, phrase.word_count
+  end
 end
