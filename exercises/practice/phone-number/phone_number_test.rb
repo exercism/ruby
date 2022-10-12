@@ -44,12 +44,12 @@ class PhoneNumberTest < Minitest::Test
 
   def test_invalid_with_letters
     skip
-    assert_nil PhoneNumber.clean("123-abc-7890")
+    assert_nil PhoneNumber.clean("523-abc-7890")
   end
 
   def test_invalid_with_punctuations
     skip
-    assert_nil PhoneNumber.clean("123-@:!-7890")
+    assert_nil PhoneNumber.clean("523-@:!-7890")
   end
 
   def test_invalid_if_area_code_starts_with_0
