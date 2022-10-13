@@ -37,6 +37,20 @@ class SayTest < Minitest::Test
     assert_equal expected, Say.new(number).in_english
   end
 
+  def test_thirty
+    skip
+    number = 30
+    expected = "thirty"
+    assert_equal expected, Say.new(number).in_english
+  end
+
+  def test_ninety_nine
+    skip
+    number = 99
+    expected = "ninety-nine"
+    assert_equal expected, Say.new(number).in_english
+  end
+
   def test_one_hundred
     skip
     number = 100
@@ -48,6 +62,20 @@ class SayTest < Minitest::Test
     skip
     number = 123
     expected = "one hundred twenty-three"
+    assert_equal expected, Say.new(number).in_english
+  end
+
+  def test_two_hundred
+    skip
+    number = 200
+    expected = "two hundred"
+    assert_equal expected, Say.new(number).in_english
+  end
+
+  def test_nine_hundred_ninety_nine
+    skip
+    number = 999
+    expected = "nine hundred ninety-nine"
     assert_equal expected, Say.new(number).in_english
   end
 
