@@ -2,100 +2,75 @@ require 'minitest/autorun'
 require_relative 'series'
 
 class SeriesTest < Minitest::Test
-  def test_simple_slices_of_one
-    series = Series.new('01234')
-    assert_equal %w[0 1 2 3 4], series.slices(1)
+  def test_slices_of_one_from_one
+    # skip
+    series = Series.new("1")
+    assert_equal ["1"], series.slices(1)
   end
 
-  def test_simple_slices_of_one_again
+  def test_slices_of_one_from_two
     skip
-    series = Series.new('92834')
-    assert_equal %w[9 2 8 3 4], series.slices(1)
+    series = Series.new("12")
+    assert_equal %w[1 2], series.slices(1)
   end
 
-  def test_simple_slices_of_two
+  def test_slices_of_two
     skip
-    series = Series.new('01234')
-    assert_equal %w[01 12 23 34], series.slices(2)
+    series = Series.new("35")
+    assert_equal ["35"], series.slices(2)
   end
 
-  def test_other_slices_of_two
+  def test_slices_of_two_overlap
     skip
-    series = Series.new('98273463')
-    expected = %w[98 82 27 73 34 46 63]
-    assert_equal expected, series.slices(2)
+    series = Series.new("9142")
+    assert_equal %w[91 14 42], series.slices(2)
   end
 
-  def test_simple_slices_of_two_again
+  def test_slices_can_include_duplicates
     skip
-    series = Series.new('37103')
-    assert_equal %w[37 71 10 03], series.slices(2)
+    series = Series.new("777777")
+    assert_equal %w[777 777 777 777], series.slices(3)
   end
 
-  def test_simple_slices_of_three
+  def test_slices_of_a_long_series
     skip
-    series = Series.new('01234')
-    assert_equal %w[012 123 234], series.slices(3)
+    series = Series.new("918493904243")
+    assert_equal %w[91849 18493 84939 49390 93904 39042 90424 04243], series.slices(5)
   end
 
-  def test_simple_slices_of_three_again
+  def test_slice_length_is_too_large
     skip
-    series = Series.new('31001')
-    assert_equal %w[310 100 001], series.slices(3)
-  end
-
-  def test_other_slices_of_three
-    skip
-    series = Series.new('982347')
-    assert_equal %w[982 823 234 347], series.slices(3)
-  end
-
-  def test_simple_slices_of_four
-    skip
-    series = Series.new('01234')
-    assert_equal %w[0123 1234], series.slices(4)
-  end
-
-  def test_simple_slices_of_four_again
-    skip
-    series = Series.new('91274')
-    assert_equal %w[9127 1274], series.slices(4)
-  end
-
-  def test_simple_slices_of_five
-    skip
-    series = Series.new('01234')
-    assert_equal ['01234'], series.slices(5)
-  end
-
-  def test_simple_slices_of_five_again
-    skip
-    series = Series.new('81228')
-    assert_equal ['81228'], series.slices(5)
-  end
-
-  def test_simple_slice_that_blows_up
-    skip
-    series = Series.new('01234')
+    slice_string = "12345"
+    series = Series.new(slice_string)
     assert_raises ArgumentError do
       series.slices(6)
     end
   end
 
-  def test_more_complicated_slice_that_blows_up
+  def test_slice_length_cannot_be_zero
     skip
-    slice_string = '01032987583'
-
+    slice_string = "12345"
     series = Series.new(slice_string)
     assert_raises ArgumentError do
-      series.slices(slice_string.length + 1)
+      series.slices(0)
     end
   end
 
-  def test_sequential_slices
+  def test_slice_length_cannot_be_negative
     skip
-    series = Series.new('1234')
-    assert_equal %w[12 23 34], series.slices(2)
-    assert_equal %w[123 234], series.slices(3)
+    slice_string = "123"
+    series = Series.new(slice_string)
+    assert_raises ArgumentError do
+      series.slices(-1)
+    end
+  end
+
+  def test_empty_series_is_invalid
+    skip
+    slice_string = ""
+    series = Series.new(slice_string)
+    assert_raises ArgumentError do
+      series.slices(1)
+    end
   end
 end

@@ -1,9 +1,9 @@
 class Series
   def initialize(series)
-    @series = (series)
+    @series = series
   end
   def slices(n)
-    if n > @series.length
+    if n > @series.length || n <= 0
       raise ArgumentError
     end
     series = @series
