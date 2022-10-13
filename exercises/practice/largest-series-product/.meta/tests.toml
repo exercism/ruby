@@ -53,3 +53,8 @@ description = "rejects invalid character in digits"
 
 [5fe3c0e5-a945-49f2-b584-f0814b4dd1ef]
 description = "rejects negative span"
+include = false
+
+[c859f34a-9bfe-4897-9c2f-6d7f8598e7f0]
+description = "rejects negative span"
+reimplements = "5fe3c0e5-a945-49f2-b584-f0814b4dd1ef"
