@@ -1,0 +1,633 @@
+{
+  "note": "see https://github.com/exercism/ruby/issues/1218",
+  "exercises": [
+    {
+      "slug": "acronym",
+      "practices": [
+        "regular-expressions"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "high-scores",
+      "practices": [
+        "ordering"
+      ],
+      "prerequisites": [
+        "ordering",
+        "constructors"
+      ]
+    },
+    {
+      "slug": "matrix",
+      "practices": [
+        "classes"
+      ],
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "slug": "word-count",
+      "practices": [
+        "hashes",
+        "regular-expressions"
+      ],
+      "prerequisites": [
+        "hashes"
+      ]
+    },
+    {
+      "slug": "raindrops",
+      "practices": [
+        "casting"
+      ],
+      "prerequisites": [
+        "casting"
+      ]
+    },
+    {
+      "slug": "isogram",
+      "practices": [
+        "sets"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "scrabble-score",
+      "practices": [
+        "hashes"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "clock",
+      "practices": [
+        "equality"
+      ],
+      "prerequisites": [
+        "classes",
+        "equality"
+      ]
+    },
+    {
+      "slug": "gigasecond",
+      "practices": [
+        "time"
+      ],
+      "prerequisites": [
+        "time"
+      ]
+    },
+    {
+      "slug": "resistor-color",
+      "practices": [
+
+      ],
+      "prerequisites": [
+        "integers"
+      ]
+    },
+    {
+      "slug": "leap",
+      "practices": [
+        "math-operators"
+      ],
+      "prerequisites": [
+        "math-operators"
+      ]
+    },
+    {
+      "slug": "pangram",
+      "practices": [
+        "sets"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "space-age",
+      "practices": [
+        "classes"
+      ],
+      "prerequisites": [
+        "classes",
+        "constructors"
+      ]
+    },
+    {
+      "slug": "difference-of-squares",
+      "practices": [
+        "math-operators"
+      ],
+      "prerequisites": [
+        "math-operators"
+      ]
+    },
+    {
+      "slug": "anagram",
+      "practices": [
+        "classes"
+      ],
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "slug": "sum-of-multiples",
+      "practices": [
+        "enumerable"
+      ],
+      "prerequisites": [
+        "enumerable"
+      ]
+    },
+    {
+      "slug": "armstrong-numbers",
+      "practices": [
+        "casting"
+      ],
+      "prerequisites": [
+        "casting"
+      ]
+    },
+    {
+      "slug": "flatten-array",
+      "practices": [
+        "enumerable",
+        "recursion"
+      ],
+      "prerequisites": [
+        "enumerable"
+      ]
+    },
+    {
+      "slug": "phone-number",
+      "practices": [
+        "regular-expressions"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "grains",
+      "practices": [
+        "integral-numbers",
+        "math-operators"
+      ],
+      "prerequisites": [
+        "integral-numbers",
+        "math-operators"
+      ]
+    },
+    {
+      "slug": "saddle-points",
+      "practices": [
+
+      ],
+      "prerequisites": [
+        "enumerable"
+      ]
+    },
+    {
+      "slug": "etl",
+      "practices": [
+        "hashes"
+      ],
+      "prerequisites": [
+        "hashes"
+      ]
+    },
+    {
+      "slug": "nucleotide-count",
+      "practices": [
+        "hashes"
+      ],
+      "prerequisites": [
+        "hashes"
+      ]
+    },
+    {
+      "slug": "pythagorean-triplet",
+      "practices": [
+        "classes",
+        "constructors"
+      ],
+      "prerequisites": [
+        "classes",
+        "constructors",
+        "enumerable",
+        "generic-methods"
+      ]
+    },
+    {
+      "slug": "collatz-conjecture",
+      "practices": [
+        "recursion"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "palindrome-products",
+      "practices": [
+
+      ],
+      "prerequisites": [
+        "enumerable"
+      ]
+    },
+    {
+      "slug": "nth-prime",
+      "practices": [
+        "lazy-evaluation"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "perfect-numbers",
+      "practices": [
+
+      ],
+      "prerequisites": [
+        "symbols"
+      ]
+    },
+    {
+      "slug": "alphametics",
+      "practices": [
+        "lazy-evaluation"
+      ],
+      "prerequisites": [
+        "lazy-evaluation"
+      ]
+    },
+    {
+      "slug": "two-bucket",
+      "practices": [
+        "constructors"
+      ],
+      "prerequisites": [
+        "symbols",
+        "constructors"
+      ]
+    },
+    {
+      "slug": "matching-brackets",
+      "practices": [
+        "stacks"
+      ],
+      "prerequisites": [
+        "stacks"
+      ]
+    },
+    {
+      "slug": "all-your-base",
+      "practices": [
+        "math-operators"
+      ],
+      "prerequisites": [
+        "math-operators"
+      ]
+    },
+    {
+      "slug": "allergies",
+      "practices": [
+        "bit-manipulation",
+        "symbols"
+      ],
+      "prerequisites": [
+        "symbols",
+        "bit-manipulation",
+        "classes"
+      ]
+    },
+    {
+      "slug": "rail-fence-cipher",
+      "practices": [
+        "constructors"
+      ],
+      "prerequisites": [
+        "classes",
+        "constructors"
+      ]
+    },
+    {
+      "slug": "robot-simulator",
+      "practices": [
+        "constructors"
+      ],
+      "prerequisites": [
+        "symbols",
+        "classes",
+        "constructors"
+      ]
+    },
+    {
+      "slug": "wordy",
+      "practices": [
+        "regular-expressions"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "secret-handshake",
+      "practices": [
+        "bit-manipulation"
+      ],
+      "prerequisites": [
+        "bit-manipulation"
+      ]
+    },
+    {
+      "slug": "crypto-square",
+      "practices": [
+        "enumerable"
+      ],
+      "prerequisites": [
+        "enumerable"
+      ]
+    },
+    {
+      "slug": "list-ops",
+      "practices": [
+        "higher-order-functions",
+        "parameters"
+      ],
+      "prerequisites": [
+        "parameters",
+        "higher-order-functions"
+      ]
+    },
+    {
+      "slug": "robot-name",
+      "practices": [
+        "randomness",
+        "classes"
+      ],
+      "prerequisites": [
+        "randomness",
+        "classes"
+      ]
+    },
+    {
+      "slug": "simple-cipher",
+      "practices": [
+        "classes",
+        "randomness"
+      ],
+      "prerequisites": [
+        "classes",
+        "randomness"
+      ]
+    },
+    {
+      "slug": "dominoes",
+      "practices": [
+        "lazy-evaluation"
+      ],
+      "prerequisites": [
+        "enumerable"
+      ]
+    },
+    {
+      "slug": "pig-latin",
+      "practices": [
+        "regular-expressions"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "simple-linked-list",
+      "practices": [
+        "enumerable"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "binary-search-tree",
+      "practices": [
+        "constructors"
+      ],
+      "prerequisites": [
+        "enumerable",
+        "classes",
+        "constructors"
+      ]
+    },
+    {
+      "slug": "circular-buffer",
+      "practices": [
+        "queues"
+      ],
+      "prerequisites": [
+        "queues",
+        "classes"
+      ]
+    },
+    {
+      "slug": "grade-school",
+      "practices": [
+        "hashes",
+        "ordering"
+      ],
+      "prerequisites": [
+        "enumerable",
+        "ordering"
+      ]
+    },
+    {
+      "slug": "kindergarten-garden",
+      "practices": [
+        "symbols"
+      ],
+      "prerequisites": [
+        "symbols",
+        "enumerable",
+        "dynamic-programming",
+        "recursion",
+        "meta-programming"
+      ]
+    },
+    {
+      "slug": "largest-series-product",
+      "practices": [
+        "integral-numbers",
+        "math-operators"
+      ],
+      "prerequisites": [
+        "integral-numbers",
+        "math-operators"
+      ]
+    },
+    {
+      "slug": "prime-factors",
+      "practices": [
+        "integral-numbers"
+      ],
+      "prerequisites": [
+        "integral-numbers"
+      ]
+    },
+    {
+      "slug": "custom-set",
+      "practices": [
+        "sets",
+        "immutability",
+        "constructors"
+      ],
+      "prerequisites": [
+        "sets",
+        "immutability",
+        "constructors"
+      ]
+    },
+    {
+      "slug": "linked-list",
+      "practices": [
+
+      ],
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "slug": "poker",
+      "practices": [
+        "ordering"
+      ],
+      "prerequisites": [
+        "enumerable",
+        "ordering"
+      ]
+    },
+    {
+      "slug": "isbn-verifier",
+      "practices": [
+        "regular-expressions"
+      ],
+      "prerequisites": [
+
+      ]
+    },
+    {
+      "slug": "complex-numbers",
+      "practices": [
+        "structs",
+        "immutability",
+        "math-operators"
+      ],
+      "prerequisites": [
+        "structs",
+        "immutability",
+        "math-operators"
+      ]
+    },
+    {
+      "slug": "meetup",
+      "practices": [
+        "dates",
+        "time"
+      ],
+      "prerequisites": [
+        "dates",
+        "time"
+      ]
+    },
+    {
+      "slug": "bowling",
+      "practices": [
+        "classes"
+      ],
+      "prerequisites": [
+        "classes"
+      ]
+    },
+    {
+      "slug": "say",
+      "practices": [
+        "integral-numbers"
+      ],
+      "prerequisites": [
+        "integral-numbers"
+      ]
+    },
+    {
+      "slug": "zipper",
+      "practices": [
+        "immutability",
+        "equality",
+        "recursion"
+      ],
+      "prerequisites": [
+        "classes",
+        "equality"
+      ]
+    },
+    {
+      "slug": "pascals-triangle",
+      "practices": [
+        "enumerable"
+      ],
+      "prerequisites": [
+        "enumerable"
+      ]
+    },
+    {
+      "slug": "queen-attack",
+      "practices": [
+        "constructors",
+        "math-operators"
+      ],
+      "prerequisites": [
+        "classes",
+        "constructors",
+        "math-operators"
+      ]
+    },
+    {
+      "slug": "book-store",
+      "practices": [
+        "recursion"
+      ],
+      "prerequisites": [
+        "enumerable"
+      ]
+    },
+    {
+      "slug": "connect",
+      "practices": [
+        "symbols"
+      ],
+      "prerequisites": [
+        "symbols"
+      ]
+    },
+    {
+      "slug": "microwave",
+      "practices": [
+        "string-formatting"
+      ],
+      "prerequisites": [
+        "string-formatting"
+      ]
+    }
+  ]
+}
