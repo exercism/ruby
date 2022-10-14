@@ -9,8 +9,14 @@
 # As user-added comments (using the # character) will be removed when this file
 # is regenerated, comments can be added via a `comment` key.
 
+[8c71dabd-da60-422d-a290-4a571471fb14]
+description = "empty"
+
 [d268b919-963c-442d-9f07-82b93f1b518c]
 description = "no nesting"
+
+[3f15bede-c856-479e-bb71-1684b20c6a30]
+description = "flattens a nested array"
 
 [c84440cc-bb3a-48a6-862c-94cf23f2815d]
 description = "flattens array with just integers present"
@@ -20,6 +26,18 @@ description = "5 level nesting"
 
 [d572bdba-c127-43ed-bdcd-6222ac83d9f7]
 description = "6 level nesting"
+
+[0705a8e5-dc86-4cec-8909-150c5e54fa9c]
+description = "null values are omitted from the final result"
+include = false
+
+[c6cf26de-8ccd-4410-84bd-b9efd88fd2bc]
+description = "consecutive null values at the front of the list are omitted from the final result"
+include = false
+
+[382c5242-587e-4577-b8ce-a5fb51e385a1]
+description = "consecutive null values in the middle of the list are omitted from the final result"
+include = false
 
 [ef1d4790-1b1e-4939-a179-51ace0829dbd]
 description = "6 level nest list with null values"
