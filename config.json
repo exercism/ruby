@@ -766,17 +766,9 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "2c71fc3a-2c93-402b-b091-697b795ce3ba",
-        "practices": [
-          "lambdas",
-          "enumeration",
-          "blocks",
-          "enumerable"
-        ],
-        "prerequisites": [
-          "lambdas",
-          "enumeration",
-          "enumerable"
-        ],
+	"status": "deprecated",
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 1
       },
       {
@@ -796,15 +788,9 @@
         "slug": "strain",
         "name": "Strain",
         "uuid": "ac0966a9-822b-45be-91d9-36f6706ea76f",
-        "practices": [
-          "higher-order-functions",
-          "blocks",
-          "lazy-evaluation"
-        ],
-        "prerequisites": [
-          "numbers",
-          "higher-order-functions"
-        ],
+	"status": "deprecated",
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 2
       },
       {
