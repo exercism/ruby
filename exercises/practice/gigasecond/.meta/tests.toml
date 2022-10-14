@@ -23,3 +23,7 @@ description = "full time specified"
 
 [09d4e30e-728a-4b52-9005-be44a58d9eba]
 description = "full time with day roll-over"
+
+[fcec307c-7529-49ab-b0fe-20309197618a]
+description = "does not mutate the input"
+include = false
