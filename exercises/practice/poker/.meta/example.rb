@@ -77,7 +77,7 @@ class Hand
   end
 
   def straight?
-    rank_values.each_cons(2).all? { |a, b| a + 1 == b }
+    (rank_values - [14]).each_cons(2).all? { |a, b| a + 1 == b }
   end
 
   def flush?
