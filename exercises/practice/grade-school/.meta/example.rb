@@ -3,20 +3,22 @@ class School
     @students = Hash.new { |hash, key| hash[key] = [] }
   end
 
-  def students_by_grade
-    @students.keys.sort.map { |level| grade(level) }
+  def add(student, grade)
+    if roster.include?(student)
+      return false
+    end
+    students[grade] << student
+    true
   end
 
-  def add(student, level)
-    @students[level] << student
-    @students[level].sort!
+  def roster
+    students.sort_by {|grade, names| grade}.map {|_, names| names.sort}.flatten
   end
 
-  def students(level)
-    @students[level]
+  def grade(number)
+    students[number].sort
   end
 
-  def grade(level)
-    { grade: level, students: students(level) }
-  end
+  private
+  attr_reader :students
 end
