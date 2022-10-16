@@ -14,10 +14,10 @@ class Scale
   end
 
   def interval(pattern)
-    last_index = 0
-    scale = pattern.each_char.with_object([]) do |c, collector|
-      collector << reorder_chromatic_scale[last_index]
-      last_index += ASCENDING_INTERVALS.index(c) + 1
+    index = 0
+    pattern.each_char.with_object([reorder_chromatic_scale[index]]) do |char, scale|
+      index = (index + (ASCENDING_INTERVALS.index(char) + 1)) % 12
+      scale << reorder_chromatic_scale[index]
     end
   end
 
