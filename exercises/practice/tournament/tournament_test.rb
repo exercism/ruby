@@ -188,4 +188,23 @@ class TournamentTest < Minitest::Test
 
     assert_equal expected, Tournament.tally(input)
   end
+
+  def test_ensure_points_sorted_numerically
+    skip
+    input = <<~INPUT
+      Devastating Donkeys;Blithering Badgers;win
+      Devastating Donkeys;Blithering Badgers;win
+      Devastating Donkeys;Blithering Badgers;win
+      Devastating Donkeys;Blithering Badgers;win
+      Blithering Badgers;Devastating Donkeys;win
+    INPUT
+
+    expected = <<~TALLY
+      Team                           | MP |  W |  D |  L |  P
+      Devastating Donkeys            |  5 |  4 |  0 |  1 | 12
+      Blithering Badgers             |  5 |  1 |  0 |  4 |  3
+    TALLY
+
+    assert_equal expected, Tournament.tally(input)
+  end
 end

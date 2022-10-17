@@ -41,3 +41,6 @@ description = "incomplete competition (not all pairs have played)"
 
 [3aa0386f-150b-4f99-90bb-5195e7b7d3b8]
 description = "ties broken alphabetically"
+
+[f9e20931-8a65-442a-81f6-503c0205b17a]
+description = "ensure points sorted numerically"
