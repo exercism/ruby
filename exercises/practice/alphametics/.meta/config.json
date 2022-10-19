@@ -1,5 +1,4 @@
 {
-  "blurb": "Write a function to solve alphametics puzzles.",
   "authors": [
     "repinel"
   ],
@@ -27,5 +26,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  }
+  },
+  "blurb": "Write a function to solve alphametics puzzles."
 }

@@ -1,9 +1,17 @@
 {
-  "blurb": "Learn advanced enumeration functionality by preparing your online fashion boutique for its big annual sale.",
-  "authors": ["iHiD"],
+  "authors": [
+    "iHiD"
+  ],
   "files": {
-    "solution": ["boutique_inventory.rb"],
-    "test": ["boutique_inventory_test.rb"],
-    "exemplar": [".meta/exemplar.rb"]
-  }
+    "solution": [
+      "boutique_inventory.rb"
+    ],
+    "test": [
+      "boutique_inventory_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "blurb": "Learn advanced enumeration functionality by preparing your online fashion boutique for its big annual sale."
 }

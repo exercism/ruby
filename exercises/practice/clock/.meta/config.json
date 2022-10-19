@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a clock that handles times without dates.",
   "authors": [
     "kytrinyx"
   ],
@@ -30,6 +29,7 @@
       ".meta/example.rb"
     ]
   },
+  "blurb": "Implement a clock that handles times without dates.",
   "source": "Pairing session with Erin Drummond",
   "source_url": "https://twitter.com/ebdrummond"
 }

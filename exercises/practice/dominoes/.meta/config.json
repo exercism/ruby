@@ -1,5 +1,4 @@
 {
-  "blurb": "Make a chain of dominoes.",
   "authors": [
     "petertseng"
   ],
@@ -24,5 +23,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  }
+  },
+  "blurb": "Make a chain of dominoes."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement basic list operations",
   "authors": [
     "rhoprhh"
   ],
@@ -23,5 +22,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  }
+  },
+  "blurb": "Implement basic list operations"
 }

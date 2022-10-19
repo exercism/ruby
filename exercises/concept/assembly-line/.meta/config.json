@@ -1,11 +1,24 @@
 {
-  "blurb": "Learn about numbers by analyzing the production of an assembly line.",
-  "authors": ["dvik1950"],
-  "contributors": ["kotp", "iHiD"],
-  "forked_from": ["csharp/cars-assemble"],
+  "authors": [
+    "dvik1950"
+  ],
+  "contributors": [
+    "kotp",
+    "iHiD"
+  ],
   "files": {
-    "solution": ["assembly_line.rb"],
-    "test": ["assembly_line_test.rb"],
-    "exemplar": [".meta/exemplar.rb"]
-  }
+    "solution": [
+      "assembly_line.rb"
+    ],
+    "test": [
+      "assembly_line_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "forked_from": [
+    "csharp/cars-assemble"
+  ],
+  "blurb": "Learn about numbers by analyzing the production of an assembly line."
 }
