@@ -1,5 +1,4 @@
 {
-  "blurb": "Translate RNA sequences into proteins.",
   "authors": [
     "Teapane"
   ],
@@ -27,5 +26,6 @@
       ".meta/example.rb"
     ]
   },
+  "blurb": "Translate RNA sequences into proteins.",
   "source": "Tyler Long"
 }

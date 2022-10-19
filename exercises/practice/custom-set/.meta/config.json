@@ -1,5 +1,4 @@
 {
-  "blurb": "Create a custom set type.",
   "authors": [
     "fluxusfrequency"
   ],
@@ -29,5 +28,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  }
+  },
+  "blurb": "Create a custom set type."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Creating a zipper for a binary tree.",
   "authors": [
     "tuxagon"
   ],
@@ -21,5 +20,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  }
+  },
+  "blurb": "Creating a zipper for a binary tree."
 }

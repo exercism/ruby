@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a doubly linked list",
   "authors": [
     "vosechu"
   ],
@@ -29,5 +28,6 @@
       ".meta/example.rb"
     ]
   },
+  "blurb": "Implement a doubly linked list",
   "source": "Classic computer science topic"
 }
