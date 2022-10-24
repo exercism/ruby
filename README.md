@@ -328,6 +328,8 @@ For an in-depth discussion of how exercism language tracks and exercises work, p
 
 If you're just getting started and looking for a helpful way to get involved, take a look at [regenerating the test suites][#regenerating-a-test-suite], [porting an exercise from another language][port exercise], or [creating an automated test generator][#implementing-a-generator].
 
+We are also available at our community forum: [building-exercism]
+
 ## Ruby icon
 
 The Ruby icon is the Vienna.rb logo, and is used with permission. Thanks Floor
@@ -335,6 +337,7 @@ Dress :)
 
 [#anatomy-of-an-exercise]: #anatomy-of-an-exercise
 [assertion]: https://github.com/exercism/ruby/blob/master/lib/generator/exercise_case/assertion.rb
+[building-exercism]: https://forum.exercism.org/c/general/building-exercism/125
 [#canonical-data]: #canonical-data
 [canonical data]: https://github.com/exercism/problem-specifications/tree/master/exercises
 [canonical exercises]: https://github.com/exercism/problem-specifications/tree/master/exercises
