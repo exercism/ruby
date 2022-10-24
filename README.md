@@ -2,7 +2,6 @@
 
 [![Configlet Status][configlet-workflow-badge]][configlet-workflow]
 [![Exercise Test Status][tests-workflow-badge]][tests-workflow]
-[![Join the chat at https://gitter.im/exercism/ruby][ruby-gitter-badge]][ruby-gitter-channel]
 
 Exercism Exercises in Ruby
 
@@ -361,8 +360,6 @@ Dress :)
 [#ruby-icon]: #ruby-icon
 [#running-the-tests]: #running-the-tests
 [rubocop]: http://batsov.com/rubocop/
-[ruby-gitter-badge]: https://badges.gitter.im/exercism/ruby.svg
-[ruby-gitter-channel]: https://gitter.im/exercism/ruby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 [#setup]: #setup
 [#style-guide]: #style-guide
 [synchronize]: https://help.github.com/articles/syncing-a-fork/
