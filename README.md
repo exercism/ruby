@@ -2,7 +2,6 @@
 
 [![Configlet Status][configlet-workflow-badge]][configlet-workflow]
 [![Exercise Test Status][tests-workflow-badge]][tests-workflow]
-[![Join the chat at https://gitter.im/exercism/ruby][ruby-gitter-badge]][ruby-gitter-channel]
 
 Exercism Exercises in Ruby
 
@@ -329,6 +328,8 @@ For an in-depth discussion of how exercism language tracks and exercises work, p
 
 If you're just getting started and looking for a helpful way to get involved, take a look at [regenerating the test suites][#regenerating-a-test-suite], [porting an exercise from another language][port exercise], or [creating an automated test generator][#implementing-a-generator].
 
+We are also available at our community forum: [building-exercism]
+
 ## Ruby icon
 
 The Ruby icon is the Vienna.rb logo, and is used with permission. Thanks Floor
@@ -336,6 +337,7 @@ Dress :)
 
 [#anatomy-of-an-exercise]: #anatomy-of-an-exercise
 [assertion]: https://github.com/exercism/ruby/blob/master/lib/generator/exercise_case/assertion.rb
+[building-exercism]: https://forum.exercism.org/c/general/building-exercism/125
 [#canonical-data]: #canonical-data
 [canonical data]: https://github.com/exercism/problem-specifications/tree/master/exercises
 [canonical exercises]: https://github.com/exercism/problem-specifications/tree/master/exercises
@@ -361,8 +363,6 @@ Dress :)
 [#ruby-icon]: #ruby-icon
 [#running-the-tests]: #running-the-tests
 [rubocop]: http://batsov.com/rubocop/
-[ruby-gitter-badge]: https://badges.gitter.im/exercism/ruby.svg
-[ruby-gitter-channel]: https://gitter.im/exercism/ruby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 [#setup]: #setup
 [#style-guide]: #style-guide
 [synchronize]: https://help.github.com/articles/syncing-a-fork/

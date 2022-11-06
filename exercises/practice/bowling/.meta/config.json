@@ -1,5 +1,4 @@
 {
-  "blurb": "Score a bowling game",
   "authors": [
     "bernardoamc"
   ],
@@ -27,6 +26,7 @@
       ".meta/example.rb"
     ]
   },
-  "source": "The Bowling Game Kata at but UncleBob",
+  "blurb": "Score a bowling game.",
+  "source": "The Bowling Game Kata from UncleBob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
 }

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'microwave'
 
-# Common test data version: 1.7.0 cacf1f1
 class MicrowaveTest < Minitest::Test
   def test_one_second
     assert_equal '00:01', Microwave.new(1).timer

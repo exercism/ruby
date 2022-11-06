@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'isogram'
 
-# Common test data version: 1.7.0 74869e8
 class IsogramTest < Minitest::Test
   def test_empty_string
     # skip
@@ -78,6 +77,12 @@ class IsogramTest < Minitest::Test
   def test_same_first_and_last_characters
     skip
     input = "angola"
+    refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
+  end
+
+  def test_word_with_duplicated_character_and_with_two_hyphens
+    skip
+    input = "up-to-date"
     refute Isogram.isogram?(input), "Expected false, '#{input}' is not an isogram"
   end
 end

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'word_count'
 
-# Common test data version: 1.2.0 77623ec
 class WordCountTest < Minitest::Test
   def test_count_one_word
     # skip
@@ -61,8 +60,8 @@ class WordCountTest < Minitest::Test
 
   def test_with_apostrophes
     skip
-    phrase = Phrase.new("First: don't laugh. Then: don't cry.")
-    counts = { "first" => 1, "don't" => 2, "laugh" => 1, "then" => 1, "cry" => 1 }
+    phrase = Phrase.new("'First: don't laugh. Then: don't cry. You're getting it.'")
+    counts = { "first" => 1, "don't" => 2, "laugh" => 1, "then" => 1, "cry" => 1, "you're" => 1, "getting" => 1, "it" => 1 }
     assert_equal counts, phrase.word_count
   end
 
@@ -73,10 +72,31 @@ class WordCountTest < Minitest::Test
     assert_equal counts, phrase.word_count
   end
 
+  def test_substrings_from_the_beginning
+    skip
+    phrase = Phrase.new("Joe can't tell between app, apple and a.")
+    counts = { "joe" => 1, "can't" => 1, "tell" => 1, "between" => 1, "app" => 1, "apple" => 1, "and" => 1, "a" => 1 }
+    assert_equal counts, phrase.word_count
+  end
+
   def test_multiple_spaces_not_detected_as_a_word
     skip
     phrase = Phrase.new(" multiple   whitespaces")
     counts = { "multiple" => 1, "whitespaces" => 1 }
+    assert_equal counts, phrase.word_count
+  end
+
+  def test_alternating_word_separators_not_detected_as_a_word
+    skip
+    phrase = Phrase.new(",\n,one,\n ,two \n 'three'")
+    counts = { "one" => 1, "two" => 1, "three" => 1 }
+    assert_equal counts, phrase.word_count
+  end
+
+  def test_quotation_for_word_with_apostrophe
+    skip
+    phrase = Phrase.new("can, can't, 'can't'")
+    counts = { "can" => 1, "can't" => 2 }
     assert_equal counts, phrase.word_count
   end
 end

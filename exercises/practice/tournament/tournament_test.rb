@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'tournament'
 
-# Common test data version: 1.4.0 ee01fe0
 class TournamentTest < Minitest::Test
   def test_just_the_header_if_no_input
     # skip
@@ -185,6 +184,25 @@ class TournamentTest < Minitest::Test
       Courageous Californians        |  3 |  2 |  1 |  0 |  7
       Blithering Badgers             |  3 |  0 |  1 |  2 |  1
       Devastating Donkeys            |  3 |  0 |  1 |  2 |  1
+    TALLY
+
+    assert_equal expected, Tournament.tally(input)
+  end
+
+  def test_ensure_points_sorted_numerically
+    skip
+    input = <<~INPUT
+      Devastating Donkeys;Blithering Badgers;win
+      Devastating Donkeys;Blithering Badgers;win
+      Devastating Donkeys;Blithering Badgers;win
+      Devastating Donkeys;Blithering Badgers;win
+      Blithering Badgers;Devastating Donkeys;win
+    INPUT
+
+    expected = <<~TALLY
+      Team                           | MP |  W |  D |  L |  P
+      Devastating Donkeys            |  5 |  4 |  0 |  1 | 12
+      Blithering Badgers             |  5 |  1 |  0 |  4 |  3
     TALLY
 
     assert_equal expected, Tournament.tally(input)

@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'affine_cipher'
 
-# Common test data version: 2.0.0 8026923
 class AffineCipherTest < Minitest::Test
   def test_encode_yes
     # skip

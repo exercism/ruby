@@ -2,146 +2,105 @@ require 'minitest/autorun'
 require_relative 'scale_generator'
 
 class ScaleGeneratorTest < Minitest::Test
-  def test_naming_scale
-    chromatic = Scale.new('c', :chromatic)
-    expected = 'C chromatic'
-    actual = chromatic.name
-    assert_equal expected, actual
+  def test_chromatic_scales_chromatic_scale_with_sharps
+    # skip
+    scale = Scale.new("C")
+    assert_equal ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"], scale.chromatic
   end
 
-  def test_chromatic_scale
+  def test_chromatic_scales_chromatic_scale_with_flats
     skip
-    chromatic = Scale.new('C', :chromatic)
-    expected = %w[C C# D D# E F F# G G# A A# B]
-    actual = chromatic.pitches
-    assert_equal expected, actual
+    scale = Scale.new("F")
+    assert_equal %w[F Gb G Ab A Bb B C Db D Eb E], scale.chromatic
   end
 
-  def test_another_chromatic_scale
+  def test_scales_with_specified_intervals_simple_major_scale
     skip
-    chromatic = Scale.new('F', :chromatic)
-    expected = %w[F Gb G Ab A Bb B C Db D Eb E]
-    actual = chromatic.pitches
-    assert_equal expected, actual
+    scale = Scale.new("C")
+    assert_equal %w[C D E F G A B C], scale.interval("MMmMMMm")
   end
 
-  def test_naming_major_scale
+  def test_scales_with_specified_intervals_major_scale_with_sharps
     skip
-    major = Scale.new('G', :major, 'MMmMMMm')
-    expected = 'G major'
-    actual = major.name
-    assert_equal expected, actual
+    scale = Scale.new("G")
+    assert_equal ["G", "A", "B", "C", "D", "E", "F#", "G"], scale.interval("MMmMMMm")
   end
 
-  def test_major_scale
+  def test_scales_with_specified_intervals_major_scale_with_flats
     skip
-    major = Scale.new('C', :major, 'MMmMMMm')
-    expected = %w[C D E F G A B]
-    actual = major.pitches
-    assert_equal expected, actual
+    scale = Scale.new("F")
+    assert_equal %w[F G A Bb C D E F], scale.interval("MMmMMMm")
   end
 
-  def test_another_major_scale
+  def test_scales_with_specified_intervals_minor_scale_with_sharps
     skip
-    major = Scale.new('G', :major, 'MMmMMMm')
-    expected = %w[G A B C D E F#]
-    actual = major.pitches
-    assert_equal expected, actual
+    scale = Scale.new("f#")
+    assert_equal ["F#", "G#", "A", "B", "C#", "D", "E", "F#"], scale.interval("MmMMmMM")
   end
 
-  def test_minor_scale
+  def test_scales_with_specified_intervals_minor_scale_with_flats
     skip
-    minor = Scale.new('f#', :minor, 'MmMMmMM')
-    expected = %w[F# G# A B C# D E]
-    actual = minor.pitches
-    assert_equal expected, actual
+    scale = Scale.new("bb")
+    assert_equal %w[Bb C Db Eb F Gb Ab Bb], scale.interval("MmMMmMM")
   end
 
-  def test_another_minor_scale
+  def test_scales_with_specified_intervals_dorian_mode
     skip
-    minor = Scale.new('bb', :minor, 'MmMMmMM')
-    expected = %w[Bb C Db Eb F Gb Ab]
-    actual = minor.pitches
-    assert_equal expected, actual
+    scale = Scale.new("d")
+    assert_equal %w[D E F G A B C D], scale.interval("MmMMMmM")
   end
 
-  def test_dorian_mode
+  def test_scales_with_specified_intervals_mixolydian_mode
     skip
-    dorian = Scale.new('d', :dorian, 'MmMMMmM')
-    expected = %w[D E F G A B C]
-    actual = dorian.pitches
-    assert_equal expected, actual
+    scale = Scale.new("Eb")
+    assert_equal %w[Eb F G Ab Bb C Db Eb], scale.interval("MMmMMmM")
   end
 
-  def test_mixolydian_mode
+  def test_scales_with_specified_intervals_lydian_mode
     skip
-    mixolydian = Scale.new('Eb', :mixolydian, 'MMmMMmM')
-    expected = %w[Eb F G Ab Bb C Db]
-    actual = mixolydian.pitches
-    assert_equal expected, actual
+    scale = Scale.new("a")
+    assert_equal ["A", "B", "C#", "D#", "E", "F#", "G#", "A"], scale.interval("MMMmMMm")
   end
 
-  def test_lydian_mode
+  def test_scales_with_specified_intervals_phrygian_mode
     skip
-    lydian = Scale.new('a', :lydian, 'MMMmMMm')
-    expected = %w[A B C# D# E F# G#]
-    actual = lydian.pitches
-    assert_equal expected, actual
+    scale = Scale.new("e")
+    assert_equal %w[E F G A B C D E], scale.interval("mMMMmMM")
   end
 
-  def test_phrygian_mode
+  def test_scales_with_specified_intervals_locrian_mode
     skip
-    phrygian = Scale.new('e', :phrygian, 'mMMMmMM')
-    expected = %w[E F G A B C D]
-    actual = phrygian.pitches
-    assert_equal expected, actual
+    scale = Scale.new("g")
+    assert_equal %w[G Ab Bb C Db Eb F G], scale.interval("mMMmMMM")
   end
 
-  def test_locrian_mode
+  def test_scales_with_specified_intervals_harmonic_minor
     skip
-    locrian = Scale.new('g', :locrian, 'mMMmMMM')
-    expected = %w[G Ab Bb C Db Eb F]
-    actual = locrian.pitches
-    assert_equal expected, actual
+    scale = Scale.new("d")
+    assert_equal %w[D E F G A Bb Db D], scale.interval("MmMMmAm")
   end
 
-  def test_harmonic_minor
+  def test_scales_with_specified_intervals_octatonic
     skip
-    harmonic_minor = Scale.new('d', :harmonic_minor, 'MmMMmAm')
-    expected = %w[D E F G A Bb Db]
-    actual = harmonic_minor.pitches
-    assert_equal expected, actual
+    scale = Scale.new("C")
+    assert_equal ["C", "D", "D#", "F", "F#", "G#", "A", "B", "C"], scale.interval("MmMmMmMm")
   end
 
-  def test_octatonic
+  def test_scales_with_specified_intervals_hexatonic
     skip
-    octatonic = Scale.new('C', :octatonic, 'MmMmMmMm')
-    expected = %w[C D D# F F# G# A B]
-    actual = octatonic.pitches
-    assert_equal expected, actual
+    scale = Scale.new("Db")
+    assert_equal %w[Db Eb F G A B Db], scale.interval("MMMMMM")
   end
 
-  def test_hexatonic
+  def test_scales_with_specified_intervals_pentatonic
     skip
-    hexatonic = Scale.new('Db', :hexatonic, 'MMMMMM')
-    expected = %w[Db Eb F G A B]
-    actual = hexatonic.pitches
-    assert_equal expected, actual
+    scale = Scale.new("A")
+    assert_equal ["A", "B", "C#", "E", "F#", "A"], scale.interval("MMAMA")
   end
 
-  def test_pentatonic
+  def test_scales_with_specified_intervals_enigmatic
     skip
-    pentatonic = Scale.new('A', :pentatonic, 'MMAMA')
-    expected = %w[A B C# E F#]
-    actual = pentatonic.pitches
-    assert_equal expected, actual
-  end
-
-  def test_enigmatic
-    skip
-    enigmatic = Scale.new('G', :enigma, 'mAMMMmM')
-    expected = %w[G G# B C# D# F F#]
-    actual = enigmatic.pitches
-    assert_equal expected, actual
+    scale = Scale.new("G")
+    assert_equal ["G", "G#", "B", "C#", "D#", "F", "F#", "G"], scale.interval("mAMMMmm")
   end
 end

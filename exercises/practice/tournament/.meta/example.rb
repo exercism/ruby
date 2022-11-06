@@ -44,7 +44,7 @@ class Tournament
         stats[:draw],
         stats[:loss],
         stats[:points]
-      ].join(' |  ')
+      ].map {|row| "#{row} ".rjust(4)}.join('|').strip
     end
 
     result.join("\n") + "\n"

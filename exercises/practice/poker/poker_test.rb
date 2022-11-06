@@ -2,199 +2,213 @@ require 'minitest/autorun'
 require_relative 'poker'
 
 class PokerTest < Minitest::Test
-  # rubocop:disable Naming/VariableNumber
-
-  def test_one_hand
-    high_of_jack = %w[4S 5S 7H 8D JC]
-    game = Poker.new([high_of_jack])
-    assert_equal [high_of_jack], game.best_hand
+  def test_single_hand_always_wins
+    # skip
+    hands = [%w[4S 5S 7H 8D JC]]
+    assert_equal [%w[4S 5S 7H 8D JC]], Poker.new(hands).best_hand
   end
 
-  def test_highest_card
+  def test_highest_card_out_of_all_hands_wins
     skip
-    high_of_8 = %w[4S 5H 6S 8D 2H]
-    high_of_queen = %w[2S 4H 6C 9D QH]
-    game = Poker.new([high_of_8, high_of_queen])
-    assert_equal [high_of_queen], game.best_hand
+    hands = [%w[4D 5S 6S 8D 3C], %w[2S 4C 7S 9H 10H], %w[3S 4S 5D 6H JH]]
+    assert_equal [%w[3S 4S 5D 6H JH]], Poker.new(hands).best_hand
   end
 
-  def test_highest_card_10
+  def test_a_tie_has_multiple_winners
     skip
-    high_of_8 = %w[4D 5S 6S 8D 3C]
-    high_of_10 = %w[2S 4C 7S 9H 10H]
-    game = Poker.new([high_of_8, high_of_10])
-    assert_equal [high_of_10], game.best_hand
+    hands = [%w[4D 5S 6S 8D 3C], %w[2S 4C 7S 9H 10H], %w[3S 4S 5D 6H JH], %w[3H 4H 5C 6C JD]]
+    assert_equal [%w[3S 4S 5D 6H JH], %w[3H 4H 5C 6C JD]], Poker.new(hands).best_hand
   end
 
-  def test_nothing_vs_one_pair
+  def test_multiple_hands_with_the_same_high_cards_tie_compares_next_highest_ranked_down_to_last_card
     skip
-    high_of_king = %w[4S 5H 6C 8D KH]
-    pair_of_4 = %w[2S 4H 6S 4D JH]
-    game = Poker.new([high_of_king, pair_of_4])
-    assert_equal [pair_of_4], game.best_hand
+    hands = [%w[3S 5H 6S 8D 7H], %w[2S 5D 6D 8C 7S]]
+    assert_equal [%w[3S 5H 6S 8D 7H]], Poker.new(hands).best_hand
   end
 
-  def test_two_pair
+  def test_one_pair_beats_high_card
     skip
-    pair_of_2 = %w[4S 2H 6S 2D JH]
-    pair_of_4 = %w[2S 4H 6C 4D JD]
-    game = Poker.new([pair_of_2, pair_of_4])
-    assert_equal [pair_of_4], game.best_hand
+    hands = [%w[4S 5H 6C 8D KH], %w[2S 4H 6S 4D JH]]
+    assert_equal [%w[2S 4H 6S 4D JH]], Poker.new(hands).best_hand
   end
 
-  def test_one_pair_vs_double_pair
+  def test_highest_pair_wins
     skip
-    pair_of_8 = %w[2S 8H 6S 8D JH]
-    fives_and_fours = %w[4S 5H 4C 8C 5C]
-    game = Poker.new([pair_of_8, fives_and_fours])
-    assert_equal [fives_and_fours], game.best_hand
+    hands = [%w[4S 2H 6S 2D JH], %w[2S 4H 6C 4D JD]]
+    assert_equal [%w[2S 4H 6C 4D JD]], Poker.new(hands).best_hand
   end
 
-  def test_two_double_pair
+  def test_two_pairs_beats_one_pair
     skip
-    eights_and_twos = %w[2S 8H 2D 8D 3H]
-    fives_and_fours = %w[4S 5H 4C 8S 5D]
-    game = Poker.new([eights_and_twos, fives_and_fours])
-    assert_equal [eights_and_twos], game.best_hand
+    hands = [%w[2S 8H 6S 8D JH], %w[4S 5H 4C 8C 5C]]
+    assert_equal [%w[4S 5H 4C 8C 5C]], Poker.new(hands).best_hand
   end
 
-  def test_another_two_double_pair
+  def test_both_hands_have_two_pairs_highest_ranked_pair_wins
     skip
-    aces_and_twos = %w[2S AH 2C AD JH]
-    queens_and_jacks = %w[JD QH JS 8D QC]
-    game = Poker.new([aces_and_twos, queens_and_jacks])
-    assert_equal [aces_and_twos], game.best_hand
+    hands = [%w[2S 8H 2D 8D 3H], %w[4S 5H 4C 8S 5D]]
+    assert_equal [%w[2S 8H 2D 8D 3H]], Poker.new(hands).best_hand
   end
 
-  def test_double_pair_vs_three
+  def test_both_hands_have_two_pairs_with_the_same_highest_ranked_pair_tie_goes_to_low_pair
     skip
-    eights_and_twos = %w[2S 8H 2H 8D JH]
-    three_of_4 = %w[4S 5H 4C 8S 4H]
-    game = Poker.new([eights_and_twos, three_of_4])
-    assert_equal [three_of_4], game.best_hand
+    hands = [%w[2S QS 2C QD JH], %w[JD QH JS 8D QC]]
+    assert_equal [%w[JD QH JS 8D QC]], Poker.new(hands).best_hand
   end
 
-  def test_two_three
+  def test_both_hands_have_two_identically_ranked_pairs_tie_goes_to_remaining_card_kicker
     skip
-    three_twos = %w[2S 2H 2C 8D JH]
-    three_aces = %w[4S AH AS 8C AD]
-    game = Poker.new([three_twos, three_aces])
-    assert_equal [three_aces], game.best_hand
+    hands = [%w[JD QH JS 8D QC], %w[JS QS JC 2D QD]]
+    assert_equal [%w[JD QH JS 8D QC]], Poker.new(hands).best_hand
   end
 
-  def test_three_vs_straight
+  def test_both_hands_have_two_pairs_that_add_to_the_same_value_win_goes_to_highest_pair
     skip
-    three_of_4 = %w[4S 5H 4C 8D 4H]
-    straight = %w[3S 4D 2S 6D 5C]
-    game = Poker.new([three_of_4, straight])
-    assert_equal [straight], game.best_hand
+    hands = [%w[6S 6H 3S 3H AS], %w[7H 7S 2H 2S AC]]
+    assert_equal [%w[7H 7S 2H 2S AC]], Poker.new(hands).best_hand
   end
 
-  def test_a_5_high_straight
+  def test_two_pairs_first_ranked_by_largest_pair
     skip
-    three_of_4 = %w[4S 5H 4C 8D 4H]
-    straight_to_5 = %w[4D AH 3S 2D 5C]
-    game = Poker.new([three_of_4, straight_to_5])
-    assert_equal [straight_to_5], game.best_hand
+    hands = [%w[5C 2S 5S 4H 4C], %w[6S 2S 6H 7C 2C]]
+    assert_equal [%w[6S 2S 6H 7C 2C]], Poker.new(hands).best_hand
   end
 
-  def test_two_straights
+  def test_three_of_a_kind_beats_two_pair
     skip
-    straight_to_8 = %w[4S 6C 7S 8D 5H]
-    straight_to_9 = %w[5S 7H 8S 9D 6H]
-    game = Poker.new([straight_to_8, straight_to_9])
-    assert_equal [straight_to_9], game.best_hand
+    hands = [%w[2S 8H 2H 8D JH], %w[4S 5H 4C 8S 4H]]
+    assert_equal [%w[4S 5H 4C 8S 4H]], Poker.new(hands).best_hand
   end
 
-  def test_5_high_straight_vs_other_straight
+  def test_both_hands_have_three_of_a_kind_tie_goes_to_highest_ranked_triplet
     skip
-    straight_to_jack = %w[8H 7C 10D 9D JH]
-    straight_to_5 = %w[4S AH 3S 2D 5H]
-    game = Poker.new([straight_to_jack, straight_to_5])
-    assert_equal [straight_to_jack], game.best_hand
+    hands = [%w[2S 2H 2C 8D JH], %w[4S AH AS 8C AD]]
+    assert_equal [%w[4S AH AS 8C AD]], Poker.new(hands).best_hand
   end
 
-  def test_straight_vs_flush
+  def test_with_multiple_decks_two_players_can_have_same_three_of_a_kind_ties_go_to_highest_remaining_cards
     skip
-    straight_to_8 = %w[4C 6H 7D 8D 5H]
-    flush_to_7 = %w[2S 4S 5S 6S 7S]
-    game = Poker.new([straight_to_8, flush_to_7])
-    assert_equal [flush_to_7], game.best_hand
+    hands = [%w[4S AH AS 7C AD], %w[4S AH AS 8C AD]]
+    assert_equal [%w[4S AH AS 8C AD]], Poker.new(hands).best_hand
   end
 
-  def test_two_flushes
+  def test_a_straight_beats_three_of_a_kind
     skip
-    flush_to_8 = %w[3H 6H 7H 8H 5H]
-    flush_to_7 = %w[2S 4S 5S 6S 7S]
-    game = Poker.new([flush_to_8, flush_to_7])
-    assert_equal [flush_to_8], game.best_hand
+    hands = [%w[4S 5H 4C 8D 4H], %w[3S 4D 2S 6D 5C]]
+    assert_equal [%w[3S 4D 2S 6D 5C]], Poker.new(hands).best_hand
   end
 
-  def test_flush_vs_full
+  def test_aces_can_end_a_straight_10_j_q_k_a
     skip
-    flush_to_8 = %w[3H 6H 7H 8H 5C]
-    full = %w[4S 5H 4C 5D 4H]
-    game = Poker.new([flush_to_8, full])
-    assert_equal [full], game.best_hand
+    hands = [%w[4S 5H 4C 8D 4H], %w[10D JH QS KD AC]]
+    assert_equal [%w[10D JH QS KD AC]], Poker.new(hands).best_hand
   end
 
-  def test_two_fulls
+  def test_aces_can_start_a_straight_a_2_3_4_5
     skip
-    full_of_4_by_9 = %w[4H 4S 4D 9S 9D]
-    full_of_5_by_8 = %w[5H 5S 5D 8S 8D]
-    game = Poker.new([full_of_4_by_9, full_of_5_by_8])
-    assert_equal [full_of_5_by_8], game.best_hand
+    hands = [%w[4S 5H 4C 8D 4H], %w[4D AH 3S 2D 5C]]
+    assert_equal [%w[4D AH 3S 2D 5C]], Poker.new(hands).best_hand
   end
 
-  def test_full_vs_square
+  def test_aces_cannot_be_in_the_middle_of_a_straight_q_k_a_2_3
     skip
-    full = %w[4S 5H 4D 5D 4H]
-    square_of_3 = %w[3S 3H 2S 3D 3C]
-    game = Poker.new([square_of_3, full])
-    assert_equal [square_of_3], game.best_hand
+    hands = [%w[2C 3D 7H 5H 2S], %w[QS KH AC 2D 3S]]
+    assert_equal [%w[2C 3D 7H 5H 2S]], Poker.new(hands).best_hand
   end
 
-  def test_two_square
+  def test_both_hands_with_a_straight_tie_goes_to_highest_ranked_card
     skip
-    square_of_2 = %w[2S 2H 2C 8D 2D]
-    square_of_5 = %w[4S 5H 5S 5D 5C]
-    game = Poker.new([square_of_2, square_of_5])
-    assert_equal [square_of_5], game.best_hand
+    hands = [%w[4S 6C 7S 8D 5H], %w[5S 7H 8S 9D 6H]]
+    assert_equal [%w[5S 7H 8S 9D 6H]], Poker.new(hands).best_hand
   end
 
-  def test_square_vs_straight_flush
+  def test_even_though_an_ace_is_usually_high_a_5_high_straight_is_the_lowest_scoring_straight
     skip
-    square_of_5 = %w[4S 5H 5S 5D 5C]
-    straight_flush_to_10 = %w[7S 8S 9S 6S 10S]
-    game = Poker.new([square_of_5, straight_flush_to_10])
-    assert_equal [straight_flush_to_10], game.best_hand
+    hands = [%w[2H 3C 4D 5D 6H], %w[4S AH 3S 2D 5H]]
+    assert_equal [%w[2H 3C 4D 5D 6H]], Poker.new(hands).best_hand
   end
 
-  def test_two_straight_flushes
+  def test_flush_beats_a_straight
     skip
-    straight_flush_to_8 = %w[4H 6H 7H 8H 5H]
-    straight_flush_to_9 = %w[5S 7S 8S 9S 6S]
-    game = Poker.new([straight_flush_to_8, straight_flush_to_9])
-    assert_equal [straight_flush_to_9], game.best_hand
+    hands = [%w[4C 6H 7D 8D 5H], %w[2S 4S 5S 6S 7S]]
+    assert_equal [%w[2S 4S 5S 6S 7S]], Poker.new(hands).best_hand
   end
 
-  def test_highest_card_down_to_fifth_card
+  def test_both_hands_have_a_flush_tie_goes_to_high_card_down_to_the_last_one_if_necessary
     skip
-    high_of_8_low_of_3 = %w[3S 5H 6S 8D 7H]
-    high_of_8_low_of_2 = %w[2S 5D 6D 8C 7S]
-    game = Poker.new([high_of_8_low_of_3, high_of_8_low_of_2])
-    assert_equal [high_of_8_low_of_3], game.best_hand
+    hands = [%w[4H 7H 8H 9H 6H], %w[2S 4S 5S 6S 7S]]
+    assert_equal [%w[4H 7H 8H 9H 6H]], Poker.new(hands).best_hand
   end
 
-  def test_three_hand_with_tie
+  def test_full_house_beats_a_flush
     skip
-    spade_straight_to_9 = %w[9S 8S 7S 6S 5S]
-    diamond_straight_to_9 = %w[9D 8D 7D 6D 5D]
-    three_of_4 = %w[4D 4S 4H QS KS]
-    hands = [spade_straight_to_9, diamond_straight_to_9, three_of_4]
-    game = Poker.new(hands)
-    assert_equal [spade_straight_to_9, diamond_straight_to_9], game.best_hand
+    hands = [%w[3H 6H 7H 8H 5H], %w[4S 5H 4C 5D 4H]]
+    assert_equal [%w[4S 5H 4C 5D 4H]], Poker.new(hands).best_hand
   end
 
-  # rubocop:enable Naming/VariableNumber
+  def test_both_hands_have_a_full_house_tie_goes_to_highest_ranked_triplet
+    skip
+    hands = [%w[4H 4S 4D 9S 9D], %w[5H 5S 5D 8S 8D]]
+    assert_equal [%w[5H 5S 5D 8S 8D]], Poker.new(hands).best_hand
+  end
+
+  def test_with_multiple_decks_both_hands_have_a_full_house_with_the_same_triplet_tie_goes_to_the_pair
+    skip
+    hands = [%w[5H 5S 5D 9S 9D], %w[5H 5S 5D 8S 8D]]
+    assert_equal [%w[5H 5S 5D 9S 9D]], Poker.new(hands).best_hand
+  end
+
+  def test_four_of_a_kind_beats_a_full_house
+    skip
+    hands = [%w[4S 5H 4D 5D 4H], %w[3S 3H 2S 3D 3C]]
+    assert_equal [%w[3S 3H 2S 3D 3C]], Poker.new(hands).best_hand
+  end
+
+  def test_both_hands_have_four_of_a_kind_tie_goes_to_high_quad
+    skip
+    hands = [%w[2S 2H 2C 8D 2D], %w[4S 5H 5S 5D 5C]]
+    assert_equal [%w[4S 5H 5S 5D 5C]], Poker.new(hands).best_hand
+  end
+
+  def test_with_multiple_decks_both_hands_with_identical_four_of_a_kind_tie_determined_by_kicker
+    skip
+    hands = [%w[3S 3H 2S 3D 3C], %w[3S 3H 4S 3D 3C]]
+    assert_equal [%w[3S 3H 4S 3D 3C]], Poker.new(hands).best_hand
+  end
+
+  def test_straight_flush_beats_four_of_a_kind
+    skip
+    hands = [%w[4S 5H 5S 5D 5C], %w[7S 8S 9S 6S 10S]]
+    assert_equal [%w[7S 8S 9S 6S 10S]], Poker.new(hands).best_hand
+  end
+
+  def test_aces_can_end_a_straight_flush_10_j_q_k_a
+    skip
+    hands = [%w[KC AH AS AD AC], %w[10C JC QC KC AC]]
+    assert_equal [%w[10C JC QC KC AC]], Poker.new(hands).best_hand
+  end
+
+  def test_aces_can_start_a_straight_flush_a_2_3_4_5
+    skip
+    hands = [%w[KS AH AS AD AC], %w[4H AH 3H 2H 5H]]
+    assert_equal [%w[4H AH 3H 2H 5H]], Poker.new(hands).best_hand
+  end
+
+  def test_aces_cannot_be_in_the_middle_of_a_straight_flush_q_k_a_2_3
+    skip
+    hands = [%w[2C AC QC 10C KC], %w[QH KH AH 2H 3H]]
+    assert_equal [%w[2C AC QC 10C KC]], Poker.new(hands).best_hand
+  end
+
+  def test_both_hands_have_a_straight_flush_tie_goes_to_highest_ranked_card
+    skip
+    hands = [%w[4H 6H 7H 8H 5H], %w[5S 7S 8S 9S 6S]]
+    assert_equal [%w[5S 7S 8S 9S 6S]], Poker.new(hands).best_hand
+  end
+
+  def test_even_though_an_ace_is_usually_high_a_5_high_straight_flush_is_the_lowest_scoring_straight_flush
+    skip
+    hands = [%w[2H 3H 4H 5H 6H], %w[4D AD 3D 2D 5D]]
+    assert_equal [%w[2H 3H 4H 5H 6H]], Poker.new(hands).best_hand
+  end
 end

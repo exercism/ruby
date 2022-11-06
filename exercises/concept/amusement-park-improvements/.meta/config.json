@@ -1,11 +1,23 @@
 {
-  "blurb": "Learn about booleans by writing a system that can check if an attendee can use a ride.",
-  "authors": ["neenjaw"],
-  "contributors": ["kotp", "iHiD", "kayn1"],
-  "language_versions": ">=2.6.6",
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "kotp",
+    "iHiD",
+    "kayn1"
+  ],
   "files": {
-    "solution": ["attendee.rb"],
-    "test": ["attendee_test.rb"],
-    "exemplar": [".meta/exemplar.rb"]
-  }
+    "solution": [
+      "attendee.rb"
+    ],
+    "test": [
+      "attendee_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "language_versions": ">=2.6.6",
+  "blurb": "Learn about booleans by writing a system that can check if an attendee can use a ride."
 }

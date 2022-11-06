@@ -1,10 +1,11 @@
 class InvalidCodonError < StandardError; end
 
 class Translation
+
   def self.of_codon(codon)
-    found_key = lookups.keys.find { |sequences| sequences.include?(codon) }
-    fail InvalidCodonError if lookups[found_key].nil?
-    lookups[found_key]
+    found = lookups.keys.find { |sequences| sequences.include?(codon) }
+    fail InvalidCodonError unless lookups[found]
+    lookups[found]
   end
 
   def self.of_rna(sequence)
@@ -13,8 +14,6 @@ class Translation
       output << of_codon(codon.join)
     end
   end
-
-  private
 
   def self.lookups
     {
@@ -28,4 +27,7 @@ class Translation
       %w(UAA UAG UGA)     => 'STOP'
     }
   end
+
+  private_class_method :lookups
+
 end

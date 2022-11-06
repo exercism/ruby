@@ -1,48 +1,59 @@
 require 'minitest/autorun'
 require_relative 'scrabble_score'
 
-class ScrabbleTest < Minitest::Test
-  def test_empty_word_scores_zero
-    assert_equal 0, Scrabble.new('').score
+class ScrabbleScoreTest < Minitest::Test
+  def test_lowercase_letter
+    # skip
+    assert_equal 1, Scrabble.new("a").score
   end
 
-  def test_whitespace_scores_zero
+  def test_uppercase_letter
     skip
-    assert_equal 0, Scrabble.new(" \t\n").score
+    assert_equal 1, Scrabble.new("A").score
   end
 
-  def test_nil_scores_zero
+  def test_valuable_letter
     skip
-    assert_equal 0, Scrabble.new(nil).score
+    assert_equal 4, Scrabble.new("f").score
   end
 
-  def test_scores_very_short_word
+  def test_short_word
     skip
-    assert_equal 1, Scrabble.new('a').score
+    assert_equal 2, Scrabble.new("at").score
   end
 
-  def test_scores_other_very_short_word
+  def test_short_valuable_word
     skip
-    assert_equal 4, Scrabble.new('f').score
+    assert_equal 12, Scrabble.new("zoo").score
   end
 
-  def test_simple_word_scores_the_number_of_letters
+  def test_medium_word
     skip
-    assert_equal 6, Scrabble.new('street').score
+    assert_equal 6, Scrabble.new("street").score
   end
 
-  def test_complicated_word_scores_more
+  def test_medium_valuable_word
     skip
-    assert_equal 22, Scrabble.new('quirky').score
+    assert_equal 22, Scrabble.new("quirky").score
   end
 
-  def test_scores_are_case_insensitive
+  def test_long_mixed_case_word
     skip
-    assert_equal 41, Scrabble.new('OXYPHENBUTAZONE').score
+    assert_equal 41, Scrabble.new("OxyphenButazone").score
   end
 
-  def test_convenient_scoring
+  def test_english_like_word
     skip
-    assert_equal 13, Scrabble.score('alacrity')
+    assert_equal 8, Scrabble.new("pinata").score
+  end
+
+  def test_empty_input
+    skip
+    assert_equal 0, Scrabble.new("").score
+  end
+
+  def test_entire_alphabet_available
+    skip
+    assert_equal 87, Scrabble.new("abcdefghijklmnopqrstuvwxyz").score
   end
 end

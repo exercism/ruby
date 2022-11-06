@@ -1,5 +1,4 @@
 {
-  "blurb": "Compute the result for a game of Hex / Polygon",
   "authors": [
     "jonatas"
   ],
@@ -25,5 +24,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  }
+  },
+  "blurb": "Compute the result for a game of Hex / Polygon."
 }

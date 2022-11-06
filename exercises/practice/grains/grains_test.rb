@@ -1,39 +1,38 @@
 require 'minitest/autorun'
 require_relative 'grains'
 
-# Common test data version: 1.2.0 2ec42ab
 class GrainsTest < Minitest::Test
-  def test_1 # rubocop:disable Naming/VariableNumber
+  def test_1
     # skip
     assert_equal 1, Grains.square(1)
   end
 
-  def test_2 # rubocop:disable Naming/VariableNumber
+  def test_2
     skip
     assert_equal 2, Grains.square(2)
   end
 
-  def test_3 # rubocop:disable Naming/VariableNumber
+  def test_3
     skip
     assert_equal 4, Grains.square(3)
   end
 
-  def test_4 # rubocop:disable Naming/VariableNumber
+  def test_4
     skip
     assert_equal 8, Grains.square(4)
   end
 
-  def test_16 # rubocop:disable Naming/VariableNumber
+  def test_16
     skip
     assert_equal 32_768, Grains.square(16)
   end
 
-  def test_32 # rubocop:disable Naming/VariableNumber
+  def test_32
     skip
     assert_equal 2_147_483_648, Grains.square(32)
   end
 
-  def test_64 # rubocop:disable Naming/VariableNumber
+  def test_64
     skip
     assert_equal 9_223_372_036_854_775_808, Grains.square(64)
   end

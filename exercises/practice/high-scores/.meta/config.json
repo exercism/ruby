@@ -1,5 +1,4 @@
 {
-  "blurb": "Manage a player's High Score list",
   "authors": [
     "pgaspar"
   ],
@@ -7,7 +6,8 @@
     "emcoding",
     "iHiD",
     "Insti",
-    "kotp"
+    "kotp",
+    "kytrinyx"
   ],
   "files": {
     "solution": [
@@ -20,5 +20,6 @@
       ".meta/example.rb"
     ]
   },
+  "blurb": "Manage a player's High Score list.",
   "source": "Tribute to the eighties' arcade game Frogger"
 }

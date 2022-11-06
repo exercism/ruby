@@ -1,5 +1,4 @@
 {
-  "blurb": "Make a chain of dominoes.",
   "authors": [
     "petertseng"
   ],
@@ -12,7 +11,8 @@
     "jpotts244",
     "kotp",
     "NeimadTL",
-    "tryantwit"
+    "tryantwit",
+    "kytrinyx"
   ],
   "files": {
     "solution": [
@@ -24,5 +24,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  }
+  },
+  "blurb": "Make a chain of dominoes."
 }

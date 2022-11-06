@@ -1,12 +1,12 @@
 {
-  "blurb": "Determine if a number is an Armstrong number",
   "authors": [
     "Tuxified"
   ],
   "contributors": [
     "guygastineau",
     "iHiD",
-    "kotp"
+    "kotp",
+    "kytrinyx"
   ],
   "files": {
     "solution": [
@@ -19,6 +19,7 @@
       ".meta/example.rb"
     ]
   },
+  "blurb": "Determine if a number is an Armstrong number.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
 }

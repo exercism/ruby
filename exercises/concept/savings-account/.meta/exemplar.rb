@@ -1,6 +1,6 @@
 module SavingsAccount
 
-  NEGATIVE_RATE = -3.213
+  NEGATIVE_RATE = 3.213
   SMALL_POSITIVE_RATE = 0.5
   MEDIUM_POSITIVE_RATE = 1.621
   LARGE_POSITIVE_RATE = 2.475
@@ -34,6 +34,6 @@ module SavingsAccount
 
   def self.annual_yield(balance)
     multiplier = interest_rate(balance) / 100
-    balance.abs * multiplier
+    balance * multiplier
   end
 end

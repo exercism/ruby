@@ -1,5 +1,4 @@
 {
-  "blurb": "Add the numbers to a minesweeper board",
   "authors": [
     "fluxusfrequency"
   ],
@@ -24,5 +23,6 @@
     "example": [
       ".meta/example.rb"
     ]
-  }
+  },
+  "blurb": "Add the numbers to a minesweeper board."
 }

@@ -1,35 +1,32 @@
 class Scale
   ASCENDING_INTERVALS = %w(m M A)
-  CHROMATIC_SCALE = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+  CHROMATIC_SCALE = %w(C C# D D# E F F# G G# A A# B)
   FLAT_CHROMATIC_SCALE = %w(C Db D Eb E F Gb G Ab A Bb B)
   FLAT_KEYS = %w(F Bb Eb Ab Db Gb d g c f bb eb)
 
-  def initialize(tonic, scale_name, pattern = nil)
+  def initialize(tonic)
     @tonic = tonic.capitalize
-    @scale_name = scale_name
-    @pattern = pattern
     @chromatic_scale = FLAT_KEYS.include?(tonic) ? FLAT_CHROMATIC_SCALE : CHROMATIC_SCALE
   end
 
-  def name
-    "#{tonic} #{scale_name}"
+  def chromatic
+    reorder_chromatic_scale
   end
 
-  def pitches
-    return reorder_chromatic_scale unless pattern
-    last_index = 0
-    scale = pattern.each_char.with_object([]) do |c, collector|
-      collector << reorder_chromatic_scale[last_index]
-      last_index += ASCENDING_INTERVALS.index(c) + 1
+  def interval(pattern)
+    index = 0
+    pattern.each_char.with_object([reorder_chromatic_scale[index]]) do |char, scale|
+      index = (index + (ASCENDING_INTERVALS.index(char) + 1)) % 12
+      scale << reorder_chromatic_scale[index]
     end
   end
 
   private
 
-  attr_reader :tonic, :scale_name, :pattern, :chromatic_scale
+  attr_reader :tonic, :chromatic_scale
 
   def reorder_chromatic_scale
-    return chromatic_scale if tonic == 'C'
+    return chromatic_scale if tonic == "C"
     index = chromatic_scale.index(tonic)
     chromatic_scale[index..-1] + chromatic_scale[0..index - 1]
   end

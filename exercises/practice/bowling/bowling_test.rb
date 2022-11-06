@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'bowling'
 
-# Common test data version: 1.2.0 1806718
 class BowlingTest < Minitest::Test
   def test_should_be_able_to_score_a_game_with_all_zeros
     # skip
@@ -99,12 +98,12 @@ class BowlingTest < Minitest::Test
     assert_equal 30, game.score
   end
 
-  def test_a_spare_followed_by_a_strike_should_not_get_bonus_from_next_frame
+  def test_last_two_strikes_followed_by_only_last_bonus_with_non_strike_points
     skip
     game = Game.new
-    rolls = [5, 5, 10, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    rolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 0, 1]
     rolls.each { |pins| game.roll(pins) }
-    assert_equal 42, game.score
+    assert_equal 31, game.score
   end
 
   def test_a_strike_with_the_one_roll_bonus_after_a_spare_in_the_last_frame_does_not_get_a_bonus
