@@ -41,6 +41,6 @@ So your first action is to fill bucket one.
 You choose to empty bucket one for your second action.
 For your third action, you may not fill bucket two, because this violates the third rule -- you may not end up in a state after any action where the starting bucket is empty and the other bucket is full.
 
-Written with <3 at [Fullstack Academy][fulstack] by Lindsay Levine.
+Written with <3 at [Fullstack Academy][fullstack] by Lindsay Levine.
 
-[fullstack]: http://www.fullstackacademy.com/
+[fullstack]: https://www.fullstackacademy.com/

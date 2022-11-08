@@ -102,4 +102,4 @@ that ate the malt
 that lay in the house that Jack built.
 ```
 
-[papyr]: http://papyr.com/hypertextbooks/grammar/ph_noun.htm
+[papyr]: https://papyr.com/hypertextbooks/grammar/ph_noun.htm

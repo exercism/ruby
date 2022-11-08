@@ -61,4 +61,4 @@ I know an old lady who swallowed a horse.
 She's dead, of course!
 ```
 
-[cumulative-song]: http://en.wikipedia.org/wiki/Cumulative_song
+[cumulative-song]: https://en.wikipedia.org/wiki/Cumulative_song

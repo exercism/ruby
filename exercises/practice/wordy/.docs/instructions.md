@@ -54,6 +54,6 @@ Since these are verbal word problems, evaluate the expression from left-to-right
 
 The parser should reject:
 
-* Unsupported operations ("What is 52 cubed?")
-* Non-math questions ("Who is the President of the United States")
-* Word problems with invalid syntax ("What is 1 plus plus 2?")
+- Unsupported operations ("What is 52 cubed?")
+- Non-math questions ("Who is the President of the United States")
+- Word problems with invalid syntax ("What is 1 plus plus 2?")
