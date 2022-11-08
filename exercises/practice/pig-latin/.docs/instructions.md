@@ -16,4 +16,4 @@ There are a few more rules for edge cases, and there are regional variants too.
 
 Read more about [Pig Latin on Wikipedia][pig-latin].
 
-[pig-latin]: http://en.wikipedia.org/wiki/Pig_latin
+[pig-latin]: https://en.wikipedia.org/wiki/Pig_latin

@@ -42,4 +42,4 @@ UAA, UAG, UGA         | STOP
 
 Learn more about [protein translation on Wikipedia][protein-translation].
 
-[protein-translation]: http://en.wikipedia.org/wiki/Translation_(biology)
+[protein-translation]: https://en.wikipedia.org/wiki/Translation_(biology)
