@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@ece82769428359c077b5a5eaff268902a303c101
+        uses: ruby/setup-ruby@f2c070bbf74632495b403899c87610cd4cb99dbe
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
