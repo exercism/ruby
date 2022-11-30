@@ -112,4 +112,12 @@ class BoutiqueInventoryTest < Minitest::Test
     items = [shoes, coat, handkerchief]
     assert_equal 5, BoutiqueInventory.new(items).total_stock
   end
+
+  def test_total_stock_for_all_items
+    shoes = { price: 30.00, name: "Shoes", quantity_by_size: { s: 1, xl: 4 } }
+    coat = { price: 65.00, name: "Coat", quantity_by_size: { s: 0, m: 3, l: 0 } }
+    handkerchief = { price: 19.99, name: "Handkerchief", quantity_by_size: { adult: 4, child: 3 } }
+    items = [shoes, coat, handkerchief]
+    assert_equal 15, BoutiqueInventory.new(items).total_stock
+  end
 end
