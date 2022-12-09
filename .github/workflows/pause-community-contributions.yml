@@ -22,3 +22,5 @@ jobs:
     uses: exercism/github-actions/.github/workflows/community-contributions.yml@main
     with:
       forum_category: ruby
+    secrets:
+      github_membership_token: ${{ secrets.COMMUNITY_CONTRIBUTIONS_WORKFLOW_TOKEN }}
