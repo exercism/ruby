@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "meatball133",
+    "kotp"
+  ],
+  "files": {
+    "solution": [
+      "locomotive_engineer.rb"
+    ],
+    "test": [
+      "locomotive_engineer_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "icon": "tracks-on-tracks-on-tracks",
+  "blurb": "Learn about decomposition and multiple assignment in Ruby while helping Linus with his train control system.",
+  "forked_from": ["python/locomotive-engineer"]
+}

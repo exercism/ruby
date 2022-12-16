@@ -144,6 +144,17 @@
         ]
       },
       {
+        "slug": "locomotive-engineer",
+        "name": "Locomotive Engineer",
+        "uuid": "e7a405ad-f241-4565-85cd-4f173512983d",
+        "concepts": [
+          "multiple-assignment-and-decomposition"
+        ],
+        "prerequisites": [
+          "ostruct"
+        ]
+      },
+      {
         "slug": "moviegoer",
         "name": "Moviegoer",
         "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
@@ -1563,6 +1574,11 @@
     ]
   },
   "concepts": [
+    {
+      "uuid": "d44ead9e-d5cb-46f6-84ac-fdc2d9bbc5d3",
+      "slug": "multiple-assignment-and-decomposition",
+      "name": "Multiple Assignment and Decomposition"
+    },
     {
       "uuid": "fa482f4a-19d6-4d13-ad9e-5121c536dc76",
       "slug": "ostruct",
