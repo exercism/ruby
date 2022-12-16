@@ -1,0 +1,5 @@
+{
+  "blurb": "Decomposition is the process of extracting individual elements of a collection, such as an array or hash. Decomposited values can be assigned to variables within the same step. Multiple assignment is the ability to assign values to multiple variables in one line.",
+  "authors": ["meatball133","kotp"],
+  "contributors": []
+}
