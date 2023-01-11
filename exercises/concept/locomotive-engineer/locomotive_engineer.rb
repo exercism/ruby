@@ -1,5 +1,5 @@
 class LocomotiveEngineer
-  def self.generate_list_of_wagons()
+  def self.generate_list_of_wagons
     raise 'Please implement the LocomotiveEngineer.generate_list_of_wagons method'
   end
 
@@ -7,7 +7,7 @@ class LocomotiveEngineer
     raise 'Please implement the LocomotiveEngineer.fix_list_of_wagons method'
   end
 
-  def self.add_missing_stops()
+  def self.add_missing_stops
     raise 'Please implement the LocomotiveEngineer.add_missing_stops method'
   end
 

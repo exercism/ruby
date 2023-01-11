@@ -4,8 +4,6 @@
 
 This concept exercise is meant to teach an understanding/use of **decomposition** and the `*` (splat) and `**` (double splat) operators in Ruby.
 
-<br>
-
 ## Learning objectives
 
 - Understand/use **decomposition** through the use of splat operators (`*` and `**`) operators in various scenarios
