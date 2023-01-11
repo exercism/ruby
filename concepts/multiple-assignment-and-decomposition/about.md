@@ -15,7 +15,7 @@ When the splat operator, (`*`), is used without a collection, it _packs_ (or com
 This is often used in multiple assignment to group all "remaining" elements that do not have individual assignments into a single variable.
 
 It is common in Ruby to use this decomposing/composing behavior when using or defining methods that take an arbitrary number of positional or keyword arguments.
-You will often see these arguments defined as `def some_method(*args, **kwargs)` and the arguments used as `some_method(*some_array, **some_hash)`.
+You will often see these arguments defined as `def some_method(*arguments, **keyword_arguments)` and the arguments used as `some_method(*some_array, **some_hash)`.
 
 ```exercism/caution
 *<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
@@ -268,9 +268,9 @@ This will pack all **key**/**value** pairs from one hash into another hash, or c
 
 ### Composition with method parameters
 
-When you create a method that accepts an arbitrary number of arguments, you can use [`*args`][args] or [`**kwargs`][kwargs] in the method definition.
-`*args` is used to pack an arbitrary number of positional (non-keyworded) arguments and
-`**kwargs` is used to pack an arbitrary number of keyword arguments.
+When you create a method that accepts an arbitrary number of arguments, you can use [`*arguments`][arguments] or [`**keyword_arguments`][keyword arguments] in the method definition.
+`*arguments` is used to pack an arbitrary number of positional (non-keyworded) arguments and
+`**keyword_arguments` is used to pack an arbitrary number of keyword arguments.
 
 Usage of `*arguments`:
 
@@ -305,7 +305,7 @@ Usage of `**keyword_arguments`:
 => {:a => 1, :b => 2, :c => 3}
 ```
 
-If the method defined does not have any defined parameters for keyword arguments(`**kwargs` or `<key_word>: <value>`) then the keyword arguments will be packed into a hash and assigned to the last parameter.
+If the method defined does not have any defined parameters for keyword arguments(`**keyword_arguments` or `<key_word>: <value>`) then the keyword arguments will be packed into a hash and assigned to the last parameter.
 
 ```irb
 >> def my_method(a)= a
@@ -318,8 +318,8 @@ If the method defined does not have any defined parameters for keyword arguments
 
 ```ruby
 def my_method(*arguments, **keywword_arguments)
-  p args.sum
-  for (key, value) in kwargs.to_a
+  p arguments.sum
+  for (key, value) in keyword_arguments.to_a
     p key.to_s + " = " + value.to_s
   end
 end
@@ -338,7 +338,7 @@ This works the same way as decomposing an array.
 ```exercism/caution
 Arguments have to be structured in a specific order:
 
-`def my_method(<positional_args>, *args, <positional_args>, <key-word_args>, **kwargs)`
+`def my_method(<positional_arguments>, *arguments, <positional_arguments>, <key-word_arguments>, **keyword_arguments)`
 
 If you don't follow this order then you will get an error.
 ```
@@ -356,7 +356,7 @@ my_method(1, 2, 3, 4, 5)
 [3, 4, 5]
 ```
 
-You can write positional arguments before and after `*args`:
+You can write positional arguments before and after `*arguments`:
 
 ```irb
 >> def my_method(a, *middle, b)= middle
@@ -387,14 +387,14 @@ You can also combine positional arguments, \*arguments, key-word arguments and \
 Writing arguments in an incorrect order will result in an error:
 
 ```ruby
-def my_method(a:, **kwargs, first, *args, last)
-  args
+def my_method(a:, **keyword_arguments, first, *arguments, last)
+  arguments
 end
 
 my_method(1, 2, 3, 4, a: 5)
 
 syntax error, unexpected local variable or method, expecting & or '&'
-... my_method(a:, **kwargs, first, *args, last)
+... my_method(a:, **keyword_arguments, first, *arguments, last)
 ```
 
 ### Decomposing into method calls
@@ -431,8 +431,8 @@ my_method(**numbers)
 1
 ```
 
-[args]: https://docs.ruby-lang.org/en/3.1/syntax/methods_rdoc.html#label-Array-2FHash+Argument
-[kwargs]: https://docs.ruby-lang.org/en/3.1/syntax/methods_rdoc.html#label-Keyword+Arguments
+[arguments]: https://docs.ruby-lang.org/en/3.1/syntax/methods_rdoc.html#label-Array-2FHash+Argument
+[keyword arguments]: https://docs.ruby-lang.org/en/3.1/syntax/methods_rdoc.html#label-Keyword+Arguments
 [multiple assignment]: https://docs.ruby-lang.org/en/3.1/syntax/assignment_rdoc.html#label-Multiple+Assignment
 [sorting algorithms]: https://en.wikipedia.org/wiki/Sorting_algorithm
 [decompose]: https://docs.ruby-lang.org/en/3.1/syntax/assignment_rdoc.html#label-Array+Decomposition
