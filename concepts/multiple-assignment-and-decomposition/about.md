@@ -18,7 +18,7 @@ It is common in Ruby to use this decomposing/composing behavior when using or de
 You will often see these arguments defined as `def some_method(*arguments, **keyword_arguments)` and the arguments used as `some_method(*some_array, **some_hash)`.
 
 ```exercism/caution
-*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
+`*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
 While `*` and `**` are used for multiplication and exponentiation, respectively, `*<variable_name>` and `**<variable_name>` are used as composition and decomposition operators.
 ```
 

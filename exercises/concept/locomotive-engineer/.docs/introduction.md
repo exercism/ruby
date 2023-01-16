@@ -9,7 +9,7 @@ This allows for code to be more concise and readable, and is done by separating 
 The splat operator(`*`), and double splat operator, (`**`), are often used in decomposition contexts.
 
 ```exercism/caution
-*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
+`*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
 While `*` and `**` are used for multiplication and exponentiation, respectively, `*<variable_name>` and `**<variable_name>` are used as composition and decomposition operators.
 ```
 
