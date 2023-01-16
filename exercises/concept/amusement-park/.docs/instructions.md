@@ -40,7 +40,7 @@ attendee.pass_id
 # => 42
 ```
 
-## 4. Revoke the pass
+## 5. Revoke the pass
 
 Some guests break the rules with unsafe behavior, so the park wants to be able to revoke passes. Implement `Attendee#revoke_pass!` to mutate the state of the instance, and set the pass id to `nil`
 
