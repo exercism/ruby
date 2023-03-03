@@ -1,6 +1,6 @@
 # Instructions
 
-A Pythagorean triplet is a set of three natural numbers, {a, b, c}, for which,
+A Pythagorean triplet is a set of three natural numbers (positive integers), {a, b, c}, for which,
 
 ```text
 a² + b² = c²
@@ -18,6 +18,8 @@ For example,
 3² + 4² = 5².
 ```
 
-Given an input integer N, find all Pythagorean triplets for which `a + b + c = N`.
+Given certain conditions for the triplet, like the maximum possible value (`max_factor`), the minimum possible value (`min_factor`) or the sum of the integers, find all Pythagorean triplets that are possible such that `a² + b² = c²` and they are within the max and min values. 
 
-For example, with N = 1000, there is exactly one Pythagorean triplet for which `a + b + c = 1000`: `{200, 375, 425}`.
+For example, given the maximum value of 5, return an array with a single Triplet object of value `{3,4,5}`. 
+
+Or given  N = 1000 as the sum, return exactly one Pythagorean triplet for which `a + b + c = 1000`: `{200, 375, 425}`.
