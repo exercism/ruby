@@ -5,7 +5,7 @@
 - To extract multiple arguments in the function parameters so can you pack them with the `*arguments` operator for **array** or `**keyword_arguments` for keyword-based arguments.
 - To pack or unpack use the splat operators (`*` or `**`).
 
-## 1. Create an list of all wagons
+## 1. Create a list of all wagons
 
 - Multiple arguments in the function parameters can be packed with the `*arguments` operator.
 

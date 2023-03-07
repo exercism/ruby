@@ -9,7 +9,7 @@ This exercise could easily be solved using slicing, indexing, and various `hash`
 However, we would like you to practice packing, unpacking, and multiple assignment in solving each of the tasks below.
 ```
 
-## 1. Create an list of all wagons
+## 1. Create a list of all wagons
 
 Your friend has been keeping track of each wagon identifier (ID), but they are never sure how many wagons the system is going to have to process at any given time. It would be much easier for the rest of the logistics program to have this data packaged into a unified **array**.
 
