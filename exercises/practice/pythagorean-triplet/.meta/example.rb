@@ -1,13 +1,11 @@
 class PythagoreanTriplet
   def self.triplets_with_sum(sum)
     triplets = []
-    (2..(sum/2)).to_a.reverse.each do |c|
+    (2..(sum / 2)).to_a.reverse.each do |c|
       a = 1
-      b = sum-c-a
+      b = sum - c - a
       while a < b
-        if pythagorean?(a, b, c)
-          triplets << [a, b, c]
-        end
+        triplets << [a, b, c] if pythagorean?(a, b, c)
         a += 1
         b -= 1
       end
@@ -16,6 +14,6 @@ class PythagoreanTriplet
   end
 
   def self.pythagorean?(a, b, c)
-    (a*a + b*b == c*c)
+    (a * a + b * b == c * c)
   end
 end
