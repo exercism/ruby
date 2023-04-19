@@ -1,0 +1,10 @@
+{
+  "skipping": {
+    "yes": "skip",
+    "no": "# skip"
+  },
+  "postprocess": [
+    "rubocop -A exercises/practice/{{exercise-name}}",
+    "rake test:{{exercise-name}}"
+  ]
+}
