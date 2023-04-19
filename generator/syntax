@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+value = JSON.parse(ARGV.first)["value"]
+if value.is_a?(String) || value.nil?
+  puts value.inspect
+else
+  puts value.to_s
+end
