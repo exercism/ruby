@@ -29,9 +29,3 @@ description = "very long abbreviation"
 
 [6a078f49-c68d-4b7b-89af-33a1a98c28cc]
 description = "consecutive delimiters"
-
-[5118b4b1-4572-434c-8d57-5b762e57973e]
-description = "apostrophes"
-
-[adc12eab-ec2d-414f-b48c-66a4fc06cdef]
-description = "underscore emphasis"
