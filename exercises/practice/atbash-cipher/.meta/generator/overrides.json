@@ -1,0 +1,17 @@
+{
+  "values": {
+    "namespace": "atbash",
+    "description": {
+      "encode": "",
+      "decode": ""
+    },
+    "property": {
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}

@@ -4,99 +4,71 @@ require_relative 'atbash_cipher'
 class AtbashCipherTest < Minitest::Test
   def test_encode_yes
     # skip
-    plaintext = 'yes'
-    ciphertext = 'bvh'
-    assert_equal ciphertext, Atbash.encode(plaintext)
+    assert_equal "bvh", Atbash.encode("yes")
   end
 
   def test_encode_no
     skip
-    plaintext = 'no'
-    ciphertext = 'ml'
-    assert_equal ciphertext, Atbash.encode(plaintext)
+    assert_equal "ml", Atbash.encode("no")
   end
 
   def test_encode_omg
     skip
-    plaintext = 'OMG'
-    ciphertext = 'lnt'
-    assert_equal ciphertext, Atbash.encode(plaintext)
+    assert_equal "lnt", Atbash.encode("OMG")
   end
 
   def test_encode_spaces
     skip
-    plaintext = 'O M G'
-    ciphertext = 'lnt'
-    assert_equal ciphertext, Atbash.encode(plaintext)
+    assert_equal "lnt", Atbash.encode("O M G")
   end
 
   def test_encode_mindblowingly
     skip
-    plaintext = 'mindblowingly'
-    ciphertext = 'nrmwy oldrm tob'
-    assert_equal ciphertext, Atbash.encode(plaintext)
+    assert_equal "nrmwy oldrm tob", Atbash.encode("mindblowingly")
   end
 
   def test_encode_numbers
     skip
-    plaintext = 'Testing,1 2 3, testing.'
-    ciphertext = 'gvhgr mt123 gvhgr mt'
-    assert_equal ciphertext, Atbash.encode(plaintext)
+    assert_equal "gvhgr mt123 gvhgr mt", Atbash.encode("Testing,1 2 3, testing.")
   end
 
   def test_encode_deep_thought
     skip
-    plaintext = 'Truth is fiction.'
-    ciphertext = 'gifgs rhurx grlm'
-    assert_equal ciphertext, Atbash.encode(plaintext)
+    assert_equal "gifgs rhurx grlm", Atbash.encode("Truth is fiction.")
   end
 
   def test_encode_all_the_letters
     skip
-    plaintext = 'The quick brown fox jumps over the lazy dog.'
-    ciphertext = 'gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt'
-    assert_equal ciphertext, Atbash.encode(plaintext)
+    assert_equal "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt", Atbash.encode("The quick brown fox jumps over the lazy dog.")
   end
 
   def test_decode_exercism
     skip
-    ciphertext = 'vcvix rhn'
-    plaintext = 'exercism'
-    assert_equal plaintext, Atbash.decode(ciphertext)
+    assert_equal "exercism", Atbash.decode("vcvix rhn")
   end
 
   def test_decode_a_sentence
     skip
-    ciphertext = 'zmlyh gzxov rhlug vmzhg vkkrm thglm v'
-    plaintext = 'anobstacleisoftenasteppingstone'
-    assert_equal plaintext, Atbash.decode(ciphertext)
+    assert_equal "anobstacleisoftenasteppingstone", Atbash.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v")
   end
 
   def test_decode_numbers
     skip
-    ciphertext = 'gvhgr mt123 gvhgr mt'
-    plaintext = 'testing123testing'
-    assert_equal plaintext, Atbash.decode(ciphertext)
+    assert_equal "testing123testing", Atbash.decode("gvhgr mt123 gvhgr mt")
   end
 
   def test_decode_all_the_letters
     skip
-    ciphertext = 'gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt'
-    plaintext = 'thequickbrownfoxjumpsoverthelazydog'
-    assert_equal plaintext, Atbash.decode(ciphertext)
+    assert_equal "thequickbrownfoxjumpsoverthelazydog", Atbash.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt")
   end
 
   def test_decode_with_too_many_spaces
     skip
-    ciphertext = 'vc vix    r hn'
-    plaintext = 'exercism'
-    assert_equal plaintext, Atbash.decode(ciphertext)
+    assert_equal "exercism", Atbash.decode("vc vix    r hn")
   end
 
   def test_decode_with_no_spaces
     skip
-    ciphertext = 'zmlyhgzxovrhlugvmzhgvkkrmthglmv'
-    plaintext = 'anobstacleisoftenasteppingstone'
-    assert_equal plaintext, Atbash.decode(ciphertext)
+    assert_equal "anobstacleisoftenasteppingstone", Atbash.decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv")
   end
 end
