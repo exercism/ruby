@@ -1,0 +1,16 @@
+{
+  "values": {
+    "namespace": null,
+    "description": {
+    },
+    "property": {
+      "response": "hey"
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}
