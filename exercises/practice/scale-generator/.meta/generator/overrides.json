@@ -1,0 +1,15 @@
+{
+  "values": {
+    "namespace": "scale",
+    "description": {
+    },
+    "property": {
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}

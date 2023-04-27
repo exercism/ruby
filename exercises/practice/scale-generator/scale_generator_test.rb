@@ -5,102 +5,119 @@ class ScaleGeneratorTest < Minitest::Test
   def test_chromatic_scales_chromatic_scale_with_sharps
     # skip
     scale = Scale.new("C")
-    assert_equal ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"], scale.chromatic
+    expected = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+    assert_equal expected, scale.chromatic
   end
 
   def test_chromatic_scales_chromatic_scale_with_flats
     skip
     scale = Scale.new("F")
-    assert_equal %w[F Gb G Ab A Bb B C Db D Eb E], scale.chromatic
+    expected = %w[F Gb G Ab A Bb B C Db D Eb E]
+    assert_equal expected, scale.chromatic
   end
 
   def test_scales_with_specified_intervals_simple_major_scale
     skip
     scale = Scale.new("C")
-    assert_equal %w[C D E F G A B C], scale.interval("MMmMMMm")
+    expected = %w[C D E F G A B C]
+    assert_equal expected, scale.interval("MMmMMMm")
   end
 
   def test_scales_with_specified_intervals_major_scale_with_sharps
     skip
     scale = Scale.new("G")
-    assert_equal ["G", "A", "B", "C", "D", "E", "F#", "G"], scale.interval("MMmMMMm")
+    expected = ["G", "A", "B", "C", "D", "E", "F#", "G"]
+    assert_equal expected, scale.interval("MMmMMMm")
   end
 
   def test_scales_with_specified_intervals_major_scale_with_flats
     skip
     scale = Scale.new("F")
-    assert_equal %w[F G A Bb C D E F], scale.interval("MMmMMMm")
+    expected = %w[F G A Bb C D E F]
+    assert_equal expected, scale.interval("MMmMMMm")
   end
 
   def test_scales_with_specified_intervals_minor_scale_with_sharps
     skip
     scale = Scale.new("f#")
-    assert_equal ["F#", "G#", "A", "B", "C#", "D", "E", "F#"], scale.interval("MmMMmMM")
+    expected = ["F#", "G#", "A", "B", "C#", "D", "E", "F#"]
+    assert_equal expected, scale.interval("MmMMmMM")
   end
 
   def test_scales_with_specified_intervals_minor_scale_with_flats
     skip
     scale = Scale.new("bb")
-    assert_equal %w[Bb C Db Eb F Gb Ab Bb], scale.interval("MmMMmMM")
+    expected = %w[Bb C Db Eb F Gb Ab Bb]
+    assert_equal expected, scale.interval("MmMMmMM")
   end
 
   def test_scales_with_specified_intervals_dorian_mode
     skip
     scale = Scale.new("d")
-    assert_equal %w[D E F G A B C D], scale.interval("MmMMMmM")
+    expected = %w[D E F G A B C D]
+    assert_equal expected, scale.interval("MmMMMmM")
   end
 
   def test_scales_with_specified_intervals_mixolydian_mode
     skip
     scale = Scale.new("Eb")
-    assert_equal %w[Eb F G Ab Bb C Db Eb], scale.interval("MMmMMmM")
+    expected = %w[Eb F G Ab Bb C Db Eb]
+    assert_equal expected, scale.interval("MMmMMmM")
   end
 
   def test_scales_with_specified_intervals_lydian_mode
     skip
     scale = Scale.new("a")
-    assert_equal ["A", "B", "C#", "D#", "E", "F#", "G#", "A"], scale.interval("MMMmMMm")
+    expected = ["A", "B", "C#", "D#", "E", "F#", "G#", "A"]
+    assert_equal expected, scale.interval("MMMmMMm")
   end
 
   def test_scales_with_specified_intervals_phrygian_mode
     skip
     scale = Scale.new("e")
-    assert_equal %w[E F G A B C D E], scale.interval("mMMMmMM")
+    expected = %w[E F G A B C D E]
+    assert_equal expected, scale.interval("mMMMmMM")
   end
 
   def test_scales_with_specified_intervals_locrian_mode
     skip
     scale = Scale.new("g")
-    assert_equal %w[G Ab Bb C Db Eb F G], scale.interval("mMMmMMM")
+    expected = %w[G Ab Bb C Db Eb F G]
+    assert_equal expected, scale.interval("mMMmMMM")
   end
 
   def test_scales_with_specified_intervals_harmonic_minor
     skip
     scale = Scale.new("d")
-    assert_equal %w[D E F G A Bb Db D], scale.interval("MmMMmAm")
+    expected = %w[D E F G A Bb Db D]
+    assert_equal expected, scale.interval("MmMMmAm")
   end
 
   def test_scales_with_specified_intervals_octatonic
     skip
     scale = Scale.new("C")
-    assert_equal ["C", "D", "D#", "F", "F#", "G#", "A", "B", "C"], scale.interval("MmMmMmMm")
+    expected = ["C", "D", "D#", "F", "F#", "G#", "A", "B", "C"]
+    assert_equal expected, scale.interval("MmMmMmMm")
   end
 
   def test_scales_with_specified_intervals_hexatonic
     skip
     scale = Scale.new("Db")
-    assert_equal %w[Db Eb F G A B Db], scale.interval("MMMMMM")
+    expected = %w[Db Eb F G A B Db]
+    assert_equal expected, scale.interval("MMMMMM")
   end
 
   def test_scales_with_specified_intervals_pentatonic
     skip
     scale = Scale.new("A")
-    assert_equal ["A", "B", "C#", "E", "F#", "A"], scale.interval("MMAMA")
+    expected = ["A", "B", "C#", "E", "F#", "A"]
+    assert_equal expected, scale.interval("MMAMA")
   end
 
   def test_scales_with_specified_intervals_enigmatic
     skip
     scale = Scale.new("G")
-    assert_equal ["G", "G#", "B", "C#", "D#", "F", "F#", "G"], scale.interval("mAMMMmm")
+    expected = ["G", "G#", "B", "C#", "D#", "F", "F#", "G"]
+    assert_equal expected, scale.interval("mAMMMmm")
   end
 end
