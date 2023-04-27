@@ -1,0 +1,27 @@
+{
+  "values": {
+    "namespace": null,
+    "description": {
+      "Returns true if the set contains no elements": "",
+      "Sets can report if they contain an element": "",
+      "A set is a subset if all of its elements are contained in the other set": "",
+      "Sets are disjoint if they share no elements": "",
+      "Sets with the same elements are equal": "",
+      "Unique elements can be added to a set": "",
+      "Intersection returns a set of all shared elements": "",
+      "Union returns a set of all elements in either set": "",
+      "Difference (or Complement) of a set is a set of all elements that are only in the first set": ""
+    },
+    "property": {
+      "contains": "member?",
+      "subset": "subset?",
+      "disjoint": "disjoint?"
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}

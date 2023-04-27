@@ -1,0 +1,7 @@
+  def test_{{test_description}}
+    {{skipping}}
+    set1 = {{ExerciseNamespace}}.new {{input-set1}}
+    set2 = {{ExerciseNamespace}}.new {{input-set2}}
+    expected = {{ExerciseNamespace}}.new {{expected}}
+    assert_equal expected, set1.{{property_name}}(set2)
+  end
