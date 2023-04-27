@@ -1,0 +1,16 @@
+{
+  "values": {
+    "namespace": "year",
+    "description": {
+    },
+    "property": {
+      "leapYear": "leap?"
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}
