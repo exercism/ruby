@@ -1,0 +1,7 @@
+  def test_{{test_description}}
+    {{skipping}}
+    input = {{input}}
+    encoded = {{ExerciseNamespace}}.encode(input)
+    decoded = {{ExerciseNamespace}}.decode(encoded)
+    assert_equal input, decoded
+  end
