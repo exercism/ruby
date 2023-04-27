@@ -1,0 +1,16 @@
+{
+  "values": {
+    "namespace": "brackets",
+    "description": {
+    },
+    "property": {
+      "isPaired": "paired?"
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}
