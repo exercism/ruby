@@ -37,6 +37,11 @@ class RomanNumeralsTest < Minitest::Test
     assert_equal "IX", 9.to_roman
   end
 
+  def test_16_is_xvi
+    skip
+    assert_equal "XVI", 16.to_roman
+  end
+
   def test_27_is_xxvii
     skip
     assert_equal "XXVII", 27.to_roman
@@ -57,6 +62,11 @@ class RomanNumeralsTest < Minitest::Test
     assert_equal "LIX", 59.to_roman
   end
 
+  def test_66_is_lxvi
+    skip
+    assert_equal "LXVI", 66.to_roman
+  end
+
   def test_93_is_xciii
     skip
     assert_equal "XCIII", 93.to_roman
@@ -72,6 +82,11 @@ class RomanNumeralsTest < Minitest::Test
     assert_equal "CLXIII", 163.to_roman
   end
 
+  def test_166_is_clxvi
+    skip
+    assert_equal "CLXVI", 166.to_roman
+  end
+
   def test_402_is_cdii
     skip
     assert_equal "CDII", 402.to_roman
@@ -80,6 +95,11 @@ class RomanNumeralsTest < Minitest::Test
   def test_575_is_dlxxv
     skip
     assert_equal "DLXXV", 575.to_roman
+  end
+
+  def test_666_is_dclxvi
+    skip
+    assert_equal "DCLXVI", 666.to_roman
   end
 
   def test_911_is_cmxi
@@ -92,34 +112,14 @@ class RomanNumeralsTest < Minitest::Test
     assert_equal "MXXIV", 1024.to_roman
   end
 
-  def test_3000_is_mmm
-    skip
-    assert_equal "MMM", 3000.to_roman
-  end
-
-  def test_16_is_xvi
-    skip
-    assert_equal "XVI", 16.to_roman
-  end
-
-  def test_66_is_lxvi
-    skip
-    assert_equal "LXVI", 66.to_roman
-  end
-
-  def test_166_is_clxvi
-    skip
-    assert_equal "CLXVI", 166.to_roman
-  end
-
-  def test_666_is_dclxvi
-    skip
-    assert_equal "DCLXVI", 666.to_roman
-  end
-
   def test_1666_is_mdclxvi
     skip
     assert_equal "MDCLXVI", 1666.to_roman
+  end
+
+  def test_3000_is_mmm
+    skip
+    assert_equal "MMM", 3000.to_roman
   end
 
   def test_3001_is_mmmi
