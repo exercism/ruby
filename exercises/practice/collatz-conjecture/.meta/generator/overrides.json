@@ -1,0 +1,16 @@
+{
+  "values": {
+    "namespace": null,
+    "description": {
+    },
+    "property": {
+    },
+    "expected-error": {
+      "Only positive integers are allowed": "ArgumentError"
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}
