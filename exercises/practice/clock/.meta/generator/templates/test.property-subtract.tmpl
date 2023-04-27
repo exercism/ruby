@@ -1,0 +1,5 @@
+  def test_{{test_description}}
+    {{skipping}}
+    {{exercise_namespace}} = {{ExerciseNamespace}}.new(hour: {{input-hour}}, minute: {{input-minute}})
+    assert_equal {{expected}}, ({{exercise_namespace}} - {{ExerciseNamespace}}.new(minute: {{input-value}})).{{property_name}}
+  end

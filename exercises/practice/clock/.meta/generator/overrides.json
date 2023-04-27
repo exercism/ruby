@@ -1,0 +1,18 @@
+{
+  "values": {
+    "namespace": null,
+    "description": {
+    },
+    "property": {
+      "create": "to_s",
+      "add": "to_s",
+      "subtract": "to_s"
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}
