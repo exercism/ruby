@@ -1,0 +1,15 @@
+{
+  "values": {
+    "namespace": "triangle",
+    "description": {
+    },
+    "property": {
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}
