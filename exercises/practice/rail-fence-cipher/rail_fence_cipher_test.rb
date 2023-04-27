@@ -2,59 +2,45 @@ require 'minitest/autorun'
 require_relative 'rail_fence_cipher'
 
 class RailFenceCipherTest < Minitest::Test
-  def test_encode_with_empty_string
-    assert_equal '', RailFenceCipher.encode('', 4)
+  def test_encode_encode_with_two_rails
+    # skip
+    message = "XOXOXOXOXOXOXOXOXO"
+    expected = "XXXXXXXXXOOOOOOOOO"
+    assert_equal expected, RailFenceCipher.encode(message, 2)
   end
 
-  def test_encode_with_one_rail
+  def test_encode_encode_with_three_rails
     skip
-    assert_equal 'One rail, only one rail',
-      RailFenceCipher.encode('One rail, only one rail', 1)
+    message = "WEAREDISCOVEREDFLEEATONCE"
+    expected = "WECRLTEERDSOEEFEAOCAIVDEN"
+    assert_equal expected, RailFenceCipher.encode(message, 3)
   end
 
-  def test_encode_with_two_rails
+  def test_encode_encode_with_ending_in_the_middle
     skip
-    assert_equal 'XXXXXXXXXOOOOOOOOO',
-      RailFenceCipher.encode('XOXOXOXOXOXOXOXOXO', 2)
+    message = "EXERCISES"
+    expected = "ESXIEECSR"
+    assert_equal expected, RailFenceCipher.encode(message, 4)
   end
 
-  def test_encode_with_three_rails
+  def test_decode_decode_with_three_rails
     skip
-    assert_equal 'WECRLTEERDSOEEFEAOCAIVDEN',
-      RailFenceCipher.encode('WEAREDISCOVEREDFLEEATONCE', 3)
+    message = "TEITELHDVLSNHDTISEIIEA"
+    expected = "THEDEVILISINTHEDETAILS"
+    assert_equal expected, RailFenceCipher.decode(message, 3)
   end
 
-  def test_encode_with_ending_in_the_middle
+  def test_decode_decode_with_five_rails
     skip
-    assert_equal 'ESXIEECSR', RailFenceCipher.encode('EXERCISES', 4)
+    message = "EIEXMSMESAORIWSCE"
+    expected = "EXERCISMISAWESOME"
+    assert_equal expected, RailFenceCipher.decode(message, 5)
   end
 
-  def test_encode_with_less_letters_than_rails
+  def test_decode_decode_with_six_rails
     skip
-    assert_equal 'More rails than letters',
-      RailFenceCipher.encode('More rails than letters', 24)
-  end
-
-  def test_decode_with_empty_string
-    skip
-    assert_equal '', RailFenceCipher.decode('', 4)
-  end
-
-  def test_decode_with_one_rail
-    skip
-    assert_equal 'ABCDEFGHIJKLMNOP',
-      RailFenceCipher.decode('ABCDEFGHIJKLMNOP', 1)
-  end
-
-  def test_decode_with_two_rails
-    skip
-    assert_equal 'XOXOXOXOXOXOXOXOXO',
-      RailFenceCipher.decode('XXXXXXXXXOOOOOOOOO', 2)
-  end
-
-  def test_decode_with_three_rails
-    skip
-    assert_equal 'THEDEVILISINTHEDETAILS',
-      RailFenceCipher.decode('TEITELHDVLSNHDTISEIIEA', 3)
+    message = "133714114238148966225439541018335470986172518171757571896261"
+    expected = "112358132134558914423337761098715972584418167651094617711286"
+    assert_equal expected, RailFenceCipher.decode(message, 6)
   end
 end
