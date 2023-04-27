@@ -1,0 +1,17 @@
+{
+  "values": {
+    "namespace": "prime",
+    "description": {
+    },
+    "property": {
+      "prime": "nth"
+    },
+    "expected-error": {
+      "there is no zeroth prime": "ArgumentError"
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}
