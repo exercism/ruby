@@ -11,13 +11,13 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_eggs_allergy_allergic_only_to_eggs
     skip
     allergies = Allergies.new(1)
-    assert allergies.allergic_to?("eggs"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("eggs"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_eggs_allergy_allergic_to_eggs_and_something_else
     skip
     allergies = Allergies.new(3)
-    assert allergies.allergic_to?("eggs"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("eggs"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_eggs_allergy_allergic_to_something_but_not_eggs
@@ -29,7 +29,7 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_eggs_allergy_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert allergies.allergic_to?("eggs"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("eggs"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_peanuts_allergy_not_allergic_to_anything
@@ -41,13 +41,13 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_peanuts_allergy_allergic_only_to_peanuts
     skip
     allergies = Allergies.new(2)
-    assert allergies.allergic_to?("peanuts"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("peanuts"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_peanuts_allergy_allergic_to_peanuts_and_something_else
     skip
     allergies = Allergies.new(7)
-    assert allergies.allergic_to?("peanuts"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("peanuts"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_peanuts_allergy_allergic_to_something_but_not_peanuts
@@ -59,7 +59,7 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_peanuts_allergy_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert allergies.allergic_to?("peanuts"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("peanuts"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_shellfish_allergy_not_allergic_to_anything
@@ -71,13 +71,13 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_shellfish_allergy_allergic_only_to_shellfish
     skip
     allergies = Allergies.new(4)
-    assert allergies.allergic_to?("shellfish"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("shellfish"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_shellfish_allergy_allergic_to_shellfish_and_something_else
     skip
     allergies = Allergies.new(14)
-    assert allergies.allergic_to?("shellfish"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("shellfish"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_shellfish_allergy_allergic_to_something_but_not_shellfish
@@ -89,7 +89,7 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_shellfish_allergy_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert allergies.allergic_to?("shellfish"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("shellfish"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_strawberries_allergy_not_allergic_to_anything
@@ -101,13 +101,13 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_strawberries_allergy_allergic_only_to_strawberries
     skip
     allergies = Allergies.new(8)
-    assert allergies.allergic_to?("strawberries"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("strawberries"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_strawberries_allergy_allergic_to_strawberries_and_something_else
     skip
     allergies = Allergies.new(28)
-    assert allergies.allergic_to?("strawberries"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("strawberries"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_strawberries_allergy_allergic_to_something_but_not_strawberries
@@ -119,7 +119,7 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_strawberries_allergy_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert allergies.allergic_to?("strawberries"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("strawberries"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_tomatoes_allergy_not_allergic_to_anything
@@ -131,13 +131,13 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_tomatoes_allergy_allergic_only_to_tomatoes
     skip
     allergies = Allergies.new(16)
-    assert allergies.allergic_to?("tomatoes"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("tomatoes"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_tomatoes_allergy_allergic_to_tomatoes_and_something_else
     skip
     allergies = Allergies.new(56)
-    assert allergies.allergic_to?("tomatoes"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("tomatoes"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_tomatoes_allergy_allergic_to_something_but_not_tomatoes
@@ -149,7 +149,7 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_tomatoes_allergy_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert allergies.allergic_to?("tomatoes"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("tomatoes"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_chocolate_allergy_not_allergic_to_anything
@@ -161,13 +161,13 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_chocolate_allergy_allergic_only_to_chocolate
     skip
     allergies = Allergies.new(32)
-    assert allergies.allergic_to?("chocolate"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("chocolate"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_chocolate_allergy_allergic_to_chocolate_and_something_else
     skip
     allergies = Allergies.new(112)
-    assert allergies.allergic_to?("chocolate"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("chocolate"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_chocolate_allergy_allergic_to_something_but_not_chocolate
@@ -179,7 +179,7 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_chocolate_allergy_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert allergies.allergic_to?("chocolate"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("chocolate"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_pollen_allergy_not_allergic_to_anything
@@ -191,13 +191,13 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_pollen_allergy_allergic_only_to_pollen
     skip
     allergies = Allergies.new(64)
-    assert allergies.allergic_to?("pollen"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("pollen"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_pollen_allergy_allergic_to_pollen_and_something_else
     skip
     allergies = Allergies.new(224)
-    assert allergies.allergic_to?("pollen"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("pollen"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_pollen_allergy_allergic_to_something_but_not_pollen
@@ -209,7 +209,7 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_pollen_allergy_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert allergies.allergic_to?("pollen"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("pollen"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_cats_allergy_not_allergic_to_anything
@@ -221,13 +221,13 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_cats_allergy_allergic_only_to_cats
     skip
     allergies = Allergies.new(128)
-    assert allergies.allergic_to?("cats"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("cats"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_cats_allergy_allergic_to_cats_and_something_else
     skip
     allergies = Allergies.new(192)
-    assert allergies.allergic_to?("cats"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("cats"), "Tom is allergic, but it says he's not."
   end
 
   def test_testing_for_cats_allergy_allergic_to_something_but_not_cats
@@ -239,7 +239,7 @@ class AllergiesTest < Minitest::Test
   def test_testing_for_cats_allergy_allergic_to_everything
     skip
     allergies = Allergies.new(255)
-    assert allergies.allergic_to?("cats"), "Tom is allergic, but it says he is not."
+    assert allergies.allergic_to?("cats"), "Tom is allergic, but it says he's not."
   end
 
   def test_list_when_no_allergies
