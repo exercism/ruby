@@ -1,0 +1,19 @@
+{
+  "values": {
+    "namespace": "squares",
+    "description": {
+      "Square the sum of the numbers up to the given number": "",
+      "Sum the squares of the numbers up to the given number": "",
+      "Subtract sum of squares from square of sums": ""
+    },
+    "property": {
+      "differenceOfSquares": "difference"
+    },
+    "expected-error": {
+    },
+    "expected-error-message": {
+    }
+  },
+  "formatting": {
+  }
+}
