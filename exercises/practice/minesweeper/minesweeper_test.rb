@@ -2,95 +2,75 @@ require 'minitest/autorun'
 require_relative 'minesweeper'
 
 class MinesweeperTest < Minitest::Test
-  def test_transform1
-    inp = ['+------+', '| *  * |', '|  *   |', '|    * |', '|   * *|',
-           '| *  * |', '|      |', '+------+']
-    out = ['+------+', '|1*22*1|', '|12*322|', '| 123*2|', '|112*4*|',
-           '|1*22*2|', '|111111|', '+------+']
-    assert_equal out, Board.transform(inp)
+  def test_no_rows
+    input = []
+    expected = []
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_transform2
-    skip
-    inp = ['+-----+', '| * * |', '|     |', '|   * |', '|  * *|',
-           '| * * |', '+-----+']
-    out = ['+-----+', '|1*2*1|', '|11322|', '| 12*2|', '|12*4*|',
-           '|1*3*2|', '+-----+']
-    assert_equal out, Board.transform(inp)
+  def test_no_columns
+    input = [""]
+    expected = [""]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_transform3
-    skip
-    inp = ['+-----+', '| * * |', '+-----+']
-    out = ['+-----+', '|1*2*1|', '+-----+']
-    assert_equal out, Board.transform(inp)
+  def test_no_mines
+    input = ["   ", "   ", "   "]
+    expected = ["   ", "   ", "   "]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_transform4
-    skip
-    inp = ['+-+', '|*|', '| |', '|*|', '| |', '| |', '+-+']
-    out = ['+-+', '|*|', '|2|', '|*|', '|1|', '| |', '+-+']
-    assert_equal out, Board.transform(inp)
+  def test_minefield_with_only_mines
+    input = ["***", "***", "***"]
+    expected = ["***", "***", "***"]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_transform5
-    skip
-    inp = ['+-+', '|*|', '+-+']
-    out = ['+-+', '|*|', '+-+']
-    assert_equal out, Board.transform(inp)
+  def test_mine_surrounded_by_spaces
+    input = ["   ", " * ", "   "]
+    expected = ["111", "1*1", "111"]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_transform6
-    skip
-    inp = ['+--+', '|**|', '|**|', '+--+']
-    out = ['+--+', '|**|', '|**|', '+--+']
-    assert_equal out, Board.transform(inp)
+  def test_space_surrounded_by_mines
+    input = ["***", "* *", "***"]
+    expected = ["***", "*8*", "***"]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_transform7
-    skip
-    inp = ['+--+', '|**|', '|**|', '+--+']
-    out = ['+--+', '|**|', '|**|', '+--+']
-    assert_equal out, Board.transform(inp)
+  def test_horizontal_line
+    input = [" * * "]
+    expected = ["1*2*1"]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_transform8
-    skip
-    inp = ['+---+', '|***|', '|* *|', '|***|', '+---+']
-    out = ['+---+', '|***|', '|*8*|', '|***|', '+---+']
-    assert_equal out, Board.transform(inp)
+  def test_horizontal_line_mines_at_edges
+    input = ["*   *"]
+    expected = ["*1 1*"]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_transform9
-    skip
-    inp = ['+-----+', '|     |', '|   * |', '|     |', '|     |',
-           '| *   |', '+-----+']
-    out = ['+-----+', '|  111|', '|  1*1|', '|  111|', '|111  |',
-           '|1*1  |', '+-----+']
-    assert_equal out, Board.transform(inp)
+  def test_vertical_line
+    input = [" ", "*", " ", "*", " "]
+    expected = ["1", "*", "2", "*", "1"]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_different_len
-    skip
-    inp = ['+-+', '| |', '|*  |', '|  |', '+-+']
-    assert_raises(ArgumentError) do
-      Board.transform(inp)
-    end
+  def test_vertical_line_mines_at_edges
+    input = ["*", " ", " ", " ", "*"]
+    expected = ["*", "1", " ", "1", "*"]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_faulty_border
-    skip
-    inp = ['+-----+', '*   * |', '+-- --+']
-    assert_raises(ArgumentError) do
-      Board.transform(inp)
-    end
+  def test_cross
+    input = ["  *  ", "  *  ", "*****", "  *  ", "  *  "]
+    expected = [" 2*2 ", "25*52", "*****", "25*52", " 2*2 "]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 
-  def test_invalid_char
-    skip
-    inp = ['+-----+', '|X  * |', '+-----+']
-    assert_raises(ArgumentError) do
-      Board.transform(inp)
-    end
+  def test_large_minefield
+    input = [" *  * ", "  *   ", "    * ", "   * *", " *  * ", "      "]
+    expected = ["1*22*1", "12*322", " 123*2", "112*4*", "1*22*2", "111111"]
+    assert_equal expected, Minesweeper.annotate(input)
   end
 end
