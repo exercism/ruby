@@ -9,9 +9,6 @@
 # As user-added comments (using the # character) will be removed when this file
 # is regenerated, comments can be added via a `comment` key.
 
-[88bf4b28-0de3-4883-93c7-db1b14aa806e]
-description = "just a number"
-
 [bb8c655c-cf42-4dfc-90e0-152fcfd8d4e0]
 description = "addition"
 
@@ -59,21 +56,3 @@ description = "unknown operation"
 
 [8a7e85a8-9e7b-4d46-868f-6d759f4648f8]
 description = "Non math question"
-
-[42d78b5f-dbd7-4cdb-8b30-00f794bb24cf]
-description = "reject problem missing an operand"
-
-[c2c3cbfc-1a72-42f2-b597-246e617e66f5]
-description = "reject problem with no operands or operators"
-
-[4b3df66d-6ed5-4c95-a0a1-d38891fbdab6]
-description = "reject two operations in a row"
-
-[6abd7a50-75b4-4665-aa33-2030fd08bab1]
-description = "reject two numbers in a row"
-
-[10a56c22-e0aa-405f-b1d2-c642d9c4c9de]
-description = "reject postfix notation"
-
-[0035bc63-ac43-4bb5-ad6d-e8651b7d954e]
-description = "reject prefix notation"
