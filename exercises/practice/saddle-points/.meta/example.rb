@@ -1,43 +1,13 @@
-class Matrix
-  attr_reader :rows, :columns
-  def initialize(input)
-    @rows = extract_rows(input)
-    @columns = extract_columns(rows)
-  end
-
-  def saddle_points
-    unless @saddle_points
-      coordinates = []
-      rows.each_with_index do |row, j|
-        max = row.max
-        row.each_with_index do |number, i|
-          min = columns[i].min
-          if number == max && number == min
-            coordinates << [j, i]
-          end
+class Grid
+  def self.saddle_points(grid)
+    coordinates = []
+    grid.each.with_index do |row, x|
+      row.each.with_index do |value, y|
+        if value == row.max && value == grid.map {|row| row[y]}.min
+          coordinates << {"row" => x+1, "column" => y+1}
         end
       end
-      @saddle_points = coordinates
     end
-    @saddle_points
-  end
-
-  private
-
-  def extract_rows(s)
-    s.split("\n").map do |row|
-      row.split(' ').map(&:to_i)
-    end
-  end
-
-  def extract_columns(rows)
-    columns = []
-    rows.each do |row|
-      row.each_with_index do |number, i|
-        columns[i] ||= []
-        columns[i] << number
-      end
-    end
-    columns
+    coordinates
   end
 end
