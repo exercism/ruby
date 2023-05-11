@@ -3,7 +3,7 @@ require_relative 'gigasecond'
 
 class GigasecondTest < Minitest::Test
   def test_full_time_specified
-    skip
+    # skip
     assert_equal Time.utc(2046, 10, 2, 23, 46, 40), Gigasecond.from(Time.utc(2015, 1, 24, 22, 0, 0))
   end
 
