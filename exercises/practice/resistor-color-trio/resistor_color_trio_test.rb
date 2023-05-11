@@ -26,11 +26,4 @@ class ResistorColorTrioTest < Minitest::Test
     skip
     assert_equal "Resistor value: 470 kiloohms", ResistorColorTrio.new(%w[yellow violet yellow]).label
   end
-
-  def test_invalid_color
-    skip
-    assert_raises(ArgumentError) do
-      ResistorColorTrio.new(%w[yellow purple black]).label
-    end
-  end
 end

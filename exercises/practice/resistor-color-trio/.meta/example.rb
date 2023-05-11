@@ -23,18 +23,10 @@ class ResistorColorTrio
   end
 
   def value
-    raise ArgumentError.new('Invalid color') unless valid_colors?
-
     significants * multiplier
   end
 
   def to_s
     value < 1000 ? "#{value} ohms" : "#{(value.to_f/1000).to_i} kiloohms"
-  end
-
-  def valid_colors?
-    COLOR_CODES.include?(tens) && \
-      COLOR_CODES.include?(ones) && \
-      COLOR_CODES.include?(zeros)
   end
 end
