@@ -5,6 +5,14 @@ class Matrix
     @columns = extract_columns(rows)
   end
 
+  def row(number)
+    rows[number-1]
+  end
+
+  def column(number)
+    columns[number-1]
+  end
+
   private
 
   def extract_rows(s)
