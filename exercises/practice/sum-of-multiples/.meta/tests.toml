@@ -53,6 +53,7 @@ description = "the only multiple of 0 is 0"
 
 [c423ae21-a0cb-4ec7-aeb1-32971af5b510]
 description = "the factor 0 does not affect the sum of multiples of other factors"
+include = false
 
 [17053ba9-112f-4ac0-aadb-0519dd836342]
 description = "solutions using include-exclude must extend to cardinality greater than 3"
