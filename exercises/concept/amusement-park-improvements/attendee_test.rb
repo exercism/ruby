@@ -35,6 +35,12 @@ class AttendeeTest < Minitest::Test
     refute Attendee.new(100).allowed_to_ride?(100)
   end
 
+  def test_does_not_fit_ride_and_pass
+    attendee = Attendee.new(100)
+    attendee.issue_pass!(1)
+    refute attendee.allowed_to_ride?(120)
+  end
+
   def test_fits_ride_and_pass
     attendee = Attendee.new(100)
     attendee.issue_pass!(1)
