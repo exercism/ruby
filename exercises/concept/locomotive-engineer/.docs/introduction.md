@@ -126,7 +126,7 @@ The syntax error is not tied to the data structure.
 
 ### Decomposing an array with the single splat operator (`*`)
 
-When [decomposing an **array**][decomposition] you can use the splat operator (`*`) to capture the "leftover" values.
+When [decomposing an **array**][decompose] you can use the splat operator (`*`) to capture the "leftover" values.
 This is clearer than slicing the **array** (_which in some situations is less readable_).
 For example, we can extract the first element and then assign the remaining values into a new **array** without the first element:
 
