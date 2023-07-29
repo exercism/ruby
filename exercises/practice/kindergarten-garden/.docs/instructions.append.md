@@ -1,4 +1,5 @@
 # Instructions append
 
-In this exercise you're going to be using a concept called dynamic programming. https://en.wikipedia.org/wiki/Dynamic_programming
-Your solution could use the class method `#define_singleton_method` or the combination of `#method_missing` and `#respond_to_missing`.
+The exercise requires you to write a class that provides a method for each child in the kindergarten.
+You can make your work less repetitive (and more fun!) if, instead of manually defining 12 different methods, you use a bit of metaprogramming.
+If you're not sure where to start, explore the `method_missing` or `define_method` methods.
