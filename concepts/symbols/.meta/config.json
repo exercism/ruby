@@ -1,0 +1,5 @@
+{
+  "blurb": "Symbols are identifiers and are created through the symbol literal. They are non mutable, which makes them useful for things like keys in a hashes.",
+  "authors": ["meatball133"],
+  "contributors": []
+}
