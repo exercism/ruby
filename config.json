@@ -124,12 +124,12 @@
         "uuid": "874e7d1f-d047-4183-875a-5345896f9fc1",
         "concepts": [
           "arrays",
-          "enumeration",
-          "symbols"
+          "enumeration"
         ],
         "prerequisites": [
           "instance-variables",
           "booleans",
+          "symbols",
           "conditionals"
         ]
       },
