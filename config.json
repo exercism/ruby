@@ -108,8 +108,8 @@
         ]
       },
       {
-        "slug": "Port Of Palermo",
-        "name": "port-palermo",
+        "slug": "port-palermo",
+        "name": "Port Of Palermo",
         "uuid": "d852aa08-f712-4c83-b19a-9adef4318b5e",
         "concepts": [
           "symbols"
@@ -1651,6 +1651,11 @@
       "slug": "strings",
       "name": "Strings"
     },
+    {
+      "uuid": "4b0f3718-cc06-4aa6-8b0f-7db3bbe6af5d",
+      "slug": "symbols",
+      "name": "Symbols"
+    },  
     {
       "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
       "slug": "enumeration",
