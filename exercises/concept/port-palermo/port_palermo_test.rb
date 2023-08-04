@@ -19,18 +19,18 @@ class MoviegoerTest < Minitest::Test
   end
 
   def test_get_terminal_for_oil
-    assert_equal :A, Port.get_terminal("OIL123")
+    assert_equal :A, Port.get_terminal(:OIL123)
   end
 
   def test_get_terminal_for_gas
-    assert_equal :A, Port.get_terminal("GAS674")
+    assert_equal :A, Port.get_terminal(:GAS674)
   end
 
   def test_get_terminal_for_cars
-    assert_equal :B, Port.get_terminal("CAR942")
+    assert_equal :B, Port.get_terminal(:CAR942)
   end
 
   def test_get_terminal_for_clothes
-    assert_equal :B, Port.get_terminal("CLO315")
+    assert_equal :B, Port.get_terminal(:CLO315)
   end
 end
