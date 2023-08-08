@@ -43,7 +43,7 @@ The benefit of symbols being immutable is that they are more memory efficient th
 
 Symbols can be converted to strings and vice versa.
 This can be useful when you want to modify a symbol, or when you want to use a symbol as a string.
-To convert a string to a symbol, you can use the `String#to_sym` method, and to do the opposite, you can use the `Symbol#to_s` method.
+To present a symbol as a string, you can use the `String#to_sym` method, and to do the opposite, you can use the `Symbol#to_s` method.
 Due to symbols having a limited set of methods, it can be useful to convert a symbol to a string to use string methods on it, if a new symbol is needed.
 
 ```ruby
