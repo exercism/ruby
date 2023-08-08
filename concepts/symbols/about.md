@@ -27,7 +27,7 @@ This means that two symbols with the same name are always the same object.
 
 Symbols are immutable, which means that they cannot be modified.
 This means that when you "modify" a symbol, you are actually creating a new symbol.
-There are a few methods that can be used to modify symbols, but they all return new symbols.
+There are a few methods that can be used to manipulate symbols, they all return new symbols.
 All methods can be found in the [Symbol API][symbols-api].
 
 ```ruby
