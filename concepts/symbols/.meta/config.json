@@ -1,5 +1,5 @@
 {
-  "blurb": "Symbols are identifiers and are created through the symbol literal. They are non mutable, which makes them useful for things like keys in a hashes.",
+  "blurb": "Symbols are very important in Ruby.  They are used as \"identity\".  They are immutable, guaranteed to be a single item no matter where it is used or referenced.  They are used internally as variable, method, constants, and keyword identifiers.  They are also useful, and often used, as keys in a `Hash`.",
   "authors": ["meatball133"],
   "contributors": ["kotp"]
 }
