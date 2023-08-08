@@ -56,7 +56,7 @@ Due to symbols having a limited set of methods, it can be useful to convert a sy
 In Ruby you can get names in scopes by using various methods to get names of constants, methods, and variables.
 These methods returns arrays of symbols.
 
-The most common methods are `Module#constants`, `Module#instance_methods`, `Module#class_variables`, `global_variables` and `local_variables`.
+Some methods are `Module#constants`, `Module#instance_methods`, `Module#class_variables`, `global_variables` and `local_variables`.
 
 ```ruby
 module Foo
