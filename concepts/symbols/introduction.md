@@ -2,7 +2,7 @@
 
 [Symbols][symbols] are named identifiers that can be used to refer to a value.
 Symbols are created through a symbol literal, which is by prefixing a name with a `:` character, e.g. `:foo`.
-They also allow for being written as strings, e.g. `:"foo"`, which allows for example spaces in the name.
+They also allow for being written with quotes, e.g. `:"foo"`, which allows, for example, spaces in the name.
 
 ```ruby
 :foo # => :foo
