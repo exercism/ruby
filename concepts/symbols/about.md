@@ -13,7 +13,7 @@ Symbols are used in many places in the language, including as keys in hashes, to
 
 ## Identifier
 
-What makes symbols different from strings is that they are identifiers, and not data or text.
+What makes symbols different from strings is that they are identifiers, and do not represent data or text.
 This means that two symbols with the same name are always the same object.
 
 ```ruby
