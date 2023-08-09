@@ -108,6 +108,17 @@
         ]
       },
       {
+        "slug": "port-palermo",
+        "name": "Port Of Palermo",
+        "uuid": "d852aa08-f712-4c83-b19a-9adef4318b5e",
+        "concepts": [
+          "symbols"
+        ],
+        "prerequisites": [
+          "conditionals"
+        ]
+      },
+      {
         "slug": "bird-count",
         "name": "Bird Count",
         "uuid": "874e7d1f-d047-4183-875a-5345896f9fc1",
@@ -118,6 +129,7 @@
         "prerequisites": [
           "instance-variables",
           "booleans",
+          "symbols",
           "conditionals"
         ]
       },
@@ -1639,6 +1651,11 @@
       "slug": "strings",
       "name": "Strings"
     },
+    {
+      "uuid": "4b0f3718-cc06-4aa6-8b0f-7db3bbe6af5d",
+      "slug": "symbols",
+      "name": "Symbols"
+    },  
     {
       "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
       "slug": "enumeration",

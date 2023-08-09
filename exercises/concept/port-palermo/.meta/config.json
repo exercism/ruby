@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "meatball133"
+  ],
+  "files": {
+    "solution": [
+      "port_palermo.rb"
+    ],
+    "test": [
+      "port_palermo_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "icon": "strings-package",
+  "blurb": "Learn about the symbols while helping out with modernize the ports of Palermo computer system."
+}
