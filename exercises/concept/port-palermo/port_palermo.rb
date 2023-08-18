@@ -1,6 +1,4 @@
 module Port
-  # TODO: define the 'Identifier' constant
-
   def self.get_identifier(city)
     raise 'Please implement the Port.get_identifier method'
   end
