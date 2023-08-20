@@ -14,5 +14,6 @@
     ]
   },
   "icon": "strings-package",
-  "blurb": "Learn about the symbols while helping out with modernize the ports of Palermo computer system."
+  "blurb": "Learn about the symbols while helping out with modernize the ports of Palermo computer system.",
+  "contributors": ["egemen-dev"]
 }

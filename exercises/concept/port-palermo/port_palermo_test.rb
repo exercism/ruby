@@ -3,7 +3,7 @@ require_relative 'port_palermo'
 
 class MoviegoerTest < Minitest::Test
   def test_identifier
-    assert_equal :PALE, Port::Identifier
+    assert_equal :PALE, Port::IDENTIFIER
   end
 
   def test_get_identifier_for_hamburg

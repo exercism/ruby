@@ -1,5 +1,5 @@
 module Port
-  Identifier = :PALE
+  IDENTIFIER = :PALE
 
   def self.get_identifier(city)
     return city[0..3].upcase.to_sym

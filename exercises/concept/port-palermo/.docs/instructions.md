@@ -12,10 +12,10 @@ The system has to handle identifiers for ships, but also for destinations.
 The first thing you need to do is to create the identifier for the port of Palermo.
 The identifier are the first four letters of the name of the port, in uppercase.
 
-Define the `Port.Identifier` constant to be a symbol with the value `:PALE`.
+Define the `Port::IDENTIFIER` constant to be a symbol with the value `:PALE`.
     
 ```ruby
-Port::Identifier 
+Port::IDENTIFIER 
 # => :PALE
 ```
 
