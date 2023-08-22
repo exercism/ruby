@@ -25,7 +25,7 @@
 
 - In the `Attendee#issue_pass!` method, set the instance's state to the argument.
 
-## 4. Revoke the pass
+## 5. Revoke the pass
 
 - In the `Attendee#revoke_pass!` setter method set the instance's state so that no pass exists.
 
