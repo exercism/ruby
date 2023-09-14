@@ -18,7 +18,7 @@ The reason for having two range operators is to allow to create ranges that are 
 Ranges can also be created using the `Range` initializer.
 
 ```ruby
-Range.new(1, 5) # => 1, 2, 3, 4, 5
+Range.new(1, 5) #  A range containing 1, 2, 3, 4, 5
 ```
 
 ````exercism/note
