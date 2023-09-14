@@ -61,8 +61,7 @@ These methods when for example want to get the sum of all the values in the rang
 
 ## Endless & Beginless ranges
 
-There are two special types of ranges, the endless and beginless ranges.
-This means that the range has no beginning or end.
+A range can be endless and beginless.
 The endless or beginless range has there start or end value being `nil`, but when defining the range so can nil be omitted.
 
 Using beginless and endless ranges is useful when you want to, for example, slice a string from the beginning or to the end.
