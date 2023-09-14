@@ -6,8 +6,11 @@ They can be used for many things like quickly creating a collection, slicing str
 They are created using the range operator `..` or `...` (inclusive and exclusive respectively).
 
 ```ruby
-1..5 # => 1, 2, 3, 4, 5
-1...5 # => 1, 2, 3, 4
+1..5  # => 1..5
+1...5 # => 1...5
+
+(1..5).to_a # => [1, 2, 3, 4, 5]
+(1...5).to_a # => [1, 2, 3, 4]
 ```
 
 The reason for having two range operators is to allow to create ranges that are inclusive or exclusive of the end value, which can be useful when for example working with indexes, that are zero based.
@@ -31,7 +34,7 @@ This is because the otherwise will the method be called on the 2nd argument of t
 ## Getting substrings
 
 When wanting to slice a string, you can use the range operator to get a substring.
-That is by creating a range with the start and end index of the substring.
+That is, by creating a range with the start and end index of the sub-string.
 
 ```ruby
 "Hello World"[0..4] # => "Hello"
@@ -54,7 +57,7 @@ These methods when for example want to get the sum of all the values in the rang
 | ----------------------- | ----------------------------------------------------------------------- | ------------------------------- |
 | [`sum`][sum]            | Returns the sum of all the values in the range                          | `(1..5).sum # => 15`            |
 | [`size`][size]          | Returns the size of the range                                           | `(1..5).size # => 5`            |
-| [`include?`][indlude] | Returns `true` if the range includes the given value, otherwise `false` | `(1..5).include?(3) # => true` |
+| [`include?`][indlude]   | Returns `true` if the range includes the given value, otherwise `false` | `(1..5).include?(3) # => true` |
 
 ## Endless & Beginless ranges
 
@@ -62,7 +65,7 @@ There are two special types of ranges, the endless and beginless ranges.
 This means that the range has no beginning or end.
 The endless or beginless range has there start or end value being `nil`, but when defining the range so can nil be omitted.
 
-Using beginless and endless ranges is useful when you want to for example slice a string from the beginning or to the end.
+Using beginless and endless ranges is useful when you want to, for example, slice a string from the beginning or to the end.
 
 ```ruby
 "Hello World"[0..] # => "Hello World"
@@ -71,17 +74,16 @@ Using beginless and endless ranges is useful when you want to for example slice 
 ```
 
 ```exercism/caution
-If not used on a collection, the endless range can cause an infinite loop, if not used with caution.
+If not used on a collection, the endless range can cause an endless sequence, if not used with caution.
 ```
 
 ## String ranges
 
 Strings can also be used in ranges and allow one to get an interval of strings between two strings.
-But its behavior is a bit different than with chars, when using multiple characters in a string range.
-Its behavior can become when doing more complex string ranges, so use it with caution.
+Its behavior can be a bit unexpected when using certain strings, so use it with caution.
 
 ```ruby
-"aa".."az" # => "aa", "ab", "ac", ..., "az"
+"aa".."az".to_a # => ["aa", "ab", "ac", ..., "az"]
 ```
 
 ## Custom objects in ranges
