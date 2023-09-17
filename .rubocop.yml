@@ -12,6 +12,8 @@ AllCops:
     - "bin/**/*"
     - "node_modules/**/*"
     - "vendor/**/*"
+    - "lib/**/*"
+    - "test/**/*"
 
 Bundler/OrderedGems:
   Enabled: false
