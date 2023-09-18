@@ -1,9 +1,9 @@
 # Ranges
 
-[Ranges][ranges] represents an interval between two values.
+[Ranges][ranges] represent an interval between two values.
 The most common types that support ranges are `Int` and `String`.
-They can be used for many things like quickly creating a collection, slicing strings, checking if a value is in a range and iteration.
-They are created using the range operator `..` or `...` (inclusive and exclusive respectively).
+They can be used for many things like quickly creating a collection, slicing strings, checking if a value is in a range, and iteration.
+They are created using the range operator `..` or `...` (inclusive and exclusive, respectively).
 
 ```ruby
 1..5  # => 1..5
@@ -13,7 +13,7 @@ They are created using the range operator `..` or `...` (inclusive and exclusive
 (1...5).to_a # => [1, 2, 3, 4]
 ```
 
-The reason for having two range operators is to allow to create ranges that are inclusive or exclusive of the end value, which can be useful when for example working with indexes, that are zero based.
+The reason for having two range operators is to allow to create ranges that are inclusive or exclusive of the end value, which can be useful when for example working with indexes that are zero based.
 
 Ranges can also be created using the `Range` initializer.
 
@@ -51,7 +51,7 @@ You can also use negative indexes to get the substring from the end of the strin
 ## Range methods
 
 Ranges do have a set of methods that can be used to work with them.
-These methods when for example want to get the sum of all the values in the range, or check if the range includes a value.
+For example, these methods can be used to get the sum of all the values in the range or check if the range includes a value.
 
 | Method                  | Description                                                             | Example                         |
 | ----------------------- | ----------------------------------------------------------------------- | ------------------------------- |
@@ -62,7 +62,7 @@ These methods when for example want to get the sum of all the values in the rang
 ## Endless & Beginless ranges
 
 A range can be endless and beginless.
-The endless or beginless range has their start or end value being `nil`, but when defining the range so can nil be omitted.
+The endless or beginless range has their start or end value being `nil`, but when defining the range the `nil` can be omitted.
 
 Using beginless and endless ranges is useful when you want to, for example, slice a string from the beginning or to the end.
 
@@ -88,13 +88,14 @@ Its behavior can be a bit unexpected when using certain strings, so use it with 
 ## Custom objects in ranges
 
 ````exercism/advanced
-Ruby allows to use custom objects in ranges, the requirement for this is that the object implements the following:
+Ruby allows you to use custom objects in ranges. 
+The requirement for this is that the object implements the following:
 
 - include the `Comparable` module
 - `succ` method
 - `<=>` method
 
-These methods make it so that the range can iterate over the object, and compare the objects in the range.
+These methods make it so that the range can iterate over the object and compare the objects in the range.
 
 ```ruby
 class Foo

@@ -20,7 +20,7 @@
 ## 4. Create move message
 
 - You can index the square string to get the rank and file.
-- You can use already defined methods to get the nickname of the player, and to check if the move is valid.
+- You can use already defined methods to get the nickname of the player and to check if the move is valid.
 
 [constants]: https://www.rubyguides.com/2017/07/ruby-constants/
 [integers]: https://rubyapi.org/o/integer
