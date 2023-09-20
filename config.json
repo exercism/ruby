@@ -119,6 +119,17 @@
         ]
       },
       {
+        "slug": "chess-game",
+        "name": "Chess Game",
+        "uuid": "3b107bdb-42a1-43de-95d4-ad1370a70cfc",
+        "concepts": [
+          "ranges"
+        ],
+        "prerequisites": [
+          "symbols"
+        ]
+      },      
+      {
         "slug": "bird-count",
         "name": "Bird Count",
         "uuid": "874e7d1f-d047-4183-875a-5345896f9fc1",
@@ -130,7 +141,8 @@
           "instance-variables",
           "booleans",
           "symbols",
-          "conditionals"
+          "conditionals",
+          "ranges"
         ]
       },
       {
@@ -1655,7 +1667,12 @@
       "uuid": "4b0f3718-cc06-4aa6-8b0f-7db3bbe6af5d",
       "slug": "symbols",
       "name": "Symbols"
-    },  
+    },
+    {
+      "uuid": "ec83aa13-0861-46d4-a126-2ebf6b8705d3",
+      "slug": "ranges",
+      "name": "Ranges"
+    },    
     {
       "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
       "slug": "enumeration",

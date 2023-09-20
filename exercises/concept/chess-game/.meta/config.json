@@ -1,0 +1,12 @@
+{
+  "authors": ["meatball133"],
+  "contributors": ["kotp"],
+  "files": {
+    "solution": ["chess_game.rb"],
+    "test": ["chess_game_test.rb"],
+    "exemplar": [".meta/exemplar.rb"]
+  },
+  "forked_from": ["elixir/chess-board", "crystal/chess-game"],
+  "blurb": "Learn about ranges while making a chess game.",
+  "icon": "chessboard"
+}
