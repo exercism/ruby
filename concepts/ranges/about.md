@@ -1,7 +1,7 @@
 # Ranges
 
 [Ranges][range] represent an interval between two values.
-The most common types that support ranges are `Int` and `String`.
+The most common types that support ranges are `Integer` and `String`.
 They can be used for many things like quickly creating a collection, slicing strings, checking if a value is in a range, and iteration.
 They are created using the range operator `..` or `...` (inclusive and exclusive, respectively).
 
