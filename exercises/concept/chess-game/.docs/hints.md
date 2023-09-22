@@ -3,14 +3,14 @@
 ## 1. Define rank & file range
 
 - You need to define two [constant][constants] that should hold a [`Range`][range] of ranks and files.
-- The ranks should be an [`Int`][integers] `range` from 1 to 8.
+- The ranks should be an [`Integer`][integers] `range` from 1 to 8.
 - The files should be a [`String`][string] `Range` from 'A' to 'H'.
 - The constant needs to be defined in the `Chess` [module][module].
 
 ## 2. Check if square is valid
 
 - You need to check if a value is within a range.
-- There is [a method][include] that can be used to check if a value is within a range. 
+- There is [a method][include] that can be used to check if a value is within a range.
 
 ## 3. Get player's nickname
 
