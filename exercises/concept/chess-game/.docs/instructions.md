@@ -31,7 +31,7 @@ Chess::Files
 The game will have to check if a square is valid.
 A square is valid if the rank and file are within the ranges of the ranks and files.
 
-Define the `Chess.valid_square?` method that takes the arguments `rank` that holds an int of the rank and `file` that holds a char of the file.
+Define the `Chess.valid_square?` method that takes the arguments `rank` that holds an integer of the rank and `file` that holds a char of the file.
 The method should return `true` if the rank and file are within the ranges of the ranks and files and return `false` otherwise.
 
 ```ruby
