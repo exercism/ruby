@@ -45,7 +45,7 @@ You can also use negative indexes to get the substring from the end of the strin
 
 ```ruby
 "Hello World"[-5..-1] # => "World"
-"Hello World"[6..-4] # => "Wor"
+"Hello World"[6..-4] # => "Wo"
 ```
 
 ## Range methods
