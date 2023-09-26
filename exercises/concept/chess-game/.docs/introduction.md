@@ -82,7 +82,7 @@ Strings can also be used in ranges and allow one to get an interval of strings b
 Its behavior can be a bit unexpected when using certain strings, so use it with caution.
 
 ```ruby
-"aa".."az".to_a # => ["aa", "ab", "ac", ..., "az"]
+("aa".."az").to_a # => ["aa", "ab", "ac", ..., "az"]
 ```
 
 [range]: https://rubyapi.org/o/range
