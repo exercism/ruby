@@ -117,10 +117,10 @@ If the decomposition has variables with incorrect placement and/or an incorrect 
 fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
 
 (a, b), (d) = fruits_vegetables
-syntax error, unexpected '=', expecting '.' or &. or :: or '['
+# syntax error, unexpected '=', expecting '.' or &. or :: or '['
 
 ((a, b), (d)) = fruits_vegetables
-syntax error, unexpected ')', expecting '.' or &. or :: or '['
+# syntax error, unexpected ')', expecting '.' or &. or :: or '['
 ```
 
 Experiment here, and you will notice that the first pattern dictates, not the available values on the right hand side.
