@@ -17,10 +17,10 @@ This is often used in multiple assignment to group all "remaining" elements that
 It is common in Ruby to use this decomposing/composing behavior when using or defining methods that take an arbitrary number of positional or keyword arguments.
 You will often see these arguments defined as `def some_method(*arguments, **keyword_arguments)` and the arguments used as `some_method(*some_array, **some_hash)`.
 
-```exercism/caution
+~~~~exercism/caution
 `*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
 While `*` and `**` are used for multiplication and exponentiation, respectively, `*<variable_name>` and `**<variable_name>` are used as composition and decomposition operators.
-```
+~~~~
 
 ## Multiple assignment
 
@@ -60,9 +60,9 @@ For example:
 => [2, 1]
 ```
 
-```exercism/note
+~~~~exercism/note
 This is also known as "Parallel Assignment", and can be used to avoid a temporary variable.
-```
+~~~~
 
 If there are more variables than values, the extra variables will be assigned `nil`:
 
@@ -335,13 +335,13 @@ my_method(1, 2, 3, a: 1, b: 2, c: 3)
 You can also write arguments before and after `*arguments` to allow for specific positional arguments.
 This works the same way as decomposing an array.
 
-```exercism/caution
+~~~~exercism/caution
 Arguments have to be structured in a specific order:
 
 `def my_method(<positional_arguments>, *arguments, <positional_arguments>, <key-word_arguments>, **keyword_arguments)`
 
 If you don't follow this order then you will get an error.
-```
+~~~~
 
 ```ruby
 def my_method(a, b, *arguments)
