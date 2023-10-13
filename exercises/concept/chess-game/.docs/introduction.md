@@ -15,7 +15,7 @@ They are created using the range operator `..` or `...` (inclusive and exclusive
 
 The reason for having two range operators is to allow to create ranges that are inclusive or exclusive of the end value, which can be useful when for example working with indexes that are zero based.
 
-Ranges can also be created using the `Range` initializer.
+Ranges can also be created using the `Range` constructor, `new`.
 
 ```ruby
 Range.new(1, 5) # A range containing 1, 2, 3, 4, 5
