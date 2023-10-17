@@ -21,4 +21,4 @@ We have recently signed a supplier of **_Conjured_** items. This requires an upd
 
 - **_Conjured_** items degrade in quality twice as fast as normal items.
 
-Feel free to make any changes to the `GildedRose#update!` method and add any new code as long as everything still works correctly. However, do not alter `Item` because it belongs to the goblin in the corner who will insta-rage and one-shot you, as he doesn't believe in shared code ownership.
+Feel free to make any changes to the `GildedRose#update!` method and add any new code as long as everything still works correctly (i.e., as long as the tests still pass).

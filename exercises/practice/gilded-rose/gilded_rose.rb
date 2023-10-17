@@ -1,4 +1,4 @@
-Item = Struct.new(:name, :sell_in, :quality) # Do not change this line!
+Item = Struct.new(:name, :sell_in, :quality)
 
 class GildedRose
   def initialize(items)
