@@ -31,6 +31,8 @@ Feel free to make any changes to the `GildedRose#update!` method and add any new
 
 ## 2. Add the new feature
 
-We have recently signed a supplier of **_Conjured_** items. This requires an update to our system:
+We have recently signed a supplier of **_Conjured_** items. Your job is to add the following rules to our system:
 
-- **_Conjured_** items degrade in quality twice as fast as normal items.
+- **_Conjured_** items degrade in quality twice as fast as they would otherwise. However, special rules apply for conjured items that are not normal items:
+  - **_Conjured Aged Brie_** and **_Conjured Sulfuras_** behave as their non-conjured counterparts, except that once their sell-by date has arrived, their quality degrades at the rate of a conjured normal item. (Which means, of course, a conjured Sulfuras has a sell-by date.)
+  - **_Conjured backstage passes_** increase in quality by 1 less than if they were not conjured.
