@@ -10,7 +10,8 @@ class AbstractItem
 
   def update!
     update_quality!
-    @quality = 0 if @quality < 0
+    @quality = 0 if quality < 0
+    @quality = 0 if conjured? && sell_in <= 0
     @quality = max_quality if quality > max_quality
 
     update_sell_in!
@@ -47,7 +48,6 @@ class AgedBrie < AbstractItem
   def update_quality!
     quality_change = 1
     quality_change += 1 if sell_in <= 0
-    quality_change *= -2 if conjured? && sell_in <= 0
 
     @quality += quality_change
   end
@@ -61,17 +61,10 @@ class Sulfuras < AbstractItem
   def max_quality = 80
 
   def update_quality!
-    quality_change = 0
-    quality_change = -4 if conjured? && sell_in <= 0
-
-    @quality += quality_change
   end
 
   def update_sell_in!
-    sell_in_change = 0
-    sell_in_change = -1 if conjured?
-
-    @sell_in += sell_in_change
+    @sell_in -= 1 if conjured?
   end
 end
 

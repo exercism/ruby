@@ -37,7 +37,7 @@ Feel free to make any changes and add any new code as long as everything still w
 We have recently signed a supplier of **_Conjured_** items.
 Your job is to add the following rules to our system:
 
-- **_Conjured_** items degrade in quality twice as fast as they would otherwise. However, special rules apply for conjured items that are not normal items:
-  - **_Conjured Aged Brie_** is like a non-conjured Aged Brie, with one difference: when its sell-by date has arrived, instead of its quality increasing faster, its quality _decreases_ at the rate of a conjured normal item.
-  - **_Conjured Sulfuras_** is like a non-conjured Sulfuras, with two differences: (1) it has a sell-by date, and (2) like the Conjured Aged Brie, once the sell-by date has arrived its quality decreases at the rate of a conjured normal item.
+- **_Conjured_** items drop to 0 quality once their sell-by date has arrived. Additionally:
+  - **_Conjured normal items_** degrade in quality twice as fast as non-conjured normal items.
+  - **_Conjured Sulfuras_** has a sell-by date, unlike a non-conjured Sulfuras.
   - **_Conjured backstage passes_** increase in quality by 1 less than if they were not conjured.

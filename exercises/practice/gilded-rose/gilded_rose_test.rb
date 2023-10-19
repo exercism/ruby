@@ -119,13 +119,13 @@ class GildedRoseTest < Minitest::Test
   def test_conjured_normal_item_on_sell_date
     skip
     update_with sell_in: 0, quality: 10, name: "Conjured Rabbit",
-      quality_change: -4
+      quality_change: -10
   end
 
   def test_conjured_normal_item_after_sell_date
     skip
     update_with sell_in: -1, quality: 10, name: "Conjured Rabbit",
-      quality_change: -4
+      quality_change: -10
   end
 
   def test_conjured_normal_item_of_zero_quality
@@ -149,13 +149,13 @@ class GildedRoseTest < Minitest::Test
   def test_conjured_brie_on_sell_date
     skip
     update_with sell_in: 0, quality: 10, name: "Conjured Aged Brie",
-      quality_change: -4
+      quality_change: -10
   end
 
   def test_conjured_brie_after_sell_date
     skip
     update_with sell_in: -1, quality: 10, name: "Conjured Aged Brie",
-      quality_change: -4
+      quality_change: -10
   end
 
   def test_conjured_brie_of_max_quality
@@ -185,13 +185,13 @@ class GildedRoseTest < Minitest::Test
   def test_conjured_sulfuras_on_sell_date
     skip
     update_with sell_in: 0, quality: 80, name: "Conjured Sulfuras, Hand of Ragnaros",
-      quality_change: -4
+      quality_change: -80
   end
 
   def test_conjured_sulfuras_after_sell_date
     skip
     update_with sell_in: -1, quality: 80, name: "Conjured Sulfuras, Hand of Ragnaros",
-      quality_change: -4
+      quality_change: -80
   end
 
   def test_conjured_sulfuras_of_zero_quality
