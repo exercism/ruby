@@ -13,8 +13,8 @@ So your task is twofold: refactor the inventory system, then add the new feature
 
 Here are the basics of our system:
 
-- All items have a `sell_in` attribute, which denotes the number of days we have to sell the item.
-- All items have a `quality` attribute, which denotes how valuable the item is.
+- All items have a "sell in" attribute, which denotes the number of days we have to sell the item.
+- All items have a "quality" attribute, which denotes how valuable the item is.
 - At the end of each day, our system lowers both values for every item.
 
 Pretty simple, right? Well, this is where it gets interesting:
@@ -30,7 +30,7 @@ Pretty simple, right? Well, this is where it gets interesting:
 
 To pave the way for the new feature, refactor the existing code and make it easier to change.
 
-Feel free to make any changes to the `GildedRose#update!` method and add any new code as long as everything still works correctly (i.e., as long as the tests for existing features still pass).
+Feel free to make any changes and add any new code as long as everything still works correctly (i.e., as long as the tests for existing features still pass).
 
 ## 2. Add the new feature
 

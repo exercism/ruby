@@ -24,6 +24,6 @@ The reason for this change is that the original exercise can be "solved" by addi
 Ordinarily this isn't a problem, because most people who seek out the Gilded Rose Kata do so _because_ it's a refactoring exercise.
 But on Exercism, students may be tempted to take a shortcut that bypasses refactoring.
 
-This version's more complex requirements are designed to discourage skipping the refactor, which now would mean adding code _throughout_ the `GildedRose#update!` method until it's twice its starting length.
+This version's more complex requirements are designed to discourage skipping the refactor, which now would mean adding code _throughout_ the "update" method until it's twice its starting length.
 The painfulness of such an attempt will hopefully nudge the student to see that it is indeed a good idea to refactor first.
 Or in the words of Kent Beck, _"Make the change easy (warning: this may be hard), then make the easy change."_
