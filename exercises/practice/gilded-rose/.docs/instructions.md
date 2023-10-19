@@ -1,8 +1,11 @@
 # Instructions
 
-Welcome to the engineering team at the Gilded Rose! As you know, we're an inn that buys and sells only the finest goods. Our goods are constantly degrading in quality as they approach their sell-by date, so we have an inventory system that keeps track of these data.
+Welcome to the engineering team at the Gilded Rose!
+As you know, we're an inn that buys and sells only the finest goods.
+Our goods are constantly degrading in quality as they approach their sell-by date, so we have an inventory system that keeps track of these data.
 
-We need you to add a new feature to our system so that we can begin selling a new category of items. However, the code is a mess, and it will be difficult to add the new feature unless you first refactor the existing code.
+We need you to add a new feature to our system so that we can begin selling a new category of items.
+However, the code is a mess, and it will be difficult to add the new feature unless you first refactor the existing code.
 
 So your task is twofold: refactor the inventory system, then add the new feature.
 
@@ -31,7 +34,8 @@ Feel free to make any changes to the `GildedRose#update!` method and add any new
 
 ## 2. Add the new feature
 
-We have recently signed a supplier of **_Conjured_** items. Your job is to add the following rules to our system:
+We have recently signed a supplier of **_Conjured_** items.
+Your job is to add the following rules to our system:
 
 - **_Conjured_** items degrade in quality twice as fast as they would otherwise. However, special rules apply for conjured items that are not normal items:
   - **_Conjured Aged Brie_** and **_Conjured Sulfuras_** behave as their non-conjured counterparts, except that once their sell-by date has arrived, their quality degrades at the rate of a conjured normal item. (Which means, of course, a conjured Sulfuras has a sell-by date.)
