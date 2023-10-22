@@ -56,6 +56,12 @@ class BoutiqueInventoryTest < Minitest::Test
     assert_empty BoutiqueInventory.new([]).out_of_stock
   end
 
+  def test_stock_for_item_not_existing
+    shoes = { price: 30.00, name: "Shoes", quantity_by_size: {} }
+    items = [shoes]
+    refute(BoutiqueInventory.new(items).stock_for_item("Coat"))
+  end
+
   def test_out_of_stock_for_all_items
     shoes = { price: 30.00, name: "Shoes", quantity_by_size: {} }
     coat = { price: 65.00, name: "Coat", quantity_by_size: {} }
