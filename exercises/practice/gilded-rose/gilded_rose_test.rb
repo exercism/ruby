@@ -244,6 +244,6 @@ class GildedRoseTest < Minitest::Test
     assert_equal 9, normal_item.quality
     assert_equal 0, normal_item.sell_in
     assert_equal 12, aged_brie.quality
-    assert_equal -2, aged_brie.sell_in
+    assert_equal(-2, aged_brie.sell_in)
   end
 end
