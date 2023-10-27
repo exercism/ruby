@@ -2,7 +2,12 @@
   "authors": [
     "fpsvogel"
   ],
-  "contributors": [],
+  "contributors": [
+    "BethanyG",
+    "ErikSchierboom",
+    "IsaacG",
+    "vaeng"
+  ],
   "files": {
     "solution": [
       "gilded_rose.rb"
