@@ -128,7 +128,7 @@
         "prerequisites": [
           "symbols"
         ]
-      },      
+      },
       {
         "slug": "bird-count",
         "name": "Bird Count",
@@ -1594,6 +1594,20 @@
           "conditionals"
         ],
         "difficulty": 3
+      },
+      {
+        "slug": "gilded-rose",
+        "name": "Gilded Rose",
+        "uuid": "19f65173-5c79-4a6a-b9e1-352ec438a3c4",
+        "practices": [
+
+        ],
+        "prerequisites": [
+          "strings",
+          "conditionals",
+          "enumeration"
+        ],
+        "difficulty": 8
       }
     ]
   },
@@ -1672,7 +1686,7 @@
       "uuid": "ec83aa13-0861-46d4-a126-2ebf6b8705d3",
       "slug": "ranges",
       "name": "Ranges"
-    },    
+    },
     {
       "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
       "slug": "enumeration",

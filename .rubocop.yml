@@ -14,6 +14,7 @@ AllCops:
     - "vendor/**/*"
     - "lib/**/*"
     - "test/**/*"
+    - "exercises/practice/gilded-rose/gilded_rose.rb" # This starting code is intended to be a mess.
 
 Bundler/OrderedGems:
   Enabled: false
