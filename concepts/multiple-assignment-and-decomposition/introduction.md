@@ -17,9 +17,9 @@ This is often used in multiple assignment to group all "remaining" elements that
 It is common in Ruby to use this decomposing/composing behavior when using or defining methods that take an arbitrary number of positional or keyword arguments.
 You will often see these arguments defined as `def some_method(*args, **kwargs)` and the arguments used as `some_method(*some_array, **some_hash)`.
 
-```exercism/caution
+~~~~exercism/caution
 `*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
 While `*` and `**` are used for multiplication and exponentiation, respectively, `*<variable_name>` and `**<variable_name>` are used as composition and decomposition operators.
-```
+~~~~
 
 [multiple assignment]: https://docs.ruby-lang.org/en/3.1/syntax/assignment_rdoc.html#label-Multiple+Assignment

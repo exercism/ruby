@@ -4,10 +4,10 @@ Your friend Linus is a Locomotive Engineer who drives cargo trains between citie
 Although they are amazing at handling trains, they are not amazing at handling logistics or computers.
 They would like to enlist your programming help organizing train details and correcting mistakes in route data.
 
-```exercism/note
+~~~~exercism/note
 This exercise could easily be solved using slicing, indexing, and various `hash` methods.
 However, we would like you to practice packing, unpacking, and multiple assignment in solving each of the tasks below.
-```
+~~~~
 
 ## 1. Create a list of all wagons
 
@@ -74,9 +74,9 @@ The first **hash** contains the origin and destination cities the train route ru
 The second **hash** contains other routing details such as train speed, length, or temperature.
 The method should return a consolidated **hash** with all routing information.
 
-```exercism/note
+~~~~exercism/note
 The second **hash** can contain different/more properties than the ones shown in the example.
-```
+~~~~
 
 ```ruby
 LocomotiveEngineer.extend_route_information({"from": "Berlin", "to": "Hamburg"}, {"length": "100", "speed": "50"})

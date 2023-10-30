@@ -1,7 +1,7 @@
 # Ranges
 
-[Ranges][ranges] represent an interval between two values.
-The most common types that support ranges are `Int` and `String`.
+[Ranges][range] represent an interval between two values.
+The most common types that support ranges are `Integer` and `String`.
 They can be used for many things like quickly creating a collection, slicing strings, checking if a value is in a range, and iteration.
 They are created using the range operator `..` or `...` (inclusive and exclusive, respectively).
 
@@ -21,7 +21,7 @@ Ranges can also be created using the `Range` initializer.
 Range.new(1, 5) # A range containing 1, 2, 3, 4, 5
 ```
 
-````exercism/note
+~~~~exercism/note
 When creating a range in Ruby using the range operators `..` or `...`, and wanting to call a method on the range, you need to wrap the range in parentheses.
 This is because the otherwise will the method be called on the 2nd argument of the range operator.
 
@@ -29,7 +29,7 @@ This is because the otherwise will the method be called on the 2nd argument of t
 (1..5).sum # => 15
 1..5.sum # => Error: undefined method `sum' for 5:Integer (NoMethodError)
 ```
-````
+~~~~
 
 ## Getting substrings
 
@@ -45,7 +45,7 @@ You can also use negative indexes to get the substring from the end of the strin
 
 ```ruby
 "Hello World"[-5..-1] # => "World"
-"Hello World"[6..-4] # => "Wor"
+"Hello World"[6..-4] # => "Wo"
 ```
 
 ## Range methods
@@ -72,9 +72,9 @@ Using beginless and endless ranges is useful when you want to, for example, slic
 "Hello World"[..5] # => "Hello"
 ```
 
-```exercism/caution
+~~~~exercism/caution
 If not used on a collection, the endless range can cause an endless sequence, if not used with caution.
-```
+~~~~
 
 ## String ranges
 

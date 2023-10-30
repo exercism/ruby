@@ -1606,6 +1606,20 @@
           "conditionals"
         ],
         "difficulty": 3
+      },
+      {
+        "slug": "gilded-rose",
+        "name": "Gilded Rose",
+        "uuid": "19f65173-5c79-4a6a-b9e1-352ec438a3c4",
+        "practices": [
+
+        ],
+        "prerequisites": [
+          "strings",
+          "conditionals",
+          "enumeration"
+        ],
+        "difficulty": 8
       }
     ]
   },

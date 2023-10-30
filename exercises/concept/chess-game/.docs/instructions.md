@@ -16,13 +16,13 @@ The ranks are the rows of the board, and are numbered from 1 to 8.
 The game will also have to store the files of the board.
 The files are the columns of the board and are identified by the letters A to H.
 
-Define the `Chess::Ranks` and `Chess::Files` constants that store the range of ranks and files respectively.
+Define the `Chess::RANKS` and `Chess::FILES` constants that store the range of ranks and files respectively.
 
 ```ruby
-Chess::Ranks
+Chess::RANKS
 # => 1..8
 
-Chess::Files
+Chess::FILES
 # => 'A'..'H'
 ```
 
@@ -31,7 +31,7 @@ Chess::Files
 The game will have to check if a square is valid.
 A square is valid if the rank and file are within the ranges of the ranks and files.
 
-Define the `Chess.valid_square?` method that takes the arguments `rank` that holds an int of the rank and `file` that holds a char of the file.
+Define the `Chess.valid_square?` method that takes the arguments `rank` that holds an integer of the rank and `file` that holds a char of the file.
 The method should return `true` if the rank and file are within the ranges of the ranks and files and return `false` otherwise.
 
 ```ruby
