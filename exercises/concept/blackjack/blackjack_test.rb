@@ -70,7 +70,6 @@ class BlackjackTest < Minitest::Test
     assert_equal "low", Blackjack.card_range("four", "seven")
   end
 
-
   def test_lower_mid_range
     assert_equal "mid", Blackjack.card_range("seven", "five")
   end
