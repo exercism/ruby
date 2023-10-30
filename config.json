@@ -1603,7 +1603,9 @@
 
         ],
         "prerequisites": [
-
+          "strings",
+          "conditionals",
+          "enumeration"
         ],
         "difficulty": 8
       }
