@@ -128,7 +128,19 @@
         "prerequisites": [
           "symbols"
         ]
-      },      
+      },
+      {
+        "slug": "blackjack",
+        "name": "BlackJack",
+        "uuid": "414ee9b2-c62d-41d5-aa1e-c5d82fb8562c",
+        "concepts": [
+          "case"
+        ],
+        "prerequisites": [
+          "ranges",
+          "modules"
+        ]
+      }, 
       {
         "slug": "bird-count",
         "name": "Bird Count",
@@ -1672,7 +1684,7 @@
       "uuid": "ec83aa13-0861-46d4-a126-2ebf6b8705d3",
       "slug": "ranges",
       "name": "Ranges"
-    },    
+    },
     {
       "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
       "slug": "enumeration",
@@ -1687,6 +1699,11 @@
       "uuid": "b12c64cc-cbfc-48c1-b3e2-a58079fe2b7e",
       "slug": "modules",
       "name": "Modules"
+    },
+    {
+      "uuid": "bcea6b47-4db8-4cce-b341-c2f97182687b",
+      "slug": "case",
+      "name": "Case"
     },
     {
       "uuid": "ad546bc1-7583-482d-9159-44e08c50c7b8",
