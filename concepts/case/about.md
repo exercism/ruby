@@ -10,10 +10,11 @@ After the `when` keyword is the code that should be executed if the case express
 Case allows for an optional `else` statement which is executed if no other case matches.
 
 The case expression is evaluated and then compared to each `when` expression.
-The expression is compared using the case subsumption operator (`===`).
+The expression is compared using the case equality operator (`===`).
 
 ```ruby
-case 1
+value = 1
+case value
 when 1
   "One"
 when 2
@@ -21,22 +22,21 @@ when 2
 else
   "Other"
 end
-# => "One"
 
 # This is the same as:
-tmp = 1
-if 1 === tmp
+value = 1
+if 1 === value
   "One"
-elsif 1 === tmp
+elsif 2 === value
   "Two"
 else
   "Other"
 end
 ```
 
-## Case subsumption operator (`===`)
+## Case equality operator (`===`)
 
-The case subsumption operator (`===`) is a bit different from the equality operator (`==`).
+The case equality operator (`===`) is a bit different from the equality operator (`==`).
 The operator checks if the right side is a member of the set described by the left side.
 This means that it does matter where each operand is placed.
 How this works depends on the type of the left side, for example a `Range` would check if the right side is in the range or a `Object` would check if the right side is an instance of the `Object`.
