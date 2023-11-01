@@ -2,7 +2,7 @@
   "authors": [
     "meatball133"
   ],
-  "contributors": [],
+  "contributors": ["kotp"],
   "files": {
     "solution": [
       "blackjack.rb"

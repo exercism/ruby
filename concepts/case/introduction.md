@@ -1,7 +1,7 @@
 # Case
 
 [Case][case] (often referred to as switch in other languages) is a form of control expression like if-else.
-Case allows for chaining of multiple if-else-if statements and can be more readable and also allows for powerful constructs.
+Case allows for chaining of multiple if-else-if statements and can be more readable while still providing flow control.
 
 A case is defined by the keyword `case` followed by an optional expression.
 Then for each case, the keyword `when` is used followed by an expression which is compared to the case expression.
