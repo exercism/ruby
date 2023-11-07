@@ -1,5 +1,5 @@
 {
-  "blurb": "Ruby has several constructs to conditionally execute code: if statements, unless statements and case statements.",
-  "authors": ["dvik1950"],
+  "blurb": "Ruby has conditionals to control the flow of your program. You can use if, unless to control the flow of your program.",
+  "authors": ["dvik1950", "meatball133"],
   "contributors": ["kotp", "iHiD"]
 }
