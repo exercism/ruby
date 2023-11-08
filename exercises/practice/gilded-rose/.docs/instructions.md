@@ -32,6 +32,9 @@ To pave the way for the new feature, refactor the existing code and make it easi
 
 Feel free to make any changes and add any new code as long as everything still works correctly (i.e., as long as the tests for existing features still pass).
 
+Note: you can assume that items always _start_ with a valid quality.
+In other words, the automated tests don't check what happens when an item has an initial quality above the maximum, or when a **_Sulfuras_** has an initial quality other than 80.
+
 ## 2. Add the new feature
 
 We have recently signed a supplier of **_Conjured_** items.
