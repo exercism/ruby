@@ -18,7 +18,7 @@ These classes have methods that will coerce values from one to the other. `Integ
 
 ## Conditionals
 
-Ruby has what is known as control expressions, these are used to control the way the program will run and they take a truthy or falsey value.
+Ruby has what is known as flow control expressions, these are used to control the way the program will run and they take a truthy or falsey value.
 There are operators that can be used to create truthy or falsey values, these are known as [comparison operators][comparison-operators].
 
 There are two main control expressions that are used to control which code will run and which will not.
@@ -52,7 +52,7 @@ Here is a list of the equal and not equal operators and an example of when they 
 
 ## If statement
 
-The [`if`][if] statement is used to check if a given condition is truthy or falsey.
+The [`if`][if] statement is used to check if a given condition is "truthy" or "falsey".
 If the condition is truthy then the code inside the if statement will run.
 An `if` statement ends with the `end` keyword.
 
@@ -102,8 +102,6 @@ end
 
 unless value < 2
   "1 is not greater than 2"
-else
-  "1 is greater than 2"
 end
 # => "1 is greater than 2"
 ```
