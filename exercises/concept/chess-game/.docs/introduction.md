@@ -23,7 +23,7 @@ Range.new(1, 5) # A range containing 1, 2, 3, 4, 5
 
 ~~~~exercism/note
 When creating a range in Ruby using the range operators `..` or `...`, and wanting to call a method on the range, you need to wrap the range in parentheses.
-This is because the otherwise will the method be called on the 2nd argument of the range operator.
+This is because, otherwise, the method will be called on the 2nd argument of the range operator.
 
 ```ruby
 (1..5).sum # => 15
