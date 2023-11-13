@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "meatball133"
+  ],
+  "contributors": ["kotp"],
+  "files": {
+    "solution": [
+      "blackjack.rb"
+    ],
+    "test": [
+      "blackjack_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "forked_from": ["go/blackjack", "crystal/blackjack"],
+  "blurb": "Learn about cases while simulating blackjack",
+  "icon": "blackjack"
+}
