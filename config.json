@@ -897,15 +897,10 @@
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "4134d491-8ec5-480b-aa61-37a02689db1f",
-        "practices": [
-          "enumeration"
-        ],
-        "prerequisites": [
-          "strings",
-          "arrays",
-          "enumeration"
-        ],
-        "difficulty": 3
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "deprecated"
       },
       {
         "slug": "allergies",
