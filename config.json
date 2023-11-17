@@ -905,7 +905,8 @@
           "arrays",
           "enumeration"
         ],
-        "difficulty": 3
+        "difficulty": 3,
+        "status": "deprecated"
       },
       {
         "slug": "allergies",
