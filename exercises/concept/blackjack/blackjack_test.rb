@@ -131,7 +131,7 @@ class BlackjackTest < Minitest::Test
   end
 
   def test_first_turn_blackjack_with_nine_for_dealer
-    assert_equal "W", Blackjack.first_turn("ace", "king", "none")
+    assert_equal "W", Blackjack.first_turn("ace", "king", "nine")
   end
 
   def test_first_turn_score_of_20
