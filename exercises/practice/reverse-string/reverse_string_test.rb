@@ -32,5 +32,3 @@ class ReverseStringTest < Minitest::Test
     assert_equal "reward", ReverseString.reverse("drawer")
   end
 end
-
-
