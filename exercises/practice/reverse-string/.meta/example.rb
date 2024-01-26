@@ -1,4 +1,4 @@
-module ReverseString
+module Reverser
   def self.reverse(input)
     input.reverse
   end

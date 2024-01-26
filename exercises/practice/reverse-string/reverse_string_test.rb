@@ -1,34 +1,34 @@
 require 'minitest/autorun'
-require_relative 'reverse_string'
+require_relative 'reverser'
 
-class ReverseStringTest < Minitest::Test
+class ReverserTest < Minitest::Test
   def test_an_empty_string
     # skip
-    assert_equal "", ReverseString.reverse("")
+    assert_equal "", Reverser.reverse("")
   end
 
   def test_a_word
     skip
-    assert_equal "tobor", ReverseString.reverse("robot")
+    assert_equal "tobor", Reverser.reverse("robot")
   end
 
   def test_a_capitalized_word
     skip
-    assert_equal "nemaR", ReverseString.reverse("Ramen")
+    assert_equal "nemaR", Reverser.reverse("Ramen")
   end
 
   def test_a_sentence_with_punctuation
     skip
-    assert_equal "!yrgnuh m'I", ReverseString.reverse("I'm hungry!")
+    assert_equal "!yrgnuh m'I", Reverser.reverse("I'm hungry!")
   end
 
   def test_a_palindrome
     skip
-    assert_equal "racecar", ReverseString.reverse("racecar")
+    assert_equal "racecar", Reverser.reverse("racecar")
   end
 
   def test_an_even_sized_word
     skip
-    assert_equal "reward", ReverseString.reverse("drawer")
+    assert_equal "reward", Reverser.reverse("drawer")
   end
 end

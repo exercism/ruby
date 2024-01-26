@@ -4,13 +4,13 @@
   ],
   "files": {
     "solution": [
-      "reverse_string.rb"
+      "reverser.rb"
     ],
     "test": [
       "reverse_string_test.rb"
     ],
     "example": [
-      ".meta/solutions/reverse_string.rb"
+      ".meta/example.rb"
     ]
   },
   "blurb": "Reverse a given string.",
