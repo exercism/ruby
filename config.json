@@ -41,9 +41,7 @@
         "concepts": [
           "basics"
         ],
-        "prerequisites": [
-
-        ]
+        "prerequisites": []
       },
       {
         "slug": "amusement-park",
@@ -219,12 +217,8 @@
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "4fe19484-4414-471b-a106-73c776c61388",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 1
       },
       {
@@ -318,9 +312,7 @@
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "e9d29769-8d4d-4159-8d6f-762db5339707",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "numbers"
@@ -377,9 +369,7 @@
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "d934ebce-9ac3-4a41-bcb8-d70480170438",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers",
           "strings"
@@ -442,9 +432,7 @@
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "0fb594a1-193b-4ccf-8de2-eb6a81708b29",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers"
         ],
@@ -589,9 +577,7 @@
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "77c5c7e6-265a-4f1a-9bc4-851f8f825420",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers",
           "booleans"
@@ -614,9 +600,7 @@
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "b68665d5-14ef-4351-ac4a-c28a80c27b3d",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings"
         ],
@@ -626,9 +610,7 @@
         "slug": "grains",
         "name": "Grains",
         "uuid": "22519f53-4516-43bc-915e-07d58e48f617",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "conditionals",
           "loops",
@@ -696,9 +678,7 @@
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "43aad536-0e24-464c-9554-cbc2699d0543",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers"
         ],
@@ -765,14 +745,10 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "2c71fc3a-2c93-402b-b091-697b795ce3ba",
-        "status": "deprecated",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
-        "difficulty": 1
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "status": "deprecated"
       },
       {
         "slug": "bob",
@@ -791,22 +767,16 @@
         "slug": "strain",
         "name": "Strain",
         "uuid": "ac0966a9-822b-45be-91d9-36f6706ea76f",
-        "status": "deprecated",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
-        "difficulty": 2
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "deprecated"
       },
       {
         "slug": "nth-prime",
         "name": "Nth Prime",
         "uuid": "16baef71-6234-4928-a2d4-a19eb8e110b8",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers",
           "exceptions"
@@ -830,9 +800,7 @@
         "slug": "alphametics",
         "name": "Alphametics",
         "uuid": "2323a2a5-c181-4c1e-9c5f-f6b92b2de511",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings"
         ],
@@ -869,9 +837,7 @@
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "26f6e297-7980-4472-8ce7-157b62b0ff40",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "booleans"
@@ -906,9 +872,7 @@
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "7a67a62f-9331-4776-a5b5-aaba7ad1e1e6",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "arrays",
           "booleans"
@@ -919,9 +883,7 @@
         "slug": "rail-fence-cipher",
         "name": "Rail Fence Cipher",
         "uuid": "64196fe5-2270-4113-a614-fbfbb6d00f2b",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers",
           "strings"
@@ -1021,9 +983,7 @@
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "c1ebad1b-d5aa-465a-b5ef-9e717ab5db9e",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "arrays"
@@ -1047,9 +1007,7 @@
         "slug": "crypto-square",
         "name": "Crypto Square",
         "uuid": "86f8e33d-31b7-43e3-8ea3-2e391133704a",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings"
         ],
@@ -1071,9 +1029,7 @@
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "76a0fd0a-cc65-4be3-acc8-7348bb67ad5a",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings"
         ],
@@ -1098,9 +1054,7 @@
         "slug": "dominoes",
         "name": "Dominoes",
         "uuid": "705f3eb6-55a9-476c-b3f2-e9f3cb0bbe37",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers",
           "booleans"
@@ -1111,9 +1065,7 @@
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "efc0e498-891a-4e91-a6aa-fae635573a83",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings"
         ],
@@ -1178,9 +1130,7 @@
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "4460742c-2beb-48d7-94e6-72ff13c68c71",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "numbers"
@@ -1233,9 +1183,7 @@
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "04bde625-e363-4d8b-880f-db7bf86286eb",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings"
         ],
@@ -1245,9 +1193,7 @@
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "7cb55328-1b11-4544-94c0-945444d9a6a4",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "loops",
@@ -1272,9 +1218,7 @@
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "4f74b3cd-f995-4b8c-9b57-23f073261d0e",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "arrays",
           "numbers",
@@ -1299,9 +1243,7 @@
         "slug": "linked-list",
         "name": "Linked List",
         "uuid": "92c9aafc-791d-4aaf-a136-9bee14f6ff95",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers"
         ],
@@ -1311,9 +1253,7 @@
         "slug": "poker",
         "name": "Poker",
         "uuid": "9a59ba44-34f5-410b-a1e6-9a5c47c52d9e",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "conditionals"
@@ -1337,9 +1277,7 @@
         "slug": "complex-numbers",
         "name": "Complex Numbers",
         "uuid": "d75bd7c0-52c5-44f2-a046-f63cb332425f",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers"
         ],
@@ -1349,12 +1287,8 @@
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "8120e133-9561-4f82-8081-10c19f7f6ba3",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 3
       },
       {
@@ -1417,9 +1351,7 @@
         "slug": "zipper",
         "name": "Zipper",
         "uuid": "239b8e79-2983-4ce0-9dda-9bb999e79d11",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers"
         ],
@@ -1458,9 +1390,7 @@
         "slug": "pascals-triangle",
         "name": "Pascal's Triangle",
         "uuid": "4ff8b056-f27d-4bdf-b7af-214448db4260",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "loops",
           "numbers"
@@ -1471,14 +1401,20 @@
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "2ce9b158-e730-4c86-8639-bd08af9f80f4",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "booleans",
           "conditionals",
           "exceptions"
         ],
+        "difficulty": 5
+      },
+      {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "9839d8ec-05fc-4dcf-80e2-dd3e414def69",
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 5
       },
       {
@@ -1501,9 +1437,7 @@
         "slug": "connect",
         "name": "Connect",
         "uuid": "538a6768-bae5-437c-9cdf-765d73a79643",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "arrays",
@@ -1515,12 +1449,8 @@
         "slug": "binary",
         "name": "Binary",
         "uuid": "43bc27ed-d2fa-4173-8665-4459b71c9a3a",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 1,
         "status": "deprecated"
       },
@@ -1528,12 +1458,8 @@
         "slug": "hexadecimal",
         "name": "Hexadecimal",
         "uuid": "6984cc14-91f8-47a7-b7e2-4b210a5dbc5c",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 1,
         "status": "deprecated"
       },
@@ -1541,12 +1467,8 @@
         "slug": "octal",
         "name": "Octal",
         "uuid": "cae4e000-3aac-41f7-b727-f9cce12d058d",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 1,
         "status": "deprecated"
       },
@@ -1554,12 +1476,8 @@
         "slug": "point-mutations",
         "name": "Point Mutations",
         "uuid": "89bd3d71-000f-4cd9-9a84-ad1b22ddbd33",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 1,
         "status": "deprecated"
       },
@@ -1567,12 +1485,8 @@
         "slug": "trinary",
         "name": "Trinary",
         "uuid": "f6735416-4be6-4eb8-b6b9-cb61671ce25e",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 1,
         "status": "deprecated"
       },
@@ -1580,12 +1494,8 @@
         "slug": "microwave",
         "name": "Microwave",
         "uuid": "34e715a6-4d22-4b74-a26a-409283ac419c",
-        "practices": [
-
-        ],
-        "prerequisites": [
-
-        ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 2
       },
       {
@@ -1606,9 +1516,7 @@
         "slug": "gilded-rose",
         "name": "Gilded Rose",
         "uuid": "19f65173-5c79-4a6a-b9e1-352ec438a3c4",
-        "practices": [
-
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "conditionals",
@@ -1727,44 +1635,44 @@
   ],
   "key_features": [
     {
-      "icon": "fun",
       "title": "Developer happiness",
-      "content": "Ruby puts developer-happiness first. It has an elegant syntax that is natural to read and write."
+      "content": "Ruby puts developer-happiness first. It has an elegant syntax that is natural to read and write.",
+      "icon": "fun"
     },
     {
-      "icon": "extensible",
       "title": "Metaprogramming magic",
-      "content": "Ruby code can write and invoke Ruby code."
+      "content": "Ruby code can write and invoke Ruby code.",
+      "icon": "extensible"
     },
     {
-      "icon": "garbage-collected",
       "title": "Garbage Collection",
-      "content": "Garbage collection done via mark and sweep, stays out of your way."
+      "content": "Garbage collection done via mark and sweep, stays out of your way.",
+      "icon": "garbage-collected"
     },
     {
-      "icon": "powerful",
       "title": "Large standard library",
-      "content": "Ruby's standard library provides a wealth of classes utilities for common tasks."
+      "content": "Ruby's standard library provides a wealth of classes utilities for common tasks.",
+      "icon": "powerful"
     },
     {
-      "icon": "tooling",
       "title": "Flexible package manager",
-      "content": "Packages (gems) can be centrally managed, but can also include custom or private gem stores."
+      "content": "Packages (gems) can be centrally managed, but can also include custom or private gem stores.",
+      "icon": "tooling"
     },
     {
-      "icon": "dynamically-typed",
       "title": "Strong, dynamic typing",
-      "content": "Ruby is strong and dynamically typed and supports 'Duck Typing'. Everything in Ruby is an object"
+      "content": "Ruby is strong and dynamically typed and supports 'Duck Typing'. Everything in Ruby is an object",
+      "icon": "dynamically-typed"
     }
   ],
   "tags": [
+    "execution_mode/interpreted",
     "paradigm/functional",
     "paradigm/object_oriented",
     "platform/linux",
-    "platform/windows",
     "platform/mac",
+    "platform/windows",
     "runtime/language_specific",
-    "execution_mode/interpreted",
     "typing/dynamic",
     "typing/strong",
     "used_for/backends",
