@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "mr-sigma"
+  ],
   "files": {
     "solution": [
       "yacht.rb"
@@ -8,7 +10,7 @@
       "yacht_test.rb"
     ],
     "example": [
-      ".meta/solutions/yacht.rb"
+      ".meta/example.rb"
     ]
   },
   "blurb": "Score a single throw of dice in the game Yacht.",
