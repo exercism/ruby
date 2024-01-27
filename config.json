@@ -1482,6 +1482,14 @@
         "difficulty": 5
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "9839d8ec-05fc-4dcf-80e2-dd3e414def69",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "0ec96460-08be-49a0-973a-4336f21b763c",
