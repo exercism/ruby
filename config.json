@@ -1531,6 +1531,14 @@
           "enumeration"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "24f396d0-1fdf-4489-8976-8a3fb9a64adf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
