@@ -285,6 +285,14 @@
         "difficulty": 2
       },
       {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "24f396d0-1fdf-4489-8976-8a3fb9a64adf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "3de21c18-a533-4150-8a73-49df8fcb8c61",
