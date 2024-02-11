@@ -87,7 +87,7 @@ class DndCharacterTest < Minitest::Test
 
       attributes.each do |attribute|
         assert_includes allowed_range, character.send(attribute),
-          informative_message % [attribute, allowed_range] # rubocop:disable Style/FormatString
+          informative_message % [attribute, allowed_range]
       end
 
       informative_message = %q(The character's %s must be %s)
