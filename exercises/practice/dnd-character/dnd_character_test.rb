@@ -93,7 +93,7 @@ class DndCharacterTest < Minitest::Test
       informative_message = %q(The character's %s must be %s)
 
       assert_equal expected_hitpoints, character.hitpoints,
-        informative_message % ['hitpoints', expected_hitpoints] # rubocop:disable Style/FormatString
+        informative_message % ['hitpoints', expected_hitpoints]
     end
   end
 
