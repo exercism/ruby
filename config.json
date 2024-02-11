@@ -1539,6 +1539,14 @@
           "enumeration"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "44f6c85e-a99c-4bf1-9269-67d9f25e93df",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
