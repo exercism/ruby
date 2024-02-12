@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "mr-sigma"
+  ],
   "files": {
     "solution": [
       "spiral_matrix.rb"
