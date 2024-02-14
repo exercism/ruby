@@ -562,6 +562,14 @@
         "difficulty": 5
       },
       {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "44f6c85e-a99c-4bf1-9269-67d9f25e93df",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "uuid": "4fc25295-5d6a-4d13-9b87-064167d8980e",

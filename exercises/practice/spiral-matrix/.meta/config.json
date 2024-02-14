@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "mr-sigma"
+  ],
+  "files": {
+    "solution": [
+      "spiral_matrix.rb"
+    ],
+    "test": [
+      "spiral_matrix_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "blurb": "Given the size, return a square matrix of numbers in spiral order.",
+  "source": "Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension.",
+  "source_url": "https://web.archive.org/web/20230607064729/https://old.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/"
+}
