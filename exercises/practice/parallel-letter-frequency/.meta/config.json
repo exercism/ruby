@@ -1,0 +1,15 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [
+      "parallel_letter_frequency.rb"
+    ],
+    "test": [
+      "parallel_letter_frequency_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "blurb": "Count the frequency of letters in texts using parallel computation."
+}

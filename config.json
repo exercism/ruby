@@ -1547,6 +1547,14 @@
           "enumeration"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "parallel-letter-frequency",
+        "name": "Parallel Letter Frequency",
+        "uuid": "527fdec4-a24e-491d-8f2d-7496054b6e88",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
