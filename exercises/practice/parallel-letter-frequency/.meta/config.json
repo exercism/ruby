@@ -1,5 +1,8 @@
 {
-  "authors": [],
+  "authors": [
+    "mr-sigma",
+    "kotp"
+  ],
   "files": {
     "solution": [
       "parallel_letter_frequency.rb"
