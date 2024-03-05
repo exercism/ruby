@@ -61,7 +61,7 @@ class ParallelLetterFrequencyTest < Minitest::Test
 
   def test_ignore_punctuation
     skip
-    texts = ['!', '?', ';', ',', '.', '-', "'", '"', '/', ':', '{}', '[]', '()']
+    texts = ['!', '?', ';', ',', '.', '-', '—', '’', "'", '"', '/', ':', '{}', '[]', '()']
     expected = {}
     actual = ParallelLetterFrequency.count(texts)
     assert_equal expected, actual
@@ -86,7 +86,7 @@ class ParallelLetterFrequencyTest < Minitest::Test
   def test_combo_lower_upper_punctuation_whitespace
     skip
     ruby_wiki = File.read(File.expand_path('data/ruby_wiki.txt', __dir__))
-    texts = ruby_wiki
+    texts = [ruby_wiki]
     expected = {
       "r" => 34,
       "u" => 20,
