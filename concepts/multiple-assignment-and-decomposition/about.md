@@ -317,7 +317,7 @@ If the method defined does not have any defined parameters for keyword arguments
 `*arguments` and `**keyword_arguments` can also be used in combination with one another:
 
 ```ruby
-def my_method(*arguments, **keywword_arguments)
+def my_method(*arguments, **keyword_arguments)
   p arguments.sum
   for (key, value) in keyword_arguments.to_a
     p key.to_s + " = " + value.to_s

@@ -37,7 +37,7 @@ Linus would be really grateful to you for fixing their mistakes and consolidatin
 
 Implement a method `fix_list_of_wagons()` that takes two **arrays** containing wagon IDs.
 It should reposition the first two items of the first **array** to the end, and insert the values from the second **array** behind (_on the right hand side of_) the locomotive ID (**1**).
-The method should then `return` a **array** with the modifications.
+The method should then `return` an **array** with the modifications.
 
 ```ruby
 LocomotiveEngineer.fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
