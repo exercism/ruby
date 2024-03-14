@@ -1555,6 +1555,14 @@
           "enumeration"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "91b585ce-b476-4c0d-aa2b-c1487a6e466f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
