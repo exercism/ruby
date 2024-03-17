@@ -8,7 +8,10 @@ class KnapsackTest < Minitest::Test
     # skip
     max_weight = 100
     items = []
-    assert_equal 0, Knapsack.new(max_weight).max_value(items),
+    expected = 0
+    actual = Knapsack.new(max_weight).max_value(items)
+
+    assert_equal expected, actual,
       "When there are no items, the resulting value should be 0."
   end
 
@@ -16,7 +19,10 @@ class KnapsackTest < Minitest::Test
     skip
     max_weight = 10
     items = [Item.new(weight: 100, value: 1)]
-    assert_equal 0, Knapsack.new(max_weight).max_value(items),
+    expected = 0
+    actual = Knapsack.new(max_weight).max_value(items)
+
+    assert_equal expected, actual,
       "When there is one item that is too heavy, the resulting value should be 0."
   end
 
@@ -30,7 +36,10 @@ class KnapsackTest < Minitest::Test
       Item.new(weight: 2, value: 5),
       Item.new(weight: 10, value: 21)
     ]
-    assert_equal 21, Knapsack.new(max_weight).max_value(items),
+    expected = 21
+    actual = Knapsack.new(max_weight).max_value(items)
+
+    assert_equal expected, actual,
       "Do not prioritize the most valuable items per weight when that would " \
       "result in a lower total value."
   end
@@ -45,7 +54,10 @@ class KnapsackTest < Minitest::Test
       Item.new(weight: 2, value: 20),
       Item.new(weight: 10, value: 50)
     ]
-    assert_equal 80, Knapsack.new(max_weight).max_value(items),
+    expected = 80
+    actual = Knapsack.new(max_weight).max_value(items)
+
+    assert_equal expected, actual,
       "Do not prioritize the items with the highest value when that would " \
       "result in a lower total value."
   end
@@ -59,7 +71,10 @@ class KnapsackTest < Minitest::Test
       Item.new(weight: 6, value: 30),
       Item.new(weight: 4, value: 50)
     ]
-    assert_equal 90, Knapsack.new(max_weight).max_value(items),
+    expected = 90
+    actual = Knapsack.new(max_weight).max_value(items)
+
+    assert_equal expected, actual,
       "A small example knapsack should result in a value of 90."
   end
 
@@ -76,7 +91,10 @@ class KnapsackTest < Minitest::Test
       Item.new(weight: 2, value: 5),
       Item.new(weight: 2, value: 5)
     ]
-    assert_equal 900, Knapsack.new(max_weight).max_value(items),
+    expected = 900
+    actual = Knapsack.new(max_weight).max_value(items)
+
+    assert_equal expected, actual,
       "A larger example knapsack with 8 items should result in a value of 900."
   end
 
@@ -100,7 +118,10 @@ class KnapsackTest < Minitest::Test
       Item.new(weight: 118, value: 229),
       Item.new(weight: 120, value: 240)
     ]
-    assert_equal 1458, Knapsack.new(max_weight).max_value(items),
+    expected = 1458
+    actual = Knapsack.new(max_weight).max_value(items)
+
+    assert_equal expected, actual,
       "A very large example knapsack with 15 items should result in a value of 1458."
   end
 end
