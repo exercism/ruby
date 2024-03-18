@@ -12,7 +12,7 @@ class KnapsackTest < Minitest::Test
     actual = Knapsack.new(max_weight).max_value(items)
 
     assert_equal expected, actual,
-      "When there are no items, the resulting value should be 0."
+      "When there are no items, the resulting value must be 0."
   end
 
   def test_one_item_too_heavy
@@ -23,7 +23,7 @@ class KnapsackTest < Minitest::Test
     actual = Knapsack.new(max_weight).max_value(items)
 
     assert_equal expected, actual,
-      "When there is one item that is too heavy, the resulting value should be 0."
+      "When there is one item that is too heavy, the resulting value must be 0."
   end
 
   def test_five_items_cannot_be_greedy_by_weight
@@ -75,7 +75,7 @@ class KnapsackTest < Minitest::Test
     actual = Knapsack.new(max_weight).max_value(items)
 
     assert_equal expected, actual,
-      "A small example knapsack should result in a value of 90."
+      "A small example knapsack must result in a value of 90."
   end
 
   def test_eight_items
@@ -95,7 +95,7 @@ class KnapsackTest < Minitest::Test
     actual = Knapsack.new(max_weight).max_value(items)
 
     assert_equal expected, actual,
-      "A larger example knapsack with 8 items should result in a value of 900."
+      "A larger example knapsack with 8 items must result in a value of 900."
   end
 
   def test_fifteen_items
@@ -122,6 +122,6 @@ class KnapsackTest < Minitest::Test
     actual = Knapsack.new(max_weight).max_value(items)
 
     assert_equal expected, actual,
-      "A very large example knapsack with 15 items should result in a value of 1458."
+      "A very large example knapsack with 15 items must result in a value of 1458."
   end
 end
