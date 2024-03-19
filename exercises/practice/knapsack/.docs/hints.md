@@ -1,22 +1,14 @@
 # Hints
 
-## A starting point: brute-force recursion
+## General
 
-If you're stuck, a good starting point is a brute-force recursive solution.
+- A good starting point is a brute-force recursive solution.
 You can see it sketched out in the first half of the article ["Demystifying the 0-1 knapsack problem: top solutions explained"](demystifying-the-knapsack-problem).
-
-## Dynamic programming: what is it?
-
-For a more efficient solution, you can improve your recursive solution using *dynamic programming*, which is introduced in the second half of [the above-mentioned article](demystifying-the-knapsack-problem).
-
+- For a more efficient solution, you can improve your recursive solution using *dynamic programming*, which is introduced in the second half of [the above-mentioned article](demystifying-the-knapsack-problem).
 For a more general explainer, see the video ["5 Simple Steps for Solving Dynamic Programming Problems"](solving-dynamic-programming-problems)
-
-## Dynamic programming and the knapsack problem
-
-If you need a more visual walkthrough of how to apply dynamic programming to the knapsack problem, see the video ["0/1 Knapsack problem | Dynamic Programming"](0-1-knapsack-problem).
-
+- If you need a more visual walkthrough of how to apply dynamic programming to the knapsack problem, see the video ["0/1 Knapsack problem | Dynamic Programming"](0-1-knapsack-problem).
 Also worth mentioning is [this answer](intuition-of-dp-for-knapsack-problem) to a question on Reddit, *"What is the intuition behind Knapsack problem solution using dynamic programming?"*.
-Here is the answer in full:
+Below is the answer in full.
 
 > The intuition behind the solution is basically like any dynamic programming solution: split the task into many sub-tasks, and save solutions to these sub-tasks for later use.
 >
