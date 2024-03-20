@@ -48,7 +48,7 @@ class BoutiqueInventoryTest < Minitest::Test
     coat = { price: 65.00, name: "Coat", quantity_by_size: { m: 1, l: 2 } }
     handkerchief = { price: 19.99, name: "Handkerchief", quantity_by_size: { s: 3, m: 2 } }
     items = [shoes, coat, handkerchief]
-    assert_equal Array, BoutiqueInventory.new(items).items.class
-    assert_equal OpenStruct, BoutiqueInventory.new(items).items.first.class
+    assert_instance_of Array, BoutiqueInventory.new(items).items
+    assert_instance_of OpenStruct, BoutiqueInventory.new(items).items.first
   end
 end

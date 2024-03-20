@@ -4,7 +4,7 @@ require_relative 'attendee'
 class AttendeeTest < Minitest::Test
   def test_new_instance
     height = 100
-    assert_equal Attendee, Attendee.new(height).class
+    assert_instance_of Attendee, Attendee.new(height)
   end
 
   def test_new_instance_height
