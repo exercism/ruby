@@ -1567,6 +1567,17 @@
           "enumeration"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "0c585fee-0afc-44c3-b5bf-7f29ed6f5b42",
+        "practices": [],
+        "prerequisites": [
+          "arrays",
+          "advanced-enumeration"
+        ],
+        "difficulty": 7
       }
     ]
   },

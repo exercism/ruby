@@ -1,0 +1,17 @@
+{
+  "authors": ["fpsvogel"],
+  "files": {
+    "solution": [
+      "zebra_puzzle.rb"
+    ],
+    "test": [
+      "zebra_puzzle_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "blurb": "Solve the zebra puzzle.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"
+}
