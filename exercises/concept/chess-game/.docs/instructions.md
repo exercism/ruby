@@ -59,7 +59,7 @@ The game will have to create a message for a move to say which player moved to w
 The message should use the player's nickname and the square they moved to.
 The game also has to determine if the move is valid by checking if the file and rank of the square are within the ranges of the files and ranks.
 
-If the move is valid, the message should be: `"{nickname} moved to {square}}"`
+If the move is valid, the message should be: `"{nickname} moved to {square}"`
 If the move is invalid, the message should be: `"{nickname} attempted to move to {square}, but that is not a valid square"`
 
 Define the `Chess.move_message` method that takes the arguments `first_name` that holds a string of the player's first_name, `last_name` that holds a string of the player's last_name, and `square` that holds a string of the square the player moved to.
