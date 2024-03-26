@@ -1,25 +1,22 @@
-# This solution uses dynamic programming to memoize solutions to overlapping
-# subproblems, so that they don't need to be recomputed. It's essentially a
-# recursive solution that remembers best-so-far outputs of previous inputs. The
-# algorithm has a time complexity of O(n * W), where n is the number of items
-# and W is the knapsack's maximum weight.
+# This brute-force solution is not as efficient as an approach that uses dynamic
+# programming, such as the former example solution in Ruby:
+# https://github.com/exercism/ruby/blob/8925745e6301a56cadb49f18b91b19778e9e6642/exercises/practice/knapsack/.meta/example.rb
+#
+# But this solution is simpler, and the tests still run in <100 ms, so it would
+# only be unsuitable for huge input sets.
 class Knapsack
+  private attr_reader :max_weight
+
   def initialize(max_weight)
     @max_weight = max_weight
   end
 
   def max_value(items)
-    # e.g. max_values[3] is the maximum value so far for a maximum weight of 3.
-    max_values = Array.new(@max_weight + 1, 0)
+    item_combinations = (1..items.length).flat_map { |n| items.combination(n).to_a }
 
-    items.each do |item|
-      @max_weight.downto(item.weight) do |weight|
-        value_with_item = max_values[weight - item.weight] + item.value
-
-        max_values[weight] = [max_values[weight], value_with_item].max
-      end
-    end
-
-    max_values[@max_weight]
+    item_combinations
+      .reject { _1.sum(&:weight) > max_weight }
+      .map { _1.sum(&:value) }
+      .max || 0
   end
 end
