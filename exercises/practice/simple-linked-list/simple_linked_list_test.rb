@@ -92,7 +92,7 @@ class LinkedListTest < Minitest::Test
     skip
     array = [1, 2, 3]
     list = SimpleLinkedList.new(array)
-    assert_equal Element, list.pop.class
+    assert_instance_of Element, list.pop
   end
 
   def test_list_from_array_still_acts_as_lifo

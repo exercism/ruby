@@ -32,6 +32,3 @@ jobs:
 
       - name: Test exercises
         run: bundle exec rake test
-
-      - name: Get latest SHA
-        run: echo ${{ github.sha }}
