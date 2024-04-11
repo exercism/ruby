@@ -1,6 +1,26 @@
 require 'minitest/autorun'
 require_relative 'knapsack'
 
+if RUBY_VERSION < '3.2.0'
+  class Data
+    def self.define(*attributes)
+      self
+    end
+
+    private
+    attr_writer :weight, :value
+
+    def initialize(weight:, value:)
+      self.weight = weight
+      self.value = value
+    end
+
+    public
+
+    attr_reader :weight, :value
+  end
+end
+
 class KnapsackTest < Minitest::Test
   Item = Data.define(:weight, :value)
 

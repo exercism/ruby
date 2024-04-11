@@ -67,7 +67,7 @@ module Generator
       error = assert_raises NoMethodError do
         subject.unknown
       end
-      expected_message = /undefined method `unknown' for #<Generator::ExerciseCase/
+      expected_message = /undefined method `unknown'/
       assert_match expected_message, error.message
     end
 
