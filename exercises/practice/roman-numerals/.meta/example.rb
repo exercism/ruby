@@ -18,7 +18,7 @@ class Integer
 
   def to_roman
     i = self
-    s = ''
+    s = String.new
     ROMAN_MAPPINGS.each do |arabic, roman|
       while i >= arabic
         s << roman

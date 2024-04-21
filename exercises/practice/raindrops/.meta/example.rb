@@ -13,7 +13,7 @@ class Raindrops
       return number.to_s
     end
 
-    s = ''
+    s = String.new
     s << 'Pling' if pling?
     s << 'Plang' if plang?
     s << 'Plong' if plong?
