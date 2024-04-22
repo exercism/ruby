@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'minitest/autorun'
 require_relative 'log_line_parser'
 

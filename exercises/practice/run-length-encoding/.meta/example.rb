@@ -1,12 +1,12 @@
 class RunLengthEncoding
   def self.encode(str)
-    str.chars.chunk { |char| char }.each_with_object('') do |chunk, out|
+    str.chars.chunk { |char| char }.each_with_object(+'') do |chunk, out|
       out << encoded(chunk)
     end
   end
 
   def self.decode(str)
-    str.scan(/(\d+)?(\D)/).each_with_object('') do |captures, out|
+    str.scan(/(\d+)?(\D)/).each_with_object(+'') do |captures, out|
       out << decoded(captures)
     end
   end
