@@ -46,7 +46,7 @@ pet_names.map { |_, name| name }  #=> ["bob, "caris", "arya"]
 ## Nested Enumerations
 
 You can also enumerate in nested blocks, and daisy chain methods together.
-For example, if we have an array of hashes of animals, and we want extract the animals with short names, we might want to do something like:
+For example, if we have an array of hashes of animals, and we want to extract the animals with short names, we might want to do something like:
 
 ```ruby
 pets = [
