@@ -69,7 +69,7 @@ Using beginless and endless ranges is useful when you want to, for example, slic
 ```ruby
 "Hello World"[0..] # => "Hello World"
 "Hello World"[4..] # => "o World"
-"Hello World"[..5] # => "Hello"
+"Hello World"[..5] # => "Hello "
 ```
 
 ~~~~exercism/caution
