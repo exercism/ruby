@@ -15,7 +15,8 @@ GEM
     rainbow (3.1.1)
     rake (13.2.1)
     regexp_parser (2.9.0)
-    rexml (3.2.6)
+    rexml (3.2.8)
+      strscan (>= 3.0.9)
     rubocop (1.50.2)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -41,6 +42,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
+    strscan (3.1.0)
     unicode-display_width (2.5.0)
 
 PLATFORMS
