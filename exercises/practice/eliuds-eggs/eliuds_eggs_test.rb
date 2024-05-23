@@ -19,6 +19,6 @@ class EliudsEggsTest < Minitest::Test
 
   def test_13_eggs
     skip
-    assert_equal 13, EliudsEggs.egg_count(2000000000)
+    assert_equal 13, EliudsEggs.egg_count(2_000_000_000)
   end
 end
