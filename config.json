@@ -336,6 +336,17 @@
         "difficulty": 3
       },
       {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "d9e488a6-c232-47cf-91c2-06249fa3f0b5",
+        "practices": [
+          "numbers",
+          "enumeration"
+        ],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "d33dec8a-e2b4-40bc-8be9-3f49de084d43",
