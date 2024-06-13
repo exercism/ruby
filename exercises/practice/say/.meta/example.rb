@@ -16,13 +16,13 @@ class Chunk
   private
 
   def say_hundreds
-    return '' unless hundreds?
+    return +'' unless hundreds?
     "#{small_numbers[hundreds]} hundred"
   end
 
   def say_double_digits
     return '' if double_digits.zero?
-    s = ' '
+    s = +' '
     if double_digits < 20
       s << small_numbers[double_digits]
     else

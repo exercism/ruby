@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "fpsvogel"
+  ],
+  "contributors": [
+    "BethanyG",
+    "ErikSchierboom",
+    "IsaacG",
+    "vaeng"
+  ],
+  "files": {
+    "solution": [
+      "gilded_rose.rb"
+    ],
+    "test": [
+      "gilded_rose_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "language_versions": ">=3.1.0",
+  "blurb": "Refactor an inventory system and add a new feature to it.",
+  "source": "Gilded Rose Kata",
+  "source_url": "https://github.com/emilybache/GildedRose-Refactoring-Kata"
+}

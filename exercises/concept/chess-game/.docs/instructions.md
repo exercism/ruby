@@ -16,13 +16,13 @@ The ranks are the rows of the board, and are numbered from 1 to 8.
 The game will also have to store the files of the board.
 The files are the columns of the board and are identified by the letters A to H.
 
-Define the `Chess::Ranks` and `Chess::Files` constants that store the range of ranks and files respectively.
+Define the `Chess::RANKS` and `Chess::FILES` constants that store the range of ranks and files respectively.
 
 ```ruby
-Chess::Ranks
+Chess::RANKS
 # => 1..8
 
-Chess::Files
+Chess::FILES
 # => 'A'..'H'
 ```
 
@@ -31,7 +31,7 @@ Chess::Files
 The game will have to check if a square is valid.
 A square is valid if the rank and file are within the ranges of the ranks and files.
 
-Define the `Chess.valid_square?` method that takes the arguments `rank` that holds an int of the rank and `file` that holds a char of the file.
+Define the `Chess.valid_square?` method that takes the arguments `rank` that holds an integer of the rank and `file` that holds a char of the file.
 The method should return `true` if the rank and file are within the ranges of the ranks and files and return `false` otherwise.
 
 ```ruby
@@ -59,7 +59,7 @@ The game will have to create a message for a move to say which player moved to w
 The message should use the player's nickname and the square they moved to.
 The game also has to determine if the move is valid by checking if the file and rank of the square are within the ranges of the files and ranks.
 
-If the move is valid, the message should be: `"{nickname} moved to {square}}"`
+If the move is valid, the message should be: `"{nickname} moved to {square}"`
 If the move is invalid, the message should be: `"{nickname} attempted to move to {square}, but that is not a valid square"`
 
 Define the `Chess.move_message` method that takes the arguments `first_name` that holds a string of the player's first_name, `last_name` that holds a string of the player's last_name, and `square` that holds a string of the square the player moved to.

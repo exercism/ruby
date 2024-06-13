@@ -26,7 +26,7 @@
       "%{snake_slug}_test.rb"
     ],
     "example": [
-      ".meta/solutions/%{snake_slug}.rb"
+      ".meta/example.rb"
     ],
     "exemplar": [
       ".meta/exemplar.rb"
@@ -125,6 +125,18 @@
         ],
         "prerequisites": [
           "symbols"
+        ]
+      },
+      {
+        "slug": "blackjack",
+        "name": "BlackJack",
+        "uuid": "414ee9b2-c62d-41d5-aa1e-c5d82fb8562c",
+        "concepts": [
+          "case"
+        ],
+        "prerequisites": [
+          "ranges",
+          "modules"
         ]
       },
       {
@@ -265,6 +277,22 @@
         "difficulty": 2
       },
       {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "3cd81b0b-8172-44ed-9e7a-140713a918db",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "24f396d0-1fdf-4489-8976-8a3fb9a64adf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "3de21c18-a533-4150-8a73-49df8fcb8c61",
@@ -305,6 +333,17 @@
           "strings",
           "numbers"
         ],
+        "difficulty": 3
+      },
+      {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "d9e488a6-c232-47cf-91c2-06249fa3f0b5",
+        "practices": [
+          "numbers",
+          "enumeration"
+        ],
+        "prerequisites": [],
         "difficulty": 3
       },
       {
@@ -534,6 +573,14 @@
         "difficulty": 5
       },
       {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "44f6c85e-a99c-4bf1-9269-67d9f25e93df",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "sum-of-multiples",
         "name": "Sum of Multiples",
         "uuid": "4fc25295-5d6a-4d13-9b87-064167d8980e",
@@ -730,6 +777,14 @@
         "difficulty": 6
       },
       {
+        "slug": "parallel-letter-frequency",
+        "name": "Parallel Letter Frequency",
+        "uuid": "527fdec4-a24e-491d-8f2d-7496054b6e88",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "2c71fc3a-2c93-402b-b091-697b795ce3ba",
@@ -851,15 +906,10 @@
         "slug": "scale-generator",
         "name": "Scale Generator",
         "uuid": "4134d491-8ec5-480b-aa61-37a02689db1f",
-        "practices": [
-          "enumeration"
-        ],
-        "prerequisites": [
-          "strings",
-          "arrays",
-          "enumeration"
-        ],
-        "difficulty": 3
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "deprecated"
       },
       {
         "slug": "allergies",
@@ -1403,6 +1453,14 @@
         "difficulty": 5
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "9839d8ec-05fc-4dcf-80e2-dd3e414def69",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "book-store",
         "name": "Book Store",
         "uuid": "0ec96460-08be-49a0-973a-4336f21b763c",
@@ -1504,6 +1562,39 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+        "slug": "gilded-rose",
+        "name": "Gilded Rose",
+        "uuid": "19f65173-5c79-4a6a-b9e1-352ec438a3c4",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "conditionals",
+          "enumeration"
+        ],
+        "difficulty": 8
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "91b585ce-b476-4c0d-aa2b-c1487a6e466f",
+        "practices": [],
+        "prerequisites": [
+          "numbers",
+          "arrays",
+          "enumeration"
+        ],
+        "difficulty": 8
+      },
+      {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "0c585fee-0afc-44c3-b5bf-7f29ed6f5b42",
+        "practices": [],
+        "prerequisites": [
+          "arrays",
+          "advanced-enumeration"
+        ],
+        "difficulty": 7
       }
     ]
   },
@@ -1597,6 +1688,11 @@
       "uuid": "b12c64cc-cbfc-48c1-b3e2-a58079fe2b7e",
       "slug": "modules",
       "name": "Modules"
+    },
+    {
+      "uuid": "bcea6b47-4db8-4cce-b341-c2f97182687b",
+      "slug": "case",
+      "name": "Case"
     },
     {
       "uuid": "ad546bc1-7583-482d-9159-44e08c50c7b8",

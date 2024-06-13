@@ -8,10 +8,10 @@ This allows for code to be more concise and readable, and is done by separating 
 
 The splat operator(`*`), and double splat operator, (`**`), are often used in decomposition contexts.
 
-```exercism/caution
+~~~~exercism/caution
 `*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
 While `*` and `**` are used for multiplication and exponentiation, respectively, `*<variable_name>` and `**<variable_name>` are used as composition and decomposition operators.
-```
+~~~~
 
 ## Multiple assignment
 
@@ -51,9 +51,9 @@ For example:
 => [2, 1]
 ```
 
-```exercism/note
+~~~~exercism/note
 This is also known as "Parallel Assignment", and can be used to avoid a temporary variable.
-```
+~~~~
 
 If there are more variables than values, the extra variables will be assigned `nil`:
 
@@ -115,10 +115,12 @@ If the decomposition has variables with incorrect placement and/or an incorrect 
 
 ```ruby
 fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
-(a, b), (d) = fruits_vegetables
 
-syntax error, unexpected ')', expecting '.' or &. or :: or '['
+(a, b), (d) = fruits_vegetables
+# syntax error, unexpected '=', expecting '.' or &. or :: or '['
+
 ((a, b), (d)) = fruits_vegetables
+# syntax error, unexpected ')', expecting '.' or &. or :: or '['
 ```
 
 Experiment here, and you will notice that the first pattern dictates, not the available values on the right hand side.
@@ -297,7 +299,7 @@ If the method defined does not have any defined parameters for keyword arguments
 `*arguments` and `**keyword_arguments` can also be used in combination with one another:
 
 ```ruby
-def my_method(*arguments, **keywword_arguments)
+def my_method(*arguments, **keyword_arguments)
   p arguments.sum
   for (key, value) in keyword_arguments.to_a
     p key.to_s + " = " + value.to_s
@@ -315,13 +317,13 @@ my_method(1, 2, 3, a: 1, b: 2, c: 3)
 You can also write arguments before and after `*arguments` to allow for specific positional arguments.
 This works the same way as decomposing an array.
 
-```exercism/caution
+~~~~exercism/caution
 Arguments have to be structured in a specific order:
 
 `def my_method(<positional_arguments>, *arguments, <positional_arguments>, <keyword_arguments>, **keyword_arguments)`
 
 If you don't follow this order then you will get an error.
-```
+~~~~
 
 ```ruby
 def my_method(a, b, *arguments)
