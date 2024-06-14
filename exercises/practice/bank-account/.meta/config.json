@@ -1,0 +1,15 @@
+{
+  "authors": ["meatball133"],
+  "files": {
+    "solution": [
+      "bank_account.rb"
+    ],
+    "test": [
+      "bank_account_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!"
+}
