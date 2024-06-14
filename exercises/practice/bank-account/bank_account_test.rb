@@ -65,22 +65,6 @@ class BankAccountTest < Minitest::Test
     assert_raises(ArgumentError, "You can't check the balance of a closed account") { bank_account.balance }
   end
 
-  def test_cannot_check_balance_of_closed_account
-    skip
-    bank_account = BankAccount.new
-    bank_account.open
-    bank_account.close
-    assert_raises(ArgumentError, "You can't check the balance of a closed account") { bank_account.balance }
-  end
-
-  def test_cannot_check_balance_of_closed_account
-    skip
-    bank_account = BankAccount.new
-    bank_account.open
-    bank_account.close
-    assert_raises(ArgumentError, "You can't check the balance of a closed account") { bank_account.balance }
-  end
-
   def test_cannot_deposit_into_closed_account
     skip
     bank_account = BankAccount.new
