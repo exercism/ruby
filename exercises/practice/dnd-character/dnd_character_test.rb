@@ -13,71 +13,88 @@ class DndCharacterTest < Minitest::Test
   include Helpers
 
   def test_modifier_score_3
+    # skip
     assert_equal(-4, DndCharacter.modifier(3))
   end
 
   def test_modifier_score_4
+    skip
     assert_equal(-3, DndCharacter.modifier(4))
   end
 
   def test_modifier_score_5
+    skip
     assert_equal(-3, DndCharacter.modifier(5))
   end
 
   def test_modifier_score_6
+    skip
     assert_equal(-2, DndCharacter.modifier(6))
   end
 
   def test_modifier_score_7
+    skip
     assert_equal(-2, DndCharacter.modifier(7))
   end
 
   def test_modifier_score_8
+    skip
     assert_equal(-1, DndCharacter.modifier(8))
   end
 
   def test_modifier_score_9
+    skip
     assert_equal(-1, DndCharacter.modifier(9))
   end
 
   def test_modifier_score_10
+    skip
     assert_equal 0, DndCharacter.modifier(10)
   end
 
   def test_modifier_score_11
+    skip
     assert_equal 0, DndCharacter.modifier(11)
   end
 
   def test_modifier_score_12
+    skip
     assert_equal 1, DndCharacter.modifier(12)
   end
 
   def test_modifier_score_13
+    skip
     assert_equal 1, DndCharacter.modifier(13)
   end
 
   def test_modifier_score_14
+    skip
     assert_equal 2, DndCharacter.modifier(14)
   end
 
   def test_modifier_score_15
+    skip
     assert_equal 2, DndCharacter.modifier(15)
   end
 
   def test_modifier_score_16
+    skip
     assert_equal 3, DndCharacter.modifier(16)
   end
 
   def test_modifier_score_17
+    skip
     assert_equal 3, DndCharacter.modifier(17)
   end
 
   def test_modifier_score_18
+    skip
     assert_equal 4, DndCharacter.modifier(18)
   end
 
   # rubocop:disable Style/FormatString, Style/RedundantPercentQ
   def test_random_character_stats
+    skip
     100.times do
       character = DndCharacter.new
       allowed_range = (3..18)
@@ -98,6 +115,7 @@ class DndCharacterTest < Minitest::Test
   end
 
   def test_stats_calculated_once
+    skip
     informative_message = <<~EXPLAIN
       The character's %<attribute>s must not change if called more than once.
       It was %<first>s, is now %<second>s.
