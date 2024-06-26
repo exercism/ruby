@@ -14,7 +14,7 @@ class BankAccountTest < Minitest::Test
     bank_account = BankAccount.new
     bank_account.open
     bank_account.deposit(100)
-    assert_equal bank_account.balance, 100
+    assert_equal 100, bank_account.balance
   end
 
   def test_multiple_deposits
@@ -23,7 +23,7 @@ class BankAccountTest < Minitest::Test
     bank_account.open
     bank_account.deposit(100)
     bank_account.deposit(50)
-    assert_equal bank_account.balance, 150
+    assert_equal 150, bank_account.balance
   end
 
   def test_withdraw_once
@@ -32,7 +32,7 @@ class BankAccountTest < Minitest::Test
     bank_account.open
     bank_account.deposit(100)
     bank_account.withdraw(75)
-    assert_equal bank_account.balance, 25
+    assert_equal 25, bank_account.balance
   end
 
   def test_withdraw_twice
@@ -42,7 +42,7 @@ class BankAccountTest < Minitest::Test
     bank_account.deposit(100)
     bank_account.withdraw(80)
     bank_account.withdraw(20)
-    assert_equal bank_account.balance, 0
+    assert_equal 0, bank_account.balance
   end
 
   def test_can_do_multiple_operations_sequentially
@@ -54,7 +54,7 @@ class BankAccountTest < Minitest::Test
     bank_account.withdraw(200)
     bank_account.deposit(60)
     bank_account.withdraw(50)
-    assert_equal bank_account.balance, 20
+    assert_equal 20, bank_account.balance
   end
 
   def test_cannot_check_balance_of_closed_account
@@ -107,7 +107,7 @@ class BankAccountTest < Minitest::Test
     bank_account.deposit(50)
     bank_account.close
     bank_account.open
-    assert_equal bank_account.balance, 0
+    assert_equal 0, bank_account.balance
   end
 
   def test_cannot_withdraw_more_than_deposited
