@@ -1,14 +1,10 @@
 [
   {
-    "url": "https://ruby-doc.org/core-2.7.0/Float.html",
-    "description": "Float"
+    "url": "https://launchschool.com/books/ruby/read/loops_iterators",
+    "description": "Loops"
   },
   {
-    "url": "https://0.30000000000000004.com/",
-    "description": "0.30000000000000004.com"
-  },
-  {
-    "url": "https://evanw.github.io/float-toy/",
-    "description": "evanw.github.io-float-toy"
+    "url": "https://www.rubyguides.com/ruby-tutorial/loops/",
+    "description": "Ruby Loops: Repeating Something Many Times"
   }
 ]
