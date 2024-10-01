@@ -1,43 +1,40 @@
 Palindrome = Struct.new(:value, :factors)
 
 class Palindromes
-  attr_reader :range
-  def initialize(options)
-    max = options.fetch(:max_factor)
-    min = options.fetch(:min_factor) { 1 }
-    @range = (min..max)
-  end
+  private
+  attr_reader :min, :max
 
-  def generate
-    @palindromes = {}
-    range.each do |i|
-      range.each do |j|
-        product = i * j
-        if palindrome?(product)
-          palindrome = @palindromes[product] || Palindrome.new(product, [])
-          palindrome.factors << [i, j].sort
-          palindrome.factors.uniq!
-          @palindromes[product] = palindrome
-        end
-      end
-    end
+  def initialize(max_factor:, min_factor: 1)
+    raise ArgumentError, "min must be <= max" unless min_factor <= max_factor
+
+    @min = min_factor
+    @max = max_factor
   end
 
   def palindrome?(number)
     number.to_s == number.to_s.reverse
   end
 
-  def sort
-    @palindromes.sort_by do |key, _palindrome|
-      key
+  def factors(palindrome)
+    (min..Math.sqrt(palindrome)).each_with_object([]) do |number, factors|
+      div, mod = palindrome.divmod(number)
+      factors << [number, div] if div.between?(min, max) && mod.zero?
     end
   end
 
-  def largest
-    sort.last[1]
+  def find_palindrome(enum)
+    enum.lazy.
+      filter { |number| palindrome? number }.
+      map { |number| Palindrome.new number, factors(number) }.
+      find { |palindrome| !palindrome.factors.empty? }
   end
 
-  def smallest
-    sort.first[1]
+  public
+  attr_reader :smallest, :largest
+
+  def generate
+    @smallest = find_palindrome(min**2..max**2) || Palindrome.new(nil, [])
+
+    @largest = find_palindrome((max**2..min**2).step(-1)) || Palindrome.new(nil, [])
   end
 end
