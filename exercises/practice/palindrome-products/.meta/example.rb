@@ -2,6 +2,7 @@ Palindrome = Struct.new(:value, :factors)
 
 class Palindromes
   private
+
   attr_reader :min, :max
 
   def initialize(max_factor:, min_factor: 1)
@@ -30,6 +31,7 @@ class Palindromes
   end
 
   public
+
   attr_reader :smallest, :largest
 
   def generate
