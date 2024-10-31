@@ -1,5 +1,6 @@
 class Series
   def initialize(series)
+    raise ArgumentError if series.length.zero?
     @series = series
   end
   def slices(n)
