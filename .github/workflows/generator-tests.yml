@@ -1,12 +1,11 @@
 name: GeneratorTests
+
 on:
-  pull_request:
+  workflow_dispatch:
   push:
-    branches:
-      - main
-  schedule:
-    # Weekly.
-    - cron: '0 0 * * 0'
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   test-generator-templates:

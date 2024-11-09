@@ -69,7 +69,7 @@ class Generator
     when Net::HTTPNotFound
       check_for_local_canonical_data
     else
-      raise "Error while requesting the #{@exercise} data file from GitHub... " +
+      raise "Error while requesting the #{@exercise} data file from GitHub... " \
             "Status was #{response.code}"
     end
   end
