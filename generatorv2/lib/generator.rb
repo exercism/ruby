@@ -12,7 +12,7 @@ class Generator
   end
 
   def generate(result_path = "./exercises/practice/#{@exercise}/#{@exercise}_test.rb")
-    json = get_remote_files
+    json = remote_files
     uuid = toml("./exercises/practice/#{@exercise}/.meta/tests.toml")
     additional_json(json)
     json["cases"] = remove_tests(uuid, json)
@@ -56,11 +56,12 @@ class Generator
 
     uuid = TomlRB.load_file(path)
     uuid.filter do |_k, v|
-      v.none? { |k, v| k == "include" && !v }
-    end.map { |k, _v| k }
+      v.none? { |k, inner_value| k == "include" && !inner_value }
+    end
+    uuid.map { |k, _v| k }
   end
 
-  def get_remote_files
+  def remote_files
     url = URI.parse("https://raw.githubusercontent.com/exercism/problem-specifications/main/exercises/#{@exercise}/canonical-data.json")
     response = Net::HTTP.get_response(url)
     case response
