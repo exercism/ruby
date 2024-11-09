@@ -29,14 +29,7 @@ class Generator
   end
 
   def underscore(str)
-    str.each_char.reduce("") do |acc, x|
-      acc << if [' ', '-'].include?(x)
-               '_'
-             else
-               x.downcase
-             end
-      acc
-    end
+    str.gsub(/[-\s]/, '_').downcase
   end
 
   def camel_case(str)
@@ -55,10 +48,10 @@ class Generator
     raise "Toml not found: #{path}" unless File.exist?(path)
 
     uuid = TomlRB.load_file(path)
-    uuid.filter do |_k, v|
+    uuid = uuid.filter do |_k, v|
       v.none? { |k, inner_value| k == "include" && !inner_value }
     end
-    uuid.map { |k, _v| k }
+    uuid.keys
   end
 
   def remote_files

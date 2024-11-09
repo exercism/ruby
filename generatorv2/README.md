@@ -9,6 +9,7 @@ The generator is written in Ruby and is located in the `bin` directory.
 
 ### Things to do before running the generator
 
+Run `bundle install` to install the required libraries.
 Before running the generator you have to make sure a couple of files are in place.
 
 1. `tests.toml` file
