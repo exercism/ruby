@@ -8,3 +8,4 @@ gem 'rubocop-minitest', require: false
 gem 'rubocop-rake', require: false
 gem 'simplecov', require: false
 gem 'racc', require: false
+gem 'toml-rb', require: false

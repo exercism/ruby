@@ -11,7 +11,7 @@ class Generator
     @exercise = exercise
   end
 
-  def generate
+  def generate(result_path = "./exercises/practice/#{@exercise}/#{@exercise}_test.rb")
     json = get_remote_files
     uuid = toml("./exercises/practice/#{@exercise}/.meta/tests.toml")
     additional_json(json)
@@ -23,14 +23,14 @@ class Generator
 
     result = template.result(binding)
 
-    File.write("./exercises/practice/#{@exercise}/#{@exercise}_test.rb", result)
+    File.write(result_path, result)
     cli = RuboCop::CLI.new
-    cli.run(['-x', "--force-default-config", "exercises/practice/#{@exercise}/#{@exercise}_test.rb"])
+    cli.run(['-x', "--force-default-config", "-o", "/dev/null", result_path])
   end
 
   def underscore(str)
     str.each_char.reduce("") do |acc, x|
-      acc << if x == ' '
+      acc << if [' ', '-'].include?(x)
                '_'
              else
                x.downcase
@@ -40,7 +40,7 @@ class Generator
   end
 
   def camel_case(str)
-    str.split('_').map(&:capitalize).join
+    str.split(/[-_]/).map(&:capitalize).join
   end
 
   def status
@@ -56,7 +56,7 @@ class Generator
 
     uuid = TomlRB.load_file(path)
     uuid.filter do |_k, v|
-      !v.any? { |k, v| k == "include" && !v }
+      v.none? { |k, v| k == "include" && !v }
     end.map { |k, _v| k }
   end
 
@@ -99,5 +99,3 @@ class Generator
     end
   end
 end
-
-# Generator.new("acronym").get_remote_files

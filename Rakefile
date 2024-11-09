@@ -25,5 +25,10 @@ namespace :test do
     task.pattern = 'test/**/*_test.rb'
   end
 
+  Rake::TestTask.new :generator do |task|
+    task.options = flags
+    task.pattern = 'generatorv2/test/**/*_test.rb'
+  end
+
   ExerciseTestTasks.new options: flags
 end

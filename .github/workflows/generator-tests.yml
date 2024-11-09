@@ -1,0 +1,33 @@
+name: GeneratorTests
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    # Weekly.
+    - cron: '0 0 * * 0'
+
+jobs:
+  test-generator-templates:
+    name: Test Generator
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@52753b7da854d5c07df37391a986c76ab4615999
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+        run: ruby ./bin/generator.rb --verify
+  test-generator:
+    name: Check Generator Templates
+    runs-on: ubuntu-22.04
+    container:
+      image: crystallang/crystal
+    steps:
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@52753b7da854d5c07df37391a986c76ab4615999
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+        run: rake test:generator

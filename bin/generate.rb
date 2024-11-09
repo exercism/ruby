@@ -1,4 +1,5 @@
 require 'optparse'
+require 'tempfile'
 require_relative '../generatorv2/lib/generator'
 
 parser = OptionParser.new
@@ -23,8 +24,13 @@ end
 parser.on('--verify', 'Verify all exercises') do
   exercises = Dir.entries('./exercises/practice').select { |f| File.directory? File.join('./exercises/practice', f) }
   exercises.each do |exercise|
-    puts "Verifying #{exercise}"
-    system("ruby ./exercises/practice/#{exercise}/#{exercise}__test.rb")
+    if File.exist?("./exercises/practice/#{exercise}/.meta/test_template.erb")
+      current_code = File.read("./exercises/practice/#{exercise}/#{exercise}_test.rb")
+      f = Tempfile.create
+      Generator.new(exercise).generate(f.path)
+      generated_code = f.read
+      raise RuntimeError.new("The result generated for: #{exercise}, doesnt match the current file") if current_code != generated_code
+    end
   end
 end
 
