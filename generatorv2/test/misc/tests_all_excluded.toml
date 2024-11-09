@@ -1,0 +1,38 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[1e22cceb-c5e4-4562-9afe-aef07ad1eaf4]
+description = "basic"
+include = false
+
+[79ae3889-a5c0-4b01-baf0-232d31180c08]
+description = "lowercase words"
+include = false
+
+[ec7000a7-3931-4a17-890e-33ca2073a548]
+description = "punctuation"
+include = false
+
+[32dd261c-0c92-469a-9c5c-b192e94a63b0]
+description = "all caps word"
+include = false
+
+[ae2ac9fa-a606-4d05-8244-3bcc4659c1d4]
+description = "punctuation without whitespace"
+include = false
+
+[0e4b1e7c-1a6d-48fb-81a7-bf65eb9e69f9]
+description = "very long abbreviation"
+include = false
+
+[6a078f49-c68d-4b7b-89af-33a1a98c28cc]
+description = "consecutive delimiters"
+include = false
