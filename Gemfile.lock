@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.2)
+    citrus (3.0.2)
     docile (1.4.0)
     json (2.7.2)
     minitest (5.22.3)
@@ -43,6 +44,9 @@ GEM
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
     strscan (3.1.0)
+    toml-rb (3.0.1)
+      citrus (~> 3.0, > 3.0)
+      racc (~> 1.7)
     unicode-display_width (2.5.0)
 
 PLATFORMS
@@ -57,6 +61,7 @@ DEPENDENCIES
   rubocop-minitest
   rubocop-rake
   simplecov
+  toml-rb
 
 BUNDLED WITH
    2.5.7
