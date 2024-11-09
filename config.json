@@ -979,6 +979,20 @@
         "difficulty": 6
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "fb29b743-0f2d-46fe-8a2a-14973259bb2b",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings",
+          "numbers",
+          "loops"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "607a3515-e53b-427f-8e3b-1e22912fa29a",

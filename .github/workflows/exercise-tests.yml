@@ -19,10 +19,10 @@ jobs:
         ruby-version: [3.2, 3.3]
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Set up Ruby
-        uses: ruby/setup-ruby@52753b7da854d5c07df37391a986c76ab4615999
+        uses: ruby/setup-ruby@7d3497fd78c07c0d84ebafa58d8dac60cd1f0763
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true
