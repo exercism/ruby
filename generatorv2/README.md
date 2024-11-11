@@ -26,12 +26,6 @@ By writing after the test name `include = false` and it will be skipped when gen
 
 The generator makes sure that the exercise is in the config.json so you need to add it there before running the generator.
 
-3. `spec` directory
-
-The generator will create a spec file for each exercise, so you need to make sure that the spec directory is in place.
-Although there don't have to be any files in the directory, since the script will create one for you.
-If it is a file already so will the generator overwrite it.
-
 #### Things to note
 
 The script which grabs info from the toml file is quite sensitive, writing the toml file in an incorrect way can brick the generator.
@@ -117,7 +111,7 @@ The generator is located in the `bin` directory and is called `generator.rb`.
 To run the generator so do you have to be in the root directory and run the following command:
 
 ```shell
-ruby ./bin/generator.rb -e <exercise_slug>
+bundle exec ./bin/generate -e <exercise_slug>
 ```
 
 Where `<exercise_slug>` is the same name as the slug name which is located in the `config.json` file.
@@ -125,7 +119,7 @@ Where `<exercise_slug>` is the same name as the slug name which is located in th
 For more commands so can you run the following command:
 
 ```shell
-ruby ./bin/generator.rb --help
+bundle exec ./bin/generate --help
 ```
 
 ### Errors and warnings
