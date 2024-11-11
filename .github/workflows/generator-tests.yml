@@ -9,9 +9,10 @@ on:
 
 jobs:
   test-generator-templates:
-    name: Test Generator
+    name: Check Generator Templates
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up Ruby
         uses: ruby/setup-ruby@52753b7da854d5c07df37391a986c76ab4615999
         with:
@@ -20,7 +21,7 @@ jobs:
       - name: Verify templates
         run: ruby ./bin/generate --verify
   test-generator:
-    name: Check Generator Templates
+    name: Test Generator
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
