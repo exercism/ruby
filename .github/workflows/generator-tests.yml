@@ -19,9 +19,7 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
       - name: Verify templates
-        run: bundle install
-      - name: Verify templates
-        run: ruby ./bin/generate --verify
+        run: bundle exec ./bin/generate --verify
   test-generator:
     name: Test Generator
     runs-on: ubuntu-22.04
