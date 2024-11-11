@@ -18,13 +18,12 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
       - name: Verify templates
-        run: ruby ./bin/generator --verify
+        run: ruby ./bin/generate --verify
   test-generator:
     name: Check Generator Templates
     runs-on: ubuntu-22.04
-    container:
-      image: crystallang/crystal
     steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Set up Ruby
         uses: ruby/setup-ruby@52753b7da854d5c07df37391a986c76ab4615999
         with:
