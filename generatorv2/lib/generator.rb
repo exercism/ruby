@@ -25,7 +25,7 @@ class Generator
 
     File.write(result_path, result)
     cli = RuboCop::CLI.new
-    cli.run(['-x', "--force-default-config", "-o", "/dev/null", result_path])
+    cli.run(['-x', "-c", ".rubocop.yml", "-o", "/dev/null", result_path])
   end
 
   def underscore(str)
