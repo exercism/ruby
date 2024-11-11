@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'base64'
 gem 'minitest'
 gem 'rake'
 gem 'mocha', require: false

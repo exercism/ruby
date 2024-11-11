@@ -3,6 +3,7 @@ GEM
   specs:
     ast (2.4.2)
     citrus (3.0.2)
+    base64 (0.2.0)
     docile (1.4.0)
     json (2.7.2)
     minitest (5.22.3)
@@ -52,6 +53,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  base64
   minitest
   mocha
   racc

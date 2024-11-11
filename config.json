@@ -993,20 +993,6 @@
         "difficulty": 3
       },
       {
-        "slug": "beer-song",
-        "name": "Beer Song",
-        "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
-        "practices": [
-          "strings"
-        ],
-        "prerequisites": [
-          "strings",
-          "numbers",
-          "loops"
-        ],
-        "difficulty": 3
-      },
-      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "607a3515-e53b-427f-8e3b-1e22912fa29a",
@@ -1545,6 +1531,15 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
+        "status": "deprecated"
+      },
+      {
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "e4f0873a-e834-4b28-9902-795f52f76adb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
         "status": "deprecated"
       },
       {
