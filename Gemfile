@@ -5,7 +5,7 @@ gem 'minitest'
 gem 'rake'
 gem 'toml-rb', require: false
 gem 'mocha', require: false
-gem 'rubocop', '~> 1.68.0', require: false
+gem 'rubocop', '~> 1.50.0', require: false
 gem 'rubocop-minitest', require: false
 gem 'rubocop-rake', require: false
 gem 'simplecov', require: false

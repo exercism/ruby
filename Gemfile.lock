@@ -6,7 +6,6 @@ GEM
     citrus (3.0.2)
     docile (1.4.0)
     json (2.8.1)
-    language_server-protocol (3.17.0.3)
     minitest (5.22.3)
     mocha (2.1.0)
       ruby2_keywords (>= 0.0.5)
@@ -18,14 +17,15 @@ GEM
     rainbow (3.1.1)
     rake (13.2.1)
     regexp_parser (2.9.2)
-    rubocop (1.68.0)
+    rexml (3.3.9)
+    rubocop (1.50.2)
       json (~> 2.3)
-      language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 3.3.0.2)
+      parser (>= 3.2.0.0)
       rainbow (>= 2.2.2, < 4.0)
-      regexp_parser (>= 2.4, < 3.0)
-      rubocop-ast (>= 1.32.2, < 2.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml (>= 3.2.5, < 4.0)
+      rubocop-ast (>= 1.28.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.34.1)
@@ -57,7 +57,7 @@ DEPENDENCIES
   mocha
   racc
   rake
-  rubocop (~> 1.68.0)
+  rubocop (~> 1.50.0)
   rubocop-minitest
   rubocop-rake
   simplecov
