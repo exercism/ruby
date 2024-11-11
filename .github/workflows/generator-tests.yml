@@ -17,6 +17,7 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true
+      - name: Verify templates
         run: ruby ./bin/generator.rb --verify
   test-generator:
     name: Check Generator Templates
@@ -29,4 +30,5 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true
+      - name: Run tests
         run: rake test:generator
