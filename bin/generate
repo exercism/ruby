@@ -40,10 +40,11 @@ parser.on('--verify', 'Verify all exercises') do
   exercises.each do |exercise|
     if File.exist?("./exercises/practice/#{exercise}/.meta/test_template.erb")
       current_code = File.read("./exercises/practice/#{exercise}/#{exercise}_test.rb")
-      f = Tempfile.create
+      f = File.new("./exercises/practice/#{exercise}/temp_test.rb", 'w+')
       Generator.new(exercise).generate(f.path)
       generated_code = f.read
-      raise VerificationError unless current_code == generated_code
+      File.delete(f.path)
+      fail VerificationError unless current_code == generated_code
     end
     rescue VerificationError => e
       $stderr.puts e.message % {exercise:}

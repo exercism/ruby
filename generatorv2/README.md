@@ -32,21 +32,21 @@ The script which grabs info from the toml file is quite sensitive, writing the t
 
 Here are some examples of how you should **NOT** work with the toml file.
 
-Make sure that the uuid is the only thing inside of `[uuid]`, if there is, for example, an extra space so would that break it.
+Make sure that the UUID is the only thing inside of `[UUID]`, if there is, for example, an extra space so would that break it.
 Here is an example
 
 ```toml
-# This would break it since it is an extra space between uuid and `]`
+# This would break it since it is an extra space between UUID and `]`
 [1e22cceb-c5e4-4562-9afe-aef07ad1eaf4 ]
-# This would break it since it is an extra space between uuid and `[`
+# This would break it since it is an extra space between UUID and `[`
 [ 1e22cceb-c5e4-4562-9afe-aef07ad1eaf4]
 ```
 
-The script won't care if you write `include = true` since if it sees the uuid it will always take it as long as `include = false` is not written.
+The script won't care if you write `include = true` since if it sees the UUID it will always take it as long as `include = false` is not written.
 The script will not work if anything is misspelled, although the part which gets `include = false` doesn't care if it gets an extra space or not.
 
 **NOTE:**
-You are also **NOT** allowed to write `include = false` more than once after each uuid.
+You are also **NOT** allowed to write `include = false` more than once after each UUID.
 Since that can lead to errors in the generator.
 
 Bad way:
@@ -78,7 +78,7 @@ The template file is written in [Embedded Ruby(ERB)][erb].
 ERB enables you to write Ruby code inside of the template file.
 It also means that the templates can be highly customizable since you can write any Ruby code you want.
 
-When writing the template file it is recommended to look at already existing template files to get a better understanding of how it works.
+When writing the template file, it is recommended to look at already existing template files to get a better understanding of how it works.
 The template is getting a slightly modified version of the canonical data, so you can check out the [canonical data][canonical data] to see the data structure.
 The modification is that the cases which are not included in the toml file will be removed from the data structure.
 
