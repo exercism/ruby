@@ -10,9 +10,9 @@ def exercises
 end
 
 class VerificationError < StandardError
-  def initialize(
-    message = "VerificationError: The result generated for %<exercise>s, doesn't match the current file"
-  )
+  MESSAGE = 'The result generated for %<exercise>s, does not match the current file'
+
+  def initialize(message = MESSAGE)
     super
   end
 end
@@ -47,7 +47,7 @@ parser.on('--verify', 'Verify all exercises') do
       fail VerificationError unless current_code == generated_code
     end
     rescue VerificationError => e
-      $stderr.puts e.message % {exercise:}
+      stderr.puts e.message % {exercise:}
   end
 end
 

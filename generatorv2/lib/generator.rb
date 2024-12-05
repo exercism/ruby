@@ -8,6 +8,7 @@ require_relative 'utils'
 
 class Generator
   include Utils
+  include NullDevice
 
   def initialize(exercise = nil)
     @first = true
@@ -20,15 +21,13 @@ class Generator
     additional_json(json)
     json["cases"] = remove_tests(uuid, json)
     status = proc { status }
-    camel_case = proc { |str| camel_case(str) }
-    underscore = proc { |str| underscore(str) }
     template = ERB.new File.read("./exercises/practice/#{@exercise}/.meta/test_template.erb")
 
     result = template.result(binding)
 
     File.write(result_path, result)
-    cli = RuboCop::CLI.new
-    cli.run(['-x', "-c", ".rubocop.yml", "-o", "/dev/null", result_path])
+    RuboCop::CLI.new.
+      run(['-x', '-c', '.rubocop.yml', '-o', NullDevice.path, result_path])
   end
 
   def underscore(str)

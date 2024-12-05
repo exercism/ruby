@@ -1,3 +1,9 @@
+module NullDevice
+  def self.path
+    Gem.win_platform? ? 'NUL' : '/dev/null'
+  end
+end
+
 module Utils
   def toml(path = "./exercises/practice/#{@exercise}/.meta/tests.toml")
     raise "Toml not found: #{path}" unless File.exist?(path)

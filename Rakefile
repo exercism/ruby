@@ -16,6 +16,21 @@ task :rubocop do
   system('rubocop --display-cop-names')
 end
 
+desc "Run generator for specefic exercise"
+task :generate, [:exercise] do |_t, argumments|
+  system("./bin/generate --exercise #{argumments[:exercise]}")
+end
+
+desc "Run generator for all exercises"
+task :generate_all do
+  system("./bin/generate --all")
+end
+
+desc "Verify templates for all exercises"
+task :verify do
+  system("./bin/generate --verify")
+end
+
 namespace :test do
   flags = ARGV.drop_while { |e| e != '--' }.drop(1).join(' ')
 
