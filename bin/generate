@@ -47,7 +47,7 @@ parser.on('--verify', 'Verify all exercises') do
       fail VerificationError unless current_code == generated_code
     end
     rescue VerificationError => e
-      stderr.puts e.message % {exercise:}
+      STDERR.puts e.message % {exercise:}
   end
 end
 
