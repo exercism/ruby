@@ -22,15 +22,15 @@ class UtilTest < Minitest::Test
       Generator.new("two-fer").underscore("two-fer")
   end
 
-  def test_status
+  def test_skip
     assert_equal "# skip",
-      Generator.new("acronym").status
+      Generator.new("acronym").skip?
   end
 
-  def test_status_after_first
+  def test_skip_after_first
     generator = Generator.new("acronym")
-    generator.status
+    generator.skip?
     assert_equal "skip",
-      generator.status
+      generator.skip?
   end
 end
