@@ -21,7 +21,7 @@ end
 parser = OptionParser.new
 
 parser.on('-v', '--version', 'Print the version') do
-  puts '0.1.0'
+  puts File.read('./generatorv2/VERSION')
 end
 
 parser.on('-h', '--help', 'Prints help') do

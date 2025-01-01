@@ -26,27 +26,8 @@ By writing after the test name `include = false` and it will be skipped when gen
 
 The generator makes sure that the exercise is in the config.json so you need to add it there before running the generator.
 
-#### Things to note
-
-The script which grabs info from the toml file is quite sensitive, writing the toml file in an incorrect way can brick the generator.
-
-Here are some examples of how you should **NOT** work with the toml file.
-
-Make sure that the UUID is the only thing inside of `[UUID]`, if there is, for example, an extra space so would that break it.
-Here is an example
-
-```toml
-# This would break it since it is an extra space between UUID and `]`
-[1e22cceb-c5e4-4562-9afe-aef07ad1eaf4 ]
-# This would break it since it is an extra space between UUID and `[`
-[ 1e22cceb-c5e4-4562-9afe-aef07ad1eaf4]
-```
-
-The script won't care if you write `include = true` since if it sees the UUID it will always take it as long as `include = false` is not written.
-The script will not work if anything is misspelled, although the part which gets `include = false` doesn't care if it gets an extra space or not.
-
 **NOTE:**
-You are also **NOT** allowed to write `include = false` more than once after each UUID.
+You are **NOT** allowed to write `include = false` more than once after each UUID.
 Since that can lead to errors in the generator.
 
 Bad way:
@@ -72,7 +53,7 @@ The generator uses a template file to generate the test file.
 The template is located under the `.meta` for each exercise.
 
 This template has to be manually written for each exercise.
-The goal although is to make it so that you only have to write the template once and then it will be able to be used to generate new tests.
+The goal is to make it so that you only have to write the template once and then it will be able to be used to generate new tests.
 
 The template file is written in [Embedded Ruby(ERB)][erb].
 ERB enables you to write Ruby code inside of the template file.
@@ -83,15 +64,15 @@ The template is getting a slightly modified version of the canonical data, so yo
 The modification is that the cases which are not included in the toml file will be removed from the data structure.
 
 When writing the template so is it a special tool that can help with giving `# skip` and `skip` tags for tests.
-You simply have to call the `status` method.
+You simply have to call the `skip?` method.
 It will return either `# skip` or `skip` depending on if it is the first test case or not.
 
 Here is an example:
 
 ```
-<%= status()%>
-<%= status()%>
-<%= status()%>
+<%= skip? %>
+<%= skip? %>
+<%= skip? %>
 ```
 
 result:
@@ -104,19 +85,19 @@ skip
 
 ### The Test Generator
 
-If all the earlier steps are done so can you run the generator.
-To run the generator you need to have a working Ruby installation and installed all gems in the Gemfile.
-The generator is located in the `bin` directory and is called `generator.rb`.
+If all the earlier steps are done you run the generator.
+To run the generator you need to have a working Ruby installation with the gems installed, via `bundle install`.
+The generator is located in the `bin` directory and is called `generator`.
 
 To run the generator so do you have to be in the root directory and run the following command:
 
 ```shell
-bundle exec ./bin/generate -e <exercise_slug>
+bundle exec ./bin/generate -e <exercise-name>
 ```
 
-Where `<exercise_slug>` is the same name as the slug name which is located in the `config.json` file.
+Where `<exercise-name>` is the same name as the exercise has in its directory.
 
-For more commands so can you run the following command:
+For more commands and options, you can see this by running the command:
 
 ```shell
 bundle exec ./bin/generate --help
@@ -126,9 +107,9 @@ bundle exec ./bin/generate --help
 
 The generator will give you errors and warnings if something is wrong.
 That includes if the exercise is not in the `config.json` file, if the exercise is not in the toml file, or if the template file is missing.
-Also if it has a problem getting the `canonical-data.json` file so will it give you an error.
-The generator also uses a formatter which will give you errors if the generated file is not formatted correctly.
-The file will still be generated even if formatter gives errors, therefore can you check the file and see what is wrong and fix it in the template.
+It will also report an error if it can not read the `canonical-data.json` file.
+The generator will check that the generated file is formatted correctly, reporting an error if there is a problem.
+The file will still be generated even if the formatter reports errors, So that you can check the file and see what is wrong and fix it in the template.
 
 [erb]: https://docs.ruby-lang.org/en/master/ERB.html
 [canonical data]: https://github.com/exercism/problem-specifications

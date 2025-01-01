@@ -38,7 +38,7 @@ class Generator
     str.split(/[-_]/).map(&:capitalize).join
   end
 
-  def status
+  def skip?
     if @first
       @first = false
       return "# skip"
