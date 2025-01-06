@@ -22,12 +22,12 @@ class UtilTest < Minitest::Test
       Generator.new("two-fer").underscore("two-fer")
   end
 
-  def test_skip
+  def test_first_time_includes_hastag
     assert_equal "# skip",
       Generator.new("acronym").skip?
   end
 
-  def test_skip_after_first
+  def test_skip_after_first_should_not_include_hastag
     generator = Generator.new("acronym")
     generator.skip?
     assert_equal "skip",
