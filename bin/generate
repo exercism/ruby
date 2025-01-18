@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+require 'optparse'
+require 'tempfile'
+require_relative '../generatorv2/lib/generator'
+
+# Helper methods
+def exercises
+  Dir.entries('./exercises/practice')
+    .select { |file| File.directory? File.join('./exercises/practice', file) }
+end
+
+class VerificationError < StandardError
+  MESSAGE = 'The result generated for %<exercise>s, does not match the current file'
+
+  def initialize(message = MESSAGE)
+    super
+  end
+end
+
+# Parsing Code
+parser = OptionParser.new
+
+parser.on('-v', '--version', 'Print the version') do
+  puts File.read('./generatorv2/VERSION')
+end
+
+parser.on('-h', '--help', 'Prints help') do
+  puts parser
+end
+
+parser.on('-a', '--all', 'Generate all exercises') do
+  exercises.each do |exercise|
+    if File.exist?("./exercises/practice/#{exercise}/.meta/test_template.erb")
+      Generator.new(exercise).generate
+    end
+  end
+end
+
+parser.on('--verify', 'Verify all exercises') do
+  exercises.each do |exercise|
+    if File.exist?("./exercises/practice/#{exercise}/.meta/test_template.erb")
+      current_code = File.read("./exercises/practice/#{exercise}/#{exercise}_test.rb")
+      f = File.new("./exercises/practice/#{exercise}/temp_test.rb", 'w+')
+      Generator.new(exercise).generate(f.path)
+      generated_code = f.read
+      File.delete(f.path)
+      fail VerificationError unless current_code == generated_code
+    end
+    rescue VerificationError => e
+      STDERR.puts e.message % {exercise:}
+  end
+end
+
+parser.on('-e', '--exercise EXERCISE', 'The exercise to generate') do |exercise|
+  Generator.new(exercise).generate
+end
+
+parser.parse!
