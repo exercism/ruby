@@ -71,7 +71,7 @@ end
 
 ## Unless statement
 
-The `unless`unless statement works very similarly to the `if` statement but it will run the code inside the `unless` statement if the condition is falsey.
+The `unless` statement works very similarly to the `if` statement but it will run the code inside the `unless` statement if the condition is falsey.
 
 ```ruby
 value = 1
