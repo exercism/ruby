@@ -70,8 +70,8 @@ end
 
 ## Else statement
 
-The `else` statement can be used in conjunction with the `if` and `unless` statements.
-The `else` statement will be executed if the `if` branch or the `unless` branch is not executed.
+The `else` statement can be used in conjunction with the `if` statement.
+The `else` statement will be executed if the `if` branch is not executed.
 
 ```ruby
 value = 1
@@ -82,10 +82,12 @@ else
 end
 # => "1 is equal to 1"
 
-unless value < 2
+if value > 2
+  "1 is greater than 2"
+else
   "1 is not greater than 2"
 end
-# => "1 is greater than 2"
+# => "1 is not greater than 2"
 ```
 
 ## "Cascading-if" statements
