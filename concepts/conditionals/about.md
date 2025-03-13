@@ -112,14 +112,14 @@ There can also be an else statement at the end of the if statement which will ru
 
 ```ruby
 value = 1
-if value != 1
-  "1 is not equal to 1"
+if value == 0
+  "1 is equal to 0"
 elsif value > 2
   "1 is greater than 2"
 else
-  "1 is not equal to 1 and 1 is not greater than 2"
+  "1 is not equal to 0 and 1 is not greater than 2"
 end
-# => "1 is not equal to 1 and 1 is not greater than 2"
+# => "1 is not equal to 0 and 1 is not greater than 2"
 ```
 
 ## if and unless as suffix
