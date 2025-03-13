@@ -17,7 +17,7 @@ Here is a list of the operators and an example of when they give a `true` value:
 
 | Method | Description           | Example |
 | ------ | --------------------- | ------- |
-| <      | less than             | 5 < 4   |
+| <      | less than             | 4 < 5   |
 | <=     | less than or equal    | 4 <= 4  |
 | >      | greater than          | 3 > 1   |
 | >=     | greater than or equal | 2 >= 2  |
@@ -53,7 +53,7 @@ end
 
 ## Unless statement
 
-The `unless`unless statement works very similarly to the `if` statement but it will run the code inside the `unless` statement if the condition is falsey.
+The `unless` statement works very similarly to the `if` statement but it will run the code inside the `unless` statement if the condition is falsey.
 
 ```ruby
 value = 1
@@ -70,8 +70,8 @@ end
 
 ## Else statement
 
-The `else` statement can be used in conjunction with the `if` and `unless` statements.
-The `else` statement will be executed if the `if` branch or the `unless` branch is not executed.
+The `else` statement can be used in conjunction with the `if` statement.
+The `else` statement will be executed if the `if` branch is not executed.
 
 ```ruby
 value = 1
@@ -82,10 +82,12 @@ else
 end
 # => "1 is equal to 1"
 
-unless value < 2
+if value > 2
+  "1 is greater than 2"
+else
   "1 is not greater than 2"
 end
-# => "1 is greater than 2"
+# => "1 is not greater than 2"
 ```
 
 ## "Cascading-if" statements
@@ -93,18 +95,18 @@ end
 The `elsif` statement can be used in conjunction with the if statement.
 The `elsif` statement will be executed if the if branch is not executed and the condition of the elsif statement is truthy.
 Elsif statements can be chained together and the first truthy condition will be executed.
-There can also be an else statement at the end of the if statement which will run if non of the earlier statement has been true.
+There can also be an else statement at the end of the if statement which will run if none of the earlier statements have been true.
 
 ```ruby
 value = 1
-if value != 1
-  "1 is not equal to 1"
+if value == 0
+  "1 is equal to 0"
 elsif value > 2
   "1 is greater than 2"
 else
-  "1 is not equal to 1 and 1 is not greater than 2"
+  "1 is not equal to 0 and 1 is not greater than 2"
 end
-# => "1 is not equal to 1 and 1 is not greater than 2"
+# => "1 is not equal to 0 and 1 is not greater than 2"
 ```
 
 [comparison-operators]: https://www.w3resource.com/ruby/ruby-comparison-operators.php
