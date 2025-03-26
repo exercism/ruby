@@ -49,7 +49,7 @@ Define the `Chess.nickname` method that takes the arguments `first_name` that ho
 The method should return the nickname of the player as capitalized string.
 
 ```ruby
-Chess.nickname("John", "Doe")
+Chess.nick_name("John", "Doe")
 # => "JOOE"
 ```
 
