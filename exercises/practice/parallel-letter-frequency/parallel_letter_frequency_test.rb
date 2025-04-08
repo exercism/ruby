@@ -183,8 +183,8 @@ class ParallelLetterFrequencyTest < Minitest::Test
   def sequential_letter_frequency(texts)
     tally = Hash.new(0)
     texts.each do |text|
-      text.each_grapheme_cluster do |cluster|
-        tally[cluster] += 1
+      text.each_char do |char|
+        tally[char.downcase] += 1 if char.match?(/\p{L}/)
       end
     end
 
