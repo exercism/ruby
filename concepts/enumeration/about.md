@@ -2,15 +2,15 @@
 
 Enumeration is the act of stepping through a collection (`Array`, `Hash`, etc) and performing some action on each object.
 
-Enumeration is a key concept in Ruby and is used for sorting (`sort_by`), grouping (`group_by`), mapping (`map`), reducing (`reduce`), and much more. 
+Enumeration is a key concept in Ruby and is used for sorting (`sort_by`), grouping (`group_by`), mapping (`map`), reducing (`reduce`), and much more.
 You'll most frequently see enumeration as the idiomatic way iterating through collections rather than using loops.
 
 A simple enumeration to print each word in an array would look like this:
 
 ```ruby
 words = %w[the cat sat on the mat]
-words.each do |word| 
-  puts word 
+words.each do |word|
+  puts word
 end
 
 # Output:
@@ -22,14 +22,14 @@ end
 # mat
 ```
 
-In this example, we have called the `Array#each` method and passed in a _block_, which takes one parameter (`word`) and prints it. 
+In this example, we have called the `Array#each` method and passed in a _block_, which takes one parameter (`word`) and prints it.
 
-We can also chain enumerable methods. 
+We can also chain enumerable methods.
 For example, we can chain `.with_index` onto `each` to print out the index of an object as well as it's value:
 
 ```ruby
 words = %w[the cat sat on the mat]
-list = words.map.with_index { |word, index| "#{index}: #{word}" }
+list = words.map.with_index { |word, index| "#{index}. #{word}" }
 puts list
 
 # Output:
