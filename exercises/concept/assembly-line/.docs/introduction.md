@@ -10,11 +10,11 @@ The two most common types of numbers in Ruby are:
 They are implemented through the `Integer` and `Float` classes.
 
 These classes have methods that will coerce values from one to the other. `Integer` numbers are precise to a whole unit, while `Float` has precision that is fractional to a whole number:
-- `Integer#to_f`: Coerce to a new float
-- `Float#ceil`: Round up to the nearest integer
-- `Float#floor`: Round down to the nearest integer
-- `Float#round`: Round to the nearest integer
-- `Float#to_i`: Truncate to the nearest integer
+- `Integer.to_f`: Coerce to a new float
+- `Float.ceil`: Round up to the nearest integer
+- `Float.floor`: Round down to the nearest integer
+- `Float.round`: Round to the nearest integer
+- `Float.to_i`: Truncate to the nearest integer
 
 ## Conditionals
 
