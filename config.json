@@ -948,6 +948,22 @@
         ],
         "difficulty": 4
       },
+      ,
+      {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "d55cb55a-9c0e-42b5-83fe-0bfec3d52f93",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings",
+          "arrays",
+          "conditionals",
+          "exceptions"
+        ],
+        "difficulty": 5
+      },
       {
         "slug": "minesweeper",
         "name": "Minesweeper",
