@@ -968,16 +968,10 @@
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "9d6808fb-d367-4df9-a1f0-47ff83b75544",
-        "practices": [
-          "strings"
-        ],
-        "prerequisites": [
-          "strings",
-          "arrays",
-          "conditionals",
-          "exceptions"
-        ],
-        "difficulty": 5
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "status": "deprecated"
       },
       {
         "slug": "robot-simulator",
