@@ -1,0 +1,29 @@
+{
+  "authors": [
+    "fluxusfrequency"
+  ],
+  "contributors": [
+    "abeger",
+    "BNAndras",
+    "budmc29",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "kytrinyx",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "flower_field.rb"
+    ],
+    "test": [
+      "flower_field_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
