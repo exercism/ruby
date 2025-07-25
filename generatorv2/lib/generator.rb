@@ -15,7 +15,7 @@ class Generator
     @exercise = exercise
   end
 
-  def generate(result_path = "./exercises/practice/#{@exercise}/#{@exercise}_test.rb")
+  def generate(result_path = "./exercises/practice/#{@exercise}/#{to_snake(@exercise)}_test.rb")
     json = remote_files
     uuid = toml("./exercises/practice/#{@exercise}/.meta/tests.toml")
     additional_json(json)
@@ -36,6 +36,10 @@ class Generator
 
   def camel_case(str)
     str.split(/[-_]/).map(&:capitalize).join
+  end
+
+  def to_snake(str)
+    str.gsub(/([a-z\d])([A-Z])/, '\1_\2').tr("-", "_").downcase
   end
 
   def skip?
