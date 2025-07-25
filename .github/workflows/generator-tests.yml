@@ -1,0 +1,34 @@
+name: GeneratorTests
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-generator-templates:
+    name: Check Generator Templates
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@52753b7da854d5c07df37391a986c76ab4615999
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Verify templates
+        run: bundle exec ./bin/generate --verify
+  test-generator:
+    name: Test Generator
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@52753b7da854d5c07df37391a986c76ab4615999
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Run tests
+        run: bundle exec rake test:generator
