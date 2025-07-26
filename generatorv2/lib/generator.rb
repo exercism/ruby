@@ -15,7 +15,7 @@ class Generator
     @exercise = exercise
   end
 
-  def generate(result_path = "./exercises/practice/#{@exercise}/#{@exercise}_test.rb")
+  def generate(result_path = "./exercises/practice/#{@exercise}/#{underscore(@exercise)}_test.rb")
     json = remote_files
     uuid = toml("./exercises/practice/#{@exercise}/.meta/tests.toml")
     additional_json(json)
