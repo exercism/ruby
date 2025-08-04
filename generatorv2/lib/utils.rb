@@ -47,7 +47,7 @@ module Utils
   def remove_tests(uuid, json)
     json["cases"].each_with_object([]) do |x, acc|
       if x["cases"]
-        acc << remove_tests(uuid, json)
+        acc << { "cases" => remove_tests(uuid, x) }
       elsif uuid.include?(x["uuid"])
         acc << x
       end
