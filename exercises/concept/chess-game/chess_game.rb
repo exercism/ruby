@@ -6,7 +6,7 @@ module Chess
     raise "Please implement the Chess.valid_square? method"
   end
 
-  def self.nick_name(first_name, last_name)
+  def self.nickname(first_name, last_name)
     raise "Please implement the Chess.nick_name method"
   end
 
