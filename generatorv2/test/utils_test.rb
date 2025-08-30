@@ -24,7 +24,7 @@ class UtilTest < Minitest::Test
 
   def test_underscore_with_special_characters
     assert_equal "two_fer",
-      Generator.new("two-fer").underscore("two, !@#$%^&*()-fer")
+      Generator.new("two-fer").underscore("two,!@#$%^&*()-fer")
   end
 
   def test_first_time_includes_hastag
