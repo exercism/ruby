@@ -1,0 +1,16 @@
+require 'minitest/autorun'
+require_relative 'binary_search'
+
+class BinarySearchTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %> 
+        binary = BinarySearch.new(<%= cases["input"]["array"] %>)
+        <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
+        assert_nil binary.search_for(<%= cases["input"]["value"] %>)
+        <%- else -%>
+        assert_equal <%= cases["expected"] %>, binary.search_for(<%= cases["input"]["value"] %>)
+        <%- end -%>
+    end
+    <% end %>
+end
