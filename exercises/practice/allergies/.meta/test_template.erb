@@ -2,9 +2,9 @@ require 'minitest/autorun'
 require_relative 'allergies'
 
 class AllergiesTest < Minitest::Test
-<% json["cases"].each do |group| %>
+<% json["cases"].each_with_index do |group, index| %>
     <% group["cases"].each do |sub_case| %>
-    def test_<%= underscore(sub_case["description"]) %>
+    def test_<%= underscore(sub_case["description"]) %><%= index.zero? ? "" : "_#{index}" %>
         <%= skip? %> 
         allergies = Allergies.new(<%= sub_case["input"]["score"] %>)
         <%- if sub_case["property"] == "allergicTo" -%>
