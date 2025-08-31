@@ -9,6 +9,10 @@ def exercises
     .select { |file| File.directory? File.join('./exercises/practice', file) }
 end
 
+def underscore(str)
+  str.gsub(/[^\w\s-]/, '').gsub(/[-\s]/, '_').downcase
+end
+
 class VerificationError < StandardError
   MESSAGE = 'The result generated for %<exercise>s, does not match the current file'
 
@@ -39,7 +43,7 @@ end
 parser.on('--verify', 'Verify all exercises') do
   exercises.each do |exercise|
     if File.exist?("./exercises/practice/#{exercise}/.meta/test_template.erb")
-      current_code = File.read("./exercises/practice/#{exercise}/#{exercise}_test.rb")
+      current_code = File.read("./exercises/practice/#{exercise}/#{underscore(exercise)}_test.rb")
       f = File.new("./exercises/practice/#{exercise}/temp_test.rb", 'w+')
       Generator.new(exercise).generate(f.path)
       generated_code = f.read
