@@ -21,17 +21,17 @@ class Generator
     additional_json(json)
     json["cases"] = remove_tests(uuid, json)
     status = proc { status }
-    template = ERB.new File.read("./exercises/practice/#{@exercise}/.meta/test_template.erb")
+    template = ERB.new(File.read("./exercises/practice/#{@exercise}/.meta/test_template.erb"), trim_mode: '-')
 
     result = template.result(binding)
 
     File.write(result_path, result)
     RuboCop::CLI.new.
-      run(['-x', '-c', '.rubocop.yml', '-o', NullDevice.path, result_path])
+      run(['-a', '-c', '.rubocop.yml', '-o', NullDevice.path, result_path])
   end
 
   def underscore(str)
-    str.gsub(/[-\s]/, '_').downcase
+    str.gsub(/[^\w\s-]/, '').gsub('  ', ' ').gsub(/[-\s]/, '_').downcase
   end
 
   def camel_case(str)
