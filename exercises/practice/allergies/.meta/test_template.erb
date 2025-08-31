@@ -2,13 +2,13 @@ require 'minitest/autorun'
 require_relative 'allergies'
 
 class AllergiesTest < Minitest::Test
-<% json["cases"].each_with_index do |group, index| %>
+<% json["cases"].each do |group| %>
     <% group["cases"].each do |sub_case| %>
-    def test_<%= underscore(sub_case["description"]) %><%= index.zero? ? "" : "_#{index}" %>
+    def test_<%= underscore(group["description"]) %>_<%= underscore(sub_case["description"]) %>
         <%= skip? %> 
         allergies = Allergies.new(<%= sub_case["input"]["score"] %>)
         <%- if sub_case["property"] == "allergicTo" -%>
-        <%= sub_case["expected"] ? "assert" : "refute" %> allergies.allergic_to?("<%= sub_case["input"]["item"] %>"), "Tom is allergic, but it says he is<%= sub_case["expected"] ? "" : " not" %>."
+        <%= sub_case["expected"] ? "assert" : "refute" %> allergies.allergic_to?('<%= sub_case["input"]["item"] %>'), 'Tom is<%= sub_case["expected"] ? "" : " not" %> allergic, but it says he is<%= sub_case["expected"] ? " not" : "" %>.'
         <%- else -%>
         expected = %w[<%= sub_case["expected"].join(" ") %>]
         assert_equal expected, allergies.list
