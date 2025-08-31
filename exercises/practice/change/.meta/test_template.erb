@@ -1,0 +1,26 @@
+require 'minitest/autorun'
+require_relative 'change'
+
+class ChangeTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %> 
+        <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
+            <%- if cases["expected"]["error"] == "can't make target with given coins" -%>
+                assert_raises(Change::ImpossibleCombinationError) do
+            <%- elsif cases["expected"]["error"] == "target can't be negative" -%>
+                assert_raises(Change::NegativeTargetError) do
+            <%- end -%>
+                Change.generate(<%= cases["input"]["coins"] %>, <%= cases["input"]["target"] %>)
+            end
+        <%- else -%>
+            <%- if cases["expected"].empty? -%>
+                assert_empty Change.generate(<%= cases["input"]["coins"] %>, <%= cases["input"]["target"] %>)
+            <%- else -%>
+                expected = <%= cases["expected"] %>
+                assert_equal expected, Change.generate(<%= cases["input"]["coins"] %>, <%= cases["input"]["target"] %>)
+            <%- end -%>
+        <%- end -%>
+    end
+<% end %>
+end
