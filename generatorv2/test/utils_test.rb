@@ -28,7 +28,7 @@ class UtilTest < Minitest::Test
   end
 
   def test_underscore_with_special_characters_should_not_create_multiple_spaces
-        assert_equal "two_fer",
+    assert_equal "two_fer",
       Generator.new("two-fer").underscore("two = fer")
   end
 
