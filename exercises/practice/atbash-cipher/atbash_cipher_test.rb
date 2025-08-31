@@ -1,7 +1,7 @@
 require 'minitest/autorun'
-require_relative 'armstrong_numbers'
+require_relative 'atbash_cipher'
 
-class ArmstrongNumbersTest < Minitest::Test
+class AtbashCipherTest < Minitest::Test
   def test_encode_yes
     # skip
     plaintext = 'yes'
