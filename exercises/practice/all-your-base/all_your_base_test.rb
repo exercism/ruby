@@ -11,8 +11,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 2, output base 10. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -26,8 +26,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 2, output base 10. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -41,8 +41,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 10, output base 2. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -56,8 +56,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 2, output base 10. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -71,8 +71,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 10, output base 2. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -86,8 +86,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 3, output base 16. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -101,8 +101,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 16, output base 3. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -116,8 +116,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 97, output base 73. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -131,8 +131,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 2, output base 10. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -146,8 +146,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 10, output base 2. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -161,8 +161,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 10, output base 2. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -176,8 +176,8 @@ class AllYourBaseTest < Minitest::Test
 
     converted = BaseConverter.convert(input_base, digits, output_base)
 
-    hint = "Input base: 7, output base 10. " \
-           "Expected #{expected} but got #{converted}."
+    hint = "Input base: #{input_base}, output base #{output_base}. " \
+        "Expected #{expected} but got #{converted}."
 
     assert_equal expected, converted, hint
   end
@@ -187,6 +187,7 @@ class AllYourBaseTest < Minitest::Test
     digits = [0]
     input_base = 1
     output_base = 10
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end
@@ -197,6 +198,7 @@ class AllYourBaseTest < Minitest::Test
     digits = []
     input_base = 0
     output_base = 10
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end
@@ -207,6 +209,7 @@ class AllYourBaseTest < Minitest::Test
     digits = [1]
     input_base = -2
     output_base = 10
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end
@@ -217,6 +220,7 @@ class AllYourBaseTest < Minitest::Test
     digits = [1, -1, 1, 0, 1, 0]
     input_base = 2
     output_base = 10
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end
@@ -227,6 +231,7 @@ class AllYourBaseTest < Minitest::Test
     digits = [1, 2, 1, 0, 1, 0]
     input_base = 2
     output_base = 10
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end
@@ -237,6 +242,7 @@ class AllYourBaseTest < Minitest::Test
     digits = [1, 0, 1, 0, 1, 0]
     input_base = 2
     output_base = 1
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end
@@ -247,6 +253,7 @@ class AllYourBaseTest < Minitest::Test
     digits = [7]
     input_base = 10
     output_base = 0
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end
@@ -257,6 +264,7 @@ class AllYourBaseTest < Minitest::Test
     digits = [1]
     input_base = 2
     output_base = -7
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end
@@ -267,6 +275,7 @@ class AllYourBaseTest < Minitest::Test
     digits = [1]
     input_base = -2
     output_base = -7
+
     assert_raises(ArgumentError) do
       BaseConverter.convert(input_base, digits, output_base)
     end

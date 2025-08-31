@@ -5,7 +5,7 @@ class AcronymTest < Minitest::Test
 <% json["cases"].each do |cases| %>
     def test_<%= underscore(cases["description"]) %>
         <%= skip? %> 
-        assert_equal '<%= cases["expected"] %>', <%= camel_case(json["exercise"]) %>.<%= underscore(cases["property"]) %>('<%= cases["input"]["phrase"] %>')
+        assert_equal '<%= cases["expected"] %>', <%= camel_case(json["exercise"]) %>.<%= underscore(cases["property"]) %>('<%= cases["input"]["phrase"].gsub("'", "\\\\'") %>')
     end
 <% end %>
 end

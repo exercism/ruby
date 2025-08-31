@@ -1,0 +1,26 @@
+require 'minitest/autorun'
+require_relative 'affine_cipher'
+
+class AffineCipherTest < Minitest::Test
+<% json["cases"].each do |group| %>
+    <% group["cases"].each do |sub_case| %>
+        def test_<%= underscore(sub_case["description"]) %>
+            <%= skip? %> 
+            <%- if sub_case["expected"].is_a?(Hash) && sub_case["expected"].key?("error") -%>
+                assert_raises(ArgumentError) { Affine.new(<%= sub_case["input"]["key"]["a"] %>, <%= sub_case["input"]["key"]["b"] %>) }
+            <%- else -%>
+                cipher = Affine.new(<%= sub_case["input"]["key"]["a"] %>, <%= sub_case["input"]["key"]["b"] %>)
+                <%- if sub_case["property"] == "encode" -%>
+                    plaintext = '<%= sub_case["input"]["phrase"] %>'
+                    ciphertext = '<%= sub_case["expected"] %>'
+                    assert_equal ciphertext, cipher.encode(plaintext)
+                <%- elsif sub_case["property"] == "decode" -%>
+                    ciphertext = '<%= sub_case["input"]["phrase"] %>'
+                    plaintext = '<%= sub_case["expected"] %>'
+                    assert_equal plaintext, cipher.decode(ciphertext)
+                <%- end -%>
+            <%- end -%>
+        end
+    <% end %>
+<% end %>
+end

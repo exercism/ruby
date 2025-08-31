@@ -1,0 +1,43 @@
+require 'minitest/autorun'
+require_relative 'bank_account'
+
+class BankAccountTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        bank_account = BankAccount.new
+        <%- cases["input"]["operations"][...-1].each do |operation| -%>
+            <%- if operation["operation"] == "open" -%>
+                bank_account.open
+            <%- elsif operation["operation"] == "close" -%>
+                bank_account.close
+            <%- elsif operation["operation"] == "deposit" -%>
+                bank_account.deposit(<%= operation["amount"] %>)
+            <%- elsif operation["operation"] == "withdraw" -%>
+                bank_account.withdraw(<%= operation["amount"] %>)
+            <%- end -%>
+        <%- end -%>
+        <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
+            assert_raises(ArgumentError, <%- if cases["expected"]["error"] == "account not open" && cases["input"]["operations"][-1]["operation"] == "balance" -%>
+                "You can't check the balance of a closed account"
+            <%- elsif cases["expected"]["error"] == "account not open"  && cases["input"]["operations"][-1]["operation"] == "withdraw" -%>
+                "You can't withdraw money into a closed account"
+            <%- elsif cases["expected"]["error"] == "account not open"  && cases["input"]["operations"][-1]["operation"] == "deposit" -%>
+                "You can't deposit money into a closed account"
+            <%- elsif cases["expected"]["error"] == "account not open" -%>
+                "You can't close an already closed account"
+            <%- elsif cases["expected"]["error"] == "account already open" -%>
+                "You can't open an already open account"
+            <%- elsif cases["expected"]["error"] == "amount must be less than balance" -%>
+                "You can't withdraw more than you have"
+            <%- elsif cases["expected"]["error"] == "amount must be greater than 0" && cases["input"]["operations"][-1]["operation"] == "withdraw" -%>
+                "You can't withdraw a negative amount"
+            <%- elsif cases["expected"]["error"] == "amount must be greater than 0" -%>
+                "You can't deposit a negative amount"
+            <%- end -%> ) { bank_account.<%= cases["input"]["operations"][-1]["operation"]%>(<%= cases["input"]["operations"][-1]["amount"] %>) }
+        <%- else -%>
+            assert_equal <%= cases["expected"] %>, bank_account.balance
+        <%- end -%>
+    end
+<% end %>
+end

@@ -6,7 +6,7 @@ class BankAccountTest < Minitest::Test
     # skip
     bank_account = BankAccount.new
     bank_account.open
-    assert_equal bank_account.balance, 0
+    assert_equal 0, bank_account.balance
   end
 
   def test_single_deposit

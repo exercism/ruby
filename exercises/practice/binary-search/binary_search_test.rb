@@ -44,13 +44,13 @@ class BinarySearchTest < Minitest::Test
     assert_nil binary.search_for(7)
   end
 
-  def test_a_value_smaller_than_the_array_s_smallest_value_is_not_found
+  def test_a_value_smaller_than_the_arrays_smallest_value_is_not_found
     skip
     binary = BinarySearch.new([1, 3, 4, 6, 8, 9, 11])
     assert_nil binary.search_for(0)
   end
 
-  def test_a_value_larger_than_the_array_s_largest_value_is_not_found
+  def test_a_value_larger_than_the_arrays_largest_value_is_not_found
     skip
     binary = BinarySearch.new([1, 3, 4, 6, 8, 9, 11])
     assert_nil binary.search_for(13)

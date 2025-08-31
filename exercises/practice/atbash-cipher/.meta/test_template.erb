@@ -1,0 +1,21 @@
+require 'minitest/autorun'
+require_relative 'armstrong_numbers'
+
+class ArmstrongNumbersTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case| %>
+        def test_<%= underscore(sub_case["description"]) %>
+            <%= skip? %>
+            <%- if sub_case["property"] == "encode" -%>
+            plaintext = '<%= sub_case["input"]["phrase"] %>'
+            ciphertext = '<%= sub_case["expected"] %>'
+            assert_equal ciphertext, Atbash.encode(plaintext)
+            <%- else -%>
+            ciphertext = '<%= sub_case["input"]["phrase"] %>'
+            plaintext = '<%= sub_case["expected"] %>'
+            assert_equal plaintext, Atbash.decode(ciphertext)
+            <% end %>
+        end
+    <% end %>
+<% end %>
+end

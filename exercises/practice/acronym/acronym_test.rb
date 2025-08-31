@@ -36,4 +36,14 @@ class AcronymTest < Minitest::Test
     skip
     assert_equal 'SIMUFTA', Acronym.abbreviate('Something - I made up from thin air')
   end
+
+  def test_apostrophes
+    skip
+    assert_equal 'HC', Acronym.abbreviate('Halley\'s Comet')
+  end
+
+  def test_underscore_emphasis
+    skip
+    assert_equal 'TRNT', Acronym.abbreviate('The Road _Not_ Taken')
+  end
 end

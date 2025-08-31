@@ -1,0 +1,15 @@
+require 'minitest/autorun'
+require_relative 'anagram'
+
+class AnagramTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %> 
+        detector = Anagram.new('<%= cases["input"]["subject"] %>')
+        anagrams = detector.match(%w[<%= cases["input"]["candidates"].join(" ") %>])
+        expected = %w[<%= cases["expected"].join(" ") %>]
+
+        assert_equal expected, anagrams
+    end
+    <% end %>
+end
