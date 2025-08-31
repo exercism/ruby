@@ -1,0 +1,15 @@
+require 'minitest/autorun'
+require_relative 'diamond'
+
+class DiamondTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %> 
+        answer = Diamond.make_diamond('<%= cases["input"]["letter"] %>')
+        string =<% cases["expected"].each do |row| -%>
+                "<%= row %>\n"\
+        <%- end %>
+        assert_equal string, answer
+    end
+    <% end %>
+end

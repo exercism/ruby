@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'difference_of_squares'
+
+class DifferenceOfSquaresTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case| %>
+        def test_<%= underscore(sub_case["description"]) %>
+            <%= skip? %> 
+            assert_equal <%= sub_case["expected"] %>, Squares.new(<%= sub_case["input"]["number"] %>).<%= sub_case["property"] == "differenceOfSquares" ? "difference" : sub_case["property"].gsub(/([A-Z])/, '_\1').downcase.sub(/^_/, '') %>
+        end
+    <% end %>
+<% end %>
+end

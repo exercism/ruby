@@ -154,6 +154,13 @@ class CustomSetTest < Minitest::Test
     refute_equal set1, set2
   end
 
+  def test_set_is_equal_to_a_set_constructed_from_an_array_with_duplicates
+    skip
+    set1 = CustomSet.new [1]
+    set2 = CustomSet.new [1, 1]
+    assert_equal set1, set2
+  end
+
   def test_add_to_empty_set
     skip
     set = CustomSet.new []
@@ -180,7 +187,7 @@ class CustomSetTest < Minitest::Test
     set1 = CustomSet.new []
     set2 = CustomSet.new []
     expected = CustomSet.new []
-    assert_equal expected, set2.intersection(set1)
+    assert_equal expected, set1.intersection(set2)
   end
 
   def test_intersection_of_an_empty_set_and_non_empty_set_is_an_empty_set
@@ -188,7 +195,7 @@ class CustomSetTest < Minitest::Test
     set1 = CustomSet.new []
     set2 = CustomSet.new [3, 2, 5]
     expected = CustomSet.new []
-    assert_equal expected, set2.intersection(set1)
+    assert_equal expected, set1.intersection(set2)
   end
 
   def test_intersection_of_a_non_empty_set_and_an_empty_set_is_an_empty_set
@@ -196,7 +203,7 @@ class CustomSetTest < Minitest::Test
     set1 = CustomSet.new [1, 2, 3, 4]
     set2 = CustomSet.new []
     expected = CustomSet.new []
-    assert_equal expected, set2.intersection(set1)
+    assert_equal expected, set1.intersection(set2)
   end
 
   def test_intersection_of_two_sets_with_no_shared_elements_is_an_empty_set
@@ -204,7 +211,7 @@ class CustomSetTest < Minitest::Test
     set1 = CustomSet.new [1, 2, 3]
     set2 = CustomSet.new [4, 5, 6]
     expected = CustomSet.new []
-    assert_equal expected, set2.intersection(set1)
+    assert_equal expected, set1.intersection(set2)
   end
 
   def test_intersection_of_two_sets_with_shared_elements_is_a_set_of_the_shared_elements
@@ -212,7 +219,7 @@ class CustomSetTest < Minitest::Test
     set1 = CustomSet.new [1, 2, 3, 4]
     set2 = CustomSet.new [3, 2, 5]
     expected = CustomSet.new [2, 3]
-    assert_equal expected, set2.intersection(set1)
+    assert_equal expected, set1.intersection(set2)
   end
 
   def test_difference_of_two_empty_sets_is_an_empty_set
@@ -244,6 +251,14 @@ class CustomSetTest < Minitest::Test
     set1 = CustomSet.new [3, 2, 1]
     set2 = CustomSet.new [2, 4]
     expected = CustomSet.new [1, 3]
+    assert_equal expected, set1.difference(set2)
+  end
+
+  def test_difference_removes_all_duplicates_in_the_first_set
+    skip
+    set1 = CustomSet.new [1, 1]
+    set2 = CustomSet.new [1]
+    expected = CustomSet.new []
     assert_equal expected, set1.difference(set2)
   end
 
