@@ -16,8 +16,8 @@ end
 class VerificationError < StandardError
   MESSAGE = 'The result generated for %<exercise>s, does not match the current file'
 
-  def initialize(message = MESSAGE)
-    super
+  def initialize(exercise, message = MESSAGE)
+    super(message % { exercise: exercise })
   end
 end
 
@@ -48,10 +48,8 @@ parser.on('--verify', 'Verify all exercises') do
       Generator.new(exercise).generate(f.path)
       generated_code = f.read
       File.delete(f.path)
-      fail VerificationError unless current_code == generated_code
+      fail VerificationError.new(exercise) unless current_code == generated_code
     end
-    rescue VerificationError => e
-      STDERR.puts e.message % {exercise:}
   end
 end
 

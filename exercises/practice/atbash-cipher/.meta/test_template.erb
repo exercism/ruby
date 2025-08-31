@@ -1,7 +1,7 @@
 require 'minitest/autorun'
-require_relative 'armstrong_numbers'
+require_relative 'atbash_cipher'
 
-class ArmstrongNumbersTest < Minitest::Test
+class AtbashCipherTest < Minitest::Test
 <% json["cases"].each do |cases| %>
     <% cases["cases"].each do |sub_case| %>
         def test_<%= underscore(sub_case["description"]) %>
