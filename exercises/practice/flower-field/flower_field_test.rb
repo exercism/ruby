@@ -3,6 +3,7 @@ require_relative 'flower_field'
 
 class FlowerFieldTest < Minitest::Test
   def test_no_rows
+    # skip
     input = []
     expected = []
     assert_equal expected, FlowerField.annotate(input)

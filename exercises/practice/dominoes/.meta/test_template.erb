@@ -1,0 +1,12 @@
+require 'minitest/autorun'
+require_relative 'dominoes'
+
+class DominoesTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %> 
+        dominoes = <%= cases["input"]["dominoes"] %>
+        <%= cases["expected"] ? "assert" : "refute" %> Dominoes.chain?(dominoes)
+    end
+    <% end %>
+end
