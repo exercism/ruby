@@ -2,13 +2,13 @@ require 'minitest/autorun'
 require_relative 'dominoes'
 
 class DominoesTest < Minitest::Test
-  def test_empty_input__empty_output
+  def test_empty_input_empty_output
     # skip
     dominoes = []
     assert Dominoes.chain?(dominoes)
   end
 
-  def test_singleton_input__singleton_output
+  def test_singleton_input_singleton_output
     skip
     dominoes = [[1, 1]]
     assert Dominoes.chain?(dominoes)
