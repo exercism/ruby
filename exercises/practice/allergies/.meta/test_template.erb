@@ -1,0 +1,19 @@
+require 'minitest/autorun'
+require_relative 'allergies'
+
+class AllergiesTest < Minitest::Test
+<% json["cases"].each do |group| %>
+    <% group["cases"].each do |sub_case| %>
+    def test_<%= underscore(group["description"]) %>_<%= underscore(sub_case["description"]) %>
+        <%= skip? %> 
+        allergies = Allergies.new(<%= sub_case["input"]["score"] %>)
+        <%- if sub_case["property"] == "allergicTo" -%>
+        <%= sub_case["expected"] ? "assert" : "refute" %> allergies.allergic_to?('<%= sub_case["input"]["item"] %>'), 'Tom is<%= sub_case["expected"] ? "" : " not" %> allergic, but it says he is<%= sub_case["expected"] ? " not" : "" %>.'
+        <%- else -%>
+        expected = %w[<%= sub_case["expected"].join(" ") %>]
+        assert_equal expected, allergies.list
+        <% end %>
+    end
+    <% end %>
+    <% end %>
+end
