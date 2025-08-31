@@ -138,7 +138,7 @@ class ClockTest < Minitest::Test
     assert_equal '00:01', (clock + Clock.new(minute: 2)).to_s
   end
 
-  def test_add_more_than_one_day_1500_min__25_hrs
+  def test_add_more_than_one_day_1500_min_25_hrs
     skip
     clock = Clock.new(hour: 5, minute: 32)
     assert_equal '06:32', (clock + Clock.new(minute: 1500)).to_s
@@ -186,7 +186,7 @@ class ClockTest < Minitest::Test
     assert_equal '03:35', (clock - Clock.new(minute: 160)).to_s
   end
 
-  def test_subtract_more_than_one_day_1500_min__25_hrs
+  def test_subtract_more_than_one_day_1500_min_25_hrs
     skip
     clock = Clock.new(hour: 5, minute: 32)
     assert_equal '04:32', (clock - Clock.new(minute: 1500)).to_s
