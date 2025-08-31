@@ -27,6 +27,11 @@ class UtilTest < Minitest::Test
       Generator.new("two-fer").underscore("two,!@#$%^&*()-fer")
   end
 
+  def test_underscore_with_special_characters_should_not_create_multiple_spaces
+        assert_equal "two_fer",
+      Generator.new("two-fer").underscore("two = fer")
+  end
+
   def test_first_time_includes_hastag
     assert_equal "# skip",
       Generator.new("acronym").skip?

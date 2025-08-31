@@ -31,7 +31,7 @@ class Generator
   end
 
   def underscore(str)
-    str.gsub(/[^\w\s-]/, '').gsub(/[-\s]/, '_').downcase
+    str.gsub(/[^\w\s-]/, '').gsub('  ', ' ').gsub(/[-\s]/, '_').downcase
   end
 
   def camel_case(str)
