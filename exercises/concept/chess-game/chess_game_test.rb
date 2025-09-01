@@ -34,11 +34,11 @@ class ChessTest < Minitest::Test
     assert_equal "JOOE", Chess.nick_name("John", "Doe")
   end
 
-  def test_correct_nickname_for_2_letter_last_name
+  def test_correct_nick_name_for_2_letter_last_name
     assert_equal "LILI", Chess.nick_name("Lisa", "Li")
   end
 
-  def test_correct_nickname_for_2_letter_first_name
+  def test_correct_nick_name_for_2_letter_first_name
     assert_equal "DJER", Chess.nick_name("Dj", "Walker")
   end
 
