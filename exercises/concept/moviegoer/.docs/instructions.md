@@ -24,7 +24,7 @@ The cinema has a simplified age-verification system.
 If you are 18 or over you can watch scary movies.
 If you are younger, you cannot.
 
-Implement the `Moviegoer.watch_scary_movie?` method.
+Implement the `Moviegoer#watch_scary_movie?` method.
 It should return whether someone is allowed to watch the movie or not.
 
 ```ruby

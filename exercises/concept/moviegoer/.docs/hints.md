@@ -6,7 +6,7 @@
 
 ## 2. Check if a moviegoer is allowed to see scary movies
 
-- [Compare][doc-integer-gtoe] the moviegoer's age with the minimum age allowed to see scary movies. You don't even need thee ternary operator in this task.
+- [Compare][doc-integer-gtoe] the moviegoer's age with the minimum age allowed to see scary movies. You don't even need the ternary operator in this task.
 
 ## 3. Check if a moviegoer is entitled to free popcorn
 
