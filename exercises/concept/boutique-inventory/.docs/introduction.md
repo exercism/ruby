@@ -40,7 +40,7 @@ This helps both in terms of developer clarity and also is a performance optimisa
 
 ```ruby
 pet_names = {cat: "bob", horse: "caris", mouse: "arya"}
-pet_names.map { |_, name| name }  #=> ["bob, "caris", "arya"]
+pet_names.map { |_, name| name }  #=> ["bob", "caris", "arya"]
 ```
 
 ## Nested Enumerations

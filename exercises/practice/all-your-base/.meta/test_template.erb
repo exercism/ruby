@@ -1,0 +1,26 @@
+require 'minitest/autorun'
+require_relative 'all_your_base'
+
+class AllYourBaseTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %> 
+        digits = <%= cases["input"]["digits"] %>
+        input_base = <%= cases["input"]["inputBase"] %>
+        output_base = <%= cases["input"]["outputBase"] %>
+        <% if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") %>
+        assert_raises(ArgumentError) do
+            BaseConverter.convert(input_base, digits, output_base)
+        end
+        <% else %>expected = <%= cases["expected"] %>
+
+        converted = BaseConverter.convert(input_base, digits, output_base)
+
+        hint = "Input base: #{input_base}, output base #{output_base}. " \
+            "Expected #{expected} but got #{converted}."
+
+        assert_equal expected, converted, hint
+        <% end %>
+    end
+    <% end %>
+end

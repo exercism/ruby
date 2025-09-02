@@ -7,9 +7,7 @@ class Acronym
     end.join
   end
 
-  def self.each_word(phrase)
-    phrase.scan(/[A-Z]+[a-z]*|[a-z]+/) do |word|
-      yield word
-    end
+  def self.each_word(phrase, &block)
+    phrase.scan(/[A-Za-z]+(?:'[A-Za-z]+)*/, &block)
   end
 end
