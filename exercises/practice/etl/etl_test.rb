@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'etl'
 
 class EtlTest < Minitest::Test
-  def test_a_single_letter
+  def test_single_letter
     # skip
     old = {
       1 => ["A"]
