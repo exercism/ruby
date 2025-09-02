@@ -48,7 +48,7 @@ parser.on('--verify', 'Verify all exercises') do
       Generator.new(exercise).generate(f.path)
       generated_code = f.read
       File.delete(f.path)
-      fail VerificationError.new(exercise) unless current_code == generated_code
+      fail VerificationError, exercise unless current_code == generated_code
     end
   end
 end
