@@ -26,13 +26,13 @@ class DartsTest < Minitest::Test
     assert_equal(10, darts.score)
   end
 
-  def test_exactly_on_centre
+  def test_exactly_on_center
     skip
     darts = Darts.new(0, 0)
     assert_equal(10, darts.score)
   end
 
-  def test_near_the_centre
+  def test_near_the_center
     skip
     darts = Darts.new(-0.1, -0.1)
     assert_equal(10, darts.score)

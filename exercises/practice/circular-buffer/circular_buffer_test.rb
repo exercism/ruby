@@ -2,107 +2,131 @@ require 'minitest/autorun'
 require_relative 'circular_buffer'
 
 class CircularBufferTest < Minitest::Test
-  def test_read_empty_buffer_throws_buffer_empty_exception
+  def test_reading_empty_buffer_should_fail
+    # skip
     buffer = CircularBuffer.new(1)
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
-  def test_write_and_read_back_one_item
+  def test_can_read_an_item_just_written
     skip
     buffer = CircularBuffer.new(1)
-    buffer.write '1'
+    buffer.write('1')
+    assert_equal '1', buffer.read
+  end
+
+  def test_each_item_may_only_be_read_once
+    skip
+    buffer = CircularBuffer.new(1)
+    buffer.write('1')
     assert_equal '1', buffer.read
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
-  def test_write_and_read_back_multiple_items
+  def test_items_are_read_in_the_order_they_are_written
     skip
     buffer = CircularBuffer.new(2)
-    buffer.write '1'
-    buffer.write '2'
+    buffer.write('1')
+    buffer.write('2')
     assert_equal '1', buffer.read
     assert_equal '2', buffer.read
-    assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
-  def test_clearing_buffer
+  def test_full_buffer_cant_be_written_to
+    skip
+    buffer = CircularBuffer.new(1)
+    buffer.write('1')
+    assert_raises(CircularBuffer::BufferFullException) { buffer.write('2') }
+  end
+
+  def test_a_read_frees_up_capacity_for_another_write
+    skip
+    buffer = CircularBuffer.new(1)
+    buffer.write('1')
+    assert_equal '1', buffer.read
+    buffer.write('2')
+    assert_equal '2', buffer.read
+  end
+
+  def test_read_position_is_maintained_even_across_multiple_writes
     skip
     buffer = CircularBuffer.new(3)
-    ('1'..'3').each { |i| buffer.write i }
-    buffer.clear
-    assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
-    buffer.write '1'
-    buffer.write '2'
+    buffer.write('1')
+    buffer.write('2')
     assert_equal '1', buffer.read
-    buffer.write '3'
-    assert_equal '2', buffer.read
-  end
-
-  def test_alternate_write_and_read
-    skip
-    buffer = CircularBuffer.new(2)
-    buffer.write '1'
-    assert_equal '1', buffer.read
-    buffer.write '2'
-    assert_equal '2', buffer.read
-  end
-
-  def test_reads_back_oldest_item
-    skip
-    buffer = CircularBuffer.new(3)
-    buffer.write '1'
-    buffer.write '2'
-    buffer.read
-    buffer.write '3'
+    buffer.write('3')
     assert_equal '2', buffer.read
     assert_equal '3', buffer.read
   end
 
-  def test_writing_to_a_full_buffer_throws_an_exception
+  def test_items_cleared_out_of_buffer_cant_be_read
     skip
-    buffer = CircularBuffer.new(2)
-    buffer.write '1'
-    buffer.write '2'
-    assert_raises(CircularBuffer::BufferFullException) { buffer.write 'A' }
-  end
-
-  def test_overwriting_oldest_item_in_a_full_buffer
-    skip
-    buffer = CircularBuffer.new(2)
-    buffer.write '1'
-    buffer.write '2'
-    buffer.write! 'A'
-    assert_equal '2', buffer.read
-    assert_equal 'A', buffer.read
+    buffer = CircularBuffer.new(1)
+    buffer.write('1')
+    buffer.clear
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
-  def test_forced_writes_to_non_full_buffer_should_behave_like_writes
+  def test_clear_frees_up_capacity_for_another_write
+    skip
+    buffer = CircularBuffer.new(1)
+    buffer.write('1')
+    buffer.clear
+    buffer.write('2')
+    assert_equal '2', buffer.read
+  end
+
+  def test_clear_does_nothing_on_empty_buffer
+    skip
+    buffer = CircularBuffer.new(1)
+    buffer.clear
+    buffer.write('1')
+    assert_equal '1', buffer.read
+  end
+
+  def test_overwrite_acts_like_write_on_non_full_buffer
     skip
     buffer = CircularBuffer.new(2)
-    buffer.write '1'
-    buffer.write! '2'
+    buffer.write('1')
+    buffer.write!('2')
     assert_equal '1', buffer.read
     assert_equal '2', buffer.read
-    assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 
-  def test_alternate_read_and_write_into_buffer_overflow
+  def test_overwrite_replaces_the_oldest_item_on_full_buffer
     skip
-    buffer = CircularBuffer.new(5)
-    ('1'..'3').each { |i| buffer.write i }
-    buffer.read
-    buffer.read
-    buffer.write '4'
-    buffer.read
-    ('5'..'8').each { |i| buffer.write i }
-    buffer.write! 'A'
-    buffer.write! 'B'
-    ('6'..'8').each do |i|
-      assert_equal i, buffer.read
-    end
-    assert_equal 'A', buffer.read
-    assert_equal 'B', buffer.read
+    buffer = CircularBuffer.new(2)
+    buffer.write('1')
+    buffer.write('2')
+    buffer.write!('3')
+    assert_equal '2', buffer.read
+    assert_equal '3', buffer.read
+  end
+
+  def test_overwrite_replaces_the_oldest_item_remaining_in_buffer_following_a_read
+    skip
+    buffer = CircularBuffer.new(3)
+    buffer.write('1')
+    buffer.write('2')
+    buffer.write('3')
+    assert_equal '1', buffer.read
+    buffer.write('4')
+    buffer.write!('5')
+    assert_equal '3', buffer.read
+    assert_equal '4', buffer.read
+    assert_equal '5', buffer.read
+  end
+
+  def test_initial_clear_does_not_affect_wrapping_around
+    skip
+    buffer = CircularBuffer.new(2)
+    buffer.clear
+    buffer.write('1')
+    buffer.write('2')
+    buffer.write!('3')
+    buffer.write!('4')
+    assert_equal '3', buffer.read
+    assert_equal '4', buffer.read
     assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
   end
 end

@@ -12,84 +12,84 @@ end
 class DndCharacterTest < Minitest::Test
   include Helpers
 
-  def test_modifier_score_3
+  def test_ability_modifier_for_score_3_is__4
     # skip
     assert_equal(-4, DndCharacter.modifier(3))
   end
 
-  def test_modifier_score_4
+  def test_ability_modifier_for_score_4_is__3
     skip
     assert_equal(-3, DndCharacter.modifier(4))
   end
 
-  def test_modifier_score_5
+  def test_ability_modifier_for_score_5_is__3
     skip
     assert_equal(-3, DndCharacter.modifier(5))
   end
 
-  def test_modifier_score_6
+  def test_ability_modifier_for_score_6_is__2
     skip
     assert_equal(-2, DndCharacter.modifier(6))
   end
 
-  def test_modifier_score_7
+  def test_ability_modifier_for_score_7_is__2
     skip
     assert_equal(-2, DndCharacter.modifier(7))
   end
 
-  def test_modifier_score_8
+  def test_ability_modifier_for_score_8_is__1
     skip
     assert_equal(-1, DndCharacter.modifier(8))
   end
 
-  def test_modifier_score_9
+  def test_ability_modifier_for_score_9_is__1
     skip
     assert_equal(-1, DndCharacter.modifier(9))
   end
 
-  def test_modifier_score_10
+  def test_ability_modifier_for_score_10_is_0
     skip
-    assert_equal 0, DndCharacter.modifier(10)
+    assert_equal(0, DndCharacter.modifier(10))
   end
 
-  def test_modifier_score_11
+  def test_ability_modifier_for_score_11_is_0
     skip
-    assert_equal 0, DndCharacter.modifier(11)
+    assert_equal(0, DndCharacter.modifier(11))
   end
 
-  def test_modifier_score_12
+  def test_ability_modifier_for_score_12_is_1
     skip
-    assert_equal 1, DndCharacter.modifier(12)
+    assert_equal(1, DndCharacter.modifier(12))
   end
 
-  def test_modifier_score_13
+  def test_ability_modifier_for_score_13_is_1
     skip
-    assert_equal 1, DndCharacter.modifier(13)
+    assert_equal(1, DndCharacter.modifier(13))
   end
 
-  def test_modifier_score_14
+  def test_ability_modifier_for_score_14_is_2
     skip
-    assert_equal 2, DndCharacter.modifier(14)
+    assert_equal(2, DndCharacter.modifier(14))
   end
 
-  def test_modifier_score_15
+  def test_ability_modifier_for_score_15_is_2
     skip
-    assert_equal 2, DndCharacter.modifier(15)
+    assert_equal(2, DndCharacter.modifier(15))
   end
 
-  def test_modifier_score_16
+  def test_ability_modifier_for_score_16_is_3
     skip
-    assert_equal 3, DndCharacter.modifier(16)
+    assert_equal(3, DndCharacter.modifier(16))
   end
 
-  def test_modifier_score_17
+  def test_ability_modifier_for_score_17_is_3
     skip
-    assert_equal 3, DndCharacter.modifier(17)
+    assert_equal(3, DndCharacter.modifier(17))
   end
 
-  def test_modifier_score_18
+  def test_ability_modifier_for_score_18_is_4
     skip
-    assert_equal 4, DndCharacter.modifier(18)
+    assert_equal(4, DndCharacter.modifier(18))
   end
 
   # rubocop:disable Style/FormatString, Style/RedundantPercentQ

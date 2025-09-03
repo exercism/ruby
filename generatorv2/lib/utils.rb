@@ -10,7 +10,7 @@ module Utils
 
     uuid = TomlRB.load_file(path)
     uuid = uuid.filter do |_k, v|
-      v.none? { |k, inner_value| k == "include" && !inner_value }
+      v.none? { |k, inner_value| k == 'include' && !inner_value }
     end
     uuid.keys
   end
@@ -39,16 +39,16 @@ module Utils
     file_path = "./exercises/practice/#{@exercise}/.meta/additional_tests.json"
     return unless File.exist?(file_path)
 
-    JSON.parse(File.read(file_path))["cases"].each do |test|
-      json["cases"] << test
+    JSON.parse(File.read(file_path))['cases'].each do |test|
+      json['cases'] << test
     end
   end
 
   def remove_tests(uuid, json)
-    json["cases"].each_with_object([]) do |x, acc|
-      if x["cases"]
-        acc << { "cases" => remove_tests(uuid, x), "description" => x["description"] }
-      elsif uuid.include?(x["uuid"])
+    json['cases'].each_with_object([]) do |x, acc|
+      if x['cases']
+        acc << { 'cases' => remove_tests(uuid, x), 'description' => x['description'] }
+      elsif uuid.include?(x['uuid'])
         acc << x
       end
     end
