@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'bottle_song'
 
 class BottleSongTest < Minitest::Test
-  def test_single_verse
+  def test_first_generic_verse
     # skip
     expected = <<~TEXT
       Ten green bottles hanging on the wall,

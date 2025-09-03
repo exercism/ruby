@@ -1,0 +1,12 @@
+require 'minitest/autorun'
+require_relative 'bob'
+
+class BobTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %> 
+        remark = <%= cases["input"]["heyBob"].dump()  %>
+        assert_equal "<%= cases["expected"] %>", Bob.hey(remark), <%= "Bob hears #{ cases["input"]["heyBob"].dump}, and..".dump %>
+    end
+<% end %>
+end

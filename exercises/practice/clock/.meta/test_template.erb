@@ -1,0 +1,25 @@
+require 'minitest/autorun'
+require_relative 'clock'
+
+class ClockTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case| %>
+        def test_<%= underscore(sub_case["description"]) %>
+            <%= skip? %> 
+            <%- if sub_case["property"] == "create" -%>
+                assert_equal '<%= sub_case["expected"] %>', Clock.new(<%= sub_case["input"]["hour"] != 0 ? "hour: #{sub_case["input"]["hour"]}" : "" %><%= sub_case["input"]["minute"] != 0 && sub_case["input"]["hour"] != 0 ? ", " : "" %><%= sub_case["input"]["minute"] != 0 ?  "minute: #{sub_case["input"]["minute"]}" : "" %>).to_s
+            <%- elsif sub_case["property"] == "add" -%>
+                clock = Clock.new(<%= sub_case["input"]["hour"] != 0 ? "hour: #{sub_case["input"]["hour"]}" : "" %><%= sub_case["input"]["minute"] != 0 && sub_case["input"]["hour"] != 0 ? ", " : "" %><%= sub_case["input"]["minute"] != 0 ?  "minute: #{sub_case["input"]["minute"]}" : "" %>)
+                assert_equal '<%= sub_case["expected"] %>', (clock + Clock.new(minute: <%= sub_case["input"]["value"]%>)).to_s
+            <%- elsif sub_case["property"] == "subtract" -%>
+                clock = Clock.new(<%= sub_case["input"]["hour"] != 0 ? "hour: #{sub_case["input"]["hour"]}" : "" %><%= sub_case["input"]["minute"] != 0 && sub_case["input"]["hour"] != 0 ? ", " : "" %><%= sub_case["input"]["minute"] != 0 ?  "minute: #{sub_case["input"]["minute"]}" : "" %>)
+                assert_equal '<%= sub_case["expected"] %>', (clock - Clock.new(minute: <%= sub_case["input"]["value"]%>)).to_s
+            <%- elsif sub_case["property"] == "equal" -%>
+                clock1 = Clock.new(hour: <%= sub_case["input"]["clock1"]["hour"] %>, minute: <%= sub_case["input"]["clock1"]["minute"] %>)
+                clock2 = Clock.new(hour: <%= sub_case["input"]["clock2"]["hour"] %>, minute: <%= sub_case["input"]["clock2"]["minute"] %>)
+                <%= sub_case["expected"] ? "assert_equal" : "refute_equal"%> clock1, clock2
+            <%- end -%>
+        end
+    <% end %>
+<% end %>
+end

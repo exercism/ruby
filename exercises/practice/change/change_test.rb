@@ -4,27 +4,32 @@ require_relative 'change'
 class ChangeTest < Minitest::Test
   def test_change_for_1_cent
     # skip
-    assert_equal [1], Change.generate([1, 5, 10, 25], 1)
+    expected = [1]
+    assert_equal expected, Change.generate([1, 5, 10, 25], 1)
   end
 
   def test_single_coin_change
     skip
-    assert_equal [25], Change.generate([1, 5, 10, 25, 100], 25)
+    expected = [25]
+    assert_equal expected, Change.generate([1, 5, 10, 25, 100], 25)
   end
 
   def test_multiple_coin_change
     skip
-    assert_equal [5, 10], Change.generate([1, 5, 10, 25, 100], 15)
+    expected = [5, 10]
+    assert_equal expected, Change.generate([1, 5, 10, 25, 100], 15)
   end
 
   def test_change_with_lilliputian_coins
     skip
-    assert_equal [4, 4, 15], Change.generate([1, 4, 15, 20, 50], 23)
+    expected = [4, 4, 15]
+    assert_equal expected, Change.generate([1, 4, 15, 20, 50], 23)
   end
 
   def test_change_with_lower_elbonia_coins
     skip
-    assert_equal [21, 21, 21], Change.generate([1, 5, 10, 21, 25], 63)
+    expected = [21, 21, 21]
+    assert_equal expected, Change.generate([1, 5, 10, 21, 25], 63)
   end
 
   def test_large_target_values
@@ -35,12 +40,20 @@ class ChangeTest < Minitest::Test
 
   def test_possible_change_without_unit_coins_available
     skip
-    assert_equal [2, 2, 2, 5, 10], Change.generate([2, 5, 10, 20, 50], 21)
+    expected = [2, 2, 2, 5, 10]
+    assert_equal expected, Change.generate([2, 5, 10, 20, 50], 21)
   end
 
   def test_another_possible_change_without_unit_coins_available
     skip
-    assert_equal [4, 4, 4, 5, 5, 5], Change.generate([4, 5], 27)
+    expected = [4, 4, 4, 5, 5, 5]
+    assert_equal expected, Change.generate([4, 5], 27)
+  end
+
+  def test_a_greedy_approach_is_not_optimal
+    skip
+    expected = [10, 10]
+    assert_equal expected, Change.generate([1, 10, 11], 20)
   end
 
   def test_no_coins_make_0_change

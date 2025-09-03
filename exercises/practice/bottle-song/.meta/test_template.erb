@@ -1,0 +1,18 @@
+require 'minitest/autorun'
+require_relative 'bottle_song'
+
+class BottleSongTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case| %>
+        <% sub_case["cases"].each do |sub_sub_case| %>
+            def test_<%= underscore(sub_sub_case["description"]) %>
+                <%= skip? %>
+                expected = <<~TEXT
+<%= sub_sub_case["expected"].join("\n") %>
+                    TEXT
+                assert_equal expected, BottleSong.recite(<%= sub_sub_case["input"]["startBottles"] %>, <%= sub_sub_case["input"]["takeDown"] %>)
+            end
+        <% end %>
+    <% end %>
+<% end %>
+end
