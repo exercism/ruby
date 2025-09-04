@@ -45,11 +45,11 @@ The game will have to get the nickname of the player.
 The nickname is the first 2 characters of the player's first name and the last 2 characters of the player's last name.
 The nickname should be capitalized.
 
-Define the `Chess.nick_name` method that takes the arguments `first_name` that holds a string of the player's first name and `last_name` that holds a string of the player's last name.
+Define the `Chess.nickname` method that takes the arguments `first_name` that holds a string of the player's first name and `last_name` that holds a string of the player's last name.
 The method should return the nickname of the player as capitalized string.
 
 ```ruby
-Chess.nick_name("John", "Doe")
+Chess.nickname("John", "Doe")
 # => "JOOE"
 ```
 
