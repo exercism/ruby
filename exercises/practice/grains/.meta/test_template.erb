@@ -6,7 +6,7 @@ class GrainsTest < Minitest::Test
     <%- if cases["cases"] -%>
         <% cases["cases"].each do |sub_case| %>
             def test_<%= underscore(sub_case["description"]) %>
-                <%= skip? %> 
+                <%= skip? %>
                 <%- if sub_case["expected"].is_a?(Hash) && sub_case["expected"].key?("error") -%>
                     assert_raises(ArgumentError) do
                         Grains.square(<%= sub_case["input"]["square"] %>)
