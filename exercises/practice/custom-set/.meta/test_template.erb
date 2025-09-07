@@ -1,0 +1,43 @@
+require 'minitest/autorun'
+require_relative 'custom_set'
+
+class CustomSetTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case| %>
+        def test_<%= underscore(sub_case["description"]) %>
+            <%= skip? %>
+            <%- if sub_case["input"].key?("set") -%>
+                set = CustomSet.new <%= sub_case["input"]["set"] %>
+                <%- if sub_case["property"] == "empty" -%>
+                    <%= sub_case["expected"] ? "assert" : "refute" %>_empty set
+                <%- elsif sub_case["property"] == "contains" -%>
+                    element = <%= sub_case["input"]["element"] %>
+                    <%= sub_case["expected"] ? "assert" : "refute" %> set.member? element
+                <%- elsif sub_case["property"] == "add" -%>
+                    expected = CustomSet.new <%= sub_case["expected"] %>
+                    assert_equal expected, set.add(<%= sub_case["input"]["element"] %>)
+                <%- end -%>
+            <%- else -%>
+                set1 = CustomSet.new <%= sub_case["input"]["set1"] %>
+                set2 = CustomSet.new <%= sub_case["input"]["set2"] %>
+                <%- if sub_case["property"] == "subset" -%>
+                    <%= sub_case["expected"] ? "assert" : "refute" %> set1.subset? set2
+                <%- elsif sub_case["property"] == "disjoint" -%>
+                    <%= sub_case["expected"] ? "assert" : "refute" %> set1.disjoint? set2
+                <%- elsif sub_case["property"] == "equal" -%>
+                    <%= sub_case["expected"] ? "assert" : "refute" %>_equal set1, set2
+                <%- elsif sub_case["property"] == "intersection" -%>
+                    expected = CustomSet.new <%= sub_case["expected"] %>
+                    assert_equal expected, set1.intersection(set2)
+                <%- elsif sub_case["property"] == "difference" -%>
+                    expected = CustomSet.new <%= sub_case["expected"] %>
+                    assert_equal expected, set1.difference(set2)
+                <%- elsif sub_case["property"] == "union" -%>
+                    expected = CustomSet.new <%= sub_case["expected"] %>
+                    assert_equal expected, set1.union(set2)
+                <%- end -%>
+            <% end %>
+        end
+    <% end %>
+<% end %>
+end

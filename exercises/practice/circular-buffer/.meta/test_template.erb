@@ -1,0 +1,30 @@
+require 'minitest/autorun'
+require_relative 'circular_buffer'
+
+class CircularBufferTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        buffer = CircularBuffer.new(<%= cases["input"]["capacity"] %>)
+        <%- cases["input"]["operations"].each do |operation| -%>
+            <%- if operation["operation"] == "read"-%>
+                <%- if operation["should_succeed"] -%>
+                    assert_equal '<%= operation["expected"] %>', buffer.read
+                <%- else -%>
+                    assert_raises(CircularBuffer::BufferEmptyException) { buffer.read }
+                <%- end -%>
+            <%- elsif operation["operation"] == "write" -%>
+                <%- if operation["should_succeed"] -%>
+                    buffer.write('<%= operation["item"] %>')
+                <%- else -%>
+                    assert_raises(CircularBuffer::BufferFullException) { buffer.write('<%= operation["item"] %>') }
+                <%- end -%>
+            <%- elsif operation["operation"] == "overwrite" -%>
+                buffer.write!('<%= operation["item"] %>')
+            <% elsif operation["operation"] == "clear" -%>
+                buffer.clear
+            <%- end -%>
+        <%- end -%>
+    end
+    <% end %>
+end

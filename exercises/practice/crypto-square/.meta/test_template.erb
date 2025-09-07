@@ -1,0 +1,12 @@
+require 'minitest/autorun'
+require_relative 'crypto_square'
+
+class CryptoSquareTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        plaintext = '<%= cases["input"]["plaintext"] %>'
+        assert_equal '<%= cases["expected"] %>', Crypto.new(plaintext).ciphertext
+    end
+    <% end %>
+end
