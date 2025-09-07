@@ -1,0 +1,26 @@
+require 'minitest/autorun'
+require_relative 'grains'
+
+class GrainsTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <%- if cases["cases"] -%>
+        <% cases["cases"].each do |sub_case| %>
+            def test_<%= underscore(sub_case["description"]) %>
+                <%= skip? %>
+                <%- if sub_case["expected"].is_a?(Hash) && sub_case["expected"].key?("error") -%>
+                    assert_raises(ArgumentError) do
+                        Grains.square(<%= sub_case["input"]["square"] %>)
+                    end
+                <%- else -%>
+                    assert_equal <%= sub_case["expected"] %>, Grains.square(<%= sub_case["input"]["square"] %>)
+                <%- end -%>
+            end
+        <% end %>
+    <%- else -%>
+        def test_<%= underscore(cases["description"]) %>
+        <%= skip? %> 
+        assert_equal <%= cases["expected"] %>, Grains.total
+        end
+    <%- end -%>
+<% end %>
+end

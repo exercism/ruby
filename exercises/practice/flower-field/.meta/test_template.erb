@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'flower_field'
+
+class FlowerFieldTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        input = <%= cases["input"]["garden"] %>
+        expected = <%= cases["expected"] %>
+        assert_equal expected, FlowerField.annotate(input)
+    end
+    <% end %>
+end
