@@ -57,13 +57,12 @@ class Deque
       if current.datum == value
         if current.equal?(@front) && current.next.equal?(@front)
           @front = nil
-          break
         else
           current.prev.next = current.next
           current.next.prev = current.prev
           @front = current.next if current.equal?(@front)
-          break
         end
+        break
       end
       current = current.next
       break if current.equal?(@front)
