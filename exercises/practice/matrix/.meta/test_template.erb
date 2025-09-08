@@ -1,0 +1,12 @@
+require 'minitest/autorun'
+require_relative 'matrix'
+
+class MatrixTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        matrix = Matrix.new(<%= cases["input"]["string"].inspect %>)
+        assert_equal <%= cases["expected"] %>, matrix.<%= cases["property"] %>(<%= cases["input"]["index"] %>)
+    end
+    <% end %>
+end

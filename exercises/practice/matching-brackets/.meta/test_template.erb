@@ -1,0 +1,11 @@
+require 'minitest/autorun'
+require_relative 'matching_brackets'
+
+class MatchingBracketsTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        <%= cases["expected"] ? "assert" : "refute" %> Brackets.paired?('<%= cases["input"]["value"] %>')
+    end
+    <% end %>
+end

@@ -1,0 +1,20 @@
+require 'minitest/autorun'
+require_relative 'leap'
+
+class Date
+  def leap?
+    raise "Implement this yourself instead of using Ruby's implementation."
+  end
+
+  alias gregorian_leap? leap?
+  alias julian_leap? leap?
+end
+
+class YearTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        <%= cases["expected"] ? "assert" : "refute" %> Year.leap?(<%= cases["input"]["year"] %>), "Expected '<%= cases["expected"] %>', <%= cases["input"]["year"] %> is<%= cases["expected"] ? "" : " not" %> a leap year"
+    end
+    <% end %>
+end

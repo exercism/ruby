@@ -1,0 +1,11 @@
+require 'minitest/autorun'
+require_relative 'luhn'
+
+class LuhnTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        <%= cases["expected"] ? "assert" : "refute" %> Luhn.valid?('<%= cases["input"]["value"] %>')
+    end
+    <% end %>
+end

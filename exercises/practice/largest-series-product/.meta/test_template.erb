@@ -1,0 +1,17 @@
+require 'minitest/autorun'
+require_relative 'largest_series_product'
+
+class LargestSeriesProductTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
+            assert_raises(ArgumentError) do
+                Series.new('<%= cases["input"]["digits"] %>').largest_product(<%= cases["input"]["span"] %>)
+            end
+        <%- else -%>
+            assert_equal <%= cases["expected"] %>, Series.new('<%= cases["input"]["digits"] %>').largest_product(<%= cases["input"]["span"] %>)
+        <%- end -%>
+    end
+    <% end %>
+end
