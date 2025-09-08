@@ -1,0 +1,24 @@
+require 'minitest/autorun'
+require_relative 'kindergarten_garden'
+
+class KindergartenGardenTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+  <% cases["cases"].each do |sub_case| %>
+    <%- if sub_case.key?("cases") -%>
+      <% sub_case["cases"].each do |nested_case| %>
+        def test_<%= underscore(nested_case["description"]) %>
+          <%= skip? %>
+          garden = Garden.new(<%= nested_case["input"]["diagram"].inspect %>)
+          assert_equal %i[<%= nested_case["expected"].join(", ") %>], garden.<%= underscore(nested_case["input"]["student"]) %>
+        end
+      <% end %>
+    <%- else -%>
+    def test_<%= underscore(sub_case["description"]) %>
+      <%= skip? %>
+      garden = Garden.new(<%= sub_case["input"]["diagram"].inspect %>)
+      assert_equal %i[<%= sub_case["expected"].join(", ") %>], garden.<%= underscore(sub_case["input"]["student"]) %>
+    end
+    <%- end -%>
+  <% end %>
+<% end %>
+end

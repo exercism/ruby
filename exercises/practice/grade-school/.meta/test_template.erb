@@ -1,0 +1,28 @@
+require 'minitest/autorun'
+require_relative 'grade_school'
+
+class GradeSchoolTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        school = School.new
+        <%- if cases["property"] == "roster" -%>
+            <%- cases["input"]["students"].each do |student| -%>
+                school.add('<%= student[0] %>', <%= student[1] %>)
+            <%- end -%>
+            assert_equal <%= cases["expected"] %>, school.roster
+        <%- elsif cases["property"] == "add" -%>
+            results = []
+            <%- cases["input"]["students"].each do |student| -%>
+                results << school.add('<%= student[0] %>', <%= student[1] %>)
+            <%- end -%>
+            assert_equal <%= cases["expected"] %>, results
+        <%- elsif cases["property"] == "grade" -%>
+            <%- cases["input"]["students"].each do |student| -%>
+                school.add('<%= student[0] %>', <%= student[1] %>)
+            <%- end -%>
+            assert_equal <%= cases["expected"] %>, school.grade(<%= cases["input"]["desiredGrade"] %>)
+        <%- end -%>
+    end
+<% end %>
+end
