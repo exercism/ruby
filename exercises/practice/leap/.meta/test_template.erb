@@ -3,7 +3,7 @@ require_relative 'leap'
 
 class Date
   def leap?
-    raise "Implement this yourself instead of using Ruby's implementation."
+    raise "Write this functionality yourself instead of using Ruby's `leap?` method."
   end
 
   alias gregorian_leap? leap?
