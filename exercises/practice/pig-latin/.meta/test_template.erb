@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'pig_latin'
+
+class PigLatinTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case|%>
+        def test_<%= underscore(sub_case["description"]) %>
+            <%= skip? %>
+            assert_equal '<%= sub_case["expected"] %>', PigLatin.translate('<%= sub_case["input"]["phrase"] %>')
+        end
+    <% end%>
+<% end %>
+end

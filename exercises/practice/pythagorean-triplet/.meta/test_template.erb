@@ -1,0 +1,12 @@
+require 'minitest/autorun'
+require_relative 'pythagorean_triplet'
+
+class PythagoreanTripletTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        expected = <%= cases["expected"] %>
+        assert_equal expected, PythagoreanTriplet.triplets_with_sum(<%= cases["input"]["n"] %>)
+    end
+<% end %>
+end

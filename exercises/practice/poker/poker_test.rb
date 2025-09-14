@@ -26,6 +26,12 @@ class PokerTest < Minitest::Test
     assert_equal [%w[3S 5H 6S 8D 7H]], Poker.new(hands).best_hand
   end
 
+  def test_winning_high_card_hand_also_has_the_lowest_card
+    skip
+    hands = [%w[2S 5H 6S 8D 7H], %w[3S 4D 6D 8C 7S]]
+    assert_equal [%w[2S 5H 6S 8D 7H]], Poker.new(hands).best_hand
+  end
+
   def test_one_pair_beats_high_card
     skip
     hands = [%w[4S 5H 6C 8D KH], %w[2S 4H 6S 4D JH]]
@@ -36,6 +42,12 @@ class PokerTest < Minitest::Test
     skip
     hands = [%w[4S 2H 6S 2D JH], %w[2S 4H 6C 4D JD]]
     assert_equal [%w[2S 4H 6C 4D JD]], Poker.new(hands).best_hand
+  end
+
+  def test_both_hands_have_the_same_pair_high_card_wins
+    skip
+    hands = [%w[4H 4S AH JC 3D], %w[4C 4D AS 5D 6C]]
+    assert_equal [%w[4H 4S AH JC 3D]], Poker.new(hands).best_hand
   end
 
   def test_two_pairs_beats_one_pair
@@ -88,7 +100,7 @@ class PokerTest < Minitest::Test
 
   def test_with_multiple_decks_two_players_can_have_same_three_of_a_kind_ties_go_to_highest_remaining_cards
     skip
-    hands = [%w[4S AH AS 7C AD], %w[4S AH AS 8C AD]]
+    hands = [%w[5S AH AS 7C AD], %w[4S AH AS 8C AD]]
     assert_equal [%w[4S AH AS 8C AD]], Poker.new(hands).best_hand
   end
 
@@ -136,8 +148,8 @@ class PokerTest < Minitest::Test
 
   def test_both_hands_have_a_flush_tie_goes_to_high_card_down_to_the_last_one_if_necessary
     skip
-    hands = [%w[4H 7H 8H 9H 6H], %w[2S 4S 5S 6S 7S]]
-    assert_equal [%w[4H 7H 8H 9H 6H]], Poker.new(hands).best_hand
+    hands = [%w[2H 7H 8H 9H 6H], %w[3S 5S 6S 7S 8S]]
+    assert_equal [%w[2H 7H 8H 9H 6H]], Poker.new(hands).best_hand
   end
 
   def test_full_house_beats_a_flush
