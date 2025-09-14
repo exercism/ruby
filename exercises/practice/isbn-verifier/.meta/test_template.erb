@@ -1,0 +1,12 @@
+require 'minitest/autorun'
+require_relative 'isbn_verifier'
+
+class IsbnVerifierTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+      <%= skip? %>
+      string = '<%= cases["input"]["isbn"] %>'
+      <%= cases["expected"] ? "assert" : "refute" %> IsbnVerifier.valid?(string), "Expected <%= cases["expected"] %>, '#{string}' is<%= cases["expected"] ? "" : " not" %> a valid isbn"
+    end
+    <% end %>
+end

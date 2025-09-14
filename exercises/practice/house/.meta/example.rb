@@ -1,18 +1,17 @@
 class House
-  def self.recite
-    new.recite
+  def self.recite(start_verse, end_verse)
+    new.recite(start_verse, end_verse)
   end
 
-  def recite
-    (1..pieces.length).map { |i| line(i) }.join("\n")
+  def recite(start_verse, end_verse)
+    (start_verse..end_verse).map { |i| line(i) }.join
   end
 
   def line(i)
-    "This is %s.\n" % pieces.last(i).map { |s| s.join("\n") }.join(' ')
+    "This is %s.\n" % pieces.last(i).join(' ')
   end
 
   private
-
   def pieces
     [
       ['the horse and the hound and the horn', 'that belonged to'],
