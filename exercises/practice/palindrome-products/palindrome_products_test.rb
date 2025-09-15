@@ -106,7 +106,7 @@ class PalindromesTest < Minitest::Test
     error = assert_raises(ArgumentError) do
       palindromes = Palindromes.new(min_factor: 2, max_factor: 1)
       palindromes.generate
-      palindromes.smallest
+      palindromes.largest
     end
     assert_equal "min must be <= max", error.message
   end
