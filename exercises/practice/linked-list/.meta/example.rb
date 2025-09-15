@@ -1,6 +1,5 @@
 class Element
-  attr_accessor :prev
-  attr_accessor :next
+  attr_accessor :prev, :next
   attr_reader :datum
 
   def initialize(datum, next_element = nil, prev = nil)
@@ -48,5 +47,38 @@ class Deque
       @front = front
     end
     value
+  end
+
+  def delete(value)
+    return if @front.nil?
+
+    current = @front
+    loop do
+      if current.datum == value
+        if current.equal?(@front) && current.next.equal?(@front)
+          @front = nil
+        else
+          current.prev.next = current.next
+          current.next.prev = current.prev
+          @front = current.next if current.equal?(@front)
+        end
+        break
+      end
+      current = current.next
+      break if current.equal?(@front)
+    end
+  end
+
+  def count
+    return 0 if @front.nil?
+
+    count = 0
+    current = @front
+    loop do
+      count += 1
+      current = current.next
+      break if current.equal?(@front)
+    end
+    count
   end
 end
