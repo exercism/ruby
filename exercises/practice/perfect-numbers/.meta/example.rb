@@ -1,24 +1,25 @@
-class PerfectNumber
-  def self.classify(num)
-    raise 'not a natural number' if num < 0
-    aliquot_sum = aliquot_sum(num)
-    aliquot_sum == num ? "perfect" : aliquot_sum < num ? "deficient" : 'abundant'
-  end
+module PerfectNumber
+  def self.classify(number)
+    raise ArgumentError, 'Classification is only possible for positive integers.' unless number > 0
 
-  def self.aliquot_sum(num)
-    get_divisors(num).reduce(:+)
-  end
+    aliquot_sum = get_divisors(number).sum
 
-  private
-
-  def self.get_divisors(num)
-    divisors = [0]
-    (1..Math.sqrt(num)).each do |n|
-      if num % n == 0
-        divisors << n
-        divisors << num/n unless (n == 1) || (num/n) == n
-      end
+    if aliquot_sum == number
+      "perfect"
+    else
+      aliquot_sum < number ? "deficient" : 'abundant'
     end
-    divisors
+  end
+
+  def self.get_divisors(number)
+    return [] if number == 1
+
+    (2..Math.sqrt(number)).each_with_object [1] do |n, divisors|
+      div, mod = number.divmod n
+      next unless mod.zero?
+
+      divisors << n
+      divisors << div unless div == n
+    end
   end
 end

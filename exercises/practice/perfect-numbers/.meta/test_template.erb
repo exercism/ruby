@@ -1,0 +1,18 @@
+require 'minitest/autorun'
+require_relative 'perfect_numbers'
+
+class PerfectNumberTest < Minitest::Test
+<% json["cases"].each do |group| %>
+  <% group["cases"].each do |sub_case| %>
+    def test_<%= underscore(sub_case["description"]) %>
+      <%= skip? %> 
+      <%- if sub_case["expected"].is_a?(Hash) && sub_case["expected"].key?("error") -%>
+        error = assert_raises(ArgumentError) { PerfectNumber.<%= underscore(sub_case["property"]) %>(<%= sub_case["input"]["number"] %>) }
+        assert_equal '<%= sub_case["expected"]["error"] %>', error.message
+      <%- else -%>
+        assert_equal '<%= sub_case["expected"] %>', PerfectNumber.<%= underscore(sub_case["property"]) %>(<%= sub_case["input"]["number"] %>)
+      <%- end -%>
+    end
+  <% end %>
+<% end %>
+end
