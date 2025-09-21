@@ -4,17 +4,23 @@ require_relative 'phone_number'
 class PhoneNumberTest < Minitest::Test
   def test_cleans_the_number
     # skip
-    assert_equal '2234567890', PhoneNumber.clean('(223) 456-7890')
+    actual = PhoneNumber.clean('(223) 456-7890')
+    expected = '2234567890'
+    assert_equal expected, actual
   end
 
   def test_cleans_numbers_with_dots
     skip
-    assert_equal '2234567890', PhoneNumber.clean('223.456.7890')
+    actual = PhoneNumber.clean('223.456.7890')
+    expected = '2234567890'
+    assert_equal expected, actual
   end
 
   def test_cleans_numbers_with_multiple_spaces
     skip
-    assert_equal '2234567890', PhoneNumber.clean('223 456   7890   ')
+    actual = PhoneNumber.clean('223 456   7890   ')
+    expected = '2234567890'
+    assert_equal expected, actual
   end
 
   def test_invalid_when_9_digits
@@ -29,12 +35,16 @@ class PhoneNumberTest < Minitest::Test
 
   def test_valid_when_11_digits_and_starting_with_1
     skip
-    assert_equal '2234567890', PhoneNumber.clean('12234567890')
+    actual = PhoneNumber.clean('12234567890')
+    expected = '2234567890'
+    assert_equal expected, actual
   end
 
   def test_valid_when_11_digits_and_starting_with_1_even_with_punctuation
     skip
-    assert_equal '2234567890', PhoneNumber.clean('+1 (223) 456-7890')
+    actual = PhoneNumber.clean('+1 (223) 456-7890')
+    expected = '2234567890'
+    assert_equal expected, actual
   end
 
   def test_invalid_when_more_than_11_digits

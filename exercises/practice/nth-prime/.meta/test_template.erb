@@ -10,7 +10,9 @@ class NthPrimeTest < Minitest::Test
                 Prime.nth(0)
             end
         <%- else -%>
-            assert_equal <%= cases["expected"] %>, Prime.nth(<%= cases["input"]["number"] %>)
+            actual = Prime.nth(<%= cases["input"]["number"] %>)
+            expected = <%= cases["expected"] %>
+            assert_equal expected, actual
         <%- end -%>
     end
 <% end %>

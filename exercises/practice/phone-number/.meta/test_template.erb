@@ -8,7 +8,9 @@ class PhoneNumberTest < Minitest::Test
         <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
             assert_nil PhoneNumber.clean('<%= cases["input"]["phrase"] %>')
         <%- else -%>
-            assert_equal '<%= cases["expected"] %>', PhoneNumber.clean('<%= cases["input"]["phrase"] %>')
+            actual = PhoneNumber.clean('<%= cases["input"]["phrase"] %>')
+            expected = '<%= cases["expected"] %>'
+            assert_equal expected, actual
         <%- end -%>
     end
 <% end %>

@@ -6,8 +6,8 @@ class PangramTest < Minitest::Test
     def test_<%= underscore(cases["description"]) %>
         <%= skip? %>
         sentence = '<%= cases["input"]["sentence"] %>'
-        result = Pangram.pangram?(sentence)
-        <%= cases["expected"] ? "assert" : "refute" %> result, "Expected <%= cases["expected"] %>, got: #{result.inspect}. #{sentence.inspect} is<%= cases["expected"] ? "" : " not" %> a pangram"
+        actual = Pangram.pangram?(sentence)
+        <%= cases["expected"] ? "assert" : "refute" %> actual, "Expected <%= cases["expected"] %>, got: #{actual.inspect}. #{sentence.inspect} is<%= cases["expected"] ? "" : " not" %> a pangram"
     end
 <% end %>
 end

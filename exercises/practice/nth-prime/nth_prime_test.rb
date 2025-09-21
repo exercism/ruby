@@ -4,22 +4,30 @@ require_relative 'nth_prime'
 class NthPrimeTest < Minitest::Test
   def test_first_prime
     # skip
-    assert_equal 2, Prime.nth(1)
+    actual = Prime.nth(1)
+    expected = 2
+    assert_equal expected, actual
   end
 
   def test_second_prime
     skip
-    assert_equal 3, Prime.nth(2)
+    actual = Prime.nth(2)
+    expected = 3
+    assert_equal expected, actual
   end
 
   def test_sixth_prime
     skip
-    assert_equal 13, Prime.nth(6)
+    actual = Prime.nth(6)
+    expected = 13
+    assert_equal expected, actual
   end
 
   def test_big_prime
     skip
-    assert_equal 104_743, Prime.nth(10_001)
+    actual = Prime.nth(10_001)
+    expected = 104_743
+    assert_equal expected, actual
   end
 
   def test_there_is_no_zeroth_prime

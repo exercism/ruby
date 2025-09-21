@@ -5,9 +5,9 @@ class TriangleTest < Minitest::Test
 <% json["cases"].each do |cases| %>
     def test_<%= underscore(cases["description"]) %>
         <%= skip? %>
-        triangle = Triangle.new(<%= cases["input"]["count"] %>)
+        actual = Triangle.new(<%= cases["input"]["count"] %>).rows
         expected = <%= cases["expected"] %>
-        assert_equal expected, triangle.rows
+        assert_equal expected, actual
     end
 <% end %>
 end
