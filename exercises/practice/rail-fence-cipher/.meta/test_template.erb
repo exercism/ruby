@@ -6,7 +6,9 @@ class RailFenceCipherTest < Minitest::Test
     <% cases["cases"].each do |sub_case| %>
         def test_<%= underscore(sub_case["description"]) %>
             <%= skip? %>
-            assert_equal '<%= sub_case["expected"] %>', RailFenceCipher.<%= sub_case["property"] %>('<%= sub_case["input"]["msg"] %>', <%= sub_case["input"]["rails"] %>)
+            actual = RailFenceCipher.<%= sub_case["property"] %>('<%= sub_case["input"]["msg"] %>', <%= sub_case["input"]["rails"] %>)
+            expected = '<%= sub_case["expected"] %>'
+            assert_equal expected, actual
         end
     <% end %>
 <% end %>

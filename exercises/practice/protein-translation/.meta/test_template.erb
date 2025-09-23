@@ -11,8 +11,9 @@ class ProteinTranslationTest < Minitest::Test
             Translation.of_rna(strand)
         end
         <%- else -%>
+            actual = Translation.of_rna(strand)
             expected = %w[<%= cases["expected"].join(" ") %>]
-            assert_equal expected, Translation.of_rna(strand)
+            assert_equal expected, actual
         <%- end -%>
     end
 <% end %>

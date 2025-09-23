@@ -4,116 +4,162 @@ require_relative 'pig_latin'
 class PigLatinTest < Minitest::Test
   def test_word_beginning_with_a
     # skip
-    assert_equal 'appleay', PigLatin.translate('apple')
+    actual = PigLatin.translate('apple')
+    expected = 'appleay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_e
     skip
-    assert_equal 'earay', PigLatin.translate('ear')
+    actual = PigLatin.translate('ear')
+    expected = 'earay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_i
     skip
-    assert_equal 'iglooay', PigLatin.translate('igloo')
+    actual = PigLatin.translate('igloo')
+    expected = 'iglooay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_o
     skip
-    assert_equal 'objectay', PigLatin.translate('object')
+    actual = PigLatin.translate('object')
+    expected = 'objectay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_u
     skip
-    assert_equal 'underay', PigLatin.translate('under')
+    actual = PigLatin.translate('under')
+    expected = 'underay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_a_vowel_and_followed_by_a_qu
     skip
-    assert_equal 'equalay', PigLatin.translate('equal')
+    actual = PigLatin.translate('equal')
+    expected = 'equalay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_p
     skip
-    assert_equal 'igpay', PigLatin.translate('pig')
+    actual = PigLatin.translate('pig')
+    expected = 'igpay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_k
     skip
-    assert_equal 'oalakay', PigLatin.translate('koala')
+    actual = PigLatin.translate('koala')
+    expected = 'oalakay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_x
     skip
-    assert_equal 'enonxay', PigLatin.translate('xenon')
+    actual = PigLatin.translate('xenon')
+    expected = 'enonxay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_q_without_a_following_u
     skip
-    assert_equal 'atqay', PigLatin.translate('qat')
+    actual = PigLatin.translate('qat')
+    expected = 'atqay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_consonant_and_vowel_containing_qu
     skip
-    assert_equal 'iquidlay', PigLatin.translate('liquid')
+    actual = PigLatin.translate('liquid')
+    expected = 'iquidlay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_ch
     skip
-    assert_equal 'airchay', PigLatin.translate('chair')
+    actual = PigLatin.translate('chair')
+    expected = 'airchay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_qu
     skip
-    assert_equal 'eenquay', PigLatin.translate('queen')
+    actual = PigLatin.translate('queen')
+    expected = 'eenquay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_qu_and_a_preceding_consonant
     skip
-    assert_equal 'aresquay', PigLatin.translate('square')
+    actual = PigLatin.translate('square')
+    expected = 'aresquay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_th
     skip
-    assert_equal 'erapythay', PigLatin.translate('therapy')
+    actual = PigLatin.translate('therapy')
+    expected = 'erapythay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_thr
     skip
-    assert_equal 'ushthray', PigLatin.translate('thrush')
+    actual = PigLatin.translate('thrush')
+    expected = 'ushthray'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_sch
     skip
-    assert_equal 'oolschay', PigLatin.translate('school')
+    actual = PigLatin.translate('school')
+    expected = 'oolschay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_yt
     skip
-    assert_equal 'yttriaay', PigLatin.translate('yttria')
+    actual = PigLatin.translate('yttria')
+    expected = 'yttriaay'
+    assert_equal expected, actual
   end
 
   def test_word_beginning_with_xr
     skip
-    assert_equal 'xrayay', PigLatin.translate('xray')
+    actual = PigLatin.translate('xray')
+    expected = 'xrayay'
+    assert_equal expected, actual
   end
 
   def test_y_is_treated_like_a_consonant_at_the_beginning_of_a_word
     skip
-    assert_equal 'ellowyay', PigLatin.translate('yellow')
+    actual = PigLatin.translate('yellow')
+    expected = 'ellowyay'
+    assert_equal expected, actual
   end
 
   def test_y_is_treated_like_a_vowel_at_the_end_of_a_consonant_cluster
     skip
-    assert_equal 'ythmrhay', PigLatin.translate('rhythm')
+    actual = PigLatin.translate('rhythm')
+    expected = 'ythmrhay'
+    assert_equal expected, actual
   end
 
   def test_y_as_second_letter_in_two_letter_word
     skip
-    assert_equal 'ymay', PigLatin.translate('my')
+    actual = PigLatin.translate('my')
+    expected = 'ymay'
+    assert_equal expected, actual
   end
 
   def test_a_whole_phrase
     skip
-    assert_equal 'ickquay astfay unray', PigLatin.translate('quick fast run')
+    actual = PigLatin.translate('quick fast run')
+    expected = 'ickquay astfay unray'
+    assert_equal expected, actual
   end
 end

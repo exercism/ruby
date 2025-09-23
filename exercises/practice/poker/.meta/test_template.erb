@@ -6,7 +6,9 @@ class PokerTest < Minitest::Test
     def test_<%= underscore(cases["description"]) %>
         <%= skip? %>
         hands = [<%= cases["input"]["hands"].map{ |hand| "%w[#{hand}]"}.join(", ") %>]
-        assert_equal [<%= cases["expected"].map{ |hand| "%w[#{hand}]"}.join(", ") %>], Poker.new(hands).best_hand
+        actual = Poker.new(hands).best_hand
+        expected = [<%= cases["expected"].map{ |hand| "%w[#{hand}]"}.join(", ") %>]
+        assert_equal expected, actual
     end
 <% end %>
 end
