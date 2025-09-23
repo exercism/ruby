@@ -16,7 +16,7 @@ class PalindromesTest < Minitest::Test
     palindromes = Palindromes.new(max_factor: 9)
     palindromes.generate
     actual = palindromes.largest.value, palindromes.largest.factors
-    expected = [[9, [[1, 9], [3, 3]]], [9, [[3, 3], [1, 9]]]]
+    expected = [9, [[1, 9], [3, 3]]], [9, [[3, 3], [1, 9]]]
     assert_includes expected, actual
   end
 

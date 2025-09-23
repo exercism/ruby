@@ -16,7 +16,7 @@ class PalindromesTest < Minitest::Test
                 palindromes = Palindromes.new(max_factor: <%= cases["input"]["max"] %> <%= cases["input"]["min"] != 1 ?  ", min_factor: #{cases["input"]["min"]}" : "" %>)
                 palindromes.generate
                 actual = palindromes.<%= cases["property"] %>.value, palindromes.<%= cases["property"] %>.factors
-                expected = <%= cases["expected"]["factors"].size > 1 ? "#{cases["expected"]["factors"].permutation(2).to_a.map{|factors| [cases["expected"]["value"], factors]}}" : "#{cases["expected"]["value"] ? cases["expected"]["value"] : "nil"}, #{cases["expected"]["factors"]}"%>
+                expected = <%= cases["expected"]["factors"].size > 1 ? "#{ cases["expected"]["factors"].permutation(2).to_a.map{|factors| [cases["expected"]["value"], factors].to_s}.join(", ")}" : "#{cases["expected"]["value"] ? cases["expected"]["value"] : "nil"}, #{cases["expected"]["factors"]}"%>
                 assert_<%= cases["expected"]["factors"].size > 1 ? "includes" : "equal" %> expected, actual
         <%- end -%>
     end
