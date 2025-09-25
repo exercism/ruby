@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'pangram'
+
+class PangramTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        sentence = '<%= cases["input"]["sentence"] %>'
+        actual = Pangram.pangram?(sentence)
+        <%= cases["expected"] ? "assert" : "refute" %> actual, "Expected <%= cases["expected"] %>, got: #{actual.inspect}. #{sentence.inspect} is<%= cases["expected"] ? "" : " not" %> a pangram"
+    end
+<% end %>
+end

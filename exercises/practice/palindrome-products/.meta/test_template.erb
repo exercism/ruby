@@ -1,0 +1,24 @@
+require 'minitest/autorun'
+require_relative 'palindrome_products'
+
+class PalindromesTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"].gsub("find the", "for the")) %>
+        <%= skip? %>
+        <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
+            error = assert_raises(ArgumentError) do
+                palindromes = Palindromes.new(max_factor: <%= cases["input"]["max"] %> <%= cases["input"]["min"] != 1 ?  ", min_factor: #{cases["input"]["min"]}" : "" %>)
+                palindromes.generate
+                palindromes.<%= cases["property"] %>
+            end
+            assert_equal "<%= cases["expected"]["error"]%>", error.message
+        <%- else -%>
+                palindromes = Palindromes.new(max_factor: <%= cases["input"]["max"] %> <%= cases["input"]["min"] != 1 ?  ", min_factor: #{cases["input"]["min"]}" : "" %>)
+                palindromes.generate
+                actual = palindromes.<%= cases["property"] %>.value, palindromes.<%= cases["property"] %>.factors
+                expected = <%= cases["expected"]["factors"].size > 1 ? "#{ cases["expected"]["factors"].permutation(2).to_a.map{|factors| [cases["expected"]["value"], factors].to_s}.join(", ")}" : "#{cases["expected"]["value"] ? cases["expected"]["value"] : "nil"}, #{cases["expected"]["factors"]}"%>
+                assert_<%= cases["expected"]["factors"].size > 1 ? "includes" : "equal" %> expected, actual
+        <%- end -%>
+    end
+<% end %>
+end

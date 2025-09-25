@@ -1,0 +1,17 @@
+require 'minitest/autorun'
+require_relative 'phone_number'
+
+class PhoneNumberTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
+            assert_nil PhoneNumber.clean('<%= cases["input"]["phrase"] %>')
+        <%- else -%>
+            actual = PhoneNumber.clean('<%= cases["input"]["phrase"] %>')
+            expected = '<%= cases["expected"] %>'
+            assert_equal expected, actual
+        <%- end -%>
+    end
+<% end %>
+end
