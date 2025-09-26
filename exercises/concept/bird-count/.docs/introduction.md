@@ -9,7 +9,7 @@ A negative index is assumed to be relative to the end of the array — e.g.. an 
 ### Creating arrays
 
 Arrays are normally created using the `[]` notation.
-They can create any different type of object.
+They can contain any different type of object.
 
 ```ruby
 array = [1, "two", 3.0]
