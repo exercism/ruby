@@ -1,0 +1,23 @@
+require 'minitest/autorun'
+require_relative 'queen_attack'
+
+class QueenAttackTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case| %>
+        def test_<%= underscore(sub_case["description"]) %>
+            <%= skip? %>
+            <%- if sub_case["property"] == "create" -%>
+                <%- if sub_case["expected"].is_a?(Hash) && sub_case["expected"].key?("error") -%>
+                    assert_raises(ArgumentError) do
+                        Queens.new(white: [<%= sub_case["input"]["queen"]["position"]["row"] %>, <%= sub_case["input"]["queen"]["position"]["column"] %>])
+                    end
+                <%- else -%>
+                    assert Queens.new(white: [<%= sub_case["input"]["queen"]["position"]["row"] %>, <%= sub_case["input"]["queen"]["position"]["column"] %>])
+                <%- end -%>
+            <%- elsif sub_case["property"] == "canAttack" -%>
+                <%= sub_case["expected"] ? "assert" : "refute" %> Queens.new(white: [<%= sub_case["input"]["white_queen"]["position"]["row"] %>, <%= sub_case["input"]["white_queen"]["position"]["column"] %>], black: [<%= sub_case["input"]["black_queen"]["position"]["row"] %>, <%= sub_case["input"]["black_queen"]["position"]["column"] %>]).attack?
+            <%- end -%>
+        end
+    <% end %>
+<% end %>
+end

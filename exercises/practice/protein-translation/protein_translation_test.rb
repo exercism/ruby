@@ -4,189 +4,223 @@ require_relative 'protein_translation'
 class ProteinTranslationTest < Minitest::Test
   def test_empty_rna_sequence_results_in_no_proteins
     # skip
-    strand = ""
-    expected = []
-    assert_equal expected, Translation.of_rna(strand)
+    strand = ''
+    actual = Translation.of_rna(strand)
+    expected = %w[]
+    assert_equal expected, actual
   end
 
   def test_methionine_rna_sequence
     skip
-    strand = "AUG"
-    expected = ["Methionine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'AUG'
+    actual = Translation.of_rna(strand)
+    expected = %w[Methionine]
+    assert_equal expected, actual
   end
 
   def test_phenylalanine_rna_sequence_1
     skip
-    strand = "UUU"
-    expected = ["Phenylalanine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UUU'
+    actual = Translation.of_rna(strand)
+    expected = %w[Phenylalanine]
+    assert_equal expected, actual
   end
 
   def test_phenylalanine_rna_sequence_2
     skip
-    strand = "UUC"
-    expected = ["Phenylalanine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UUC'
+    actual = Translation.of_rna(strand)
+    expected = %w[Phenylalanine]
+    assert_equal expected, actual
   end
 
   def test_leucine_rna_sequence_1
     skip
-    strand = "UUA"
-    expected = ["Leucine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UUA'
+    actual = Translation.of_rna(strand)
+    expected = %w[Leucine]
+    assert_equal expected, actual
   end
 
   def test_leucine_rna_sequence_2
     skip
-    strand = "UUG"
-    expected = ["Leucine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UUG'
+    actual = Translation.of_rna(strand)
+    expected = %w[Leucine]
+    assert_equal expected, actual
   end
 
   def test_serine_rna_sequence_1
     skip
-    strand = "UCU"
-    expected = ["Serine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UCU'
+    actual = Translation.of_rna(strand)
+    expected = %w[Serine]
+    assert_equal expected, actual
   end
 
   def test_serine_rna_sequence_2
     skip
-    strand = "UCC"
-    expected = ["Serine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UCC'
+    actual = Translation.of_rna(strand)
+    expected = %w[Serine]
+    assert_equal expected, actual
   end
 
   def test_serine_rna_sequence_3
     skip
-    strand = "UCA"
-    expected = ["Serine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UCA'
+    actual = Translation.of_rna(strand)
+    expected = %w[Serine]
+    assert_equal expected, actual
   end
 
   def test_serine_rna_sequence_4
     skip
-    strand = "UCG"
-    expected = ["Serine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UCG'
+    actual = Translation.of_rna(strand)
+    expected = %w[Serine]
+    assert_equal expected, actual
   end
 
   def test_tyrosine_rna_sequence_1
     skip
-    strand = "UAU"
-    expected = ["Tyrosine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UAU'
+    actual = Translation.of_rna(strand)
+    expected = %w[Tyrosine]
+    assert_equal expected, actual
   end
 
   def test_tyrosine_rna_sequence_2
     skip
-    strand = "UAC"
-    expected = ["Tyrosine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UAC'
+    actual = Translation.of_rna(strand)
+    expected = %w[Tyrosine]
+    assert_equal expected, actual
   end
 
   def test_cysteine_rna_sequence_1
     skip
-    strand = "UGU"
-    expected = ["Cysteine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UGU'
+    actual = Translation.of_rna(strand)
+    expected = %w[Cysteine]
+    assert_equal expected, actual
   end
 
   def test_cysteine_rna_sequence_2
     skip
-    strand = "UGC"
-    expected = ["Cysteine"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UGC'
+    actual = Translation.of_rna(strand)
+    expected = %w[Cysteine]
+    assert_equal expected, actual
   end
 
   def test_tryptophan_rna_sequence
     skip
-    strand = "UGG"
-    expected = ["Tryptophan"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UGG'
+    actual = Translation.of_rna(strand)
+    expected = %w[Tryptophan]
+    assert_equal expected, actual
   end
 
   def test_stop_codon_rna_sequence_1
     skip
-    strand = "UAA"
-    expected = []
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UAA'
+    actual = Translation.of_rna(strand)
+    expected = %w[]
+    assert_equal expected, actual
   end
 
   def test_stop_codon_rna_sequence_2
     skip
-    strand = "UAG"
-    expected = []
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UAG'
+    actual = Translation.of_rna(strand)
+    expected = %w[]
+    assert_equal expected, actual
   end
 
   def test_stop_codon_rna_sequence_3
     skip
-    strand = "UGA"
-    expected = []
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UGA'
+    actual = Translation.of_rna(strand)
+    expected = %w[]
+    assert_equal expected, actual
   end
 
   def test_sequence_of_two_protein_codons_translates_into_proteins
     skip
-    strand = "UUUUUU"
+    strand = 'UUUUUU'
+    actual = Translation.of_rna(strand)
     expected = %w[Phenylalanine Phenylalanine]
-    assert_equal expected, Translation.of_rna(strand)
+    assert_equal expected, actual
   end
 
   def test_sequence_of_two_different_protein_codons_translates_into_proteins
     skip
-    strand = "UUAUUG"
+    strand = 'UUAUUG'
+    actual = Translation.of_rna(strand)
     expected = %w[Leucine Leucine]
-    assert_equal expected, Translation.of_rna(strand)
+    assert_equal expected, actual
   end
 
   def test_translate_rna_strand_into_correct_protein_list
     skip
-    strand = "AUGUUUUGG"
+    strand = 'AUGUUUUGG'
+    actual = Translation.of_rna(strand)
     expected = %w[Methionine Phenylalanine Tryptophan]
-    assert_equal expected, Translation.of_rna(strand)
+    assert_equal expected, actual
   end
 
   def test_translation_stops_if_stop_codon_at_beginning_of_sequence
     skip
-    strand = "UAGUGG"
-    expected = []
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UAGUGG'
+    actual = Translation.of_rna(strand)
+    expected = %w[]
+    assert_equal expected, actual
   end
 
   def test_translation_stops_if_stop_codon_at_end_of_two_codon_sequence
     skip
-    strand = "UGGUAG"
-    expected = ["Tryptophan"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UGGUAG'
+    actual = Translation.of_rna(strand)
+    expected = %w[Tryptophan]
+    assert_equal expected, actual
   end
 
   def test_translation_stops_if_stop_codon_at_end_of_three_codon_sequence
     skip
-    strand = "AUGUUUUAA"
+    strand = 'AUGUUUUAA'
+    actual = Translation.of_rna(strand)
     expected = %w[Methionine Phenylalanine]
-    assert_equal expected, Translation.of_rna(strand)
+    assert_equal expected, actual
   end
 
   def test_translation_stops_if_stop_codon_in_middle_of_three_codon_sequence
     skip
-    strand = "UGGUAGUGG"
-    expected = ["Tryptophan"]
-    assert_equal expected, Translation.of_rna(strand)
+    strand = 'UGGUAGUGG'
+    actual = Translation.of_rna(strand)
+    expected = %w[Tryptophan]
+    assert_equal expected, actual
   end
 
   def test_translation_stops_if_stop_codon_in_middle_of_six_codon_sequence
     skip
-    strand = "UGGUGUUAUUAAUGGUUU"
+    strand = 'UGGUGUUAUUAAUGGUUU'
+    actual = Translation.of_rna(strand)
     expected = %w[Tryptophan Cysteine Tyrosine]
-    assert_equal expected, Translation.of_rna(strand)
+    assert_equal expected, actual
+  end
+
+  def test_sequence_of_two_non_stop_codons_does_not_translate_to_a_stop_codon
+    skip
+    strand = 'AUGAUG'
+    actual = Translation.of_rna(strand)
+    expected = %w[Methionine Methionine]
+    assert_equal expected, actual
   end
 
   def test_non_existing_codon_cant_translate
     skip
-    strand = "AAA"
+    strand = 'AAA'
     assert_raises(InvalidCodonError) do
       Translation.of_rna(strand)
     end
@@ -194,7 +228,7 @@ class ProteinTranslationTest < Minitest::Test
 
   def test_unknown_amino_acids_not_part_of_a_codon_cant_translate
     skip
-    strand = "XYZ"
+    strand = 'XYZ'
     assert_raises(InvalidCodonError) do
       Translation.of_rna(strand)
     end
@@ -202,7 +236,7 @@ class ProteinTranslationTest < Minitest::Test
 
   def test_incomplete_rna_sequence_cant_translate
     skip
-    strand = "AUGU"
+    strand = 'AUGU'
     assert_raises(InvalidCodonError) do
       Translation.of_rna(strand)
     end
@@ -210,8 +244,9 @@ class ProteinTranslationTest < Minitest::Test
 
   def test_incomplete_rna_sequence_can_translate_if_valid_until_a_stop_codon
     skip
-    strand = "UUCUUCUAAUGGU"
+    strand = 'UUCUUCUAAUGGU'
+    actual = Translation.of_rna(strand)
     expected = %w[Phenylalanine Phenylalanine]
-    assert_equal expected, Translation.of_rna(strand)
+    assert_equal expected, actual
   end
 end

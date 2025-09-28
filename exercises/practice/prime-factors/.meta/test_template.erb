@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'prime_factors'
+
+class PrimeFactorsTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        actual = PrimeFactors.of(<%= cases["input"]["value"] %>)
+        expected = <%= cases["expected"] %>
+        assert_equal expected, actual
+    end
+<% end %>
+end

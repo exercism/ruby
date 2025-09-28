@@ -1,0 +1,15 @@
+require 'minitest/autorun'
+require_relative 'rail_fence_cipher'
+
+class RailFenceCipherTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case| %>
+        def test_<%= underscore(sub_case["description"]) %>
+            <%= skip? %>
+            actual = RailFenceCipher.<%= sub_case["property"] %>('<%= sub_case["input"]["msg"] %>', <%= sub_case["input"]["rails"] %>)
+            expected = '<%= sub_case["expected"] %>'
+            assert_equal expected, actual
+        end
+    <% end %>
+<% end %>
+end
