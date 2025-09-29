@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'secret_handshake'
+
+class SecretHandshakeTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        actual = SecretHandshake.new(<%= cases["input"]["number"] %>).commands
+        expected = <%= cases["expected"] %>
+        assert_equal expected, actual
+    end
+    <% end %>
+end

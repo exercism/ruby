@@ -4,56 +4,78 @@ require_relative 'scrabble_score'
 class ScrabbleScoreTest < Minitest::Test
   def test_lowercase_letter
     # skip
-    assert_equal 1, Scrabble.new("a").score
+    actual = Scrabble.new('a').score
+    expected = 1
+    assert_equal expected, actual
   end
 
   def test_uppercase_letter
     skip
-    assert_equal 1, Scrabble.new("A").score
+    actual = Scrabble.new('A').score
+    expected = 1
+    assert_equal expected, actual
   end
 
   def test_valuable_letter
     skip
-    assert_equal 4, Scrabble.new("f").score
+    actual = Scrabble.new('f').score
+    expected = 4
+    assert_equal expected, actual
   end
 
   def test_short_word
     skip
-    assert_equal 2, Scrabble.new("at").score
+    actual = Scrabble.new('at').score
+    expected = 2
+    assert_equal expected, actual
   end
 
   def test_short_valuable_word
     skip
-    assert_equal 12, Scrabble.new("zoo").score
+    actual = Scrabble.new('zoo').score
+    expected = 12
+    assert_equal expected, actual
   end
 
   def test_medium_word
     skip
-    assert_equal 6, Scrabble.new("street").score
+    actual = Scrabble.new('street').score
+    expected = 6
+    assert_equal expected, actual
   end
 
   def test_medium_valuable_word
     skip
-    assert_equal 22, Scrabble.new("quirky").score
+    actual = Scrabble.new('quirky').score
+    expected = 22
+    assert_equal expected, actual
   end
 
   def test_long_mixed_case_word
     skip
-    assert_equal 41, Scrabble.new("OxyphenButazone").score
+    actual = Scrabble.new('OxyphenButazone').score
+    expected = 41
+    assert_equal expected, actual
   end
 
   def test_english_like_word
     skip
-    assert_equal 8, Scrabble.new("pinata").score
+    actual = Scrabble.new('pinata').score
+    expected = 8
+    assert_equal expected, actual
   end
 
   def test_empty_input
     skip
-    assert_equal 0, Scrabble.new("").score
+    actual = Scrabble.new('').score
+    expected = 0
+    assert_equal expected, actual
   end
 
   def test_entire_alphabet_available
     skip
-    assert_equal 87, Scrabble.new("abcdefghijklmnopqrstuvwxyz").score
+    actual = Scrabble.new('abcdefghijklmnopqrstuvwxyz').score
+    expected = 87
+    assert_equal expected, actual
   end
 end
