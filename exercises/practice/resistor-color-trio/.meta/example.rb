@@ -1,5 +1,6 @@
 class ResistorColorTrio
   COLOR_CODES = %i[black brown red orange yellow green blue violet grey white].freeze
+  LABELS = %w[ohms kiloohms megaohms gigaohms teraohms].freeze
 
   def initialize(colors)
     @colors = colors.map(&:to_sym)
@@ -7,11 +8,10 @@ class ResistorColorTrio
   end
 
   def label
-    "Resistor value: #{to_s}"
+    "Resistor value: #{self}"
   end
 
   private
-
   attr_reader :tens, :ones, :zeros
 
   def significants
@@ -27,6 +27,12 @@ class ResistorColorTrio
   end
 
   def to_s
-    value < 1000 ? "#{value} ohms" : "#{(value.to_f/1000).to_i} kiloohms"
+    index = 0
+    value_copy = value
+    while value_copy >= 1000 && index < LABELS.size - 1
+      value_copy /= 1000
+      index += 1
+    end
+    "#{value_copy} #{LABELS[index]}"
   end
 end
