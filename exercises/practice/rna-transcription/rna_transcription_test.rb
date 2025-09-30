@@ -4,31 +4,43 @@ require_relative 'rna_transcription'
 class RnaTranscriptionTest < Minitest::Test
   def test_empty_rna_sequence
     # skip
-    assert_equal '', Complement.of_dna('')
+    actual = Complement.of_dna('')
+    expected = ''
+    assert_equal expected, actual
   end
 
   def test_rna_complement_of_cytosine_is_guanine
     skip
-    assert_equal 'G', Complement.of_dna('C')
+    actual = Complement.of_dna('C')
+    expected = 'G'
+    assert_equal expected, actual
   end
 
   def test_rna_complement_of_guanine_is_cytosine
     skip
-    assert_equal 'C', Complement.of_dna('G')
+    actual = Complement.of_dna('G')
+    expected = 'C'
+    assert_equal expected, actual
   end
 
   def test_rna_complement_of_thymine_is_adenine
     skip
-    assert_equal 'A', Complement.of_dna('T')
+    actual = Complement.of_dna('T')
+    expected = 'A'
+    assert_equal expected, actual
   end
 
   def test_rna_complement_of_adenine_is_uracil
     skip
-    assert_equal 'U', Complement.of_dna('A')
+    actual = Complement.of_dna('A')
+    expected = 'U'
+    assert_equal expected, actual
   end
 
   def test_rna_complement
     skip
-    assert_equal 'UGCACCAGAAUU', Complement.of_dna('ACGTGGTCTTAA')
+    actual = Complement.of_dna('ACGTGGTCTTAA')
+    expected = 'UGCACCAGAAUU'
+    assert_equal expected, actual
   end
 end
