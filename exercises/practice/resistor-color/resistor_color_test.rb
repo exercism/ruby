@@ -4,17 +4,23 @@ require_relative 'resistor_color'
 class ResistorColorTest < Minitest::Test
   def test_black
     # skip
-    assert_equal 0, ResistorColor.color_code("black")
+    actual = ResistorColor.color_code('black')
+    expected = 0
+    assert_equal expected, actual
   end
 
   def test_white
     skip
-    assert_equal 9, ResistorColor.color_code("white")
+    actual = ResistorColor.color_code('white')
+    expected = 9
+    assert_equal expected, actual
   end
 
   def test_orange
     skip
-    assert_equal 3, ResistorColor.color_code("orange")
+    actual = ResistorColor.color_code('orange')
+    expected = 3
+    assert_equal expected, actual
   end
 
   def test_colors

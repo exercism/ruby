@@ -1,0 +1,23 @@
+require 'minitest/autorun'
+require_relative 'resistor_color'
+
+class ResistorColorTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+  <% if cases.is_a?(Hash) && cases.key?("cases") %>
+    <% cases["cases"].each do |sub_case| %>
+      def test_<%= underscore(sub_case["description"]) %>
+        <%= skip? %>
+        actual = ResistorColor.color_code('<%= sub_case["input"]["color"] %>')
+        expected = <%= sub_case["expected"] %>
+        assert_equal expected, actual
+      end
+      <% end %>
+  <% else %>
+    def test_<%= underscore(cases["description"]) %>
+      <%= skip? %>
+      expected = <%= cases["expected"] %>
+      assert_equal expected, ResistorColor::COLORS
+    end
+  <% end%>
+  <% end %>
+end

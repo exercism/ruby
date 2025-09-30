@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'resistor_color_trio'
+
+class ResistorColorTrioTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+  def test_<%= underscore(cases["description"]) %>
+    <%= skip? %>
+    actual = ResistorColorTrio.new(<%= cases["input"]["colors"] %>).label
+    expected = 'Resistor value: <%= cases["expected"]["value"] %> <%= cases["expected"]["unit"] %>'
+    assert_equal expected, actual
+  end
+<% end %>
+end

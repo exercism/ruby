@@ -4,31 +4,43 @@ require_relative 'reverser'
 class ReverserTest < Minitest::Test
   def test_an_empty_string
     # skip
-    assert_equal "", Reverser.reverse("")
+    actual = Reverser.reverse("")
+    expected = ""
+    assert_equal expected, actual
   end
 
   def test_a_word
     skip
-    assert_equal "tobor", Reverser.reverse("robot")
+    actual = Reverser.reverse("robot")
+    expected = "tobor"
+    assert_equal expected, actual
   end
 
   def test_a_capitalized_word
     skip
-    assert_equal "nemaR", Reverser.reverse("Ramen")
+    actual = Reverser.reverse("Ramen")
+    expected = "nemaR"
+    assert_equal expected, actual
   end
 
   def test_a_sentence_with_punctuation
     skip
-    assert_equal "!yrgnuh m'I", Reverser.reverse("I'm hungry!")
+    actual = Reverser.reverse("I'm hungry!")
+    expected = "!yrgnuh m'I"
+    assert_equal expected, actual
   end
 
   def test_a_palindrome
     skip
-    assert_equal "racecar", Reverser.reverse("racecar")
+    actual = Reverser.reverse("racecar")
+    expected = "racecar"
+    assert_equal expected, actual
   end
 
   def test_an_even_sized_word
     skip
-    assert_equal "reward", Reverser.reverse("drawer")
+    actual = Reverser.reverse("drawer")
+    expected = "reward"
+    assert_equal expected, actual
   end
 end
