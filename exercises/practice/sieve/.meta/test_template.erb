@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'sieve'
+
+class SieveTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        actual = Sieve.new(<%= cases["input"]["limit"] %>).primes
+        expected = <%= cases["expected"] %>
+        assert_equal expected, actual
+    end
+    <% end %>
+end

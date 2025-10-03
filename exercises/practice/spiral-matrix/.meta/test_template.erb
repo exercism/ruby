@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'spiral_matrix'
+
+class SpiralMatrixTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+      <%= skip? %>
+      actual = SpiralMatrix.new(<%= cases["input"]["size"] %>).matrix
+      expected = <%= cases["expected"] %>
+      assert_equal expected, actual
+    end
+    <% end %>
+end

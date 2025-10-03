@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'transpose'
+
+class TransposeTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+      #<%= skip? %>
+      actual = Transpose.transpose("<%= cases["input"]["lines"].join("\\n") %>")
+      expected = "<%= cases["expected"].join("\\n") %>"
+      assert_equal expected, actual
+    end
+    <% end %>
+end
