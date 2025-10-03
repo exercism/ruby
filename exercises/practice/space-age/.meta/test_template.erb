@@ -1,0 +1,17 @@
+require 'minitest/autorun'
+require_relative 'space_age'
+
+class SpaceAgeTest < Minitest::Test
+  # assert_in_delta will pass if the difference
+  # between the values being compared is less
+  # than the allowed delta
+  DELTA = 0.01
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        actual = SpaceAge.new(<%= cases["input"]["seconds"] %>).on_<%= cases["input"]["planet"].downcase %>
+        expected = <%= cases["expected"] %>
+        assert_in_delta expected, actual, DELTA
+    end
+    <% end %>
+end
