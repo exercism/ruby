@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'word_count'
+
+class WordCountTest < Minitest::Test
+  <% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+      <%= skip? %>
+      actual = Phrase.new("<%= cases["input"]["sentence"] %>").word_count
+      expected = <%= cases["expected"] %>
+      assert_equal expected, actual
+    end
+  <% end %>
+end

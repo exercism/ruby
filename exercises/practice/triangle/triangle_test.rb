@@ -2,129 +2,129 @@ require 'minitest/autorun'
 require_relative 'triangle'
 
 class TriangleTest < Minitest::Test
-  def test_equilateral_triangle_all_sides_are_equal
+  def test_all_sides_are_equal_on_equilateral_triangle
     # skip
-    triangle = Triangle.new([2, 2, 2])
-    assert triangle.equilateral?, "Expected 'true', triangle [2, 2, 2] is equilateral."
+    actual = Triangle.new([2, 2, 2]).equilateral?
+    assert actual, "Expected 'true', triangle [2, 2, 2] is equilateral."
   end
 
-  def test_equilateral_triangle_any_side_is_unequal
+  def test_any_side_is_unequal_on_equilateral_triangle
     skip
-    triangle = Triangle.new([2, 3, 2])
-    refute triangle.equilateral?, "Expected 'false', triangle [2, 3, 2] is not equilateral."
+    actual = Triangle.new([2, 3, 2]).equilateral?
+    refute actual, "Expected 'false', triangle [2, 3, 2] is not equilateral."
   end
 
-  def test_equilateral_triangle_no_sides_are_equal
+  def test_no_sides_are_equal_on_equilateral_triangle
     skip
-    triangle = Triangle.new([5, 4, 6])
-    refute triangle.equilateral?, "Expected 'false', triangle [5, 4, 6] is not equilateral."
+    actual = Triangle.new([5, 4, 6]).equilateral?
+    refute actual, "Expected 'false', triangle [5, 4, 6] is not equilateral."
   end
 
-  def test_equilateral_triangle_all_zero_sides_is_not_a_triangle
+  def test_all_zero_sides_is_not_a_triangle_on_equilateral_triangle
     skip
-    triangle = Triangle.new([0, 0, 0])
-    refute triangle.equilateral?, "Expected 'false', triangle [0, 0, 0] is not equilateral."
+    actual = Triangle.new([0, 0, 0]).equilateral?
+    refute actual, "Expected 'false', triangle [0, 0, 0] is not equilateral."
   end
 
-  def test_equilateral_triangle_sides_may_be_floats
+  def test_sides_may_be_floats_on_equilateral_triangle
     skip
-    triangle = Triangle.new([0.5, 0.5, 0.5])
-    assert triangle.equilateral?, "Expected 'true', triangle [0.5, 0.5, 0.5] is equilateral."
+    actual = Triangle.new([0.5, 0.5, 0.5]).equilateral?
+    assert actual, "Expected 'true', triangle [0.5, 0.5, 0.5] is equilateral."
   end
 
-  def test_isosceles_triangle_last_two_sides_are_equal
+  def test_last_two_sides_are_equal_on_isosceles_triangle
     skip
-    triangle = Triangle.new([3, 4, 4])
-    assert triangle.isosceles?, "Expected 'true', triangle [3, 4, 4] is isosceles."
+    actual = Triangle.new([3, 4, 4]).isosceles?
+    assert actual, "Expected 'true', triangle [3, 4, 4] is isosceles."
   end
 
-  def test_isosceles_triangle_first_two_sides_are_equal
+  def test_first_two_sides_are_equal_on_isosceles_triangle
     skip
-    triangle = Triangle.new([4, 4, 3])
-    assert triangle.isosceles?, "Expected 'true', triangle [4, 4, 3] is isosceles."
+    actual = Triangle.new([4, 4, 3]).isosceles?
+    assert actual, "Expected 'true', triangle [4, 4, 3] is isosceles."
   end
 
-  def test_isosceles_triangle_first_and_last_sides_are_equal
+  def test_first_and_last_sides_are_equal_on_isosceles_triangle
     skip
-    triangle = Triangle.new([4, 3, 4])
-    assert triangle.isosceles?, "Expected 'true', triangle [4, 3, 4] is isosceles."
+    actual = Triangle.new([4, 3, 4]).isosceles?
+    assert actual, "Expected 'true', triangle [4, 3, 4] is isosceles."
   end
 
-  def test_isosceles_triangle_equilateral_triangles_are_also_isosceles
+  def test_equilateral_triangles_are_also_isosceles_on_isosceles_triangle
     skip
-    triangle = Triangle.new([4, 4, 4])
-    assert triangle.isosceles?, "Expected 'true', triangle [4, 4, 4] is isosceles."
+    actual = Triangle.new([4, 4, 4]).isosceles?
+    assert actual, "Expected 'true', triangle [4, 4, 4] is isosceles."
   end
 
-  def test_isosceles_triangle_no_sides_are_equal
+  def test_no_sides_are_equal_on_isosceles_triangle
     skip
-    triangle = Triangle.new([2, 3, 4])
-    refute triangle.isosceles?, "Expected 'false', triangle [2, 3, 4] is not isosceles."
+    actual = Triangle.new([2, 3, 4]).isosceles?
+    refute actual, "Expected 'false', triangle [2, 3, 4] is not isosceles."
   end
 
-  def test_isosceles_triangle_first_triangle_inequality_violation
+  def test_first_triangle_inequality_violation_on_isosceles_triangle
     skip
-    triangle = Triangle.new([1, 1, 3])
-    refute triangle.isosceles?, "Expected 'false', triangle [1, 1, 3] is not isosceles."
+    actual = Triangle.new([1, 1, 3]).isosceles?
+    refute actual, "Expected 'false', triangle [1, 1, 3] is not isosceles."
   end
 
-  def test_isosceles_triangle_second_triangle_inequality_violation
+  def test_second_triangle_inequality_violation_on_isosceles_triangle
     skip
-    triangle = Triangle.new([1, 3, 1])
-    refute triangle.isosceles?, "Expected 'false', triangle [1, 3, 1] is not isosceles."
+    actual = Triangle.new([1, 3, 1]).isosceles?
+    refute actual, "Expected 'false', triangle [1, 3, 1] is not isosceles."
   end
 
-  def test_isosceles_triangle_third_triangle_inequality_violation
+  def test_third_triangle_inequality_violation_on_isosceles_triangle
     skip
-    triangle = Triangle.new([3, 1, 1])
-    refute triangle.isosceles?, "Expected 'false', triangle [3, 1, 1] is not isosceles."
+    actual = Triangle.new([3, 1, 1]).isosceles?
+    refute actual, "Expected 'false', triangle [3, 1, 1] is not isosceles."
   end
 
-  def test_isosceles_triangle_sides_may_be_floats
+  def test_sides_may_be_floats_on_isosceles_triangle
     skip
-    triangle = Triangle.new([0.5, 0.4, 0.5])
-    assert triangle.isosceles?, "Expected 'true', triangle [0.5, 0.4, 0.5] is isosceles."
+    actual = Triangle.new([0.5, 0.4, 0.5]).isosceles?
+    assert actual, "Expected 'true', triangle [0.5, 0.4, 0.5] is isosceles."
   end
 
-  def test_scalene_triangle_no_sides_are_equal
+  def test_no_sides_are_equal_on_scalene_triangle
     skip
-    triangle = Triangle.new([5, 4, 6])
-    assert triangle.scalene?, "Expected 'true', triangle [5, 4, 6] is scalene."
+    actual = Triangle.new([5, 4, 6]).scalene?
+    assert actual, "Expected 'true', triangle [5, 4, 6] is scalene."
   end
 
-  def test_scalene_triangle_all_sides_are_equal
+  def test_all_sides_are_equal_on_scalene_triangle
     skip
-    triangle = Triangle.new([4, 4, 4])
-    refute triangle.scalene?, "Expected 'false', triangle [4, 4, 4] is not scalene."
+    actual = Triangle.new([4, 4, 4]).scalene?
+    refute actual, "Expected 'false', triangle [4, 4, 4] is not scalene."
   end
 
-  def test_scalene_triangle_first_and_second_sides_are_equal
+  def test_first_and_second_sides_are_equal_on_scalene_triangle
     skip
-    triangle = Triangle.new([4, 4, 3])
-    refute triangle.scalene?, "Expected 'false', triangle [4, 4, 3] is not scalene."
+    actual = Triangle.new([4, 4, 3]).scalene?
+    refute actual, "Expected 'false', triangle [4, 4, 3] is not scalene."
   end
 
-  def test_scalene_triangle_first_and_third_sides_are_equal
+  def test_first_and_third_sides_are_equal_on_scalene_triangle
     skip
-    triangle = Triangle.new([3, 4, 3])
-    refute triangle.scalene?, "Expected 'false', triangle [3, 4, 3] is not scalene."
+    actual = Triangle.new([3, 4, 3]).scalene?
+    refute actual, "Expected 'false', triangle [3, 4, 3] is not scalene."
   end
 
-  def test_scalene_triangle_second_and_third_sides_are_equal
+  def test_second_and_third_sides_are_equal_on_scalene_triangle
     skip
-    triangle = Triangle.new([4, 3, 3])
-    refute triangle.scalene?, "Expected 'false', triangle [4, 3, 3] is not scalene."
+    actual = Triangle.new([4, 3, 3]).scalene?
+    refute actual, "Expected 'false', triangle [4, 3, 3] is not scalene."
   end
 
-  def test_scalene_triangle_may_not_violate_triangle_inequality
+  def test_may_not_violate_triangle_inequality_on_scalene_triangle
     skip
-    triangle = Triangle.new([7, 3, 2])
-    refute triangle.scalene?, "Expected 'false', triangle [7, 3, 2] is not scalene."
+    actual = Triangle.new([7, 3, 2]).scalene?
+    refute actual, "Expected 'false', triangle [7, 3, 2] is not scalene."
   end
 
-  def test_scalene_triangle_sides_may_be_floats
+  def test_sides_may_be_floats_on_scalene_triangle
     skip
-    triangle = Triangle.new([0.5, 0.4, 0.6])
-    assert triangle.scalene?, "Expected 'true', triangle [0.5, 0.4, 0.6] is scalene."
+    actual = Triangle.new([0.5, 0.4, 0.6]).scalene?
+    assert actual, "Expected 'true', triangle [0.5, 0.4, 0.6] is scalene."
   end
 end

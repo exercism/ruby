@@ -1,0 +1,14 @@
+require 'minitest/autorun'
+require_relative 'triangle'
+
+class TriangleTest < Minitest::Test
+  <% json["cases"].each do |cases| %>
+    <% cases["cases"].each do |sub_case| %>
+      def test_<%= underscore(sub_case["description"]) %>_on_<%= underscore(cases["description"])%>
+        <%= skip? %>
+        actual = Triangle.new(<%= sub_case["input"]["sides"] %>).<%= sub_case["property"] %>?
+        <%= sub_case["expected"] ? "assert" : "refute" %> actual, "Expected '<%= sub_case["expected"] %>', triangle <%= sub_case["input"]["sides"] %> is <%= sub_case["expected"] ? "" : "not " %><%= sub_case["property"] %>."
+      end
+    <% end %>
+  <% end %>
+end

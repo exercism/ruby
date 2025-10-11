@@ -1,0 +1,13 @@
+require 'minitest/autorun'
+require_relative 'two_fer'
+
+class TwoFerTest < Minitest::Test
+  <% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+      <%= skip? %>
+      actual = TwoFer.two_fer(<%= cases["input"]["name"] ? "'#{cases["input"]["name"]}'" : "" %>)
+      expected = '<%= cases["expected"] %>'
+      assert_equal expected, actual
+    end
+  <% end %>
+end
