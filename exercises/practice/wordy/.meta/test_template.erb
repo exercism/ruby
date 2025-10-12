@@ -1,0 +1,20 @@
+require 'minitest/autorun'
+require_relative 'wordy'
+
+class WordyTest < Minitest::Test
+  <% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+      <%= skip? %>
+      <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
+        assert_raises(ArgumentError) do
+          problem = WordProblem.new("<%= cases["input"]["question"] %>")
+          problem.answer
+        end
+      <%- else -%>
+        actual = WordProblem.new("<%= cases["input"]["question"] %>").answer
+        expected = <%= cases["expected"] %>
+        assert_equal expected, actual
+      <%- end -%>
+    end
+  <% end %>
+end
