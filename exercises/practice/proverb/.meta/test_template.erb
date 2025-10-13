@@ -1,0 +1,21 @@
+require 'minitest/autorun'
+require_relative 'proverb'
+
+class ProverbTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+      #<%= skip? %>
+      chain = %w[<%= cases["input"]["strings"].join(" ") %>]
+      proverb = Proverb.new(*chain, <%= cases["input"].key?("qualifier") ? "qualifier: '#{cases["input"]["qualifier"]}'" : "" %>)
+      <%- if cases["property"] == "consistency" %>
+        actual = proverb.to_s
+        expected = proverb.to_s
+        assert_equal expected, actual 
+      <%- else -%>
+        actual = proverb.to_s
+        expected = "<%= cases["expected"].join("\\n\" \\\n\t\t\t\"") %>"
+        assert_equal expected, actual
+      <%- end -%>
+    end
+    <% end %>
+end

@@ -1,0 +1,37 @@
+{ "cases": 
+    [
+        {
+        "uuid": "4d420abc-5359-4a6c-b6a8-05edcd9463c9",
+        "description": "an optional qualifier in the final consequence",
+        "property": "recite",
+        "input": {
+            "strings": ["nail", "shoe", "horse", "rider", "message", "battle", "kingdom"],
+            "qualifier": "horseshoe"
+        },
+        "expected": [
+            "For want of a nail the shoe was lost.",
+            "For want of a shoe the horse was lost.",
+            "For want of a horse the rider was lost.",
+            "For want of a rider the message was lost.",
+            "For want of a message the battle was lost.",
+            "For want of a battle the kingdom was lost.",
+            "And all for the want of a horseshoe nail."
+        ]
+        },
+        {
+            "uuid": "f610c8cc-b29e-485c-a82c-e9a9b337bd78",
+            "description": "proverb is same each time",
+            "property": "consistency",
+            "input": {
+                "strings": ["nail", "shoe"],
+                "qualifier": "horseshoe"
+            },
+            "expected": [
+                "For want of a horseshoe nail the shoe was lost.",
+                "For want of a horseshoe shoe the horse was lost.",
+                "For want of a horseshoe horse the rider was lost.",
+                "And all for the want of a horseshoe nail."
+            ]
+        }
+    ]
+}

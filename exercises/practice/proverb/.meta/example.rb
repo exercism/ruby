@@ -2,15 +2,18 @@ class Proverb
   attr_reader :chain, :options
 
   def initialize(*chain)
-    if chain.last.is_a? Hash
-      @options = chain.pop
-    else
-      @options = {}
-    end
+    @options = if chain.last.is_a? Hash
+                 chain.pop
+               else
+                 {}
+               end
     @chain = chain
   end
 
   def to_s
+    return "" if chain.empty?
+    return conclusion[1..] if chain.size <= 1
+
     chain_of_events + conclusion
   end
 
@@ -25,14 +28,14 @@ class Proverb
   end
 
   def consequence(cause, effect)
-    'For want of a %s the %s was lost.' % [cause, effect]
+    format('For want of a %s the %s was lost.', cause, effect)
   end
 
   def qualifier
-    options[:qualifier] ?  '%s ' % options[:qualifier] : ''
+    options[:qualifier] ? '%s ' % options[:qualifier] : ''
   end
 
   def conclusion
-    "\nAnd all for the want of a %s%s." % [qualifier, chain.first]
+    format("\nAnd all for the want of a %s%s.", qualifier, chain.first)
   end
 end
