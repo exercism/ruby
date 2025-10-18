@@ -2,52 +2,38 @@ require 'minitest/autorun'
 require_relative 'nucleotide_count'
 
 class NucleotideTest < Minitest::Test
-  def test_empty_dna_strand_has_no_adenosine
-    assert_equal 0, Nucleotide.from_dna('').count('A')
+  def test_empty_strand
+    # skip
+    expected = { "A" => 0, "C" => 0, "G" => 0, "T" => 0 }
+    actual = Nucleotide.from_dna('').histogram
+    assert_equal expected, actual
   end
 
-  def test_repetitive_cytidine_gets_counted
+  def test_can_count_one_nucleotide_in_single_character_input
     skip
-    assert_equal 5, Nucleotide.from_dna('CCCCC').count('C')
+    expected = { "A" => 0, "C" => 0, "G" => 1, "T" => 0 }
+    actual = Nucleotide.from_dna('G').histogram
+    assert_equal expected, actual
   end
 
-  def test_counts_only_thymidine
+  def test_strand_with_repeated_nucleotide
     skip
-    assert_equal 1, Nucleotide.from_dna('GGGGGTAACCCGG').count('T')
+    expected = { "A" => 0, "C" => 0, "G" => 7, "T" => 0 }
+    actual = Nucleotide.from_dna('GGGGGGG').histogram
+    assert_equal expected, actual
   end
 
-  def test_counts_a_nucleotide_only_once
+  def test_strand_with_multiple_nucleotides
     skip
-    dna = Nucleotide.from_dna('CGATTGGG')
-    dna.count('T')
-    dna.count('T')
-    assert_equal 2, dna.count('T')
+    expected = { "A" => 20, "C" => 12, "G" => 17, "T" => 21 }
+    actual = Nucleotide.from_dna('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC').histogram
+    assert_equal expected, actual
   end
 
-  def test_empty_dna_strand_has_no_nucleotides
-    skip
-    expected = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0 }
-    assert_equal expected, Nucleotide.from_dna('').histogram
-  end
-
-  def test_repetitive_sequence_has_only_guanosine
-    skip
-    expected = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 8 }
-    assert_equal expected, Nucleotide.from_dna('GGGGGGGG').histogram
-  end
-
-  def test_counts_all_nucleotides
-    skip
-    s = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
-    dna = Nucleotide.from_dna(s)
-    expected = { 'A' => 20, 'T' => 21, 'G' => 17, 'C' => 12 }
-    assert_equal expected, dna.histogram
-  end
-
-  def test_validates_dna
+  def test_strand_with_invalid_nucleotides
     skip
     assert_raises ArgumentError do
-      Nucleotide.from_dna('JOHNNYAPPLESEED')
+      Nucleotide.from_dna('AGXXACT')
     end
   end
 end

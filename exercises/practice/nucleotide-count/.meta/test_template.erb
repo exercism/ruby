@@ -1,0 +1,19 @@
+require 'minitest/autorun'
+require_relative 'nucleotide_count'
+
+class NucleotideTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        <%- if cases["expected"].is_a?(Hash) && cases["expected"].key?("error") -%>
+            assert_raises ArgumentError do
+                Nucleotide.from_dna('<%= cases["input"]["strand"] %>')
+            end
+        <%- else -%>
+            expected = <%= cases["expected"] %>
+            actual = Nucleotide.from_dna('<%= cases["input"]["strand"] %>').histogram
+            assert_equal expected, actual
+        <%- end -%>
+    end
+<% end %>
+end

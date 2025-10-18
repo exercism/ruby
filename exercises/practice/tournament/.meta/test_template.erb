@@ -1,0 +1,21 @@
+require 'minitest/autorun'
+require_relative 'tournament'
+
+class TournamentTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+      <%= skip? %>
+      input = <<~INPUT
+<%= cases["input"]["rows"].join("\n") %>
+      INPUT
+
+      actual = Tournament.tally(input)
+
+      expected = <<~TALLY
+        <%= cases["expected"].join("\n        ") %>
+      TALLY
+
+      assert_equal expected, actual
+    end
+    <% end %>
+end

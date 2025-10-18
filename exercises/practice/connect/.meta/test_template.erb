@@ -1,0 +1,16 @@
+require 'minitest/autorun'
+require_relative 'connect'
+
+class ConnectTest < Minitest::Test
+<% json["cases"].each do |cases| %>
+    def test_<%= underscore(cases["description"]) %>
+        <%= skip? %>
+        expected = '<%= cases["expected"] %>'
+        board = [
+        '<%= cases["input"]["board"].join("', \n'") %>'
+        ].map { |row| row.gsub(/^ */, '') }
+        actual = Board.new(board).winner
+        assert_equal expected, actual, '<%= cases["description"] %>'
+    end
+    <% end %>
+end

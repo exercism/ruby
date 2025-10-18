@@ -8,11 +8,13 @@ class TournamentTest < Minitest::Test
 
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_a_win_is_three_points_a_loss_is_zero_points
@@ -21,13 +23,15 @@ class TournamentTest < Minitest::Test
       Allegoric Alaskans;Blithering Badgers;win
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3
       Blithering Badgers             |  1 |  0 |  0 |  1 |  0
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_a_win_can_also_be_expressed_as_a_loss
@@ -36,13 +40,15 @@ class TournamentTest < Minitest::Test
       Blithering Badgers;Allegoric Alaskans;loss
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3
       Blithering Badgers             |  1 |  0 |  0 |  1 |  0
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_a_different_team_can_win
@@ -51,13 +57,15 @@ class TournamentTest < Minitest::Test
       Blithering Badgers;Allegoric Alaskans;win
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Blithering Badgers             |  1 |  1 |  0 |  0 |  3
       Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_a_draw_is_one_point_each
@@ -66,13 +74,15 @@ class TournamentTest < Minitest::Test
       Allegoric Alaskans;Blithering Badgers;draw
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1
       Blithering Badgers             |  1 |  0 |  1 |  0 |  1
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_there_can_be_more_than_one_match
@@ -82,13 +92,15 @@ class TournamentTest < Minitest::Test
       Allegoric Alaskans;Blithering Badgers;win
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6
       Blithering Badgers             |  2 |  0 |  0 |  2 |  0
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_there_can_be_more_than_one_winner
@@ -98,13 +110,15 @@ class TournamentTest < Minitest::Test
       Allegoric Alaskans;Blithering Badgers;win
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3
       Blithering Badgers             |  2 |  1 |  0 |  1 |  3
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_there_can_be_more_than_two_teams
@@ -115,6 +129,8 @@ class TournamentTest < Minitest::Test
       Courageous Californians;Allegoric Alaskans;loss
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6
@@ -122,7 +138,7 @@ class TournamentTest < Minitest::Test
       Courageous Californians        |  2 |  0 |  0 |  2 |  0
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_typical_input
@@ -136,6 +152,8 @@ class TournamentTest < Minitest::Test
       Allegoric Alaskans;Courageous Californians;win
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Devastating Donkeys            |  3 |  2 |  1 |  0 |  7
@@ -144,7 +162,7 @@ class TournamentTest < Minitest::Test
       Courageous Californians        |  3 |  0 |  1 |  2 |  1
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_incomplete_competition_not_all_pairs_have_played
@@ -156,6 +174,8 @@ class TournamentTest < Minitest::Test
       Allegoric Alaskans;Courageous Californians;win
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6
@@ -164,7 +184,7 @@ class TournamentTest < Minitest::Test
       Devastating Donkeys            |  1 |  0 |  0 |  1 |  0
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_ties_broken_alphabetically
@@ -178,6 +198,8 @@ class TournamentTest < Minitest::Test
       Allegoric Alaskans;Courageous Californians;draw
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Allegoric Alaskans             |  3 |  2 |  1 |  0 |  7
@@ -186,7 +208,7 @@ class TournamentTest < Minitest::Test
       Devastating Donkeys            |  3 |  0 |  1 |  2 |  1
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 
   def test_ensure_points_sorted_numerically
@@ -199,12 +221,14 @@ class TournamentTest < Minitest::Test
       Blithering Badgers;Devastating Donkeys;win
     INPUT
 
+    actual = Tournament.tally(input)
+
     expected = <<~TALLY
       Team                           | MP |  W |  D |  L |  P
       Devastating Donkeys            |  5 |  4 |  0 |  1 | 12
       Blithering Badgers             |  5 |  1 |  0 |  4 |  3
     TALLY
 
-    assert_equal expected, Tournament.tally(input)
+    assert_equal expected, actual
   end
 end
