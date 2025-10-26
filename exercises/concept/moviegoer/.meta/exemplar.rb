@@ -17,7 +17,7 @@ class Moviegoer
     age >= 18
   end
 
-  def claim_free_popcorn!
+  def claim_free_popcorn
     raise NotMovieClubMemberError unless member
 
     "🍿"

@@ -8,22 +8,22 @@ class AbstractItem
 
   def conjured? = @conjured
 
-  def update!
-    update_quality!
+  def update
+    update_quality
     @quality = 0 if quality < 0
     @quality = 0 if conjured? && sell_in <= 0
     @quality = max_quality if quality > max_quality
 
-    update_sell_in!
+    update_sell_in
   end
 
   private
 
   def max_quality = 50
 
-  def update_quality! = raise NotImplementedError
+  def update_quality = raise NotImplementedError
 
-  def update_sell_in! = @sell_in -= 1
+  def update_sell_in = @sell_in -= 1
 end
 
 class NormalItem < AbstractItem
@@ -31,7 +31,7 @@ class NormalItem < AbstractItem
 
   private
 
-  def update_quality!
+  def update_quality
     quality_change = -1
     quality_change -= 1 if sell_in <= 0
     quality_change *= 2 if conjured?
@@ -45,7 +45,7 @@ class AgedBrie < AbstractItem
 
   private
 
-  def update_quality!
+  def update_quality
     quality_change = 1
     quality_change += 1 if sell_in <= 0
 
@@ -60,10 +60,10 @@ class Sulfuras < AbstractItem
 
   def max_quality = 80
 
-  def update_quality!
+  def update_quality
   end
 
-  def update_sell_in!
+  def update_sell_in
     @sell_in -= 1 if conjured?
   end
 end
@@ -73,7 +73,7 @@ class BackstagePass < AbstractItem
 
   private
 
-  def update_quality!
+  def update_quality
     @quality = 0 and return if sell_in <= 0
 
     quality_change = 1
@@ -103,9 +103,9 @@ class GildedRose
     @items = items
   end
 
-  def update!
+  def update
     @items.each do |item|
-      item.update!
+      item.update
     end
   end
 end

@@ -5,7 +5,7 @@ class GildedRose
     @items = items
   end
 
-  def update!
+  def update
     @items.each do |item|
       if item.name != "Aged Brie" && item.name != "Backstage passes to a TAFKAL80ETC concert"
         if item.quality > 0

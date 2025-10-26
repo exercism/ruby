@@ -8,14 +8,14 @@ class AttendeeTest < Minitest::Test
 
   def test_when_issued_pass
     attendee = Attendee.new(100)
-    attendee.issue_pass!(1)
+    attendee.issue_pass(1)
     assert attendee.has_pass?
   end
 
   def test_when_revoked_doesnt_have_pass
     attendee = Attendee.new(100)
-    attendee.issue_pass!(1)
-    attendee.revoke_pass!
+    attendee.issue_pass(1)
+    attendee.revoke_pass
     refute attendee.has_pass?
   end
 
@@ -37,13 +37,13 @@ class AttendeeTest < Minitest::Test
 
   def test_fits_ride_and_pass
     attendee = Attendee.new(100)
-    attendee.issue_pass!(1)
+    attendee.issue_pass(1)
     assert attendee.allowed_to_ride?(100)
   end
 
   def test_does_not_fit_ride_and_pass
     attendee = Attendee.new(100)
-    attendee.issue_pass!(1)
+    attendee.issue_pass(1)
     refute attendee.allowed_to_ride?(120)
   end
 end

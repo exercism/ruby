@@ -3,11 +3,11 @@ class Attendee
     @height = height
   end
 
-  def issue_pass!(pass_id)
+  def issue_pass(pass_id)
     @pass_id = pass_id
   end
 
-  def revoke_pass!
+  def revoke_pass
     @pass_id = nil
   end
 

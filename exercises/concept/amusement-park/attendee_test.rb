@@ -22,7 +22,7 @@ class AttendeeTest < Minitest::Test
     attendee = Attendee.new(height)
 
     pass_id = 1
-    attendee.issue_pass!(pass_id)
+    attendee.issue_pass(pass_id)
 
     assert_equal pass_id, attendee.pass_id
   end
@@ -31,8 +31,8 @@ class AttendeeTest < Minitest::Test
     height = 100
     attendee = Attendee.new(height)
     pass_id = 1
-    attendee.issue_pass!(pass_id)
-    attendee.revoke_pass!
+    attendee.issue_pass(pass_id)
+    attendee.revoke_pass
     refute attendee.pass_id
   end
 end

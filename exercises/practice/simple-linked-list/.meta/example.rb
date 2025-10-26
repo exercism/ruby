@@ -34,7 +34,7 @@ class SimpleLinkedList
     element
   end
 
-  def reverse!
+  def reverse
     previous = nil
     pointer = @head
     while pointer

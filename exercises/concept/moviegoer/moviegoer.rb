@@ -17,7 +17,7 @@ class Moviegoer
   end
 
   # Popcorn is 🍿
-  def claim_free_popcorn!
+  def claim_free_popcorn
     raise 'Please implement the Moviegoer#claim_free_popcorn method'
   end
 end

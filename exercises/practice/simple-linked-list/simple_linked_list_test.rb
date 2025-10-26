@@ -103,7 +103,7 @@ class LinkedListTest < Minitest::Test
     assert_equal 3, element.datum
   end
 
-  def test_list_in_place_reverse!
+  def test_list_in_place_reverse
     skip
     first = Element.new(1)
     second = Element.new(2)
@@ -111,7 +111,7 @@ class LinkedListTest < Minitest::Test
     list = SimpleLinkedList.new
     list.push(first).push(second).push(third)
 
-    assert_equal [1, 2, 3], list.reverse!.to_a
+    assert_equal [1, 2, 3], list.reverse.to_a
   end
 
   def test_list_in_place_reverse_are_the_same_elements
@@ -121,7 +121,7 @@ class LinkedListTest < Minitest::Test
     list = SimpleLinkedList.new
     list.push(first).push(second)
 
-    list.reverse!
+    list.reverse
 
     assert_equal first, list.pop
     assert_equal second, list.pop
@@ -130,7 +130,7 @@ class LinkedListTest < Minitest::Test
   def test_list_reverse_empty_list
     skip
     list = SimpleLinkedList.new
-    assert_equal list, list.reverse!
+    assert_equal list, list.reverse
   end
 
   def test_works_for_1_through_10

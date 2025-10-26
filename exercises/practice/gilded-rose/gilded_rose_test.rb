@@ -4,7 +4,7 @@ require_relative 'gilded_rose'
 class GildedRoseTest < Minitest::Test
   def update_with(sell_in:, quality:, name:, sell_in_change: -1, quality_change: -1)
     item = Item.new(name:, sell_in:, quality:)
-    GildedRose.new([item]).update!
+    GildedRose.new([item]).update
 
     assert_equal sell_in + sell_in_change, item.sell_in
     assert_equal quality + quality_change, item.quality
@@ -239,7 +239,7 @@ class GildedRoseTest < Minitest::Test
     normal_item = Item.new(name: "some item", sell_in: 1, quality: 10)
     aged_brie = Item.new(name: "Aged Brie", sell_in: -1, quality: 10)
 
-    GildedRose.new([normal_item, aged_brie]).update!
+    GildedRose.new([normal_item, aged_brie]).update
 
     assert_equal 9, normal_item.quality
     assert_equal 0, normal_item.sell_in
