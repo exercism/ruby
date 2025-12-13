@@ -19,8 +19,10 @@ Exercism Exercises in Ruby
 
 ## Setup
 
-You'll need a recent (2.6+) version of Ruby, but that's it.
+You will want a recent (3.4+) version of Ruby, but that's it.
 Minitest ships with the language, so you're all set.
+
+Older versions of Ruby may work, but are not officially supported.
 
 ## Anatomy of an Exercise
 
