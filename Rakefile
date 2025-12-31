@@ -37,7 +37,7 @@ namespace :test do
   desc 'Run all development tests located in the test directory'
   Rake::TestTask.new :dev do |task|
     task.options = flags
-    task.pattern = 'test/**/*_test.rb'
+    task.pattern = FileList['test/**/*_test.rb'].exclude('test/generator/**/*')
   end
 
   Rake::TestTask.new :generator do |task|
