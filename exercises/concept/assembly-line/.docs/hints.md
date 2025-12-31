@@ -15,5 +15,5 @@
 
 [comparison-operators]: https://www.w3resource.com/ruby/ruby-comparison-operators.php
 [if-else-unless]: https://www.w3resource.com/ruby/ruby-if-else-unless.php
-[to_f]: https://apidock.com/ruby/v2_6_3/Integer/to_f
-[to_i]: https://apidock.com/ruby/Float/to_i
+[to_f]: https://docs.ruby-lang.org/en/master/Integer.html#method-i-to_f
+[to_i]: https://docs.ruby-lang.org/en/master/Float.html#method-i-to_i

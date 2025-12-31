@@ -29,9 +29,9 @@
 
 [instance-variables]: http://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html
 [class-method]: http://www.rubyfleebie.com/2007/04/09/understanding-class-methods-in-ruby/
-[array-definition]: https://ruby-doc.org/core-2.7.0/Array.html#class-Array-label-Creating+Arrays
-[array-length]: https://ruby-doc.org/core-2.7.0/Array.html#class-Array-label-Obtaining+Information+about+an+Array
-[array-sum]: https://ruby-doc.org/core-2.7.0/Array.html#method-i-sum
-[array-count]: https://ruby-doc.org/core-2.7.0/Array.html#method-i-count
-[enumerable-any]: https://ruby-doc.org/core-2.7.0/Enumerable.html#method-i-any-3F
-[enumerable-all]: https://ruby-doc.org/core-2.7.0/Enumerable.html#method-i-all-3F
+[array-definition]: https://docs.ruby-lang.org/en/master/Array.html#class-Array-label-Creating+Arrays
+[array-length]: https://docs.ruby-lang.org/en/master/Array.html#class-Array-label-Obtaining+Information+about+an+Array
+[array-sum]: https://docs.ruby-lang.org/en/master/Array.html#method-i-sum
+[array-count]: https://docs.ruby-lang.org/en/master/Array.html#method-i-count
+[enumerable-any]: https://docs.ruby-lang.org/en/master/Enumerable.html#method-i-any-3F
+[enumerable-all]: https://docs.ruby-lang.org/en/master/Enumerable.html#method-i-all-3F

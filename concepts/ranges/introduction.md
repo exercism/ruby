@@ -85,7 +85,8 @@ Its behavior can be a bit unexpected when using certain strings, so use it with 
 "aa".."az".to_a # => ["aa", "ab", "ac", ..., "az"]
 ```
 
-[range]: https://rubyapi.org/o/range
-[sum]: https://rubyapi.org/o/enumerable#method-i-sum
-[size]: https://rubyapi.org/o/range#method-i-size
-[indlude]: https://rubyapi.org/o/range#method-i-include-3F
+[range]: https://docs.ruby-lang.org/en/master/Range.html
+[sum]: https://docs.ruby-lang.org/en/master/Enumerable.html#method-i-sum
+[size]: https://docs.ruby-lang.org/en/master/Range.html#method-i-size
+[indlude]: https://docs.ruby-lang.org/en/master/Range.html#method-i-include-3F
+

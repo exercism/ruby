@@ -25,4 +25,4 @@
   all (or some) of these categories.
 
 [case]: https://www.rubyguides.com/2015/10/ruby-case/
-[range]: https://rubyapi.org/o/range
+[range]: https://docs.ruby-lang.org/en/master/Range.html

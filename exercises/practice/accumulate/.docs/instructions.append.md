@@ -1,6 +1,6 @@
 # Advanced
 
-It is typical to call [#to_enum](http://ruby-doc.org/core-2.3.1/Object.html#method-i-to_enum) when defining methods for a generic Enumerable, in case no block is passed.
+It is typical to call [#to_enum][to_enum] when defining methods for a generic Enumerable, in case no block is passed.
 
 Here is an additional test you could add:
 
@@ -14,3 +14,5 @@ def test_accumulate_when_block_is_deferred
   assert_equal [1, 4, 9], accumulated_result
 end
 ```
+
+[to_enum]: https://docs.ruby-lang.org/en/master/Object.html#method-i-to_enum

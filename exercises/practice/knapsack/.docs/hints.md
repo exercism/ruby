@@ -3,7 +3,7 @@
 ## General
 
 - If you're not sure where to start, try a brute-force solution:
-  - First, generate all possible combinations of items. [`Array#combination`](https://rubyapi.org/3.3/o/array#method-i-combination) might come in handy.
+  - First, generate all possible combinations of items. [`Array#combination`][Array#combination] might come in handy.
   - Then, find the combination that has the highest value and is within the weight limit.
 - If you want to make your solution as efficient as possible, look into an algorithmic technique called _dynamic programming_. Here are some resources:
   - ["Demystifying the 0-1 knapsack problem: top solutions explained"](demystifying-the-knapsack-problem).
@@ -46,3 +46,4 @@
 [solving-dynamic-programming-problems]: https://www.youtube.com/watch?v=aPQY__2H3tE
 [0-1-knapsack-problem]: https://www.youtube.com/watch?v=cJ21moQpofY
 [intuition-of-dp-for-knapsack-problem]: https://www.reddit.com/r/explainlikeimfive/comments/junw6n/comment/gces429
+[Array#combination]: https://docs.ruby-lang.org/en/master/Array.html#method-i-combination

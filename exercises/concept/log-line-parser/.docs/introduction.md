@@ -89,4 +89,4 @@ my_string.capitalize!  #=> "Hello"
 puts my_string         #=> "Hello"
 ```
 
-[docs-string]: https://ruby-doc.org/core-2.7.0/String.html
+[docs-string]: https://docs.ruby-lang.org/en/master/String.html

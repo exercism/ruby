@@ -7,5 +7,5 @@ It's also worth knowing that strings can be created using single quotes (`'`) or
 You can also create strings using the [heredoc syntax][ruby-heredoc] or using the `%q` and `%Q` helpers.
 
 [ruby-for-beginners.rubymonstas.org-interpolation]: http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html
-[ruby-doc.org-string]: https://ruby-doc.org/core-2.7.0/String.html
+[ruby-doc.org-string]: https://docs.ruby-lang.org/en/master/String.html
 [ruby-heredoc]: https://www.rubyguides.com/2018/11/ruby-heredoc/
