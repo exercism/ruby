@@ -52,4 +52,4 @@ Due to symbols having a limited set of methods, it can be useful to convert a sy
 ```
 
 [symbols]: https://www.rubyguides.com/2018/02/ruby-symbols/
-[symbols-api]: https://rubyapi.org/o/symbol
+[symbols-api]: https://docs.ruby-lang.org/en/master/Symbol.html

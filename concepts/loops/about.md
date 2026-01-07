@@ -40,6 +40,3 @@ end
 ```
 
 As you have probably noticed, Ruby has no increment operator (`i++`) like some other languages do. Instead, constructs like `i += 1` (which is equal to `i = i + 1`) can be used.
-
-[0.30000000000000004.com]: https://0.30000000000000004.com/
-[evanw.github.io-float-toy]: https://evanw.github.io/float-toy/

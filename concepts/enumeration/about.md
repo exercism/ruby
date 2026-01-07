@@ -49,4 +49,6 @@ words.each { |animal, name| ... }
 words.each.with_index { |(animal, name), index| ... }
 ```
 
-The methods described above are part of the [`Enumerable` module](https://ruby-doc.org/core-2.7.1/Enumerable.html) which is included in `Array`, `Hash` and other classes that require the ability to enumerate.
+The methods described above are part of the [`Enumerable` module][enumerable-module] which is included in `Array`, `Hash` and other classes that require the ability to enumerate.
+
+[enumerable-module]: https://docs.ruby-lang.org/en/master/Enumerable.html

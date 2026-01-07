@@ -52,5 +52,5 @@ a # => [{"cat"=>"feline"}, {}]
 
 Another characteristic of Ruby arrays is that they mix in the [Enumerable][enumerable-module] module, which adds a lot of handy methods to iterate, search, sort, filter, etc. elements of an array.
 
-[enumerable-module]: https://ruby-doc.org/core-2.7.1/Enumerable.html
+[enumerable-module]: https://docs.ruby-lang.org/en/master/Enumerable.html
 [for-loop]: https://launchschool.com/books/ruby/read/loops_iterators#forloops

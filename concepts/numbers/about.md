@@ -79,5 +79,5 @@ The same problem can sometimes be solved using different types of conditional st
 [arithmetic-operators]: https://www.tutorialspoint.com/ruby/ruby_operators.htm
 [comparison-operators]: https://www.w3resource.com/ruby/ruby-comparison-operators.php
 [if-else-unless]: https://www.w3resource.com/ruby/ruby-if-else-unless.php
-[integer-ruby]: https://ruby-doc.org/core-2.7.1/Integer.html
-[float-ruby]: https://ruby-doc.org/core-2.7.1/Float.html
+[integer-ruby]: https://docs.ruby-lang.org/en/master/Integer.html
+[float-ruby]: https://docs.ruby-lang.org/en/master/Float.html

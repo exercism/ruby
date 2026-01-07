@@ -23,9 +23,9 @@
 - You can use already defined methods to get the nickname of the player and to check if the move is valid.
 
 [constants]: https://www.rubyguides.com/2017/07/ruby-constants/
-[integers]: https://rubyapi.org/o/integer
-[string]: https://rubyapi.org/o/string
-[module]: https://rubyapi.org/o/module
-[include]: https://rubyapi.org/o/range#method-i-include-3F
-[range]: https://rubyapi.org/o/range
-[upcase]: https://rubyapi.org/o/string#method-i-upcase
+[integers]: https://docs.ruby-lang.org/en/master/Integer.html
+[string]: https://docs.ruby-lang.org/en/master/String.html
+[module]: https://docs.ruby-lang.org/en/master/Module.html
+[include]: https://docs.ruby-lang.org/en/master/Range.html#method-i-include-3F
+[range]: https://docs.ruby-lang.org/en/master/Range.html
+[upcase]: https://docs.ruby-lang.org/en/master/String.html#method-i-upcase

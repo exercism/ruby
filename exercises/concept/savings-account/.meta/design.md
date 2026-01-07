@@ -37,6 +37,6 @@ This exercise does not require any specific representation logic to be added to 
 
 This exercise does not require any specific logic to be added to the [analyzer][analyzer].
 
-[float-class]: https://ruby-doc.org/core-2.7.0/Float.html
+[float-class]: https://docs.ruby-lang.org/en/master/Float.html
 [analyzer]: https://github.com/exercism/ruby-analyzer
 [representer]: https://github.com/exercism/ruby-representer

@@ -83,4 +83,4 @@ arr.pop #=> 6
 arr     #=> [1, 2, 3, 4, 5]
 ```
 
-[enumerable-module]: https://ruby-doc.org/core-2.7.1/Enumerable.html
+[enumerable-module]: https://docs.ruby-lang.org/en/master/Enumerable.html

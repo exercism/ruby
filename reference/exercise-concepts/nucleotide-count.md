@@ -25,7 +25,7 @@
 ## Approach: use `Enumerable` mixin
 
 - Make the class that represents the nucleotides strand to include `Enumerable` so that all `Enumerable` methods are available.
-- Requires implementation of `each` method. See [Enumerable mixin documentation](https://ruby-doc.org/core-2.7.0/Enumerable.html)
+- Requires implementation of `each` method. See [Enumerable mixin documentation](https://docs.ruby-lang.org/en/master/Enumerable.html)
 
 ## Approach: Use collections + `Enumerable` methods.
 

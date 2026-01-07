@@ -72,9 +72,9 @@ Foo.instance_methods # => [:baz]
 local_variables # => [:a]
 ```
 
-All methods can be found in the [Kernel API][kernal-api] and [Module API][module-api].
+All methods can be found in the [Kernel API][kernel-api] and [Module API][module-api].
 
 [symbols]: https://www.rubyguides.com/2018/02/ruby-symbols/
-[symbols-api]: https://rubyapi.org/o/symbol
-[kernal-api]: https://rubyapi.org/o/kernel
-[module-api]: https://rubyapi.org/o/module
+[symbols-api]: https://docs.ruby-lang.org/en/master/Symbol.html
+[kernel-api]: https://docs.ruby-lang.org/en/master/Kernel.html
+[module-api]: https://docs.ruby-lang.org/en/master/Module.html

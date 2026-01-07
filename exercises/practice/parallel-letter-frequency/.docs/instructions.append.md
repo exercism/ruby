@@ -16,4 +16,4 @@ You may want to investigate what performance impact length of text vs number of 
 - [Ruby `Thread::Queue` Documentation](https://docs.ruby-lang.org/en/master/Thread/Queue.html)
 - [Ruby `Fiber` Documentation](https://docs.ruby-lang.org/en/master/Fiber.html)
 - [Ruby `Ractor` Documentation](https://docs.ruby-lang.org/en/master/Ractor.html)
-- [`Minitest::Benchmark` Documentation](https://ruby-doc.org/3.0.6/gems/minitest/Minitest/Benchmark.html)
+- [`Minitest::Benchmark` Documentation](https://ruby-doc.org/3.4/gems/minitest/Minitest/Benchmark.html)

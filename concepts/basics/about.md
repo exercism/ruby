@@ -45,7 +45,7 @@ Car.new.run
 
 Finally, bear in mind that the `Integer` object holds values that may be defined as one or more (consecutive) digits and its methods support many of the [mathematical operators][integers-docs].
 
-[integers-docs]: https://ruby-doc.org/core-2.7.0/Integer.html
+[integers-docs]: https://docs.ruby-lang.org/en/master/Integer.html
 
 ~~~~exercism/note
 The communication in documentation often will reference instance methods using syntax like `Class#method_name` while class or module level methods are referenced as `Class::method_name`.

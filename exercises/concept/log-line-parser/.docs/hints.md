@@ -20,6 +20,6 @@
 
 [ruby-for-beginners.rubymonstas.org-strings]: http://ruby-for-beginners.rubymonstas.org/built_in_classes/strings.html
 [ruby-for-beginners.rubymonstas.org-interpolation]: http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html
-[docs-string-methods]: https://ruby-doc.org/core-2.7.0/String.html
-[strip-white-space]: https://ruby-doc.org/core-2.7.0/String.html#method-i-strip
-[downcase]: https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase
+[docs-string-methods]: https://docs.ruby-lang.org/en/master/String.html
+[strip-white-space]: https://docs.ruby-lang.org/en/master/String.html#method-i-strip
+[downcase]: https://docs.ruby-lang.org/en/master/String.html#method-i-downcase

@@ -16,9 +16,9 @@
 - A string can be [slice][slice] to get parts of it.
 - Use conditional [`if`][doc-if], to check if the ship is carrying `"OIL"` or `"GAS"`.
 
-[doc-if]: https://ruby-doc.org/core/syntax/control_expressions_rdoc.html#label-if+Expression
+[doc-if]: https://docs.ruby-lang.org/en/master/syntax/control_expressions_rdoc.html#label-if+Expression
 [constants]: https://www.rubyguides.com/2017/07/ruby-constants/
-[upcase]: https://ruby-doc.org/core/String.html#method-i-upcase
+[upcase]: https://docs.ruby-lang.org/en/master/String.html#method-i-upcase
 [slice]: https://ruby-doc.org/core/String.html#class-String-label-String+Slices
-[to_s]: https://rubyapi.org/symbol#method-i-to_s
-[to_sym]: https://rubyapi.org/string#method-i-to_sym
+[to_s]: https://docs.ruby-lang.org/en/master/Symbol.html#method-i-to_s
+[to_sym]: https://docs.ruby-lang.org/en/master/String.html#method-i-to_sym

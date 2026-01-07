@@ -30,4 +30,4 @@
 [operators]: https://www.w3resource.com/ruby/ruby-arithmetic-operators.php
 [constants]: https://www.rubyguides.com/2017/07/ruby-constants/
 [invocation]: http://ruby-for-beginners.rubymonstas.org/objects/calling.html
-[integers]: https://ruby-doc.org/core-2.7.0/Integer.html
+[integers]: https://docs.ruby-lang.org/en/master/Integer.html
