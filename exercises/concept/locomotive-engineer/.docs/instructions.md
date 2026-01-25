@@ -62,6 +62,10 @@ LocomotiveEngineer.add_missing_stops({from: "New York", to: "Miami"},
 # => {from: "New York", to: "Miami", stops: ["Washington, DC", "Charlotte", "Atlanta", "Jacksonville", "Orlando"]}
 ```
 
+~~~~exercism/note
+The stops will always be passed in the correct order, so you don’t need to worry about sorting them.
+~~~~
+
 ## 4. Extend routing information
 
 Linus has been working on the routing program and has noticed that certain routes are missing some important details.
