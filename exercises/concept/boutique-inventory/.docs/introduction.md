@@ -14,12 +14,12 @@ fibonacci.none?  { |number| number > 20 }   #=> true
 fibonacci.select { |number| number.odd? }   #=> [1, 1, 3, 5, 13]
 fibonacci.all?   { |number| number < 20 }   #=> true
 fibonacci.map    { |number| number * 2  }   #=> [0, 2, 2, 4, 6, 10, 16, 26]
-fibonacci.select { |number| number >= 5}    #=> [5, 8, 13]
-fibonacci.find   { |number| number >= 6}    #=> 8
+fibonacci.select { |number| number >= 5 }   #=> [5, 8, 13]
+fibonacci.find   { |number| number >= 6 }   #=> 8
 
 # Some methods work with or without a block
 fibonacci.sum  #=> 33
-fibonacci.sum {| number | number * number }  #=> 273
+fibonacci.sum { |number| number * number }  #=> 273
 
 # There are also methods to help with nested arrays:
 animals = [ ['cat', 'bob'], ['horse', 'caris'], ['mouse', 'arya'] ]
