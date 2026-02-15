@@ -27,17 +27,17 @@ class SimpleCalculatorTest < Minitest::Test
   end
 
   def test_raises_exception_for_non_valid_operations
-    expected_exception=SimpleCalculator.include?(UnsupportedOperation)?(SimpleCalculator::UnsupportedOperation):UnsupportedOperation
+    expected_exception = SimpleCalculator.include?(UnsupportedOperation) ? SimpleCalculator::UnsupportedOperation : UnsupportedOperation
     assert_raises(expected_exception) { SimpleCalculator.calculate(1, 2, '**') }
   end
 
   def test_raises_exception_when_operation_is_nil
-    expected_exception=SimpleCalculator.include?(UnsupportedOperation)?(SimpleCalculator::UnsupportedOperation):UnsupportedOperation
+    expected_exception = SimpleCalculator.include?(UnsupportedOperation) ? SimpleCalculator::UnsupportedOperation : UnsupportedOperation
     assert_raises(expected_exception) { SimpleCalculator.calculate(1, 2, nil) }
   end
 
   def test_raises_exception_when_operation_is_an_empty_string
-    expected_exception=SimpleCalculator.include?(UnsupportedOperation)?(SimpleCalculator::UnsupportedOperation):UnsupportedOperation
+    expected_exception = SimpleCalculator.include?(UnsupportedOperation) ? SimpleCalculator::UnsupportedOperation : UnsupportedOperation
     assert_raises(expected_exception) { SimpleCalculator.calculate(1, 2, '') }
   end
 end

@@ -23,7 +23,7 @@ class MoviegoerTest < Minitest::Test
   end
 
   def test_regular_moviegoers_dont_get_free_popcorn
-    expected_exception=Moviegoer.include?(NotMovieClubMemberError)?(Moviegoer::NotMovieClubMemberError):NotMovieClubMemberError
+    expected_exception = Moviegoer.include?(NotMovieClubMemberError) ? Moviegoer::NotMovieClubMemberError : NotMovieClubMemberError
     assert_raises expected_exception do
       Moviegoer.new(25, member: false).claim_free_popcorn!
     end
