@@ -16,7 +16,7 @@ jobs:
       matrix:
         os:
           - ubuntu-24.04
-        ruby-version: [3.2, 3.3]
+        ruby-version: [3.3, 3.4]
 
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
