@@ -167,6 +167,17 @@
         ]
       },
       {
+        "slug": "gross-store",
+        "name": "Gross Store",
+        "uuid": "8a1dcca6-bccc-4684-8e77-ea3d77b44999",
+        "concepts": [
+          "hashes"
+        ],
+        "prerequisites": [
+          "enumeration"
+        ]
+      },
+      {
         "slug": "boutique-inventory-improvements",
         "name": "Boutique Inventory Improvements",
         "uuid": "cf415960-ceff-4a1c-b65a-c4b5b1a80155",
@@ -174,7 +185,7 @@
           "ostruct"
         ],
         "prerequisites": [
-          "advanced-enumeration"
+          "hashes"
         ]
       },
       {
@@ -185,7 +196,7 @@
           "multiple-assignment-and-decomposition"
         ],
         "prerequisites": [
-          "ostruct"
+          "hashes"
         ]
       },
       {
@@ -1698,6 +1709,11 @@
       "uuid": "0189a402-ed46-47ee-9f5b-cfa5f557720d",
       "slug": "enumeration",
       "name": "Enumeration"
+    },
+    {
+      "uuid": "609e43cc-8f7f-4672-9e77-7d90b44be977",
+      "slug": "hashes",
+      "name": "Hashes"
     },
     {
       "uuid": "ed6e1642-3f85-404f-85fa-6d014662d1e4",
