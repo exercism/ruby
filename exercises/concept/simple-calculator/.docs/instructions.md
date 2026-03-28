@@ -33,6 +33,10 @@ SimpleCalculator.calculate(1, 2, '-')
 # => Raises an UnsupportedOperation
 ```
 
+~~~~exercism/note
+In this exercise, you are expected to define the `UnsupportedOperation` exception for a specific scope.
+~~~~
+
 ## 3. Handle invalid arguments
 
 Update the `SimpleCalculator.calculate()` method to raise an `ArgumentError` exception for invalid argument types.
