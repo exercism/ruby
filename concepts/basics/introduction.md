@@ -37,6 +37,7 @@ Classes can contain other classes (_inner classes_):
 # Define outer class
 class Calculator
 
+  # Define inner class
   class SpecialHandler
     # ...
   end
