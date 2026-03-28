@@ -47,6 +47,20 @@ end
 my_first_calc = Calculator.new
 ```
 
+Classes can contain other classes (_inner classes_):
+
+```
+# Define outer class
+class Calculator
+
+  class SpecialHandler
+    # ...
+  end
+
+# ...
+end
+```
+
 ## Methods
 
 Units of functionality are encapsulated in methods - similar to _functions_ in other languages.
