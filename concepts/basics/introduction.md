@@ -31,6 +31,20 @@ end
 my_first_calc = Calculator.new
 ```
 
+Classes can contain other classes (_inner classes_):
+
+```
+# Define outer class
+class Calculator
+
+  class SpecialHandler
+    # ...
+  end
+
+# ...
+end
+```
+
 Units of functionality are encapsulated in methods - similar to _functions_ in other languages. A method can optionally be defined with positional arguments, and/or keyword arguments that are defined and called using the `:` syntax. Methods either implicitly return the result of the last evaluated statement, or can explicitly return an object via the `return` keyword. Methods are invoked using `.` syntax.
 
 ```ruby
