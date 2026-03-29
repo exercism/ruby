@@ -39,4 +39,5 @@ def self.years_before_desired_balance(current_balance, desired_balance)
 end
 ```
 
-As you have probably noticed, Ruby has no increment operator (`i++`) like some other languages do. Instead, constructs like `i += 1` (which is equal to `i = i + 1`) can be used.
+As you have probably noticed, Ruby has no increment operator (`i++`) like some other languages do.
+Instead, constructs like `i += 1` (which is equal to `i = i + 1`) can be used.
