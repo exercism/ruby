@@ -10,7 +10,7 @@ on:
 jobs:
   test-generator-templates:
     name: Check Generator Templates
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Set up Ruby
@@ -22,7 +22,7 @@ jobs:
         run: bundle exec ./bin/generate --verify
   test-generator:
     name: Test Generator
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Set up Ruby
