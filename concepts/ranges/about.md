@@ -88,7 +88,7 @@ Its behavior can be a bit unexpected when using certain strings, so use it with 
 ## Custom objects in ranges
 
 ~~~~exercism/advanced
-Ruby allows you to use custom objects in ranges. 
+Ruby allows you to use custom objects in ranges.
 The requirement for this is that the object implements the following:
 
 - include the `Comparable` module
@@ -100,9 +100,9 @@ These methods make it so that the range can iterate over the object and compare 
 ```ruby
 class Foo
   include Comparable
-  
+
   attr_reader :value
-  
+
   def initialize(value)
     @value = value
   end
@@ -119,6 +119,7 @@ end
 (Foo.new(1)..Foo.new(5))
 # => #<Foo:0x7f3552bebe70 @value=1>, #<Foo:0x7f3552bebe50 @value=2>, #<Foo:0x7f3552bebe40 @value=3>, #<Foo:0x7f3552bebe30 @value=4>, #<Foo:0x7f3552bebe20 @value=5>
 ```
+
 ~~~~
 
 [range]: https://docs.ruby-lang.org/en/master/Range.html
