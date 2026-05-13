@@ -20,7 +20,7 @@ class LastWillTest < Minitest::Test
 
   def test_account_number_assembly_method_in_correct_namespace
     #skip
-    assert ::EstateExecutor.include?(assemble_account_number)
+    assert ::EstateExecutor.respond_to?(:assemble_account_number)
   end
 
   def test_account_number_assembly_method_works
@@ -31,7 +31,7 @@ class LastWillTest < Minitest::Test
 
   def test_code_fragment_number_assembly_method_in_correct_namespace
     #skip
-    assert ::EstateExecutor.include?(assemble_code)
+    assert ::EstateExecutor.respond_to?(:assemble_code)
   end
 
   def test_code_fragments_fit
