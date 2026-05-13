@@ -54,10 +54,10 @@ end
 
 class EstateExecutor
   def self.assemble_account_number(secret_modifier)
-    Zhang::bank_number_part(secret_modifier) + Khang::bank_number_part(secret_modifier) + Garcia::bank_number_part(secret_modifier)
+    ::Zhang::bank_number_part(secret_modifier) + ::Khang::bank_number_part(secret_modifier) + ::Garcia::bank_number_part(secret_modifier)
   end
 
   def self.assemble_code
-    Zhang::Red::code_fragment + Khang::Red::code_fragment + Garcia::Red::code_fragment + Zhang::Blue::code_fragment + Khang::Blue::code_fragment + Garcia::Blue::code_fragment
+    ::Zhang::Red::code_fragment + ::Khang::Red::code_fragment + ::Garcia::Red::code_fragment + ::Zhang::Blue::code_fragment + ::Khang::Blue::code_fragment + ::Garcia::Blue::code_fragment
   end
 end
