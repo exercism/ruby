@@ -6,15 +6,15 @@ class LastWillTest < Minitest::Test
     #skip
     assert_equal ::Zhang::bank_number_part(1), 8541
     assert_equal ::Zhang::bank_number_part(3), 8541 * 3 % 10000
-    assert_equal ::Khang::bank_number_part(1), 4142
-    assert_equal ::Khang::bank_number_part(3), 4142 * 3 % 10000
+    assert_equal ::Khan::bank_number_part(1), 4142
+    assert_equal ::Khan::bank_number_part(3), 4142 * 3 % 10000
     assert_equal ::Garcia::bank_number_part(1), 4023
     assert_equal ::Garcia::bank_number_part(3), 4023 * 3 % 10000
     assert_equal ::Zhang::Red::code_fragment, 512
-    assert_equal ::Khang::Red::code_fragment, 148
+    assert_equal ::Khan::Red::code_fragment, 148
     assert_equal ::Garcia::Red::code_fragment, 118
     assert_equal ::Zhang::Blue::code_fragment, 677
-    assert_equal ::Khang::Blue::code_fragment, 875
+    assert_equal ::Khan::Blue::code_fragment, 875
     assert_equal ::Garcia::Blue::code_fragment, 923
   end
 
