@@ -13,19 +13,21 @@ They are used together by prefixing their respective namespaces.
 
 ```ruby
 class MyNamespace
-    def self.foo
-        44
+  def self.foo
+    44
+  end
+
+  class MyInnerNamespace
+    def self.baz
+      90
     end
-    class MyInnerNamespace
-        def self.baz
-            90
-        end
-    end
+  end
 end
+
 class MyOtherNamespace
-    def self.foo
-        -2
-    end
+  def self.foo
+    -2
+  end
 end
 
 p MyNamespace::foo + MyOtherNamespace::foo * MyNamespace::MyInnerNamespace::baz  # => -136
@@ -42,12 +44,15 @@ class Example
     5
   end
 end
+
 class MyNamespace
+
   class Example
     def self.example
       10
     end
   end
+
   def self.call_example
     p Example::example  # => 10
     p ::Example::example  # => 5

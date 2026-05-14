@@ -6,11 +6,13 @@ class Zhang
     zhang_part = 8541
     (zhang_part * secret_modifier) % 10000
   end
+
   class Red
     def self.code_fragment
       512
     end
   end
+
   class Blue
     def self.code_fragment
       677
@@ -24,11 +26,13 @@ class Khan
     khan_part = 4142
     (khan_part * secret_modifier) % 10000
   end
+
   class Red
     def self.code_fragment
       148
     end
   end
+
   class Blue
     def self.code_fragment
       875
@@ -42,11 +46,13 @@ class Garcia
     garcia_part = 4023
     (garcia_part * secret_modifier) % 10000
   end
+
   class Red
     def self.code_fragment
       118
     end
   end
+
   class Blue
     def self.code_fragment
       923
