@@ -3,8 +3,8 @@
 # Secret knowledge of the Zhang family:
 class Zhang
   def self.bank_number_part(secret_modifier)
-    zhang_part = 8541
-    (zhang_part * secret_modifier) % 10000
+    zhang_part = 8_541
+    (zhang_part * secret_modifier) % 10_000
   end
 
   class Red
@@ -23,8 +23,8 @@ end
 # Secret knowledge of the Khan family:
 class Khan
   def self.bank_number_part(secret_modifier)
-    khan_part = 4142
-    (khan_part * secret_modifier) % 10000
+    khan_part = 4_142
+    (khan_part * secret_modifier) % 10_000
   end
 
   class Red
@@ -43,8 +43,8 @@ end
 # Secret knowledge of the Garcia family:
 class Garcia
   def self.bank_number_part(secret_modifier)
-    garcia_part = 4023
-    (garcia_part * secret_modifier) % 10000
+    garcia_part = 4_023
+    (garcia_part * secret_modifier) % 10_000
   end
 
   class Red
