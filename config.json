@@ -191,7 +191,7 @@
       {
         "slug": "last-will",
         "name": "Last Will",
-        "uuid": "",
+        "uuid": "74b09c2d-916c-4c05-87b1-a348f8828733",
         "concepts": [
           "namespaces"
         ],
@@ -1637,7 +1637,7 @@
       "name": "Multiple Assignment and Decomposition"
     },
     {
-      "uuid": "",
+      "uuid": "80baa40d-ea8d-4958-940d-8c222be71a00",
       "slug": "namespaces",
       "name": "Namespaces"
     },
