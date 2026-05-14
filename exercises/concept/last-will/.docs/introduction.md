@@ -3,7 +3,7 @@
 # Namespaces
 
 An important method for code organization is the use of namespaces.
-Classes and modules can be namespaces.
+Classes and modules provide namespaces.
 Two methods might have a naming collision, which can be resolved by putting them in different namespaces.
 Namespaces can be nested, which might help to structure big code bases.
 Access to the namespaces is done via the scope-resolution operator `::`.
