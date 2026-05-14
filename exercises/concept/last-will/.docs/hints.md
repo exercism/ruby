@@ -2,7 +2,7 @@
 
 ## General
 
-- Do not change the code in the families' namespaces.
+- The code provided in the family namespaces should be considered as a "given" and not modified.
 - Do not copy the values into your code, call the methods.
 
 ## 1. Take your seat in front of the families and lay out your papers
