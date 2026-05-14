@@ -16,9 +16,9 @@ The code from the next tasks should be defined in the body of the `EstateExecuto
 
 ```ruby
 class SomeName
-    # The space between the class/module name
-    # and the `end` keyword
-    # is called body of the  namespace.
+  # The space between the class/module name
+  # and the `end` keyword
+  # is called body of the  namespace.
 end
 ```
 
