@@ -19,7 +19,7 @@ The goal of this exercise is to teach the student how to use namespaces in Ruby.
 
 ## Concepts
 
-The Concepts this exercise unlocks are:
+The Concept this exercise unlocks is:
 
 - `namespaces`: know how to call a method defined in a namespace; know how to organize methods in namespaces.
 
