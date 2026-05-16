@@ -1,0 +1,5 @@
+{
+  "blurb": "Classes and modules provide namespaces. Namespaces can be nested, which might help to structure big code bases. Access to the namespaces is done via the scope-resolution operator.",
+  "authors": ["vaeng","vaiapatta1985"],
+  "contributors": []
+}

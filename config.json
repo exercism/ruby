@@ -189,6 +189,18 @@
         ]
       },
       {
+        "slug": "last-will",
+        "name": "Last Will",
+        "uuid": "74b09c2d-916c-4c05-87b1-a348f8828733",
+        "concepts": [
+          "namespaces"
+        ],
+        "prerequisites": [
+          "basics",
+          "modules"
+        ]
+      },
+      {
         "slug": "moviegoer",
         "name": "Moviegoer",
         "uuid": "2aa6c375-8a73-4f5f-ac8f-9db22a86e1f6",
@@ -1623,6 +1635,11 @@
       "uuid": "d44ead9e-d5cb-46f6-84ac-fdc2d9bbc5d3",
       "slug": "multiple-assignment-and-decomposition",
       "name": "Multiple Assignment and Decomposition"
+    },
+    {
+      "uuid": "80baa40d-ea8d-4958-940d-8c222be71a00",
+      "slug": "namespaces",
+      "name": "Namespaces"
     },
     {
       "uuid": "fa482f4a-19d6-4d13-ad9e-5121c536dc76",
