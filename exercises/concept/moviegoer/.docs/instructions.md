@@ -42,7 +42,11 @@ Members get free popcorn when they watch any movie.
 
 Implement the `Moviegoer.claim_free_popcorn!` method.
 If a viewer is a movie club member, they should be rewarded with their free popcorn.
-If they are not, the method should raise the `NotMovieClubMemberError` exception defined at the top of the code.
+If they are not, the method should raise the `
+~~~~exercism/note
+In this exercise, you are expected to define the `UnsupportedOperation` exception for a specific scope.
+~~~~
+` exception defined at the top of the code.
 
 
 ```ruby
@@ -52,3 +56,11 @@ Moviegoer.new(21, member: true).claim_free_popcorn!
 Moviegoer.new(17, member: false).claim_free_popcorn!
 #=> Exception was raised! (NotMovieClubMemberError)
 ```
+
+~~~~exercism/note
+In this exercise, you are expected to define the `
+~~~~exercism/note
+In this exercise, you are expected to define the `UnsupportedOperation` exception for a specific scope.
+~~~~
+` exception for a specific scope.
+~~~~
