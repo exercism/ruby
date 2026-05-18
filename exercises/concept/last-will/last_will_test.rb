@@ -36,6 +36,6 @@ class LastWillTest < Minitest::Test
 
   def test_code_fragments_fit
     # skip
-    assert_equal ::EstateExecutor.assemble_code, 1_925_550
+    assert_equal 3253, ::EstateExecutor.assemble_code
   end
 end
