@@ -1,8 +1,12 @@
 # Introduction
 
-Ruby is a dynamic [object-oriented language][object-oriented-programming]. Everything in Ruby is an [object][object].
+Ruby is a dynamic [object-oriented language][object-oriented-programming].
+Everything in Ruby is an [object][object].
 
-There are two primary ways to assign objects to names in Ruby - using variables or constants. Variables are always written in [snake case][snake-case]. A variable can reference different objects over its lifetime. For example, `my_first_variable` can be defined and redefined many times using the `=` operator:
+There are two primary ways to assign objects to names in Ruby - using variables or constants.
+Variables are always written in [snake case][snake-case].
+A variable can reference different objects over its lifetime.
+For example, `my_first_variable` can be defined and redefined many times using the `=` operator:
 
 ```ruby
 my_first_variable = 1
@@ -10,7 +14,10 @@ my_first_variable = "Some string"
 my_first_variable = SomeComplexObject.new
 ```
 
-Constants, however, are meant to be assigned once. They must start with capital letters and are normally written in block capitals with words separated by underscores. For example:
+Constants, however, are meant to be assigned once.
+They must start with capital letters and are normally written in block capitals with words separated by underscores.
+
+For example:
 
 ```ruby
 MY_FIRST_CONSTANT = 10
@@ -19,7 +26,11 @@ MY_FIRST_CONSTANT = 10
 # MY_FIRST_CONSTANT = "Some String"
 ```
 
-Ruby is organised into classes. Classes are defined using the `class` keyword followed by the name of the class. Objects are generally created by instantiating classes using the `.new` method. For example:
+Ruby is organised into classes.
+Classes are defined using the `class` keyword followed by the name of the class.
+Objects are generally created by instantiating classes using the `.new` method.
+
+For example:
 
 ```ruby
 # Define the class
@@ -31,7 +42,10 @@ end
 my_first_calc = Calculator.new
 ```
 
-Units of functionality are encapsulated in methods - similar to _functions_ in other languages. A method can optionally be defined with positional arguments, and/or keyword arguments that are defined and called using the `:` syntax. Methods either implicitly return the result of the last evaluated statement, or can explicitly return an object via the `return` keyword. Methods are invoked using `.` syntax.
+Units of functionality are encapsulated in methods - similar to _functions_ in other languages.
+A method can optionally be defined with positional arguments, and/or keyword arguments that are defined and called using the `:` syntax.
+Methods either implicitly return the result of the last evaluated statement, or can explicitly return an object via the `return` keyword.
+Methods are invoked using `.` syntax.
 
 ```ruby
 class Calculator
