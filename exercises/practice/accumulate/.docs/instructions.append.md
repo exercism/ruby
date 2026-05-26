@@ -1,4 +1,6 @@
-# Advanced
+# Instructions append
+
+## Advanced
 
 It is typical to call [#to_enum][to_enum] when defining methods for a generic Enumerable, in case no block is passed.
 
