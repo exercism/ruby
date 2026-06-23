@@ -3,39 +3,38 @@ require_relative 'last_will'
 
 class LastWillTest < Minitest::Test
   def test_family_secrets_unaltered
-    # skip
-    assert_equal ::Zhang.bank_number_part(1), 8_541
-    assert_equal ::Zhang.bank_number_part(3), 8_541 * 3 % 10_000
-    assert_equal ::Khan.bank_number_part(1), 4_142
-    assert_equal ::Khan.bank_number_part(3), 4_142 * 3 % 10_000
-    assert_equal ::Garcia.bank_number_part(1), 4_023
-    assert_equal ::Garcia.bank_number_part(3), 4_023 * 3 % 10_000
-    assert_equal ::Zhang::Red.code_fragment, 512
-    assert_equal ::Khan::Red.code_fragment, 148
-    assert_equal ::Garcia::Red.code_fragment, 118
-    assert_equal ::Zhang::Blue.code_fragment, 677
-    assert_equal ::Khan::Blue.code_fragment, 875
-    assert_equal ::Garcia::Blue.code_fragment, 923
+    assert_equal 8_541, ::Zhang.bank_number_part(1)
+    assert_equal 8_541 * 3 % 10_000, ::Zhang.bank_number_part(3)
+
+    assert_equal 4_142, ::Khan.bank_number_part(1)
+    assert_equal 4_142 * 3 % 10_000, ::Khan.bank_number_part(3)
+
+    assert_equal 4_023, ::Garcia.bank_number_part(1)
+    assert_equal 4_023 * 3 % 10_000, ::Garcia.bank_number_part(3)
+
+    assert_equal 512, ::Zhang::Red.code_fragment
+    assert_equal 148, ::Khan::Red.code_fragment
+    assert_equal 118, ::Garcia::Red.code_fragment
+
+    assert_equal 677, ::Zhang::Blue.code_fragment
+    assert_equal 875, ::Khan::Blue.code_fragment
+    assert_equal 923, ::Garcia::Blue.code_fragment
   end
 
   def test_account_number_assembly_method_in_correct_namespace
-    # skip
     assert_respond_to(::EstateExecutor, :assemble_account_number)
   end
 
   def test_account_number_assembly_method_works
-    # skip
-    assert_equal ::EstateExecutor.assemble_account_number(1), 16_706
-    assert_equal ::EstateExecutor.assemble_account_number(23), 14_238
+    assert_equal 16_706, ::EstateExecutor.assemble_account_number(1)
+    assert_equal 14_238, ::EstateExecutor.assemble_account_number(23)
   end
 
   def test_code_fragment_number_assembly_method_in_correct_namespace
-    # skip
     assert_respond_to(::EstateExecutor, :assemble_code)
   end
 
   def test_code_fragments_fit
-    # skip
-    assert_equal ::EstateExecutor.assemble_code, 1_925_550
+    assert_equal 1_925_550, ::EstateExecutor.assemble_code
   end
 end
