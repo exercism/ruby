@@ -44,6 +44,18 @@ class IsbnVerifierTest < Minitest::Test
     refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
   end
 
+  def test_only_one_check_digit_is_allowed
+    skip
+    string = '3-598-21508-96'
+    refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
+  end
+
+  def test_x_is_not_substituted_by_the_value_10
+    skip
+    string = '3-598-2X507-5'
+    refute IsbnVerifier.valid?(string), "Expected false, '#{string}' is not a valid isbn"
+  end
+
   def test_valid_isbn_without_separating_dashes
     skip
     string = '3598215088'
