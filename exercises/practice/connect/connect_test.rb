@@ -91,6 +91,32 @@ class ConnectTest < Minitest::Test
     assert_equal expected, actual, 'X wins crossing from left to right'
   end
 
+  def test_x_wins_with_left_hand_dead_end_fork
+    skip
+    expected = 'X'
+    board = [
+      '. . X .',
+      ' X X . .',
+      '  . X X X',
+      '   O O O O'
+    ].map { |row| row.gsub(/^ */, '') }
+    actual = Board.new(board).winner
+    assert_equal expected, actual, 'X wins with left-hand dead end fork'
+  end
+
+  def test_x_wins_with_right_hand_dead_end_fork
+    skip
+    expected = 'X'
+    board = [
+      '. . X X',
+      ' X X . .',
+      '  . X X .',
+      '   O O O O'
+    ].map { |row| row.gsub(/^ */, '') }
+    actual = Board.new(board).winner
+    assert_equal expected, actual, 'X wins with right-hand dead end fork'
+  end
+
   def test_o_wins_crossing_from_top_to_bottom
     skip
     expected = 'O'
