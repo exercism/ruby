@@ -269,8 +269,7 @@ This will pack all **key**/**value** pairs from one hash into another hash, or c
 ### Composition with method parameters
 
 When you create a method that accepts an arbitrary number of arguments, you can use [`*arguments`][arguments] or [`**keyword_arguments`][keyword arguments] in the method definition.
-`*arguments` is used to pack an arbitrary number of positional (non-keyworded) arguments and
-`**keyword_arguments` is used to pack an arbitrary number of keyword arguments.
+`*arguments` is used to pack an arbitrary number of positional (non-keyworded) arguments and `**keyword_arguments` is used to pack an arbitrary number of keyword arguments.
 
 Usage of `*arguments`:
 
