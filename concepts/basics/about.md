@@ -1,12 +1,14 @@
 # About
 
-Ruby is a dynamic and strongly typed language. In dynamic languages the type of a variable or object is resolved at runtime, which means that its value or type can be changed up to the very last moment (when it gets parsed by the interpreter).
-And what do we mean with strongly typed? Once we know the type of a variable or object, Ruby is strict about what you can do with it, for example:
+Ruby is a dynamic and strongly typed language.
+In dynamic languages the type of a variable or object is resolved at runtime, which means that its value or type can be changed up to the very last moment (when it gets parsed by the interpreter).
+And what do we mean with strongly typed?
+Once we know the type of a variable or object, Ruby is strict about what you can do with it, for example:
 
 ```ruby
 x = '2'
 y = x + 'n'
-# =>  '2n'
+# => '2n'
 ```
 
 **But**
@@ -17,7 +19,10 @@ y = x + 2
 # => TypeError (no implicit conversion of Integer into String)
 ```
 
-Remember, in Ruby everything is an object. Even classes are instances of the class `Class`. For example:
+Remember, in Ruby everything is an object.
+Even classes are instances of the class `Class`.
+
+For example:
 
 ```ruby
 1.class

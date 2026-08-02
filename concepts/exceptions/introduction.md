@@ -3,7 +3,7 @@
 Exceptions are a form of error handling.
 They are called exceptions, as they normally appear when dealing with some unexpected event.
 
-At any point in our code, we can "raise" an exception. 
+At any point in our code, we can "raise" an exception.
 We do this using the `raise` method, passing in an object - normally an Exception object, although we can also use basic strings.
 For example, you'll see in the exercise stubs that we use the built-in `RuntimeError` to tell Ruby that a method hasn't been implemented.
 You can also use the shorthand syntax of `raise(ExceptionObject, params)`.

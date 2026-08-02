@@ -8,6 +8,7 @@ We do this using the `raise` method, passing in an object - normally an Exceptio
 For example, you'll see in the exercise stubs that we use the built-in `RuntimeError` to tell Ruby that a method hasn't been implemented.
 You can also use the shorthand syntax of `raise(ExceptionObject, params)`.
 If the exception class is omitted, `RuntimeError` is used by default.
+
 For example:
 
 ```ruby
@@ -18,7 +19,9 @@ raise "Please implement this method"
 ```
 
 When Ruby sees this it bubbles the error to the top of the program and then exits.
+
 For example, if you try dividing something by zero, you will see something like this:
+
 ```ruby
 5/0
 
@@ -32,7 +35,8 @@ Exceptions should not be used for control-flow of a program, as that is consider
 
 ## Class hierarchy
 
-In Ruby exceptions follow a class hierarchy where `Exception` is the base class. These are the most common Ruby's built-in exceptions:
+In Ruby exceptions follow a class hierarchy where `Exception` is the base class.
+These are the most common Ruby's built-in exceptions:
 
 ```
 Exception
@@ -64,7 +68,8 @@ Exception
   SystemExit
 ```
 
-Rescuing errors of a specific class also rescues errors of its children. This is why rescuing from `Exception` can be dangerous.
+Rescuing errors of a specific class also rescues errors of its children.
+This is why rescuing from `Exception` can be dangerous.
 Ruby uses exceptions to also handle messages from the operative system "Signals", for example `ctrl-c`.
 This means that rescuing from `Exception` will also capture this system "Signals".
 So in order to prevent unexpected behaviours the common practice to capture "all errors" is to rescue form `StandardError`.
