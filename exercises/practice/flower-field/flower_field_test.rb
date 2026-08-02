@@ -85,4 +85,11 @@ class FlowerFieldTest < Minitest::Test
     expected = ["1*22*1", "12*322", " 123*2", "112*4*", "1*22*2", "111111"]
     assert_equal expected, FlowerField.annotate(input)
   end
+
+  def test_multiple_adjacent_flowers
+    skip
+    input = [" ** "]
+    expected = ["1**1"]
+    assert_equal expected, FlowerField.annotate(input)
+  end
 end

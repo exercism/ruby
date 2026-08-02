@@ -32,6 +32,11 @@ class PerfectNumberTest < Minitest::Test
     assert_equal 'abundant', PerfectNumber.classify(33_550_335)
   end
 
+  def test_perfect_square_abundant_number_is_classified_correctly
+    skip
+    assert_equal 'abundant', PerfectNumber.classify(196)
+  end
+
   def test_smallest_prime_deficient_number_is_classified_correctly
     skip
     assert_equal 'deficient', PerfectNumber.classify(2)
