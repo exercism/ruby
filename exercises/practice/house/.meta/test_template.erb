@@ -5,7 +5,7 @@ class HouseTest < Minitest::Test
 <% json["cases"].each do |cases| %>
     def test_<%= underscore(cases["description"]) %>
         <%= skip? %>
-        expected = <<~RHYME 
+        expected = <<~RHYME
 <%= cases["expected"].join("\n") %>
         RHYME
         assert_equal expected, House.recite(<%= cases["input"]["startVerse"] %>, <%= cases["input"]["endVerse"] %>)
