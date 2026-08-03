@@ -18,7 +18,7 @@ class GrainsTest < Minitest::Test
         <% end %>
     <%- else -%>
         def test_<%= underscore(cases["description"]) %>
-        <%= skip? %> 
+        <%= skip? %>
         assert_equal <%= cases["expected"] %>, Grains.total
         end
     <%- end -%>
