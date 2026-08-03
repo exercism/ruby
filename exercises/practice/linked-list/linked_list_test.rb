@@ -3,14 +3,14 @@ require_relative 'linked_list'
 
 class DequeTest < Minitest::Test
   def test_pop_gets_element_from_the_list
-    ## skip
+    # skip
     deque = Deque.new
     deque.push(7)
     assert_equal 7, deque.pop
   end
 
   def test_pushpop_respectively_addremove_at_the_end_of_the_list
-    # skip
+    skip
     deque = Deque.new
     deque.push(11)
     deque.push(13)
@@ -19,14 +19,14 @@ class DequeTest < Minitest::Test
   end
 
   def test_shift_gets_an_element_from_the_list
-    # skip
+    skip
     deque = Deque.new
     deque.push(17)
     assert_equal 17, deque.shift
   end
 
   def test_shift_gets_first_element_from_the_list
-    # skip
+    skip
     deque = Deque.new
     deque.push(23)
     deque.push(5)
@@ -35,7 +35,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_unshift_adds_element_at_start_of_the_list
-    # skip
+    skip
     deque = Deque.new
     deque.unshift(23)
     deque.unshift(5)
@@ -44,7 +44,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_pop_push_shift_and_unshift_can_be_used_in_any_order
-    # skip
+    skip
     deque = Deque.new
     deque.push(1)
     deque.push(2)
@@ -59,13 +59,13 @@ class DequeTest < Minitest::Test
   end
 
   def test_count_an_empty_list
-    # skip
+    skip
     deque = Deque.new
     assert_equal 0, deque.count
   end
 
   def test_count_a_list_with_items
-    # skip
+    skip
     deque = Deque.new
     deque.push(37)
     deque.push(1)
@@ -73,7 +73,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_count_is_correct_after_mutation
-    # skip
+    skip
     deque = Deque.new
     deque.push(31)
     assert_equal 1, deque.count
@@ -86,7 +86,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_popping_to_empty_doesnt_break_the_list
-    # skip
+    skip
     deque = Deque.new
     deque.push(41)
     deque.push(59)
@@ -98,7 +98,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_shifting_to_empty_doesnt_break_the_list
-    # skip
+    skip
     deque = Deque.new
     deque.push(41)
     deque.push(59)
@@ -110,7 +110,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_deletes_the_only_element
-    # skip
+    skip
     deque = Deque.new
     deque.push(61)
     deque.delete(61)
@@ -118,7 +118,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_deletes_the_element_with_the_specified_value_from_the_list
-    # skip
+    skip
     deque = Deque.new
     deque.push(71)
     deque.push(83)
@@ -130,7 +130,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_deletes_the_element_with_the_specified_value_from_the_list_re_assigns_tail
-    # skip
+    skip
     deque = Deque.new
     deque.push(71)
     deque.push(83)
@@ -142,7 +142,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_deletes_the_element_with_the_specified_value_from_the_list_re_assigns_head
-    # skip
+    skip
     deque = Deque.new
     deque.push(71)
     deque.push(83)
@@ -154,7 +154,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_deletes_the_first_of_two_elements
-    # skip
+    skip
     deque = Deque.new
     deque.push(97)
     deque.push(101)
@@ -164,7 +164,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_deletes_the_second_of_two_elements
-    # skip
+    skip
     deque = Deque.new
     deque.push(97)
     deque.push(101)
@@ -174,7 +174,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_delete_does_not_modify_the_list_if_the_element_is_not_found
-    # skip
+    skip
     deque = Deque.new
     deque.push(89)
     deque.delete(103)
@@ -182,7 +182,7 @@ class DequeTest < Minitest::Test
   end
 
   def test_deletes_only_the_first_occurrence
-    # skip
+    skip
     deque = Deque.new
     deque.push(73)
     deque.push(9)
