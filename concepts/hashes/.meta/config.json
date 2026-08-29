@@ -1,0 +1,5 @@
+{
+  "blurb": "Hashes are collections of key-value pairs, where each unique key maps to a specific value. They are useful for storing and retrieving data based on keys rather than numerical indices.",
+  "authors": ["meatball133"],
+  "contributors": ["kotp"]
+}
