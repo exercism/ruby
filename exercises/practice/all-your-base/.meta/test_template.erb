@@ -4,7 +4,7 @@ require_relative 'all_your_base'
 class AllYourBaseTest < Minitest::Test
 <% json["cases"].each do |cases| %>
     def test_<%= underscore(cases["description"]) %>
-        <%= skip? %> 
+        <%= skip? %>
         digits = <%= cases["input"]["digits"] %>
         input_base = <%= cases["input"]["inputBase"] %>
         output_base = <%= cases["input"]["outputBase"] %>

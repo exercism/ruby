@@ -1,6 +1,6 @@
 class Integer
-  ROMAN_MAPPINGS = 
-   {
+  ROMAN_MAPPINGS =
+    {
       1000 => 'M',
       900 => 'CM',
       500 => 'D',

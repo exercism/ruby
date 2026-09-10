@@ -10,7 +10,7 @@ class ProverbTest < Minitest::Test
       <%- if cases["property"] == "consistency" %>
         actual = proverb.to_s
         expected = proverb.to_s
-        assert_equal expected, actual 
+        assert_equal expected, actual
       <%- else -%>
         actual = proverb.to_s
         expected = "<%= cases["expected"].join("\\n\" \\\n\t\t\t\"") %>"

@@ -5,7 +5,7 @@ class PerfectNumberTest < Minitest::Test
 <% json["cases"].each do |group| %>
   <% group["cases"].each do |sub_case| %>
     def test_<%= underscore(sub_case["description"]) %>
-      <%= skip? %> 
+      <%= skip? %>
       <%- if sub_case["expected"].is_a?(Hash) && sub_case["expected"].key?("error") -%>
         error = assert_raises(ArgumentError) { PerfectNumber.<%= underscore(sub_case["property"]) %>(<%= sub_case["input"]["number"] %>) }
         assert_equal '<%= sub_case["expected"]["error"] %>', error.message

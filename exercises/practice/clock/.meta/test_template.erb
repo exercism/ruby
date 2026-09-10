@@ -5,7 +5,7 @@ class ClockTest < Minitest::Test
 <% json["cases"].each do |cases| %>
     <% cases["cases"].each do |sub_case| %>
         def test_<%= underscore(sub_case["description"]) %>
-            <%= skip? %> 
+            <%= skip? %>
             <%- if sub_case["property"] == "create" -%>
                 assert_equal '<%= sub_case["expected"] %>', Clock.new(<%= sub_case["input"]["hour"] != 0 ? "hour: #{sub_case["input"]["hour"]}" : "" %><%= sub_case["input"]["minute"] != 0 && sub_case["input"]["hour"] != 0 ? ", " : "" %><%= sub_case["input"]["minute"] != 0 ?  "minute: #{sub_case["input"]["minute"]}" : "" %>).to_s
             <%- elsif sub_case["property"] == "add" -%>
