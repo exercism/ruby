@@ -14,5 +14,8 @@
       ".meta/exemplar.rb"
     ]
   },
+  "forked_from": [
+    "cpp/last-will"
+  ],
   "blurb": "Classes and modules provide namespaces. Namespaces can be nested, which might help to structure big code bases. Access to the namespaces is done via the scope-resolution operator."
 }

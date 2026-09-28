@@ -11,7 +11,7 @@
 
 ## 2. Find the secret account number
 
-Each `bank_number_part` has to be called with the `secret_modifier` from the parameter list.
+- Each `bank_number_part` has to be called with the `secret_modifier` from the parameter list.
 
 ## 3. Last step: Enter the secret code
 

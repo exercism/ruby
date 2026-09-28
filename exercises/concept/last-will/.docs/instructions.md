@@ -38,10 +38,3 @@ The resulting code is obtained by multiplying both sums.
 
 Define the `assemble_code` method that returns the resulting code by combining the fragments from the three families to a single `Integer` result.
 The method does not have any arguments and relies solely on the information in the relevant namespaces from the families.
-
-## Source
-
-Created by
-
-- @vaeng (original C++ exercise)
-- @vaiapatta1985 (transcription to Ruby)
