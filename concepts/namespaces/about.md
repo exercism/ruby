@@ -1,6 +1,6 @@
 # Introduction
 
-# Namespaces
+## Namespaces
 
 An important method for code organization is the use of namespaces.
 Classes and modules provide namespaces.
