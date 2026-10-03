@@ -160,7 +160,7 @@ Dress :)
 [#regenerating-a-test-suite]: #regenerating-a-test-suite
 [#ruby-icon]: #ruby-icon
 [#running-the-tests]: #running-the-tests
-[rubocop]: http://batsov.com/rubocop/
+[rubocop]: https://batsov.com/rubocop/
 [#setup]: #setup
 [#style-guide]: #style-guide
 [synchronize]: https://help.github.com/articles/syncing-a-fork/

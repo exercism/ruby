@@ -59,7 +59,7 @@ end
 - [Mix & Go: Ruby's attr_accessor, attr_reader, attr_writer][mg-attr]
 
 [mg-attr]: https://mixandgo.com/learn/ruby_attr_accessor_attr_reader_attr_writer
-[rfb-instance-variables]: http://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html
+[rfb-instance-variables]: https://ruby-for-beginners.rubymonstas.org/writing_classes/instance_variables.html
 [rg-initialize-method]: https://www.rubyguides.com/2019/01/ruby-initialize-method/
 [rg-instance-variables]: https://www.rubyguides.com/2019/07/ruby-instance-variables/
 [rug-instance-variables]: https://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/instancevars.html

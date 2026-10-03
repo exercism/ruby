@@ -8,6 +8,6 @@ Single-quoted strings don't process ASCII escape codes(\n, \t etc.), and they do
 
 You can also create strings using the [heredoc syntax][ruby-heredoc] or using the `%q` and `%Q` helpers.
 
-[ruby-for-beginners.rubymonstas.org-interpolation]: http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html
+[ruby-for-beginners.rubymonstas.org-interpolation]: https://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html
 [ruby-doc.org-string]: https://docs.ruby-lang.org/en/master/String.html
 [ruby-heredoc]: https://www.rubyguides.com/2018/11/ruby-heredoc/
