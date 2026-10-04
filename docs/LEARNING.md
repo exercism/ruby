@@ -4,7 +4,7 @@ Exercism provides exercises and feedback but can be difficult to jump into for t
 
 * [Ruby in Twenty Minutes](https://www.ruby-lang.org/en/documentation/quickstart/)
 * [Ruby Documentation](https://ruby-doc.org/)
-* [RubyLearning.com (on wayback machine)](https://rubylearning.github.io/) - Ruby Tutorial and Study Notes
+* [RubyLearning)](https://rubylearning.github.io/) - Ruby Tutorial and Study Notes
 * [Learn to Program](https://pine.fm/LearnToProgram/) - A book (available online) written by Chris Pine
 * [StackOverflow](https://stackoverflow.com/questions/tagged/ruby)
 * [RubyMonk](https://rubymonk.com/)
