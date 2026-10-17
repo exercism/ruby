@@ -8,4 +8,4 @@ Exercism provides exercises and feedback but can be difficult to jump into for t
 * [Learn to Program](https://pine.fm/LearnToProgram/) - A book (available online) written by Chris Pine
 * [StackOverflow](https://stackoverflow.com/questions/tagged/ruby)
 * [Learn Ruby The Hard Way](http://learnrubythehardway.org/book/)
-* [Codecademy.org's Ruby Course](https://www.codecademy.com/learn/ruby)
+* [Codecademy.org's Ruby Course](https://www.codecademy.com/learn-ruby)
