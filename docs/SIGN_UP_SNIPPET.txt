@@ -1,0 +1,9 @@
+def most_common_word(text)
+  counts = Hash.new(0)
+  best = ""
+  text.downcase.split(" ").each do |word|
+    counts[word] += 1
+    best = word if counts[word] > counts[best]
+  end
+  "\"#{best}\" appears #{counts[best]} times"
+end
