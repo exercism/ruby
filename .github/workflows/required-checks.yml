@@ -1,12 +1,5 @@
-# This workflow checks a PR that changes .github/required-checks.yml or a
-# workflow. It fails if a check that the file lists didn't run on the PR.
-# exercism/maintainers-admin-tools applies the file to this repo's ruleset, so
-# a listed check that never runs would stop every PR from merging.
-#
-# It also catches a PR that removes or renames a job that main's copy of the
-# file still requires. That PR can't merge, because GitHub waits for the old
-# check, so the job's removal needs to wait for a PR that takes it out of the
-# file first.
+# Checks that all the checks listed in .github/required-checks.yml exist.
+# Also fails if a PR removes a job that's still listed in main's copy of the file.
 
 name: Required checks
 
@@ -51,7 +44,7 @@ jobs:
             [output, error, status]
           end
 
-          # The file at a commit, or nil if the commit doesn't have it
+          # Returns the file at a commit, or nil if the commit doesn't have one
           def read_file(sha)
             output, error, status = gh("repos/#{REPO}/contents/.github/required-checks.yml?ref=#{sha}",
               "-H", "Accept: application/vnd.github.raw")
@@ -61,7 +54,7 @@ jobs:
             output
           end
 
-          # The same rules as scripts/update-track-maintenance-status in exercism/maintainers-admin-tools
+          # Uses the same rules as scripts/sync-repo-settings in exercism/maintainers-admin-tools
           def parse(yaml, where)
             data = YAML.safe_load(yaml)
             abort "#{where}: the file must have a `checks` list" unless data.is_a?(Hash) && data["checks"].is_a?(Array)
@@ -93,9 +86,9 @@ jobs:
             exit
           end
 
-          # Wait until every other check on the PR has finished. Checks can start a
-          # little after this one, so the wait lasts at least a minute, and only
-          # ends after two polls in a row find nothing still running.
+          # Wait for the PR's other checks to finish. Some checks start a little
+          # after this one, so wait at least a minute, and stop only when two
+          # polls in a row find nothing running.
           started = Time.now
           quiet_polls = 0
           runs = []
@@ -119,11 +112,11 @@ jobs:
             next if ran.include?([name, app])
 
             if on_main.include?([name, app])
-              problems << "`#{name}` is required by main's .github/required-checks.yml, but it didn't run on this PR. " \
-                          "Take it out of the file in a PR of its own and merge that first, then remove or rename the job."
+              problems << "`#{name}` is still listed in main's .github/required-checks.yml, but it didn't run on this PR. " \
+                          "Remove it from the file in its own PR and merge that first. Then remove or rename the job."
             else
               problems << "`#{name}` is listed in .github/required-checks.yml, but it didn't run on this PR. " \
-                          "Check the name matches the check exactly, and that its workflow runs on every PR to main."
+                          "Make sure the name matches the check exactly, and that its workflow runs on every PR to main."
             end
           end
 
