@@ -1,17 +1,9 @@
-# The checks that must pass before a PR can merge into main.
-#
-# exercism/maintainers-admin-tools reads this file and applies it to this repo's
-# "Default branch" ruleset, within a few minutes of a change reaching main.
-#
-# Each entry is a check's name exactly as it appears on a PR. A check that
-# doesn't come from GitHub Actions also needs its app's id:
-#
-#   - name: some-check
-#     app: 960
+# These checks must pass before a PR can merge into main.
+# Changes here will be automatically synced to the repo's ruleset.
 #
 # To remove or rename a check, first take it out of this file in its own PR and
 # let that merge. Then remove or rename the job. If both happen in one PR, the PR
-# waits forever for a check that no longer runs.
+# will wait forever for a check that no longer runs.
 checks:
   - configlet / configlet
   - i18n / completeness
