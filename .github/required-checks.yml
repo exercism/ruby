@@ -9,4 +9,4 @@ checks:
   - i18n / completeness
   - Check Generator Templates
   - Test Generator
-  - Required checks
+  - Validate required checks
