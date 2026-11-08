@@ -1,14 +1,14 @@
 # Checks that all the checks listed in .github/required-checks.yml exist.
 # Also fails if a PR removes a job that's still listed in main's copy of the file.
+#
+# It runs on every PR, so it can be listed as a required check itself. On a PR
+# that changes neither the file nor a workflow, it passes straight away.
 
 name: Required checks
 
 on:
   pull_request:
     branches: [main]
-    paths:
-      - .github/required-checks.yml
-      - .github/workflows/**
 
 permissions: {}
 
@@ -20,6 +20,7 @@ jobs:
     permissions:
       checks: read
       contents: read
+      pull-requests: read
     steps:
       - name: Check that every required check ran
         env:
@@ -27,6 +28,7 @@ jobs:
           REPO: ${{ github.repository }}
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
           OWN_CHECK_NAME: Validate required checks
         shell: ruby {0}
         run: |
@@ -74,6 +76,15 @@ jobs:
             end.uniq
           rescue Psych::Exception => e
             abort "#{where}: the file isn't valid YAML: #{e.message}"
+          end
+
+          output, error, status = gh("--paginate", "repos/#{REPO}/pulls/#{ENV.fetch('PR_NUMBER')}/files", "--jq", ".[].filename")
+          abort "Reading this PR's changed files failed: #{error}" unless status.success?
+
+          changed_files = output.lines(chomp: true)
+          unless changed_files.any? { |file| file == ".github/required-checks.yml" || file.start_with?(".github/workflows/") }
+            puts "This PR doesn't change .github/required-checks.yml or a workflow, so there's nothing to check."
+            exit
           end
 
           head_yaml = read_file(HEAD_SHA)
