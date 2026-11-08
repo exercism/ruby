@@ -32,3 +32,18 @@ jobs:
 
       - name: Test exercises
         run: bundle exec rake test
+
+  tests:
+    name: Tests
+    needs: test
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check that every Ruby version passed
+        env:
+          RESULT: ${{ needs.test.result }}
+        run: |
+          if [[ "$RESULT" != "success" ]]; then
+            echo "The exercise tests failed on at least one Ruby version."
+            exit 1
+          fi
