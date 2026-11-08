@@ -98,8 +98,8 @@ jobs:
           end
 
           # Wait for the PR's other checks to finish. Some checks start a little
-          # after this one, so wait at least a minute, and stop only when two
-          # polls in a row find nothing running.
+          # after this one, so wait at least 30 seconds, then check every 5 seconds.
+          # Stop only when two checks in a row find nothing running.
           started = Time.now
           quiet_polls = 0
           runs = []
@@ -110,10 +110,10 @@ jobs:
             runs = JSON.parse(output).flat_map { |page| page["check_runs"] }.reject { |run| run["name"] == OWN_CHECK_NAME }
             running = runs.reject { |run| run["status"] == "completed" }
             quiet_polls = running.empty? ? quiet_polls + 1 : 0
-            break if quiet_polls >= 2 && Time.now - started >= 60
+            break if quiet_polls >= 2 && Time.now - started >= 30
 
             puts "Waiting for: #{running.map { |run| run["name"] }.uniq.join(', ')}" unless running.empty?
-            sleep 20
+            sleep 5
           end
 
           ran = runs.map { |run| [run["name"], run.dig("app", "id")] }.uniq
