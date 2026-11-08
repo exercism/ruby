@@ -120,6 +120,8 @@ jobs:
           problems = []
 
           (wanted | on_main).each do |name, app|
+            # This check is running now, so it doesn't need to be found among the others
+            next if name == OWN_CHECK_NAME
             next if ran.include?([name, app])
 
             if on_main.include?([name, app])
