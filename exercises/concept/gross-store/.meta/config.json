@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "meatball133"
+  ],
+  "contributors": [
+    "kotp"
+  ],
+  "files": {
+    "solution": [
+      "gross_store.rb"
+    ],
+    "test": [
+      "gross_store_test.rb"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rb"
+    ]
+  },
+  "forked_from": [
+    "go/gross-store"
+  ],
+  "blurb": "Learn about `Hash` by selling items by the dozen at the Gross Store."
+}
