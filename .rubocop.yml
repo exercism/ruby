@@ -79,7 +79,7 @@ Naming/MethodName:
   Exclude:
     - "exercises/practice/protein-translation/protein_translation_test.rb"
 
-Naming/PredicateName:
+Naming/PredicatePrefix:
   Enabled: true
   Exclude:
     - "exercises/concept/amusement-park-improvements/attendee.rb"
