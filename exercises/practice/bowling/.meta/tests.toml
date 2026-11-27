@@ -73,7 +73,7 @@ description = "two bonus rolls after a strike in the last frame cannot score mor
 description = "two bonus rolls after a strike in the last frame can score more than 10 points if one is a strike"
 
 [6380495a-8bc4-4cdb-a59f-5f0212dbed01]
-description = "the second bonus rolls after a strike in the last frame cannot be a strike if the first one is not a strike"
+description = "the second bonus roll after a strike in the last frame cannot be a strike if the first one is not a strike"
 
 [2b2976ea-446c-47a3-9817-42777f09fe7e]
 description = "second bonus roll after a strike in the last frame cannot score more than 10 points"

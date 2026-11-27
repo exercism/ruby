@@ -419,9 +419,7 @@
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "bee97539-b8c1-460e-aa14-9336008df2b6",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "loops",
@@ -445,9 +443,7 @@
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "eeb64dda-b79f-4920-8fa3-04810e8d37ab",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "numbers",
           "loops",
@@ -459,9 +455,7 @@
         "slug": "tournament",
         "name": "Tournament",
         "uuid": "486becee-9d85-4139-ab89-db254d385ade",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "strings"
         ],
@@ -669,9 +663,7 @@
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
         "uuid": "2df14b68-75c8-4984-8ae2-ecd2cb7ed1d4",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "arrays",
           "strings",
@@ -765,9 +757,7 @@
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "3c5193ab-6471-4be2-9d24-1d2b51ad822a",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "arrays",
@@ -964,9 +954,7 @@
         "slug": "flower-field",
         "name": "Flower Field",
         "uuid": "d55cb55a-9c0e-42b5-83fe-0bfec3d52f93",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "arrays",
@@ -1003,9 +991,7 @@
         "slug": "bottle-song",
         "name": "Bottle Song",
         "uuid": "fb29b743-0f2d-46fe-8a2a-14973259bb2b",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "numbers",
@@ -1294,9 +1280,7 @@
         "slug": "house",
         "name": "House",
         "uuid": "df5d771a-e57b-4a96-8a29-9bd4ce7f88d2",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "numbers"
@@ -1328,9 +1312,7 @@
         "slug": "isbn-verifier",
         "name": "ISBN Verifier",
         "uuid": "a0aac827-8f7a-4065-9d05-a57009f5668d",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "booleans"
@@ -1385,9 +1367,7 @@
         "slug": "ocr-numbers",
         "name": "OCR Numbers",
         "uuid": "dd13bb29-589c-497d-9580-3f288f353fb2",
-        "practices": [
-          "strings"
-        ],
+        "practices": [],
         "prerequisites": [
           "strings",
           "loops",
@@ -1439,7 +1419,6 @@
         "name": "Food Chain",
         "uuid": "6f0919eb-2160-4cca-8504-286acc2ae9c8",
         "practices": [
-          "strings",
           "conditionals"
         ],
         "prerequisites": [
