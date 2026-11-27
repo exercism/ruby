@@ -32,7 +32,7 @@ class FlattenArrayTest < Minitest::Test
     assert_equal [0, 2, 2, 3, 8, 100, 4, 50, -2], flat_array
   end
 
-  def test_6_level_nesting
+  def test_5_level_nesting_with_multiple_nested_arrays
     skip
     flat_array = FlattenArray.flatten([1, [2, [[3]], [4, [[5]]], 6, 7], 8])
     assert_equal [1, 2, 3, 4, 5, 6, 7, 8], flat_array
@@ -50,7 +50,7 @@ class FlattenArrayTest < Minitest::Test
     assert_equal [1, 4], flat_array
   end
 
-  def test_6_level_nested_array_with_null_values
+  def test_4_level_nested_array_with_null_values
     skip
     flat_array = FlattenArray.flatten([0, 2, [[2, 3], 8, [[100]], nil, [[nil]]], -2])
     assert_equal [0, 2, 2, 3, 8, 100, -2], flat_array
